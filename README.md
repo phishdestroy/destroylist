@@ -41,7 +41,7 @@ By maintaining an up-to-date list, we help protect users and systems from the la
 
 ## 📊 Current Status
 
-![Active Domains](https://img.shields.io/endpoint?url=https://phishdestroy.github.io/destroylist/count.json&label=Active%20Domains&color=important&style=flat-square)
+![Active Domains](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/count.json&label=Active%20Domains&color=important&style=flat-square)
 
 > *This counter updates automatically as new domains are added.*
 
