@@ -6,6 +6,7 @@
 ![Updated](https://img.shields.io/badge/auto--updated-yes-success?style=flat-square)
 
 ---
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=4EF7E1&background=261ABD00&width=435&lines=Phish+domains%3F+Destroyed.+Next!+%F0%9F%92%A5)](https://git.io/typing-svg)
 
 ## 🛡️ About Destroylist
 
