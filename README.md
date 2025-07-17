@@ -48,7 +48,9 @@ By maintaining an up-to-date list, we help protect users and systems from the la
 ---
 
 ## 🎯 Our Goal & Usage
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Cyber+threats%3F+Listed.+Combat!+%F0%9F%92%A5)](https://git.io/typing-svg)
+
 The primary goal of this project is to **share an up-to-date threat list with the community**. You're free to use this blacklist however you need to combat cyber threats:
 
 ✔️ Security appliances  
@@ -74,7 +76,9 @@ https://github.com/phishdestroy/destroylist/raw/main/list.json
 ---
 
 ## 🗂️ Our Historical Database
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=500K%2B+domains%3F+Dealt+with.+Next!+%F0%9F%92%A5)](https://git.io/typing-svg)
+
 We also maintain a private archive of over **500,000+** phishing/scam domains collected over 5+ years.
 
 We don’t publish the full archive here (many entries are inactive or expired), but we’re happy to share it for:
