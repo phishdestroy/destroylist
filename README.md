@@ -115,6 +115,7 @@ We prioritize accuracy and welcome corrections from the community.
 **MIT License** — Free and open for all to use and integrate.
 
 ---
+![snake gif](https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg)
 
 ## 🤝 Contributing
 
