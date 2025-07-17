@@ -1,6 +1,9 @@
 # 🎣 Destroylist: Phishing & Scam Domain Blacklist
 
+<div align="center">
 ![Destroyolist Illustration](destroyolist_image.png)
+</div>
+
 ![Status](https://img.shields.io/badge/status-maintained-brightgreen?style=flat-square) 
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square) 
 ![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square) 
