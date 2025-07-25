@@ -11,6 +11,7 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Phish+domains%3F+Destroyed.+Next!+%F0%9F%92%A5)](https://git.io/typing-svg)
 
 ## 🛡️ About Destroylist
+
 > ⚡ **Live data collection began on July 1, 2025**
 
 Destroylist is an actively maintained and carefully curated blacklist of phishing and scam domains processed by our **PhishDestroy** system.
