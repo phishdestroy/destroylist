@@ -20,8 +20,7 @@ SOURCES_CONFIG = {
 OUTPUT_FILENAME = "community_blocklist.json"
 STATE_FILENAME = "community_state.json"
 BADGE_FILENAME = "community_count.json"
-GITHUB_REPO = os.environ.get("GITHUB_REPOSITORY")
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+COMMIT_MSG_FILENAME = "commit_message.txt"
 
 def load_state():
     if not os.path.exists(STATE_FILENAME): return {}
@@ -44,15 +43,6 @@ def fetch_and_parse(url):
     except requests.RequestException as e:
         print(f"Error: Failed to fetch {url}: {e}")
         return None, set()
-
-def create_github_issue(title, body):
-    if not GITHUB_REPO or not GITHUB_TOKEN: return
-    url = f"https://api.github.com/repos/{GITHUB_REPO}/issues"
-    headers = {"Authorization": f"token {GITHUB_TOKEN}", "Accept": "application/vnd.github.v3+json"}
-    payload = {"title": title, "body": body, "labels": ["automated-update", "community-list"]}
-    response = requests.post(url, headers=headers, json=payload)
-    if response.status_code == 201: print(f"Successfully created Issue: '{title}'")
-    else: print(f"Error: Failed to create Issue. Status: {response.status_code}, Response: {response.text}")
 
 def update_badge_json(count):
     badge_data = {"schemaVersion": 1, "label": "Total Domains", "message": str(count), "color": "blue"}
@@ -106,15 +96,19 @@ def main():
     print("Changes detected! Updating blocklist...")
     new_state["total_count"] = len(all_domains)
 
-    issue_title = "Community List Sync: Total count updated"
-    issue_body = f"Total domains in the list is now {len(all_domains)}.\n\n"
+    commit_title = "Update community blocklist"
+    commit_body = f"Total domains in the list is now {len(all_domains)}.\n\n"
     if changes:
         title_parts = [f"{c['sign']}{c['diff']} from {c['name']}" for c in changes]
-        issue_title = f"Community List Sync: {', '.join(title_parts)}"
-        issue_body += "**Summary of external changes:**\n"
+        commit_title = f"Sync: {', '.join(title_parts)}"
+        commit_body += "Summary of external changes:\n"
         for c in changes:
-            issue_body += f"- **{c['name']}:** {c['sign']}{c['diff']} domains\n"
+            commit_body += f"- {c['name']}: {c['sign']}{c['diff']} domains\n"
     
+    full_commit_message = f"{commit_title}\n\n{commit_body}"
+    with open(COMMIT_MSG_FILENAME, 'w', encoding='utf-8') as f:
+        f.write(full_commit_message)
+
     sorted_domains = sorted(list(all_domains))
     with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(sorted_domains, f, indent=2)
@@ -123,7 +117,7 @@ def main():
     update_badge_json(len(all_domains))
     
     print(f"Files '{OUTPUT_FILENAME}', '{STATE_FILENAME}', and '{BADGE_FILENAME}' are updated.")
-    create_github_issue(issue_title, issue_body)
+    print(f"Commit message saved to '{COMMIT_MSG_FILENAME}'.")
 
 if __name__ == "__main__":
     main()
