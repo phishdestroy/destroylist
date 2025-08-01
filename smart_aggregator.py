@@ -4,9 +4,7 @@ import json
 import os
 import hashlib
 
-LOCAL_FILES_CONFIG = [
-    "list.json"
-]
+LOCAL_FILES_CONFIG = ["list.json"]
 
 SOURCES_CONFIG = {
     "MetaMask": "https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/main/src/hosts.json",
@@ -19,7 +17,7 @@ SOURCES_CONFIG = {
     "OpenPhish": "https://openphish.com/feed.txt",
 }
 
-OUTPUT_FILENAME = "community_blocklist.txt"
+OUTPUT_FILENAME = "community_blocklist.json"
 STATE_FILENAME = "community_state.json"
 BADGE_FILENAME = "community_count.json"
 GITHUB_REPO = os.environ.get("GITHUB_REPOSITORY")
@@ -117,9 +115,9 @@ def main():
         for c in changes:
             issue_body += f"- **{c['name']}:** {c['sign']}{c['diff']} domains\n"
     
+    sorted_domains = sorted(list(all_domains))
     with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
-        for domain in sorted(list(all_domains)):
-            f.write(f"{domain}\n")
+        json.dump(sorted_domains, f, indent=2)
     
     save_state(new_state)
     update_badge_json(len(all_domains))

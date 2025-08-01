@@ -20,8 +20,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip'
-      
+
       - name: Install dependencies
         run: pip install requests
 
@@ -34,7 +33,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add .
+          git add community_blocklist.json community_state.json community_count.json
           
           if git diff --staged --quiet; then
             echo "No file changes to commit."

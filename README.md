@@ -63,21 +63,6 @@ The primary goal of this project is to **share an up-to-date threat list with th
 We believe in the power of **open collaboration** to enhance internet security.
 
 ---
----
-
----
-
-## 🌐 Community-Sourced Blocklist
-
-In addition to our curated lists, we maintain a separate, larger blocklist automatically aggregated from trusted partner sources. This list is updated hourly and serves as a broad-spectrum supplement to our primary intelligence.
-
-![Community Domains](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community_count.json&label=Community%20Domains&color=informational&style=flat-square)
-
-* **Direct Link:** [`community_blocklist.txt`](./community_blocklist.txt)
-* **Update Frequency:** Every hour.
-* **Purpose:** Provides extended coverage by leveraging data from the wider security community.
-
-> This list is generated automatically and provided as-is. For our core, manually vetted data, please use the primary files like `list.json`.
 
 ## 📂 Data Access
 
@@ -91,6 +76,19 @@ https://github.com/phishdestroy/destroylist/raw/main/list.json
 - Easy to parse, import, and deploy.
 
 ---
+## 🌐 Community-Sourced Blocklist
+
+In addition to our curated lists, we maintain a separate, larger blocklist automatically aggregated from trusted partner sources. This list is updated hourly and serves as a broad-spectrum supplement to our primary intelligence.
+
+![Total Domains](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community_count.json&label=Total%20Domains&color=blue&style=flat-square)
+
+* **Direct Link:** [`community_blocklist.json`](./community_blocklist.json)
+* **Update Frequency:** Every hour.
+* **Purpose:** Provides extended coverage by leveraging data from the wider security community.
+
+> This list is generated automatically and provided as-is. For our core, manually vetted data, please use the primary files like `list.json`.
+---
+
 
 ## 🗂️ Our Historical Database
 
