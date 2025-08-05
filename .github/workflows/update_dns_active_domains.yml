@@ -26,25 +26,34 @@ jobs:
         pip install requests
 
     - name: Run DNS active domain update script
-      run: python active_domains.py
+      id: run-script # Add an ID to this step to capture its outputs
+      run: python dns/active_domains.py
 
     - name: Commit and push if changes
+      # Only run this step if the script indicated there are changes
+      if: steps.run-script.outputs.has_changes == 'true'
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Add the generated/updated files to the staging area
         git add dns/active_domains.json dns/active_count.json
         
-        # Check if there are any actual changes staged for commit
-        if git diff --cached --exit-code; then
-          echo "No changes detected in dns/active_domains.json or dns/active_count.json. No commit needed."
+        # Get outputs from the previous step
+        ADDED_COUNT="${{ steps.run-script.outputs.added_count }}"
+        REMOVED_COUNT="${{ steps.run-script.outputs.removed_count }}"
+
+        COMMIT_MESSAGE=""
+        if [ "$ADDED_COUNT" -gt 0 ] && [ "$REMOVED_COUNT" -gt 0 ]; then
+          COMMIT_MESSAGE="feat(active): Updated DNS active domains - Added $ADDED_COUNT, Removed $REMOVED_COUNT [Automated]"
+        elif [ "$ADDED_COUNT" -gt 0 ]; then
+          COMMIT_MESSAGE="feat(active): Added $ADDED_COUNT DNS active domains [Automated]"
+        elif [ "$REMOVED_COUNT" -gt 0 ]; then
+          COMMIT_MESSAGE="feat(active): Removed $REMOVED_COUNT DNS active domains [Automated]"
         else
-          # Pull latest changes and rebase before pushing
-          git pull --rebase origin main
-          
-          # If there are changes, commit them with a descriptive message
-          git commit -m "feat(active): Update active domain list and count [Automated]"
-          # Push the changes to the remote repository
-          git push
+          # This case means has_changes was true but counts are 0, likely only count file format changed
+          COMMIT_MESSAGE="chore(active): Updated DNS active domain count file [Automated]"
         fi
+
+        git pull --rebase origin main
+        git commit -m "$COMMIT_MESSAGE"
+        git push

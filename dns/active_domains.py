@@ -3,11 +3,30 @@ import json
 import os
 from datetime import datetime
 import socket
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import urlparse
 
 SOURCE_URL = "https://github.com/phishdestroy/destroylist/raw/main/list.json"
 
-DNS_ACTIVE_DOMAINS_FILE = "dns_active_domains.json"
-DNS_ACTIVE_COUNT_FILE = "dns_active_count.json"
+ACTIVE_DOMAINS_FILE = "active_domains.json"
+ACTIVE_COUNT_FILE = "active_count.json"
+
+MAX_WORKERS = 20
+DNS_TIMEOUT = 5
+
+def extract_domain(url_or_domain):
+    try:
+        parsed_url = urlparse(url_or_domain)
+        domain = parsed_url.netloc
+        if not domain:
+            domain = parsed_url.path
+        
+        domain = domain.split(':')[0]
+        domain = domain.split('/')[0].split('?')[0].split('#')[0]
+        
+        return domain.lower().strip()
+    except Exception:
+        return url_or_domain.lower().strip()
 
 def fetch_domains(url):
     try:
@@ -25,7 +44,10 @@ def load_existing_domains(file_path):
     if os.path.exists(file_path):
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
-                return set(json.load(f))
+                content = f.read().strip()
+                if not content:
+                    return set()
+                return set(json.loads(content))
         except json.JSONDecodeError as e:
             print(f"Error decoding existing JSON from {file_path}: {e}")
             return set()
@@ -46,7 +68,7 @@ def save_count(file_path, count):
     try:
         data = {
             "schemaVersion": 1,
-            "label": "DNS Active Domains",
+            "label": "Active Domains",
             "message": str(count),
             "color": "purple"
         }
@@ -56,65 +78,118 @@ def save_count(file_path, count):
     except Exception as e:
         print(f"Error saving count to {file_path}: {e}")
 
-def is_domain_resolvable(domain):
+def check_resolvable_wrapper(domain, timeout):
+    return domain, is_domain_resolvable(domain, timeout)
+
+def is_domain_resolvable(domain, timeout):
+    if not domain:
+        return False
     try:
+        original_timeout = socket.getdefaulttimeout()
+        socket.setdefaulttimeout(timeout)
         socket.gethostbyname(domain)
+        socket.setdefaulttimeout(original_timeout)
         return True
     except socket.gaierror:
+        socket.setdefaulttimeout(original_timeout)
         return False
     except Exception as e:
-        print(f"Error checking resolvability for {domain}: {e}")
+        socket.setdefaulttimeout(original_timeout)
         return False
 
 def main():
     print(f"[{datetime.now()}] Starting DNS active domain update...")
 
-    new_domains_list = fetch_domains(SOURCE_URL)
-    if new_domains_list is None:
+    new_domains_list_raw = fetch_domains(SOURCE_URL)
+    if new_domains_list_raw is None:
         print("Failed to fetch new domains. Exiting.")
+        # Set outputs for GitHub Actions even on failure
+        print(f"::set-output name=added_count::0")
+        print(f"::set-output name=removed_count::0")
+        print(f"::set-output name=has_changes::false")
         return
 
-    new_domains_set = set(new_domains_list)
-    print(f"Fetched {len(new_domains_set)} domains from source.")
+    new_domains_set = set()
+    for item in new_domains_list_raw:
+        domain = extract_domain(item)
+        if domain:
+            new_domains_set.add(domain)
 
-    existing_dns_active_domains = load_existing_domains(DNS_ACTIVE_DOMAINS_FILE)
-    print(f"Loaded {len(existing_dns_active_domains)} existing DNS active domains.")
+    print(f"Fetched {len(new_domains_set)} unique domains from source after extraction.")
 
-    candidate_dns_active_domains = new_domains_set.union(existing_dns_active_domains)
-    print(f"Total unique candidate domains (before DNS check): {len(candidate_dns_active_domains)}")
+    existing_active_domains = load_existing_domains(ACTIVE_DOMAINS_FILE)
+    print(f"Loaded {len(existing_active_domains)} existing active domains.")
+
+    candidate_active_domains = new_domains_set.union(existing_active_domains)
+    print(f"Total unique candidate domains (before DNS check): {len(candidate_active_domains)}")
 
     resolvable_domains = set()
-    print("Performing DNS checks on candidate domains...")
-    for i, domain in enumerate(sorted(list(candidate_dns_active_domains))):
-        if i % 100 == 0:
-            print(f"  Checked {i}/{len(candidate_dns_active_domains)} domains...")
-        if is_domain_resolvable(domain):
-            resolvable_domains.add(domain)
+    print(f"Performing concurrent DNS checks on {len(candidate_active_domains)} domains with {MAX_WORKERS} workers...")
     
-    updated_dns_active_domains = resolvable_domains
-    print(f"Finished DNS checks. {len(updated_dns_active_domains)} domains are currently DNS active.")
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_domain = {executor.submit(check_resolvable_wrapper, domain, DNS_TIMEOUT): domain for domain in candidate_active_domains}
+        
+        checked_count = 0
+        for future in as_completed(future_to_domain):
+            domain, is_resolvable = future.result()
+            if is_resolvable:
+                resolvable_domains.add(domain)
+            
+            checked_count += 1
+            if checked_count % 100 == 0:
+                print(f"  Checked {checked_count}/{len(candidate_active_domains)} domains...")
+
+    updated_active_domains = resolvable_domains
+    print(f"Finished DNS checks. {len(updated_active_domains)} domains are currently DNS active.")
 
     domains_changed = False
 
-    if updated_dns_active_domains != existing_dns_active_domains:
-        domains_changed = True
-        print("DNS active domains have changed. Updating files.")
-        save_domains(DNS_ACTIVE_DOMAINS_FILE, updated_dns_active_domains)
-        save_count(DNS_ACTIVE_COUNT_FILE, len(updated_dns_active_domains))
-    else:
-        print("No new domains detected in DNS active domains.")
-        current_count_from_file = 0
-        if os.path.exists(DNS_ACTIVE_COUNT_FILE):
-             try:
-                 with open(DNS_ACTIVE_COUNT_FILE, 'r', encoding='utf-8') as f:
-                     current_count_from_file = int(json.load(f).get("message", "0"))
-             except Exception:
-                 pass
+    desired_domains_content = json.dumps(sorted(list(updated_active_domains)), indent=2)
+    desired_count_data = {
+        "schemaVersion": 1,
+        "label": "Active Domains",
+        "message": str(len(updated_active_domains)),
+        "color": "purple"
+    }
+    desired_count_content = json.dumps(desired_count_data, indent=2)
 
-        if current_count_from_file != len(updated_dns_active_domains):
-            domains_changed = True
-            print("DNS active domain count file is outdated. Updating count file.")
-            save_count(DNS_ACTIVE_COUNT_FILE, len(updated_dns_active_domains))
+    current_domains_content = ""
+    if os.path.exists(ACTIVE_DOMAINS_FILE):
+        try:
+            with open(ACTIVE_DOMAINS_FILE, 'r', encoding='utf-8') as f:
+                current_domains_content = f.read()
+        except Exception:
+            pass
+
+    if current_domains_content != desired_domains_content:
+        domains_changed = True
+        print(f"Content of {ACTIVE_DOMAINS_FILE} has changed or file is new. Updating.")
+        save_domains(ACTIVE_DOMAINS_FILE, updated_active_domains)
+
+    current_count_content = ""
+    if os.path.exists(ACTIVE_COUNT_FILE):
+        try:
+            with open(ACTIVE_COUNT_FILE, 'r', encoding='utf-8') as f:
+                current_count_content = f.read()
+        except Exception:
+            pass
+
+    if current_count_content != desired_count_content:
+        domains_changed = True
+        print(f"Content of {ACTIVE_COUNT_FILE} has changed or file is new. Updating.")
+        save_count(ACTIVE_COUNT_FILE, len(updated_active_domains))
+
+    # Calculate added and removed domains for the commit message
+    added_count = len(updated_active_domains - existing_active_domains)
+    removed_count = len(existing_active_domains - updated_active_domains)
+
+    print(f"Added domains: {added_count}, Removed domains: {removed_count}")
+    print(f"Has changes to commit: {domains_changed}")
+
+    # Set outputs for GitHub Actions
+    print(f"::set-output name=added_count::{added_count}")
+    print(f"::set-output name=removed_count::{removed_count}")
+    print(f"::set-output name=has_changes::{'true' if domains_changed else 'false'}")
 
     if domains_changed:
         print("Files updated. Ready for commit.")
