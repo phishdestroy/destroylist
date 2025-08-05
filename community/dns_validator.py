@@ -3,127 +3,126 @@ import json
 import sys
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from tqdm import tqdm  # A library for a nice progress bar
+from tqdm import tqdm
+import logging
+from typing import List, Set
 
-# List of hosting platform suffixes to automatically include without a DNS check,
-# as the root domain is always online.
+# --- LOGGING CONFIGURATION ---
+# Configure logging for console output
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# --- PERFORMANCE CONFIGURATION ---
+MAX_WORKERS = 400
+DNS_TIMEOUT = 2.0
+CUSTOM_RESOLVERS = ['1.1.1.1', '8.8.8.8']
+
+# List of hosting platform suffixes to automatically include without a DNS check.
 HOSTING_PLATFORM_SUFFIXES = (
-    # PaaS/FaaS Platforms
-    '.pages.dev',
-    '.workers.dev',
-    '.vercel.app',
-    '.netlify.app',
-    '.onrender.com',
-    '.replit.dev',
-    '.glitch.me',
-    
-    # Git-based Pages
-    '.github.io',
-    '.gitlab.io',
-
-    # Static Site Hosting
-    '.webflow.io',
-    '.surge.sh',
-
-    # Google Firebase
-    '.firebaseapp.com',
-    '.web.app'
+    '.pages.dev', '.workers.dev', '.vercel.app', '.netlify.app',
+    '.onrender.com', '.replit.dev', '.glitch.me', '.github.io',
+    '.gitlab.io', '.webflow.io', '.surge.sh', '.firebaseapp.com', '.web.app'
 )
 
-def check_domain(domain):
-    """
-    Checks if a domain has an active DNS A record.
-    Returns the domain if it's active, otherwise None.
-    """
+def get_root_domain(domain: str) -> str:
+    """Extracts the root domain from a given domain string."""
+    parts = domain.split('.')
+    if len(parts) > 2 and parts[-2] in ('co', 'com', 'org', 'net', 'gov', 'edu'):
+        return '.'.join(parts[-3:])
+    return '.'.join(parts[-2:])
+
+def check_domain(domain: str, resolver: dns.resolver.Resolver) -> str | None:
+    """Checks if a domain has an active DNS A record."""
     try:
-        # Attempt to resolve the A record. This is the most common record type.
-        dns.resolver.resolve(domain, 'A')
+        resolver.resolve(domain, 'A')
         return domain
     except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.exception.Timeout, dns.resolver.NoNameservers):
-        # NXDOMAIN: The domain does not exist.
-        # NoAnswer: The server replied, but there's no A record.
-        # Timeout: The query timed out.
-        # NoNameservers: Could not find authoritative name servers.
         return None
-    except Exception:
-        # Catch any other potential DNS-related exceptions.
+    except Exception as e:
+        logging.debug(f"Error checking domain {domain}: {e}")
         return None
 
-def main(input_file, output_file):
-    """
-    Main function to read a list of domains, validate them via DNS,
-    and write the live domains to a new file.
-    """
-    print(f"Loading domains from {input_file}...")
-    try:
-        with open(input_file, 'r', encoding='utf-8') as f:
-            domains = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Input file not found: {input_file}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError:
-        print(f"Error: Could not decode JSON from file: {input_file}", file=sys.stderr)
-        sys.exit(1)
+def process_domains(domains: List[str], output_file: str):
+    """Main function to read, validate, and write live domains."""
+    logging.info(f"Found {len(domains)} total domains.")
 
-    if not isinstance(domains, list):
-        print(f"Error: Expected a list of domains in {input_file}, but got {type(domains).__name__}.", file=sys.stderr)
-        sys.exit(1)
-
-    print(f"Found {len(domains)} total domains.")
-
-    # --- Smart Filtering Logic ---
-    live_domains = []
-    domains_to_check = []
-
-    print("Filtering domains: separating always-on platforms from domains needing DNS checks...")
+    # --- Smart Filtering and Root Domain Extraction ---
+    platform_domains = []
+    domains_to_process = []
+    logging.info("Filtering domains: separating always-on platforms...")
     for domain in domains:
         if domain.endswith(HOSTING_PLATFORM_SUFFIXES):
-            # Automatically consider domains on these platforms as "live"
-            live_domains.append(domain)
+            platform_domains.append(domain)
         else:
-            domains_to_check.append(domain)
+            domains_to_process.append(domain)
     
-    print(f"Found {len(live_domains)} domains on always-on platforms. They will be included automatically.")
-    print(f"Validating {len(domains_to_check)} remaining domains via DNS...")
-    # --- End of Smart Filtering Logic ---
+    logging.info(f"Found {len(platform_domains)} domains on always-on platforms (auto-included).")
 
-    # Use ThreadPoolExecutor to perform DNS queries in parallel for speed.
-    with ThreadPoolExecutor(max_workers=50) as executor:
-        future_to_domain = {executor.submit(check_domain, domain): domain for domain in domains_to_check}
+    root_domains_to_check: Set[str] = {get_root_domain(d) for d in domains_to_process}
+    logging.info(f"Extracted {len(root_domains_to_check)} unique root domains for validation.")
+    
+    # --- High-performance DNS check on ROOT domains ---
+    resolver = dns.resolver.Resolver()
+    resolver.nameservers = CUSTOM_RESOLVERS
+    resolver.timeout = DNS_TIMEOUT
+    resolver.lifetime = DNS_TIMEOUT
+
+    live_root_domains: Set[str] = set()
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_domain = {executor.submit(check_domain, root_domain, resolver): root_domain for root_domain in root_domains_to_check}
         
-        # Use tqdm to display a clean progress bar in the console.
-        for future in tqdm(as_completed(future_to_domain), total=len(domains_to_check), desc="Validating domains"):
+        for future in tqdm(as_completed(future_to_domain), total=len(root_domains_to_check), desc="Validating root domains"):
             result = future.result()
             if result:
-                live_domains.append(result)
+                live_root_domains.add(result)
+    
+    logging.info(f"\nFound {len(live_root_domains)} live root domains.")
 
-    # Sort the final list for consistency.
-    live_domains.sort()
+    # --- Final List Construction ---
+    logging.info("Constructing final list of live domains...")
+    final_live_domains = platform_domains[:]
+    for domain in domains_to_process:
+        root_domain = get_root_domain(domain)
+        if root_domain in live_root_domains:
+            final_live_domains.append(domain)
 
-    print(f"\nValidation complete. Found {len(live_domains)} total live domains.")
+    final_live_domains.sort()
 
-    # Ensure the output directory exists.
+    logging.info(f"Validation complete. Found {len(final_live_domains)} total live domains.")
+
     output_dir = os.path.dirname(output_file)
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
     
-    print(f"Saving live domains to {output_file}...")
+    logging.info(f"Saving live domains to {output_file}...")
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(live_domains, f, indent=2)
+        json.dump(final_live_domains, f, indent=2)
 
-    print("Done!")
+    logging.info("Done! ✅")
 
-if __name__ == "__main__":
-    # Get the directory where this script is located.
+def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # Set default paths relative to the script's location.
-    # Assumes blocklist.json is in the same directory as this script.
     default_input = os.path.join(script_dir, "blocklist.json")
     default_output = os.path.join(script_dir, "live_blocklist.json")
 
-    # The script can be run with arguments or use the defaults.
     input_arg = sys.argv[1] if len(sys.argv) > 1 else default_input
     output_arg = sys.argv[2] if len(sys.argv) > 2 else default_output
+
+    logging.info(f"Loading domains from {input_arg}...")
+    try:
+        with open(input_arg, 'r', encoding='utf-8') as f:
+            domains = json.load(f)
+    except FileNotFoundError:
+        logging.error(f"Error: Input file not found: {input_arg}")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        logging.error(f"Error: Could not decode JSON from file: {input_arg}")
+        sys.exit(1)
     
-    main(input_arg, output_arg)
+    if not isinstance(domains, list):
+        logging.error(f"Error: Expected a list of domains, but got {type(domains).__name__}.")
+        sys.exit(1)
+        
+    process_domains(domains, output_arg)
+
+if __name__ == "__main__":
+    main()
