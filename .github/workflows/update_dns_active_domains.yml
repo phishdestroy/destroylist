@@ -1,0 +1,44 @@
+name: Update DNS Active Domains
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-dns-active-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run DNS active domain update script
+      run: python active_domains.py
+
+    - name: Commit and push if changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Updated paths for the data files
+        git add dns/active_domains.json dns/active_count.json
+        
+        if git diff --cached --exit-code; then
+          echo "No changes detected in dns/active_domains.json or dns/active_count.json. No commit needed."
+        else
+          git commit -m "feat(active): Update active domain list and count [Automated]"
+          git push
+        fi
