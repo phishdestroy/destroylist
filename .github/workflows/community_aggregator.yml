@@ -33,10 +33,14 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git pull --rebase
-          git add .
+          
+          # Add the entire 'community' directory to the commit
+          git add community/
+          
           if git diff --staged --quiet; then
             echo "No file changes to commit."
           else
-            git commit -F commit_message.txt
+            # Use the commit message from inside the 'community' directory
+            git commit -F community/commit_message.txt
             git push
           fi
