@@ -1,71 +1,19 @@
 import requests
-import re
 import json
 import os
 import hashlib
-
-# --- PARSERS FOR DIFFERENT SOURCE FORMATS ---
-
-def parse_default_text(content):
-    """
-    Default parser for simple text files (e.g., one domain per line).
-    Uses regex to find all valid domain patterns in the text content.
-    """
-    try:
-        return set(re.findall(r'([a-zA-Z0-9][a-zA-Z0-9\.-]+\.[a-zA-Z]{2,})', content))
-    except Exception as e:
-        print(f"Error: Failed to parse content with default_text parser: {e}")
-        return set()
-
-def parse_json_list(content):
-    """Parses JSON files that are a simple list of domain strings."""
-    try:
-        data = json.loads(content)
-        if isinstance(data, list):
-            return set(data)
-        print("Warning: JSON content is not a list.")
-        return set()
-    except json.JSONDecodeError:
-        print("Error: Could not decode content as JSON.")
-        return set()
-
-def parse_metamask_blacklist(content):
-    """Parses the MetaMask config file to extract domains from the 'blacklist' key."""
-    try:
-        data = json.loads(content)
-        return set(data.get('blacklist', []))
-    except json.JSONDecodeError:
-        print("Error: Could not decode MetaMask JSON.")
-        return set()
-
-def parse_polkadot_denylist(content):
-    """Parses the Polkadot config file to extract domains from the keys of the 'deny' object."""
-    try:
-        data = json.loads(content)
-        # The domains are the keys of the 'deny' dictionary
-        return set(data.get('deny', {}).keys())
-    except json.JSONDecodeError:
-        print("Error: Could not decode Polkadot JSON.")
-        return set()
-
-# Dictionary to map parser names to their respective functions
-PARSERS = {
-    'default_text': parse_default_text,
-    'json_list': parse_json_list,
-    'metamask_blacklist': parse_metamask_blacklist,
-    'polkadot_denylist': parse_polkadot_denylist,
-}
-
+import re
 
 # --- CONFIGURATION ---
 
+# Local files to include in the list
 LOCAL_FILES_CONFIG = ["list.json"]
 
-# Updated source configuration with URLs and their designated parsers
+# External data sources
 SOURCES_CONFIG = {
     "MetaMask": {
         "url": "https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/main/src/config.json",
-        "parser": "metamask_blacklist"
+        "parser": "metamask"
     },
     "ScamSniffer": {
         "url": "https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json",
@@ -73,7 +21,7 @@ SOURCES_CONFIG = {
     },
     "Polkadot": {
         "url": "https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json",
-        "parser": "polkadot_denylist"
+        "parser": "polkadot"
     },
     "Codeesura": {
         "url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json",
@@ -81,22 +29,82 @@ SOURCES_CONFIG = {
     },
     "CryptoFirewall": {
         "url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt",
-        "parser": "default_text"
+        "parser": "text_lines"
     },
     "OpenPhish": {
         "url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt",
-        "parser": "default_text"
+        "parser": "text_lines"
     }
 }
 
+# Output filenames
 OUTPUT_FILENAME = "community_blocklist.json"
 STATE_FILENAME = "community_state.json"
 BADGE_FILENAME = "community_count.json"
 COMMIT_MSG_FILENAME = "commit_message.txt"
 
 
+# --- PARSERS FOR DIFFERENT SOURCES ---
+
+def parse_metamask(content):
+    """Extracts domains from the 'blacklist' key in a JSON object."""
+    try:
+        data = json.loads(content)
+        return set(data.get("blacklist", []))
+    except json.JSONDecodeError:
+        print("Error: Failed to parse JSON for MetaMask.")
+        return set()
+
+def parse_polkadot(content):
+    """Extracts domains from the 'deny' list in the Polkadot JSON."""
+    try:
+        data = json.loads(content)
+        # The 'deny' key contains a simple list of strings.
+        if isinstance(data.get("deny"), list):
+            return set(data.get("deny", []))
+        print("Warning: 'deny' key in Polkadot source is not a list.")
+        return set()
+    except json.JSONDecodeError:
+        print("Error: Failed to parse JSON for Polkadot.")
+        return set()
+
+def parse_json_list(content):
+    """Parses a simple JSON list of domains."""
+    try:
+        data = json.loads(content)
+        if isinstance(data, list):
+            return set(data)
+        print("Warning: JSON content is not a list.")
+        return set()
+    except json.JSONDecodeError:
+        print("Error: Failed to parse a simple JSON list.")
+        return set()
+
+def parse_text_lines(content):
+    """Parses text files where each domain is on a new line."""
+    domains = set()
+    for line in content.splitlines():
+        line = line.strip()
+        # Ignore comments and empty lines
+        if line and not line.startswith('#'):
+            # Additional check for domain validity
+            if re.match(r'^[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,}$', line):
+                domains.add(line)
+    return domains
+
+# Dictionary to select the correct parser
+PARSERS = {
+    "metamask": parse_metamask,
+    "polkadot": parse_polkadot,
+    "json_list": parse_json_list,
+    "text_lines": parse_text_lines,
+}
+
+
+# --- CORE FUNCTIONS ---
+
 def load_state():
-    """Loads the last saved state from the state file."""
+    """Loads the last saved state."""
     if not os.path.exists(STATE_FILENAME):
         return {}
     with open(STATE_FILENAME, 'r', encoding='utf-8') as f:
@@ -106,14 +114,14 @@ def load_state():
             return {}
 
 def save_state(state):
-    """Saves the current state to the state file."""
+    """Saves the current state to a file."""
     with open(STATE_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(state, f, indent=2)
 
 def fetch_content(url):
-    """Fetches text content from a given URL."""
+    """Fetches content from a URL."""
     try:
-        headers = {'User-Agent': 'Mozilla/5.0'}
+        headers = {'User-Agent': 'Mozilla/5.0 (compatible; GitHub-Action-Bot/1.0)'}
         response = requests.get(url, timeout=30, headers=headers)
         response.raise_for_status()
         return response.text
@@ -122,21 +130,21 @@ def fetch_content(url):
         return None
 
 def update_badge_json(count):
-    """Updates the JSON file used for generating a repository badge."""
+    """Updates the JSON file for the badge."""
     badge_data = {"schemaVersion": 1, "label": "Total Domains", "message": str(count), "color": "blue"}
     with open(BADGE_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(badge_data, f)
     print(f"Badge file '{BADGE_FILENAME}' updated with count: {count}")
 
 def main():
-    """Main function to run the aggregation process."""
-    print("Starting smart aggregation process...")
+    """Main execution function."""
+    print("Starting domain aggregation process...")
     last_state = load_state()
     new_state = {}
     all_domains = set()
     changes = []
 
-    print("Processing local repository files...")
+    print("Processing local files...")
     for file_path in LOCAL_FILES_CONFIG:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -153,26 +161,28 @@ def main():
     for name, config in SOURCES_CONFIG.items():
         url = config['url']
         parser_name = config['parser']
-        parser_func = PARSERS[parser_name]
-
-        print(f"-> Processing {name} from {url} using '{parser_name}' parser...")
         
+        print(f"-> Fetching and parsing {name} from {url}")
         content = fetch_content(url)
+        
         domains = set()
         content_hash = None
-        
-        if content is None:
-            # Use stale data from the last state if fetch fails
-            stale_domains = last_state.get(name, {}).get('domains', [])
-            domains = set(stale_domains)
-            content_hash = last_state.get(name, {}).get('hash')
-            print(f"Warning: Using stale data for {name} due to fetch error.")
+
+        if content:
+            parser_func = PARSERS.get(parser_name)
+            if parser_func:
+                domains = parser_func(content)
+                content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
+                print(f"  -> Parsed {len(domains)} domains from {name}")
+            else:
+                print(f"Warning: No parser found for '{parser_name}'. Skipping.")
         else:
-            domains = parser_func(content)
-            content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
+            # If fetch fails, use stale data from the last run
+            domains = set(last_state.get(name, {}).get('domains', []))
+            content_hash = last_state.get(name, {}).get('hash')
+            print(f"Warning: Using stale data for {name} ({len(domains)} domains) due to fetch error.")
 
         all_domains.update(domains)
-        
         last_hash = last_state.get(name, {}).get('hash')
         
         if content_hash != last_hash and content is not None:
@@ -192,7 +202,7 @@ def main():
 
     # Prepare commit message
     commit_title = "Update community blocklist"
-    commit_body = f"Total unique domains in the list is now {len(all_domains)}.\n\n"
+    commit_body = f"Total domains in the list is now {len(all_domains)}.\n\n"
     if changes:
         title_parts = [f"{c['sign']}{c['diff']} from {c['name']}" for c in changes]
         commit_title = f"Sync: {', '.join(title_parts)}"
@@ -212,7 +222,7 @@ def main():
     save_state(new_state)
     update_badge_json(len(all_domains))
     
-    print(f"Files '{OUTPUT_FILENAME}', '{STATE_FILENAME}', and '{BADGE_FILENAME}' have been updated.")
+    print(f"Files '{OUTPUT_FILENAME}', '{STATE_FILENAME}', and '{BADGE_FILENAME}' are updated.")
     print(f"Commit message saved to '{COMMIT_MSG_FILENAME}'.")
 
 if __name__ == "__main__":
