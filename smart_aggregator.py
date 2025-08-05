@@ -6,6 +6,9 @@ import re
 
 # --- CONFIGURATION ---
 
+# The directory where all community-related files will be stored.
+COMMUNITY_DIR = "community"
+
 # Local files to include in the list
 LOCAL_FILES_CONFIG = ["list.json"]
 
@@ -37,11 +40,11 @@ SOURCES_CONFIG = {
     }
 }
 
-# Output filenames
-OUTPUT_FILENAME = "community_blocklist.json"
-STATE_FILENAME = "community_state.json"
-BADGE_FILENAME = "community_count.json"
-COMMIT_MSG_FILENAME = "commit_message.txt"
+# Output filenames, now inside the COMMUNITY_DIR
+OUTPUT_FILENAME = os.path.join(COMMUNITY_DIR, "blocklist.json")
+STATE_FILENAME = os.path.join(COMMUNITY_DIR, "state.json")
+BADGE_FILENAME = os.path.join(COMMUNITY_DIR, "count.json")
+COMMIT_MSG_FILENAME = os.path.join(COMMUNITY_DIR, "commit_message.txt")
 
 
 # --- PARSERS FOR DIFFERENT SOURCES ---
@@ -59,7 +62,6 @@ def parse_polkadot(content):
     """Extracts domains from the 'deny' list in the Polkadot JSON."""
     try:
         data = json.loads(content)
-        # The 'deny' key contains a simple list of strings.
         if isinstance(data.get("deny"), list):
             return set(data.get("deny", []))
         print("Warning: 'deny' key in Polkadot source is not a list.")
@@ -85,14 +87,11 @@ def parse_text_lines(content):
     domains = set()
     for line in content.splitlines():
         line = line.strip()
-        # Ignore comments and empty lines
         if line and not line.startswith('#'):
-            # Additional check for domain validity
             if re.match(r'^[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,}$', line):
                 domains.add(line)
     return domains
 
-# Dictionary to select the correct parser
 PARSERS = {
     "metamask": parse_metamask,
     "polkadot": parse_polkadot,
@@ -131,13 +130,16 @@ def fetch_content(url):
 
 def update_badge_json(count):
     """Updates the JSON file for the badge."""
-    badge_data = {"schemaVersion": 1, "label": "Total Domains", "message": str(count), "color": "blue"}
+    badge_data = {"schemaVersion": 1, "label": "Community Domains", "message": str(count), "color": "blue"}
     with open(BADGE_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(badge_data, f)
     print(f"Badge file '{BADGE_FILENAME}' updated with count: {count}")
 
 def main():
     """Main execution function."""
+    # Create the community directory if it doesn't exist
+    os.makedirs(COMMUNITY_DIR, exist_ok=True)
+
     print("Starting domain aggregation process...")
     last_state = load_state()
     new_state = {}
@@ -177,7 +179,6 @@ def main():
             else:
                 print(f"Warning: No parser found for '{parser_name}'. Skipping.")
         else:
-            # If fetch fails, use stale data from the last run
             domains = set(last_state.get(name, {}).get('domains', []))
             content_hash = last_state.get(name, {}).get('hash')
             print(f"Warning: Using stale data for {name} ({len(domains)} domains) due to fetch error.")
@@ -200,9 +201,8 @@ def main():
     print("Changes detected! Updating blocklist...")
     new_state["total_count"] = len(all_domains)
 
-    # Prepare commit message
     commit_title = "Update community blocklist"
-    commit_body = f"Total domains in the list is now {len(all_domains)}.\n\n"
+    commit_body = f"Total domains in the community list is now {len(all_domains)}.\n\n"
     if changes:
         title_parts = [f"{c['sign']}{c['diff']} from {c['name']}" for c in changes]
         commit_title = f"Sync: {', '.join(title_parts)}"
@@ -214,7 +214,6 @@ def main():
     with open(COMMIT_MSG_FILENAME, 'w', encoding='utf-8') as f:
         f.write(full_commit_message)
 
-    # Write output files
     sorted_domains = sorted(list(all_domains))
     with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(sorted_domains, f, indent=2)
@@ -222,8 +221,7 @@ def main():
     save_state(new_state)
     update_badge_json(len(all_domains))
     
-    print(f"Files '{OUTPUT_FILENAME}', '{STATE_FILENAME}', and '{BADGE_FILENAME}' are updated.")
-    print(f"Commit message saved to '{COMMIT_MSG_FILENAME}'.")
+    print(f"Files in '{COMMUNITY_DIR}/' are updated.")
 
 if __name__ == "__main__":
     main()

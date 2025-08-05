@@ -80,9 +80,9 @@ https://github.com/phishdestroy/destroylist/raw/main/list.json
 
 In addition to our curated lists, we maintain a separate, larger blocklist automatically aggregated from trusted partner sources. This list is updated hourly and serves as a broad-spectrum supplement to our primary intelligence.
 
-![Total Domains](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community_count.json&label=Total%20Domains&color=blue&style=flat-square)
+![Total Domains](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/count.json&label=Total%20Domains&color=blue&style=flat-square)
 
-* **Direct Link:** [`community_blocklist.json`](./community_blocklist.json)
+* **Direct Link:** [`community/blocklist.json`](./community/blocklist.json)
 * **Update Frequency:** Every hour.
 * **Purpose:** Provides extended coverage by leveraging data from the wider security community.
 
