@@ -33,12 +33,18 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Updated paths for the data files
+        # Add the generated/updated files to the staging area
         git add dns/active_domains.json dns/active_count.json
         
+        # Check if there are any actual changes staged for commit
         if git diff --cached --exit-code; then
           echo "No changes detected in dns/active_domains.json or dns/active_count.json. No commit needed."
         else
+          # Pull latest changes and rebase before pushing
+          git pull --rebase origin main
+          
+          # If there are changes, commit them with a descriptive message
           git commit -m "feat(active): Update active domain list and count [Automated]"
+          # Push the changes to the remote repository
           git push
         fi
