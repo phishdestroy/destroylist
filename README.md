@@ -48,6 +48,8 @@ Protect the web, one domain at a time! 🌐
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Police%20Officer.webp" alt="Man Police Officer" width="25" height="25" /> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Double%20Exclamation%20Mark.webp" alt="Double Exclamation Mark" width="25" height="25" />  Key Info for Online Fraud Victims <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Person%20Facepalming.webp" alt="Person Facepalming" width="25" height="25" />
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Bulletproof+registrars+should+not+exist)](https://git.io/typing-svg)
+
 **Destroylist** aims to **disable malicious domains**, targeting scams, phishing, and other illicit sites to enhance internet safety.
 
 Before a domain is added, we:
@@ -56,6 +58,8 @@ Before a domain is added, we:
 * Per **ICANN rules**, registrars must review such complaints within **24 hours**.
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Mark%20Button.webp" alt="Check Mark Button" width="25" height="25" /> If you've been defrauded by a domain already listed here, check its addition date via the **[commit history](https://github.com/phishdestroy/destroylist/commits/main/)** or our [Telegram channel](https://t.me/PhishDestroyAlerts) / [Mastodon](https://mastodon.social/@phishdestroy). If the fraud occurred *after* a domain was listed, the registrar or host's delay may imply they **share a degree of responsibility for your loss**. **Potential victims of their clients will also be aware of this information.** These "good-natured" providers, who tolerate scammers on their platforms, might be uniquely positioned to assist you or your legal representatives.
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Services+covering+thieves+are+worse+than+thieves)](https://git.io/typing-svg)
 
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Technologist.webp" alt="Man Technologist" width="25" height="25" /> Update Process <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="25" height="25" />
