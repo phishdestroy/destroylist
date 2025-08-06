@@ -47,15 +47,15 @@ Destroylist is a powerful tool against phishing and scams, powered by **PhishDes
 Protect the web, one domain at a time! 🌐
 
 ## 🚨 Key Info for Online Fraud Victims 🚨
-**Destroylist** aims to **disable malicious domains**, targeting scams, phishing, and illicit sites to enhance internet safety.
 
-Before adding a domain, we:
-1. **Scan** it across cybersecurity platforms for threat intelligence.
-2. **Send a complaint** to the registrar and host (via WHOIS), including scan results, domain screenshots, and a request to investigate their client, notifying them of our public database entry.
+**Destroylist** aims to **disable malicious domains**, targeting scams, phishing, and other illicit sites to enhance internet safety.
 
-Per **ICANN rules**, registrars must review complaints within **24 hours**.
+Before a domain is added, we:
+* **Scan it** across cybersecurity platforms for threat intelligence.
+* **Send an official complaint** to the registrar and host (via WHOIS), detailing scan results, domain screenshots, and a request for client investigation. This complaint also notifies them of our public database entry.
+* Per **ICANN rules**, registrars must review such complaints within **24 hours**.
 
-If scammed by a listed domain, check its addition date via [commit history](https://github.com/phishdestroy/destroylist), [Telegram](https://t.me/PhishDestroyAlerts), or [Mastodon](https://mastodon.social/@phishdestroy). If fraud occurred *after* listing, the registrar or host’s delay may share responsibility for your loss. They could assist you or your legal team.
+If you've been defrauded by a domain already listed here, check its addition date via the **[commit history](https://github.com/phishdestroy/destroylist/commits/main/)** or our [Telegram channel](https://t.me/PhishDestroyAlerts) / [Mastodon](https://mastodon.social/@phishdestroy). If the fraud occurred *after* a domain was listed, the registrar or host's delay may imply they **share a degree of responsibility for your loss**. **Potential victims of their clients will also be aware of this information.** These "good-natured" providers, who tolerate scammers on their platforms, might be uniquely positioned to assist you or your legal representatives.
 
 ## 🚀 Update Process 🛠️
 - 🔎 **Gather:** Continuous phishing domain collection via PhishDestroy.
