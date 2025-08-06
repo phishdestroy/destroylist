@@ -51,9 +51,13 @@ Protect the web, one domain at a time! 🌐
 **Destroylist** aims to **disable malicious domains**, targeting scams, phishing, and other illicit sites to enhance internet safety.
 
 Before a domain is added, we:
-*<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Box%20With%20Check.webp" alt="Check Box With Check" width="25" height="25" /> **Scan it** across cybersecurity platforms for threat intelligence.
-*<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Box%20With%20Check.webp" alt="Check Box With Check" width="25" height="25" /> **Send an official complaint** to the registrar and host (via WHOIS), detailing scan results, domain screenshots, and a request for client investigation. This complaint also notifies them of our public database entry.
-*<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Box%20With%20Check.webp" alt="Check Box With Check" width="25" height="25" /> Per **ICANN rules**, registrars must review such complaints within **24 hours**.
+
+
+* **Scan it** across cybersecurity platforms for threat intelligence.
+
+* **Send an official complaint** to the registrar and host (via WHOIS), detailing scan results, domain screenshots, and a request for client investigation. This complaint also notifies them of our public database entry.
+
+* Per **ICANN rules**, registrars must review such complaints within **24 hours**.
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Mark%20Button.webp" alt="Check Mark Button" width="25" height="25" /> If you've been defrauded by a domain already listed here, check its addition date via the **[commit history](https://github.com/phishdestroy/destroylist/commits/main/)** or our [Telegram channel](https://t.me/PhishDestroyAlerts) / [Mastodon](https://mastodon.social/@phishdestroy). If the fraud occurred *after* a domain was listed, the registrar or host's delay may imply they **share a degree of responsibility for your loss**. **Potential victims of their clients will also be aware of this information.** These "good-natured" providers, who tolerate scammers on their platforms, might be uniquely positioned to assist you or your legal representatives.
 
