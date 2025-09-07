@@ -10,50 +10,17 @@ LOCAL_FILES_CONFIG = ["list.json"]
 VERBOSE = True
 
 SOURCES_CONFIG = {
-    "MetaMask": {
-        "url": "https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json",
-        "parser": "metamask"
-    },
-    "ScamSniffer": {
-        "url": "https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json",
-        "parser": "json_list"
-    },
-    "Polkadot": {
-        "url": "https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json",
-        "parser": "polkadot"
-    },
-    "Codeesura": {
-        "url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json",
-        "parser": "json_list"
-    },
-    "CryptoFirewall": {
-        "url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt",
-        "parser": "text_lines"
-    },
-    "OpenPhish": {
-        "url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt",
-        "parser": "text_lines"
-    },
-    "PhishDestroy_ScamDB": {
-        "url": "https://raw.githubusercontent.com/phishdestroy/scam-database/refs/heads/main/blacklist/all.json",
-        "parser": "json_key_domains"
-    },
-    "PhishDestroy_Blocklists": {
-        "url": "https://raw.githubusercontent.com/phishdestroy/blocklists/refs/heads/main/domain.txt",
-        "parser": "text_lines"
-    },
-    "SPMedia_DetectedURLs": {
-        "url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt",
-        "parser": "urls_list"
-    },
-    "PhishingDatabase_DomainsList": {
-        "url": "https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list",
-        "parser": "any_text_domains"
-    },
-    "Enkrypt_Blacklist": {
-        "url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json",
-        "parser": "json_list"
-    }
+    "MetaMask": {"url": "https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json", "parser": "metamask"},
+    "ScamSniffer": {"url": "https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json", "parser": "json_list"},
+    "Polkadot": {"url": "https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json", "parser": "polkadot"},
+    "Codeesura": {"url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json", "parser": "json_list"},
+    "CryptoFirewall": {"url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt", "parser": "text_lines"},
+    "OpenPhish": {"url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt", "parser": "text_lines"},
+    "PhishDestroy_ScamDB": {"url": "https://raw.githubusercontent.com/phishdestroy/scam-database/refs/heads/main/blacklist/all.json", "parser": "json_key_domains"},
+    "PhishDestroy_Blocklists": {"url": "https://raw.githubusercontent.com/phishdestroy/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
+    "SPMedia_DetectedURLs": {"url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt", "parser": "urls_list"},
+    "PhishingDatabase_DomainsList": {"url": "https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list", "parser": "any_text_domains"},
+    "Enkrypt_Blacklist": {"url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json", "parser": "json_list"}
 }
 
 OUTPUT_FILENAME = os.path.join(COMMUNITY_DIR, "blocklist.json")
@@ -64,11 +31,9 @@ COMMIT_MSG_FILENAME = os.path.join(COMMUNITY_DIR, "commit_message.txt")
 STRICT_DOMAIN_RE = re.compile(r"\b(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}\b", re.IGNORECASE)
 IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
 
-
 def log(msg: str) -> None:
     if VERBOSE:
         print(msg, flush=True)
-
 
 def is_valid_domain(d: str) -> bool:
     if not d or len(d) > 253:
@@ -83,25 +48,21 @@ def is_valid_domain(d: str) -> bool:
             return False
     return True
 
-
 def normalize_domain(d: str) -> str:
     d = d.strip().strip('.').lower()
     if IPV4_RE.fullmatch(d):
         return ""
     return d if is_valid_domain(d) else ""
 
-
 def add_norm(dst: set, candidate: str) -> None:
     nd = normalize_domain(candidate)
     if nd:
         dst.add(nd)
 
-
 def clean_hosts_ips(text: str) -> str:
     text = re.sub(r"(^|\s)(?:0\.0\.0\.0|127\.0\.0\.1|::1)\s*", " ", text)
     text = re.sub(r"(?:0\.0\.0\.0|127\.0\.0\.1|::1)(?=[A-Za-z0-9])", " ", text)
     return text
-
 
 def parse_metamask(content: str) -> set:
     try:
@@ -109,7 +70,6 @@ def parse_metamask(content: str) -> set:
         return {normalize_domain(x) for x in data.get("blacklist", []) if normalize_domain(x)}
     except Exception:
         return set()
-
 
 def parse_polkadot(content: str) -> set:
     try:
@@ -121,7 +81,6 @@ def parse_polkadot(content: str) -> set:
     except Exception:
         return set()
 
-
 def parse_json_list(content: str) -> set:
     try:
         data = json.loads(content)
@@ -130,7 +89,6 @@ def parse_json_list(content: str) -> set:
         return set()
     except Exception:
         return set()
-
 
 def parse_json_key_domains(content: str) -> set:
     try:
@@ -142,14 +100,12 @@ def parse_json_key_domains(content: str) -> set:
     except Exception:
         return set()
 
-
 def extract_domains_from_text(text: str) -> set:
     text = clean_hosts_ips(text)
     out = set()
     for m in STRICT_DOMAIN_RE.finditer(text):
         add_norm(out, m.group(0))
     return out
-
 
 def parse_text_lines(content: str) -> set:
     out = set()
@@ -176,7 +132,6 @@ def parse_text_lines(content: str) -> set:
         out.update(extract_domains_from_text(line))
     return out
 
-
 def parse_urls_list(content: str) -> set:
     out = set()
     for raw in content.splitlines():
@@ -193,10 +148,8 @@ def parse_urls_list(content: str) -> set:
         out.update(extract_domains_from_text(s))
     return out
 
-
 def parse_any_text_domains(content: str) -> set:
     return extract_domains_from_text(content)
-
 
 PARSERS = {
     "metamask": parse_metamask,
@@ -208,7 +161,6 @@ PARSERS = {
     "json_key_domains": parse_json_key_domains,
 }
 
-
 def load_state() -> dict:
     if not os.path.exists(STATE_FILENAME):
         return {}
@@ -218,11 +170,9 @@ def load_state() -> dict:
     except Exception:
         return {}
 
-
 def save_state(state: dict) -> None:
     with open(STATE_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(state, f, indent=2)
-
 
 def fetch_content(url: str) -> str | None:
     try:
@@ -232,12 +182,10 @@ def fetch_content(url: str) -> str | None:
     except Exception:
         return None
 
-
 def update_badge_json(count: int) -> None:
     badge = {"schemaVersion": 1, "label": "Community Domains", "message": str(count), "color": "blue"}
-    with open(BADGE_FILENAME, 'w', encoding='utf-8') as f:
-        json.dump(badge, f)
-
+    with open(BADGE_FILENAME, 'w', encoding='utf-8', newline='') as f:
+        json.dump(badge, f, separators=(",", ":"))
 
 def main() -> None:
     log("[start] community aggregation")
@@ -303,7 +251,7 @@ def main() -> None:
     log(f"[write] {COMMIT_MSG_FILENAME}")
 
     sorted_domains = sorted(all_domains)
-    with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
+    with open(OUTPUT_FILENAME, 'w', encoding='utf-8', newline='') as f:
         json.dump(sorted_domains, f, indent=2)
     log(f"[write] {OUTPUT_FILENAME} (count={len(sorted_domains)})")
 
@@ -312,7 +260,6 @@ def main() -> None:
     log(f"[write] {STATE_FILENAME}")
     log(f"[write] {BADGE_FILENAME} — message={len(all_domains)}")
     log("[done] community aggregation complete")
-
 
 if __name__ == "__main__":
     main()
