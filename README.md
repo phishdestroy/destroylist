@@ -26,7 +26,7 @@
 | Platform | Link |
 |----------|------|
 | Website | [phishdestroy.io](https://phishdestroy.io) |
-| Telegram Alerts | [t.me/PhishDestroyAlerts](https://t.me/PhishDestroyAlerts) |
+| Telegram Alerts | [t.me/destroy_phish](https://t.me/destroy_phish) |
 | Telegram Bot | [t.me/PhishDestroy_bot](https://t.me/PhishDestroy_bot) |
 | Twitter / X | [x.com/Phish_Destroy](https://x.com/Phish_Destroy) |
 | Ban Service | [ban.destroy.tools](https://ban.destroy.tools) |
