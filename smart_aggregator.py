@@ -16,8 +16,8 @@ SOURCES_CONFIG = {
     "Codeesura": {"url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json", "parser": "json_list"},
     "CryptoFirewall": {"url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt", "parser": "text_lines"},
     "OpenPhish": {"url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt", "parser": "text_lines"},
-    "PhishDestroy_ScamDB": {"url": "https://raw.githubusercontent.com/phishdestroy/scam-database/refs/heads/main/blacklist/all.json", "parser": "json_key_domains"},
-    "PhishDestroy_Blocklists": {"url": "https://raw.githubusercontent.com/phishdestroy/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
+    "PhishDestroy": {"url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json", "parser": "json_list"},
+    "SEAL": {"url": "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
     "SPMedia_DetectedURLs": {"url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt", "parser": "urls_list"},
     "PhishingDatabase_DomainsList": {"url": "https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list", "parser": "any_text_domains"},
     "Enkrypt_Blacklist": {"url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json", "parser": "json_list"}
@@ -231,7 +231,7 @@ def main() -> None:
             diff = len(domains) - last_count
             changes.append({"name": name, "diff": diff, "sign": '+' if diff >= 0 else ''})
 
-        new_state[name] = {'hash': content_hash, 'count': len(domains), 'domains': sorted(domains)}
+        new_state[name] = {'hash': content_hash, 'count': len(domains), 'domains': sorted(list(domains))}
 
     last_total = last_state.get("total_count", 0)
     if len(all_domains) == last_total and not changes:
@@ -250,7 +250,7 @@ def main() -> None:
         f.write(commit_title + "\n\n" + commit_body)
     log(f"[write] {COMMIT_MSG_FILENAME}")
 
-    sorted_domains = sorted(all_domains)
+    sorted_domains = sorted(list(all_domains))
     with open(OUTPUT_FILENAME, 'w', encoding='utf-8', newline='') as f:
         json.dump(sorted_domains, f, indent=2)
     log(f"[write] {OUTPUT_FILENAME} (count={len(sorted_domains)})")
