@@ -113,7 +113,7 @@ def parse_text_lines(content: str) -> set:
         line = raw.strip()
         if not line or line.startswith(('#', '!', ';')):
             continue
-        if line.startswith(('0.0.0.0', '127.0.0.1', '::1')):
+        if line.startswith(('0.0.0.0', '127\.0\.0\.1', '::1')):
             line = clean_hosts_ips(line)
         if line.startswith('||'):
             line = line[2:]
@@ -205,7 +205,8 @@ def main() -> None:
                         before = len(all_domains)
                         for d in local_domains:
                             add_norm(all_domains, d)
-                        log(f"  + {len(all_domains)-before} from {file_path}")
+                        added_count = len(all_domains) - before
+                        log(f"  + Added: {added_count} from {file_path}")
         except Exception:
             log(f"  ! skip {file_path}")
 
@@ -216,15 +217,22 @@ def main() -> None:
         log(f"-> {name}: {url}")
         content = fetch_content(url)
         domains, content_hash = set(), None
+        
+        before_add = len(all_domains)
+        
         if content and parser_func:
             domains = parser_func(content)
             content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
-            log(f"    parsed: {len(domains)} domains")
+            all_domains.update(domains)
+            added_count = len(all_domains) - before_add
+            log(f"    Parsed: {len(domains)}, Added new unique: {added_count}")
         else:
             domains = set(last_state.get(name, {}).get('domains', []))
             content_hash = last_state.get(name, {}).get('hash')
-            log(f"    fallback (cached): {len(domains)} domains")
-        all_domains.update(domains)
+            all_domains.update(domains)
+            added_count = len(all_domains) - before_add
+            log(f"    fallback (cached): {len(domains)} domains, Added new unique: {added_count}")
+
         last_hash = last_state.get(name, {}).get('hash')
         if content_hash != last_hash and content is not None:
             last_count = last_state.get(name, {}).get('count', 0)
@@ -263,3 +271,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
