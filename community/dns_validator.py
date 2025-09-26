@@ -1,128 +1,217 @@
-import dns.resolver
 import json
-import sys
-import os
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from tqdm import tqdm
 import logging
-from typing import List, Set
+import os
+import sys
+import time
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Dict, List, Set, Tuple
 
-# --- LOGGING CONFIGURATION ---
-# Configure logging for console output
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from tqdm import tqdm
 
-# --- PERFORMANCE CONFIGURATION ---
-MAX_WORKERS = 400
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', stream=sys.stdout)
+
+# --- Configuration ---
+MAX_WORKERS = 500
 DNS_TIMEOUT = 2.0
-CUSTOM_RESOLVERS = ['1.1.1.1', '8.8.8.8']
+CUSTOM_RESOLVERS = ['1.1.1.1', '8.8.8.8', '9.9.9.9', '1.0.0.1']
 
-# List of hosting platform suffixes to automatically include without a DNS check.
+# --- File Paths ---
+# The script will create a 'community' directory if it doesn't exist.
+COMMUNITY_DIR = "community"
+INPUT_FILE = os.path.join(COMMUNITY_DIR, "blocklist.json")
+LIVE_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "live_blocklist.json")
+DEAD_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "dead_blocklist.json")
+LIVE_COUNT_FILE = os.path.join(COMMUNITY_DIR, "live_count.json")
+CACHE_FILENAME = os.path.join(COMMUNITY_DIR, "dns_cache.json")
+CACHE_EXPIRATION_SECONDS = 86400  # 24 hours
+
 HOSTING_PLATFORM_SUFFIXES = (
     '.pages.dev', '.workers.dev', '.vercel.app', '.netlify.app',
     '.onrender.com', '.replit.dev', '.glitch.me', '.github.io',
     '.gitlab.io', '.webflow.io', '.surge.sh', '.firebaseapp.com', '.web.app'
 )
 
-def get_root_domain(domain: str) -> str:
-    """Extracts the root domain from a given domain string."""
-    parts = domain.split('.')
-    if len(parts) > 2 and parts[-2] in ('co', 'com', 'org', 'net', 'gov', 'edu'):
-        return '.'.join(parts[-3:])
-    return '.'.join(parts[-2:])
+try:
+    import dns.resolver
+    import tldextract
+except ImportError:
+    logging.error("Required libraries not found. Please run: pip install dnspython tqdm tldextract")
+    sys.exit(1)
 
-def check_domain(domain: str, resolver: dns.resolver.Resolver) -> str | None:
-    """Checks if a domain has an active DNS A record."""
-    try:
-        resolver.resolve(domain, 'A')
+def get_registered_domain(domain: str) -> str:
+    """Extracts the registrable part of the domain (e.g., 'google.co.uk')."""
+    ext = tldextract.extract(domain)
+    if not ext.suffix:
         return domain
-    except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.exception.Timeout, dns.resolver.NoNameservers):
-        return None
+    return f"{ext.domain}.{ext.suffix}"
+
+def load_cache() -> Dict[str, Dict]:
+    if not os.path.exists(CACHE_FILENAME):
+        return {}
+    try:
+        with open(CACHE_FILENAME, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (json.JSONDecodeError, FileNotFoundError):
+        return {}
+
+def save_cache(cache: Dict[str, Dict]):
+    try:
+        with open(CACHE_FILENAME, 'w', encoding='utf-8') as f:
+            json.dump(cache, f, indent=2)
     except Exception as e:
-        logging.debug(f"Error checking domain {domain}: {e}")
-        return None
+        logging.error(f"Failed to save cache: {e}")
 
-def process_domains(domains: List[str], output_file: str):
-    """Main function to read, validate, and write live domains."""
-    logging.info(f"Found {len(domains)} total domains.")
-
-    # --- Smart Filtering and Root Domain Extraction ---
-    platform_domains = []
-    domains_to_process = []
-    logging.info("Filtering domains: separating always-on platforms...")
-    for domain in domains:
-        if domain.endswith(HOSTING_PLATFORM_SUFFIXES):
-            platform_domains.append(domain)
-        else:
-            domains_to_process.append(domain)
-    
-    logging.info(f"Found {len(platform_domains)} domains on always-on platforms (auto-included).")
-
-    root_domains_to_check: Set[str] = {get_root_domain(d) for d in domains_to_process}
-    logging.info(f"Extracted {len(root_domains_to_check)} unique root domains for validation.")
-    
-    # --- High-performance DNS check on ROOT domains ---
-    resolver = dns.resolver.Resolver()
-    resolver.nameservers = CUSTOM_RESOLVERS
-    resolver.timeout = DNS_TIMEOUT
-    resolver.lifetime = DNS_TIMEOUT
-
-    live_root_domains: Set[str] = set()
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        future_to_domain = {executor.submit(check_domain, root_domain, resolver): root_domain for root_domain in root_domains_to_check}
+def check_domain(domain: str, resolver: dns.resolver.Resolver) -> Tuple[str, str]:
+    """Checks a single domain and returns its status."""
+    try:
+        resolver.resolve(domain, 'A', lifetime=DNS_TIMEOUT)
+        return (domain, 'live')
+    except dns.resolver.NXDOMAIN:
+        return (domain, 'nxdomain')
+    except (dns.resolver.NoAnswer, dns.resolver.NoNameservers):
+        return (domain, 'no_answer')
+    except dns.exception.Timeout:
+        return (domain, 'timeout')
+    except Exception:
+        return (domain, 'error')
         
-        for future in tqdm(as_completed(future_to_domain), total=len(root_domains_to_check), desc="Validating root domains"):
-            result = future.result()
-            if result:
-                live_root_domains.add(result)
-    
-    logging.info(f"\nFound {len(live_root_domains)} live root domains.")
-
-    # --- Final List Construction ---
-    logging.info("Constructing final list of live domains...")
-    final_live_domains = platform_domains[:]
-    for domain in domains_to_process:
-        root_domain = get_root_domain(domain)
-        if root_domain in live_root_domains:
-            final_live_domains.append(domain)
-
-    final_live_domains.sort()
-
-    logging.info(f"Validation complete. Found {len(final_live_domains)} total live domains.")
-
-    output_dir = os.path.dirname(output_file)
-    if output_dir:
-        os.makedirs(output_dir, exist_ok=True)
-    
-    logging.info(f"Saving live domains to {output_file}...")
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(final_live_domains, f, indent=2)
-
-    logging.info("Done! ✅")
+def write_json_file(file_path: str, data: object):
+    """Writes data to a JSON file."""
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2)
+        logging.info(f"Successfully saved to {file_path}")
+    except Exception as e:
+        logging.error(f"Error saving to {file_path}: {e}")
 
 def main():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    default_input = os.path.join(script_dir, "blocklist.json")
-    default_output = os.path.join(script_dir, "live_blocklist.json")
+    use_cache = '--no-cache' not in sys.argv
+    if not use_cache:
+        logging.info("Cache ignored due to --no-cache flag. Performing a full check.")
+        if os.path.exists(CACHE_FILENAME):
+            try:
+                os.remove(CACHE_FILENAME)
+            except OSError as e:
+                logging.error(f"Error removing cache file: {e}")
 
-    input_arg = sys.argv[1] if len(sys.argv) > 1 else default_input
-    output_arg = sys.argv[2] if len(sys.argv) > 2 else default_output
 
-    logging.info(f"Loading domains from {input_arg}...")
+    if not os.path.exists(COMMUNITY_DIR):
+        os.makedirs(COMMUNITY_DIR)
+
+    logging.info(f"Loading domains from {INPUT_FILE}...")
     try:
-        with open(input_arg, 'r', encoding='utf-8') as f:
+        with open(INPUT_FILE, 'r', encoding='utf-8') as f:
             domains = json.load(f)
     except FileNotFoundError:
-        logging.error(f"Error: Input file not found: {input_arg}")
+        logging.error(f"Error: Input file not found at {INPUT_FILE}")
         sys.exit(1)
     except json.JSONDecodeError:
-        logging.error(f"Error: Could not decode JSON from file: {input_arg}")
+        logging.error(f"Error: Could not decode JSON from {INPUT_FILE}")
         sys.exit(1)
+
+    unique_input_domains = sorted(list({d.lower().strip() for d in domains if isinstance(d, str)}))
+    logging.info(f"Loaded {len(unique_input_domains)} unique domains to process.")
+
+    platform_domains = {d for d in unique_input_domains if d.endswith(HOSTING_PLATFORM_SUFFIXES)}
+    domains_to_check = [d for d in unique_input_domains if d not in platform_domains]
     
-    if not isinstance(domains, list):
-        logging.error(f"Error: Expected a list of domains, but got {type(domains).__name__}.")
-        sys.exit(1)
+    logging.info(f"Found {len(platform_domains)} domains on always-on platforms (auto-included).")
+    
+    registered_domains_map: Dict[str, List[str]] = {}
+    for domain in domains_to_check:
+        root = get_registered_domain(domain)
+        if root not in registered_domains_map:
+            registered_domains_map[root] = []
+        registered_domains_map[root].append(domain)
+    
+    unique_roots_to_check = list(registered_domains_map.keys())
+    logging.info(f"Extracted {len(unique_roots_to_check)} unique registered domains for validation.")
+
+    cache = load_cache()
+    live_root_domains: Set[str] = set()
+    roots_for_live_check: List[str] = []
+    stats = Counter()
+    current_time = time.time()
+
+    logging.info("Checking cache...")
+    for root in unique_roots_to_check:
+        if use_cache and root in cache and current_time - cache[root]['timestamp'] < CACHE_EXPIRATION_SECONDS:
+            status = cache[root]['status']
+            stats[f"cached_{status}"] += 1
+            if status == 'live':
+                live_root_domains.add(root)
+        else:
+            roots_for_live_check.append(root)
+
+    checked_from_cache = len(unique_roots_to_check) - len(roots_for_live_check)
+    logging.info(f"Loaded {checked_from_cache} results from cache. Need to check {len(roots_for_live_check)} domains.")
+
+    if roots_for_live_check:
+        resolver = dns.resolver.Resolver()
+        resolver.nameservers = CUSTOM_RESOLVERS
         
-    process_domains(domains, output_arg)
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            future_to_domain = {executor.submit(check_domain, root, resolver): root for root in roots_for_live_check}
+            
+            for future in tqdm(as_completed(future_to_domain), total=len(roots_for_live_check), desc="Validating registered domains"):
+                root, status = future.result()
+                stats[status] += 1
+                cache[root] = {'status': status, 'timestamp': current_time}
+                if status == 'live':
+                    live_root_domains.add(root)
+
+    logging.info("Saving updated cache...")
+    save_cache(cache)
+
+    final_live_domains: Set[str] = set(platform_domains)
+    for root in live_root_domains:
+        final_live_domains.update(registered_domains_map.get(root, []))
+        
+    all_domains_set = set(unique_input_domains)
+    final_dead_domains = all_domains_set - final_live_domains
+
+    final_live_list = sorted(list(final_live_domains))
+    final_dead_list = sorted(list(final_dead_domains))
+
+    logging.info("--- DNS Validation Statistics ---")
+    logging.info(f"Total Unique Input Domains:    {len(all_domains_set)}")
+    live_count = stats['live'] + stats['cached_live']
+    logging.info(f"Live Registered Domains:       {live_count} (Checked: {stats['live']}, Cached: {stats['cached_live']})")
+    nx_count = stats['nxdomain'] + stats['cached_nxdomain']
+    logging.info(f"  - Not Found (NXDOMAIN):      {nx_count}")
+    timeout_count = stats['timeout'] + stats['cached_timeout']
+    logging.info(f"  - Timed Out:                 {timeout_count}")
+    other_errors = stats['no_answer'] + stats['error'] + stats['no_nameservers'] + \
+                   stats['cached_no_answer'] + stats['cached_error'] + stats['cached_no_nameservers']
+    logging.info(f"  - Other Errors:              {other_errors}")
+    logging.info("---------------------------------")
+    logging.info(f"Final list (Live): {len(final_live_list)} domains (including subdomains and platforms).")
+    logging.info(f"Final list (Inactive): {len(final_dead_list)} domains.")
+
+    write_json_file(LIVE_DOMAINS_FILE, final_live_list)
+    write_json_file(DEAD_DOMAINS_FILE, final_dead_list)
+
+    count_badge_data = {
+        "schemaVersion": 1,
+        "label": "Live Domains",
+        "message": str(len(final_live_list)),
+        "color": "brightgreen"
+    }
+    write_json_file(LIVE_COUNT_FILE, count_badge_data)
+    
+    logging.info("Process finished! ✅")
 
 if __name__ == "__main__":
+    # Correct the project root detection to be more robust
+    script_path = os.path.abspath(__file__)
+    # Assuming script is in 'destroylist' or 'destroylist/community'
+    if 'community' in script_path:
+        project_root = script_path.split('community')[0]
+    else:
+        project_root = os.path.dirname(script_path)
+
+    # Change current working directory to the project root
+    os.chdir(project_root)
     main()
+
