@@ -27,7 +27,7 @@ Example `allowlist.json`:
 
 ## Additions via Issues
 
-Open: [https://github.com/](https://github.com/)<ORG>/<REPO>/issues/new
+Open: https://github.com/phishdestroy/destroylist/issues
 Include: project **name**, **homepage (full URL)**, **domains (apex)**, short rationale.
 
 ---
