@@ -16,7 +16,7 @@ SOURCES_CONFIG = {
     "Codeesura": {"url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json", "parser": "json_list"},
     "CryptoFirewall": {"url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt", "parser": "text_lines"},
     "OpenPhish": {"url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt", "parser": "text_lines"},
-    "PhishDestroy": {"url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json", "parser": "json_list"},
+    "PhishDestroy": {"url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json", "parser": "json_key_domains"},
     "SEAL": {"url": "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
     "SPMedia_DetectedURLs": {"url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt", "parser": "urls_list"},
     "PhishingDatabase_DomainsList": {"url": "https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list", "parser": "any_text_domains"},
@@ -219,11 +219,11 @@ def main() -> None:
         if content and parser_func:
             domains = parser_func(content)
             content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
-            log(f"   parsed: {len(domains)} domains")
+            log(f"    parsed: {len(domains)} domains")
         else:
             domains = set(last_state.get(name, {}).get('domains', []))
             content_hash = last_state.get(name, {}).get('hash')
-            log(f"   fallback (cached): {len(domains)} domains")
+            log(f"    fallback (cached): {len(domains)} domains")
         all_domains.update(domains)
         last_hash = last_state.get(name, {}).get('hash')
         if content_hash != last_hash and content is not None:
