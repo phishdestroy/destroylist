@@ -15,15 +15,6 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 MAX_WORKERS = 500
 DNS_TIMEOUT = 2.0
 CUSTOM_RESOLVERS = ['1.1.1.1', '8.8.8.8', '9.9.9.9', '1.0.0.1']
-
-# --- File Paths ---
-# The script will create a 'community' directory if it doesn't exist.
-COMMUNITY_DIR = "community"
-INPUT_FILE = os.path.join(COMMUNITY_DIR, "blocklist.json")
-LIVE_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "live_blocklist.json")
-DEAD_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "dead_blocklist.json")
-LIVE_COUNT_FILE = os.path.join(COMMUNITY_DIR, "live_count.json")
-CACHE_FILENAME = os.path.join(COMMUNITY_DIR, "dns_cache.json")
 CACHE_EXPIRATION_SECONDS = 86400  # 24 hours
 
 HOSTING_PLATFORM_SUFFIXES = (
@@ -31,6 +22,23 @@ HOSTING_PLATFORM_SUFFIXES = (
     '.onrender.com', '.replit.dev', '.glitch.me', '.github.io',
     '.gitlab.io', '.webflow.io', '.surge.sh', '.firebaseapp.com', '.web.app'
 )
+
+# --- Smart Pathing Logic ---
+# Determines the project root directory regardless of where the script is run from.
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+if os.path.basename(SCRIPT_DIR).lower() == 'community':
+    PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+else:
+    PROJECT_ROOT = SCRIPT_DIR
+
+# --- File Paths (Defined from project root) ---
+COMMUNITY_DIR = os.path.join(PROJECT_ROOT, "community")
+INPUT_FILE = os.path.join(COMMUNITY_DIR, "blocklist.json")
+LIVE_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "live_blocklist.json")
+DEAD_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "dead_blocklist.json")
+LIVE_COUNT_FILE = os.path.join(COMMUNITY_DIR, "live_count.json")
+CACHE_FILENAME = os.path.join(COMMUNITY_DIR, "dns_cache.json")
+
 
 try:
     import dns.resolver
@@ -75,7 +83,7 @@ def check_domain(domain: str, resolver: dns.resolver.Resolver) -> Tuple[str, str
         return (domain, 'timeout')
     except Exception:
         return (domain, 'error')
-        
+
 def write_json_file(file_path: str, data: object):
     """Writes data to a JSON file."""
     try:
@@ -94,7 +102,6 @@ def main():
                 os.remove(CACHE_FILENAME)
             except OSError as e:
                 logging.error(f"Error removing cache file: {e}")
-
 
     if not os.path.exists(COMMUNITY_DIR):
         os.makedirs(COMMUNITY_DIR)
@@ -203,15 +210,5 @@ def main():
     logging.info("Process finished! ✅")
 
 if __name__ == "__main__":
-    # Correct the project root detection to be more robust
-    script_path = os.path.abspath(__file__)
-    # Assuming script is in 'destroylist' or 'destroylist/community'
-    if 'community' in script_path:
-        project_root = script_path.split('community')[0]
-    else:
-        project_root = os.path.dirname(script_path)
-
-    # Change current working directory to the project root
-    os.chdir(project_root)
     main()
 
