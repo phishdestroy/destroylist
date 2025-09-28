@@ -17,10 +17,12 @@
 ### Data Feeds <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="25" height="25" />
 | Data Feed | Description | Link |
 |-----------|-------------|------|
-| Primary Curated List | Core phishing/scam domains, real-time updates | [list.json](https://github.com/phishdestroy/destroylist/raw/main/list.json) |
-| Active DNS-Verified | DNS-checked live threats | [active_domains.json](https://github.com/phishdestroy/destroylist/raw/main/dns/active_domains.json) |
-| Community General | Broad aggregated blocklist, hourly updates | [blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/blocklist.json) |
-| Community Live | DNS-checked active community threats | [live_blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/live_blocklist.json) |
+| **Primary Curated List** | Core phishing/scam domains, real-time updates | [list.json](https://github.com/phishdestroy/destroylist/raw/main/list.json) |
+| **Active DNS-Verified** | DNS-checked live threats | [active_domains.json](https://github.com/phishdestroy/destroylist/raw/main/dns/active_domains.json) |
+| **Community General** | Broad aggregated blocklist, hourly updates — for research, not direct blocking | [blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/blocklist.json) |
+| **Community Live** | DNS-checked active community threats | [live_blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/live_blocklist.json) |
+
+> **Note:** Community feeds are **auto-built**. Manual removals are not applied — false positives must be reported to the **original source feeds** and will disappear automatically on the next sync.
 
 ### Connect With Us <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Mobile%20Phone%20With%20Arrow.webp" alt="Mobile Phone With Arrow" width="25" height="25" />
 | Platform | Link |
