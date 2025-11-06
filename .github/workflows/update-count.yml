@@ -10,24 +10,25 @@ on:
 jobs:
   update-count:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
+          
       - name: Run count_domains.py
         run: |
           python count_domains.py
-
+          
       - name: Commit and push count.json
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          
           git add count.json
           git commit -m "Auto-update count.json" || echo "No changes"
           git push
