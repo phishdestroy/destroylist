@@ -1,0 +1,49 @@
+name: Daily DNS and Formats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run DNS Scripts
+        run: |
+          python community/dns_validator.py || true
+          python dns/active_domains.py || true
+
+      - name: Update counts
+        run: |
+          jq -n --arg c $(jq length dns/active_domains.json) '{"count": ($c | tonumber)}' > count.json
+          jq -n --arg c $(jq length community/live_blocklist.json) '{"count": ($c | tonumber)}' > community/count.json
+          jq -n --arg c $(jq length dns/active_domains.json) '{"count": ($c | tonumber)}' > dns/active_count.json
+
+      - name: Generate formats
+        run: |
+          jq -r '.[].domain' dns/active_domains.json > domains.txt
+          
+          cp domains.txt active_domains.txt
+          
+          echo "domain" > active_domains.csv
+          cat domains.txt >> active_domains.csv
+          
+          {
+            echo "# PhishDestroy Hosts Blocklist"
+            echo "# Updated: $(date -u)"
+            sed 's/^/0.0.0.0 /' domains.txt
+          } > hosts_block.txt
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Auto update: DNS, counts & formats'
+          file_pattern: '*.json *.txt *.csv hosts_block.txt'
