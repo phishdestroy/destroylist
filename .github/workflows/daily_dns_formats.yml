@@ -18,29 +18,48 @@ jobs:
 
       - name: Run DNS Scripts
         run: |
-          python community/dns_validator.py || true
-          python dns/active_domains.py || true
+          python smart_aggregator.py
+          python community/dns_validator.py
+          python dns/active_domains.py
+
+      - name: Debug Files
+        run: |
+          ls -la dns community
+          cat dns/active_domains.json || echo "File empty/missing"
 
       - name: Update counts
         run: |
-          jq -n --arg c $(jq length dns/active_domains.json) '{"count": ($c | tonumber)}' > count.json
-          jq -n --arg c $(jq length community/live_blocklist.json) '{"count": ($c | tonumber)}' > community/count.json
-          jq -n --arg c $(jq length dns/active_domains.json) '{"count": ($c | tonumber)}' > dns/active_count.json
+          if [ -s dns/active_domains.json ]; then
+            jq -n --arg c $(jq length dns/active_domains.json) '{"count": ($c | tonumber)}' > dns/active_count.json
+          else
+            echo '{"count": 0}' > dns/active_count.json
+          fi
+          if [ -s community/live_blocklist.json ]; then
+            jq -n --arg c $(jq length community/live_blocklist.json) '{"count": ($c | tonumber)}' > community/count.json
+          else
+            echo '{"count": 0}' > community/count.json
+          fi
+          if [ -s list.json ]; then
+            jq -n --arg c $(jq length list.json) '{"count": ($c | tonumber)}' > count.json
+          else
+            echo '{"count": 0}' > count.json
+          fi
 
       - name: Generate formats
         run: |
-          jq -r '.[].domain' dns/active_domains.json > domains.txt
-          
-          cp domains.txt active_domains.txt
-          
-          echo "domain" > active_domains.csv
-          cat domains.txt >> active_domains.csv
-          
-          {
-            echo "# PhishDestroy Hosts Blocklist"
-            echo "# Updated: $(date -u)"
-            sed 's/^/0.0.0.0 /' domains.txt
-          } > hosts_block.txt
+          if [ -s dns/active_domains.json ]; then
+            jq -r '.[].domain' dns/active_domains.json > domains.txt
+            cp domains.txt active_domains.txt
+            echo "domain" > active_domains.csv
+            cat domains.txt >> active_domains.csv
+            {
+              echo "# PhishDestroy Hosts Blocklist"
+              echo "# Updated: $(date -u)"
+              sed 's/^/0.0.0.0 /' domains.txt
+            } > hosts_block.txt
+          else
+            echo "No domains" > active_domains.txt active_domains.csv hosts_block.txt
+          fi
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
