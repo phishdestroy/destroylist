@@ -1,10 +1,13 @@
 name: Convert JSON to TXT
-
 on:
   push:
     paths:
       - 'list.json'
   workflow_dispatch:
+
+concurrency:
+  group: update-lists
+  cancel-in-progress: false
 
 jobs:
   convert:
@@ -14,6 +17,8 @@ jobs:
       
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Convert to TXT
         run: python3 scripts/json_to_txt.py
@@ -24,5 +29,10 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           
           git add list.txt
-          git diff --staged --quiet || git commit -m "Update list.txt"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update list.txt"
+            git pull --rebase origin main
+            git push
+          fi
