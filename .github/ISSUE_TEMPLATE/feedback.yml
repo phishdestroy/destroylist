@@ -1,0 +1,32 @@
+name: Feedback
+description: Suggestions and recommendations
+title: "[FEEDBACK] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Feedback type
+      options:
+        - Suggestion
+        - Issue
+        - Question
+        - Recommendation
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Your feedback or suggestion
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Screenshots or examples
+    validations:
+      required: false

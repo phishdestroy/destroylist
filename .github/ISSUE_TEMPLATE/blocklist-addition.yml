@@ -1,0 +1,45 @@
+name: Add to blocklist
+description: Submit domains for blocking
+title: "[ADD] "
+labels: ["addition"]
+body:
+  - type: textarea
+    id: domains
+    attributes:
+      label: Malicious domains or IPs
+      description: One per line
+      placeholder: |
+        https://phishing-site.com
+        192.168.1.100
+        scam-domain.net
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: category
+    attributes:
+      label: Threat category
+      options:
+        - Phishing
+        - Malware
+        - Scam
+        - Spam
+        - Other
+    validations:
+      required: true
+  
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots or analysis links
+    validations:
+      required: false
+  
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I verified these domains are actively malicious
+          required: true
