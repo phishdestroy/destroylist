@@ -1,7 +1,7 @@
 name: Community DNS Validation
 on:
   schedule:
-    - cron: '0 2 */3 * *'  # Every 3 days at 02:00 UTC
+    - cron: '0 2 */3 * *'
   workflow_dispatch:
   push:
     branches:
@@ -30,7 +30,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install dnspython requests tqdm
+          pip install dnspython requests tqdm tldextract
           
       - name: Validate community list DNS (100k+ domains)
         run: |
