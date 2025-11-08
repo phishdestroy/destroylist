@@ -1,5 +1,4 @@
 name: Daily DNS Formats Update
-
 on:
   schedule:
     # Run every day at 00:00 UTC
@@ -12,7 +11,6 @@ on:
       - 'list.json'
       - 'scripts/update_dns_formats.py'
       - '.github/workflows/daily_dns_formats.yml'
-
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -38,8 +36,8 @@ jobs:
           
       - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add -A
           git diff --staged --quiet || git commit -m "Update DNS formats [skip ci]"
           git push origin main || echo "No changes to push"
