@@ -1,22 +1,21 @@
-name: Daily DNS Formats Update
+name: Community DNS Validation
 on:
   schedule:
-    # Run every day at 00:00 UTC
-    - cron: '0 0 * * *'
-  workflow_dispatch:  # Allow manual trigger
+    - cron: '0 2 */3 * *'  # Every 3 days at 02:00 UTC
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - 'list.json'
-      - 'scripts/update_dns_formats.py'
-      - '.github/workflows/daily_dns_formats.yml'
+      - 'community/dns_validator.py'
+      - '.github/workflows/community_dns_check.yml'
+
 jobs:
-  update:
+  validate:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write  # Required for pushing changes
+      contents: write
       
     steps:
       - name: Checkout repository
@@ -29,15 +28,18 @@ jobs:
         with:
           python-version: '3.10'
           
-      - name: Run update script
+      - name: Install dependencies
         run: |
-          # Run the update script from scripts folder
-          python scripts/update_dns_formats.py
+          pip install dnspython requests
+          
+      - name: Validate community list DNS (100k+ domains)
+        run: |
+          python community/dns_validator.py
           
       - name: Commit and push changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
-          git diff --staged --quiet || git commit -m "Update DNS formats [skip ci]"
+          git diff --staged --quiet || git commit -m "Community DNS validation [skip ci]"
           git push origin main || echo "No changes to push"
