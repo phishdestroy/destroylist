@@ -30,7 +30,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install dnspython requests
+          pip install dnspython requests tqdm
           
       - name: Validate community list DNS (100k+ domains)
         run: |
