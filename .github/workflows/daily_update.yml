@@ -1,0 +1,51 @@
+name: Daily Update
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at 00:00 UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'list.json'
+      - 'dns/active_domains.py'
+      - 'smart_aggregator.py'
+      - '.github/workflows/daily_update.yml'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          pip install dnspython requests
+          
+      - name: Aggregate domains from external lists
+        run: |
+          python smart_aggregator.py
+          
+      - name: Check active domains in our database
+        run: |
+          python dns/active_domains.py
+          
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --staged --quiet || git commit -m "Daily update: aggregate external lists and check our domains [skip ci]"
+          git push origin main || echo "No changes to push"
