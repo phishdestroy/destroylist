@@ -19,7 +19,6 @@ SOURCES_CONFIG = {
     "PhishDestroy": {"url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json", "parser": "json_key_domains"},
     "SEAL": {"url": "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
     "SPMedia_DetectedURLs": {"url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt", "parser": "urls_list"},
-    "PhishingDatabase_DomainsList": {"url": "https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list", "parser": "any_text_domains"},
     "Enkrypt_Blacklist": {"url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json", "parser": "json_list"}
 }
 
