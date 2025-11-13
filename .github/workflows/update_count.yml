@@ -45,7 +45,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-update count.json [skip ci]"
-            
-            # Retry push up to 3 times if it fails
-            for i in 1 2 3; do
-              git
+            git pull --rebase origin main || true
+            git push || (sleep 5 && git pull --rebase origin main && git push)
+          fi
