@@ -10,6 +10,10 @@ on:
       - 'community/dns_validator.py'
       - '.github/workflows/community_dns_check.yml'
 
+concurrency:
+  group: community-dns
+  cancel-in-progress: false
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,22 +28,27 @@ jobs:
           fetch-depth: 0
           
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
           
       - name: Install dependencies
         run: |
+          pip install --upgrade pip
           pip install dnspython requests tqdm tldextract
           
-      - name: Validate community list DNS (100k+ domains)
-        run: |
-          python community/dns_validator.py
+      - name: Validate community list DNS
+        run: python community/dns_validator.py
           
       - name: Commit and push changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
-          git diff --staged --quiet || git commit -m "Community DNS validation [skip ci]"
-          git push origin main || echo "No changes to push"
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git pull --rebase origin main
+            git commit -m "Community DNS validation [skip ci]"
+            git push origin main
+          fi
