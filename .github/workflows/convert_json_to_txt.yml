@@ -40,5 +40,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update list.txt [skip ci]"
-            git push
+            git pull --rebase origin main || true
+            git push || (sleep 5 && git pull --rebase origin main && git push)
           fi
