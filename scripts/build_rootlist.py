@@ -1,41 +1,78 @@
 import json
 import os
 from pathlib import Path
-from typing import Iterable, Set
+from typing import Dict, List, Set
 
-import dns.resolver
 import tldextract
 
 ROOT = Path(__file__).resolve().parents[1]
 
-SOURCE_DNS_ACTIVE = ROOT / "dns" / "active_domains.json"
+SOURCE_LIST = ROOT / "list.json"
 
 OUT_DIR = ROOT / "rootlist"
 OUT_ACTIVE = OUT_DIR / "active_root_domains.json"
-OUT_INVALID = OUT_DIR / "invalid_root_domains.json"
+OUT_PROVIDERS = OUT_DIR / "providers_root_domains.json"
 
-INFRA_ROOTS: Set[str] = {
-    "ipfs.io", "cloudflare-ipfs.com", "dweb.link", "infura-ipfs.io", "eth.limo",
-    "vercel.app", "netlify.app", "github.io", "render.com", "onrender.com",
-    "digitaloceanspaces.com", "windows.net", "fastly.net", "cprapid.com",
-    "sslip.io", "duckdns.org", "replit.dev", "surge.sh", "typedream.app",
-    "hostingersite.com", "firebaseapp.com", "web.app", "pages.dev", "workers.dev",
-    "weebly.com", "weeblysite.com", "wixsite.com", "wordpress.com",
-    "blogspot.com", "blogspot.am", "webcindario.com", "home.pl",
-    "square.site", "webflow.io", "godaddysites.com", "pineapple.page",
-    "gitbook.io",
-    "fleek.co",
-    "teachable.com",
+PROVIDER_GROUPS: Dict[str, Set[str]] = {
+    "multi_tenant_hosting": {
+        "vercel.app",
+        "netlify.app",
+        "github.io",
+        "render.com",
+        "onrender.com",
+        "digitaloceanspaces.com",
+        "windows.net",
+        "fastly.net",
+        "cprapid.com",
+        "sslip.io",
+        "duckdns.org",
+        "replit.dev",
+        "surge.sh",
+        "typedream.app",
+        "hostingersite.com",
+        "firebaseapp.com",
+        "web.app",
+        "pages.dev",
+        "workers.dev",
+    },
+    "site_builders": {
+        "weebly.com",
+        "weeblysite.com",
+        "wixsite.com",
+        "wordpress.com",
+        "blogspot.com",
+        "blogspot.am",
+        "square.site",
+        "webflow.io",
+        "godaddysites.com",
+        "webcindario.com",
+        "home.pl",
+        "pineapple.page",
+        "gitbook.io",
+    },
+    "decentralized_storage": {
+        "ipfs.io",
+        "cloudflare-ipfs.com",
+        "dweb.link",
+        "infura-ipfs.io",
+        "eth.limo",
+        "fleek.co",
+    },
+    "saas_platforms": {
+        "teachable.com",
+    },
 }
 
+INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 
-def load_domains(path: Path) -> list[str]:
+
+def load_list(path: Path) -> List[str]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(data, dict):
         arr = data.get("domains", [])
     else:
         arr = data
-    out = []
+    out: List[str] = []
     for v in arr:
         if isinstance(v, str):
             d = v.strip().strip(".").lower()
@@ -46,57 +83,43 @@ def load_domains(path: Path) -> list[str]:
 
 def get_root(host: str) -> str | None:
     ext = tldextract.extract(host)
-    return ext.registered_domain.lower() if ext.registered_domain else None
+    rd = getattr(ext, "top_domain_under_public_suffix", None)
+    return rd.lower() if rd else None
 
 
-def dns_ok(domain: str) -> bool:
-    resolver = dns.resolver.Resolver()
-    resolver.timeout = 3
-    resolver.lifetime = 3
-    for r in ("A", "AAAA", "CNAME", "MX", "NS"):
-        try:
-            ans = resolver.resolve(domain, r, raise_on_no_answer=False)
-            if ans.rrset:
-                return True
-        except (dns.resolver.NXDOMAIN, dns.resolver.NoNameservers):
-            return False
-        except dns.exception.DNSException:
-            continue
-    return False
-
-
-def main():
+def main() -> None:
     os.makedirs(OUT_DIR, exist_ok=True)
 
-    fqdn_list = load_domains(SOURCE_DNS_ACTIVE)
+    items = load_list(SOURCE_LIST)
 
-    root_candidates = set()
-    for fqdn in fqdn_list:
-        rd = get_root(fqdn)
+    active_roots: Set[str] = set()
+    provider_stats: Dict[str, Dict[str, Dict[str, object]]] = {
+        g: {} for g in PROVIDER_GROUPS.keys()
+    }
+
+    for entry in items:
+        rd = get_root(entry)
         if not rd:
             continue
+
         if rd in INFRA_ROOTS:
+            for group, roots in PROVIDER_GROUPS.items():
+                if rd in roots:
+                    gmap = provider_stats[group]
+                    rec = gmap.get(rd)
+                    if rec is None:
+                        rec = {"count": 0, "hosts": set()}
+                        gmap[rd] = rec
+                    rec["count"] = int(rec["count"]) + 1
+                    rec["hosts"].add(entry)
             continue
-        root_candidates.add(rd)
 
-    valid = set()
-    invalid = set()
-
-    for rd in root_candidates:
-        if dns_ok(rd):
-            valid.add(rd)
-        else:
-            invalid.add(rd)
+        active_roots.add(rd)
 
     OUT_ACTIVE.write_text(
         json.dumps(
             {
-                "meta": {
-                    "name": "destroylist root-only dataset",
-                    "dns_validated": True,
-                    "infra_excluded": True,
-                },
-                "domains": sorted(valid),
+                "domains": sorted(active_roots),
             },
             indent=2,
             ensure_ascii=False,
@@ -104,23 +127,44 @@ def main():
         encoding="utf-8",
     )
 
-    OUT_INVALID.write_text(
-        json.dumps(
-            {
-                "meta": {
-                    "name": "destroylist root-only dataset (invalid DNS)",
-                },
-                "domains": sorted(invalid),
-            },
-            indent=2,
-            ensure_ascii=False,
-        ),
+    providers_payload = {
+        "meta": {
+            "name": "excluded provider roots",
+            "source": "list.json",
+        },
+        "providers": {},
+    }
+
+    for group, stats in provider_stats.items():
+        if not stats:
+            continue
+
+        total_entries = sum(int(rec["count"]) for rec in stats.values())
+        items_sorted = sorted(
+            stats.items(), key=lambda kv: int(kv[1]["count"]), reverse=True
+        )
+
+        group_items = []
+        for dom, rec in items_sorted:
+            hosts = sorted(rec["hosts"])
+            group_items.append(
+                {
+                    "domain": dom,
+                    "count": int(rec["count"]),
+                    "hosts": hosts,
+                }
+            )
+
+        providers_payload["providers"][group] = {
+            "total_domains": len(stats),
+            "total_entries": total_entries,
+            "items": group_items,
+        }
+
+    OUT_PROVIDERS.write_text(
+        json.dumps(providers_payload, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-
-    print("[OK] rootlist generated")
-    print("valid:", len(valid))
-    print("invalid:", len(invalid))
 
 
 if __name__ == "__main__":

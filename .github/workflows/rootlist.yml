@@ -4,9 +4,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - "dns/**"
+      - "list.json"
       - "scripts/build_rootlist.py"
-      - "rootlist/README.md"
+  schedule:
+    - cron: "0 */2 * * *"
   workflow_dispatch: {}
 
 jobs:
@@ -22,15 +23,15 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
-          pip install dnspython tldextract
+          pip install tldextract
 
       - name: Build rootlist
         run: |
           python scripts/build_rootlist.py
 
-      - name: Upload artifact
+      - name: Upload rootlist artifacts
         uses: actions/upload-artifact@v4
         with:
           name: rootlist
