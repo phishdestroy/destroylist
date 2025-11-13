@@ -6,19 +6,26 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: update-lists
+  group: json-convert
   cancel-in-progress: false
 
 jobs:
   convert:
     runs-on: ubuntu-latest
+    
     permissions:
       contents: write
       
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       
       - name: Convert to TXT
         run: python3 scripts/json_to_txt.py
@@ -32,7 +39,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update list.txt"
             git pull --rebase origin main
+            git commit -m "Update list.txt [skip ci]"
             git push
           fi
