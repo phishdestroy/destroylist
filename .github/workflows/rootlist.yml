@@ -1,0 +1,37 @@
+name: build-rootlist
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "dns/**"
+      - "scripts/build_rootlist.py"
+      - "rootlist/README.md"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install dnspython tldextract
+
+      - name: Build rootlist
+        run: |
+          python scripts/build_rootlist.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rootlist
+          path: rootlist
