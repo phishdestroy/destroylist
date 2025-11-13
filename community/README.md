@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="image.png" alt="Community Blocklist" width="320">
+  <img src="image.png" alt="Community Blocklist Banner" width="950">
 </p>
 
 # Community Blocklist (`community/`)
@@ -37,7 +37,7 @@
 | File | Description |
 |------|-------------|
 | `blocklist.json` | Merged & normalized community domains |
-| `state.json` | Per-source hash + counts |
+| `state.json` | Per‑source hash + counts |
 | `count.json` | Total count badge JSON |
 | `commit_message.txt` | Auto commit message |
 | `dns_cache.json` | Cached DNS lookups |
@@ -62,3 +62,26 @@ py -m venv .venv
 pip install -r requirements.txt
 py smart_aggregator.py
 py community\dns_validator.py --workers 200
+```
+
+**requirements.txt**
+
+```txt
+requests==2.32.3
+dnspython==2.6.1
+```
+
+---
+
+## 📡 Sources
+
+- MetaMask — [https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json](https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json)
+- ScamSniffer — [https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json](https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json)
+- Polkadot JS — [https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json](https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json)
+- Codeesura — [https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json](https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json)
+- Crypto Firewall — [https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt](https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt)
+- OpenPhish (public) — [https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt](https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt)
+- Security Alliance — [https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt](https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt)
+- SPMedia — [https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt](https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt)
+- Phishing.Database — [https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list](https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list)
+- Enkrypt — [https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json](https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json)
