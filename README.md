@@ -58,18 +58,18 @@ DestroyList aims to disable malicious domains: scams, phishing, and other illici
 
 Before a domain is added, we:
 
-- Scan it across cybersecurity platforms for threat intelligence.
-- Send an official complaint to the registrar and the hosting provider (via WHOIS), including scan results, screenshots, and a request for client investigation. The complaint also notifies them about inclusion in our public database.
-- According to ICANN rules, registrars must review such complaints within 24 hours.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Right.webp" alt="Magnifying Glass Tilted Right" width="25" height="25" /> Scan it across cybersecurity platforms for threat intelligence.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Inbox%20Tray.webp" alt="Inbox Tray" width="25" height="25" /> Send an official complaint to the registrar and the hosting provider (via WHOIS), including scan results, screenshots, and a request for client investigation. The complaint also notifies them about inclusion in our public database.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Police%20Car.webp" alt="Police Car" width="25" height="25" /> According to ICANN rules, registrars must review such complaints within 24 hours.
 
 --------------------------------------------------------------------
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&pause=1000&color=F722EF&width=435&lines=Profit+from+victims+%E2%80%94+become+one+yourself.)](https://git.io/typing-svg)
 
-We work hard to eliminate threats quickly. Every malicious domain is analyzed, documented, reported, and published transparently.  
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/T%20Rex.webp" alt="T Rex" width="25" height="25" /> We work hard to eliminate threats quickly. Every malicious domain is analyzed, documented, reported, and published transparently.  
 However, when a domain receives 10–30+ abuse reports and a registrar still ignores them for months, the situation changes: the registrar is no longer a passive party. It effectively provides infrastructure for illegal activity.  
 Some registrars behave as if their internal policies somehow override ICANN requirements and national laws — as if phishing and fraud are "allowed" as long as they personally decide not to act.
 
-We document this publicly so that anyone can see: threats persist not because they were unnoticed, but because the responsible providers simply chose to do nothing.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Police%20Officer.webp" alt="Man Police Officer" width="25" height="25" /> We document this publicly so that anyone can see: threats persist not because they were unnoticed, but because the responsible providers simply chose to do nothing.
 
 --------------------------------------------------------------------
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&pause=1000&color=F722EF&width=435&lines=Support+scammers+%E2%80%94+share+their+liability.)](https://git.io/typing-svg)
@@ -84,8 +84,8 @@ Private individuals may request the number of abuse reports we have sent for a s
 - via commit history:  
   https://github.com/phishdestroy/destroylist/commits/main/
 
-We do not respond to private e-mail requests from individuals about report counts.  
-This is a legal requirement for transparency and equal access to information.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Exclamation%20Mark.webp" alt="Exclamation Mark" width="25" height="25" /> We do not respond to private e-mail requests from individuals about report counts.  
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Mark%20Button.webp" alt="Check Mark Button" width="25" height="25" /> This is a legal requirement for transparency and equal access to information.
 
 Official government or law-enforcement requests may be answered privately.
 
