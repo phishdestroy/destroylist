@@ -52,14 +52,50 @@ Protect the web, one domain at a time! 🌐
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Bulletproof+registrars+should+not+exist)](https://git.io/typing-svg)
 
-**Destroylist** aims to **disable malicious domains**, targeting scams, phishing, and other illicit sites to enhance internet safety.
+![DestroyList Banner](abuse.png)
+
+DestroyList aims to disable malicious domains: scams, phishing, and other illicit sites to enhance internet safety.
 
 Before a domain is added, we:
-* **Scan it** across cybersecurity platforms for threat intelligence.
-* **Send an official complaint** to the registrar and host (via WHOIS), detailing scan results, domain screenshots, and a request for client investigation. This complaint also notifies them of our public database entry.
-* Per **ICANN rules**, registrars must review such complaints within **24 hours**.
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Mark%20Button.webp" alt="Check Mark Button" width="25" height="25" /> If you've been defrauded by a domain already listed here, check its addition date via the **[commit history](https://github.com/phishdestroy/destroylist/commits/main/)** or our [Telegram channel](https://t.me/destroy_phish) / [Mastodon](https://mastodon.social/@phishdestroy). If the fraud occurred *after* a domain was listed, the registrar or host's delay may imply they **share a degree of responsibility for your loss**. **Potential victims of their clients will also be aware of this information.** These "good-natured" providers, who tolerate scammers on their platforms, might be uniquely positioned to assist you or your legal representatives.
+- Scan it across cybersecurity platforms for threat intelligence.
+- Send an official complaint to the registrar and the hosting provider (via WHOIS), including scan results, screenshots, and a request for client investigation. The complaint also notifies them about inclusion in our public database.
+- According to ICANN rules, registrars must review such complaints within 24 hours.
+
+--------------------------------------------------------------------
+
+We work hard to eliminate threats quickly. Every malicious domain is analyzed, documented, reported, and published transparently.  
+However, when a domain receives 10–30+ abuse reports and a registrar still ignores them for months, the situation changes: the registrar is no longer a passive party. It effectively provides infrastructure for illegal activity.  
+Some registrars behave as if their internal policies somehow override ICANN requirements and national laws — as if phishing and fraud are "allowed" as long as they personally decide not to act.
+
+We document this publicly so that anyone can see: threats persist not because they were unnoticed, but because the responsible providers simply chose to do nothing.
+
+--------------------------------------------------------------------
+
+Requests from private individuals:
+
+DestroyList is an open-source, non-commercial volunteer project.
+
+Private individuals may request the number of abuse reports we have sent for a specific domain, but only through public channels:
+
+- via GitHub issues  
+- via commit history:  
+  https://github.com/phishdestroy/destroylist/commits/main/
+
+We do not respond to private e-mail requests from individuals about report counts.  
+This is a legal requirement for transparency and equal access to information.
+
+Official government or law-enforcement requests may be answered privately.
+
+--------------------------------------------------------------------
+
+If you were defrauded by a domain already listed here, check its addition date using the commit history or via our Telegram/Mastodon channels.
+
+If the fraud happened after the domain was already listed, the registrar’s or host’s delay may indicate they share responsibility for the loss.  
+Future potential victims can also see this negligence documented publicly.
+
+Registrars and hosts that tolerate scam operations may reasonably be expected to assist victims or their legal representatives.
+
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Services+covering+thieves+are+worse+than+thieves)](https://git.io/typing-svg)
 
