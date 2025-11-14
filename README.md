@@ -54,12 +54,15 @@ Protect the web, one domain at a time! 🌐
 
 ![DestroyList Banner](abuse.png)
 
-DestroyList aims to disable malicious domains: scams, phishing, and other illicit sites to enhance internet safety.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Briefcase.webp" alt="Briefcase" width="25" height="25" />DestroyList aims to disable malicious domains: scams, phishing, and other illicit sites to enhance internet safety.
+
 
 Before a domain is added, we:
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Right.webp" alt="Magnifying Glass Tilted Right" width="25" height="25" /> Scan it across cybersecurity platforms for threat intelligence.
+
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Inbox%20Tray.webp" alt="Inbox Tray" width="25" height="25" /> Send an official complaint to the registrar and the hosting provider (via WHOIS), including scan results, screenshots, and a request for client investigation. The complaint also notifies them about inclusion in our public database.
+
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Police%20Car.webp" alt="Police Car" width="25" height="25" /> According to ICANN rules, registrars must review such complaints within 24 hours.
 
 --------------------------------------------------------------------
@@ -91,12 +94,14 @@ Official government or law-enforcement requests may be answered privately.
 
 --------------------------------------------------------------------
 
-If you were defrauded by a domain already listed here, check its addition date using the commit history or via our Telegram/Mastodon channels.
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Mending%20Heart.webp" alt="Mending Heart" width="25" height="25" />If you were defrauded by a domain already listed here, check its addition date using the commit history or via our Telegram/Mastodon channels.
 
-If the fraud happened after the domain was already listed, the registrar’s or host’s delay may indicate they share responsibility for the loss.  
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Speech%20Balloon.webp" alt="Speech Balloon" width="25" height="25" /> If the fraud happened after the domain was already listed, the registrar’s or host’s delay may indicate they share responsibility for the loss.  
 Future potential victims can also see this negligence documented publicly.
 
-Registrars and hosts that tolerate scam operations may reasonably be expected to assist victims or their legal representatives.
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/No%20One%20Under%20Eighteen.webp" alt="No One Under Eighteen" width="25" height="25" /> Registrars and hosts that tolerate scam operations may reasonably be expected to assist victims or their legal representatives.
 
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Services+covering+thieves+are+worse+than+thieves)](https://git.io/typing-svg)
