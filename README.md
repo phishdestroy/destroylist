@@ -63,6 +63,7 @@ Before a domain is added, we:
 - According to ICANN rules, registrars must review such complaints within 24 hours.
 
 --------------------------------------------------------------------
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&pause=1000&color=F722EF&width=435&lines=Profit+from+victims+%E2%80%94+become+one+yourself.)](https://git.io/typing-svg)
 
 We work hard to eliminate threats quickly. Every malicious domain is analyzed, documented, reported, and published transparently.  
 However, when a domain receives 10–30+ abuse reports and a registrar still ignores them for months, the situation changes: the registrar is no longer a passive party. It effectively provides infrastructure for illegal activity.  
@@ -71,6 +72,7 @@ Some registrars behave as if their internal policies somehow override ICANN requ
 We document this publicly so that anyone can see: threats persist not because they were unnoticed, but because the responsible providers simply chose to do nothing.
 
 --------------------------------------------------------------------
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&pause=1000&color=F722EF&width=435&lines=Support+scammers+%E2%80%94+share+their+liability.)](https://git.io/typing-svg)
 
 Requests from private individuals:
 
