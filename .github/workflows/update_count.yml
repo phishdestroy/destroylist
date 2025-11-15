@@ -1,50 +1,52 @@
-name: Update Domain Count
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '*/25 * * * *'
-  workflow_dispatch:
+#!/usr/bin/env python3
+"""Update domain count badges for main list and DNS-verified list"""
 
-concurrency:
-  group: update-count
-  cancel-in-progress: false
+import json
+from pathlib import Path
 
-jobs:
-  update-count:
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+ROOT = Path(__file__).resolve().parents[1]
+
+def update_count_badge(json_file: Path, badge_file: Path, label: str, color: str = "important"):
+    """Update shields.io badge JSON for a domain list"""
+    try:
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
         
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          
-      - name: Install dependencies
-        run: pip install --upgrade pip
-          
-      - name: Run count_domains.py
-        run: python count_domains.py
-          
-      - name: Commit and push count.json
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          
-          git add count.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Auto-update count.json [skip ci]"
-            git pull --rebase origin main || true
-            git push || (sleep 5 && git pull --rebase origin main && git push)
-          fi
+        count = len(data) if isinstance(data, list) else len(data.get("domains", []))
+        
+        badge = {
+            "schemaVersion": 1,
+            "label": label,
+            "message": str(count),
+            "color": color
+        }
+        
+        with open(badge_file, 'w', encoding='utf-8') as f:
+            json.dump(badge, f, indent=2)
+        
+        print(f"✅ {badge_file.name}: {count} domains")
+        
+    except Exception as e:
+        print(f"❌ Error updating {badge_file}: {e}")
+
+def main():
+    # Main list count
+    update_count_badge(
+        ROOT / "list.json",
+        ROOT / "count.json",
+        "Active Domains",
+        "important"
+    )
+    
+    # DNS-verified count
+    dns_active = ROOT / "dns" / "active_domains.json"
+    if dns_active.exists():
+        update_count_badge(
+            dns_active,
+            ROOT / "dns" / "active_count.json",
+            "Active Domains (DNS Checked)",
+            "purple"
+        )
+
+if __name__ == "__main__":
+    main()

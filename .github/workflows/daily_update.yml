@@ -8,8 +8,7 @@ on:
       - main
     paths:
       - 'list.json'
-      - 'dns/active_domains.py'
-      - 'smart_aggregator.py'
+      - 'scripts/*.py'
       - '.github/workflows/daily_update.yml'
 
 concurrency:
@@ -19,10 +18,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    
-    # NEW: Setting timeout to 90 minutes to avoid the "Failing after 30m" error
-    timeout-minutes: 90 
-    
+    timeout-minutes: 90
     permissions:
       contents: write
       
@@ -42,22 +38,29 @@ jobs:
           pip install --upgrade pip
           pip install dnspython requests tqdm tldextract
           
-      - name: Aggregate domains from external lists
-        run: python smart_aggregator.py
+      - name: Aggregate community domains
+        run: python scripts/smart_aggregator.py
           
-      - name: Check active domains in our database
-        run: python dns/active_domains.py
+      - name: Update DNS active domains
+        run: python scripts/update_dns_formats.py
+          
+      - name: Update domain counts
+        run: python scripts/update_counts.py
+          
+      - name: Convert JSON to TXT
+        run: python scripts/json_to_txt.py
           
       - name: Commit and push changes
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
           git add -A
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Daily update [skip ci]"
+            DOMAINS_COUNT=$(python3 -c "import json; print(len(json.load(open('list.json'))))")
+            git commit -m "Update list.json ($DOMAINS_COUNT domains)"
             git pull --rebase origin main || true
             git push origin main
           fi
