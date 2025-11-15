@@ -18,61 +18,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: |
-          python3 << 'EOF'
-          import json
-          import subprocess
-          from datetime import datetime, timedelta
-          
-          def get_count(file):
-              try:
-                  return len(json.load(open(file)))
-              except:
-                  return 0
-          
-          def git_count_at_date(file, days_ago):
-              date = (datetime.now() - timedelta(days=days_ago)).strftime('%Y-%m-%d')
-              try:
-                  commit = subprocess.run(
-                      ['git', 'rev-list', '-1', f'--before={date}', 'HEAD'],
-                      capture_output=True, text=True
-                  ).stdout.strip()
-                  
-                  if commit:
-                      result = subprocess.run(
-                          ['git', 'show', f'{commit}:{file}'],
-                          capture_output=True, text=True
-                      )
-                      if result.returncode == 0:
-                          return len(json.loads(result.stdout))
-              except:
-                  pass
-              return None
-          
-          current = get_count('list.json')
-          yesterday = git_count_at_date('list.json', 1) or current
-          week_ago = git_count_at_date('list.json', 7) or current
-          
-          today_added = max(0, current - yesterday)
-          week_added = max(0, current - week_ago)
-          
-          def badge(label, val, color):
-              return {"schemaVersion": 1, "label": label, "message": f"+{val:,}", "color": color}
-          
-          import os
-          os.makedirs('dns', exist_ok=True)
-          
-          json.dump(badge("added today", today_added, "success"), open('dns/today_added.json', 'w'), indent=2)
-          json.dump(badge("added this week", week_added, "success"), open('dns/week_added.json', 'w'), indent=2)
-          json.dump(badge("community today", 0, "blue"), open('dns/today_community.json', 'w'), indent=2)
-          json.dump(badge("community this week", 0, "blue"), open('dns/week_community.json', 'w'), indent=2)
-          
-          print(f"Today: +{today_added}, Week: +{week_added}")
-          EOF
+      - name: Calculate stats
+        run: python scripts/calculate_stats.py
 
-      - run: |
+      - name: Commit
+        run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add dns/*.json
-          git diff --cached --quiet || git commit -m "Update stats [skip ci]"
+          git diff --cached --quiet || git commit -m "Update statistics [skip ci]"
           git push
