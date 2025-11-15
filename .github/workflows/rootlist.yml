@@ -1,5 +1,4 @@
 name: build-rootlist
-
 on:
   push:
     branches: [ main ]
@@ -13,10 +12,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -24,12 +26,18 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install tldextract
+        run: pip install tldextract
 
       - name: Build rootlist
+        run: python scripts/build_rootlist.py
+
+      - name: Commit and push changes
         run: |
-          python scripts/build_rootlist.py
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add rootlist/
+          git diff --cached --quiet || git commit -m "Update rootlist ($(date -u +"%Y-%m-%d %H:%M:%S UTC"))"
+          git push
 
       - name: Upload rootlist artifacts
         uses: actions/upload-artifact@v4
