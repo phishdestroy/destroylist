@@ -1,0 +1,100 @@
+name: update-stats
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Calculate statistics
+        run: |
+          python3 << 'EOF'
+          import json
+          import subprocess
+          from datetime import datetime, timedelta
+          
+          def get_count(file):
+              try:
+                  with open(file, 'r') as f:
+                      data = json.load(f)
+                      return len(data) if isinstance(data, list) else 0
+              except:
+                  return 0
+          
+          def get_commits_count(file, days_ago):
+              since = (datetime.now() - timedelta(days=days_ago)).strftime('%Y-%m-%d')
+              cmd = f'git log --since="{since}" --oneline -- {file}'
+              result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+              return len(result.stdout.strip().split('\n')) if result.stdout.strip() else 0
+          current_primary = get_count('list.json')
+          current_community = get_count('community/blocklist.json')
+          current_dead = get_count('dead_domains.json')
+          yesterday_cmd = 'git show HEAD@{1 day ago}:list.json 2>/dev/null | python3 -c "import sys, json; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "0"'
+          yesterday_primary = int(subprocess.run(yesterday_cmd, shell=True, capture_output=True, text=True).stdout.strip() or "0")
+          
+          week_ago_cmd = 'git show HEAD@{7 days ago}:list.json 2>/dev/null | python3 -c "import sys, json; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "0"'
+          week_ago_primary = int(subprocess.run(week_ago_cmd, shell=True, capture_output=True, text=True).stdout.strip() or "0")
+          today_added = max(0, current_primary - yesterday_primary)
+          week_added = max(0, current_primary - week_ago_primary)
+          today_removed_commits = get_commits_count('dead_domains.json', 1)
+          week_removed_commits = get_commits_count('dead_domains.json', 7)
+          yesterday_community_cmd = 'git show HEAD@{1 day ago}:community/blocklist.json 2>/dev/null | python3 -c "import sys, json; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "0"'
+          yesterday_community = int(subprocess.run(yesterday_community_cmd, shell=True, capture_output=True, text=True).stdout.strip() or "0")
+          
+          week_community_cmd = 'git show HEAD@{7 days ago}:community/blocklist.json 2>/dev/null | python3 -c "import sys, json; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "0"'
+          week_ago_community = int(subprocess.run(week_community_cmd, shell=True, capture_output=True, text=True).stdout.strip() or "0")
+          
+          today_community = max(0, current_community - yesterday_community)
+          week_community = max(0, current_community - week_ago_community)
+          import os
+          os.makedirs('stats', exist_ok=True)
+          def create_badge(label, value, color="blue"):
+              return {
+                  "schemaVersion": 1,
+                  "label": label,
+                  "message": f"+{value:,}",
+                  "color": color
+              }
+          with open('stats/today_added.json', 'w') as f:
+              json.dump(create_badge("added today", today_added, "success"), f, indent=2)
+          
+          with open('stats/week_added.json', 'w') as f:
+              json.dump(create_badge("added this week", week_added, "success"), f, indent=2)
+          
+          with open('stats/today_community.json', 'w') as f:
+              json.dump(create_badge("community today", today_community, "blue"), f, indent=2)
+          
+          with open('stats/week_community.json', 'w') as f:
+              json.dump(create_badge("community this week", week_community, "blue"), f, indent=2)
+          
+          with open('stats/today_removed.json', 'w') as f:
+              json.dump(create_badge("removed today", today_removed_commits, "orange"), f, indent=2)
+          
+          with open('stats/week_removed.json', 'w') as f:
+              json.dump(create_badge("removed this week", week_removed_commits, "orange"), f, indent=2)
+          
+          print(f"✅ Today: +{today_added} added, {today_removed_commits} removed, +{today_community} community")
+          print(f"✅ Week: +{week_added} added, {week_removed_commits} removed, +{week_community} community")
+          EOF
+
+      - name: Commit statistics
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add stats/
+          git diff --cached --quiet || git commit -m "📊 Update daily statistics ($(date -u +"%Y-%m-%d %H:%M UTC"))"
+          git push
