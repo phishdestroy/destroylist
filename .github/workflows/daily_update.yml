@@ -20,8 +20,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     
-    # NEW: Setting timeout to 30 minutes to avoid the "Failing after 20m" error
-    timeout-minutes: 30 
+    # NEW: Setting timeout to 90 minutes to avoid the "Failing after 30m" error
+    timeout-minutes: 90 
     
     permissions:
       contents: write
