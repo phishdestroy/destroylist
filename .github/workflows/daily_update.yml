@@ -3,16 +3,10 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'list.json'
-      - 'scripts/*.py'
 
 concurrency:
   group: daily-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
@@ -24,8 +18,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
           
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -33,21 +25,10 @@ jobs:
           python-version: '3.12'
           
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install dnspython requests tqdm tldextract
+        run: pip install dnspython requests tqdm tldextract
           
       - name: Run aggregator
         run: python scripts/smart_aggregator.py
-        continue-on-error: true
-          
-      - name: Update DNS domains
-        run: |
-          if [ -f "dns/active_domains.py" ]; then
-            python dns/active_domains.py
-          elif [ -f "scripts/update_dns_formats.py" ]; then
-            python scripts/update_dns_formats.py
-          fi
         continue-on-error: true
           
       - name: Update counts
@@ -60,15 +41,10 @@ jobs:
           
       - name: Commit changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git add -A
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            DOMAINS=$(python3 -c "import json; print(len(json.load(open('list.json'))))" 2>/dev/null || echo "N/A")
-            git commit -m "Daily update ($DOMAINS domains) [skip ci]"
-            git pull --rebase origin main || true
-            git push || { sleep 5; git pull --rebase origin main; git push; }
-          fi
+          git diff --staged --quiet || {
+            git commit -m "Auto-update [skip ci]"
+            git push
+          }
