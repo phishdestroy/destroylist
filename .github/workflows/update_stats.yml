@@ -1,0 +1,112 @@
+name: Update Statistics
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 30  # Нужна история для сравнения
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Calculate statistics
+        run: |
+          python3 << 'EOF'
+          import json
+          import subprocess
+          import os
+          
+          def get_count(file):
+              try:
+                  with open(file, 'r') as f:
+                      data = json.load(f)
+                      return len(data) if isinstance(data, list) else 0
+              except:
+                  return 0
+          
+          def get_git_count(file, ref):
+              """Get domain count from git at specific ref"""
+              cmd = f'git show {ref}:{file}'
+              try:
+                  result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=10)
+                  if result.returncode == 0:
+                      data = json.loads(result.stdout)
+                      return len(data) if isinstance(data, list) else 0
+              except:
+                  pass
+              return 0
+          
+          current_primary = get_count('list.json')
+          current_community = get_count('community/blocklist.json')
+          
+          # Try to get counts from 1 day ago
+          yesterday_primary = get_git_count('list.json', 'HEAD@{1 day ago}')
+          if yesterday_primary == 0:
+              yesterday_primary = get_git_count('list.json', 'HEAD~10')  # fallback
+          
+          # Try to get counts from 7 days ago  
+          week_ago_primary = get_git_count('list.json', 'HEAD@{7 days ago}')
+          if week_ago_primary == 0:
+              week_ago_primary = get_git_count('list.json', 'HEAD~50')  # fallback
+          
+          yesterday_community = get_git_count('community/blocklist.json', 'HEAD@{1 day ago}')
+          if yesterday_community == 0:
+              yesterday_community = get_git_count('community/blocklist.json', 'HEAD~10')
+          
+          week_ago_community = get_git_count('community/blocklist.json', 'HEAD@{7 days ago}')
+          if week_ago_community == 0:
+              week_ago_community = get_git_count('community/blocklist.json', 'HEAD~50')
+          
+          today_added = max(0, current_primary - yesterday_primary)
+          week_added = max(0, current_primary - week_ago_primary)
+          
+          today_community = max(0, current_community - yesterday_community)
+          week_community = max(0, current_community - week_ago_community)
+          
+          os.makedirs('dns', exist_ok=True)
+          
+          def create_badge(label, value, color="blue"):
+              return {
+                  "schemaVersion": 1,
+                  "label": label,
+                  "message": f"+{value:,}",
+                  "color": color
+              }
+          
+          with open('dns/today_added.json', 'w') as f:
+              json.dump(create_badge("added today", today_added, "success"), f, indent=2)
+          
+          with open('dns/week_added.json', 'w') as f:
+              json.dump(create_badge("added this week", week_added, "success"), f, indent=2)
+          
+          with open('dns/today_community.json', 'w') as f:
+              json.dump(create_badge("community today", today_community, "blue"), f, indent=2)
+          
+          with open('dns/week_community.json', 'w') as f:
+              json.dump(create_badge("community this week", week_community, "blue"), f, indent=2)
+          
+          print(f"Current: {current_primary} primary, {current_community} community")
+          print(f"Yesterday: {yesterday_primary} primary")
+          print(f"Week ago: {week_ago_primary} primary")
+          print(f"Today added: +{today_added} primary, +{today_community} community")
+          print(f"Week added: +{week_added} primary, +{week_community} community")
+          EOF
+
+      - name: Commit statistics
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add dns/*.json
+          git diff --cached --quiet || git commit -m "Update daily statistics [skip ci]"
+          git push
