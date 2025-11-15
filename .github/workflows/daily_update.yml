@@ -42,7 +42,7 @@ jobs:
         run: python scripts/smart_aggregator.py
           
       - name: Update DNS active domains
-        run: python scripts/update_dns_formats.py
+        run: python scripts/active_domains.py
           
       - name: Update domain counts
         run: python scripts/update_counts.py
@@ -60,7 +60,17 @@ jobs:
             echo "No changes to commit"
           else
             DOMAINS_COUNT=$(python3 -c "import json; print(len(json.load(open('list.json'))))")
-            git commit -m "Update list.json ($DOMAINS_COUNT domains)"
+            git commit -m "Daily update ($DOMAINS_COUNT domains) [skip ci]"
+            
+            # Pull with rebase to avoid conflicts
             git pull --rebase origin main || true
-            git push origin main
+            
+            # Push with retry
+            for i in {1..5}; do
+              git push && break || {
+                echo "Push failed, retrying in 5s..."
+                sleep 5
+                git pull --rebase origin main
+              }
+            done
           fi
