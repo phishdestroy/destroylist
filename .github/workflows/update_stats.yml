@@ -21,10 +21,19 @@ jobs:
       - name: Calculate stats
         run: python scripts/calculate_stats.py
 
-      - name: Commit
+      - name: Commit and push
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add dns/*.json
-          git diff --cached --quiet || git commit -m "Update statistics [skip ci]"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update statistics [skip ci]"
+            git pull --rebase origin main || true
+            git push || {
+              sleep 5
+              git pull --rebase origin main
+              git push
+            }
+          fi
