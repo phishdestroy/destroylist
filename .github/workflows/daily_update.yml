@@ -9,7 +9,6 @@ on:
     paths:
       - 'list.json'
       - 'scripts/*.py'
-      - '.github/workflows/daily_update.yml'
 
 concurrency:
   group: daily-update
@@ -38,19 +37,28 @@ jobs:
           pip install --upgrade pip
           pip install dnspython requests tqdm tldextract
           
-      - name: Aggregate community domains
+      - name: Run aggregator
         run: python scripts/smart_aggregator.py
+        continue-on-error: true
           
-      - name: Update DNS active domains
-        run: python scripts/active_domains.py
+      - name: Update DNS domains
+        run: |
+          if [ -f "dns/active_domains.py" ]; then
+            python dns/active_domains.py
+          elif [ -f "scripts/update_dns_formats.py" ]; then
+            python scripts/update_dns_formats.py
+          fi
+        continue-on-error: true
           
-      - name: Update domain counts
+      - name: Update counts
         run: python scripts/update_counts.py
+        continue-on-error: true
           
-      - name: Convert JSON to TXT
+      - name: Convert to TXT
         run: python scripts/json_to_txt.py
+        continue-on-error: true
           
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -59,18 +67,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            DOMAINS_COUNT=$(python3 -c "import json; print(len(json.load(open('list.json'))))")
-            git commit -m "Daily update ($DOMAINS_COUNT domains) [skip ci]"
-            
-            # Pull with rebase to avoid conflicts
+            DOMAINS=$(python3 -c "import json; print(len(json.load(open('list.json'))))" 2>/dev/null || echo "N/A")
+            git commit -m "Daily update ($DOMAINS domains) [skip ci]"
             git pull --rebase origin main || true
-            
-            # Push with retry
-            for i in {1..5}; do
-              git push && break || {
-                echo "Push failed, retrying in 5s..."
-                sleep 5
-                git pull --rebase origin main
-              }
-            done
+            git push || { sleep 5; git pull --rebase origin main; git push; }
           fi
