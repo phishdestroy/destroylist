@@ -16,35 +16,21 @@ jobs:
       contents: write
       
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           
-      - name: Install dependencies
-        run: pip install dnspython requests tqdm tldextract
+      - run: pip install dnspython requests tqdm tldextract
+      - run: python scripts/smart_aggregator.py || true
+      - run: python scripts/update_counts.py || true
+      - run: python scripts/json_to_txt.py || true
           
-      - name: Run aggregator
-        run: python scripts/smart_aggregator.py
-        continue-on-error: true
-          
-      - name: Update counts
-        run: python scripts/update_counts.py
-        continue-on-error: true
-          
-      - name: Convert to TXT
-        run: python scripts/json_to_txt.py
-        continue-on-error: true
-          
-      - name: Commit changes
-        run: |
+      - run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add -A
           git diff --staged --quiet || {
-            git commit -m "Auto-update [skip ci]"
+            git commit -m "Daily update [skip ci]"
             git push
           }
