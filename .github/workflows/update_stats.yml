@@ -10,82 +10,69 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
+          fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Calculate statistics
-        run: |
-          python3 << 'PYTHON_EOF'
+      - run: |
+          python3 << 'EOF'
           import json
           import subprocess
-          import os
+          from datetime import datetime, timedelta
           
           def get_count(file):
               try:
-                  with open(file, 'r') as f:
-                      return len(json.load(f))
+                  return len(json.load(open(file)))
               except:
                   return 0
           
-          def git_count_at_commit(file, commit):
+          def git_count_at_date(file, days_ago):
+              date = (datetime.now() - timedelta(days=days_ago)).strftime('%Y-%m-%d')
               try:
-                  result = subprocess.run(
-                      ['git', 'show', f'{commit}:{file}'],
-                      capture_output=True, text=True, timeout=10
-                  )
-                  if result.returncode == 0:
-                      return len(json.loads(result.stdout))
+                  commit = subprocess.run(
+                      ['git', 'rev-list', '-1', f'--before={date}', 'HEAD'],
+                      capture_output=True, text=True
+                  ).stdout.strip()
+                  
+                  if commit:
+                      result = subprocess.run(
+                          ['git', 'show', f'{commit}:{file}'],
+                          capture_output=True, text=True
+                      )
+                      if result.returncode == 0:
+                          return len(json.loads(result.stdout))
               except:
                   pass
               return None
           
           current = get_count('list.json')
-          
-          yesterday = git_count_at_commit('list.json', 'HEAD~1') or current
-          week_ago = git_count_at_commit('list.json', 'HEAD~7') or current
+          yesterday = git_count_at_date('list.json', 1) or current
+          week_ago = git_count_at_date('list.json', 7) or current
           
           today_added = max(0, current - yesterday)
           week_added = max(0, current - week_ago)
           
+          def badge(label, val, color):
+              return {"schemaVersion": 1, "label": label, "message": f"+{val:,}", "color": color}
+          
+          import os
           os.makedirs('dns', exist_ok=True)
           
-          def badge(label, value, color):
-              return {
-                  "schemaVersion": 1,
-                  "label": label,
-                  "message": f"+{value:,}",
-                  "color": color
-              }
+          json.dump(badge("added today", today_added, "success"), open('dns/today_added.json', 'w'), indent=2)
+          json.dump(badge("added this week", week_added, "success"), open('dns/week_added.json', 'w'), indent=2)
+          json.dump(badge("community today", 0, "blue"), open('dns/today_community.json', 'w'), indent=2)
+          json.dump(badge("community this week", 0, "blue"), open('dns/week_community.json', 'w'), indent=2)
           
-          with open('dns/today_added.json', 'w') as f:
-              json.dump(badge("added today", today_added, "success"), f, indent=2)
-          
-          with open('dns/week_added.json', 'w') as f:
-              json.dump(badge("added this week", week_added, "success"), f, indent=2)
-          
-          with open('dns/today_community.json', 'w') as f:
-              json.dump(badge("community today", 0, "blue"), f, indent=2)
-          
-          with open('dns/week_community.json', 'w') as f:
-              json.dump(badge("community this week", 0, "blue"), f, indent=2)
-          
-          print(f"Current: {current}")
-          print(f"Yesterday: {yesterday}")
-          print(f"Added today: {today_added}")
-          print(f"Added this week: {week_added}")
-          PYTHON_EOF
+          print(f"Today: +{today_added}, Week: +{week_added}")
+          EOF
 
-      - name: Commit
-        run: |
+      - run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add dns/*.json
-          git diff --cached --quiet || git commit -m "Update statistics [skip ci]"
+          git diff --cached --quiet || git commit -m "Update stats [skip ci]"
           git push
