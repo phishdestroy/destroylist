@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishDestroy - Threat Intelligence Platform</title>
+    <meta name="description" content="We destroy malicious phishing and scam domains. Comprehensive threat intelligence feed with 500,000+ blocked threats since 2019.">
+    <meta name="keywords" content="phishing, scam, malware, threat intelligence, blocklist, security, cybersecurity">
+    <meta name="author" content="PhishDestroy">
+    <link rel="icon" type="image/x-icon" href="https://phishdestroy.io/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://phishdestroy.io/favicon.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phishdestroy.github.io/destroylist/">
+    <meta property="og:title" content="PhishDestroy - Threat Intelligence Platform">
+    <meta property="og:description" content="We destroy malicious phishing and scam domains. Comprehensive threat intelligence feed with 500,000+ blocked threats since 2019.">
+    <meta property="og:image" content="https://phishdestroy.io/hook-logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://phishdestroy.github.io/destroylist/">
+    <meta property="twitter:title" content="PhishDestroy - Threat Intelligence Platform">
+    <meta property="twitter:description" content="We destroy malicious phishing and scam domains. Comprehensive threat intelligence feed with 500,000+ blocked threats since 2019.">
+    <meta property="twitter:image" content="https://phishdestroy.io/hook-logo.png">
+    <meta name="twitter:site" content="@Phish_Destroy">
+    <meta name="twitter:creator" content="@Phish_Destroy">
+    <meta name="theme-color" content="#010409">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://phishdestroy.github.io/destroylist/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style> * {margin: 0;padding: 0;box-sizing: border-box;}:root {--bg-dark: #0a0e1a;--bg-darker: #010409;--bg-card: rgba(22, 27, 34, 0.6);--text-primary: #e6edf3;--text-secondary: #7d8590;--accent-red: #ff4757;--accent-blue: #58a6ff;--accent-cyan: #00d4ff;--accent-teal: #00ffc8;--border: rgba(48, 54, 61, 0.5);--glass-bg: rgba(22, 27, 34, 0.4);}body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;background: var(--bg-darker);color: var(--text-primary);line-height: 1.6;overflow-x: hidden;}.bg-animated {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.12) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 71, 87, 0.08) 0%, transparent 50%), radial-gradient(circle at 60% 20%, rgba(0, 255, 200, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 60%, rgba(88, 166, 255, 0.15) 0%, transparent 50%);animation: bgMove 30s ease-in-out infinite;pointer-events: none;z-index: 0;}@keyframes bgMove {0%, 100% {transform: scale(1) translate(0, 0);}25% {transform: scale(1.08) translate(15px, -15px);}50% {transform: scale(1.12) translate(-20px, 10px);}75% {transform: scale(1.05) translate(10px, -25px);}}.grid-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-image: linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);background-size: 60px 60px;z-index: 0;pointer-events: none;opacity: 0.6;}.floating-domains {position: fixed;top: 0;left: 0;width: 100%;height: 100%;pointer-events: none;z-index: 0;overflow: hidden;}.floating-domain {position: absolute;font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;font-size: 11px;color: var(--text-secondary);opacity: 0.15;font-weight: 600;white-space: nowrap;animation: floatDomain 25s linear infinite;}@keyframes floatDomain {0% {transform: translateX(0) translateY(0) rotate(0deg);opacity: 0;}10% {opacity: 0.15;}90% {opacity: 0.15;}100% {transform: translateX(var(--tx)) translateY(var(--ty)) rotate(var(--rotate));opacity: 0;}}.content {position: relative;z-index: 1;}.hero {min-height: 100vh;display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 2rem;position: relative;}.hook-container {position: relative;margin-bottom: 2.5rem;animation: fadeInDown 0.8s ease-out;}@keyframes fadeInDown {from {opacity: 0;transform: translateY(-30px);}to {opacity: 1;transform: translateY(0);}}.hook-icon {width: 200px;height: 200px;background: linear-gradient(145deg, rgba(26, 31, 46, 0.9) 0%, rgba(15, 20, 25, 0.9) 100%);border-radius: 45px;display: flex;align-items: center;justify-content: center;box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(0, 212, 255, 0.2), 0 0 40px rgba(0, 212, 255, 0.1);border: 1px solid rgba(255, 255, 255, 0.1);position: relative;transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);overflow: hidden;backdrop-filter: blur(10px);animation: pulse-glow 4s ease-in-out infinite;}@keyframes pulse-glow {0%, 100% {box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(0, 212, 255, 0.2), 0 0 40px rgba(0, 212, 255, 0.1);}50% {box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.3);}}.hook-icon::before {content: '';position: absolute;top: -50%;left: -50%;width: 200%;height: 200%;background: conic-gradient( from 0deg, transparent, rgba(0, 212, 255, 0.4), transparent 60deg );animation: rotate 4s linear infinite;opacity: 0;transition: opacity 0.3s;}.hook-icon:hover::before {opacity: 1;}@keyframes rotate {100% {transform: rotate(360deg);}}.hook-icon:hover {transform: translateY(-8px) scale(1.05);box-shadow: 0 40px 80px rgba(0, 212, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(0, 212, 255, 0.5), 0 0 80px rgba(0, 212, 255, 0.3);animation: none;}.hook-icon img {width: 100%;height: 100%;object-fit: cover;border-radius: 45px;position: relative;z-index: 1;}.phishing-domains {position: absolute;font-size: 12px;color: var(--text-secondary);font-weight: 600;letter-spacing: 0.3px;opacity: 0.6;white-space: nowrap;animation: float 3s ease-in-out infinite;}@keyframes float {0%, 100% {transform: translateY(0);}50% {transform: translateY(-8px);}}.domain-top-left {top: -30px;left: -50px;animation-delay: 0s;}.domain-top-right {top: -25px;right: -70px;animation-delay: 0.5s;}.domain-bottom {bottom: -30px;left: -60px;animation-delay: 1s;}.logo {font-size: clamp(3.5rem, 8vw, 5.5rem);font-weight: 900;margin-bottom: 1.5rem;text-align: center;letter-spacing: -0.04em;color: var(--text-primary);animation: fadeInUp 0.8s ease-out 0.2s both;transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);cursor: default;position: relative;}.logo:hover {background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-teal));-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;transform: scale(1.02);filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.4));}.tagline {font-size: clamp(1.25rem, 3vw, 1.75rem);color: var(--text-secondary);margin-bottom: 3rem;text-align: center;max-width: 700px;font-weight: 400;animation: fadeInUp 0.8s ease-out 0.4s both;transition: color 0.3s ease;cursor: default;}.tagline:hover {color: var(--text-primary);}@keyframes fadeInUp {from {opacity: 0;transform: translateY(30px);}to {opacity: 1;transform: translateY(0);}}.stats-box {background: linear-gradient(135deg, rgba(22, 27, 34, 0.5) 0%, rgba(22, 27, 34, 0.3) 100%);border: 1px solid rgba(88, 166, 255, 0.2);border-radius: 24px;padding: 2.5rem 4rem;margin-bottom: 2.5rem;box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(88, 166, 255, 0.1);position: relative;overflow: hidden;animation: fadeInUp 0.8s ease-out 0.6s both;transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);}.stats-box::before {content: '';position: absolute;top: 0;left: -100%;width: 100%;height: 100%;background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.2), transparent);animation: shimmer 3s infinite;}@keyframes shimmer {0% {left: -100%;}100% {left: 200%;}}.stats-box:hover {transform: translateY(-5px) scale(1.02);box-shadow: 0 20px 60px rgba(88, 166, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(88, 166, 255, 0.3);border-color: rgba(88, 166, 255, 0.5);background: linear-gradient(135deg, rgba(22, 27, 34, 0.6) 0%, rgba(22, 27, 34, 0.4) 100%);}.stats-label {font-size: 0.875rem;color: var(--text-secondary);text-transform: uppercase;letter-spacing: 0.1em;margin-bottom: 0.75rem;font-weight: 600;position: relative;z-index: 1;transition: color 0.3s ease;}.stats-box:hover .stats-label {color: var(--accent-blue);}.stats-number {font-size: clamp(3.5rem, 7vw, 5.5rem);font-weight: 900;background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-teal));-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;line-height: 1;font-variant-numeric: tabular-nums;position: relative;z-index: 1;}.social-compact {display: flex;gap: 0.75rem;justify-content: center;flex-wrap: wrap;margin-bottom: 1.5rem;animation: fadeInUp 0.8s ease-out 0.8s both;}.social-btn {display: inline-flex;align-items: center;gap: 0.5rem;padding: 0.75rem 1.2rem;background: linear-gradient(135deg, rgba(22, 27, 34, 0.6) 0%, rgba(22, 27, 34, 0.4) 100%);border: 1px solid rgba(88, 166, 255, 0.2);border-radius: 12px;color: var(--text-primary);text-decoration: none;font-weight: 500;transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);font-size: 0.875rem;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);position: relative;overflow: hidden;}.social-btn::before {content: '';position: absolute;top: 0;left: -100%;width: 100%;height: 100%;background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.2), transparent);transition: left 0.5s;}.social-btn:hover::before {left: 100%;}.social-btn:hover {transform: translateY(-4px) scale(1.05);}.social-btn:nth-child(1) {border-color: rgba(88, 166, 255, 0.3);}.social-btn:nth-child(1):hover {border-color: var(--accent-blue);background: linear-gradient(135deg, rgba(88, 166, 255, 0.25) 0%, rgba(88, 166, 255, 0.15) 100%);box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);}.social-btn:nth-child(2), .social-btn:nth-child(3) {border-color: rgba(0, 136, 204, 0.3);}.social-btn:nth-child(2):hover, .social-btn:nth-child(3):hover {border-color: #0088cc;background: linear-gradient(135deg, rgba(0, 136, 204, 0.25) 0%, rgba(0, 136, 204, 0.15) 100%);box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);}.social-btn:nth-child(4) {border-color: rgba(29, 155, 240, 0.3);}.social-btn:nth-child(4):hover {border-color: #1d9bf0;background: linear-gradient(135deg, rgba(29, 155, 240, 0.25) 0%, rgba(29, 155, 240, 0.15) 100%);box-shadow: 0 10px 30px rgba(29, 155, 240, 0.4);}.social-btn:nth-child(5) {border-color: rgba(99, 100, 255, 0.3);}.social-btn:nth-child(5):hover {border-color: #6364ff;background: linear-gradient(135deg, rgba(99, 100, 255, 0.25) 0%, rgba(99, 100, 255, 0.15) 100%);box-shadow: 0 10px 30px rgba(99, 100, 255, 0.4);}.action-buttons {display: flex;gap: 1rem;justify-content: center;flex-wrap: wrap;animation: fadeInUp 0.8s ease-out 1s both;}.action-btn {padding: 1rem 2rem;border-radius: 12px;color: var(--text-primary);text-decoration: none;font-weight: 600;font-size: 0.95rem;transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);border: 1px solid var(--border);background: var(--glass-bg);backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);position: relative;overflow: hidden;}.action-btn::before {content: '';position: absolute;top: 50%;left: 50%;width: 0;height: 0;border-radius: 50%;background: rgba(255, 255, 255, 0.1);transform: translate(-50%, -50%);transition: width 0.6s, height 0.6s;}.action-btn:hover::before {width: 300px;height: 300px;}.action-btn.primary {background: linear-gradient(135deg, #ff4757 0%, #ff5252 100%);border: none;box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);position: relative;z-index: 1;}.action-btn.primary:hover {transform: translateY(-3px) scale(1.05);box-shadow: 0 12px 30px rgba(255, 71, 87, 0.6);}.action-btn.secondary {background: linear-gradient(135deg, rgba(22, 27, 34, 0.6) 0%, rgba(22, 27, 34, 0.4) 100%);border: 1px solid rgba(88, 166, 255, 0.3);}.action-btn.secondary:hover {border-color: var(--accent-blue);background: linear-gradient(135deg, rgba(88, 166, 255, 0.2) 0%, rgba(88, 166, 255, 0.1) 100%);transform: translateY(-3px);box-shadow: 0 8px 25px rgba(88, 166, 255, 0.3);}.container {max-width: 1400px;margin: 0 auto;padding: 4rem 2rem;position: relative;z-index: 1;}.section-title {font-size: clamp(2rem, 4vw, 2.75rem);font-weight: 800;margin-bottom: 3rem;text-align: center;color: var(--text-primary);transition: all 0.3s ease;cursor: default;position: relative;display: inline-block;width: 100%;}.section-title::after {content: '';position: absolute;bottom: -10px;left: 50%;transform: translateX(-50%);width: 0;height: 3px;background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue), var(--accent-teal));transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);border-radius: 2px;}.section-title:hover::after {width: 200px;}.section-title:hover {background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-teal));-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;}.grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));gap: 1.5rem;margin-bottom: 4rem;}.card {background: linear-gradient(135deg, rgba(22, 27, 34, 0.6) 0%, rgba(22, 27, 34, 0.4) 100%);border: 1px solid rgba(88, 166, 255, 0.15);border-radius: 16px;padding: 2rem;transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);opacity: 0;transform: translateY(20px);backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);position: relative;overflow: hidden;}.card::before {content: '';position: absolute;top: 0;left: 0;right: 0;height: 2px;background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);opacity: 0;transition: opacity 0.3s;}.card:hover::before {opacity: 1;}.card.visible {opacity: 1;transform: translateY(0);}.card:hover {border-color: rgba(88, 166, 255, 0.5);transform: translateY(-12px) scale(1.02);box-shadow: 0 20px 40px rgba(88, 166, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);background: linear-gradient(135deg, rgba(22, 27, 34, 0.7) 0%, rgba(22, 27, 34, 0.5) 100%);}.badge {display: inline-block;padding: 0.4rem 0.85rem;background: linear-gradient(135deg, rgba(255, 71, 87, 0.25), rgba(255, 71, 87, 0.15));border: 1px solid rgba(255, 71, 87, 0.5);border-radius: 8px;color: var(--accent-red);font-size: 0.7rem;font-weight: 700;text-transform: uppercase;letter-spacing: 0.08em;margin-bottom: 1rem;backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);box-shadow: 0 2px 10px rgba(255, 71, 87, 0.2);transition: all 0.3s ease;}.card:hover .badge {transform: scale(1.05);box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);}.card:nth-child(3) .badge, .card:nth-child(4) .badge {background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.15));border-color: rgba(0, 212, 255, 0.5);color: var(--accent-cyan);}.card:nth-child(5) .badge, .card:nth-child(6) .badge {background: linear-gradient(135deg, rgba(0, 255, 200, 0.25), rgba(0, 255, 200, 0.15));border-color: rgba(0, 255, 200, 0.5);color: var(--accent-teal);}.card-title {font-size: 1.3rem;font-weight: 700;margin-bottom: 0.75rem;color: var(--text-primary);display: flex;align-items: center;gap: 0.5rem;transition: all 0.3s ease;}.card:hover .card-title {color: var(--accent-blue);transform: translateX(5px);}.card-desc {color: var(--text-secondary);font-size: 0.9rem;margin-bottom: 1.25rem;line-height: 1.6;transition: color 0.3s ease;}.card:hover .card-desc {color: var(--text-primary);}.card-link {color: var(--accent-blue);text-decoration: none;font-size: 0.75rem;font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;word-break: break-all;display: block;padding: 1rem;background: rgba(0, 0, 0, 0.4);border-radius: 10px;border: 1px solid rgba(88, 166, 255, 0.2);transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);}.card-link:hover {border-color: var(--accent-blue);background: rgba(88, 166, 255, 0.15);transform: translateX(5px);box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);}.footer {text-align: center;padding: 3rem 2rem;color: var(--text-secondary);border-top: 1px solid var(--border);background: linear-gradient(180deg, rgba(22, 27, 34, 0.4) 0%, rgba(22, 27, 34, 0.6) 100%);position: relative;z-index: 1;backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);}.footer-links {display: flex;gap: 2rem;justify-content: center;margin-top: 1rem;flex-wrap: wrap;}.footer-link {color: var(--accent-blue);text-decoration: none;font-size: 0.9rem;transition: all 0.3s ease;position: relative;}.footer-link::after {content: '';position: absolute;bottom: -3px;left: 0;width: 0;height: 2px;background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));transition: width 0.3s;}.footer-link:hover::after {width: 100%;}.footer-link:hover {color: var(--accent-cyan);transform: translateY(-2px);}.about-section {max-width: 900px;margin: 0 auto;padding: 3rem 2rem;text-align: center;background: linear-gradient(135deg, rgba(22, 27, 34, 0.4) 0%, rgba(22, 27, 34, 0.2) 100%);border-radius: 20px;border: 1px solid rgba(0, 212, 255, 0.15);backdrop-filter: blur(10px);box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);transition: all 0.3s ease;}.about-section:hover {border-color: rgba(0, 212, 255, 0.3);box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);transform: translateY(-3px);}.about-section p {color: var(--text-secondary);line-height: 1.8;font-size: 1.05rem;margin-bottom: 1.5rem;}.about-section strong {color: var(--text-primary);background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;}@keyframes wobble-hor-bottom {0%, 100% {transform: translateX(0%) translateY(-12px) scale(1.02);}15% {transform: translateX(-10px) rotate(-2deg) translateY(-12px) scale(1.02);}30% {transform: translateX(8px) rotate(2deg) translateY(-12px) scale(1.02);}45% {transform: translateX(-6px) rotate(-1.2deg) translateY(-12px) scale(1.02);}60% {transform: translateX(4px) rotate(1deg) translateY(-12px) scale(1.02);}75% {transform: translateX(-2px) rotate(-0.5deg) translateY(-12px) scale(1.02);}}.card:hover {animation: wobble-hor-bottom 0.8s ease-in-out both;}@media (max-width: 768px) {.grid {grid-template-columns: 1fr;}.stats-box {padding: 2rem;}.hook-icon {width: 160px;height: 160px;}.floating-domain {font-size: 9px;}}</style>
+</head>
+<body>
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+                <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <div class="bg-animated"></div>
+    <div class="grid-overlay"></div>
+    <div class="floating-domains" id="floatingDomains"></div>
+    <div class="content">
+        <div class="hero">
+            <div class="hook-container">
+                <div class="hook-icon">
+                    <img src="hook-logo.png" alt="PhishDestroy Hook">
+                </div>
+                <div class="phishing-domains domain-top-left">seed-drainer.io</div>
+                <div class="phishing-domains domain-top-right">wallet-sweeper.eth</div>
+                <div class="phishing-domains domain-bottom">privatekey-stealer.cc</div>
+            </div>
+
+            <div class="logo">PhishDestroy</div>
+            <p class="tagline">We destroy malicious phishing and scam domains</p>
+            
+            <div class="stats-box">
+                <div class="stats-label">Blocked Malicious Domains</div>
+                <div class="stats-number" id="domainCount">...</div>
+            </div>
+
+            <div class="social-compact">
+                <a href="https://phishdestroy.io" class="social-btn" title="Website">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm.5-13h-1v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+                    </svg>
+                    Website
+                </a>
+                <a href="https://t.me/destroy_phish" class="social-btn" title="Telegram Alerts">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                    Alerts
+                </a>
+                <a href="https://t.me/PhishDestroy_bot" class="social-btn" title="Telegram Bot">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                    Bot
+                </a>
+                <a href="https://x.com/Phish_Destroy" class="social-btn" title="Twitter/X">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    Twitter
+                </a>
+                <a href="https://mastodon.social/@phishdestroy" class="social-btn" title="Mastodon">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/>
+                    </svg>
+                    Mastodon
+                </a>
+            </div>
+
+            <div class="action-buttons">
+                <a href="https://phishdestroy.io/appeals/" class="action-btn primary">Submit Appeal</a>
+                <a href="https://phishdestroy.io/terms" class="action-btn secondary">Terms of Service</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Blocklist Access Points</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="badge">🔥 Primary Feed</div>
+                    <h3 class="card-title">
+                        <span>📊</span>
+                        Main List (JSON)
+                    </h3>
+                    <p class="card-desc">Complete blocklist in JSON format with full metadata</p>
+                    <a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json" class="card-link">
+                        raw.githubusercontent.com/phishdestroy/destroylist/main/list.json
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="badge">🔥 Primary Feed</div>
+                    <h3 class="card-title">
+                        <span>📝</span>
+                        Main List (TXT)
+                    </h3>
+                    <p class="card-desc">Plain text format for easy integration</p>
+                    <a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt" class="card-link">
+                        raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="badge">✅ DNS Verified</div>
+                    <h3 class="card-title">
+                        <span>🌐</span>
+                        Active Domains
+                    </h3>
+                    <p class="card-desc">DNS-verified active malicious domains</p>
+                    <a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json" class="card-link">
+                        raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="badge">🌳 Root Domains</div>
+                    <h3 class="card-title">
+                        <span>🎯</span>
+                        Active Root Domains
+                    </h3>
+                    <p class="card-desc">Root domain list for broader blocking</p>
+                    <a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json" class="card-link">
+                        raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="badge">👥 Community</div>
+                    <h3 class="card-title">
+                        <span>🤝</span>
+                        Community Blocklist
+                    </h3>
+                    <p class="card-desc">Community-contributed threat intelligence</p>
+                    <a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json" class="card-link">
+                        raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="badge">⚡ Live Feed</div>
+                    <h3 class="card-title">
+                        <span>🔴</span>
+                        Live Community Feed
+                    </h3>
+                    <p class="card-desc">Real-time community threat feed</p>
+                    <a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json" class="card-link">
+                        raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="section-title">About DestroyList</h2>
+            <div class="about-section">
+                <p>
+                    DestroyList is a comprehensive threat intelligence feed maintained by <strong>PhishDestroy</strong>,
+                    a volunteer-driven non-profit organization dedicated to neutralizing phishing infrastructure.
+                </p>
+                <p>
+                    Our blocklists are actively maintained and updated with newly discovered malicious domains,
+                    providing real-time protection against phishing, scams, and other cyber threats.
+                </p>
+                <p>
+                    <strong>Since 2019</strong>, we've successfully neutralized over
+                    <strong>500,000 threats</strong> across 25+ networks.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1rem; margin-bottom: 1rem;">
+                &copy; 2019-2025 <strong>PhishDestroy</strong>
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/phishdestroy/destroylist" class="footer-link">GitHub</a>
+                <a href="https://phishdestroy.io" class="footer-link">Website</a>
+                <a href="https://phishdestroy.io/appeals/" class="footer-link">Appeals</a>
+                <a href="https://phishdestroy.io/terms" class="footer-link">Terms</a>
+            </div>
+        </div>
+    </div>
+
+<script>
+async function updateDomainCount(){const e=document.getElementById("domainCount");try{const t=await fetch("https://raw.githubusercontent.com/phishdestroy/destroylist/main/count.json",{cache:"no-store"});if(!t.ok)throw new Error("HTTP "+t.status);const n=await t.json();let a=null;if(typeof n==="number")a=n;else if(n&&typeof n.message==="string"&&/^\d+$/.test(n.message.trim()))a=parseInt(n.message.trim(),10);else if(typeof n.count==="number")a=n.count;else if(typeof n.total==="number")a=n.total;else if(typeof n.domains==="number")a=n.domains;if(Number.isFinite(a)&&a>0)animateCount(a);else e.textContent="44,011"}catch(o){console.error(o);e.textContent="44,011"}}
+
+function animateCount(e){const t=document.getElementById("domainCount"),n=2000,a=e/(n/16);let o=0;const r=setInterval(function(){o+=a;if(o>=e){t.textContent=e.toLocaleString();clearInterval(r)}else t.textContent=Math.floor(o).toLocaleString()},16)}
+
+const observerOptions={threshold:.1,rootMargin:"0px 0px -50px 0px"},observer=new IntersectionObserver(function(e){e.forEach(function(e,t){if(e.isIntersecting){setTimeout(function(){e.target.classList.add("visible")},100*t);observer.unobserve(e.target)}})},observerOptions);
+document.querySelectorAll(".card").forEach(function(e){observer.observe(e)});
+
+const maliciousDomains = [
+    'seed-drainer.io', 'wallet-sweeper.eth', 'privatekey-stealer.cc',
+    'phish-scam.net', 'crypto-drain.xyz', 'fake-airdrop.com',
+    'scam-nft.io', 'malicious-dapp.app', 'phishing-wallet.cc',
+    'fake-metamask.net', 'scam-token.io', 'drain-crypto.xyz',
+    'fake-uniswap.com', 'phish-defi.net', 'scam-bridge.io',
+    'malware-download.cc', 'fake-discord.gg', 'phish-login.net',
+    'scam-giveaway.xyz', 'fake-support.io', 'malicious-mint.app',
+    'phish-wallet-connect.com', 'scam-presale.io', 'fake-whitelist.xyz'
+];
+
+function createFloatingDomain() {
+    const container = document.getElementById('floatingDomains');
+    const domain = document.createElement('div');
+    domain.className = 'floating-domain';
+    domain.textContent = maliciousDomains[Math.floor(Math.random() * maliciousDomains.length)];
+
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+
+    const moveX = (Math.random() - 0.5) * 1000;
+    const moveY = (Math.random() - 0.5) * 800;
+    const rotate = (Math.random() - 0.5) * 360;
+
+    domain.style.left = startX + 'px';
+    domain.style.top = startY + 'px';
+    domain.style.setProperty('--tx', moveX + 'px');
+    domain.style.setProperty('--ty', moveY + 'px');
+    domain.style.setProperty('--rotate', rotate + 'deg');
+
+    const duration = 20 + Math.random() * 15;
+    domain.style.animationDuration = duration + 's';
+    domain.style.animationDelay = Math.random() * 5 + 's';
+
+    container.appendChild(domain);
+
+    setTimeout(() => {
+        domain.remove();
+    }, (duration + 5) * 1000);
+}
+
+for (let i = 0; i < 15; i++) {
+    setTimeout(() => createFloatingDomain(), i * 800);
+}
+
+setInterval(createFloatingDomain, 3000);
+
+updateDomainCount();
+</script>
+
+</body>
+</html>
