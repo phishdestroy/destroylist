@@ -23,7 +23,6 @@ jobs:
           
       - run: pip install dnspython requests tqdm tldextract
       - run: python scripts/smart_aggregator.py || true
-      - run: python scripts/dns_validator.py || true
       - run: python scripts/validate_and_clean.py || true
       - run: python scripts/update_counts.py || true
       - run: python scripts/json_to_txt.py || true
