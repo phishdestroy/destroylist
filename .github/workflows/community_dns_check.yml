@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
           
       - run: pip install dnspython requests tqdm tldextract
-      - run: python community/dns_validator.py || true
+      - run: python scripts/dns_validator.py || true
           
       - run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
