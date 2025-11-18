@@ -9,6 +9,10 @@ on:
     - cron: "0 */2 * * *"
   workflow_dispatch: {}
 
+concurrency:
+  group: rootlist
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,20 +25,22 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: pip install tldextract
 
       - name: Build rootlist
-        run: python scripts/build_rootlist.py
+        run: |
+          mkdir -p rootlist
+          python scripts/build_rootlist.py
 
       - name: Commit and push rootlist
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add rootlist/
-          git diff --cached --quiet || git commit -m "🌳 Update rootlist ($(date -u +"%Y-%m-%d %H:%M UTC"))"
+          git diff --cached --quiet || git commit -m "🌳 Update rootlist ($(date -u +"%Y-%m-%d %H:%M UTC")) [skip ci]"
           git push
 
       - name: Upload rootlist artifacts
