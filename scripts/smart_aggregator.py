@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR) if os.path.basename(SCRIPT_DIR) == "scripts" else SCRIPT_DIR
 COMMUNITY_DIR = os.path.join(PROJECT_ROOT, "community")
-LOCAL_FILES_CONFIG = ["list.json"]
+LOCAL_FILES_CONFIG = [os.path.join(PROJECT_ROOT, "list.json")]
 VERBOSE = True
 
 SOURCES_CONFIG = {
