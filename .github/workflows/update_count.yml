@@ -6,10 +6,6 @@ on:
       - 'dns/active_domains.json'
   workflow_dispatch:
 
-concurrency:
-  group: update-counts
-  cancel-in-progress: true
-
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -31,7 +27,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add count.json
-          git add dns/active_count.json || true
-          git diff --cached --quiet || git commit -m "Update domain counts [skip ci]"
+          git add count.json dns/active_count.json
+          git diff --cached --quiet || git commit -m "Update domain counts"
           git push
