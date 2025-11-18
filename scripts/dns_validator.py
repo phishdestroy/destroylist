@@ -34,15 +34,11 @@ else:
 
 # --- File Paths ---
 COMMUNITY_DIR = os.path.join(PROJECT_ROOT, "community")
-DNS_DIR = os.path.join(PROJECT_ROOT, "dns")
 INPUT_FILE = os.path.join(COMMUNITY_DIR, "blocklist.json")
 LIVE_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "live_blocklist.json")
 DEAD_DOMAINS_FILE = os.path.join(COMMUNITY_DIR, "dead_blocklist.json")
 LIVE_COUNT_FILE = os.path.join(COMMUNITY_DIR, "live_count.json")
 CACHE_FILENAME = os.path.join(COMMUNITY_DIR, "dns_cache.json")
-DNS_ACTIVE_FILE = os.path.join(DNS_DIR, "active_domains.json")
-DNS_DEAD_FILE = os.path.join(DNS_DIR, "dead_domains.json")
-DNS_COUNT_FILE = os.path.join(DNS_DIR, "active_count.json")
 
 try:
     import dns.resolver
@@ -144,7 +140,6 @@ def main():
 
     # Ensure directories exist
     os.makedirs(COMMUNITY_DIR, exist_ok=True)
-    os.makedirs(DNS_DIR, exist_ok=True)
 
     # Load input domains
     logging.info(f"Loading domains from {INPUT_FILE}...")
@@ -292,23 +287,11 @@ def main():
 
     badge_data = {
         "schemaVersion": 1,
-        "label": "Live Domains",
+        "label": "Live Domains (Community)",
         "message": str(len(final_live_list)),
         "color": "brightgreen" if len(final_live_list) > 0 else "red"
     }
     write_json_file(LIVE_COUNT_FILE, badge_data)
-
-    # Save results to dns/
-    write_json_file(DNS_ACTIVE_FILE, final_live_list)
-    write_json_file(DNS_DEAD_FILE, final_dead_list)
-
-    dns_badge = {
-        "schemaVersion": 1,
-        "label": "Active Domains (DNS)",
-        "message": str(len(final_live_list)),
-        "color": "purple" if len(final_live_list) > 0 else "red"
-    }
-    write_json_file(DNS_COUNT_FILE, dns_badge)
     
     logging.info("=" * 60)
     logging.info("✅ Process completed successfully!")
