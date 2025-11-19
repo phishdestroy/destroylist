@@ -1,16 +1,11 @@
-name: build-rootlist
+name: Build Rootlist
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - "list.json"
-      - "scripts/build_rootlist.py"
   schedule:
     - cron: "0 */2 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 concurrency:
-  group: rootlist
+  group: rootlist-build
   cancel-in-progress: true
 
 jobs:
@@ -18,9 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -40,11 +38,25 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add rootlist/
-          git diff --cached --quiet || git commit -m "🌳 Update rootlist ($(date -u +"%Y-%m-%d %H:%M UTC")) [skip ci]"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update rootlist ($(date -u +"%Y-%m-%d %H:%M UTC")) [skip ci]"
+
+          # Push with retry logic
+          for i in {1..3}; do
+            git pull --rebase origin main && git push && break || {
+              echo "Push attempt $i failed, retrying..."
+              sleep 5
+            }
+          done
 
       - name: Upload rootlist artifacts
         uses: actions/upload-artifact@v4
         with:
           name: rootlist
           path: rootlist
+          retention-days: 30
