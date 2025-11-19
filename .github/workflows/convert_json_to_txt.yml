@@ -1,10 +1,15 @@
 name: Convert JSON to TXT
 on:
+  push:
+    paths:
+      - 'list.json'
+    branches:
+      - main
   workflow_dispatch:
 
 concurrency:
-  group: manual-convert
-  cancel-in-progress: true
+  group: json-txt-conversion
+  cancel-in-progress: false
 
 jobs:
   convert:
