@@ -1,45 +1,50 @@
 name: Convert JSON to TXT
 on:
-  push:
-    paths:
-      - 'list.json'
   workflow_dispatch:
 
 concurrency:
-  group: json-convert
-  cancel-in-progress: false
+  group: manual-convert
+  cancel-in-progress: true
 
 jobs:
   convert:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      
+
       - name: Convert to TXT
-        run: python3 scripts/json_to_txt.py
-      
+        run: python scripts/json_to_txt.py
+
       - name: Commit changes
         run: |
           git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
           git add list.txt
+
           if git diff --staged --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "Update list.txt [skip ci]"
-            git pull --rebase origin main || true
-            git push || (sleep 5 && git pull --rebase origin main && git push)
+            exit 0
           fi
+
+          git commit -m "Manual: Update list.txt [skip ci]"
+
+          # Push with retry logic
+          for i in {1..3}; do
+            git pull --rebase origin main && git push && break || {
+              echo "Push attempt $i failed, retrying..."
+              sleep 5
+            }
+          done
