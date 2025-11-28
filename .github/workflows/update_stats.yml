@@ -3,44 +3,36 @@ on:
   schedule:
     - cron: "0 1 * * *"
   workflow_dispatch:
-
 concurrency:
   group: stats-update
-  cancel-in-progress: true
-
+  cancel-in-progress: false
 jobs:
   stats:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Calculate statistics
         run: python scripts/calculate_stats.py
-
       - name: Commit and push
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add dns/*.json
-
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-
           git commit -m "Update statistics [skip ci]"
-
           # Push with retry logic
           for i in {1..3}; do
             git pull --rebase origin main && git push && break || {
