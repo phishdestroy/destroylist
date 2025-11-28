@@ -3,48 +3,38 @@ on:
   schedule:
     - cron: '0 2 */3 * *'
   workflow_dispatch:
-
 concurrency:
   group: community-dns
-  cancel-in-progress: true
-
+  cancel-in-progress: false
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     permissions:
       contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: pip install dnspython requests tqdm tldextract
-
       - name: Validate community domains
         run: python scripts/dns_validator.py || true
-
       - name: Commit and push changes
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add community/
-
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-
           git commit -m "Community DNS validation [skip ci]"
-
           # Push with retry logic
           for i in {1..3}; do
             git pull --rebase origin main && git push && break || {
