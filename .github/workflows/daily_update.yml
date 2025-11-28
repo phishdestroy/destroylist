@@ -3,60 +3,46 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
-
 concurrency:
   group: main-updates
-  cancel-in-progress: true
-
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     permissions:
       contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: pip install dnspython requests tqdm tldextract
-
       - name: Run smart aggregator
         run: python scripts/smart_aggregator.py || true
-
       - name: Validate and clean primary list
         run: python scripts/validate_and_clean.py || true
-
       - name: DNS validation (primary)
         run: python scripts/dns_validator_primary.py || true
-
       - name: Update primary count badge
         run: python scripts/update_counts.py || true
-
       - name: Convert JSON to TXT
         run: python scripts/json_to_txt.py || true
-
       - name: Commit and push changes
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add -A
-
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-
           git commit -m "Daily update [skip ci]"
-
           # Push with retry logic
           for i in {1..3}; do
             git pull --rebase origin main && git push && break || {
