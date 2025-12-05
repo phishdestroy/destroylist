@@ -27,10 +27,10 @@
 | Feed | Description | Update | Link |
 |------|-------------|--------|------|
 | **Primary List** | Core curated phishing/scam domains | Real-time | [list.json](https://github.com/phishdestroy/destroylist/raw/main/list.json) · [list.txt](https://github.com/phishdestroy/destroylist/raw/main/list.txt) |
-| **DNS Active** | Live domains (DNS verified) | Hourly | [active_domains.json](https://github.com/phishdestroy/destroylist/raw/main/dns/active_domains.json) |
+| **DNS Active** | Live domains (DNS verified) | Every 24h | [active_domains.json](https://github.com/phishdestroy/destroylist/raw/main/dns/active_domains.json) |
 | **Root List** | Root domains only (no subdomains) | Every 2h | [list.json](https://raw.githubusercontent.com/phishdestroy/destroylist/refs/heads/main/rootlist/active_root_domains.json) |
-| **Community** | Aggregated from external sources | Hourly | [blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/blocklist.json) |
-| **Community Live** | Community + DNS verified | Hourly | [live_blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/live_blocklist.json) |
+| **Community** | Aggregated from external sources | Every 12h | [blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/blocklist.json) |
+| **Community Live** | Community + DNS verified | Every 72h | [live_blocklist.json](https://github.com/phishdestroy/destroylist/raw/main/community/live_blocklist.json) |
 | **Allow List** | False positive protection | Manual | [allowlist.json](https://raw.githubusercontent.com/phishdestroy/destroylist/refs/heads/main/allow/allowlist.json) |
 
 > **Important:**  
