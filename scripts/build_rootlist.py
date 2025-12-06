@@ -8,10 +8,12 @@ import tldextract
 ROOT = Path(__file__).resolve().parents[1]
 
 SOURCE_LIST = ROOT / "list.json"
+SOURCE_ACTIVE = ROOT / "dns" / "active_domains.json"
 
 OUT_DIR = ROOT / "rootlist"
 OUT_ACTIVE = OUT_DIR / "active_root_domains.json"
 OUT_PROVIDERS = OUT_DIR / "providers_root_domains.json"
+OUT_ONLINE = OUT_DIR / "online_root_domains.json"
 
 PROVIDER_GROUPS: Dict[str, Set[str]] = {
     "multi_tenant_hosting": {
@@ -165,6 +167,12 @@ def main() -> None:
         json.dumps(providers_payload, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+
+    if SOURCE_ACTIVE.exists():
+        OUT_ONLINE.write_text(
+            SOURCE_ACTIVE.read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
 
 
 if __name__ == "__main__":
