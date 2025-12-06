@@ -1,0 +1,56 @@
+name: Arrays Sharding
+
+on:
+  push:
+    paths:
+      - 'list.json'
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shard-arrays:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Shard List
+        shell: python
+        run: |
+          import json
+          import os
+          import math
+          import shutil
+
+          source_file = 'list.json'
+          output_dir = 'rootlist/arrays'
+          chunk_size = 3000
+
+          if not os.path.exists(source_file):
+              exit(0)
+
+          with open(source_file, 'r', encoding='utf-8') as f:
+              try:
+                  data = json.load(f)
+              except:
+                  exit(1)
+
+          if os.path.exists(output_dir):
+              shutil.rmtree(output_dir)
+          os.makedirs(output_dir, exist_ok=True)
+
+          total_chunks = math.ceil(len(data) / chunk_size)
+
+          for i in range(total_chunks):
+              chunk = data[i * chunk_size : (i + 1) * chunk_size]
+              filename = f"{output_dir}/part_{i:03d}.json"
+              with open(filename, 'w', encoding='utf-8') as f:
+                  json.dump(chunk, f, indent=2, ensure_ascii=False)
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update arrays shards
+          file_pattern: rootlist/arrays/*.json
