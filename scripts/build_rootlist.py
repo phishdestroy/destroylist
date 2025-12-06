@@ -7,7 +7,6 @@ import tldextract
 
 ROOT = Path(__file__).resolve().parents[1]
 
-SOURCE_LIST = ROOT / "list.json"
 SOURCE_ACTIVE = ROOT / "dns" / "active_domains.json"
 
 OUT_DIR = ROOT / "rootlist"
@@ -90,9 +89,12 @@ def get_root(host: str) -> str | None:
 
 
 def main() -> None:
+    if not SOURCE_ACTIVE.exists():
+        raise SystemExit(f"active_domains.json not found: {SOURCE_ACTIVE}")
+
     os.makedirs(OUT_DIR, exist_ok=True)
 
-    items = load_list(SOURCE_LIST)
+    items = load_list(SOURCE_ACTIVE)
 
     active_roots: Set[str] = set()
     provider_stats: Dict[str, Dict[str, Dict[str, object]]] = {
@@ -132,7 +134,7 @@ def main() -> None:
     providers_payload = {
         "meta": {
             "name": "excluded provider roots",
-            "source": "list.json",
+            "source": "dns/active_domains.json",
         },
         "providers": {},
     }
@@ -168,11 +170,10 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    if SOURCE_ACTIVE.exists():
-        OUT_ONLINE.write_text(
-            SOURCE_ACTIVE.read_text(encoding="utf-8"),
-            encoding="utf-8",
-        )
+    OUT_ONLINE.write_text(
+        SOURCE_ACTIVE.read_text(encoding="utf-8"),
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":
