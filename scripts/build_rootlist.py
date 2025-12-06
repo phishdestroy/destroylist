@@ -89,15 +89,12 @@ def get_root(host: str) -> str | None:
     return rd.lower() if rd else None
 
 
-def main() -> None:
-    os.makedirs(OUT_DIR, exist_ok=True)
-
-    items = load_list(SOURCE_LIST)
-
+def process_items(items: List[str]) -> tuple[Set[str], Dict[str, Dict[str, Dict[str, object]]], Set[str]]:
     active_roots: Set[str] = set()
     provider_stats: Dict[str, Dict[str, Dict[str, object]]] = {
         g: {} for g in PROVIDER_GROUPS.keys()
     }
+    cleaned_hosts: Set[str] = set()
 
     for entry in items:
         rd = get_root(entry)
@@ -117,11 +114,24 @@ def main() -> None:
             continue
 
         active_roots.add(rd)
+        cleaned_hosts.add(entry)
+
+    return active_roots, provider_stats, cleaned_hosts
+
+
+def main() -> None:
+    os.makedirs(OUT_DIR, exist_ok=True)
+
+    if not SOURCE_LIST.exists():
+        raise SystemExit(f"list.json not found: {SOURCE_LIST}")
+
+    items_primary = load_list(SOURCE_LIST)
+    primary_roots, primary_providers, _ = process_items(items_primary)
 
     OUT_ACTIVE.write_text(
         json.dumps(
             {
-                "domains": sorted(active_roots),
+                "domains": sorted(primary_roots),
             },
             indent=2,
             ensure_ascii=False,
@@ -137,7 +147,7 @@ def main() -> None:
         "providers": {},
     }
 
-    for group, stats in provider_stats.items():
+    for group, stats in primary_providers.items():
         if not stats:
             continue
 
@@ -169,8 +179,17 @@ def main() -> None:
     )
 
     if SOURCE_ACTIVE.exists():
+        items_active = load_list(SOURCE_ACTIVE)
+        _, _, online_hosts = process_items(items_active)
+
         OUT_ONLINE.write_text(
-            SOURCE_ACTIVE.read_text(encoding="utf-8"),
+            json.dumps(
+                {
+                    "domains": sorted(online_hosts),
+                },
+                indent=2,
+                ensure_ascii=False,
+            ),
             encoding="utf-8",
         )
 
