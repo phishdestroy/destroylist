@@ -1,51 +1,66 @@
-name: Build Rootlist
+name: Daily Update
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 concurrency:
-  group: rootlist-build
+  group: main-updates
   cancel-in-progress: false
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
+          cache: 'pip'
+
       - name: Install dependencies
-        run: pip install tldextract
-      - name: Build rootlist
+        run: pip install requests tqdm tldextract
+
+      - name: Run smart aggregator
+        run: python scripts/smart_aggregator.py || true
+
+      - name: Validate and clean primary list
+        run: python scripts/validate_and_clean.py || true
+
+      - name: Update count badges
+        run: python scripts/update_counts.py || true
+
+      - name: Convert JSON to TXT
+        run: python scripts/json_to_txt.py || true
+
+      - name: Build rootlists
         run: |
           mkdir -p rootlist
-          python scripts/build_rootlist.py
-      - name: Commit and push rootlist
+          python scripts/build_rootlist.py || true
+
+      - name: Commit and push
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add rootlist/
-          if git diff --cached --quiet; then
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          
+          git add -A
+          
+          if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Update rootlist ($(date -u +"%Y-%m-%d %H:%M UTC")) [skip ci]"
-          # Push with retry logic
-          for i in {1..3}; do
-            git pull --rebase origin main && git push && break || {
-              echo "Push attempt $i failed, retrying..."
-              sleep 5
-            }
+          
+          CHANGES=$(git diff --staged --stat | tail -1)
+          git commit -m "Daily update: ${CHANGES} [skip ci]"
+          
+          for i in {1..5}; do
+            git pull --rebase origin main && git push && exit 0 || sleep 10
           done
-      - name: Upload rootlist artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: rootlist
-          path: rootlist
-          retention-days: 30
+          exit 1
