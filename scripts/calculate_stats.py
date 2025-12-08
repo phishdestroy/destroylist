@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import json
 import subprocess
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Set
@@ -17,8 +16,10 @@ COMMUNITY_FILE = "community/blocklist.json"
 OUTPUT_FILES = {
     "today_added": DNS_DIR / "today_added.json",
     "week_added": DNS_DIR / "week_added.json",
+    "month_added": DNS_DIR / "month_added.json",
     "today_community": DNS_DIR / "today_community.json",
     "week_community": DNS_DIR / "week_community.json",
+    "month_community": DNS_DIR / "month_community.json",
 }
 
 
@@ -87,7 +88,6 @@ def save_archive():
         "community_domains": sorted(community),
     }
     
-    # Weekly archive (Monday)
     if now.weekday() == 0:
         weekly_dir = ARCHIVES_DIR / "weekly"
         weekly_dir.mkdir(parents=True, exist_ok=True)
@@ -95,7 +95,6 @@ def save_archive():
         week_file.write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
         print(f"  Created weekly archive: {week_file.name}")
     
-    # Monthly archive (1st day)
     if now.day == 1:
         monthly_dir = ARCHIVES_DIR / "monthly"
         monthly_dir.mkdir(parents=True, exist_ok=True)
@@ -111,18 +110,22 @@ def main():
     stats = {
         "today_added": get_domains_added_since(LIST_FILE, "1 day ago"),
         "week_added": get_domains_added_since(LIST_FILE, "1 week ago"),
+        "month_added": get_domains_added_since(LIST_FILE, "1 month ago"),
         "today_community": get_domains_added_since(COMMUNITY_FILE, "1 day ago"),
         "week_community": get_domains_added_since(COMMUNITY_FILE, "1 week ago"),
+        "month_community": get_domains_added_since(COMMUNITY_FILE, "1 month ago"),
     }
     
-    print(f"  Primary - Today: +{stats['today_added']}, Week: +{stats['week_added']}")
-    print(f"  Community - Today: +{stats['today_community']}, Week: +{stats['week_community']}")
+    print(f"  Primary - Today: +{stats['today_added']}, Week: +{stats['week_added']}, Month: +{stats['month_added']}")
+    print(f"  Community - Today: +{stats['today_community']}, Week: +{stats['week_community']}, Month: +{stats['month_community']}")
     
     badges = {
         "today_added": create_badge("added today", stats["today_added"], "success"),
         "week_added": create_badge("added this week", stats["week_added"], "success"),
+        "month_added": create_badge("added this month", stats["month_added"], "success"),
         "today_community": create_badge("community today", stats["today_community"], "blue"),
         "week_community": create_badge("community this week", stats["week_community"], "blue"),
+        "month_community": create_badge("community this month", stats["month_community"], "blue"),
     }
     
     for key, data in badges.items():
