@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
-"""
-Calculate domain addition statistics from git history.
-Generates badge JSON files for domains added today and this week.
-"""
 import json
 import subprocess
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, Set
+from typing import Set
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 DNS_DIR = PROJECT_ROOT / "dns"
+ARCHIVES_DIR = PROJECT_ROOT / "archives"
 
 LIST_FILE = "list.json"
 COMMUNITY_FILE = "community/blocklist.json"
@@ -25,149 +22,116 @@ OUTPUT_FILES = {
 }
 
 
-def run_git_command(cmd: list) -> str:
-    """Execute git command and return output."""
+def run_git(cmd: list) -> str:
     try:
-        result = subprocess.run(
-            cmd,
-            cwd=PROJECT_ROOT,
-            capture_output=True,
-            text=True,
-            check=True
-        )
+        result = subprocess.run(cmd, cwd=PROJECT_ROOT, capture_output=True, text=True, check=True)
         return result.stdout
-    except subprocess.CalledProcessError as e:
-        print(f"Git command failed: {e}", file=sys.stderr)
+    except subprocess.CalledProcessError:
         return ""
 
 
-def get_domains_from_json(json_content: str) -> Set[str]:
-    """Extract domains from JSON content."""
+def get_domains_from_json(content: str) -> Set[str]:
     try:
-        data = json.loads(json_content)
+        data = json.loads(content)
         if isinstance(data, list):
             return set(d.lower().strip() for d in data if isinstance(d, str))
         elif isinstance(data, dict) and "domains" in data:
             return set(d.lower().strip() for d in data["domains"] if isinstance(d, str))
-        return set()
-    except (json.JSONDecodeError, KeyError):
+    except Exception:
+        pass
+    return set()
+
+
+def load_current_domains(file_path: str) -> Set[str]:
+    try:
+        return get_domains_from_json((PROJECT_ROOT / file_path).read_text(encoding="utf-8"))
+    except FileNotFoundError:
         return set()
 
 
 def get_domains_added_since(file_path: str, since_date: str) -> int:
-    """
-    Count domains added to a file since a specific date.
-
-    Args:
-        file_path: Path to the JSON file to track
-        since_date: Git date format (e.g., "1 day ago", "1 week ago")
-
-    Returns:
-        Number of new domains added
-    """
-    # Get current domains
-    try:
-        with open(PROJECT_ROOT / file_path, 'r', encoding='utf-8') as f:
-            current_domains = get_domains_from_json(f.read())
-    except FileNotFoundError:
-        print(f"Warning: {file_path} not found", file=sys.stderr)
+    current = load_current_domains(file_path)
+    if not current:
         return 0
-
-    # Get domains from git history at the specified date
-    git_cmd = [
-        "git", "log",
-        f"--since={since_date}",
-        "--reverse",
-        "--format=%H",
-        "--", file_path
-    ]
-
-    commits = run_git_command(git_cmd).strip().split('\n')
-
+    
+    commits = run_git(["git", "log", f"--since={since_date}", "--reverse", "--format=%H", "--", file_path]).strip().split('\n')
     if not commits or commits[0] == '':
-        # No commits in this time period
         return 0
-
-    # Get the first commit's parent (state before the period)
-    first_commit = commits[0]
-    parent_cmd = ["git", "rev-parse", f"{first_commit}^"]
-    parent_commit = run_git_command(parent_cmd).strip()
-
-    if not parent_commit:
-        # This is the initial commit, all domains are new
-        return len(current_domains)
-
-    # Get file content at parent commit
-    show_cmd = ["git", "show", f"{parent_commit}:{file_path}"]
-    old_content = run_git_command(show_cmd)
-
+    
+    parent = run_git(["git", "rev-parse", f"{commits[0]}^"]).strip()
+    if not parent:
+        return len(current)
+    
+    old_content = run_git(["git", "show", f"{parent}:{file_path}"])
     if not old_content:
-        # File didn't exist before this period
-        return len(current_domains)
-
-    old_domains = get_domains_from_json(old_content)
-    new_domains = current_domains - old_domains
-
-    return len(new_domains)
+        return len(current)
+    
+    return len(current - get_domains_from_json(old_content))
 
 
-def create_badge_json(label: str, count: int, color: str = "success") -> Dict:
-    """Create badge JSON structure."""
-    message = f"+{count:,}" if count > 0 else "+0"
-    return {
-        "schemaVersion": 1,
-        "label": label,
-        "message": message,
-        "color": color
+def create_badge(label: str, count: int, color: str = "success") -> dict:
+    return {"schemaVersion": 1, "label": label, "message": f"+{count:,}", "color": color}
+
+
+def save_archive():
+    now = datetime.now(timezone.utc)
+    
+    primary = load_current_domains(LIST_FILE)
+    community = load_current_domains(COMMUNITY_FILE)
+    
+    archive_data = {
+        "date": now.strftime("%Y-%m-%d"),
+        "primary_count": len(primary),
+        "community_count": len(community),
+        "primary_domains": sorted(primary),
+        "community_domains": sorted(community),
     }
+    
+    # Weekly archive (Monday)
+    if now.weekday() == 0:
+        weekly_dir = ARCHIVES_DIR / "weekly"
+        weekly_dir.mkdir(parents=True, exist_ok=True)
+        week_file = weekly_dir / f"{now.strftime('%Y-W%W')}.json"
+        week_file.write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
+        print(f"  Created weekly archive: {week_file.name}")
+    
+    # Monthly archive (1st day)
+    if now.day == 1:
+        monthly_dir = ARCHIVES_DIR / "monthly"
+        monthly_dir.mkdir(parents=True, exist_ok=True)
+        month_file = monthly_dir / f"{now.strftime('%Y-%m')}.json"
+        month_file.write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
+        print(f"  Created monthly archive: {month_file.name}")
 
 
 def main():
-    """Generate statistics badges."""
-    print("Calculating domain addition statistics...")
-
-    # Ensure DNS directory exists
+    print("Calculating statistics...")
     DNS_DIR.mkdir(exist_ok=True)
-
-    # Calculate statistics
+    
     stats = {
         "today_added": get_domains_added_since(LIST_FILE, "1 day ago"),
         "week_added": get_domains_added_since(LIST_FILE, "1 week ago"),
         "today_community": get_domains_added_since(COMMUNITY_FILE, "1 day ago"),
         "week_community": get_domains_added_since(COMMUNITY_FILE, "1 week ago"),
     }
-
-    # Display results
-    print("\nStatistics:")
-    print(f"  Primary list - Today:     +{stats['today_added']}")
-    print(f"  Primary list - This week: +{stats['week_added']}")
-    print(f"  Community - Today:        +{stats['today_community']}")
-    print(f"  Community - This week:    +{stats['week_community']}")
-
-    # Generate badge files
+    
+    print(f"  Primary - Today: +{stats['today_added']}, Week: +{stats['week_added']}")
+    print(f"  Community - Today: +{stats['today_community']}, Week: +{stats['week_community']}")
+    
     badges = {
-        "today_added": create_badge_json("added today", stats["today_added"], "success"),
-        "week_added": create_badge_json("added this week", stats["week_added"], "success"),
-        "today_community": create_badge_json("community today", stats["today_community"], "blue"),
-        "week_community": create_badge_json("community this week", stats["week_community"], "blue"),
+        "today_added": create_badge("added today", stats["today_added"], "success"),
+        "week_added": create_badge("added this week", stats["week_added"], "success"),
+        "today_community": create_badge("community today", stats["today_community"], "blue"),
+        "week_community": create_badge("community this week", stats["week_community"], "blue"),
     }
-
-    # Write badge files
-    for key, badge_data in badges.items():
-        output_file = OUTPUT_FILES[key]
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(badge_data, f, indent=2)
-        print(f"  Created: {output_file.name}")
-
-    print("\n✅ Statistics updated successfully!")
-    return 0
+    
+    for key, data in badges.items():
+        OUTPUT_FILES[key].write_text(json.dumps(data, indent=2), encoding="utf-8")
+    
+    save_archive()
+    
+    print("✅ Done!")
 
 
 if __name__ == "__main__":
-    try:
-        sys.exit(main())
-    except Exception as e:
-        print(f"Fatal error: {e}", file=sys.stderr)
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
+    main()
