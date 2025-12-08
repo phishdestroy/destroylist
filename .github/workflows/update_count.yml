@@ -4,6 +4,8 @@ on:
     paths:
       - 'list.json'
       - 'dns/active_domains.json'
+      - 'community/blocklist.json'
+      - 'community/live_blocklist.json'
   workflow_dispatch:
 concurrency:
   group: update-counts
@@ -27,10 +29,12 @@ jobs:
         run: python scripts/update_counts.py
       - name: Commit and push changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add count.json
           git add dns/active_count.json || true
+          git add community/count.json || true
+          git add community/live_count.json || true
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
