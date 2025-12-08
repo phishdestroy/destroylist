@@ -1,4 +1,4 @@
-name: Daily Update
+name: Scheduled Update
 on:
   schedule:
     - cron: '0 */2 * * *'
