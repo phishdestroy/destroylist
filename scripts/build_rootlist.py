@@ -9,11 +9,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 SOURCE_LIST = ROOT / "list.json"
 SOURCE_ACTIVE = ROOT / "dns" / "active_domains.json"
+SOURCE_COMMUNITY = ROOT / "community" / "blocklist.json"
+SOURCE_COMMUNITY_ACTIVE = ROOT / "community" / "live_blocklist.json"
 
 OUT_DIR = ROOT / "rootlist"
 OUT_ACTIVE = OUT_DIR / "active_root_domains.json"
 OUT_PROVIDERS = OUT_DIR / "providers_root_domains.json"
 OUT_ONLINE = OUT_DIR / "online_root_domains.json"
+OUT_COMMUNITY = OUT_DIR / "community_root_domains.json"
+OUT_COMMUNITY_ONLINE = OUT_DIR / "community_online_root_domains.json"
+OUT_COMMUNITY_PROVIDERS = OUT_DIR / "community_providers_root_domains.json"
 
 PROVIDER_GROUPS: Dict[str, Set[str]] = {
     "multi_tenant_hosting": {
@@ -69,6 +74,8 @@ INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 
 
 def load_list(path: Path) -> List[str]:
+    if not path.exists():
+        return []
     data = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(data, dict):
         arr = data.get("domains", [])
@@ -119,35 +126,16 @@ def process_items(items: List[str]) -> tuple[Set[str], Dict[str, Dict[str, Dict[
     return active_roots, provider_stats, cleaned_hosts
 
 
-def main() -> None:
-    os.makedirs(OUT_DIR, exist_ok=True)
-
-    if not SOURCE_LIST.exists():
-        raise SystemExit(f"list.json not found: {SOURCE_LIST}")
-
-    items_primary = load_list(SOURCE_LIST)
-    primary_roots, primary_providers, _ = process_items(items_primary)
-
-    OUT_ACTIVE.write_text(
-        json.dumps(
-            {
-                "domains": sorted(primary_roots),
-            },
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-
+def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
     providers_payload = {
         "meta": {
             "name": "excluded provider roots",
-            "source": "list.json",
+            "source": source_name,
         },
         "providers": {},
     }
 
-    for group, stats in primary_providers.items():
+    for group, stats in provider_stats.items():
         if not stats:
             continue
 
@@ -173,11 +161,37 @@ def main() -> None:
             "items": group_items,
         }
 
+    return providers_payload
+
+
+def main() -> None:
+    os.makedirs(OUT_DIR, exist_ok=True)
+
+    # Primary list
+    if not SOURCE_LIST.exists():
+        raise SystemExit(f"list.json not found: {SOURCE_LIST}")
+
+    items_primary = load_list(SOURCE_LIST)
+    primary_roots, primary_providers, _ = process_items(items_primary)
+
+    OUT_ACTIVE.write_text(
+        json.dumps(
+            {
+                "domains": sorted(primary_roots),
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    providers_payload = build_providers_payload(primary_providers, "list.json")
     OUT_PROVIDERS.write_text(
         json.dumps(providers_payload, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
 
+    # Primary active (DNS checked)
     if SOURCE_ACTIVE.exists():
         items_active = load_list(SOURCE_ACTIVE)
         _, _, online_hosts = process_items(items_active)
@@ -186,6 +200,44 @@ def main() -> None:
             json.dumps(
                 {
                     "domains": sorted(online_hosts),
+                },
+                indent=2,
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+    # Community list
+    if SOURCE_COMMUNITY.exists():
+        items_community = load_list(SOURCE_COMMUNITY)
+        community_roots, community_providers, _ = process_items(items_community)
+
+        OUT_COMMUNITY.write_text(
+            json.dumps(
+                {
+                    "domains": sorted(community_roots),
+                },
+                indent=2,
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+
+        community_providers_payload = build_providers_payload(community_providers, "community/blocklist.json")
+        OUT_COMMUNITY_PROVIDERS.write_text(
+            json.dumps(community_providers_payload, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
+    # Community active (DNS checked)
+    if SOURCE_COMMUNITY_ACTIVE.exists():
+        items_community_active = load_list(SOURCE_COMMUNITY_ACTIVE)
+        _, _, community_online_hosts = process_items(items_community_active)
+
+        OUT_COMMUNITY_ONLINE.write_text(
+            json.dumps(
+                {
+                    "domains": sorted(community_online_hosts),
                 },
                 indent=2,
                 ensure_ascii=False,
