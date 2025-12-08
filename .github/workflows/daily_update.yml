@@ -9,7 +9,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 30
     permissions:
       contents: write
     steps:
@@ -27,8 +27,6 @@ jobs:
         run: python scripts/smart_aggregator.py || true
       - name: Validate and clean primary list
         run: python scripts/validate_and_clean.py || true
-      - name: DNS validation (primary)
-        run: python scripts/dns_validator_primary.py || true
       - name: Update primary count badge
         run: python scripts/update_counts.py || true
       - name: Convert JSON to TXT
