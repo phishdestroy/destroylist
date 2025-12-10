@@ -1,4 +1,5 @@
 # Project Allowlist (`allow/`)
+![Allowlist Banner](./image.png)
 
 Short allowlist of **legitimate** crypto/Web3 project domains used to avoid false positives in our security filters.
 
