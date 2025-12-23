@@ -1,5 +1,5 @@
 # <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Performing%20Arts.webp" alt="Performing Arts" width="25" height="25" /> Destroylist: Phishing & Scam Domain Blacklist <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Police%20Car.webp" alt="Police Car" width="25" height="25" /> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hook.png" alt="Hook" width="25" height="25" />
-![Destroyolist Illustration](destroyolist_image.png)
+![Destroyolist Illustration](scripts/destroyolist_image.png)
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/High%20Voltage.webp" alt="High Voltage" width="25" height="25" /> Quick Overview & Access <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Fire.webp" alt="Fire" width="25" height="25" />
 
@@ -109,7 +109,7 @@ https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domai
 </details>
 
 ## 🛡️ Threat Intelligence & Automated Remediation Workflow
-![DestroyList Banner](about.png)
+![About](scripts/about.png)
 <details>
 <summary><strong>Expand full workflow details</strong> — click to view</summary>
 
@@ -166,7 +166,7 @@ As an open‑source initiative, we ensure instant accessibility for public safet
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Bulletproof+registrars+should+not+exist)](https://git.io/typing-svg)
 
-![DestroyList Banner](abuse.png)
+![Abuse](scripts/abuse.png)
 
 <details>
 <summary><strong>Show details about complaints and transparency</strong> — click to view</summary>
@@ -205,16 +205,14 @@ Private individuals may request the number of abuse reports we have sent for a s
 
 Official government or law-enforcement requests may be answered privately.
 
-</details>
-</details>
---------------------------------------------------------------------
-
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Mending%20Heart.webp" alt="Mending Heart" width="25" height="25" />If you were defrauded by a domain already listed here, check its addition date using the commit history or via our Telegram/Mastodon channels.
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Speech%20Balloon.webp" alt="Speech Balloon" width="25" height="25" /> If the fraud happened after the domain was already listed, the registrar's or host's delay may indicate they share responsibility for the loss.  
 Future potential victims can also see this negligence documented publicly.
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/No%20One%20Under%20Eighteen.webp" alt="No One Under Eighteen" width="25" height="25" /> Registrars and hosts that tolerate scam operations may reasonably be expected to assist victims or their legal representatives.
+
+</details>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Services+covering+thieves+are+worse+than+thieves)](https://git.io/typing-svg)
 
@@ -251,6 +249,9 @@ Archive of **500,000+** domains over 5+ years. Ideal for:
 > <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Inbox%20Tray.webp" alt="Inbox Tray" width="25" height="25" /> Contact us at [phishdestroy.io](https://phishdestroy.io) for access!
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Magic%20Wand.webp" alt="Magic Wand" width="25" height="25" /> Appeals Process <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Balance%20Scale.png" alt="Balance Scale" width="25" height="25" />
+
+![Appeal](scripts/appeal.png)
+
 Wrongly listed? Fix it fast:
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Mark%20Button.webp" alt="Check Mark Button" width="25" height="25" /> [Appeals Form](https://phishdestroy.io/appeals/)
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Check%20Mark%20Button.webp" alt="Check Mark Button" width="25" height="25" /> GitHub Issue with proof
