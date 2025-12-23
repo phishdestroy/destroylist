@@ -86,6 +86,9 @@ Protect the web, one domain at a time!
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Teacher.webp" alt="Man Teacher" width="25" height="25" /> Quick Integration
 
+<details>
+<summary><strong>Integration examples (Python · Bash · DNS)</strong> — expand to view</summary>
+
 ### Python
 ```python
 import requests
@@ -103,11 +106,70 @@ curl -s https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt
 https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json
 ```
 
+</details>
+
+## 🛡️ Threat Intelligence & Automated Remediation Workflow
+![DestroyList Banner](about.png)
+<details>
+<summary><strong>Expand full workflow details</strong> — click to view</summary>
+
+Our project is a non-profit, open‑source initiative dedicated to the proactive discovery and neutralization of phishing and scam infrastructure. We operate a high‑velocity pipeline that transforms raw telemetry into actionable intelligence for the global security community.
+
+---
+
+### 📡 Phase 1: Pre‑emptive Discovery & Ingestion
+
+We utilize a distributed network of **30+ proprietary parsers** to identify malicious domains at their earliest stage:
+
+* **Advanced Heuristics:** Continuous monitoring of Google Ads (Malvertising), SEO‑manipulated search results, and trending social media campaigns on Twitter (X), YouTube, and Telegram.
+* **Infrastructure Analysis:** Leveraging *dnstwist* and typosquatting detection to catch look‑alike domains targeting established brands.
+* **Community Intelligence:** Real‑time ingestion of community‑reported threats via our Telegram Bot and partner intelligence feeds.
+
+---
+
+### 📤 Phase 2: Global Ecosystem Contribution (Reporting to 50+ Vendors)
+
+Once a threat is confirmed, we actively alert the global security ecosystem. We submit data to over **50 industry‑leading vendors** to ensure their protection layers stay updated and users are warned:
+
+```
+Cloudflare        Google Safe Browsing      Microsoft Security      VirusTotal
+Netcraft          ESET                      Bitdefender             Norton Safe Web
+Avira             PhishTank                 Dr.Web                  Yandex Safe Browsing
+URLScan.io        PolySwarm                 SiteReview              Urlquery
+PhishStats        PhishReport               IsItPhish               ThreatCenter
+```
+
+---
+
+### ⚖️ Phase 3: Legal Notifications & Investigation Support
+
+To ensure threats are handled through legitimate channels, our system initiates a structured reporting process:
+
+* **Abuse Notifications:** Formal alerts are dispatched to domain registrars and hosting providers, requesting investigation through official abuse channels.
+* **Forensic Evidence Disclosure:** We provide complete evidence packages including metadata, high‑resolution screenshots, and PDF reports to support rapid triage.
+* **ICANN Compliance Support:** Reports are aligned to support ICANN standards and provider due‑diligence workflows.
+* **Conditional Re‑Detection Logic:** Follow‑up alerts are triggered only if a threat is re‑detected and remains active beyond 24 hours — preventing noise while identifying persistent malicious infrastructure.
+
+---
+
+### 🌐 Phase 4: Public Transparency & Community Alerts
+
+As an open‑source initiative, we ensure instant accessibility for public safety:
+
+* **Open Database:** Verified threats are committed in real‑time to this GitHub repository.
+* **Live Monitoring:** Real‑time visual intelligence is available at [https://phishdestroy.io/live/](https://phishdestroy.io/live/).
+* **Social Broadcasting:** Automated, high‑priority OSINT alerts are published to Twitter (X), Telegram, and Mastodon.
+
+</details>
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Police%20Officer.webp" alt="Man Police Officer" width="25" height="25" /> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Double%20Exclamation%20Mark.webp" alt="Double Exclamation Mark" width="25" height="25" />  Key Info for Online Fraud Victims <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Person%20Facepalming.webp" alt="Person Facepalming" width="25" height="25" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=F71313&width=435&lines=Bulletproof+registrars+should+not+exist)](https://git.io/typing-svg)
 
 ![DestroyList Banner](abuse.png)
+
+<details>
+<summary><strong>Show details about complaints and transparency</strong> — click to view</summary>
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Briefcase.webp" alt="Briefcase" width="25" height="25" />DestroyList aims to disable malicious domains: scams, phishing, and other illicit sites to enhance internet safety.
 
@@ -119,7 +181,6 @@ Before a domain is added, we:
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Police%20Car.webp" alt="Police Car" width="25" height="25" /> According to ICANN rules, registrars must review such complaints within 24 hours.
 
---------------------------------------------------------------------
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&pause=1000&color=F722EF&width=435&lines=Profit+from+victims+%E2%80%94+become+one+yourself.)](https://git.io/typing-svg)
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/T%20Rex.webp" alt="T Rex" width="25" height="25" /> We work hard to eliminate threats quickly. Every malicious domain is analyzed, documented, reported, and published transparently.  
@@ -144,6 +205,8 @@ Private individuals may request the number of abuse reports we have sent for a s
 
 Official government or law-enforcement requests may be answered privately.
 
+</details>
+</details>
 --------------------------------------------------------------------
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Mending%20Heart.webp" alt="Mending Heart" width="25" height="25" />If you were defrauded by a domain already listed here, check its addition date using the commit history or via our Telegram/Mastodon channels.
