@@ -264,8 +264,13 @@ Accuracy first! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/T
 **MIT** – Free, open, yours to hack!
 
 ---
+<img src="https://raw.githubusercontent.com/phishdestroy/destroylist/output/snake.svg" alt="Snake animation" />
 
-![Snake GIF](https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/phishdestroy/destroylist/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/phishdestroy/destroylist/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/phishdestroy/destroylist/output/pacman-contribution-graph.svg">
+</picture>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Handshake.webp" alt="Handshake" width="25" height="25" /> Join the Fight! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Nail%20Polish.webp" alt="Nail Polish" width="25" height="25" />
 Got ideas, sources, or improvements?
