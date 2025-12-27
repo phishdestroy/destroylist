@@ -1,0 +1,31 @@
+name: Generate snake animation
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: generate snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: phishdestroy
+          outputs: |
+            dist/snake.svg?palette=github-dark
+            dist/snake-dark.svg?palette=github-dark
+
+      - name: push to output branch
+        run: |
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "🐍 Update snake animation"
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/phishdestroy/destroylist.git HEAD:output
