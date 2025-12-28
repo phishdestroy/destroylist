@@ -23,28 +23,42 @@
 | **Primary** | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_added.json&style=flat-square&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_added.json&style=flat-square&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_added.json&style=flat-square&label=) |
 | **Community** | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_community.json&style=flat-square&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_community.json&style=flat-square&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_community.json&style=flat-square&label=) |
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/File%20Folder.webp" alt="File Folder" width="25" height="25" />  Data Feeds <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="25" height="25" />
 
-| Feed | Description | Update |
-|:-----|:------------|:------:|
-| [list.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json) / [.txt](https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt) | Primary curated phishing domains | Real-time |
-| [active_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json) | Primary DNS verified | 24h |
-| [blocklist.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json) | Community aggregated | 2h |
-| [live_blocklist.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json) | Community DNS verified | 24h |
-| [allowlist.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json) | False positive protection | Manual |
+| Feed | Description | Update | Download |
+|:-----|:------------|:------:|:--------:|
+| **Primary** | Curated phishing domains | ⚡ Real-time | [![JSON](https://img.shields.io/badge/JSON-FF4757?style=flat-square&logo=json)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json) [![TXT](https://img.shields.io/badge/TXT-FF6B81?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt) |
+| **Primary Live** | DNS verified active | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-9B59B6?style=flat-square&logo=json)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json) |
+| **Community** | Aggregated from 35+ sources | 🕐 2h | [![JSON](https://img.shields.io/badge/JSON-3742FA?style=flat-square&logo=json)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json) |
+| **Community Live** | Community DNS verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-2ED573?style=flat-square&logo=json)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json) |
+| **Allowlist** | False positive protection | ✋ Manual | [![JSON](https://img.shields.io/badge/JSON-95A5A6?style=flat-square&logo=json)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json) |
+
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Card%20Index%20Dividers.webp" alt="Card Index Dividers" width="25" height="25" />  Download Formats <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Ballot%20Box%20With%20Ballot.webp" alt="Ballot Box With Ballot" width="25" height="25" />
 
+<details>
+<summary><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/File%20Folder.webp" alt="File Folder" width="25" height="25" /><b>All Formats</b> (TXT, Hosts, AdBlock, Dnsmasq)</summary>
+<br>
+
 | Format | Primary | Primary Live | Community | Community Live |
 |:------:|:-------:|:------------:|:---------:|:--------------:|
-| **TXT** | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/domains.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/domains.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/domains.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/domains.txt) |
-| **Hosts** | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/hosts.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/hosts.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/hosts.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/hosts.txt) |
-| **AdBlock** | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/adblock.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/adblock.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/adblock.txt) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/adblock.txt) |
-| **Dnsmasq** | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/dnsmasq.conf) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/dnsmasq.conf) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/dnsmasq.conf) | [⬇](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/dnsmasq.conf) |
+| **TXT** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/domains.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/domains.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/domains.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/domains.txt) |
+| **Hosts** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/hosts.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/hosts.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/hosts.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/hosts.txt) |
+| **AdBlock** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/adblock.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/adblock.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/adblock.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/adblock.txt) |
+| **Dnsmasq** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/dnsmasq.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/dnsmasq.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/dnsmasq.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/dnsmasq.conf) |
 
-> **Hosts** — Pi-hole, /etc/hosts, Windows · **AdBlock** — uBlock Origin, AdGuard · **Dnsmasq** — DNS server
+> **Hosts** → Pi-hole, /etc/hosts, Windows · **AdBlock** → uBlock Origin, AdGuard · **Dnsmasq** → DNS server
+
+**Root Lists** (no subdomains, hosting excluded):
+
+| Source | All Roots | Live Only |
+|:------:|:---------:|:---------:|
+| **Primary** | [⬇️ JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [⬇️ JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) |
+| **Community** | [⬇️ JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [⬇️ JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) |
+
+</details>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp" alt="Memo" width="25" height="25" />  Root Lists <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Pencil.webp" alt="Pencil" width="25" height="25" />
 
@@ -55,21 +69,26 @@
 | **Primary** | [active_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [online_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) |
 | **Community** | [community_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [community_online_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) |
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 > 💡 **Production:** `list.json` or `active_domains.json` · **Max coverage:** `blocklist.json` · **Firewall/DNS:** root lists
 
 ### Connect With Us <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Mobile%20Phone%20With%20Arrow.webp" alt="Mobile Phone With Arrow" width="25" height="25" />
-| Platform | Link |
-|----------|------|
-| Website | [phishdestroy.io](https://phishdestroy.io) |
-| Telegram Alerts | [t.me/destroy_phish](https://t.me/destroy_phish) |
-| Telegram Bot | [t.me/PhishDestroy_bot](https://t.me/PhishDestroy_bot) |
-| Twitter / X | [x.com/Phish_Destroy](https://x.com/Phish_Destroy) |
-| Mastodon | [@phishdestroy@mastodon.social](https://mastodon.social/@phishdestroy) |
-| Ban Service | [ban.destroy.tools](https://ban.destroy.tools) |
+<p align="center">
+  <a href="https://phishdestroy.io"><img src="https://img.shields.io/badge/🌐_WEBSITE-FF4757?style=for-the-badge" alt="Website"/></a>
+  <a href="https://phishdestroy.medium.com"><img src="https://img.shields.io/badge/📝_MEDIUM-000000?style=for-the-badge" alt="Medium"/></a>
+  <a href="https://t.me/destroy_phish"><img src="https://img.shields.io/badge/📢_TELEGRAM-26A5E4?style=for-the-badge" alt="Telegram"/></a>
+  <a href="https://t.me/PhishDestroy_bot"><img src="https://img.shields.io/badge/🤖_BOT-26A5E4?style=for-the-badge" alt="Bot"/></a>
+  <a href="https://x.com/Phish_Destroy"><img src="https://img.shields.io/badge/𝕏_TWITTER-000000?style=for-the-badge" alt="Twitter"/></a>
+  <a href="https://mastodon.social/@phishdestroy"><img src="https://img.shields.io/badge/🐘_MASTODON-6364FF?style=for-the-badge" alt="Mastodon"/></a>
+</p>
 
----
+<p align="center">
+  <a href="https://ban.destroy.tools"><img src="https://img.shields.io/badge/🚫_BAN_SERVICE-FF0000?style=for-the-badge" alt="Ban Service"/></a>
+  <a href="mailto:contact@phishdestroy.io"><img src="https://img.shields.io/badge/✉️_CONTACT-8B5CF6?style=for-the-badge" alt="Email"/></a>
+</p>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Phish+domains%3F+Destroyed.+Next!+%F0%9F%92%A5)](https://git.io/typing-svg)
 
@@ -109,27 +128,29 @@ https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domai
 </details>
 
 ## 🛡️ Threat Intelligence & Automated Remediation Workflow
-![About](scripts/about.png)
+|<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Right.webp" alt="Magnifying Glass Tilted Right" width="25" height="25" /> **DISCOVER** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Outbox%20Tray.webp" width="30" height="30" /> **REPORT** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Balance%20Scale.png" alt="Balance Scale" width="25" height="25" /> **LEGAL** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Mobile%20Phone%20With%20Arrow.webp" alt="Mobile Phone With Arrow" width="25" height="25" /> **PUBLISH** |
+|:---:|:---:|:---:|:---:|
+| 30+ parsers | 50+ vendors | ICANN compliance | Real-time |
+| CT logs, DNS | Google, Microsoft | Abuse notifications | GitHub, Telegram |
+| Social media | VirusTotal, Cloudflare | Evidence packages | Twitter, Mastodon |
+
 <details>
-<summary><strong>Expand full workflow details</strong> — click to view</summary>
+<summary><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Open%20Book.webp" width="20" height="20" /> <b>Read Full Workflow Details</b></summary>
+<br>
 
-Our project is a non-profit, open‑source initiative dedicated to the proactive discovery and neutralization of phishing and scam infrastructure. We operate a high‑velocity pipeline that transforms raw telemetry into actionable intelligence for the global security community.
-
----
-
-### 📡 Phase 1: Pre‑emptive Discovery & Ingestion
-
+### Phase 1: Pre-emptive Discovery & Ingestion
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Left.webp" alt="Magnifying Glass Tilted Left" width="25" height="25" />
 We utilize a distributed network of **30+ proprietary parsers** to identify malicious domains at their earliest stage:
 
-* **Advanced Heuristics:** Continuous monitoring of Google Ads (Malvertising), SEO‑manipulated search results, and trending social media campaigns on Twitter (X), YouTube, and Telegram.
-* **Infrastructure Analysis:** Leveraging *dnstwist* and typosquatting detection to catch look‑alike domains targeting established brands.
-* **Community Intelligence:** Real‑time ingestion of community‑reported threats via our Telegram Bot and partner intelligence feeds.
+- **Advanced Heuristics:** Continuous monitoring of Google Ads (Malvertising), SEO-manipulated search results, and trending social media campaigns on Twitter (X), YouTube, and Telegram
+- **Infrastructure Analysis:** Leveraging *dnstwist* and typosquatting detection to catch look-alike domains targeting established brands
+- **Community Intelligence:** Real-time ingestion of community-reported threats via our Telegram Bot and partner intelligence feeds
 
 ---
 
-### 📤 Phase 2: Global Ecosystem Contribution (Reporting to 50+ Vendors)
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Outbox%20Tray.webp" width="22" height="22" /> Phase 2: Global Ecosystem Contribution
 
-Once a threat is confirmed, we actively alert the global security ecosystem. We submit data to over **50 industry‑leading vendors** to ensure their protection layers stay updated and users are warned:
+Once a threat is confirmed, we submit data to over **50 industry-leading vendors**:
 
 ```
 Cloudflare        Google Safe Browsing      Microsoft Security      VirusTotal
@@ -141,26 +162,23 @@ PhishStats        PhishReport               IsItPhish               ThreatCenter
 
 ---
 
-### ⚖️ Phase 3: Legal Notifications & Investigation Support
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp" alt="Memo" width="25" height="25" />Phase 3: Legal Notifications & Investigation Support
 
-To ensure threats are handled through legitimate channels, our system initiates a structured reporting process:
-
-* **Abuse Notifications:** Formal alerts are dispatched to domain registrars and hosting providers, requesting investigation through official abuse channels.
-* **Forensic Evidence Disclosure:** We provide complete evidence packages including metadata, high‑resolution screenshots, and PDF reports to support rapid triage.
-* **ICANN Compliance Support:** Reports are aligned to support ICANN standards and provider due‑diligence workflows.
-* **Conditional Re‑Detection Logic:** Follow‑up alerts are triggered only if a threat is re‑detected and remains active beyond 24 hours — preventing noise while identifying persistent malicious infrastructure.
+- **Abuse Notifications:** Formal alerts to domain registrars and hosting providers
+- **Forensic Evidence Disclosure:** Complete evidence packages including metadata, screenshots, and PDF reports
+- **ICANN Compliance Support:** Reports aligned with ICANN standards
+- **Conditional Re-Detection Logic:** Follow-up alerts only if threat remains active beyond 24 hours
 
 ---
 
-### 🌐 Phase 4: Public Transparency & Community Alerts
+### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Megaphone.webp" alt="Megaphone" width="25" height="25" /> Phase 4: Public Transparency & Community Alerts
 
-As an open‑source initiative, we ensure instant accessibility for public safety:
-
-* **Open Database:** Verified threats are committed in real‑time to this GitHub repository.
-* **Live Monitoring:** Real‑time visual intelligence is available at [https://phishdestroy.io/live/](https://phishdestroy.io/live/).
-* **Social Broadcasting:** Automated, high‑priority OSINT alerts are published to Twitter (X), Telegram, and Mastodon.
+- **Open Database:** Real-time commits to this GitHub repository
+- **Live Monitoring:** Visual intelligence at [phishdestroy.io/live](https://phishdestroy.io/live/)
+- **Social Broadcasting:** Automated alerts on Twitter, Telegram, and Mastodon
 
 </details>
+
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Police%20Officer.webp" alt="Man Police Officer" width="25" height="25" /> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Double%20Exclamation%20Mark.webp" alt="Double Exclamation Mark" width="25" height="25" />  Key Info for Online Fraud Victims <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Person%20Facepalming.webp" alt="Person Facepalming" width="25" height="25" />
 
@@ -263,14 +281,8 @@ Accuracy first! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/T
 
 **MIT** – Free, open, yours to hack!
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <img src="https://raw.githubusercontent.com/phishdestroy/destroylist/output/snake.svg" alt="Snake animation" />
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/phishdestroy/destroylist/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/phishdestroy/destroylist/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/phishdestroy/destroylist/output/pacman-contribution-graph.svg">
-</picture>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Handshake.webp" alt="Handshake" width="25" height="25" /> Join the Fight! <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Nail%20Polish.webp" alt="Nail Polish" width="25" height="25" />
 Got ideas, sources, or improvements?
