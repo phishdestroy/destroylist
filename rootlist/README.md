@@ -1,107 +1,84 @@
-<p align="center">
-  <img src="image.png" alt="PhishDestroy Rootlist Banner" width="950">
-</p>
+# 🌳 Root Domains
 
-## 📌 Download Files (Latest State)
+![Rootlist Banner](image.png)
 
-**Primary Validated Roots**
-[https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json)
+Minimal, DNS-validated list of **registrable root domains** for blocking at the domain level.
 
-**Primary DNS-validated (online only)**
-[https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json)
-
-**Community Validated Roots**
-[https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json)
-
-**Community DNS-validated (online only)**
-[https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json)
+No subdomains. No hosting providers. Clean data for firewalls and DNS resolvers.
 
 ---
 
-## 📁 Output Description
+## 📥 Download Links
+
+### Primary (Curated)
+
+| List | Description | Link |
+|:-----|:------------|:----:|
+| `active_root_domains.json` | All validated roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) |
+| `online_root_domains.json` | DNS-live only | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) |
+
+### Community (Aggregated)
+
+| List | Description | Link |
+|:-----|:------------|:----:|
+| `community_root_domains.json` | All community roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) |
+| `community_online_root_domains.json` | DNS-live only | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) |
+
+---
+
+## 📁 Output Files
 
 ### `active_root_domains.json`
+- Source: `list.json`
+- Converted to registrable roots via `tldextract`
+- Infrastructure providers excluded
+- Deduplicated and normalized
 
-* Produced from `list.json`
-* Converted into registrable root domains
-* Infrastructure/provider roots excluded
-* Deduplicated and normalized
-
-Recommended use:
-✔ global DNS blocking
-✔ baseline threat intelligence
-
----
+**Use for:** Global DNS blocking, baseline threat intelligence
 
 ### `online_root_domains.json`
+- DNS-validated (A/AAAA/CNAME/MX/NS records)
+- Only currently responding domains
+- Most relevant for active campaigns
 
-* Built from DNS-live sources
-* Contains domains responding at generation time
-* Highly relevant for active phishing campaigns
-
-Recommended use:
-✔ prioritized blocking
-✔ SOC enrichment feeds
-
----
+**Use for:** Prioritized blocking, SOC feeds
 
 ### `community_root_domains.json`
-
-* Sources aggregated from security providers
-* Filtered and normalized
-* Provider roots removed automatically
-
-Source compiled by `smart_aggregator.py`
-
----
+- Aggregated from 35+ security providers
+- Filtered and normalized
+- Provider roots auto-removed
 
 ### `community_online_root_domains.json`
+- Subset of community list
+- Confirmed via DNS resolution
 
-* Subset of community list
-* Confirmed via DNS resolution
-
-Recommended use:
-✔ external threat activity tracking
+**Use for:** External threat tracking
 
 ---
 
-A minimal, DNS-validated list of **registrable root domains**, designed for consumers who block at the domain level.
+## 🚫 Excluded Infrastructure
 
-## Contents
+Root domains that should **never** be blocked globally:
 
-- `active_root_domains.json`  
-  - Derived from `dns/active_domains.json`  
-  - Reduced to registrable domains using `tldextract`  
-  - Hosting / infrastructure platforms are removed  
-  - DNS-validated (A/AAAA/CNAME/MX/NS)
+**Multi-tenant hosting:**
+`vercel.app` · `netlify.app` · `github.io` · `render.com` · `firebaseapp.com` · `web.app` · `pages.dev` · `workers.dev` · `replit.dev` · `surge.sh`
 
-- `invalid_root_domains.json`  
-  - Candidates that did not return any DNS records
+**Website builders:**
+`wixsite.com` · `weebly.com` · `wordpress.com` · `blogspot.com` · `webflow.io` · `square.site` · `godaddysites.com`
 
-## Excluded (infra / hosting)
+**Web3 gateways:**
+`ipfs.io` · `cloudflare-ipfs.com` · `dweb.link` · `eth.limo`
 
-Root domains that should **never** be blocked globally, including but not limited to:
+**Other:**
+`teachable.com` · `gitbook.io` · `duckdns.org`
 
-- **multi-tenant app hosting:**  
-  `vercel.app`, `netlify.app`, `github.io`, `render.com`, `onrender.com`,  
-  `firebaseapp.com`, `web.app`, `pages.dev`, `workers.dev`, `cprapid.com`,  
-  `windows.net`, `fastly.net`, `sslip.io`, `duckdns.org`, `replit.dev`,  
-  `surge.sh`, `typedream.app`, `hostingersite.com`
+---
 
-- **website builders / shared platforms:**  
-  `weebly.com`, `weeblysite.com`, `wixsite.com`,  
-  `wordpress.com`, `blogspot.com`, `blogspot.am`,  
-  `webflow.io`, `square.site`, `godaddysites.com`,  
-  `webcindario.com`, `home.pl`, `pineapple.page`, `gitbook.io`
+## ⚙️ Generation
 
-- **decentralized / web3 gateways:**  
-  `ipfs.io`, `cloudflare-ipfs.com`, `dweb.link`,  
-  `infura-ipfs.io`, `eth.limo`
+Produced by `build_rootlist.py`:
 
-- **SaaS / course hosts:**  
-  `teachable.com`
-
-## Generation
-
-This list is produced by scripted reduction of the main dataset, removing  
-non-registrable and infrastructure roots, and validating active records.
+1. Reduces full lists to registrable roots
+2. Removes infrastructure/provider domains
+3. Validates DNS records
+4. Outputs clean JSON files
