@@ -1,131 +1,104 @@
-<p align="center">
-  <img src="image.png" width="900">
-</p>
+# ⚙️ Scripts
 
+![Scripts Banner](image.png)
 
-# Scripts Directory Overview
+Automation, analytics, and validation utilities for the destroylist pipeline.
 
-This folder contains automation, analytics, aggregation, and validation utilities used across the destroylist lifecycle.
-Each script is focused on a specific operational role and is designed to run independently.
-
-## 📌 Scripts
+Each script runs independently.
 
 ---
 
-### `build_rootlist.py`
+## 📜 Script Reference
 
-Processes full lists and extracts registrable root domains.
+### `validate_and_clean.py`
 
-**Primary functions:**
+Cleans and validates domain lists.
 
-* Filtering subdomains into root-only versions
-* Separating infrastructure/provider platforms
-* Exporting clean structured JSON outputs
-
-Outputs include:
-
-* `rootlist/active_root_domains.json`
-* `rootlist/providers_root_domains.json`
-* `rootlist/online_root_domains.json`
-* Community variants
-
----
-
-### `calculate_stats.py`
-
-Analyzes additions over time and generates statistical badges.
-
-Tracks changes for:
-
-* last 24 hours
-* weekly delta
-* monthly delta
-
-Produces:
-
-* `dns/today_added.json`
-* `dns/week_added.json`
-* `dns/month_added.json`
-
----
-
-### `json_to_txt.py`
-
-Converts JSON domain lists into multiple formatted outputs.
-
-Formats include:
-
-* plain TXT
-* hosts file format
-* Adblock list format
-* dnsmasq configuration
-
-Outputs are grouped by dataset source.
+- Root-domain collapsing
+- Allowlist enforcement
+- Duplicate removal
+- Updates `list.json` automatically
 
 ---
 
 ### `smart_aggregator.py`
 
-Pulls data from external blocklist providers, normalizes domains and merges them into a single dataset.
+Aggregates external blocklist sources.
 
-Features:
+- SHA-256 change tracking
+- Multi-source ingestion
+- Normalization and deduplication
 
-* SHA-256 signature tracking
-* Change detection and summarization
-* Multi‑source ingest framework
+**Output:** `community/blocklist.json` + stats
 
-Generates:
+---
 
-* unified `community/blocklist.json`
-* badge statistics
-* commit update message
+### `build_rootlist.py`
+
+Extracts registrable root domains.
+
+- Filters subdomains → roots only
+- Separates infrastructure providers
+- DNS validation
+
+**Output:** `rootlist/*.json` files
+
+---
+
+### `json_to_txt.py`
+
+Converts JSON lists to multiple formats.
+
+- Plain TXT
+- Hosts file (`0.0.0.0 domain.com`)
+- AdBlock (`||domain.com^`)
+- Dnsmasq config
+
+**Output:** `rootlist/formats/`
 
 ---
 
 ### `update_counts.py`
 
-Generates count badges for multiple datasets:
+Generates badge count files.
 
-* primary dataset
-* DNS‑validated dataset
-* aggregated community list
-* live DNS‑validated community list
+- Primary dataset count
+- DNS-validated count
+- Community counts
 
-Produces files used in README badges.
-
----
-
-### `validate_and_clean.py`
-
-Cleans input domain lists using allowlist enforcement and deduplication.
-
-Capabilities:
-
-* root‑domain collapsing
-* allow‑pattern matching
-* removal of duplicates
-
-Updates the canonical `list.json` automatically.
+**Output:** `count.json`, `dns/active_count.json`, etc.
 
 ---
 
-## 📂 Script Execution
+### `calculate_stats.py`
 
-Typical execution order when generating a complete pipeline:
+Tracks additions over time.
+
+- Last 24 hours
+- Weekly delta
+- Monthly delta
+
+**Output:** `dns/today_added.json`, `dns/week_added.json`, `dns/month_added.json`
+
+---
+
+## 🔄 Execution Order
+
+Full pipeline:
 
 ```
-validate_and_clean.py
-smart_aggregator.py
-build_rootlist.py
-json_to_txt.py
-update_counts.py
-calculate_stats.py
+1. validate_and_clean.py
+2. smart_aggregator.py
+3. build_rootlist.py
+4. json_to_txt.py
+5. update_counts.py
+6. calculate_stats.py
 ```
 
-Each script can run independently without dependencies on others.
+---
 
-## 🧪 Notes
+## 📋 Requirements
 
-* All scripts assume project root execution level
-* Python 3.10+ required
-* Output folders auto‑generated when missing
+- Python 3.10+
+- Run from project root
+- Output folders auto-created
