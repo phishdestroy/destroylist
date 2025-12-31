@@ -1,20 +1,27 @@
-# Project Allowlist (`allow/`)
+# 📋 Allowlist
+
 ![Allowlist Banner](./image.png)
 
-Short allowlist of **legitimate** crypto/Web3 project domains used to avoid false positives in our security filters.
-
-[IMPORTANT] **Apex domains only** (e.g., `example.org`). No subdomains. No paths.
-
-[NOTE] This dataset combines **our own** verified domains **and** entries sourced from **SEAL (Security Alliance)** allowlists. Big thanks to SEAL for their contribution to the community.
+Curated allowlist of **legitimate** crypto/Web3 project domains to prevent false positives in security filters.
 
 ---
 
-## Contents
+## ⚠️ Format Rules
 
-* `allow/allowlist.json` — array of **lowercase apex** domains
-* `allow/README.md` — this file
+- **Apex domains only** (e.g., `example.org`)
+- No subdomains
+- No paths
+- Lowercase only
 
-Example `allowlist.json`:
+---
+
+## 📂 Contents
+
+| File | Description |
+|:-----|:------------|
+| `allowlist.json` | Array of verified apex domains |
+
+**Example:**
 
 ```json
 [
@@ -26,13 +33,18 @@ Example `allowlist.json`:
 
 ---
 
-## Additions via Issues
+## ➕ Request Addition
 
-Open: https://github.com/phishdestroy/destroylist/issues
-Include: project **name**, **homepage (full URL)**, **domains (apex)**, short rationale.
+Open an issue: [github.com/phishdestroy/destroylist/issues](https://github.com/phishdestroy/destroylist/issues)
+
+Include:
+- Project name
+- Homepage URL
+- Apex domain(s)
+- Brief rationale
 
 ---
 
-## Sources
+## 🙏 Credits
 
-SEAL — Security Alliance Allowlists: [https://github.com/security-alliance/allowlists](https://github.com/security-alliance/allowlists)
+This dataset includes entries from [SEAL (Security Alliance)](https://github.com/security-alliance/allowlists) allowlists.
