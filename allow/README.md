@@ -1,6 +1,8 @@
 # 📋 Allowlist
 
-![Allowlist Banner](./image.png)
+<p align="center">
+  <img src="image.png" alt="Allowlist Banner" width="800"/>
+</p>
 
 Curated allowlist of **legitimate** crypto/Web3 project domains to prevent false positives in security filters.
 
