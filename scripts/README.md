@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="../image.png" width="900">
+  <img src="image.png" width="900">
 </p>
+
 
 # Scripts Directory Overview
 
