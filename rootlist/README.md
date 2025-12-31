@@ -1,6 +1,8 @@
 # 🌳 Root Domains
 
-![Rootlist Banner](image.png)
+<p align="center">
+  <img src="image.png" alt="Rootlist Banner" width="800"/>
+</p>
 
 Minimal, DNS-validated list of **registrable root domains** for blocking at the domain level.
 

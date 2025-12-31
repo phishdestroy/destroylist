@@ -9,6 +9,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR) if os.path.basename(SCRIPT_DIR) == "scripts" else SCRIPT_DIR
 COMMUNITY_DIR = os.path.join(PROJECT_ROOT, "community")
 LOCAL_FILES_CONFIG = [os.path.join(PROJECT_ROOT, "list.json")]
+ALLOWLIST_FILE = os.path.join(PROJECT_ROOT, "allow", "allowlist.json")
 VERBOSE = True
 
 SOURCES_CONFIG = {
@@ -188,6 +189,44 @@ def update_badge_json(count: int) -> None:
     with open(BADGE_FILENAME, 'w', encoding='utf-8', newline='') as f:
         json.dump(badge, f, separators=(",", ":"))
 
+def load_allowlist() -> set:
+    if not os.path.exists(ALLOWLIST_FILE):
+        return set()
+    try:
+        with open(ALLOWLIST_FILE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            if isinstance(data, list):
+                return {str(d).strip().lower() for d in data if d}
+    except Exception:
+        pass
+    return set()
+
+def filter_by_allowlist(domains: set, allowlist: set) -> tuple[set, int]:
+    allowlist_patterns = {d for d in allowlist if d.startswith('.')}
+    allowlist_exact = allowlist - allowlist_patterns
+    
+    filtered = set()
+    removed = 0
+    
+    for domain in domains:
+        if domain in allowlist_exact:
+            removed += 1
+            continue
+        
+        is_allowed = False
+        for pattern in allowlist_patterns:
+            if domain.endswith(pattern) or domain == pattern[1:]:
+                is_allowed = True
+                break
+        
+        if is_allowed:
+            removed += 1
+            continue
+        
+        filtered.add(domain)
+    
+    return filtered, removed
+
 def main() -> None:
     log("[start] community aggregation")
     os.makedirs(COMMUNITY_DIR, exist_ok=True)
@@ -246,6 +285,13 @@ def main() -> None:
     if len(all_domains) == last_total and not changes:
         log("[no-op] no changes detected")
         return
+
+    # Filter against allowlist
+    log("[filter] applying allowlist")
+    allowlist = load_allowlist()
+    if allowlist:
+        all_domains, removed_count = filter_by_allowlist(all_domains, allowlist)
+        log(f"  Removed {removed_count} domains via allowlist ({len(allowlist)} entries)")
 
     new_state["total_count"] = len(all_domains)
     commit_title = "Update community blocklist"

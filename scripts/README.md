@@ -1,6 +1,8 @@
 # ⚙️ Scripts
 
-![Scripts Banner](image.png)
+<p align="center">
+  <img src="image.png" alt="Scripts Banner" width="800"/>
+</p>
 
 Automation, analytics, and validation utilities for the destroylist pipeline.
 
