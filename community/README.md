@@ -1,6 +1,8 @@
 # 🌐 Community Blocklist
 
-![Community Blocklist Banner](image.png)
+<p align="center">
+  <img src="image.png" alt="Community Blocklist Banner" width="800"/>
+</p>
 
 ---
 
