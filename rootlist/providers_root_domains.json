@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 8970,
+      "total_entries": 8972,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 5752,
+          "count": 5753,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -2374,6 +2374,7 @@
             "instadapp.pages.dev",
             "install-new-jupiter-wallet.pages.dev",
             "install-web-rabby-wallet.pages.dev",
+            "install-web-rabby-wallett.pages.dev",
             "integrate-cl5.pages.dev",
             "integrateddapp-5zy.pages.dev",
             "interact-extension-base-in.pages.dev",
@@ -7787,7 +7788,7 @@
         },
         {
           "domain": "typedream.app",
-          "count": 314,
+          "count": 315,
           "hosts": [
             "access-coinpro-en-us.typedream.app",
             "accss-ledger-public.typedream.app",
@@ -7799,6 +7800,7 @@
             "airdrop-defillama-cdnn.typedream.app",
             "app-coinbase-wallet-eng.typedream.app",
             "app-hyperswap-v3.typedream.app",
+            "app-up-hold-com-auth.typedream.app",
             "apps-krakeen-public.typedream.app",
             "auth-sso-binance-login-us-en.typedream.app",
             "balncer-dex.typedream.app",
@@ -11063,7 +11065,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 163,
+      "total_entries": 164,
       "items": [
         {
           "domain": "dweb.link",
@@ -11253,9 +11255,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
