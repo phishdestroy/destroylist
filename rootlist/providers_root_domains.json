@@ -11069,7 +11069,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 163,
+      "total_entries": 164,
       "items": [
         {
           "domain": "dweb.link",
@@ -11259,9 +11259,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
