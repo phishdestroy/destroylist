@@ -42,6 +42,8 @@
 | **Primary Live** | DNS verified active | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-CC0000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json) |
 | **Community** | Aggregated from 35+ sources | 🕐 2h | [![JSON](https://img.shields.io/badge/JSON-990000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json) |
 | **Community Live** | Community DNS verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-660000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json) |
+| **Primary Content** | Curated + HTTP content verified | 🕐 12h | [![JSON](https://img.shields.io/badge/JSON-dc2626?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json) |
+| **Community Content** | Aggregated + HTTP content verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-991b1b?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json) |
 | **Allowlist** | False positive protection | ✋ Manual | [![JSON](https://img.shields.io/badge/JSON-333333?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json) |
 
 > [!TIP]
