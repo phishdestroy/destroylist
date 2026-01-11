@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/phishdestroy/destroylist">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+69%2C000%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+63%2C000%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -33,6 +33,8 @@
 | **Community** | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_community.json&style=flat-square&color=000000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_community.json&style=flat-square&color=000000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_community.json&style=flat-square&color=000000&label=) |
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="File Folder" width="22" height="22" /> Data Feeds
+
+
 
 | Feed | Description | Update | Download |
 |:-----|:------------|:------:|:--------:|
@@ -70,6 +72,26 @@
 | 🔴 **Primary** | [`active_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [`online_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) |
 | ⚫ **Community** | [`community_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [`community_online_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) |
 
+
+---
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Fire.webp" width="25" /> Content-Verified Feeds <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Right.webp" width="25" />
+
+> [!NOTE]
+> **Real HTTP content verification** — not just DNS, but actual phishing page detection
+
+[![Primary Content](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active_count.json&style=for-the-badge)](https://github.com/phishdestroy/destroylist/raw/main/dns/content_active.json)
+[![Community Content](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_active_count.json&style=for-the-badge)](https://github.com/phishdestroy/destroylist/raw/main/community/content_live.json)
+
+| Feed | Description | ⏰ Update | Download |
+|:-----|:------------|:------:|:--------:|
+| 💥 **Primary Content** | Curated phishing with verified active content | `12h` (06:00 / 18:00 UTC) | [content_active.json](https://github.com/phishdestroy/destroylist/raw/main/dns/content_active.json) |
+| 🌐 **Community Content** | Aggregated feeds with verified active content | `24h` (03:00 UTC) | [content_live.json](https://github.com/phishdestroy/destroylist/raw/main/community/content_live.json) |
+
+> [!WARNING]
+> **Cloaking Alert:** Scammers use cloaking to hide phishing from bots — showing blank/fake pages to scanners. Domain **NOT** in content list ≠ safe! Use **Primary All** or **Community General** for full protection.
+
+---
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Telescope.png" alt="Telescope" width="22" height="22" /> About Destroylist
