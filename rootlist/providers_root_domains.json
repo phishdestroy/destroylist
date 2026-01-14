@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9182,
+      "total_entries": 9184,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 5883,
+          "count": 5885,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -121,6 +121,7 @@
             "aavesvap.pages.dev",
             "about-sso-coinbase-signin.pages.dev",
             "abraxss.pages.dev",
+            "abstract-source-factory.pages.dev",
             "acc-coinbse-extnsion.pages.dev",
             "acc-help-business-v6c-b1h-7mx.pages.dev",
             "acc-integrity-check-centre.pages.dev",
@@ -2707,6 +2708,7 @@
             "krakenfo.pages.dev",
             "krakengames-cc.pages.dev",
             "krakengift-com.pages.dev",
+            "krakenhelpslogin.pages.dev",
             "krakenkakzaiti-cc.pages.dev",
             "krakenlinknet.pages.dev",
             "krakenlinks-to.pages.dev",
@@ -11340,7 +11342,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 163,
+      "total_entries": 164,
       "items": [
         {
           "domain": "dweb.link",
@@ -11530,9 +11532,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
