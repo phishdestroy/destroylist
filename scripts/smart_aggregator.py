@@ -22,7 +22,10 @@ SOURCES_CONFIG = {
     "PhishDestroy": {"url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json", "parser": "json_key_domains"},
     "SEAL": {"url": "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
     "SPMedia_DetectedURLs": {"url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt", "parser": "urls_list"},
-    "Enkrypt_Blacklist": {"url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json", "parser": "json_list"}
+    "Enkrypt_Blacklist": {"url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json", "parser": "json_list"},
+    "DiscordPhishing_Nikolai": {"url": "https://raw.githubusercontent.com/nikolaischunk/discord-phishing-links/main/domain-list.json", "parser": "json_key_domains"},
+    "DiscordPhishing_Dogino": {"url": "https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt", "parser": "text_lines"},
+    "Phishunt": {"url": "https://phishunt.io/feed.txt", "parser": "urls_list"}
 }
 
 OUTPUT_FILENAME = os.path.join(COMMUNITY_DIR, "blocklist.json")
@@ -115,7 +118,7 @@ def parse_text_lines(content: str) -> set:
         line = raw.strip()
         if not line or line.startswith(('#', '!', ';')):
             continue
-        if line.startswith(('0.0.0.0', '127\.0\.0\.1', '::1')):
+        if line.startswith(('0.0.0.0', '127.0.0.1', '::1')):
             line = clean_hosts_ips(line)
         if line.startswith('||'):
             line = line[2:]
