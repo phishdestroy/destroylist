@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9296,
+      "total_entries": 9297,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 5962,
+          "count": 5963,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -4299,6 +4299,7 @@
             "polkadot-builders-dao.pages.dev",
             "polkadotbulk.pages.dev",
             "polkadotcoklat.pages.dev",
+            "polkadotcoklatbar.pages.dev",
             "polkadotdeliver.pages.dev",
             "polkadotit.pages.dev",
             "polkadotnews.pages.dev",
@@ -11508,7 +11509,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 165,
+      "total_entries": 166,
       "items": [
         {
           "domain": "dweb.link",
@@ -11700,9 +11701,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
