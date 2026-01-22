@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9391,
+      "total_entries": 9393,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6023,
+          "count": 6024,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -2174,6 +2174,7 @@
             "go-trezor-bridge.pages.dev",
             "go-with-coenbase-logen.pages.dev",
             "gofurs-cash.pages.dev",
+            "gominingrectification.pages.dev",
             "gondor.pages.dev",
             "gradient-airdrop-guide.pages.dev",
             "grass-3p6.pages.dev",
@@ -6039,7 +6040,7 @@
         },
         {
           "domain": "vercel.app",
-          "count": 1660,
+          "count": 1661,
           "hosts": [
             "0-autht-lo-xfin-ity-w0965.vercel.app",
             "0888naveankorea-oneinamillion-class.vercel.app",
@@ -6958,6 +6959,7 @@
             "mainnettdappfix.vercel.app",
             "maney.vercel.app",
             "mango-ui-v2-teal.vercel.app",
+            "manualresolve.vercel.app",
             "matrix-relay-2745.vercel.app",
             "me1q1a1e.vercel.app",
             "megobell.vercel.app",
@@ -11640,7 +11642,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 167,
+      "total_entries": 168,
       "items": [
         {
           "domain": "dweb.link",
@@ -11834,9 +11836,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
