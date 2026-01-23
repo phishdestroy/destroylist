@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9440,
+      "total_entries": 9441,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6057,
+          "count": 6058,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -28,6 +28,7 @@
             "12bitcoin-hyper.pages.dev",
             "151bc849.knfdjfhusurje.pages.dev",
             "17a2e78d.connewall.pages.dev",
+            "182a066d.connwl.pages.dev",
             "1839236c.mfgjgnihfh.pages.dev",
             "1d4e7dcd.walsrt.pages.dev",
             "1e1f212b.ripsyr.pages.dev",
@@ -11709,7 +11710,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 167,
+      "total_entries": 168,
       "items": [
         {
           "domain": "dweb.link",
@@ -11903,9 +11904,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
