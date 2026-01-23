@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9444,
+      "total_entries": 9445,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6060,
+          "count": 6061,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -4093,6 +4093,7 @@
             "nodesecure-5dd.pages.dev",
             "nomi-swap.pages.dev",
             "nora-coinebse.pages.dev",
+            "northbridge--wormhole.pages.dev",
             "now-leedzr-livelogin.pages.dev",
             "now-uphld-us.pages.dev",
             "now-uphold-en.pages.dev",
@@ -9558,7 +9559,7 @@
     },
     "site_builders": {
       "total_domains": 12,
-      "total_entries": 2079,
+      "total_entries": 2080,
       "items": [
         {
           "domain": "webflow.io",
@@ -10619,7 +10620,7 @@
         },
         {
           "domain": "gitbook.io",
-          "count": 240,
+          "count": 241,
           "hosts": [
             "0pensea.gitbook.io",
             "0xkowloon.gitbook.io",
@@ -10765,6 +10766,7 @@
             "meramsckxtnsn.gitbook.io",
             "metamask--wallet--xtension.gitbook.io",
             "metamask-loginty.gitbook.io",
+            "metamask-logs.gitbook.io",
             "metamaskiologiwe.gitbook.io",
             "metamasklgin-co-us.gitbook.io",
             "metamasskasxtensio.gitbook.io",
@@ -11715,7 +11717,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 167,
+      "total_entries": 168,
       "items": [
         {
           "domain": "dweb.link",
@@ -11909,9 +11911,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
