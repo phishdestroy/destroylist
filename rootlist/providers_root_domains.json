@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9493,
+      "total_entries": 9503,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6089,
+          "count": 6099,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -1332,6 +1332,7 @@
             "crome-coinbase--en-us.pages.dev",
             "crossllama.pages.dev",
             "crowdwalrus.pages.dev",
+            "crypto-cloud.pages.dev",
             "crypto-sync.pages.dev",
             "cryptoallstars-3ts.pages.dev",
             "cryptocustomersupporthelp.pages.dev",
@@ -1637,6 +1638,7 @@
             "docs-coinspro-login.pages.dev",
             "docs-craken-io.pages.dev",
             "docs-exodus.pages.dev",
+            "docs-exoudswalet-us.pages.dev",
             "docs-get-coinbs-extension.pages.dev",
             "docs-krakeen.pages.dev",
             "docs-metabase-github-io.pages.dev",
@@ -1837,6 +1839,7 @@
             "en-us-coimbse-extension-doc.pages.dev",
             "en-us-desktop-ledgre.pages.dev",
             "en-us-dydx-trade-web.pages.dev",
+            "en-us-exoduss.pages.dev",
             "en-us-guide-coinbase-com.pages.dev",
             "en-us-ledge.pages.dev",
             "en-us-ledger-live.pages.dev",
@@ -1957,12 +1960,16 @@
             "exodus-login-en.pages.dev",
             "exodus-login-faqs.pages.dev",
             "exodus-s-wlt.pages.dev",
+            "exodus-us.pages.dev",
+            "exodus-w3-wllt.pages.dev",
             "exodus-walt.pages.dev",
             "exodus-web-com.pages.dev",
+            "exodus-web3-en.pages.dev",
             "exodus-x-en-home.pages.dev",
             "exodusbest.pages.dev",
             "exodusrpc.pages.dev",
             "exoduss-lgn-web3-en-doc.pages.dev",
+            "exodussweb.pages.dev",
             "exodusvalidator.pages.dev",
             "exoduswallet-tool.pages.dev",
             "exp-phntmwllet.pages.dev",
@@ -2354,6 +2361,7 @@
             "home-en-suites-trizor.pages.dev",
             "home-en-uphold-io-us.pages.dev",
             "home-eng-liveledge-learn.pages.dev",
+            "home-exo-x3.pages.dev",
             "home-exodusweb.pages.dev",
             "home-exten-memask.pages.dev",
             "home-extension-base.pages.dev",
@@ -2483,6 +2491,7 @@
             "iamukebun.pages.dev",
             "ib-project-dapp-c4.pages.dev",
             "idawduictctrbtxx.pages.dev",
+            "idegen-portal.pages.dev",
             "idegensolutionmeme.pages.dev",
             "ie-coin-base.pages.dev",
             "ie-trustwallet.pages.dev",
@@ -4271,6 +4280,7 @@
             "page-coinbase-secure.pages.dev",
             "page-coinbse-extension.pages.dev",
             "page-com-cdn.pages.dev",
+            "page-exodus.pages.dev",
             "page-exodusweb3-en.pages.dev",
             "page-exodusweb3.pages.dev",
             "page-gemini-places.pages.dev",
@@ -11833,7 +11843,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 168,
+      "total_entries": 169,
       "items": [
         {
           "domain": "dweb.link",
@@ -12028,9 +12038,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
