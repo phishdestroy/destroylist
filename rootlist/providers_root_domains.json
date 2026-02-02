@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9578,
+      "total_entries": 9579,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6163,
+          "count": 6164,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -4579,6 +4579,7 @@
             "protocol-authentication.pages.dev",
             "protocol-vertex-io-us.pages.dev",
             "protocolinit.pages.dev",
+            "protocolspheredapp.pages.dev",
             "public--coinbase-wallet-extension.pages.dev",
             "public-coin-proo-cdn-auth.pages.dev",
             "public-coinbase.pages.dev",
@@ -11956,7 +11957,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 169,
+      "total_entries": 168,
       "items": [
         {
           "domain": "dweb.link",
@@ -12151,10 +12152,9 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 2,
+          "count": 1,
           "hosts": [
-            "gateway.ipfs.io",
-            "ipfs.io"
+            "gateway.ipfs.io"
           ]
         }
       ]
