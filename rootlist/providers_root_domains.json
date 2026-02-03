@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9611,
+      "total_entries": 9612,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6195,
+          "count": 6196,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -2377,6 +2377,7 @@
             "hom-get-extension-basse.pages.dev",
             "hom-rabby-walet-en.pages.dev",
             "home--coinbase-wallet.pages.dev",
+            "home--exodus.pages.dev",
             "home--opensea-login.pages.dev",
             "home-base-pro-io.pages.dev",
             "home-cdn-authcoin.pages.dev",
@@ -12002,7 +12003,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 169,
+      "total_entries": 168,
       "items": [
         {
           "domain": "dweb.link",
@@ -12197,10 +12198,9 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 2,
+          "count": 1,
           "hosts": [
-            "gateway.ipfs.io",
-            "ipfs.io"
+            "gateway.ipfs.io"
           ]
         }
       ]
