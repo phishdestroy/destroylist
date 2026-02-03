@@ -6,16 +6,17 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 17,
-      "total_entries": 9645,
+      "total_entries": 9648,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 6221,
+          "count": 6224,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
             "076ab655.demmoo-5p7.pages.dev",
             "076c2b1f0e43eeb23a5943ab6677c570.pages.dev",
+            "0797add9.ajkevmslay.pages.dev",
             "080dc4ca.conntwal.pages.dev",
             "0b282582.kfhhfdue.pages.dev",
             "0gfoundations.pages.dev",
@@ -2128,6 +2129,7 @@
             "fc-bayern-fan-airdrop-2025.pages.dev",
             "fcd62793.pancakeswap-swap.pages.dev",
             "fd6d9f3e.wacon.pages.dev",
+            "fde3e920.ajkevmslay.pages.dev",
             "fdscz87.pages.dev",
             "fe-bifrost-backoffice.pages.dev",
             "feat-538-favorites.frontend-next-7g0.pages.dev",
@@ -4769,6 +4771,7 @@
             "rayls.pages.dev",
             "raylshub.pages.dev",
             "rbtxwlt.pages.dev",
+            "rc-stellar-funnel.pages.dev",
             "reactivenetwork.pages.dev",
             "read-coinbase-chrom-extnson.pages.dev",
             "readyformonad.pages.dev",
@@ -12038,7 +12041,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 168,
+      "total_entries": 169,
       "items": [
         {
           "domain": "dweb.link",
@@ -12233,9 +12236,10 @@
         },
         {
           "domain": "ipfs.io",
-          "count": 1,
+          "count": 2,
           "hosts": [
-            "gateway.ipfs.io"
+            "gateway.ipfs.io",
+            "ipfs.io"
           ]
         }
       ]
