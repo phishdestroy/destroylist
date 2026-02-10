@@ -1,0 +1,107 @@
+name: Purge Domain
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: "Domain to remove from all lists (added to allowlist automatically)"
+        required: true
+        type: string
+  push:
+    paths:
+      - "allow/allowlist.json"
+    branches:
+      - main
+
+concurrency:
+  group: repo-updates
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install tldextract
+
+      - name: Add domain to allowlist
+        if: github.event.inputs.domain
+        shell: python
+        env:
+          DOMAIN: ${{ github.event.inputs.domain }}
+        run: |
+          import json, os
+
+          domain = os.environ["DOMAIN"].strip().lower()
+          path = "allow/allowlist.json"
+
+          with open(path, "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if domain not in data:
+              data.append(domain)
+              data.sort()
+              with open(path, "w", encoding="utf-8") as f:
+                  json.dump(data, f, indent=2, ensure_ascii=False)
+              print(f"Added '{domain}' to allowlist ({len(data)} total)")
+          else:
+              print(f"'{domain}' already in allowlist")
+
+      - name: Validate JSON
+        run: python scripts/validate_json.py
+
+      - name: Clean all lists against allowlist
+        run: python scripts/validate_and_clean.py
+
+      - name: Convert JSON to TXT
+        run: python scripts/json_to_txt.py
+
+      - name: Update domain counts
+        run: python scripts/update_counts.py
+
+      - name: Build rootlist
+        run: python scripts/build_rootlist.py
+
+      - name: Build array shards
+        run: python scripts/build_shards.py
+
+      - name: Commit and push
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
+          git add allow/allowlist.json list.json list.txt count.json \
+                 community/blocklist.json community/count.json community/live_count.json \
+                 dns/*.json rootlist/
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          DOMAIN="${{ github.event.inputs.domain }}"
+          if [ -n "$DOMAIN" ]; then
+            MSG="Purge: ${DOMAIN}"
+          else
+            MSG="Allowlist update: clean all lists [skip ci]"
+          fi
+
+          git commit -m "$MSG"
+
+          for i in {1..5}; do
+            git pull --rebase origin main && git push && exit 0 || sleep 5
+          done
+          exit 1
