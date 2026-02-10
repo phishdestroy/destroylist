@@ -200,8 +200,11 @@ def load_allowlist() -> set:
             data = json.load(f)
             if isinstance(data, list):
                 return {str(d).strip().lower() for d in data if d}
-    except Exception:
-        pass
+    except json.JSONDecodeError as e:
+        log(f"FATAL: allowlist.json invalid JSON at line {e.lineno}: {e.msg}")
+        raise SystemExit(1)
+    except Exception as e:
+        log(f"WARN: Could not load allowlist: {e}")
     return set()
 
 def filter_by_allowlist(domains: set, allowlist: set) -> tuple[set, int]:
@@ -235,8 +238,19 @@ def main() -> None:
     os.makedirs(COMMUNITY_DIR, exist_ok=True)
     last_state = load_state()
     new_state: dict = {}
-    all_domains: set[str] = set()
     changes: list[dict] = []
+
+    # Load existing blocklist as base — domains are never lost by source failure
+    all_domains: set[str] = set()
+    if os.path.exists(OUTPUT_FILENAME):
+        try:
+            with open(OUTPUT_FILENAME, 'r', encoding='utf-8') as f:
+                existing = json.load(f)
+                if isinstance(existing, list):
+                    all_domains = {normalize_domain(d) for d in existing if normalize_domain(d)}
+                    log(f"[base] loaded {len(all_domains)} existing domains from blocklist.json")
+        except Exception:
+            log("[base] could not load existing blocklist, starting fresh")
 
     log("[local] loading local JSON files")
     for file_path in LOCAL_FILES_CONFIG:
@@ -270,11 +284,9 @@ def main() -> None:
             added_count = len(all_domains) - before_add
             log(f"    Parsed: {len(domains)}, Added new unique: {added_count}")
         else:
-            domains = set(last_state.get(name, {}).get('domains', []))
+            domains = set()
             content_hash = last_state.get(name, {}).get('hash')
-            all_domains.update(domains)
-            added_count = len(all_domains) - before_add
-            log(f"    fallback (cached): {len(domains)} domains, Added new unique: {added_count}")
+            log(f"    WARN: {name} unavailable, skipped (existing domains preserved in blocklist.json)")
 
         last_hash = last_state.get(name, {}).get('hash')
         if content_hash != last_hash and content is not None:
@@ -282,7 +294,7 @@ def main() -> None:
             diff = len(domains) - last_count
             changes.append({"name": name, "diff": diff, "sign": '+' if diff >= 0 else ''})
 
-        new_state[name] = {'hash': content_hash, 'count': len(domains), 'domains': sorted(list(domains))}
+        new_state[name] = {'hash': content_hash, 'count': len(domains)}
 
     last_total = last_state.get("total_count", 0)
     if len(all_domains) == last_total and not changes:

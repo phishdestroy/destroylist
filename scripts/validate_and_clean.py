@@ -1,129 +1,136 @@
 #!/usr/bin/env python3
+"""
+Clean all domain lists against the allowlist.
+Removes allowed domains from: list.json, community/blocklist.json, community/live_blocklist.json
+"""
 import json
 import sys
 from pathlib import Path
-from typing import Set, List, Tuple
-import tldextract
+from typing import List, Set, Tuple
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
-LIST_FILE = PROJECT_ROOT / 'list.json'
-ALLOWLIST_FILE = PROJECT_ROOT / 'allow' / 'allowlist.json'
+ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
+
+TARGETS = [
+    PROJECT_ROOT / "list.json",
+    PROJECT_ROOT / "community" / "blocklist.json",
+    PROJECT_ROOT / "community" / "live_blocklist.json",
+]
+
 
 def load_json_list(filepath: Path) -> List[str]:
     if not filepath.exists():
         return []
     try:
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
-            if isinstance(data, list):
-                return [str(d).strip().lower() for d in data if d]
-            return []
-    except Exception as e:
-        print(f"Error loading {filepath}: {e}", file=sys.stderr)
-        return []
+    except json.JSONDecodeError as e:
+        print(f"FATAL: {filepath.name} — invalid JSON at line {e.lineno}: {e.msg}", file=sys.stderr)
+        sys.exit(1)
 
-def get_registered_domain(domain: str) -> str:
-    ext = tldextract.extract(domain)
-    if not ext.suffix:
-        return domain
-    return f"{ext.domain}.{ext.suffix}"
+    if not isinstance(data, list):
+        print(f"FATAL: {filepath.name} — expected array, got {type(data).__name__}", file=sys.stderr)
+        sys.exit(1)
 
-def deduplicate_subdomains(domains: List[str]) -> Tuple[List[str], int]:
-    root_map = {}
+    return [str(d).strip().lower() for d in data if d and str(d).strip()]
 
-    for domain in domains:
-        root = get_registered_domain(domain)
-        if root not in root_map:
-            root_map[root] = []
-        root_map[root].append(domain)
 
-    kept = []
-    removed_count = 0
+def load_allowlist() -> Tuple[Set[str], Set[str]]:
+    entries = load_json_list(ALLOWLIST_FILE)
+    if not entries:
+        print("Allowlist is empty or missing")
+        return set(), set()
 
-    for root, subdomain_list in root_map.items():
-        if root in subdomain_list:
-            kept.append(root)
-            removed_count += len(subdomain_list) - 1
-        else:
-            kept.extend(subdomain_list)
+    patterns = {d for d in entries if d.startswith(".")}
+    exact = set(entries) - patterns
+    print(f"Allowlist: {len(exact)} exact + {len(patterns)} patterns = {len(entries)} total")
+    return exact, patterns
 
-    return sorted(kept), removed_count
 
-def main():
-    import sys
-    dedupe_subdomains = '--dedupe-subdomains' in sys.argv
-
-    print("Loading lists...")
-    domains = load_json_list(LIST_FILE)
-    allowlist = load_json_list(ALLOWLIST_FILE)
-
-    if not domains:
-        print("No domains found in list.json")
-        return 1
-
-    print(f"Loaded {len(domains)} domains")
-    print(f"Loaded {len(allowlist)} allowlist entries")
-
-    original_count = len(domains)
-
-    allowlist_set = set(allowlist)
-    allowlist_patterns = {d for d in allowlist if d.startswith('.')}
-    allowlist_exact = allowlist_set - allowlist_patterns
-
+def filter_domains(domains: List[str], exact: Set[str], patterns: Set[str]) -> Tuple[List[str], int]:
     filtered = []
-    removed_by_allowlist = 0
+    removed = 0
 
     for domain in domains:
-        if domain in allowlist_exact:
-            removed_by_allowlist += 1
+        if domain in exact:
+            removed += 1
             continue
 
-        is_allowed = False
-        for pattern in allowlist_patterns:
-            if domain.endswith(pattern) or domain == pattern[1:]:
-                is_allowed = True
+        matched = False
+        for p in patterns:
+            if domain.endswith(p) or domain == p[1:]:
+                matched = True
                 break
 
-        if is_allowed:
-            removed_by_allowlist += 1
+        if matched:
+            removed += 1
             continue
 
         filtered.append(domain)
 
-    print(f"Removed {removed_by_allowlist} domains via allowlist")
+    return filtered, removed
 
-    if dedupe_subdomains:
-        deduplicated, removed_dupes = deduplicate_subdomains(filtered)
-        print(f"Removed {removed_dupes} subdomain duplicates (--dedupe-subdomains enabled)")
-    else:
-        deduplicated = filtered
-        print("Subdomain deduplication disabled (use --dedupe-subdomains to enable)")
 
-    unique = sorted(list(set(deduplicated)))
-    removed_exact_dupes = len(deduplicated) - len(unique)
-    if removed_exact_dupes > 0:
-        print(f"Removed {removed_exact_dupes} exact duplicates")
+def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
+    if not filepath.exists():
+        return False
+
+    domains = load_json_list(filepath)
+    if not domains:
+        return False
+
+    original_count = len(domains)
+
+    # Filter allowlist
+    filtered, removed_allow = filter_domains(domains, exact, patterns)
+
+    # Deduplicate
+    unique = sorted(set(filtered))
+    removed_dupes = len(filtered) - len(unique)
 
     total_removed = original_count - len(unique)
-    print(f"\nTotal: {original_count} -> {len(unique)} (removed {total_removed})")
+    name = filepath.relative_to(PROJECT_ROOT)
 
     if total_removed == 0:
-        print("No changes needed")
-        return 0
+        print(f"  {name}: {original_count} domains — no changes")
+        return False
 
-    with open(LIST_FILE, 'w', encoding='utf-8') as f:
+    print(f"  {name}: {original_count} → {len(unique)} (allowlist: -{removed_allow}, dupes: -{removed_dupes})")
+
+    with open(filepath, "w", encoding="utf-8") as f:
         json.dump(unique, f, indent=2, ensure_ascii=False)
 
-    print(f"Updated {LIST_FILE.name}")
+    return True
+
+
+def main():
+    print("=== Validate & Clean ===")
+
+    exact, patterns = load_allowlist()
+    if not exact and not patterns:
+        print("Nothing to filter")
+        return 0
+
+    changed = False
+    for target in TARGETS:
+        if clean_file(target, exact, patterns):
+            changed = True
+
+    if changed:
+        print("\n✅ Files updated")
+    else:
+        print("\n✅ No changes needed")
+
     return 0
+
 
 if __name__ == "__main__":
     try:
         sys.exit(main())
     except Exception as e:
-        print(f"Fatal error: {e}", file=sys.stderr)
+        print(f"FATAL: {e}", file=sys.stderr)
         import traceback
         traceback.print_exc()
         sys.exit(1)

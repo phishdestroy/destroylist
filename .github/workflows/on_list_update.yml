@@ -2,18 +2,21 @@ name: On List Update
 on:
   push:
     paths:
-      - 'list.json'
-      - 'dns/active_domains.json'
-      - 'community/blocklist.json'
-      - 'community/live_blocklist.json'
+      - "list.json"
+      - "dns/active_domains.json"
+      - "community/blocklist.json"
+      - "community/live_blocklist.json"
     branches:
       - main
   workflow_dispatch:
+
 concurrency:
   group: repo-updates
   cancel-in-progress: false
+
 jobs:
   process:
+    if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -23,60 +26,47 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
+
       - name: Install dependencies
         run: pip install tldextract
+
+      - name: Validate JSON
+        run: python scripts/validate_json.py
+
       - name: Convert JSON to TXT
         run: python scripts/json_to_txt.py
+
       - name: Update domain counts
         run: python scripts/update_counts.py
+
       - name: Build rootlist
         run: python scripts/build_rootlist.py
-      - name: Build arrays shards
-        shell: python
-        run: |
-          import json
-          import os
-          import math
-          import shutil
 
-          source_file = 'list.json'
-          output_dir = 'rootlist/arrays'
-          chunk_size = 3000
+      - name: Build array shards
+        run: python scripts/build_shards.py
 
-          if not os.path.exists(source_file):
-              exit(0)
-
-          with open(source_file, 'r', encoding='utf-8') as f:
-              data = json.load(f)
-
-          if os.path.exists(output_dir):
-              shutil.rmtree(output_dir)
-          os.makedirs(output_dir, exist_ok=True)
-
-          total_chunks = math.ceil(len(data) / chunk_size)
-
-          for i in range(total_chunks):
-              chunk = data[i * chunk_size : (i + 1) * chunk_size]
-              filename = f"{output_dir}/part_{i:03d}.json"
-              with open(filename, 'w', encoding='utf-8') as f:
-                  json.dump(chunk, f, indent=2, ensure_ascii=False)
-
-          print(f"Created {total_chunks} shards")
       - name: Commit and push
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add list.txt count.json dns/active_count.json community/count.json community/live_count.json rootlist/
+
+          git add list.txt count.json dns/active_count.json \
+                 community/count.json community/live_count.json \
+                 rootlist/
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
+
           git commit -m "Update processed files [skip ci]"
-          for i in {1..3}; do
+
+          for i in {1..5}; do
             git pull --rebase origin main && git push && exit 0 || sleep 5
           done
           exit 1

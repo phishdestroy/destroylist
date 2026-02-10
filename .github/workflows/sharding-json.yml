@@ -19,40 +19,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Shard List
-        shell: python
-        run: |
-          import json
-          import os
-          import math
-          import shutil
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-          source_file = 'list.json'
-          output_dir = 'rootlist/arrays'
-          chunk_size = 3000
-
-          if not os.path.exists(source_file):
-              exit(0)
-
-          with open(source_file, 'r', encoding='utf-8') as f:
-              try:
-                  data = json.load(f)
-              except:
-                  exit(1)
-
-          if os.path.exists(output_dir):
-              shutil.rmtree(output_dir)
-          os.makedirs(output_dir, exist_ok=True)
-
-          total_chunks = math.ceil(len(data) / chunk_size)
-
-          for i in range(total_chunks):
-              chunk = data[i * chunk_size : (i + 1) * chunk_size]
-              filename = f"{output_dir}/part_{i:03d}.json"
-              with open(filename, 'w', encoding='utf-8') as f:
-                  json.dump(chunk, f, indent=2, ensure_ascii=False)
-
-          print(f"Created {total_chunks} shards")
+      - name: Build shards
+        run: python scripts/build_shards.py
 
       - name: Commit and push
         run: |
@@ -64,7 +37,7 @@ jobs:
             exit 0
           fi
           git commit -m "Update arrays shards [skip ci]"
-          for i in {1..3}; do
+          for i in {1..5}; do
             git pull --rebase origin main && git push && exit 0 || sleep 5
           done
           exit 1
