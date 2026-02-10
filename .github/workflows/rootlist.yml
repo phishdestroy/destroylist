@@ -18,6 +18,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          fetch-depth: 1
+        with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
