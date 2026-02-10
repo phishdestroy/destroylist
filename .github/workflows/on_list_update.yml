@@ -67,6 +67,6 @@ jobs:
           git commit -m "Update processed files [skip ci]"
 
           for i in {1..5}; do
-            git pull --rebase origin main && git push && exit 0 || sleep 5
+            git pull --rebase --autostash origin main && git push && exit 0 || sleep 5
           done
           exit 1
