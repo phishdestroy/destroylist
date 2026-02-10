@@ -33,7 +33,7 @@ jobs:
             exit 0
           fi
           git commit -m "Update statistics [skip ci]"
-          for i in {1..3}; do
+          for i in {1..5}; do
             git pull --rebase origin main && git push && exit 0 || sleep 5
           done
           exit 1
