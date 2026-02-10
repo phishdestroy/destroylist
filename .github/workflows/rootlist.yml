@@ -73,6 +73,6 @@ jobs:
 
           git checkout -- . 2>/dev/null || true
           for i in {1..5}; do
-            git pull --rebase origin main && git push && exit 0 || sleep 10
+            git pull --rebase --autostash origin main && git push && exit 0 || sleep 10
           done
           exit 1
