@@ -71,6 +71,7 @@ jobs:
           CHANGES=$(git diff --staged --stat | tail -1)
           git commit -m "Daily update: ${CHANGES} [skip ci]"
 
+          git checkout -- . 2>/dev/null || true
           for i in {1..5}; do
             git pull --rebase origin main && git push && exit 0 || sleep 10
           done
