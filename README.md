@@ -96,6 +96,82 @@
 ---
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Alien%20Monster.webp" alt="Alien Monster" width="25" height="25" /> Threat Intelligence API
+
+<p align="center">
+  <img src="scripts/api.png" alt="API" width="700"/>
+</p>
+
+<p align="center">
+  <a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/🔥_LIVE_API-api.destroy.tools-FF0000?style=for-the-badge" alt="API"/></a>
+  <a href="https://api.destroy.tools/v1/stats"><img src="https://img.shields.io/badge/📊_STATS-000000?style=for-the-badge" alt="Stats"/></a>
+</p>
+
+> **Free, open, no API key.** Real-time domain risk scoring (0-100) across 770K+ threats · Hourly sync · Single & bulk check (500/req) · Keyword search · Full feeds
+
+<details>
+<summary>📖 <b>API Endpoints, Scoring & Integration Examples</b></summary>
+<br>
+
+### Endpoints
+
+| Method | Endpoint | Description |
+|:------:|:---------|:------------|
+| `GET` | [`/v1/check?domain=`](https://api.destroy.tools/v1/check?domain=example-phish.xyz) | Single domain check with risk score & severity |
+| `POST` | `/v1/check/bulk` | Bulk check up to **500 domains** per request |
+| `GET` | [`/v1/search?q=`](https://api.destroy.tools/v1/search?q=metamask) | Search blocklisted domains by keyword |
+| `GET` | [`/v1/feed/{list}`](https://api.destroy.tools/v1/feed/primary) | Download full domain feeds (primary, community, active) |
+| `GET` | [`/v1/stats`](https://api.destroy.tools/v1/stats) | Live statistics & domain counts |
+
+### Threat Scoring
+
+Every domain gets a **risk score (0-100)** based on multiple signals:
+
+| Signal | Points | Description |
+|:-------|:------:|:------------|
+| Curated blocklist | **+40** | In primary destroylist |
+| Community reported | **+20** | Reported by community sources |
+| DNS active | **+30** | Domain currently resolves |
+| Multi-source | **+10** | Confirmed by multiple feeds |
+| Suspicious keywords | **+5 each** | metamask, wallet, airdrop, etc. |
+| Risky TLD | **+5** | .xyz, .top, .club, .icu, etc. |
+
+> 🔴 **Critical** 70-100 · 🟠 **High** 40-69 · 🟡 **Medium** 20-39 · 🟢 **Low** 1-19
+
+### Quick Integration
+
+**cURL**
+```bash
+curl "https://api.destroy.tools/v1/check?domain=suspicious-site.xyz"
+```
+
+**Python**
+```python
+import requests
+r = requests.get(f"https://api.destroy.tools/v1/check?domain={domain}")
+if r.json()["threat"]:
+    print(f"BLOCKED: {r.json()['severity']} (score: {r.json()['risk_score']})")
+```
+
+**JavaScript**
+```javascript
+const r = await fetch(`https://api.destroy.tools/v1/check?domain=${domain}`);
+const data = await r.json();
+if (data.threat) console.warn("PHISHING:", data.severity, data.risk_score);
+```
+
+**Bulk Check**
+```bash
+curl -X POST "https://api.destroy.tools/v1/check/bulk" \
+  -H "Content-Type: application/json" \
+  -d '{"domains":["site1.com","site2.xyz","site3.top"]}'
+```
+
+</details>
+
+---
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Telescope.png" alt="Telescope" width="22" height="22" /> About Destroylist
 
 > [!NOTE]
@@ -311,8 +387,9 @@ Accuracy first! 🔭
 </p>
 
 <p align="center">
-  <a href="https://ban.destroy.tools"><img src="https://img.shields.io/badge/🚫_BAN_SERVICE-FF0000?style=for-the-badge" alt="Ban Service"/></a>
-  <a href="mailto:contact@phishdestroy.io"><img src="https://img.shields.io/badge/✉️_CONTACT-000000?style=for-the-badge" alt="Email"/></a>
+  <a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/⚡_API-FF0000?style=for-the-badge" alt="API"/></a>
+  <a href="https://ban.destroy.tools"><img src="https://img.shields.io/badge/🚫_BAN_SERVICE-000000?style=for-the-badge" alt="Ban Service"/></a>
+  <a href="mailto:contact@phishdestroy.io"><img src="https://img.shields.io/badge/✉️_CONTACT-FF0000?style=for-the-badge" alt="Email"/></a>
 </p>
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
