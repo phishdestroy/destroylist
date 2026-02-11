@@ -10,6 +10,8 @@ FILES_TO_CHECK = [
     PROJECT_ROOT / "list.json",
     PROJECT_ROOT / "allow" / "allowlist.json",
     PROJECT_ROOT / "community" / "blocklist.json",
+    PROJECT_ROOT / "community" / "live_blocklist.json",
+    PROJECT_ROOT / "dns" / "active_domains.json",
 ]
 
 def validate_file(filepath: Path) -> bool:

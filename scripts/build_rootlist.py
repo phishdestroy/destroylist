@@ -92,7 +92,7 @@ def load_list(path: Path) -> List[str]:
 
 def get_root(host: str) -> str | None:
     ext = tldextract.extract(host)
-    rd = getattr(ext, "top_domain_under_public_suffix", None)
+    rd = getattr(ext, "top_domain_under_public_suffix", None) or ext.registered_domain
     return rd.lower() if rd else None
 
 
