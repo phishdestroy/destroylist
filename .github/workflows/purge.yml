@@ -94,7 +94,7 @@ jobs:
 
           DOMAIN="${{ github.event.inputs.domain }}"
           if [ -n "$DOMAIN" ]; then
-            MSG="Purge: ${DOMAIN}"
+            MSG="Purge: ${DOMAIN} [skip ci]"
           else
             MSG="Allowlist update: clean all lists [skip ci]"
           fi
