@@ -23,6 +23,10 @@ jobs:
           python-version: "3.12"
       - name: Calculate statistics
         run: python scripts/calculate_stats.py
+      - name: Update daily gist
+        env:
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: python scripts/update_gist.py
       - name: Commit and push
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
