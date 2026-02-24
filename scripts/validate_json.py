@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate all critical JSON files before any pipeline step."""
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -13,6 +14,9 @@ FILES_TO_CHECK = [
     PROJECT_ROOT / "community" / "live_blocklist.json",
     PROJECT_ROOT / "dns" / "active_domains.json",
 ]
+
+IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
+
 
 def validate_file(filepath: Path) -> bool:
     if not filepath.exists():
@@ -34,9 +38,20 @@ def validate_file(filepath: Path) -> bool:
     if bad:
         print(f"WARN: {filepath.relative_to(PROJECT_ROOT)} — {len(bad)} empty/non-string entries (indices: {bad[:5]}...)")
 
-    dupes = len(data) - len(set(d.lower().strip() for d in data))
+    str_entries = [d for d in data if isinstance(d, str) and d.strip()]
+    dupes = len(str_entries) - len(set(d.lower().strip() for d in str_entries))
     if dupes > 0:
         print(f"WARN: {filepath.relative_to(PROJECT_ROOT)} — {dupes} duplicate entries")
+
+    # Check for entries without dots (invalid domains)
+    no_dots = [d for d in str_entries if "." not in d.split("/")[0]]
+    if no_dots:
+        print(f"WARN: {filepath.relative_to(PROJECT_ROOT)} — {len(no_dots)} entries without dots: {no_dots[:5]}...")
+
+    # Check for IP address entries
+    ips = [d for d in str_entries if IPV4_RE.fullmatch(d.split("/")[0])]
+    if ips:
+        print(f"INFO: {filepath.relative_to(PROJECT_ROOT)} — {len(ips)} IP address entries")
 
     print(f"OK: {filepath.relative_to(PROJECT_ROOT)} — {len(data)} entries")
     return True

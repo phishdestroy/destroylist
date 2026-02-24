@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 from typing import Dict, List, Set
 
@@ -11,6 +12,7 @@ SOURCE_LIST = ROOT / "list.json"
 SOURCE_ACTIVE = ROOT / "dns" / "active_domains.json"
 SOURCE_COMMUNITY = ROOT / "community" / "blocklist.json"
 SOURCE_COMMUNITY_ACTIVE = ROOT / "community" / "live_blocklist.json"
+ALLOWLIST_FILE = ROOT / "allow" / "allowlist.json"
 
 OUT_DIR = ROOT / "rootlist"
 OUT_ACTIVE = OUT_DIR / "active_root_domains.json"
@@ -72,6 +74,21 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
 
 INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 
+IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
+
+
+def load_allowlist() -> Set[str]:
+    """Load allowlist for filtering root domains."""
+    if not ALLOWLIST_FILE.exists():
+        return set()
+    try:
+        data = json.loads(ALLOWLIST_FILE.read_text(encoding="utf-8"))
+        if isinstance(data, list):
+            return {str(d).strip().lower() for d in data if d}
+    except Exception:
+        pass
+    return set()
+
 
 def load_list(path: Path) -> List[str]:
     if not path.exists():
@@ -92,20 +109,35 @@ def load_list(path: Path) -> List[str]:
 
 def get_root(host: str) -> str | None:
     ext = tldextract.extract(host)
-    rd = getattr(ext, "top_domain_under_public_suffix", None) or ext.registered_domain
+    rd = ext.top_domain_under_public_suffix if hasattr(ext, "top_domain_under_public_suffix") else ext.registered_domain
     return rd.lower() if rd else None
 
 
-def process_items(items: List[str]) -> tuple[Set[str], Dict[str, Dict[str, Dict[str, object]]], Set[str]]:
+def process_items(
+    items: List[str],
+    allowlist: Set[str] | None = None,
+) -> tuple[Set[str], Dict[str, Dict[str, Dict[str, object]]], Set[str]]:
     active_roots: Set[str] = set()
     provider_stats: Dict[str, Dict[str, Dict[str, object]]] = {
         g: {} for g in PROVIDER_GROUPS.keys()
     }
     cleaned_hosts: Set[str] = set()
+    _allowlist = allowlist or set()
 
     for entry in items:
-        rd = get_root(entry)
+        # Extract domain part (strip path) for root extraction
+        host = entry.split("/")[0].split("?")[0].split("#")[0]
+
+        # Skip IP addresses
+        if IPV4_RE.fullmatch(host):
+            continue
+
+        rd = get_root(host)
         if not rd:
+            continue
+
+        # Skip root domains that are in the allowlist
+        if rd in _allowlist:
             continue
 
         if rd in INFRA_ROOTS:
@@ -121,7 +153,7 @@ def process_items(items: List[str]) -> tuple[Set[str], Dict[str, Dict[str, Dict[
             continue
 
         active_roots.add(rd)
-        cleaned_hosts.add(entry)
+        cleaned_hosts.add(host)
 
     return active_roots, provider_stats, cleaned_hosts
 
@@ -166,13 +198,14 @@ def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
 
 def main() -> None:
     os.makedirs(OUT_DIR, exist_ok=True)
+    allowlist = load_allowlist()
 
     # Primary list
     if not SOURCE_LIST.exists():
         raise SystemExit(f"list.json not found: {SOURCE_LIST}")
 
     items_primary = load_list(SOURCE_LIST)
-    primary_roots, primary_providers, _ = process_items(items_primary)
+    primary_roots, primary_providers, _ = process_items(items_primary, allowlist)
 
     OUT_ACTIVE.write_text(
         json.dumps(
@@ -194,7 +227,7 @@ def main() -> None:
     # Primary active (DNS checked)
     if SOURCE_ACTIVE.exists():
         items_active = load_list(SOURCE_ACTIVE)
-        _, _, online_hosts = process_items(items_active)
+        _, _, online_hosts = process_items(items_active, allowlist)
 
         OUT_ONLINE.write_text(
             json.dumps(
@@ -210,7 +243,7 @@ def main() -> None:
     # Community list
     if SOURCE_COMMUNITY.exists():
         items_community = load_list(SOURCE_COMMUNITY)
-        community_roots, community_providers, _ = process_items(items_community)
+        community_roots, community_providers, _ = process_items(items_community, allowlist)
 
         OUT_COMMUNITY.write_text(
             json.dumps(
@@ -232,7 +265,7 @@ def main() -> None:
     # Community active (DNS checked)
     if SOURCE_COMMUNITY_ACTIVE.exists():
         items_community_active = load_list(SOURCE_COMMUNITY_ACTIVE)
-        _, _, community_online_hosts = process_items(items_community_active)
+        _, _, community_online_hosts = process_items(items_community_active, allowlist)
 
         OUT_COMMUNITY_ONLINE.write_text(
             json.dumps(
