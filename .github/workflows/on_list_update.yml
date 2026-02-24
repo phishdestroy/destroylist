@@ -38,6 +38,9 @@ jobs:
       - name: Validate JSON
         run: python scripts/validate_json.py
 
+      - name: Clean all lists against allowlist
+        run: python scripts/validate_and_clean.py
+
       - name: Convert JSON to TXT
         run: python scripts/json_to_txt.py
 
@@ -55,7 +58,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-          git add list.txt count.json dns/active_count.json \
+          git add list.json list.txt count.json dns/active_count.json \
+                 community/blocklist.json community/live_blocklist.json \
                  community/count.json community/live_count.json \
                  rootlist/
 
