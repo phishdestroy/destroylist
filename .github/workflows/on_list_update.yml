@@ -58,10 +58,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-          git add list.json list.txt count.json dns/active_count.json \
+          git add list.json list.txt count.json \
                  community/blocklist.json community/live_blocklist.json \
                  community/count.json community/live_count.json \
-                 rootlist/
+                 dns/*.json rootlist/
 
           if git diff --cached --quiet; then
             echo "No changes to commit"

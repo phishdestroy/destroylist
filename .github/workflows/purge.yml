@@ -84,7 +84,8 @@ jobs:
           git config user.name "github-actions[bot]"
 
           git add allow/allowlist.json list.json list.txt count.json \
-                 community/blocklist.json community/count.json community/live_count.json \
+                 community/blocklist.json community/live_blocklist.json \
+                 community/count.json community/live_count.json \
                  dns/*.json rootlist/
 
           if git diff --cached --quiet; then
