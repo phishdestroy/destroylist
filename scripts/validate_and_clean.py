@@ -208,19 +208,27 @@ def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
     # Filter allowlist (now handles path-based entries correctly)
     filtered, removed_allow = filter_domains(valid, exact, patterns)
 
-    # Deduplicate
+    # Deduplicate and sort
     unique = sorted(set(filtered))
     removed_dupes = len(filtered) - len(unique)
 
     total_removed = original_count - len(unique)
     name = filepath.relative_to(PROJECT_ROOT)
 
-    if total_removed == 0:
+    # Always rewrite file to ensure consistent formatting (indent=2, sorted)
+    expected = json.dumps(unique, indent=2, ensure_ascii=False)
+    current = filepath.read_text(encoding="utf-8").rstrip("\n")
+    needs_reformat = current != expected
+
+    if total_removed == 0 and not needs_reformat:
         print(f"  {name}: {original_count} domains — no changes")
         return False
 
-    print(f"  {name}: {original_count} -> {len(unique)} "
-          f"(invalid: -{removed_invalid}, IPs: -{removed_ips}, allowlist: -{removed_allow}, dupes: -{removed_dupes})")
+    if total_removed > 0:
+        print(f"  {name}: {original_count} -> {len(unique)} "
+              f"(invalid: -{removed_invalid}, IPs: -{removed_ips}, allowlist: -{removed_allow}, dupes: -{removed_dupes})")
+    elif needs_reformat:
+        print(f"  {name}: {original_count} domains — reformatted")
 
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(unique, f, indent=2, ensure_ascii=False)
