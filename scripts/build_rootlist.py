@@ -43,6 +43,9 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
         "web.app",
         "pages.dev",
         "workers.dev",
+        "ghost.io",
+        "amazonaws.com",
+        "cloudfront.net",
     },
     "site_builders": {
         "weebly.com",
@@ -136,10 +139,8 @@ def process_items(
         if not rd:
             continue
 
-        # Skip root domains that are in the allowlist
-        if rd in _allowlist:
-            continue
-
+        # Hosting platforms first — subdomains are separate sites,
+        # so they must be tracked even if the root is in the allowlist.
         if rd in INFRA_ROOTS:
             for group, roots in PROVIDER_GROUPS.items():
                 if rd in roots:
@@ -150,6 +151,10 @@ def process_items(
                         gmap[rd] = rec
                     rec["count"] = int(rec["count"]) + 1
                     rec["hosts"].add(entry)
+            continue
+
+        # Skip root domains that are in the allowlist (non-hosting only)
+        if rd in _allowlist:
             continue
 
         active_roots.add(rd)

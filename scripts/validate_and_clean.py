@@ -10,6 +10,12 @@ import sys
 from pathlib import Path
 from typing import List, Set, Tuple
 
+import tldextract
+
+# Allow importing sibling modules when run as `python scripts/validate_and_clean.py`
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_rootlist import INFRA_ROOTS
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
@@ -89,7 +95,17 @@ def load_json_list(filepath: Path) -> List[str]:
         print(f"FATAL: {filepath.name} — expected array, got {type(data).__name__}", file=sys.stderr)
         sys.exit(1)
 
-    return [str(d).strip().lower() for d in data if d and str(d).strip()]
+    cleaned = []
+    for d in data:
+        if not d:
+            continue
+        s = str(d).strip().lower()
+        if not s:
+            continue
+        # Strip protocol prefixes
+        s = s.removeprefix("https://").removeprefix("http://")
+        cleaned.append(s)
+    return cleaned
 
 
 def load_allowlist() -> Tuple[Set[str], Set[str]]:
@@ -102,6 +118,13 @@ def load_allowlist() -> Tuple[Set[str], Set[str]]:
     exact = set(entries) - patterns
     print(f"Allowlist: {len(exact)} exact + {len(patterns)} patterns = {len(entries)} total")
     return exact, patterns
+
+
+def get_root(host: str) -> str:
+    """Extract root domain using tldextract (e.g. sites.google.com -> google.com)."""
+    ext = tldextract.extract(host)
+    rd = ext.top_domain_under_public_suffix if hasattr(ext, "top_domain_under_public_suffix") else ext.registered_domain
+    return rd.lower() if rd else ""
 
 
 def is_allowed(domain: str, exact: Set[str], patterns: Set[str]) -> bool:
@@ -117,16 +140,36 @@ def is_allowed(domain: str, exact: Set[str], patterns: Set[str]) -> bool:
 def filter_domains(domains: List[str], exact: Set[str], patterns: Set[str]) -> Tuple[List[str], int]:
     """Filter domains against the allowlist.
 
-    Checks the full entry as-is against exact and pattern matches.
-    Path-based entries (e.g. 'github.com/something') are preserved in
-    list.json as threat intelligence data — the domain-level filtering
-    is handled at output generation time (json_to_txt.py).
+    For each entry:
+    1. Exact match on the full entry (e.g. 'github.com' in allowlist).
+    2. Extract domain part (strip path/query/fragment) and check allowlist.
+    3. Extract root domain via tldextract and check allowlist — but ONLY
+       for non-hosting platforms (INFRA_ROOTS), because subdomains on
+       hosting platforms (e.g. phish.ghost.io) are separate malicious sites.
     """
     filtered = []
     removed = 0
 
     for entry in domains:
+        # 1. Full entry exact/pattern match
         if is_allowed(entry, exact, patterns):
+            removed += 1
+            continue
+
+        # 2. Domain part (without path) — handles 'github.com/something'
+        domain = extract_domain(entry)
+        if domain != entry and is_allowed(domain, exact, patterns):
+            root = get_root(domain)
+            # Keep entries on hosting platforms (subdomains = separate sites)
+            if root and root in INFRA_ROOTS:
+                filtered.append(entry)
+            else:
+                removed += 1
+            continue
+
+        # 3. Root domain check — handles 'sites.google.com'
+        root = get_root(domain)
+        if root and root != domain and is_allowed(root, exact, patterns) and root not in INFRA_ROOTS:
             removed += 1
             continue
 
@@ -145,17 +188,22 @@ def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
 
     original_count = len(domains)
 
-    # Remove invalid entries (garbage without dots, pure numbers, etc.)
+    # Remove invalid entries (garbage, IPs, pure numbers, etc.)
     valid = []
     removed_invalid = 0
+    removed_ips = 0
     for entry in domains:
-        if is_valid_entry(entry) or is_ip_entry(entry):
-            valid.append(entry)
-        else:
+        if is_ip_entry(entry):
+            removed_ips += 1
+        elif not is_valid_entry(entry):
             removed_invalid += 1
+        else:
+            valid.append(entry)
 
     if removed_invalid > 0:
         print(f"  Removed {removed_invalid} invalid entries from {filepath.name}")
+    if removed_ips > 0:
+        print(f"  Removed {removed_ips} IP address entries from {filepath.name}")
 
     # Filter allowlist (now handles path-based entries correctly)
     filtered, removed_allow = filter_domains(valid, exact, patterns)
@@ -172,10 +220,10 @@ def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
         return False
 
     print(f"  {name}: {original_count} -> {len(unique)} "
-          f"(invalid: -{removed_invalid}, allowlist: -{removed_allow}, dupes: -{removed_dupes})")
+          f"(invalid: -{removed_invalid}, IPs: -{removed_ips}, allowlist: -{removed_allow}, dupes: -{removed_dupes})")
 
     with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(unique, f, ensure_ascii=False)
+        json.dump(unique, f, indent=2, ensure_ascii=False)
 
     return True
 
