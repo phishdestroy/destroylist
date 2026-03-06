@@ -1,35 +1,35 @@
 #!/usr/bin/env python3
+"""Generate badge count files for shields.io endpoints."""
 import json
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
+from utils import PROJECT_ROOT, make_badge, save_json, log
 
 SOURCES = {
     "primary": {
         "input": PROJECT_ROOT / "list.json",
         "output": PROJECT_ROOT / "count.json",
         "label": "Active Domains",
-        "color": "important"
+        "color": "important",
     },
     "primary_dns": {
         "input": PROJECT_ROOT / "dns" / "active_domains.json",
         "output": PROJECT_ROOT / "dns" / "active_count.json",
         "label": "Active Domains (DNS)",
-        "color": "purple"
+        "color": "purple",
     },
     "community": {
         "input": PROJECT_ROOT / "community" / "blocklist.json",
         "output": PROJECT_ROOT / "community" / "count.json",
         "label": "Community Domains",
-        "color": "blue"
+        "color": "blue",
     },
     "community_dns": {
         "input": PROJECT_ROOT / "community" / "live_blocklist.json",
         "output": PROJECT_ROOT / "community" / "live_count.json",
         "label": "Community Live",
-        "color": "brightgreen"
-    }
+        "color": "brightgreen",
+    },
 }
 
 
@@ -52,17 +52,9 @@ def main():
         count = count_domains(cfg["input"])
         if count == 0:
             continue
-        
-        badge = {
-            "schemaVersion": 1,
-            "label": cfg["label"],
-            "message": str(count),
-            "color": cfg["color"]
-        }
-        
-        cfg["output"].parent.mkdir(parents=True, exist_ok=True)
-        cfg["output"].write_text(json.dumps(badge, indent=2), encoding="utf-8")
-        print(f"{name}: {count}")
+
+        save_json(cfg["output"], make_badge(cfg["label"], f"{count:,}", cfg["color"]))
+        log(f"{name}: {count:,}", "ok")
 
 
 if __name__ == "__main__":

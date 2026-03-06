@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
+"""Convert JSON domain lists to multiple output formats."""
 import json
-import re
-import sys
-from pathlib import Path
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Set
 
-import tldextract
+from utils import (
+    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
+    extract_domain, get_root, load_allowlist, save_json, log,
+)
 
-# Allow importing sibling modules when run as `python scripts/json_to_txt.py`
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_rootlist import INFRA_ROOTS
-
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
 FORMATS_DIR = PROJECT_ROOT / "rootlist" / "formats"
 ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
 
@@ -24,27 +20,12 @@ SOURCES = {
     "community_active": PROJECT_ROOT / "community" / "live_blocklist.json",
 }
 
-IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
-
-
-def get_root(host: str) -> str:
-    """Extract root domain using tldextract (e.g. sites.google.com -> google.com)."""
-    ext = tldextract.extract(host)
-    rd = ext.top_domain_under_public_suffix if hasattr(ext, "top_domain_under_public_suffix") else ext.registered_domain
-    return rd.lower() if rd else ""
-
-
-def load_allowlist() -> Set[str]:
-    """Load allowlist domains for filtering at output generation time."""
-    if not ALLOWLIST_FILE.exists():
-        return set()
-    try:
-        data = json.loads(ALLOWLIST_FILE.read_text(encoding="utf-8"))
-        if isinstance(data, list):
-            return {str(d).strip().lower() for d in data if d}
-    except Exception:
-        pass
-    return set()
+ADBLOCK_DESCRIPTIONS = {
+    "primary": "Curated phishing and scam domain blocklist by PhishDestroy",
+    "primary_active": "DNS-verified active phishing and scam domains by PhishDestroy",
+    "community": "Community-aggregated phishing and scam domains from 35+ threat intel sources",
+    "community_active": "DNS-verified community-aggregated phishing and scam domains",
+}
 
 
 def load_domains(filepath: Path, allowlist: Set[str]) -> list:
@@ -55,20 +36,14 @@ def load_domains(filepath: Path, allowlist: Set[str]) -> list:
         domains = data if isinstance(data, list) else data.get("domains", [])
         clean = set()
         for d in domains:
-            d = str(d).strip().lower().replace("https://", "").replace("http://", "").split("/")[0].split("?")[0]
+            d = str(d).strip().lower().replace("https://", "").replace("http://", "")
+            d = extract_domain(d)
             if not d or "." not in d:
                 continue
-            # Skip IP addresses — this is a domain blacklist
             if IPV4_RE.fullmatch(d):
                 continue
-            # Skip entries without alphabetic characters (numeric garbage like '0.512752')
             if not any(c.isalpha() for c in d):
                 continue
-            # Skip domains that are in the allowlist.
-            # Exact match: always filter (e.g. ghost.io itself is allowed).
-            # Root match: only filter if root is NOT a hosting platform,
-            # because subdomains on hosting platforms (e.g. phish.ghost.io)
-            # are separate sites and may be malicious.
             if d in allowlist:
                 continue
             root = get_root(d)
@@ -80,17 +55,9 @@ def load_domains(filepath: Path, allowlist: Set[str]) -> list:
         return []
 
 
-ADBLOCK_DESCRIPTIONS = {
-    "primary": "Curated phishing and scam domain blocklist by PhishDestroy",
-    "primary_active": "DNS-verified active phishing and scam domains by PhishDestroy",
-    "community": "Community-aggregated phishing and scam domains from 35+ threat intel sources",
-    "community_active": "DNS-verified community-aggregated phishing and scam domains",
-}
-
-
 def header(name: str, count: int, fmt: str, c: str = "#") -> str:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    return f"{c} Destroylist - {name} | {fmt} | {count} domains | {ts}\n{c} https://github.com/phishdestroy/destroylist\n\n"
+    return f"{c} Destroylist - {name} | {fmt} | {count:,} domains | {ts}\n{c} https://github.com/phishdestroy/destroylist\n\n"
 
 
 def adblock_header(name: str, source_key: str, count: int) -> str:
@@ -107,7 +74,7 @@ def adblock_header(name: str, source_key: str, count: int) -> str:
         f"! Expires: 1 day\n"
         f"! Last modified: {ts}\n"
         f"! Version: {version}\n"
-        f"! Total domains: {count}\n"
+        f"! Total domains: {count:,}\n"
     )
 
 
@@ -116,7 +83,7 @@ def rpz_header(name: str, count: int) -> str:
     ts = now.strftime("%Y-%m-%d %H:%M UTC")
     serial = now.strftime("%Y%m%d%H")
     return (
-        f"; Destroylist - {name} | RPZ zone | {count} domains | {ts}\n"
+        f"; Destroylist - {name} | RPZ zone | {count:,} domains | {ts}\n"
         f"; https://github.com/phishdestroy/destroylist\n"
         f"$TTL 300\n"
         f"@ SOA localhost. root.localhost. {serial} 86400 7200 2592000 300\n"
@@ -148,7 +115,7 @@ def main():
         write(out / "unbound.conf", header(n, len(domains), "unbound") + "\n".join(f'local-zone: "{d}" always_nxdomain' for d in domains) + "\n")
         write(out / "rpz.zone", rpz_header(n, len(domains)) + "\n".join(f"{d} CNAME ." for d in domains) + "\n")
 
-        print(f"{name}: {len(domains)}")
+        log(f"{name}: {len(domains):,} domains -> 6 formats", "ok")
 
     primary = load_domains(SOURCES["primary"], allowlist)
     if primary:

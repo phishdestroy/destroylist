@@ -1,96 +1,27 @@
+#!/usr/bin/env python3
+"""Extract registrable root domains and categorize by hosting provider."""
 import json
 import os
-import re
 from pathlib import Path
 from typing import Dict, List, Set
 
-import tldextract
+from utils import (
+    PROJECT_ROOT, IPV4_RE, PROVIDER_GROUPS, INFRA_ROOTS,
+    get_root, load_allowlist, save_json, log,
+)
 
-ROOT = Path(__file__).resolve().parents[1]
+SOURCE_LIST = PROJECT_ROOT / "list.json"
+SOURCE_ACTIVE = PROJECT_ROOT / "dns" / "active_domains.json"
+SOURCE_COMMUNITY = PROJECT_ROOT / "community" / "blocklist.json"
+SOURCE_COMMUNITY_ACTIVE = PROJECT_ROOT / "community" / "live_blocklist.json"
 
-SOURCE_LIST = ROOT / "list.json"
-SOURCE_ACTIVE = ROOT / "dns" / "active_domains.json"
-SOURCE_COMMUNITY = ROOT / "community" / "blocklist.json"
-SOURCE_COMMUNITY_ACTIVE = ROOT / "community" / "live_blocklist.json"
-ALLOWLIST_FILE = ROOT / "allow" / "allowlist.json"
-
-OUT_DIR = ROOT / "rootlist"
+OUT_DIR = PROJECT_ROOT / "rootlist"
 OUT_ACTIVE = OUT_DIR / "active_root_domains.json"
 OUT_PROVIDERS = OUT_DIR / "providers_root_domains.json"
 OUT_ONLINE = OUT_DIR / "online_root_domains.json"
 OUT_COMMUNITY = OUT_DIR / "community_root_domains.json"
 OUT_COMMUNITY_ONLINE = OUT_DIR / "community_online_root_domains.json"
 OUT_COMMUNITY_PROVIDERS = OUT_DIR / "community_providers_root_domains.json"
-
-PROVIDER_GROUPS: Dict[str, Set[str]] = {
-    "multi_tenant_hosting": {
-        "vercel.app",
-        "netlify.app",
-        "github.io",
-        "render.com",
-        "onrender.com",
-        "digitaloceanspaces.com",
-        "windows.net",
-        "fastly.net",
-        "cprapid.com",
-        "sslip.io",
-        "duckdns.org",
-        "replit.dev",
-        "surge.sh",
-        "typedream.app",
-        "hostingersite.com",
-        "firebaseapp.com",
-        "web.app",
-        "pages.dev",
-        "workers.dev",
-        "ghost.io",
-        "amazonaws.com",
-        "cloudfront.net",
-    },
-    "site_builders": {
-        "weebly.com",
-        "weeblysite.com",
-        "wixsite.com",
-        "wordpress.com",
-        "blogspot.com",
-        "blogspot.am",
-        "square.site",
-        "webflow.io",
-        "godaddysites.com",
-        "webcindario.com",
-        "home.pl",
-        "pineapple.page",
-        "gitbook.io",
-    },
-    "decentralized_storage": {
-        "ipfs.io",
-        "cloudflare-ipfs.com",
-        "dweb.link",
-        "infura-ipfs.io",
-        "eth.limo",
-        "fleek.co",
-    },
-    "saas_platforms": {
-        "teachable.com",
-    },
-}
-
-INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
-
-IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
-
-
-def load_allowlist() -> Set[str]:
-    """Load allowlist for filtering root domains."""
-    if not ALLOWLIST_FILE.exists():
-        return set()
-    try:
-        data = json.loads(ALLOWLIST_FILE.read_text(encoding="utf-8"))
-        if isinstance(data, list):
-            return {str(d).strip().lower() for d in data if d}
-    except Exception:
-        pass
-    return set()
 
 
 def load_list(path: Path) -> List[str]:
@@ -101,37 +32,20 @@ def load_list(path: Path) -> List[str]:
         arr = data.get("domains", [])
     else:
         arr = data
-    out: List[str] = []
-    for v in arr:
-        if isinstance(v, str):
-            d = v.strip().strip(".").lower()
-            if d:
-                out.append(d)
-    return out
-
-
-def get_root(host: str) -> str | None:
-    ext = tldextract.extract(host)
-    rd = ext.top_domain_under_public_suffix if hasattr(ext, "top_domain_under_public_suffix") else ext.registered_domain
-    return rd.lower() if rd else None
+    return [v.strip().strip(".").lower() for v in arr if isinstance(v, str) and v.strip()]
 
 
 def process_items(
     items: List[str],
     allowlist: Set[str] | None = None,
-) -> tuple[Set[str], Dict[str, Dict[str, Dict[str, object]]], Set[str]]:
+) -> tuple[Set[str], Dict[str, Dict], Set[str]]:
     active_roots: Set[str] = set()
-    provider_stats: Dict[str, Dict[str, Dict[str, object]]] = {
-        g: {} for g in PROVIDER_GROUPS.keys()
-    }
+    provider_stats: Dict[str, Dict] = {g: {} for g in PROVIDER_GROUPS}
     cleaned_hosts: Set[str] = set()
     _allowlist = allowlist or set()
 
     for entry in items:
-        # Extract domain part (strip path) for root extraction
         host = entry.split("/")[0].split("?")[0].split("#")[0]
-
-        # Skip IP addresses
         if IPV4_RE.fullmatch(host):
             continue
 
@@ -139,21 +53,14 @@ def process_items(
         if not rd:
             continue
 
-        # Hosting platforms first — subdomains are separate sites,
-        # so they must be tracked even if the root is in the allowlist.
         if rd in INFRA_ROOTS:
             for group, roots in PROVIDER_GROUPS.items():
                 if rd in roots:
-                    gmap = provider_stats[group]
-                    rec = gmap.get(rd)
-                    if rec is None:
-                        rec = {"count": 0, "hosts": set()}
-                        gmap[rd] = rec
-                    rec["count"] = int(rec["count"]) + 1
+                    rec = provider_stats[group].setdefault(rd, {"count": 0, "hosts": set()})
+                    rec["count"] += 1
                     rec["hosts"].add(entry)
             continue
 
-        # Skip root domains that are in the allowlist (non-hosting only)
         if rd in _allowlist:
             continue
 
@@ -164,11 +71,8 @@ def process_items(
 
 
 def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
-    providers_payload = {
-        "meta": {
-            "name": "excluded provider roots",
-            "source": source_name,
-        },
+    payload = {
+        "meta": {"name": "excluded provider roots", "source": source_name},
         "providers": {},
     }
 
@@ -176,112 +80,57 @@ def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
         if not stats:
             continue
 
-        total_entries = sum(int(rec["count"]) for rec in stats.values())
-        items_sorted = sorted(
-            stats.items(), key=lambda kv: int(kv[1]["count"]), reverse=True
-        )
+        total_entries = sum(rec["count"] for rec in stats.values())
+        items_sorted = sorted(stats.items(), key=lambda kv: kv[1]["count"], reverse=True)
 
-        group_items = []
-        for dom, rec in items_sorted:
-            hosts = sorted(rec["hosts"])
-            group_items.append(
-                {
-                    "domain": dom,
-                    "count": int(rec["count"]),
-                    "hosts": hosts,
-                }
-            )
-
-        providers_payload["providers"][group] = {
+        payload["providers"][group] = {
             "total_domains": len(stats),
             "total_entries": total_entries,
-            "items": group_items,
+            "items": [
+                {"domain": dom, "count": rec["count"], "hosts": sorted(rec["hosts"])}
+                for dom, rec in items_sorted
+            ],
         }
 
-    return providers_payload
+    return payload
 
 
-def main() -> None:
+def main():
+    log("Build root lists", "step")
     os.makedirs(OUT_DIR, exist_ok=True)
     allowlist = load_allowlist()
 
-    # Primary list
     if not SOURCE_LIST.exists():
         raise SystemExit(f"list.json not found: {SOURCE_LIST}")
 
-    items_primary = load_list(SOURCE_LIST)
-    primary_roots, primary_providers, _ = process_items(items_primary, allowlist)
+    # Primary
+    items = load_list(SOURCE_LIST)
+    roots, providers, _ = process_items(items, allowlist)
+    save_json(OUT_ACTIVE, {"domains": sorted(roots)})
+    save_json(OUT_PROVIDERS, build_providers_payload(providers, "list.json"))
+    log(f"Primary: {len(roots):,} root domains", "ok")
 
-    OUT_ACTIVE.write_text(
-        json.dumps(
-            {
-                "domains": sorted(primary_roots),
-            },
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-
-    providers_payload = build_providers_payload(primary_providers, "list.json")
-    OUT_PROVIDERS.write_text(
-        json.dumps(providers_payload, indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-
-    # Primary active (DNS checked)
+    # Primary active
     if SOURCE_ACTIVE.exists():
-        items_active = load_list(SOURCE_ACTIVE)
-        _, _, online_hosts = process_items(items_active, allowlist)
+        items = load_list(SOURCE_ACTIVE)
+        _, _, hosts = process_items(items, allowlist)
+        save_json(OUT_ONLINE, {"domains": sorted(hosts)})
+        log(f"Primary active: {len(hosts):,} hosts", "ok")
 
-        OUT_ONLINE.write_text(
-            json.dumps(
-                {
-                    "domains": sorted(online_hosts),
-                },
-                indent=2,
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-
-    # Community list
+    # Community
     if SOURCE_COMMUNITY.exists():
-        items_community = load_list(SOURCE_COMMUNITY)
-        community_roots, community_providers, _ = process_items(items_community, allowlist)
+        items = load_list(SOURCE_COMMUNITY)
+        roots, providers, _ = process_items(items, allowlist)
+        save_json(OUT_COMMUNITY, {"domains": sorted(roots)})
+        save_json(OUT_COMMUNITY_PROVIDERS, build_providers_payload(providers, "community/blocklist.json"))
+        log(f"Community: {len(roots):,} root domains", "ok")
 
-        OUT_COMMUNITY.write_text(
-            json.dumps(
-                {
-                    "domains": sorted(community_roots),
-                },
-                indent=2,
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-
-        community_providers_payload = build_providers_payload(community_providers, "community/blocklist.json")
-        OUT_COMMUNITY_PROVIDERS.write_text(
-            json.dumps(community_providers_payload, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-
-    # Community active (DNS checked)
+    # Community active
     if SOURCE_COMMUNITY_ACTIVE.exists():
-        items_community_active = load_list(SOURCE_COMMUNITY_ACTIVE)
-        _, _, community_online_hosts = process_items(items_community_active, allowlist)
-
-        OUT_COMMUNITY_ONLINE.write_text(
-            json.dumps(
-                {
-                    "domains": sorted(community_online_hosts),
-                },
-                indent=2,
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
+        items = load_list(SOURCE_COMMUNITY_ACTIVE)
+        _, _, hosts = process_items(items, allowlist)
+        save_json(OUT_COMMUNITY_ONLINE, {"domains": sorted(hosts)})
+        log(f"Community active: {len(hosts):,} hosts", "ok")
 
 
 if __name__ == "__main__":
