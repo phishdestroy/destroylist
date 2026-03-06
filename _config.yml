@@ -1,0 +1,15 @@
+title: Destroylist
+description: Phishing & Scam Domain Blacklist
+
+# Exclude large data files from GitHub Pages build
+exclude:
+  - list.json
+  - list.txt
+  - count.json
+  - dns/
+  - community/
+  - rootlist/
+  - archives/
+  - allow/
+  - requirements.txt
+  - "*.py"
