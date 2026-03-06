@@ -1,0 +1,23 @@
+{
+  "retryOn429": true,
+  "retryCount": 3,
+  "timeout": "15000",
+  "aliveStatusCodes": [200, 206, 301, 302, 403],
+  "ignorePatterns": [
+    {
+      "pattern": "^https://img\\.shields\\.io"
+    },
+    {
+      "pattern": "^https://readme-typing-svg"
+    },
+    {
+      "pattern": "^https://raw\\.githubusercontent\\.com/Tarikul"
+    },
+    {
+      "pattern": "^https://user-images\\.githubusercontent\\.com"
+    },
+    {
+      "pattern": "^https://api\\.star-history\\.com"
+    }
+  ]
+}

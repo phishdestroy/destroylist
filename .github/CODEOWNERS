@@ -1,0 +1,11 @@
+# Allowlist changes require maintainer review
+/allow/                 @phishdestroy
+
+# Pipeline scripts
+/scripts/               @phishdestroy
+
+# Workflow files
+/.github/workflows/     @phishdestroy
+
+# Security policy
+SECURITY.md             @phishdestroy
