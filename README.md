@@ -49,16 +49,6 @@
 > [!TIP]
 > **Production:** `list.json` or `active_domains.json` · **Max coverage:** `blocklist.json` · **Firewall/DNS:** root lists
 
-### Which List Should I Use?
-
-| | Primary | Community |
-|:--|:--|:--|
-| **Source** | Curated by PhishDestroy | Aggregated from 35+ external feeds |
-| **Domains** | 99K+ | 828K+ |
-| **False positives** | Very low | Higher (automated ingestion) |
-| **Update** | Real-time | Every 2 hours |
-| **Best for** | Production, firewalls, DNS | Research, max coverage, ML training |
-| **Live (DNS-verified)** | `active_domains.json` | `live_blocklist.json` |
 
 <details>
 <summary>📁 <b>All Download Formats</b> (TXT, Hosts, AdBlock, Dnsmasq, Unbound, RPZ)</summary>
