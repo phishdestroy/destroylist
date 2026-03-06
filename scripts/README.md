@@ -12,14 +12,28 @@ Each script runs independently.
 
 ## 📜 Script Reference
 
+### `validate_json.py`
+
+Pre-pipeline JSON integrity checks.
+
+- Validates syntax, structure, duplicates
+- Checks for empty entries, IPs, invalid domains
+- Runs before and after pipeline steps
+
+**Targets:** `list.json`, `allowlist.json`, `blocklist.json`, `active_domains.json`
+
+---
+
 ### `validate_and_clean.py`
 
 Cleans and validates domain lists.
 
 - Root-domain collapsing
 - Allowlist enforcement
+- Invalid entry and IP removal
 - Duplicate removal
-- Updates `list.json` automatically
+
+**Output:** Updated `list.json`, `community/blocklist.json`, `community/live_blocklist.json`
 
 ---
 
@@ -28,10 +42,11 @@ Cleans and validates domain lists.
 Aggregates external blocklist sources.
 
 - SHA-256 change tracking
-- Multi-source ingestion
+- Multi-source ingestion (13+ feeds)
 - Normalization and deduplication
+- Allowlist filtering
 
-**Output:** `community/blocklist.json` + stats
+**Output:** `community/blocklist.json` + `community/state.json`
 
 ---
 
@@ -39,7 +54,7 @@ Aggregates external blocklist sources.
 
 Extracts registrable root domains.
 
-- Filters subdomains → roots only
+- Filters subdomains to roots only
 - Separates infrastructure providers
 - DNS validation
 
@@ -53,10 +68,21 @@ Converts JSON lists to multiple formats.
 
 - Plain TXT
 - Hosts file (`0.0.0.0 domain.com`)
-- AdBlock (`||domain.com^`)
+- AdBlock Plus (`||domain.com^`) with subscription headers
 - Dnsmasq config
 
-**Output:** `rootlist/formats/`
+**Output:** `rootlist/formats/`, `list.txt`
+
+---
+
+### `build_shards.py`
+
+Splits the primary list into array chunks.
+
+- 3,000 domains per shard
+- Auto-creates output directory
+
+**Output:** `rootlist/arrays/part_000.json` ... `part_NNN.json`
 
 ---
 
@@ -68,19 +94,28 @@ Generates badge count files.
 - DNS-validated count
 - Community counts
 
-**Output:** `count.json`, `dns/active_count.json`, etc.
+**Output:** `count.json`, `dns/active_count.json`, `community/count.json`, `community/live_count.json`
 
 ---
 
 ### `calculate_stats.py`
 
-Tracks additions over time.
+Tracks additions over time via git history.
 
-- Last 24 hours
-- Weekly delta
-- Monthly delta
+- Last 24 hours, weekly, monthly deltas
+- Weekly and monthly archive snapshots
 
-**Output:** `dns/today_added.json`, `dns/week_added.json`, `dns/month_added.json`
+**Output:** `dns/today_added.json`, `dns/week_added.json`, `dns/month_added.json`, `archives/`
+
+---
+
+### `update_gist.py`
+
+Updates a GitHub Gist with current statistics.
+
+- Reads all badge files
+- Pushes formatted markdown to Gist
+- Requires `GIST_TOKEN` and `GIST_ID` env vars
 
 ---
 
@@ -89,12 +124,15 @@ Tracks additions over time.
 Full pipeline:
 
 ```
-1. validate_and_clean.py
-2. smart_aggregator.py
-3. build_rootlist.py
-4. json_to_txt.py
-5. update_counts.py
-6. calculate_stats.py
+1. validate_json.py       (pre-check)
+2. smart_aggregator.py    (fetch sources)
+3. validate_and_clean.py  (clean all lists)
+4. validate_json.py       (post-check)
+5. update_counts.py       (badge counts)
+6. json_to_txt.py         (format conversion)
+7. build_rootlist.py      (root domains)
+8. build_shards.py        (array splitting)
+9. calculate_stats.py     (time-period stats)
 ```
 
 ---
@@ -102,5 +140,6 @@ Full pipeline:
 ## 📋 Requirements
 
 - Python 3.10+
+- Dependencies: `pip install -r requirements.txt`
 - Run from project root
 - Output folders auto-created
