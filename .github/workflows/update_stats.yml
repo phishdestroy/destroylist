@@ -24,8 +24,10 @@ jobs:
       - name: Calculate statistics
         run: python scripts/calculate_stats.py
       - name: Update daily gist
+        continue-on-error: true
         env:
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
         run: python scripts/update_gist.py
       - name: Commit and push
         run: |
