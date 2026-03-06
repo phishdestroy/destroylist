@@ -91,7 +91,7 @@ def save_archive():
     if now.weekday() == 0:
         weekly_dir = ARCHIVES_DIR / "weekly"
         weekly_dir.mkdir(parents=True, exist_ok=True)
-        week_file = weekly_dir / f"{now.strftime('%Y-W%W')}.json"
+        week_file = weekly_dir / f"{now.strftime('%G-W%V')}.json"
         week_file.write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
         print(f"  Created weekly archive: {week_file.name}")
     

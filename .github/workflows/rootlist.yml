@@ -62,6 +62,7 @@ jobs:
           git add list.json list.txt count.json \
                  community/blocklist.json community/live_blocklist.json \
                  community/count.json community/live_count.json \
+                 community/state.json community/commit_message.txt \
                  dns/*.json rootlist/
 
           if git diff --staged --quiet; then

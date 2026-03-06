@@ -79,6 +79,8 @@ jobs:
         run: python scripts/build_shards.py
 
       - name: Commit and push
+        env:
+          INPUT_DOMAIN: ${{ github.event.inputs.domain }}
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -93,9 +95,8 @@ jobs:
             exit 0
           fi
 
-          DOMAIN="${{ github.event.inputs.domain }}"
-          if [ -n "$DOMAIN" ]; then
-            MSG="Purge: ${DOMAIN} [skip ci]"
+          if [ -n "$INPUT_DOMAIN" ]; then
+            MSG="Purge: ${INPUT_DOMAIN} [skip ci]"
           else
             MSG="Allowlist update: clean all lists [skip ci]"
           fi
