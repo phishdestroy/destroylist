@@ -80,9 +80,35 @@ def load_domains(filepath: Path, allowlist: Set[str]) -> list:
         return []
 
 
+ADBLOCK_DESCRIPTIONS = {
+    "primary": "Curated phishing and scam domain blocklist by PhishDestroy",
+    "primary_active": "DNS-verified active phishing and scam domains by PhishDestroy",
+    "community": "Community-aggregated phishing and scam domains from 35+ threat intel sources",
+    "community_active": "DNS-verified community-aggregated phishing and scam domains",
+}
+
+
 def header(name: str, count: int, fmt: str, c: str = "#") -> str:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     return f"{c} Destroylist - {name} | {fmt} | {count} domains | {ts}\n{c} https://github.com/phishdestroy/destroylist\n\n"
+
+
+def adblock_header(name: str, source_key: str, count: int) -> str:
+    now = datetime.now(timezone.utc)
+    ts = now.strftime("%Y-%m-%d %H:%M UTC")
+    version = now.strftime("%Y%m%d%H%M")
+    description = ADBLOCK_DESCRIPTIONS.get(source_key, f"Destroylist - {name}")
+    return (
+        f"[Adblock Plus]\n"
+        f"! Title: Destroylist - {name}\n"
+        f"! Description: {description}\n"
+        f"! Homepage: https://github.com/phishdestroy/destroylist\n"
+        f"! License: https://github.com/phishdestroy/destroylist/blob/main/LICENSE\n"
+        f"! Expires: 1 day\n"
+        f"! Last modified: {ts}\n"
+        f"! Version: {version}\n"
+        f"! Total domains: {count}\n"
+    )
 
 
 def write(path: Path, content: str):
@@ -104,7 +130,7 @@ def main():
 
         write(out / "domains.txt", header(n, len(domains), "plain") + "\n".join(domains) + "\n")
         write(out / "hosts.txt", header(n, len(domains), "hosts") + "\n".join(f"0.0.0.0 {d}" for d in domains) + "\n")
-        write(out / "adblock.txt", header(n, len(domains), "adblock", "!") + "[Adblock Plus]\n" + "\n".join(f"||{d}^" for d in domains) + "\n")
+        write(out / "adblock.txt", adblock_header(n, name, len(domains)) + "\n".join(f"||{d}^" for d in domains) + "\n")
         write(out / "dnsmasq.conf", header(n, len(domains), "dnsmasq") + "\n".join(f"address=/{d}/0.0.0.0" for d in domains) + "\n")
 
         print(f"{name}: {len(domains)}")
