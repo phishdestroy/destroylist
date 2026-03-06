@@ -69,7 +69,9 @@ Converts JSON lists to multiple formats.
 - Plain TXT
 - Hosts file (`0.0.0.0 domain.com`)
 - AdBlock Plus (`||domain.com^`) with subscription headers
-- Dnsmasq config
+- Dnsmasq config (`address=/domain.com/0.0.0.0`)
+- Unbound config (`local-zone: "domain.com" always_nxdomain`)
+- RPZ zone (`domain.com CNAME .`)
 
 **Output:** `rootlist/formats/`, `list.txt`
 
