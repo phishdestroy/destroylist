@@ -111,6 +111,19 @@ def adblock_header(name: str, source_key: str, count: int) -> str:
     )
 
 
+def rpz_header(name: str, count: int) -> str:
+    now = datetime.now(timezone.utc)
+    ts = now.strftime("%Y-%m-%d %H:%M UTC")
+    serial = now.strftime("%Y%m%d%H")
+    return (
+        f"; Destroylist - {name} | RPZ zone | {count} domains | {ts}\n"
+        f"; https://github.com/phishdestroy/destroylist\n"
+        f"$TTL 300\n"
+        f"@ SOA localhost. root.localhost. {serial} 86400 7200 2592000 300\n"
+        f"  NS  localhost.\n\n"
+    )
+
+
 def write(path: Path, content: str):
     path.write_text(content, encoding="utf-8")
 
@@ -132,6 +145,8 @@ def main():
         write(out / "hosts.txt", header(n, len(domains), "hosts") + "\n".join(f"0.0.0.0 {d}" for d in domains) + "\n")
         write(out / "adblock.txt", adblock_header(n, name, len(domains)) + "\n".join(f"||{d}^" for d in domains) + "\n")
         write(out / "dnsmasq.conf", header(n, len(domains), "dnsmasq") + "\n".join(f"address=/{d}/0.0.0.0" for d in domains) + "\n")
+        write(out / "unbound.conf", header(n, len(domains), "unbound") + "\n".join(f'local-zone: "{d}" always_nxdomain' for d in domains) + "\n")
+        write(out / "rpz.zone", rpz_header(n, len(domains)) + "\n".join(f"{d} CNAME ." for d in domains) + "\n")
 
         print(f"{name}: {len(domains)}")
 
