@@ -1,0 +1,36 @@
+name: Bug Report
+description: Report a problem with the blocklist, pipeline, or API
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Blocklist data (missing domain, wrong entry)
+        - Pipeline / CI workflow
+        - API (api.destroy.tools)
+        - Website (phishdestroy.io)
+        - Documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      placeholder: Describe the issue clearly
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What should have happened instead?
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      placeholder: Screenshots, links, logs, etc.
