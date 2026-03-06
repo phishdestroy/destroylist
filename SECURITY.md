@@ -29,7 +29,7 @@ We respond within 48 hours.
 
 ### Missing Malicious Domain
 
-➕ [Submit addition request](https://github.com/phishdestroy/destroylist/issues/new?template=add-to-blocklist.yml)
+➕ [Submit addition request](https://github.com/phishdestroy/destroylist/issues/new?template=blocklist-addition.yml)
 
 ---
 

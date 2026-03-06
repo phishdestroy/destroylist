@@ -35,7 +35,7 @@ def load_cache() -> Dict[str, Dict]:
     try:
         with open(CACHE_FILENAME, 'r', encoding='utf-8') as f:
             return json.load(f)
-    except:
+    except Exception:
         return {}
 
 def save_cache(cache: Dict[str, Dict]):
@@ -55,14 +55,14 @@ def check_domain(domain: str, resolver: dns.resolver.Resolver, retry: int = 0) -
         try:
             resolver.resolve(domain, 'AAAA', lifetime=DNS_TIMEOUT)
             return (domain, 'live')
-        except:
+        except Exception:
             return (domain, 'no_answer')
     except dns.exception.Timeout:
         if retry < MAX_RETRIES:
             time.sleep(0.5)
             return check_domain(domain, resolver, retry + 1)
         return (domain, 'timeout')
-    except:
+    except Exception:
         return (domain, 'error')
 
 def fetch_domains(url: str) -> Set[str]:

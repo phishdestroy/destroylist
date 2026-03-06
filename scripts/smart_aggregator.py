@@ -184,7 +184,14 @@ def fetch_content(url: str) -> str | None:
         r = requests.get(url, timeout=30, headers={'User-Agent': 'Mozilla/5.0 Aggregator/2.0'})
         r.raise_for_status()
         return r.text
-    except Exception:
+    except requests.exceptions.Timeout:
+        log(f"    TIMEOUT: {url}")
+        return None
+    except requests.exceptions.HTTPError as e:
+        log(f"    HTTP {e.response.status_code}: {url}")
+        return None
+    except Exception as e:
+        log(f"    ERROR: {type(e).__name__}: {e}")
         return None
 
 def update_badge_json(count: int) -> None:

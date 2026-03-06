@@ -1,2 +1,22 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Mark generated data files — excludes from GitHub language stats and diffs
+list.json linguist-generated
+list.txt linguist-generated
+count.json linguist-generated
+dns/*.json linguist-generated
+community/blocklist.json linguist-generated
+community/live_blocklist.json linguist-generated
+community/dead_blocklist.json linguist-generated
+community/count.json linguist-generated
+community/live_count.json linguist-generated
+rootlist/arrays/** linguist-generated
+rootlist/formats/** linguist-generated
+rootlist/active_root_domains.json linguist-generated
+rootlist/online_root_domains.json linguist-generated
+rootlist/community_root_domains.json linguist-generated
+rootlist/community_online_root_domains.json linguist-generated
+rootlist/providers_root_domains.json linguist-generated
+rootlist/community_providers_root_domains.json linguist-generated
+archives/** linguist-generated

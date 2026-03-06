@@ -28,7 +28,7 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install requests tqdm tldextract
+        run: pip install -r requirements.txt
 
       - name: Validate JSON (pre-check)
         run: python scripts/validate_json.py
