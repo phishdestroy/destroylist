@@ -2,12 +2,12 @@
 """Split list.json into array shards for rootlist/arrays/."""
 import json
 import math
-import os
 import shutil
 import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+from utils import PROJECT_ROOT, log
+
 SOURCE_FILE = PROJECT_ROOT / "list.json"
 OUTPUT_DIR = PROJECT_ROOT / "rootlist" / "arrays"
 CHUNK_SIZE = 3000
@@ -15,17 +15,17 @@ CHUNK_SIZE = 3000
 
 def main():
     if not SOURCE_FILE.exists():
-        print("list.json not found, skipping sharding")
+        log("list.json not found, skipping sharding", "warn")
         return
 
     try:
         data = json.loads(SOURCE_FILE.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
-        print(f"FATAL: list.json invalid JSON: {e}", file=sys.stderr)
+        log(f"list.json invalid JSON: {e}", "error")
         sys.exit(1)
 
     if not isinstance(data, list) or not data:
-        print("list.json is empty or not a list, skipping")
+        log("list.json is empty or not a list, skipping", "warn")
         return
 
     if OUTPUT_DIR.exists():
@@ -39,7 +39,7 @@ def main():
         outfile = OUTPUT_DIR / f"part_{i:03d}.json"
         outfile.write_text(json.dumps(chunk, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"Created {total_chunks} shards ({len(data)} domains)")
+    log(f"Created {total_chunks} shards ({len(data):,} domains)", "ok")
 
 
 if __name__ == "__main__":

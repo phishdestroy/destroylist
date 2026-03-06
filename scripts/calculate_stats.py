@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
+"""Calculate domain addition statistics using git history."""
 import json
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Set
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
+from utils import PROJECT_ROOT, make_badge, save_json, log
+
 DNS_DIR = PROJECT_ROOT / "dns"
 ARCHIVES_DIR = PROJECT_ROOT / "archives"
 
@@ -35,9 +36,9 @@ def get_domains_from_json(content: str) -> Set[str]:
     try:
         data = json.loads(content)
         if isinstance(data, list):
-            return set(d.lower().strip() for d in data if isinstance(d, str))
+            return {d.lower().strip() for d in data if isinstance(d, str)}
         elif isinstance(data, dict) and "domains" in data:
-            return set(d.lower().strip() for d in data["domains"] if isinstance(d, str))
+            return {d.lower().strip() for d in data["domains"] if isinstance(d, str)}
     except Exception:
         pass
     return set()
@@ -54,32 +55,28 @@ def get_domains_added_since(file_path: str, since_date: str) -> int:
     current = load_current_domains(file_path)
     if not current:
         return 0
-    
-    commits = run_git(["git", "log", f"--since={since_date}", "--reverse", "--format=%H", "--", file_path]).strip().split('\n')
-    if not commits or commits[0] == '':
+
+    commits = run_git(["git", "log", f"--since={since_date}", "--reverse", "--format=%H", "--", file_path]).strip().split("\n")
+    if not commits or not commits[0]:
         return 0
-    
+
     parent = run_git(["git", "rev-parse", f"{commits[0]}^"]).strip()
     if not parent:
         return len(current)
-    
+
     old_content = run_git(["git", "show", f"{parent}:{file_path}"])
     if not old_content:
         return len(current)
-    
+
     return len(current - get_domains_from_json(old_content))
-
-
-def create_badge(label: str, count: int, color: str = "success") -> dict:
-    return {"schemaVersion": 1, "label": label, "message": f"+{count:,}", "color": color}
 
 
 def save_archive():
     now = datetime.now(timezone.utc)
-    
+
     primary = load_current_domains(LIST_FILE)
     community = load_current_domains(COMMUNITY_FILE)
-    
+
     archive_data = {
         "date": now.strftime("%Y-%m-%d"),
         "primary_count": len(primary),
@@ -87,26 +84,26 @@ def save_archive():
         "primary_domains": sorted(primary),
         "community_domains": sorted(community),
     }
-    
+
     if now.weekday() == 0:
         weekly_dir = ARCHIVES_DIR / "weekly"
         weekly_dir.mkdir(parents=True, exist_ok=True)
         week_file = weekly_dir / f"{now.strftime('%G-W%V')}.json"
         week_file.write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
-        print(f"  Created weekly archive: {week_file.name}")
-    
+        log(f"Weekly archive: {week_file.name}", "ok")
+
     if now.day == 1:
         monthly_dir = ARCHIVES_DIR / "monthly"
         monthly_dir.mkdir(parents=True, exist_ok=True)
         month_file = monthly_dir / f"{now.strftime('%Y-%m')}.json"
         month_file.write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
-        print(f"  Created monthly archive: {month_file.name}")
+        log(f"Monthly archive: {month_file.name}", "ok")
 
 
 def main():
-    print("Calculating statistics...")
+    log("Calculate statistics", "step")
     DNS_DIR.mkdir(exist_ok=True)
-    
+
     stats = {
         "today_added": get_domains_added_since(LIST_FILE, "1 day ago"),
         "week_added": get_domains_added_since(LIST_FILE, "1 week ago"),
@@ -115,25 +112,24 @@ def main():
         "week_community": get_domains_added_since(COMMUNITY_FILE, "1 week ago"),
         "month_community": get_domains_added_since(COMMUNITY_FILE, "1 month ago"),
     }
-    
-    print(f"  Primary - Today: +{stats['today_added']}, Week: +{stats['week_added']}, Month: +{stats['month_added']}")
-    print(f"  Community - Today: +{stats['today_community']}, Week: +{stats['week_community']}, Month: +{stats['month_community']}")
-    
+
+    log(f"Primary  — today: +{stats['today_added']:,}, week: +{stats['week_added']:,}, month: +{stats['month_added']:,}")
+    log(f"Community — today: +{stats['today_community']:,}, week: +{stats['week_community']:,}, month: +{stats['month_community']:,}")
+
     badges = {
-        "today_added": create_badge("added today", stats["today_added"], "success"),
-        "week_added": create_badge("added this week", stats["week_added"], "success"),
-        "month_added": create_badge("added this month", stats["month_added"], "success"),
-        "today_community": create_badge("community today", stats["today_community"], "blue"),
-        "week_community": create_badge("community this week", stats["week_community"], "blue"),
-        "month_community": create_badge("community this month", stats["month_community"], "blue"),
+        "today_added": make_badge("added today", f"+{stats['today_added']:,}", "success"),
+        "week_added": make_badge("added this week", f"+{stats['week_added']:,}", "success"),
+        "month_added": make_badge("added this month", f"+{stats['month_added']:,}", "success"),
+        "today_community": make_badge("community today", f"+{stats['today_community']:,}", "blue"),
+        "week_community": make_badge("community this week", f"+{stats['week_community']:,}", "blue"),
+        "month_community": make_badge("community this month", f"+{stats['month_community']:,}", "blue"),
     }
-    
+
     for key, data in badges.items():
-        OUTPUT_FILES[key].write_text(json.dumps(data, indent=2), encoding="utf-8")
-    
+        save_json(OUTPUT_FILES[key], data)
+
     save_archive()
-    
-    print("✅ Done!")
+    log("Done", "ok")
 
 
 if __name__ == "__main__":
