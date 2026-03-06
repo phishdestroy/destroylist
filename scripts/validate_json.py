@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Validate all critical JSON files before any pipeline step."""
 import json
-import re
 import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+from utils import PROJECT_ROOT, IPV4_RE, log
 
 FILES_TO_CHECK = [
     PROJECT_ROOT / "list.json",
@@ -15,45 +14,43 @@ FILES_TO_CHECK = [
     PROJECT_ROOT / "dns" / "active_domains.json",
 ]
 
-IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
-
 
 def validate_file(filepath: Path) -> bool:
+    rel = filepath.relative_to(PROJECT_ROOT)
+
     if not filepath.exists():
-        print(f"SKIP: {filepath.relative_to(PROJECT_ROOT)} (not found)")
+        log(f"{rel} (not found, skipped)", "warn")
         return True
 
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
     except json.JSONDecodeError as e:
-        print(f"FATAL: {filepath.relative_to(PROJECT_ROOT)} — invalid JSON at line {e.lineno}: {e.msg}", file=sys.stderr)
+        log(f"{rel} — invalid JSON at line {e.lineno}: {e.msg}", "error")
         return False
 
     if not isinstance(data, list):
-        print(f"FATAL: {filepath.relative_to(PROJECT_ROOT)} — expected array, got {type(data).__name__}", file=sys.stderr)
+        log(f"{rel} — expected array, got {type(data).__name__}", "error")
         return False
 
     bad = [i for i, d in enumerate(data) if not isinstance(d, str) or not d.strip()]
     if bad:
-        print(f"WARN: {filepath.relative_to(PROJECT_ROOT)} — {len(bad)} empty/non-string entries (indices: {bad[:5]}...)")
+        log(f"{rel} — {len(bad)} empty/non-string entries (indices: {bad[:5]}...)", "warn")
 
     str_entries = [d for d in data if isinstance(d, str) and d.strip()]
     dupes = len(str_entries) - len(set(d.lower().strip() for d in str_entries))
     if dupes > 0:
-        print(f"WARN: {filepath.relative_to(PROJECT_ROOT)} — {dupes} duplicate entries")
+        log(f"{rel} — {dupes} duplicate entries", "warn")
 
-    # Check for entries without dots (invalid domains)
     no_dots = [d for d in str_entries if "." not in d.split("/")[0]]
     if no_dots:
-        print(f"WARN: {filepath.relative_to(PROJECT_ROOT)} — {len(no_dots)} entries without dots: {no_dots[:5]}...")
+        log(f"{rel} — {len(no_dots)} entries without dots: {no_dots[:5]}...", "warn")
 
-    # Check for IP address entries
     ips = [d for d in str_entries if IPV4_RE.fullmatch(d.split("/")[0])]
     if ips:
-        print(f"INFO: {filepath.relative_to(PROJECT_ROOT)} — {len(ips)} IP address entries")
+        log(f"{rel} — {len(ips)} IP address entries", "info")
 
-    print(f"OK: {filepath.relative_to(PROJECT_ROOT)} — {len(data)} entries")
+    log(f"{rel} — {len(data):,} entries", "ok")
     return True
 
 
@@ -61,16 +58,13 @@ def main():
     extra = [Path(a) for a in sys.argv[1:] if Path(a).exists()]
     files = FILES_TO_CHECK + extra
 
-    ok = True
-    for f in files:
-        if not validate_file(f):
-            ok = False
+    ok = all(validate_file(f) for f in files)
 
     if not ok:
-        print("\n❌ Validation FAILED — fix JSON errors before proceeding", file=sys.stderr)
+        log("Validation FAILED — fix JSON errors before proceeding", "error")
         sys.exit(1)
 
-    print("\n✅ All files valid")
+    log("All files valid", "ok")
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+from utils import PROJECT_ROOT, log
 
 
 def load_badge(path: Path) -> dict:
@@ -24,11 +24,10 @@ def main():
     gist_id = os.environ.get("GIST_ID", "").strip()
 
     if not token:
-        print("GIST_TOKEN not set, skipping gist update")
+        log("GIST_TOKEN not set, skipping", "warn")
         return
-
     if not gist_id:
-        print("GIST_ID not set, skipping gist update")
+        log("GIST_ID not set, skipping", "warn")
         return
 
     badge_files = {
@@ -41,11 +40,7 @@ def main():
         "month_added": PROJECT_ROOT / "dns" / "month_added.json",
     }
 
-    stats = {}
-    for name, path in badge_files.items():
-        badge = load_badge(path)
-        stats[name] = badge.get("message", "0")
-
+    stats = {name: load_badge(path).get("message", "0") for name, path in badge_files.items()}
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     content = (
@@ -53,19 +48,17 @@ def main():
         f"Updated: {now}\n\n"
         f"| Metric | Count |\n"
         f"|--------|-------|\n"
-        f"| Primary Domains | {stats.get('primary', '0')} |\n"
-        f"| Primary Active (DNS) | {stats.get('primary_dns', '0')} |\n"
-        f"| Community Domains | {stats.get('community', '0')} |\n"
-        f"| Community Active (DNS) | {stats.get('community_dns', '0')} |\n"
-        f"| Added Today | {stats.get('today_added', '0')} |\n"
-        f"| Added This Week | {stats.get('week_added', '0')} |\n"
-        f"| Added This Month | {stats.get('month_added', '0')} |\n"
+        f"| Primary Domains | {stats['primary']} |\n"
+        f"| Primary Active (DNS) | {stats['primary_dns']} |\n"
+        f"| Community Domains | {stats['community']} |\n"
+        f"| Community Active (DNS) | {stats['community_dns']} |\n"
+        f"| Added Today | {stats['today_added']} |\n"
+        f"| Added This Week | {stats['week_added']} |\n"
+        f"| Added This Month | {stats['month_added']} |\n"
     )
 
     payload = json.dumps({
-        "files": {
-            "destroylist-stats.md": {"content": content}
-        }
+        "files": {"destroylist-stats.md": {"content": content}}
     }).encode("utf-8")
 
     req = urllib.request.Request(
@@ -82,9 +75,9 @@ def main():
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             result = json.loads(resp.read())
-            print(f"Gist updated: {result.get('html_url', gist_id)}")
+            log(f"Gist updated: {result.get('html_url', gist_id)}", "ok")
     except Exception as e:
-        print(f"Warning: could not update gist: {e}", file=sys.stderr)
+        log(f"Could not update gist: {e}", "warn")
 
 
 if __name__ == "__main__":
