@@ -20,7 +20,7 @@ Pre-pipeline JSON integrity checks.
 - Checks for empty entries, IPs, invalid domains
 - Runs before and after pipeline steps
 
-**Targets:** `list.json`, `allowlist.json`, `blocklist.json`, `active_domains.json`
+**Targets:** `list.json`, `allowlist.json`, `blocklist.json`, `live_blocklist.json`, `content_live.json`, `active_domains.json`, `content_active.json`
 
 ---
 
@@ -33,7 +33,7 @@ Cleans and validates domain lists.
 - Invalid entry and IP removal
 - Duplicate removal
 
-**Output:** Updated `list.json`, `community/blocklist.json`, `community/live_blocklist.json`
+**Output:** Updated `list.json`, `community/blocklist.json`, `community/live_blocklist.json`, `community/content_live.json`, `dns/active_domains.json`, `dns/content_active.json`
 
 ---
 
@@ -58,7 +58,7 @@ Extracts registrable root domains.
 - Separates infrastructure providers
 - DNS validation
 
-**Output:** `rootlist/*.json` files
+**Output:** `rootlist/*.json`, `rootlist/*.txt` (root domains, services, provider analytics)
 
 ---
 
@@ -73,7 +73,7 @@ Converts JSON lists to multiple formats.
 - Unbound config (`local-zone: "domain.com" always_nxdomain`)
 - RPZ zone (`domain.com CNAME .`)
 
-**Output:** `rootlist/formats/`, `list.txt`
+**Output:** `rootlist/formats/` (6 formats x 4 datasets), `list.txt`, `dns/*.txt`, `community/*.txt`
 
 ---
 
@@ -92,11 +92,10 @@ Splits the primary list into array chunks.
 
 Generates badge count files.
 
-- Primary dataset count
-- DNS-validated count
-- Community counts
+- Primary, DNS-validated, community counts
+- Content-verified counts
 
-**Output:** `count.json`, `dns/active_count.json`, `community/count.json`, `community/live_count.json`
+**Output:** `count.json`, `dns/active_count.json`, `dns/content_active_count.json`, `community/count.json`, `community/live_count.json`, `community/content_active_count.json`
 
 ---
 

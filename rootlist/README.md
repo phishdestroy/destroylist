@@ -14,17 +14,26 @@ No subdomains. No hosting providers. Clean data for firewalls and DNS resolvers.
 
 ### Primary (Curated)
 
-| List | Description | Link |
-|:-----|:------------|:----:|
-| `active_root_domains.json` | All validated roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) |
-| `online_root_domains.json` | DNS-live only | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) |
+| List | Description | JSON | TXT |
+|:-----|:------------|:----:|:---:|
+| Root domains | All validated roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt) |
+| Live only | DNS-verified active | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt) |
+| Services only | Hosting platform subdomains | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt) |
 
 ### Community (Aggregated)
 
+| List | Description | JSON | TXT |
+|:-----|:------------|:----:|:---:|
+| Root domains | All community roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt) |
+| Live only | DNS-verified active | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt) |
+| Services only | Hosting platform subdomains | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt) |
+
+### Provider Analytics
+
 | List | Description | Link |
 |:-----|:------------|:----:|
-| `community_root_domains.json` | All community roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) |
-| `community_online_root_domains.json` | DNS-live only | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) |
+| `providers_root_domains.json` | Primary — breakdown by hosting provider | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/providers_root_domains.json) |
+| `community_providers_root_domains.json` | Community — breakdown by hosting provider | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_providers_root_domains.json) |
 
 ---
 
@@ -46,7 +55,7 @@ No subdomains. No hosting providers. Clean data for firewalls and DNS resolvers.
 **Use for:** Prioritized blocking, SOC feeds
 
 ### `community_root_domains.json`
-- Aggregated from 35+ security providers
+- Aggregated from 13+ security providers
 - Filtered and normalized
 - Provider roots auto-removed
 
@@ -55,6 +64,19 @@ No subdomains. No hosting providers. Clean data for firewalls and DNS resolvers.
 - Confirmed via DNS resolution
 
 **Use for:** External threat tracking
+
+### `services_domains.json` / `community_services_domains.json`
+- Subdomains on hosting platforms (Vercel, Pages.dev, Netlify, etc.)
+- Actual phishing subdomains, not root domains
+- Separated to avoid blocking entire platforms
+
+**Use for:** Platform abuse reporting, takedown automation
+
+### `providers_root_domains.json` / `community_providers_root_domains.json`
+- Breakdown of phishing count per hosting provider
+- Groups: multi-tenant hosting, site builders, Web3 gateways, SaaS
+
+**Use for:** Abuse analytics, registrar/provider engagement
 
 ---
 
@@ -83,4 +105,4 @@ Produced by `build_rootlist.py`:
 1. Reduces full lists to registrable roots
 2. Removes infrastructure/provider domains
 3. Validates DNS records
-4. Outputs clean JSON files
+4. Outputs clean JSON + TXT files

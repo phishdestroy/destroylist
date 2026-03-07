@@ -35,7 +35,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install tldextract
+        run: pip install -r requirements.txt
 
       - name: Add domain to allowlist
         if: github.event.inputs.domain
@@ -86,11 +86,15 @@ jobs:
           git config user.name "github-actions[bot]"
 
           git add allow/allowlist.json list.json list.txt count.json \
-                 community/blocklist.json community/live_blocklist.json \
+                 community/blocklist.json community/blocklist.txt \
+                 community/live_blocklist.json community/live_blocklist.txt \
+                 community/content_live.txt \
                  community/count.json community/live_count.json \
-                 dns/*.json rootlist/
+                 community/content_active_count.json \
+                 dns/*.json dns/*.txt \
+                 rootlist/
 
-          if git diff --cached --quiet; then
+          if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
