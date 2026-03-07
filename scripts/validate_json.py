@@ -11,7 +11,9 @@ FILES_TO_CHECK = [
     PROJECT_ROOT / "allow" / "allowlist.json",
     PROJECT_ROOT / "community" / "blocklist.json",
     PROJECT_ROOT / "community" / "live_blocklist.json",
+    PROJECT_ROOT / "community" / "content_live.json",
     PROJECT_ROOT / "dns" / "active_domains.json",
+    PROJECT_ROOT / "dns" / "content_active.json",
 ]
 
 
@@ -29,8 +31,15 @@ def validate_file(filepath: Path) -> bool:
         log(f"{rel} — invalid JSON at line {e.lineno}: {e.msg}", "error")
         return False
 
-    if not isinstance(data, list):
-        log(f"{rel} — expected array, got {type(data).__name__}", "error")
+    # Accept both plain arrays and {"domains": [...]} format
+    if isinstance(data, dict):
+        if "domains" in data and isinstance(data["domains"], list):
+            data = data["domains"]
+        else:
+            log(f"{rel} — dict without 'domains' key", "error")
+            return False
+    elif not isinstance(data, list):
+        log(f"{rel} — expected array or {{domains:[]}}, got {type(data).__name__}", "error")
         return False
 
     bad = [i for i, d in enumerate(data) if not isinstance(d, str) or not d.strip()]
