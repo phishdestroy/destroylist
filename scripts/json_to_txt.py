@@ -23,7 +23,7 @@ SOURCES = {
 ADBLOCK_DESCRIPTIONS = {
     "primary": "Curated phishing and scam domain blocklist by PhishDestroy",
     "primary_active": "DNS-verified active phishing and scam domains by PhishDestroy",
-    "community": "Community-aggregated phishing and scam domains from 35+ threat intel sources",
+    "community": "Community-aggregated phishing and scam domains from 13+ threat intel sources",
     "community_active": "DNS-verified community-aggregated phishing and scam domains",
 }
 
