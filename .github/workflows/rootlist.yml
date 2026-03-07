@@ -60,10 +60,14 @@ jobs:
           git config user.name "github-actions[bot]"
 
           git add list.json list.txt count.json \
-                 community/blocklist.json community/live_blocklist.json \
+                 community/blocklist.json community/blocklist.txt \
+                 community/live_blocklist.json community/live_blocklist.txt \
+                 community/content_live.txt \
                  community/count.json community/live_count.json \
+                 community/content_active_count.json \
                  community/state.json community/commit_message.txt \
-                 dns/*.json rootlist/
+                 dns/*.json dns/*.txt \
+                 rootlist/
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
