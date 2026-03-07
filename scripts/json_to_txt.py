@@ -121,6 +121,20 @@ def main():
     if primary:
         write(PROJECT_ROOT / "list.txt", "\n".join(primary) + "\n")
 
+    # Generate plain TXT next to each source JSON
+    TXT_SOURCES = {
+        PROJECT_ROOT / "dns" / "active_domains.json": PROJECT_ROOT / "dns" / "active_domains.txt",
+        PROJECT_ROOT / "dns" / "content_active.json": PROJECT_ROOT / "dns" / "content_active.txt",
+        PROJECT_ROOT / "community" / "blocklist.json": PROJECT_ROOT / "community" / "blocklist.txt",
+        PROJECT_ROOT / "community" / "live_blocklist.json": PROJECT_ROOT / "community" / "live_blocklist.txt",
+        PROJECT_ROOT / "community" / "content_live.json": PROJECT_ROOT / "community" / "content_live.txt",
+    }
+    for src_json, dst_txt in TXT_SOURCES.items():
+        domains = load_domains(src_json, allowlist)
+        if domains:
+            write(dst_txt, "\n".join(domains) + "\n")
+            log(f"{dst_txt.relative_to(PROJECT_ROOT)}: {len(domains):,} domains", "ok")
+
 
 if __name__ == "__main__":
     main()
