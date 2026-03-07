@@ -61,6 +61,9 @@ def filter_domains(domains: List[str], exact: Set[str], patterns: Set[str]) -> T
     return filtered, removed
 
 
+ANOMALY_THRESHOLD = 0.20  # warn if count drops more than 20%
+
+
 def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
     if not filepath.exists():
         return False
@@ -103,6 +106,12 @@ def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
     current = filepath.read_text(encoding="utf-8").rstrip("\n")
     needs_reformat = current != expected
 
+    # Anomaly detection: warn if count dropped significantly
+    if original_count > 0 and total_removed / original_count > ANOMALY_THRESHOLD:
+        drop_pct = total_removed / original_count * 100
+        log(f"ANOMALY {name}: count dropped {drop_pct:.1f}% "
+            f"({original_count:,} -> {len(unique):,})", "warn")
+
     if total_removed == 0 and not needs_reformat:
         log(f"{name}: {original_count:,} domains — no changes", "ok")
         return False
@@ -130,7 +139,7 @@ def main():
 
     log(f"Allowlist: {len(exact)} exact + {len(patterns)} patterns")
 
-    changed = any(clean_file(target, exact, patterns) for target in TARGETS)
+    changed = sum(clean_file(target, exact, patterns) for target in TARGETS) > 0
 
     if changed:
         log("Files updated", "ok")

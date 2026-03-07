@@ -72,12 +72,19 @@ def main():
         },
     )
 
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            result = json.loads(resp.read())
-            log(f"Gist updated: {result.get('html_url', gist_id)}", "ok")
-    except Exception as e:
-        log(f"Could not update gist: {e}", "warn")
+    import time as _time
+    last_error = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                result = json.loads(resp.read())
+                log(f"Gist updated: {result.get('html_url', gist_id)}", "ok")
+                return
+        except Exception as e:
+            last_error = e
+            if attempt < 2:
+                _time.sleep(2 ** attempt)
+    log(f"Could not update gist after 3 attempts: {last_error}", "warn")
 
 
 if __name__ == "__main__":

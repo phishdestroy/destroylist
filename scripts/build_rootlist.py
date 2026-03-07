@@ -35,7 +35,11 @@ def write_txt(json_path: Path, domains):
 def load_list(path: Path) -> List[str]:
     if not path.exists():
         return []
-    data = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        log(f"{path.name}: invalid JSON at line {e.lineno}: {e.msg}", "error")
+        return []
     if isinstance(data, dict):
         arr = data.get("domains", [])
     else:
@@ -152,4 +156,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        log(f"FATAL: {e}", "error")
+        import traceback
+        traceback.print_exc()
+        raise SystemExit(1)

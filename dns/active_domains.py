@@ -11,10 +11,10 @@ from typing import List, Set, Dict, Tuple
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', stream=sys.stdout)
 
-MAX_WORKERS = 100
-DNS_TIMEOUT = 3.0
-CUSTOM_RESOLVERS = ['1.1.1.1', '8.8.8.8', '9.9.9.9', '208.67.222.222']
-MAX_RETRIES = 2
+MAX_WORKERS = int(os.getenv('DNS_MAX_WORKERS', '100'))
+DNS_TIMEOUT = float(os.getenv('DNS_TIMEOUT', '3.0'))
+CUSTOM_RESOLVERS = [r.strip() for r in os.getenv('DNS_RESOLVERS', '1.1.1.1,8.8.8.8,9.9.9.9,208.67.222.222').split(',')]
+MAX_RETRIES = int(os.getenv('DNS_MAX_RETRIES', '2'))
 
 SOURCE_URL = "https://github.com/phishdestroy/destroylist/raw/main/list.json"
 ACTIVE_DOMAINS_FILE = "active_domains.json"
@@ -91,7 +91,8 @@ def load_file(path: str) -> Set[str]:
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             return {d.lower().strip() for d in data if d.strip()}
-    except:
+    except Exception as e:
+        logging.warning(f"Could not load {path}: {e}")
         return set()
 
 def save_file(path: str, data):
@@ -108,7 +109,7 @@ def set_output(name: str, value: str):
         with open(out, 'a') as f:
             f.write(f"{name}={value}\n")
     else:
-        print(f"::set-output name={name}::{value}")
+        logging.info(f"Output {name}={value} (GITHUB_OUTPUT not set)")
 
 def main():
     no_cache = '--no-cache' in sys.argv

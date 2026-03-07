@@ -39,8 +39,8 @@ def get_domains_from_json(content: str) -> Set[str]:
             return {d.lower().strip() for d in data if isinstance(d, str)}
         elif isinstance(data, dict) and "domains" in data:
             return {d.lower().strip() for d in data["domains"] if isinstance(d, str)}
-    except Exception:
-        pass
+    except Exception as e:
+        log(f"Failed to parse JSON content: {e}", "warn")
     return set()
 
 
@@ -133,4 +133,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        log(f"FATAL: {e}", "error")
+        import traceback
+        traceback.print_exc()
+        import sys
+        sys.exit(1)

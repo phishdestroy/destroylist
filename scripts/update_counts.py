@@ -54,8 +54,8 @@ def count_domains(filepath: Path) -> int:
             return len(data)
         elif isinstance(data, dict):
             return len(data.get("domains", []))
-    except Exception:
-        pass
+    except Exception as e:
+        log(f"Failed to read {filepath.name}: {e}", "warn")
     return 0
 
 
@@ -70,4 +70,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        log(f"FATAL: {e}", "error")
+        import traceback
+        traceback.print_exc()
+        import sys
+        sys.exit(1)

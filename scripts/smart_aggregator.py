@@ -297,7 +297,19 @@ def main():
                 diff = len(domains) - last_count
                 changes.append({"name": name, "diff": diff, "sign": "+" if diff >= 0 else ""})
 
-            new_state[name] = {"hash": content_hash, "count": len(domains)}
+            # Track source health
+            prev_failures = last_state.get(name, {}).get("consecutive_failures", 0)
+            if success:
+                new_state[name] = {"hash": content_hash, "count": len(domains), "consecutive_failures": 0}
+            else:
+                failures = prev_failures + 1
+                new_state[name] = {
+                    "hash": content_hash,
+                    "count": last_state.get(name, {}).get("count", 0),
+                    "consecutive_failures": failures,
+                }
+                if failures >= 3:
+                    log(f"HEALTH: {name} has failed {failures} consecutive times", "warn")
 
     last_total = last_state.get("total_count", 0)
     if len(all_domains) == last_total and not changes:
@@ -332,4 +344,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    try:
+        main()
+    except Exception as e:
+        log(f"FATAL: {e}", "error")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
