@@ -22,6 +22,14 @@ OUT_ONLINE = OUT_DIR / "online_root_domains.json"
 OUT_COMMUNITY = OUT_DIR / "community_root_domains.json"
 OUT_COMMUNITY_ONLINE = OUT_DIR / "community_online_root_domains.json"
 OUT_COMMUNITY_PROVIDERS = OUT_DIR / "community_providers_root_domains.json"
+OUT_SERVICES = OUT_DIR / "services_domains.json"
+OUT_COMMUNITY_SERVICES = OUT_DIR / "community_services_domains.json"
+
+
+def write_txt(json_path: Path, domains):
+    """Write a plain TXT (one domain per line) next to a JSON file."""
+    txt_path = json_path.with_suffix(".txt")
+    txt_path.write_text("\n".join(sorted(domains)) + "\n", encoding="utf-8")
 
 
 def load_list(path: Path) -> List[str]:
@@ -38,10 +46,11 @@ def load_list(path: Path) -> List[str]:
 def process_items(
     items: List[str],
     allowlist: Set[str] | None = None,
-) -> tuple[Set[str], Dict[str, Dict], Set[str]]:
+) -> tuple[Set[str], Dict[str, Dict], Set[str], Set[str]]:
     active_roots: Set[str] = set()
     provider_stats: Dict[str, Dict] = {g: {} for g in PROVIDER_GROUPS}
     cleaned_hosts: Set[str] = set()
+    service_hosts: Set[str] = set()
     _allowlist = allowlist or set()
 
     for entry in items:
@@ -54,6 +63,7 @@ def process_items(
             continue
 
         if rd in INFRA_ROOTS:
+            service_hosts.add(host)
             for group, roots in PROVIDER_GROUPS.items():
                 if rd in roots:
                     rec = provider_stats[group].setdefault(rd, {"count": 0, "hosts": set()})
@@ -67,7 +77,7 @@ def process_items(
         active_roots.add(rd)
         cleaned_hosts.add(host)
 
-    return active_roots, provider_stats, cleaned_hosts
+    return active_roots, provider_stats, cleaned_hosts, service_hosts
 
 
 def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
@@ -105,31 +115,39 @@ def main():
 
     # Primary
     items = load_list(SOURCE_LIST)
-    roots, providers, _ = process_items(items, allowlist)
+    roots, providers, _, services = process_items(items, allowlist)
     save_json(OUT_ACTIVE, {"domains": sorted(roots)})
+    write_txt(OUT_ACTIVE, roots)
     save_json(OUT_PROVIDERS, build_providers_payload(providers, "list.json"))
-    log(f"Primary: {len(roots):,} root domains", "ok")
+    save_json(OUT_SERVICES, sorted(services))
+    write_txt(OUT_SERVICES, services)
+    log(f"Primary: {len(roots):,} root domains, {len(services):,} service domains", "ok")
 
     # Primary active
     if SOURCE_ACTIVE.exists():
         items = load_list(SOURCE_ACTIVE)
-        _, _, hosts = process_items(items, allowlist)
+        _, _, hosts, _ = process_items(items, allowlist)
         save_json(OUT_ONLINE, {"domains": sorted(hosts)})
+        write_txt(OUT_ONLINE, hosts)
         log(f"Primary active: {len(hosts):,} hosts", "ok")
 
     # Community
     if SOURCE_COMMUNITY.exists():
         items = load_list(SOURCE_COMMUNITY)
-        roots, providers, _ = process_items(items, allowlist)
+        roots, providers, _, services = process_items(items, allowlist)
         save_json(OUT_COMMUNITY, {"domains": sorted(roots)})
+        write_txt(OUT_COMMUNITY, roots)
         save_json(OUT_COMMUNITY_PROVIDERS, build_providers_payload(providers, "community/blocklist.json"))
-        log(f"Community: {len(roots):,} root domains", "ok")
+        save_json(OUT_COMMUNITY_SERVICES, sorted(services))
+        write_txt(OUT_COMMUNITY_SERVICES, services)
+        log(f"Community: {len(roots):,} root domains, {len(services):,} service domains", "ok")
 
     # Community active
     if SOURCE_COMMUNITY_ACTIVE.exists():
         items = load_list(SOURCE_COMMUNITY_ACTIVE)
-        _, _, hosts = process_items(items, allowlist)
+        _, _, hosts, _ = process_items(items, allowlist)
         save_json(OUT_COMMUNITY_ONLINE, {"domains": sorted(hosts)})
+        write_txt(OUT_COMMUNITY_ONLINE, hosts)
         log(f"Community active: {len(hosts):,} hosts", "ok")
 
 

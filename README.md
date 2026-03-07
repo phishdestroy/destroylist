@@ -39,11 +39,11 @@
 | Feed | Description | Update | Download |
 |:-----|:------------|:------:|:--------:|
 | **Primary** | Curated phishing domains | ⚡ Real-time | [![JSON](https://img.shields.io/badge/JSON-FF0000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt) |
-| **Primary Live** | DNS verified active | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-CC0000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json) |
-| **Community** | Aggregated from 35+ sources | 🕐 2h | [![JSON](https://img.shields.io/badge/JSON-990000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json) |
-| **Community Live** | Community DNS verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-660000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json) |
-| **Primary Content** | Curated + HTTP content verified | 🕐 12h | [![JSON](https://img.shields.io/badge/JSON-dc2626?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json) |
-| **Community Content** | Aggregated + HTTP content verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-991b1b?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json) |
+| **Primary Live** | DNS verified active | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-CC0000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.txt) |
+| **Community** | Aggregated from 35+ sources | 🕐 2h | [![JSON](https://img.shields.io/badge/JSON-990000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.txt) |
+| **Community Live** | Community DNS verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-660000?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.txt) |
+| **Primary Content** | Curated + HTTP content verified | 🕐 12h | [![JSON](https://img.shields.io/badge/JSON-dc2626?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.txt) |
+| **Community Content** | Aggregated + HTTP content verified | 🕐 24h | [![JSON](https://img.shields.io/badge/JSON-991b1b?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.txt) |
 | **Allowlist** | False positive protection | ✋ Manual | [![JSON](https://img.shields.io/badge/JSON-333333?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json) |
 
 > [!TIP]
@@ -72,10 +72,12 @@
 > [!TIP]
 > **Root domains only** — no subdomains, hosting providers excluded
 
-| | All Roots | Live Only |
-|:--|:-:|:-:|
-| 🔴 **Primary** | [`active_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [`online_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) |
-| ⚫ **Community** | [`community_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [`community_online_root_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) |
+| | All Roots | Live Only | Services Only |
+|:--|:-:|:-:|:-:|
+| 🔴 **Primary** | [JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) · [TXT](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt) | [JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) · [TXT](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt) | [JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json) · [TXT](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt) |
+| ⚫ **Community** | [JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) · [TXT](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt) | [JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) · [TXT](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt) | [JSON](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json) · [TXT](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt) |
+
+> **All Roots** — clean root domains (no infra) · **Live Only** — DNS-verified active · **Services Only** — hosting platform subdomains (Vercel, Pages.dev, Netlify, etc.)
 
 
 ---
