@@ -1,5 +1,7 @@
 dns/dns_check_cache.json
 dns/*.txt
+!dns/active_domains.txt
+!dns/content_active.txt
 dns/*.conf
 dns/analytics.json
 dns/source_health.json
