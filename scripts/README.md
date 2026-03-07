@@ -20,7 +20,7 @@ Pre-pipeline JSON integrity checks.
 - Checks for empty entries, IPs, invalid domains
 - Runs before and after pipeline steps
 
-**Targets:** `list.json`, `allowlist.json`, `blocklist.json`, `live_blocklist.json`, `content_live.json`, `active_domains.json`, `content_active.json`
+**Targets:** `list.json`, `allow/allowlist.json`, `community/blocklist.json`, `community/live_blocklist.json`, `community/content_live.json`, `dns/active_domains.json`, `dns/content_active.json`
 
 ---
 
