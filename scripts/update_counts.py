@@ -30,6 +30,18 @@ SOURCES = {
         "label": "Community Live",
         "color": "brightgreen",
     },
+    "primary_content": {
+        "input": PROJECT_ROOT / "dns" / "content_active.json",
+        "output": PROJECT_ROOT / "dns" / "content_active_count.json",
+        "label": "Content Verified",
+        "color": "orange",
+    },
+    "community_content": {
+        "input": PROJECT_ROOT / "community" / "content_live.json",
+        "output": PROJECT_ROOT / "community" / "content_active_count.json",
+        "label": "Community Content",
+        "color": "yellow",
+    },
 }
 
 
