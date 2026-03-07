@@ -37,7 +37,11 @@ def main():
     for i in range(total_chunks):
         chunk = data[i * CHUNK_SIZE : (i + 1) * CHUNK_SIZE]
         outfile = OUTPUT_DIR / f"part_{i:03d}.json"
-        outfile.write_text(json.dumps(chunk, indent=2, ensure_ascii=False), encoding="utf-8")
+        try:
+            outfile.write_text(json.dumps(chunk, indent=2, ensure_ascii=False), encoding="utf-8")
+        except OSError as e:
+            log(f"Failed to write {outfile.name}: {e}", "error")
+            sys.exit(1)
 
     log(f"Created {total_chunks} shards ({len(data):,} domains)", "ok")
 

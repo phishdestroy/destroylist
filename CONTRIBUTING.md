@@ -50,4 +50,4 @@ If you maintain a phishing blocklist and want it aggregated:
 
 ## Code of Conduct
 
-Be respectful. We're all here to make the internet safer. Harassment, spam, or abuse will not be tolerated.
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold a respectful, harassment-free environment. Spam, abuse, and fake reports will not be tolerated.

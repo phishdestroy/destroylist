@@ -51,7 +51,8 @@ def load_domains(filepath: Path, allowlist: Set[str]) -> list:
                 continue
             clean.add(d)
         return sorted(clean)
-    except Exception:
+    except Exception as e:
+        log(f"Failed to load {filepath.name}: {e}", "error")
         return []
 
 
@@ -137,4 +138,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        log(f"FATAL: {e}", "error")
+        import traceback
+        traceback.print_exc()
+        import sys
+        sys.exit(1)
