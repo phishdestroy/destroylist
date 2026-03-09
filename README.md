@@ -11,7 +11,7 @@
 <p align="center">
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/rootlist.yml/badge.svg" alt="Rootlist"/>
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/on_list_update.yml/badge.svg" alt="On List Update"/>
-  <img src="https://github.com/phishdestroy/destroylist/actions/workflows/purge.yml/badge.svg" alt="Purge Domain"/>
+
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/update_stats.yml/badge.svg" alt="Update Statistics"/>
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/pages.yml/badge.svg" alt="Deploy GitHub Pages"/>
   <img src="https://img.shields.io/badge/status-maintained-FF0000?style=flat-square" alt="Status"/>
