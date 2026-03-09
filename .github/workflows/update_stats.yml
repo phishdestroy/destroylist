@@ -16,11 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          fetch-depth: 500
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Calculate statistics
         run: python scripts/calculate_stats.py
       - name: Update daily gist
