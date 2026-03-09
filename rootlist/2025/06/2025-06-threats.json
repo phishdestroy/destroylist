@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "month": "2025-06",
+    "name": "June 2025",
+    "generated": "2026-03-09T05:00:55.516497+00:00",
+    "total": 4,
+    "source": "https://github.com/phishdestroy/destroylist",
+    "report": "2025-06.md",
+    "prev_report": "../../2025/05/",
+    "next_report": "../../2025/07/"
+  },
+  "stats": {
+    "live": 1,
+    "dead": 3,
+    "enriched": 0,
+    "kill_rate": 75.0,
+    "vt_flagged": 3,
+    "vt_rate": 75.0,
+    "gsb_flagged": 0,
+    "avg_response_h": 0,
+    "median_response_h": 0
+  },
+  "top": {
+    "registrars": [
+      {
+        "name": "Unknown",
+        "count": 1
+      },
+      {
+        "name": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+        "count": 1
+      },
+      {
+        "name": "NameSilo, LLC",
+        "count": 1
+      },
+      {
+        "name": "Infomaniak Network SA",
+        "count": 1
+      }
+    ],
+    "tlds": [
+      {
+        "tld": "click",
+        "count": 1
+      },
+      {
+        "tld": "live",
+        "count": 1
+      },
+      {
+        "tld": "org",
+        "count": 1
+      },
+      {
+        "tld": "com",
+        "count": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "Unknown",
+        "count": 1
+      },
+      {
+        "country": "India",
+        "count": 1
+      },
+      {
+        "country": "USA",
+        "count": 1
+      }
+    ],
+    "brands": [],
+    "drainers": [],
+    "vt_vendors": [
+      {
+        "vendor": "Gridinsoft",
+        "detections": 1
+      },
+      {
+        "vendor": "Trustwave",
+        "detections": 1
+      },
+      {
+        "vendor": "Webroot",
+        "detections": 1
+      },
+      {
+        "vendor": "alphaMountain.ai",
+        "detections": 1
+      },
+      {
+        "vendor": "G-Data",
+        "detections": 1
+      },
+      {
+        "vendor": "SOCRadar",
+        "detections": 1
+      },
+      {
+        "vendor": "Sophos",
+        "detections": 1
+      }
+    ]
+  },
+  "daily": {
+    "2025-06-05": 1,
+    "2025-06-23": 1,
+    "2025-06-26": 1,
+    "2025-06-30": 1
+  },
+  "threats": [
+    {
+      "domain": "1linstars.click",
+      "detected_at": "2025-06-26 21:26:25",
+      "registrar": "Unknown",
+      "registrar_country": "Unknown",
+      "tld": "click",
+      "ip_address": "198.18.0.91",
+      "nameservers": "Unknown",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Gridinsoft",
+        "Trustwave"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "",
+      "urlscan": "https://urlscan.io/result/0197aec7-23d3-7268-a373-fcd1746ff863/",
+      "screenshot": "https://urlscan.io/screenshots/0197aec7-23d3-7268-a373-fcd1746ff863.png"
+    },
+    {
+      "domain": "bitserbia.live",
+      "detected_at": "2025-06-23 03:30:45",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+      "registrar_country": "India",
+      "tld": "live",
+      "ip_address": "172.67.144.3",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-06-16 16:17:07",
+      "urlscan": "https://urlscan.io/result/01979b7b-203f-75ae-91cb-c6c374a08afb/",
+      "screenshot": "https://urlscan.io/screenshots/01979b7b-203f-75ae-91cb-c6c374a08afb.png"
+    },
+    {
+      "domain": "compoundflnance.org",
+      "detected_at": "2025-06-30 14:45:50",
+      "registrar": "NameSilo, LLC",
+      "registrar_country": "USA",
+      "tld": "org",
+      "ip_address": "188.114.97.3",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "SOCRadar",
+        "Sophos"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-03-13 13:48:56",
+      "urlscan": "https://urlscan.io/result/0197c1f1-e45f-73ab-8108-5d92e264306a/",
+      "screenshot": "https://urlscan.io/screenshots/0197c1f1-e45f-73ab-8108-5d92e264306a.png"
+    },
+    {
+      "domain": "peachbitcoin.com",
+      "detected_at": "2025-06-05 07:44:03",
+      "registrar": "Infomaniak Network SA",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "2606:4700:20::ac43:4498",
+      "nameservers": "1",
+      "status": "live",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2022-01-12 17:42:30",
+      "urlscan": "https://urlscan.io/result/01973fb0-bc90-716b-8224-2f86916240eb/",
+      "screenshot": "https://urlscan.io/screenshots/01973fb0-bc90-716b-8224-2f86916240eb.png"
+    }
+  ]
+}

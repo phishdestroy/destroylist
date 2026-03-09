@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "month": "2025-04",
+    "name": "April 2025",
+    "generated": "2026-03-09T05:00:20.024387+00:00",
+    "total": 2,
+    "source": "https://github.com/phishdestroy/destroylist",
+    "report": "2025-04.md",
+    "prev_report": "../../2025/03/",
+    "next_report": "../../2025/05/"
+  },
+  "stats": {
+    "live": 1,
+    "dead": 1,
+    "enriched": 0,
+    "kill_rate": 50.0,
+    "vt_flagged": 2,
+    "vt_rate": 100.0,
+    "gsb_flagged": 0,
+    "avg_response_h": 0,
+    "median_response_h": 0
+  },
+  "top": {
+    "registrars": [
+      {
+        "name": "Registrar of Domain Names REG.RU, LLC",
+        "count": 1
+      },
+      {
+        "name": "Spaceship, Inc.",
+        "count": 1
+      }
+    ],
+    "tlds": [
+      {
+        "tld": "online",
+        "count": 1
+      },
+      {
+        "tld": "mom",
+        "count": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "Russia",
+        "count": 1
+      },
+      {
+        "country": "USA",
+        "count": 1
+      }
+    ],
+    "brands": [],
+    "drainers": [],
+    "vt_vendors": [
+      {
+        "vendor": "alphaMountain.ai",
+        "detections": 2
+      },
+      {
+        "vendor": "ADMINUSLabs",
+        "detections": 1
+      },
+      {
+        "vendor": "BitDefender",
+        "detections": 1
+      },
+      {
+        "vendor": "DNS8",
+        "detections": 1
+      },
+      {
+        "vendor": "G-Data",
+        "detections": 1
+      },
+      {
+        "vendor": "Lionic",
+        "detections": 1
+      },
+      {
+        "vendor": "Netcraft",
+        "detections": 1
+      },
+      {
+        "vendor": "Seclookup",
+        "detections": 1
+      }
+    ]
+  },
+  "daily": {
+    "2025-04-01": 1,
+    "2025-04-08": 1
+  },
+  "threats": [
+    {
+      "domain": "casinogalaxy.online",
+      "detected_at": "2025-04-08 20:38:47",
+      "registrar": "Registrar of Domain Names REG.RU, LLC",
+      "registrar_country": "Russia",
+      "tld": "online",
+      "ip_address": "188.114.96.3",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "alphaMountain.ai"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2024-12-11 17:14:11",
+      "urlscan": "https://urlscan.io/result/019617c5-3104-761a-ae6b-ac4f869e5f02/",
+      "screenshot": "https://urlscan.io/screenshots/019617c5-3104-761a-ae6b-ac4f869e5f02.png"
+    },
+    {
+      "domain": "cryptograb-fuck.mom",
+      "detected_at": "2025-04-01 12:52:26",
+      "registrar": "Spaceship, Inc.",
+      "registrar_country": "USA",
+      "tld": "mom",
+      "ip_address": "172.67.132.4",
+      "nameservers": "1",
+      "status": "live",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "ADMINUSLabs",
+        "BitDefender",
+        "DNS8",
+        "G-Data",
+        "Lionic",
+        "Netcraft",
+        "Seclookup",
+        "alphaMountain.ai"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2023-10-03 09:37:44",
+      "urlscan": "https://urlscan.io/result/0195f20d-b9e2-73e9-8674-089c25035d78/",
+      "screenshot": "https://urlscan.io/screenshots/0195f20d-b9e2-73e9-8674-089c25035d78.png"
+    }
+  ]
+}
