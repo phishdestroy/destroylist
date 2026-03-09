@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhishDestroy — Documentation & Repository Map</title>
+<meta name="description" content="Complete documentation for the PhishDestroy destroylist repository. Directory structure, workflow schedules, data formats, and download links.">
+<meta name="keywords" content="phishing, blocklist, documentation, threat intelligence, destroylist, PhishDestroy, DNS blocking, security feeds">
+<link rel="icon" type="image/x-icon" href="https://destroyico.pages.dev/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://destroyico.pages.dev/assets/favicon-32x32.png">
+<meta property="og:title" content="PhishDestroy — Documentation">
+<meta property="og:description" content="Repository map, workflow schedules, and data format documentation.">
+<meta property="og:image" content="https://destroyico.pages.dev/assets/logo.png">
+<meta name="theme-color" content="#010409">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#000;--bg-card:rgba(10,15,25,0.7);--text:#f0f6fc;--text2:#8b949e;--red:#ff3333;--cyan:#00f0ff;--blue:#3388ff;--border:rgba(255,255,255,0.08);--glass:rgba(5,10,20,0.6);--mono:'JetBrains Mono',monospace}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;background-image:radial-gradient(circle at 50% 0%,rgba(0,240,255,0.04) 0%,transparent 50%)}
+a{color:var(--cyan);text-decoration:none;transition:color .2s}
+a:hover{color:var(--red)}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);background:rgba(0,0,0,0.8);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-weight:800;font-size:1.1rem;color:var(--red)}
+.nav-links a{margin-left:1.5rem;font-size:.85rem;color:var(--text2)}
+.nav-links a:hover{color:var(--cyan)}
+
+/* Hero */
+.hero{text-align:center;padding:5rem 2rem 3rem}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.hero p{color:var(--text2);font-size:1.1rem;max-width:600px;margin:0 auto}
+
+/* Section */
+.section{padding:3rem 0;border-top:1px solid var(--border)}
+.section:first-of-type{border-top:none}
+.section h2{font-size:1.6rem;font-weight:800;margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.section h2 .icon{font-size:1.4rem}
+.section h3{font-size:1.1rem;font-weight:700;margin:2rem 0 .8rem;color:var(--cyan)}
+
+/* Cards */
+.card{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem;transition:border-color .3s}
+.card:hover{border-color:rgba(0,240,255,0.2)}
+.card-title{font-weight:700;font-size:1rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.card-title .badge{font-family:var(--mono);font-size:.7rem;padding:2px 8px;border-radius:4px;font-weight:600}
+.badge-red{background:rgba(255,51,51,0.15);color:var(--red)}
+.badge-cyan{background:rgba(0,240,255,0.1);color:var(--cyan)}
+.badge-green{background:rgba(46,160,67,0.15);color:#2ea043}
+.card-desc{color:var(--text2);font-size:.9rem}
+.card-link{font-family:var(--mono);font-size:.8rem;color:var(--cyan);display:inline-block;margin-top:.5rem}
+
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:1rem 0}
+th{text-align:left;padding:.7rem 1rem;background:rgba(0,240,255,0.05);border-bottom:1px solid var(--border);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text2)}
+td{padding:.6rem 1rem;border-bottom:1px solid var(--border)}
+td code{font-family:var(--mono);font-size:.8rem;background:rgba(0,240,255,0.06);padding:2px 6px;border-radius:4px}
+tr:hover{background:rgba(0,240,255,0.02)}
+
+/* Tree */
+.tree{font-family:var(--mono);font-size:.85rem;line-height:2;padding:1.5rem;background:var(--glass);border:1px solid var(--border);border-radius:12px;overflow-x:auto}
+.tree a{color:var(--cyan)}
+.tree .dir{color:var(--red);font-weight:600}
+.tree .desc{color:var(--text2);font-size:.75rem}
+
+/* Schedule */
+.schedule-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem;margin-top:1rem}
+.sched-card{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:1.2rem}
+.sched-name{font-weight:700;font-size:.95rem;margin-bottom:.3rem}
+.sched-trigger{font-family:var(--mono);font-size:.75rem;color:var(--cyan);margin-bottom:.3rem}
+.sched-desc{color:var(--text2);font-size:.85rem}
+.sched-badge{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:4px;font-weight:600;margin-top:.4rem}
+
+/* Footer */
+.footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--border);color:var(--text2);font-size:.85rem}
+.footer a{color:var(--red)}
+
+/* Responsive */
+@media(max-width:768px){
+  .container{padding:1rem}
+  .hero{padding:3rem 1rem 2rem}
+  .schedule-grid{grid-template-columns:1fr}
+  .nav-links a{margin-left:.8rem;font-size:.75rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="./" class="nav-brand">🔥 PhishDestroy</a>
+  <div class="nav-links">
+    <a href="./">Home</a>
+    <a href="./docs.html">Docs</a>
+    <a href="https://api.destroy.tools" target="_blank">API</a>
+    <a href="https://github.com/phishdestroy/destroylist" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="hero">
+  <h1>Documentation</h1>
+  <p>Complete repository map, automation schedules, data formats, and integration guides</p>
+</div>
+
+<!-- ─── REPO STRUCTURE ─── -->
+<div class="section" id="structure">
+  <h2><span class="icon">📂</span> Repository Structure</h2>
+
+  <div class="tree">
+<span class="dir">destroylist/</span>
+├── <a href="https://github.com/phishdestroy/destroylist/blob/main/README.md">README.md</a> <span class="desc">— Main repository documentation</span>
+├── <a href="https://github.com/phishdestroy/destroylist/blob/main/list.json">list.json</a> <span class="desc">— Primary blocklist (JSON)</span>
+├── <a href="https://github.com/phishdestroy/destroylist/blob/main/list.txt">list.txt</a> <span class="desc">— Primary blocklist (TXT)</span>
+├── <a href="https://github.com/phishdestroy/destroylist/blob/main/count.json">count.json</a> <span class="desc">— Domain count badge endpoint</span>
+│
+├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/dns">dns/</a></span> <span class="desc">— DNS intelligence & live domain tracking</span>
+│   ├── active_domains.json <span class="desc">— DNS-validated live domains</span>
+│   ├── dead_domains.json <span class="desc">— Domains with no DNS</span>
+│   ├── content_active.json <span class="desc">— Live domains serving HTTP content</span>
+│   ├── today_added.json <span class="desc">— Domains added today</span>
+│   ├── week_added.json <span class="desc">— Domains added this week</span>
+│   ├── month_added.json <span class="desc">— Domains added this month</span>
+│   └── active_domains.py <span class="desc">— Multithreaded DNS resolver (100 threads)</span>
+│
+├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/community">community/</a></span> <span class="desc">— Aggregated community threat feeds (13+ sources)</span>
+│   ├── blocklist.json / .txt <span class="desc">— All community domains</span>
+│   ├── live_blocklist.json / .txt <span class="desc">— DNS-verified live</span>
+│   └── content_live.json / .txt <span class="desc">— With HTTP content</span>
+│
+├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist">rootlist/</a></span> <span class="desc">— Root domain lists, formats, shards & monthly reports</span>
+│   ├── active_root_domains.json <span class="desc">— All validated root domains</span>
+│   ├── online_root_domains.json <span class="desc">— DNS-verified active roots</span>
+│   │
+│   ├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats">formats/</a></span> <span class="desc">— Pre-built configs for DNS blockers</span>
+│   │   ├── <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/primary">primary/</a> <span class="desc">— All curated domains (6 formats)</span>
+│   │   ├── <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/primary_active">primary_active/</a> <span class="desc">— Live only (recommended)</span>
+│   │   ├── <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/community">community/</a> <span class="desc">— Community feeds (6 formats)</span>
+│   │   └── <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/community_active">community_active/</a> <span class="desc">— Community live only</span>
+│   │
+│   ├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/arrays">arrays/</a></span> <span class="desc">— Sharded JSON arrays (34 parts × 3K domains)</span>
+│   │
+│   ├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025">2025/</a></span> <span class="desc">— 2025 monthly data + threat reports</span>
+│   │   ├── <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/01">01/</a> — <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12">12/</a> <span class="desc">— Daily JSONs + monthly README report</span>
+│   │
+│   └── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026">2026/</a></span> <span class="desc">— 2026 monthly data + threat reports</span>
+│       ├── <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01">01/</a> — <a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/03">03/</a> <span class="desc">— Daily JSONs + monthly README report</span>
+│
+├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/archives">archives/</a></span> <span class="desc">— Historical snapshots</span>
+│   ├── <a href="https://github.com/phishdestroy/destroylist/tree/main/archives/monthly">monthly/</a> <span class="desc">— End-of-month full blocklist snapshots</span>
+│   └── <a href="https://github.com/phishdestroy/destroylist/tree/main/archives/weekly">weekly/</a> <span class="desc">— Weekly snapshots (every Sunday 01:00 UTC)</span>
+│
+├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/allow">allow/</a></span> <span class="desc">— Allowlisted domains (false positive protection)</span>
+│
+├── <span class="dir"><a href="https://github.com/phishdestroy/destroylist/tree/main/scripts">scripts/</a></span> <span class="desc">— Python processing pipeline + GitHub Pages</span>
+│   ├── validate_json.py <span class="desc">— JSON structure validator</span>
+│   ├── validate_and_clean.py <span class="desc">— Clean against allowlist</span>
+│   ├── json_to_txt.py <span class="desc">— Convert to 6 output formats</span>
+│   ├── update_counts.py <span class="desc">— Update badge count files</span>
+│   ├── build_rootlist.py <span class="desc">— Build root domain lists</span>
+│   ├── build_shards.py <span class="desc">— Split into array shards</span>
+│   ├── calculate_stats.py <span class="desc">— Generate statistics</span>
+│   └── index.html <span class="desc">— GitHub Pages website</span>
+│
+└── <span class="dir">.github/workflows/</span> <span class="desc">— CI/CD automation</span>
+  </div>
+</div>
+
+<!-- ─── WORKFLOWS ─── -->
+<div class="section" id="workflows">
+  <h2><span class="icon">⚙️</span> Automation & Schedules</h2>
+
+  <div class="schedule-grid">
+    <div class="sched-card">
+      <div class="sched-name">📋 On List Update</div>
+      <div class="sched-trigger">trigger: push to list.json, dns/*, community/*</div>
+      <div class="sched-desc">Validates JSON → cleans against allowlist → converts to all formats → updates counts → builds rootlist + shards → commits</div>
+      <div class="sched-badge badge-green">event-driven</div>
+    </div>
+
+    <div class="sched-card">
+      <div class="sched-name">🔄 Scheduled Update</div>
+      <div class="sched-trigger">cron: every 15 min</div>
+      <div class="sched-desc">Runs DNS validation via active_domains.py, builds rootlist. Keeps live/dead domain status current.</div>
+      <div class="sched-badge badge-cyan">every 15 min</div>
+    </div>
+
+    <div class="sched-card">
+      <div class="sched-name">📊 Update Statistics</div>
+      <div class="sched-trigger">cron: 0 */6 * * * (every 6 hours)</div>
+      <div class="sched-desc">Recalculates stats from all lists. Updates stat badges and count endpoints.</div>
+      <div class="sched-badge badge-cyan">every 6h</div>
+    </div>
+
+    <div class="sched-card">
+      <div class="sched-name">🌐 Deploy GitHub Pages</div>
+      <div class="sched-trigger">cron: 0 */3 * * * (every 3 hours)</div>
+      <div class="sched-desc">Rebuilds and deploys the PhishDestroy website via Jekyll.</div>
+      <div class="sched-badge badge-cyan">every 3h</div>
+    </div>
+
+    <div class="sched-card">
+      <div class="sched-name">🔗 Check Links</div>
+      <div class="sched-trigger">cron: weekly + on push to .md files</div>
+      <div class="sched-desc">Validates all links in markdown files across the repo.</div>
+      <div class="sched-badge badge-green">weekly</div>
+    </div>
+
+    <div class="sched-card">
+      <div class="sched-name">🧹 Stale Issues</div>
+      <div class="sched-trigger">cron: 0 6 * * * (daily 06:00 UTC)</div>
+      <div class="sched-desc">Labels issues/PRs inactive for 60 days as stale. Closes after 14 more days. Excludes: pinned, security, appeal.</div>
+      <div class="sched-badge badge-green">daily</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── DATA FORMATS ─── -->
+<div class="section" id="formats">
+  <h2><span class="icon">📦</span> Data Formats & Downloads</h2>
+
+  <h3>Blocklist Formats</h3>
+  <p style="color:var(--text2);margin-bottom:1rem">Each list is available in 6 formats. <strong style="color:var(--cyan)">Primary Active</strong> is recommended for blocking.</p>
+
+  <table>
+    <tr><th>Format</th><th>File</th><th>Use With</th></tr>
+    <tr><td>Plain domains</td><td><code>domains.txt</code></td><td>Any tool, scripts, APIs</td></tr>
+    <tr><td>Hosts file</td><td><code>hosts.txt</code></td><td>Windows, macOS, Linux /etc/hosts</td></tr>
+    <tr><td>AdBlock</td><td><code>adblock.txt</code></td><td>uBlock Origin, AdGuard, ABP</td></tr>
+    <tr><td>DNSMasq</td><td><code>dnsmasq.conf</code></td><td>Pi-hole, OpenWrt, DNSMasq</td></tr>
+    <tr><td>Unbound</td><td><code>unbound.conf</code></td><td>Unbound DNS resolver</td></tr>
+    <tr><td>RPZ</td><td><code>rpz.zone</code></td><td>BIND, Knot, PowerDNS</td></tr>
+  </table>
+
+  <h3>Available Lists</h3>
+  <table>
+    <tr><th>List</th><th>Description</th><th>Path</th></tr>
+    <tr><td><strong>Primary</strong></td><td>PhishDestroy curated — all domains</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/primary"><code>rootlist/formats/primary/</code></a></td></tr>
+    <tr><td><strong style="color:var(--cyan)">Primary Active ⭐</strong></td><td>Curated — DNS-verified live only</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/primary_active"><code>rootlist/formats/primary_active/</code></a></td></tr>
+    <tr><td><strong>Community</strong></td><td>13+ aggregated threat feeds</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/community"><code>rootlist/formats/community/</code></a></td></tr>
+    <tr><td><strong>Community Active</strong></td><td>Community — DNS-verified live</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/community_active"><code>rootlist/formats/community_active/</code></a></td></tr>
+  </table>
+
+  <h3>Sharded Arrays</h3>
+  <p style="color:var(--text2)">Full blocklist split into 34 JSON chunks (3K domains each) for CDN, pagination, and browser extensions.</p>
+  <p><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/arrays"><code>rootlist/arrays/part_000.json</code> — <code>part_033.json</code></a></p>
+</div>
+
+<!-- ─── THREAT REPORTS ─── -->
+<div class="section" id="reports">
+  <h2><span class="icon">📊</span> Monthly Threat Reports</h2>
+  <p style="color:var(--text2);margin-bottom:1.5rem">Each month folder contains a README with full analytics: registrars, TLDs, geolocation, brands, crypto drainers, VirusTotal engine coverage, daily activity charts, and threat JSON with scan URLs.</p>
+
+  <table>
+    <tr><th>Month</th><th>Domains</th><th>Report</th></tr>
+    <tr><td>January 2025</td><td>1</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/01">rootlist/2025/01/</a></td></tr>
+    <tr><td>February 2025</td><td>13</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/02">rootlist/2025/02/</a></td></tr>
+    <tr><td>March 2025</td><td>2</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/03">rootlist/2025/03/</a></td></tr>
+    <tr><td>April 2025</td><td>2</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/04">rootlist/2025/04/</a></td></tr>
+    <tr><td>May 2025</td><td>2</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/05">rootlist/2025/05/</a></td></tr>
+    <tr><td>June 2025</td><td>4</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/06">rootlist/2025/06/</a></td></tr>
+    <tr><td>July 2025</td><td>700</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/07">rootlist/2025/07/</a></td></tr>
+    <tr><td>August 2025</td><td>3,788</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/08">rootlist/2025/08/</a></td></tr>
+    <tr><td>September 2025</td><td>7,307</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/09">rootlist/2025/09/</a></td></tr>
+    <tr><td>October 2025</td><td>8,841</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/10">rootlist/2025/10/</a></td></tr>
+    <tr><td>November 2025</td><td>12,581</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/11">rootlist/2025/11/</a></td></tr>
+    <tr><td>December 2025</td><td>11,773</td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12">rootlist/2025/12/</a></td></tr>
+    <tr><td><strong>January 2026</strong></td><td><strong>8,932</strong></td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01">rootlist/2026/01/</a></td></tr>
+    <tr><td><strong>February 2026</strong></td><td><strong>18,207</strong></td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/02">rootlist/2026/02/</a></td></tr>
+    <tr><td><strong>March 2026</strong></td><td><strong>4,042</strong></td><td><a href="https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/03">rootlist/2026/03/</a></td></tr>
+  </table>
+
+  <p style="margin-top:1rem">Each report includes: <code>README.md</code> (auto-rendered), <code>YYYY-MM-threats.json</code> (full threat data), <code>YYYY-MM-activity.svg</code> (daily chart)</p>
+</div>
+
+<!-- ─── API ─── -->
+<div class="section" id="api">
+  <h2><span class="icon">🔌</span> API Endpoints</h2>
+
+  <table>
+    <tr><th>Endpoint</th><th>Description</th><th>Auth</th></tr>
+    <tr><td><code>GET /v1/check?domain=</code></td><td>Check if a domain is in the blocklist</td><td>Free, no key</td></tr>
+    <tr><td><code>GET /v1/search?q=</code></td><td>Search domains by keyword</td><td>Free, no key</td></tr>
+    <tr><td><code>POST /v1/check/bulk</code></td><td>Bulk check (newline-separated)</td><td>Free, no key</td></tr>
+    <tr><td><code>GET /v1/feed/primary</code></td><td>Primary threat feed</td><td>Free, no key</td></tr>
+    <tr><td><code>GET /v1/stats</code></td><td>Live statistics</td><td>Free, no key</td></tr>
+  </table>
+
+  <p style="margin-top:1rem;color:var(--text2)">Base URL: <a href="https://api.destroy.tools" target="_blank"><code>https://api.destroy.tools</code></a></p>
+</div>
+
+<!-- ─── RAW LINKS ─── -->
+<div class="section" id="raw">
+  <h2><span class="icon">⬇️</span> Quick Raw Download Links</h2>
+
+  <h3>Primary (Curated by PhishDestroy)</h3>
+  <table>
+    <tr><th>File</th><th>Description</th><th>Link</th></tr>
+    <tr><td><code>list.json</code></td><td>Full primary blocklist</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json">raw ⬇️</a></td></tr>
+    <tr><td><code>list.txt</code></td><td>Plain text</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt">raw ⬇️</a></td></tr>
+    <tr><td><code>dns/active_domains.json</code></td><td>Live domains (DNS verified)</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json">raw ⬇️</a></td></tr>
+    <tr><td><code>dns/content_active.json</code></td><td>Live with HTTP content</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json">raw ⬇️</a></td></tr>
+  </table>
+
+  <h3>Community (13+ Aggregated Feeds)</h3>
+  <table>
+    <tr><th>File</th><th>Description</th><th>Link</th></tr>
+    <tr><td><code>community/blocklist.json</code></td><td>All community domains</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json">raw ⬇️</a></td></tr>
+    <tr><td><code>community/live_blocklist.json</code></td><td>Live community domains</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json">raw ⬇️</a></td></tr>
+    <tr><td><code>community/content_live.json</code></td><td>Live with HTTP content</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json">raw ⬇️</a></td></tr>
+  </table>
+
+  <h3>Root Domains</h3>
+  <table>
+    <tr><th>File</th><th>Description</th><th>Link</th></tr>
+    <tr><td><code>active_root_domains.json</code></td><td>All validated roots</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json">raw ⬇️</a></td></tr>
+    <tr><td><code>online_root_domains.json</code></td><td>DNS-verified active roots</td><td><a href="https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json">raw ⬇️</a></td></tr>
+  </table>
+</div>
+
+<!-- ─── PROCESSING PIPELINE ─── -->
+<div class="section" id="pipeline">
+  <h2><span class="icon">🔧</span> Processing Pipeline</h2>
+  <p style="color:var(--text2);margin-bottom:1.5rem">When domains are added to <code>list.json</code>, the On List Update workflow triggers this pipeline:</p>
+
+  <div class="card">
+    <div class="card-title">1. validate_json.py</div>
+    <div class="card-desc">Validates JSON structure of all list files</div>
+  </div>
+  <div class="card">
+    <div class="card-title">2. validate_and_clean.py</div>
+    <div class="card-desc">Removes false positives using allow/ lists</div>
+  </div>
+  <div class="card">
+    <div class="card-title">3. json_to_txt.py</div>
+    <div class="card-desc">Converts JSON → 6 output formats (hosts, adblock, dnsmasq, unbound, rpz, plain)</div>
+  </div>
+  <div class="card">
+    <div class="card-title">4. update_counts.py</div>
+    <div class="card-desc">Updates count.json badge endpoints for shields.io</div>
+  </div>
+  <div class="card">
+    <div class="card-title">5. build_rootlist.py</div>
+    <div class="card-desc">Extracts root domains via tldextract, filters infrastructure, validates DNS</div>
+  </div>
+  <div class="card">
+    <div class="card-title">6. build_shards.py</div>
+    <div class="card-desc">Splits root domains into 34 JSON array chunks (3K each)</div>
+  </div>
+</div>
+
+<!-- ─── LINKS ─── -->
+<div class="section" id="links">
+  <h2><span class="icon">🔗</span> Quick Links</h2>
+  <table>
+    <tr><th>Resource</th><th>URL</th></tr>
+    <tr><td>GitHub Repository</td><td><a href="https://github.com/phishdestroy/destroylist">github.com/phishdestroy/destroylist</a></td></tr>
+    <tr><td>Website</td><td><a href="https://phishdestroy.io">phishdestroy.io</a></td></tr>
+    <tr><td>API</td><td><a href="https://api.destroy.tools">api.destroy.tools</a></td></tr>
+    <tr><td>GitHub Pages</td><td><a href="https://phishdestroy.github.io/destroylist/">phishdestroy.github.io/destroylist</a></td></tr>
+    <tr><td>Telegram</td><td><a href="https://t.me/destroy_phish">t.me/destroy_phish</a></td></tr>
+    <tr><td>Twitter / X</td><td><a href="https://x.com/Phish_Destroy">x.com/Phish_Destroy</a></td></tr>
+    <tr><td>Mastodon</td><td><a href="https://mastodon.social/@phishdestroy">mastodon.social/@phishdestroy</a></td></tr>
+    <tr><td>Appeals</td><td><a href="https://phishdestroy.io/appeals/">phishdestroy.io/appeals</a></td></tr>
+    <tr><td>Contact</td><td><a href="mailto:contact@phishdestroy.io">contact@phishdestroy.io</a></td></tr>
+  </table>
+</div>
+
+</div>
+
+<footer class="footer">
+  <a href="https://phishdestroy.io">PhishDestroy</a> · <a href="https://github.com/phishdestroy/destroylist">GitHub</a> · <a href="https://api.destroy.tools">API</a> · <a href="https://t.me/destroy_phish">Telegram</a>
+</footer>
+
+</body>
+</html>
