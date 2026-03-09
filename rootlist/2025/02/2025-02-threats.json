@@ -1,0 +1,451 @@
+{
+  "meta": {
+    "month": "2025-02",
+    "name": "February 2025",
+    "generated": "2026-03-09T04:59:46.258123+00:00",
+    "total": 13,
+    "source": "https://github.com/phishdestroy/destroylist",
+    "report": "2025-02.md",
+    "prev_report": "../../2025/01/",
+    "next_report": "../../2025/03/"
+  },
+  "stats": {
+    "live": 2,
+    "dead": 11,
+    "enriched": 0,
+    "kill_rate": 84.6,
+    "vt_flagged": 10,
+    "vt_rate": 76.9,
+    "gsb_flagged": 0,
+    "avg_response_h": 0,
+    "median_response_h": 0
+  },
+  "top": {
+    "registrars": [
+      {
+        "name": "URL Solutions Inc.",
+        "count": 3
+      },
+      {
+        "name": "Unknown",
+        "count": 2
+      },
+      {
+        "name": "Global Domain Group LLC",
+        "count": 2
+      },
+      {
+        "name": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+        "count": 2
+      },
+      {
+        "name": "Dynadot Inc",
+        "count": 1
+      },
+      {
+        "name": "Web Commerce Communications Limited dba WebNic.cc",
+        "count": 1
+      },
+      {
+        "name": "Google LLC",
+        "count": 1
+      },
+      {
+        "name": "NameCheap, Inc.",
+        "count": 1
+      }
+    ],
+    "tlds": [
+      {
+        "tld": "com",
+        "count": 5
+      },
+      {
+        "tld": "space",
+        "count": 3
+      },
+      {
+        "tld": "top",
+        "count": 1
+      },
+      {
+        "tld": "live",
+        "count": 1
+      },
+      {
+        "tld": "cc",
+        "count": 1
+      },
+      {
+        "tld": "app",
+        "count": 1
+      },
+      {
+        "tld": "bet",
+        "count": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "USA",
+        "count": 8
+      },
+      {
+        "country": "Unknown",
+        "count": 2
+      },
+      {
+        "country": "India",
+        "count": 2
+      },
+      {
+        "country": "Malaysia",
+        "count": 1
+      }
+    ],
+    "brands": [],
+    "drainers": [],
+    "vt_vendors": [
+      {
+        "vendor": "Gridinsoft",
+        "detections": 4
+      },
+      {
+        "vendor": "Seclookup",
+        "detections": 3
+      },
+      {
+        "vendor": "alphaMountain.ai",
+        "detections": 2
+      },
+      {
+        "vendor": "Forcepoint ThreatSeeker",
+        "detections": 2
+      },
+      {
+        "vendor": "CRDF",
+        "detections": 1
+      },
+      {
+        "vendor": "ChainPatrol",
+        "detections": 1
+      },
+      {
+        "vendor": "Bfore.Ai PreCrime",
+        "detections": 1
+      },
+      {
+        "vendor": "Criminal IP",
+        "detections": 1
+      },
+      {
+        "vendor": "ESET",
+        "detections": 1
+      },
+      {
+        "vendor": "Emsisoft",
+        "detections": 1
+      },
+      {
+        "vendor": "Kaspersky",
+        "detections": 1
+      },
+      {
+        "vendor": "Lionic",
+        "detections": 1
+      },
+      {
+        "vendor": "Phishing Database",
+        "detections": 1
+      },
+      {
+        "vendor": "Sophos",
+        "detections": 1
+      },
+      {
+        "vendor": "Webroot",
+        "detections": 1
+      }
+    ]
+  },
+  "daily": {
+    "2025-02-02": 1,
+    "2025-02-04": 1,
+    "2025-02-06": 1,
+    "2025-02-07": 1,
+    "2025-02-13": 1,
+    "2025-02-17": 1,
+    "2025-02-19": 1,
+    "2025-02-21": 3,
+    "2025-02-25": 3
+  },
+  "threats": [
+    {
+      "domain": "1cas.com",
+      "detected_at": "2025-02-21 13:30:00",
+      "registrar": "Unknown",
+      "registrar_country": "Unknown",
+      "tld": "com",
+      "ip_address": "198.18.0.80",
+      "nameservers": "Unknown",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "Seclookup"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "",
+      "urlscan": "https://urlscan.io/result/1f80962a-f220-46b3-9f54-e66ac880d2f3/",
+      "screenshot": "https://urlscan.io/screenshots/1f80962a-f220-46b3-9f54-e66ac880d2f3.png"
+    },
+    {
+      "domain": "3xplay.top",
+      "detected_at": "2025-02-21 13:29:55",
+      "registrar": "Unknown",
+      "registrar_country": "Unknown",
+      "tld": "top",
+      "ip_address": "198.18.0.96",
+      "nameservers": "Unknown",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Seclookup"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "",
+      "urlscan": "https://urlscan.io/result/3380a360-33aa-49f3-b8b7-177cc16245c2/",
+      "screenshot": "https://urlscan.io/screenshots/3380a360-33aa-49f3-b8b7-177cc16245c2.png"
+    },
+    {
+      "domain": "boostbet.live",
+      "detected_at": "2025-02-02 10:32:10",
+      "registrar": "Global Domain Group LLC",
+      "registrar_country": "USA",
+      "tld": "live",
+      "ip_address": "104.21.16.1",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2024-12-05 10:27:29",
+      "urlscan": "https://urlscan.io/result/5f674428-fc38-4a82-a7df-010e7423b934/",
+      "screenshot": "https://urlscan.io/screenshots/5f674428-fc38-4a82-a7df-010e7423b934.png"
+    },
+    {
+      "domain": "coinsbureaufx.com",
+      "detected_at": "2025-02-04 19:42:12",
+      "registrar": "Dynadot Inc",
+      "registrar_country": "USA",
+      "tld": "com",
+      "ip_address": "199.59.243.228",
+      "nameservers": "1",
+      "status": "live",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "ChainPatrol",
+        "alphaMountain.ai"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-02-04 20:57:18",
+      "urlscan": "https://urlscan.io/result/d53322b3-ce25-493e-80d4-e05a509be000/",
+      "screenshot": "https://urlscan.io/screenshots/d53322b3-ce25-493e-80d4-e05a509be000.png"
+    },
+    {
+      "domain": "cutetusy.cc",
+      "detected_at": "2025-02-17 20:43:46",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+      "registrar_country": "India",
+      "tld": "cc",
+      "ip_address": "103.117.212.223",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Forcepoint ThreatSeeker",
+        "Seclookup"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2021-05-03 09:52:02",
+      "urlscan": "https://urlscan.io/result/7d12dc2d-3489-4a1c-9b3c-3f3df7108299/",
+      "screenshot": "https://urlscan.io/screenshots/7d12dc2d-3489-4a1c-9b3c-3f3df7108299.png"
+    },
+    {
+      "domain": "fortuquest.com",
+      "detected_at": "2025-02-21 14:28:07",
+      "registrar": "Web Commerce Communications Limited dba WebNic.cc",
+      "registrar_country": "Malaysia",
+      "tld": "com",
+      "ip_address": "104.21.48.1",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Bfore.Ai PreCrime"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-01-08 11:19:35",
+      "urlscan": "https://urlscan.io/result/469b99e4-9f0e-4100-940d-14eecaecd7d9/",
+      "screenshot": "https://urlscan.io/screenshots/469b99e4-9f0e-4100-940d-14eecaecd7d9.png"
+    },
+    {
+      "domain": "greens-bitcoins.web.app",
+      "detected_at": "2025-02-06 19:19:35",
+      "registrar": "Google LLC",
+      "registrar_country": "USA",
+      "tld": "app",
+      "ip_address": "2620:0:890::100",
+      "nameservers": "1",
+      "status": "live",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "Criminal IP",
+        "alphaMountain.ai",
+        "ESET",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Kaspersky",
+        "Lionic",
+        "Phishing Database",
+        "Sophos",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "",
+      "urlscan": "https://urlscan.io/result/9e82b520-0b74-40d2-9393-8a04555d16a9/",
+      "screenshot": "https://urlscan.io/screenshots/9e82b520-0b74-40d2-9393-8a04555d16a9.png"
+    },
+    {
+      "domain": "gwaz24x.space",
+      "detected_at": "2025-02-25 07:46:44",
+      "registrar": "URL Solutions Inc.",
+      "registrar_country": "USA",
+      "tld": "space",
+      "ip_address": "",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-02-25 06:34:56",
+      "urlscan": "https://urlscan.io/result/ff23c341-b4e7-4c42-bb2f-5e712d8fcab9/",
+      "screenshot": "https://urlscan.io/screenshots/ff23c341-b4e7-4c42-bb2f-5e712d8fcab9.png"
+    },
+    {
+      "domain": "gwck49x.space",
+      "detected_at": "2025-02-25 08:39:30",
+      "registrar": "URL Solutions Inc.",
+      "registrar_country": "USA",
+      "tld": "space",
+      "ip_address": "",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Gridinsoft",
+        "Trustwave"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-02-25 06:29:54",
+      "urlscan": "https://urlscan.io/result/0685c11d-fcca-463c-85f2-740180edcac6/",
+      "screenshot": "https://urlscan.io/screenshots/0685c11d-fcca-463c-85f2-740180edcac6.png"
+    },
+    {
+      "domain": "gwda56x.space",
+      "detected_at": "2025-02-25 08:02:44",
+      "registrar": "URL Solutions Inc.",
+      "registrar_country": "USA",
+      "tld": "space",
+      "ip_address": "",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-02-25 06:30:18",
+      "urlscan": "https://urlscan.io/result/7fb7481c-1fb9-4211-958b-048102e96118/",
+      "screenshot": "https://urlscan.io/screenshots/7fb7481c-1fb9-4211-958b-048102e96118.png"
+    },
+    {
+      "domain": "hokbit.com",
+      "detected_at": "2025-02-19 19:48:16",
+      "registrar": "NameCheap, Inc.",
+      "registrar_country": "USA",
+      "tld": "com",
+      "ip_address": "172.67.187.248",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2023-01-04 06:35:08",
+      "urlscan": "https://urlscan.io/result/68579699-1906-4d5c-9b95-5f78794d6764/",
+      "screenshot": "https://urlscan.io/screenshots/68579699-1906-4d5c-9b95-5f78794d6764.png"
+    },
+    {
+      "domain": "hoscas.com",
+      "detected_at": "2025-02-07 01:41:11",
+      "registrar": "Global Domain Group LLC",
+      "registrar_country": "USA",
+      "tld": "com",
+      "ip_address": "104.21.48.1",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-02-07 04:14:25",
+      "urlscan": "https://urlscan.io/result/388e5a33-cff9-4a80-acdd-fce9c2aea311/",
+      "screenshot": "https://urlscan.io/screenshots/388e5a33-cff9-4a80-acdd-fce9c2aea311.png"
+    },
+    {
+      "domain": "raxcas.bet",
+      "detected_at": "2025-02-13 00:26:13",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+      "registrar_country": "India",
+      "tld": "bet",
+      "ip_address": "172.67.199.31",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2025-02-12 09:24:53",
+      "urlscan": "https://urlscan.io/result/182417ec-0a70-4055-b3f6-f7117eabd3fd/",
+      "screenshot": "https://urlscan.io/screenshots/182417ec-0a70-4055-b3f6-f7117eabd3fd.png"
+    }
+  ]
+}

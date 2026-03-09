@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "month": "2025-05",
+    "name": "May 2025",
+    "generated": "2026-03-09T05:00:37.105974+00:00",
+    "total": 2,
+    "source": "https://github.com/phishdestroy/destroylist",
+    "report": "2025-05.md",
+    "prev_report": "../../2025/04/",
+    "next_report": "../../2025/06/"
+  },
+  "stats": {
+    "live": 0,
+    "dead": 2,
+    "enriched": 0,
+    "kill_rate": 100.0,
+    "vt_flagged": 1,
+    "vt_rate": 50.0,
+    "gsb_flagged": 0,
+    "avg_response_h": 0,
+    "median_response_h": 0
+  },
+  "top": {
+    "registrars": [
+      {
+        "name": "HOSTINGER operations, UAB",
+        "count": 1
+      },
+      {
+        "name": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
+        "count": 1
+      }
+    ],
+    "tlds": [
+      {
+        "tld": "org",
+        "count": 1
+      },
+      {
+        "tld": "com",
+        "count": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "Lithuania",
+        "count": 1
+      },
+      {
+        "country": "Hong Kong",
+        "count": 1
+      }
+    ],
+    "brands": [
+      {
+        "brand": "Magic Eden",
+        "count": 1
+      }
+    ],
+    "drainers": [],
+    "vt_vendors": [
+      {
+        "vendor": "alphaMountain.ai",
+        "detections": 1
+      },
+      {
+        "vendor": "Bfore.Ai PreCrime",
+        "detections": 1
+      },
+      {
+        "vendor": "CyRadar",
+        "detections": 1
+      },
+      {
+        "vendor": "Fortinet",
+        "detections": 1
+      },
+      {
+        "vendor": "Seclookup",
+        "detections": 1
+      },
+      {
+        "vendor": "Sophos",
+        "detections": 1
+      }
+    ]
+  },
+  "daily": {
+    "2025-05-27": 1,
+    "2025-05-30": 1
+  },
+  "threats": [
+    {
+      "domain": "jokercards.org",
+      "detected_at": "2025-05-27 19:16:16",
+      "registrar": "HOSTINGER operations, UAB",
+      "registrar_country": "Lithuania",
+      "tld": "org",
+      "ip_address": "97.74.184.62",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2025-03-17 15:04:45",
+      "urlscan": "https://urlscan.io/result/019713d1-2e9e-7599-9d33-45e616b28dce/",
+      "screenshot": "https://urlscan.io/screenshots/019713d1-2e9e-7599-9d33-45e616b28dce.png"
+    },
+    {
+      "domain": "ntfshop-magiceden.com",
+      "detected_at": "2025-05-30 18:50:39",
+      "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
+      "registrar_country": "Hong Kong",
+      "tld": "com",
+      "ip_address": "",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "Magic Eden",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CyRadar",
+        "Fortinet",
+        "Seclookup",
+        "Sophos"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-03-22 08:19:28",
+      "urlscan": "https://urlscan.io/result/0197232c-d61b-73c7-a61a-615d3cb7c008/",
+      "screenshot": "https://urlscan.io/screenshots/0197232c-d61b-73c7-a61a-615d3cb7c008.png"
+    }
+  ]
+}

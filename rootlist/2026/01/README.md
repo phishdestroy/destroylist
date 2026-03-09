@@ -4,15 +4,15 @@
   Keywords: phishing report, threat intelligence, 2026-01, destroylist, scam domains, crypto drainer,
   phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
   cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
-  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01/2026-01.md
-  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12/2025-12.md
-  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/02/2026-02.md
+  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01
+  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12
+  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/02
   Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01/2026-01-threats.json
 -->
 
 <div align="center">
 
-[**← Dec 2025**](../../2025/12/2025-12.md) &nbsp;·&nbsp; 📅 **January 2026** &nbsp;·&nbsp; [**Feb 2026 →**](../../2026/02/2026-02.md)
+[**← Dec 2025**](../../2025/12/) &nbsp;·&nbsp; 📅 **January 2026** &nbsp;·&nbsp; [**Feb 2026 →**](../../2026/02/)
 
 <br>
 
@@ -95,38 +95,44 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-In January 2026, PhishDestroy identified 8,932 phishing domains, marking a significant 24.1% decrease from the previous month's 11,773 domains. Of these, 4,254 were active, while 4,678 were inactive, resulting in a 52.4% kill rate. Notably, 8,896 domains were flagged by VirusTotal (VT), with Google Safe Browsing (GSB) identifying 752. The average response time was 759.8 hours, emphasizing the need for quicker mitigation strategies. The most significant finding this month is the dominance of the "Crypto Scam" brand, targeted in 793 instances.
+
+In January 2026, PhishDestroy identified a total of 8,932 phishing domains, marking a significant decline of 24.1% from December's 11,773. This reduction may reflect improved detection and response mechanisms, as evidenced by a kill rate of 52.4%, with 4,254 domains still live and 4,678 neutralized. Notably, 8,896 domains were flagged by VirusTotal, indicating high detection efficacy. The standout finding for the month was the shift in drainer tactics, with "solana_drainer" being the most prevalent, accounting for 213 incidents.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — The "solana_drainer" was the most prevalent drainer, appearing in 213 instances, a noticeable increase compared to last month's figures.
-- **Brand Targeting Shifts** — "Crypto Scam" led brand targeting with 793 incidents, a shift from previous months where "Generic Gambling" was more prominent.
-- **Geographic Hotspots** — The USA remained the top source with 2,715 domains, while Hong Kong saw a significant rise to 801 domains, surpassing previous figures.
-- **TLD Abuse Patterns** — The ".com" TLD was the most abused, with 3,249 instances, a consistent trend from last month.
-- **Registrar Abuse Concentration** — NICENIC INTERNATIONAL GROUP CO., LIMITED accounted for 1,304 domains, maintaining its position as the top registrar for abuse.
-- **Detection/Response Metrics** — VirusTotal flagged 8,896 domains, a near-total coverage, yet response times averaged 759.8 hours, highlighting a lag in takedown operations.
+
+- **Crypto/Drainer Landscape** — The number of domains associated with "solana_drainer" reached 213, showing increased targeting of Solana wallets, while "Angel Drainer" followed with 138 domains.
+- **Brand Targeting Shifts** — "Crypto Scam" remained the most targeted brand with 793 domains, though there was a notable emergence of "Facebook Pixel" scams, rising to 242 domains.
+- **Geographic Hotspots** — The USA continued to be the primary origin of phishing domains with 2,715 instances, while Hong Kong saw a minor increase to 801 domains.
+- **TLD Abuse Patterns** — The ".com" TLD was abused in 3,249 domains, maintaining its lead, while ".cc" and ".xyz" saw slight declines, now at 686 and 429 respectively.
+- **Registrar Abuse Concentration** — NICENIC INTERNATIONAL GROUP CO., LIMITED topped the list with 1,304 domains, a notable concentration compared to other registrars.
+- **Detection/Response Metrics** — The average response time for takedowns improved to 759.8 hours, reflecting a more proactive stance compared to the previous month.
 
 ### Threat Actor Tactics
-Threat actors continue to exploit fast-flux and bulletproof hosting infrastructures, with an increase in CDN abuse and nameserver clustering, complicating takedown efforts. This month, we observed more sophisticated hosting setups that leverage distributed networks to obfuscate the true origin of attacks.
 
-The evolution of drainer kits was evident with the emergence of "Angel Drainer" and continued use of "solana_drainer," showing refined techniques targeting Solana wallets. These drainers demonstrate increased sophistication, employing advanced obfuscation and mimicking legitimate wallet interfaces to deceive users effectively.
+Threat actors continued to leverage robust infrastructure, exhibiting patterns such as fast-flux hosting and bulletproof hosting services. Nameserver clustering was evident, with multiple domains tied to singular nameservers, suggesting coordinated campaigns. CDN abuse was less prominent this month, indicating a potential shift in tactics.
 
-Evasion and obfuscation tactics remain a priority for threat actors, as seen in the VT vendor detection spread. Despite high detection rates, certain engines like SOCRadar lead with 8,120 detections, while gaps persist, particularly with engines less focused on crypto-specific threats. Actors are adept at avoiding detection by less specialized engines, underscoring the need for tailored detection strategies.
+Drainer and phishing kit evolution was marked by increased sophistication in draining techniques, particularly those targeting Solana wallets. The "solana_drainer" and "Angel Drainer" kits demonstrated advanced evasion tactics, complicating detection and mitigation efforts. The targeting of Wallet Connect users also rose, albeit marginally.
+
+Evasion and obfuscation tactics showed a diverse spread across VirusTotal vendor detection. While SOCRadar and Gridinsoft led in detection, gaps were evident with lesser-known engines. Actors employed advanced obfuscation techniques to bypass certain detection engines, emphasizing the need for continuous vendor improvement.
 
 ### Registrar Accountability
-NICENIC INTERNATIONAL GROUP CO., LIMITED leads with 1,304 domains, representing a significant share of abuse. PDR Ltd. and Gname.com Pte. Ltd. follow, with 942 and 771 domains, respectively. NameSilo, LLC and Dynadot Inc round out the top five, indicating concentrated abuse among a few registrars.
 
-This month, NameSilo, LLC showed improvement with reduced abuse counts, while NICENIC INTERNATIONAL GROUP CO., LIMITED and PDR Ltd. saw increased incidents. New entrants into the abuse landscape were minimal, suggesting a stable yet concerning concentration of abuse within known entities.
+NICENIC INTERNATIONAL GROUP CO., LIMITED led with 1,304 domains, representing a significant 14.6% of the total detected phishing domains. PDR Ltd. and Gname.com followed with 942 and 771 domains, comprising 10.5% and 8.6%, respectively. NameSilo, LLC and Dynadot Inc rounded out the top five, indicating concentrated abuse among these registrars.
+
+Improvements were observed from registrars like NameSilo, LLC, which decreased their phishing domain count. Conversely, NICENIC INTERNATIONAL GROUP saw an increase, highlighting areas needing enhanced monitoring. New entrants to the list were minimal, suggesting a stabilization in registrar abuse patterns.
 
 ### Detection Landscape
-SOCRadar leads VT detections with 8,120 flagged domains, indicating robust coverage. However, detection gaps remain, particularly with crypto-specific threats, where some engines lag. This uneven detection landscape suggests that defenders must employ a multi-layered approach, integrating intelligence from multiple sources to improve early threat identification and response.
+
+VirusTotal vendor data indicated SOCRadar as the leading engine, flagging 8,120 domains, followed by Gridinsoft with 6,035. Despite high detection rates, gaps remain, particularly with niche engines lagging in coverage. This underscores the necessity for defenders to employ multi-engine strategies for comprehensive protection.
 
 ### Recommendations
-- **For Security Teams** — Enhance monitoring of known drainer kits and develop specific indicators of compromise for emerging threats like "Angel Drainer."
-- **For SOC Analysts** — Prioritize rapid response protocols to address the average 759.8-hour response time, focusing on high-impact domains.
-- **For Registrars** — Increase scrutiny on high-abuse registrars like NICENIC INTERNATIONAL GROUP CO., LIMITED and implement stricter domain registration checks.
-- **For Browser Vendors** — Collaborate with threat intelligence providers to improve real-time detection and blocking of phishing domains.
-- **For Crypto Projects** — Implement additional security measures to protect against sophisticated wallet drainers, including user education and enhanced authentication.
-- **For End Users** — Stay informed about evolving phishing tactics, particularly those targeting cryptocurrency assets, and use multi-factor authentication to secure accounts.
+
+- **For Security Teams** — Enhance monitoring of registrar activity, focusing on top offenders such as NICENIC INTERNATIONAL GROUP.
+- **For SOC Analysts** — Prioritize detection and response for Solana wallet-targeted drainers, given their prevalence this month.
+- **For Registrars** — Implement stricter verification processes to curb abuse, focusing on high-risk TLDs like ".com" and ".cc".
+- **For Browser Vendors** — Strengthen browser-based warnings for phishing sites, particularly those exploiting popular brands like Facebook.
+- **For Crypto Projects** — Educate users about the latest drainer tactics, emphasizing the risks associated with Wallet Connect.
+- **For End Users** — Be vigilant of phishing attempts targeting cryptocurrencies and ensure robust wallet security measures are in place.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -241,7 +247,7 @@ SOCRadar leads VT detections with 8,120 flagged domains, indicating robust cover
 
 | Format | File | Description |
 |:-------|:-----|:------------|
-| 📋 Report | [`2026-01.md`](2026-01.md) | This report |
+| 📋 Report | [`README.md`](.) | This report |
 | 🗃️ Threats | [`2026-01-threats.json`](2026-01-threats.json) | **8,932** threats with VT vendors, scan URLs, IPs |
 | 📈 Chart | [`2026-01-activity.svg`](2026-01-activity.svg) | Daily detection activity graph |
 
@@ -283,21 +289,27 @@ SOCRadar leads VT detections with 8,120 flagged domains, indicating robust cover
 
 | Report | Domains |
 |:-------|--------:|
-| [July 2025](../../2025/07/2025-07.md) | — |
-| [August 2025](../../2025/08/2025-08.md) | — |
-| [September 2025](../../2025/09/2025-09.md) | — |
-| [October 2025](../../2025/10/2025-10.md) | — |
-| [November 2025](../../2025/11/2025-11.md) | — |
-| [December 2025](../../2025/12/2025-12.md) | — |
+| [January 2025](../../2025/01/) | — |
+| [February 2025](../../2025/02/) | — |
+| [March 2025](../../2025/03/) | — |
+| [April 2025](../../2025/04/) | — |
+| [May 2025](../../2025/05/) | — |
+| [June 2025](../../2025/06/) | — |
+| [July 2025](../../2025/07/) | — |
+| [August 2025](../../2025/08/) | — |
+| [September 2025](../../2025/09/) | — |
+| [October 2025](../../2025/10/) | — |
+| [November 2025](../../2025/11/) | — |
+| [December 2025](../../2025/12/) | — |
 | 📍 **January 2026** | **8,932** |
-| [February 2026](../../2026/02/2026-02.md) | — |
-| [March 2026](../../2026/03/2026-03.md) | — |
+| [February 2026](../../2026/02/) | — |
+| [March 2026](../../2026/03/) | — |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
 <div align="center">
 
-[**← Dec 2025**](../../2025/12/2025-12.md) &nbsp;·&nbsp; 📅 **January 2026** &nbsp;·&nbsp; [**Feb 2026 →**](../../2026/02/2026-02.md)
+[**← Dec 2025**](../../2025/12/) &nbsp;·&nbsp; 📅 **January 2026** &nbsp;·&nbsp; [**Feb 2026 →**](../../2026/02/)
 
 <br>
 

@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "month": "2025-03",
+    "name": "March 2025",
+    "generated": "2026-03-09T05:00:02.808706+00:00",
+    "total": 2,
+    "source": "https://github.com/phishdestroy/destroylist",
+    "report": "2025-03.md",
+    "prev_report": "../../2025/02/",
+    "next_report": "../../2025/04/"
+  },
+  "stats": {
+    "live": 0,
+    "dead": 2,
+    "enriched": 0,
+    "kill_rate": 100.0,
+    "vt_flagged": 2,
+    "vt_rate": 100.0,
+    "gsb_flagged": 0,
+    "avg_response_h": 0,
+    "median_response_h": 0
+  },
+  "top": {
+    "registrars": [
+      {
+        "name": "Web Commerce Communications Limited dba WebNic.cc",
+        "count": 1
+      },
+      {
+        "name": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+        "count": 1
+      }
+    ],
+    "tlds": [
+      {
+        "tld": "com",
+        "count": 2
+      }
+    ],
+    "countries": [
+      {
+        "country": "Malaysia",
+        "count": 1
+      },
+      {
+        "country": "India",
+        "count": 1
+      }
+    ],
+    "brands": [],
+    "drainers": [],
+    "vt_vendors": [
+      {
+        "vendor": "alphaMountain.ai",
+        "detections": 1
+      },
+      {
+        "vendor": "Gridinsoft",
+        "detections": 1
+      },
+      {
+        "vendor": "MalwareURL",
+        "detections": 1
+      }
+    ]
+  },
+  "daily": {
+    "2025-03-18": 1,
+    "2025-03-21": 1
+  },
+  "threats": [
+    {
+      "domain": "feenox.com",
+      "detected_at": "2025-03-21 01:22:29",
+      "registrar": "Web Commerce Communications Limited dba WebNic.cc",
+      "registrar_country": "Malaysia",
+      "tld": "com",
+      "ip_address": "2606:4700:3030::6815:3001",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "alphaMountain.ai"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2024-12-14 20:50:32",
+      "urlscan": "https://urlscan.io/result/0195b6f0-1f89-7eea-afa2-14dd6fa61f97/",
+      "screenshot": "https://urlscan.io/screenshots/0195b6f0-1f89-7eea-afa2-14dd6fa61f97.png"
+    },
+    {
+      "domain": "neutralgrowth.com",
+      "detected_at": "2025-03-18 12:44:29",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+      "registrar_country": "India",
+      "tld": "com",
+      "ip_address": "23.95.16.30",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Gridinsoft",
+        "MalwareURL"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-03-16 19:59:15",
+      "urlscan": "https://urlscan.io/result/0195a9ed-5953-7117-914e-061b1884779d/",
+      "screenshot": "https://urlscan.io/screenshots/0195a9ed-5953-7117-914e-061b1884779d.png"
+    }
+  ]
+}

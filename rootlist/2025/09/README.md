@@ -4,15 +4,15 @@
   Keywords: phishing report, threat intelligence, 2025-09, destroylist, scam domains, crypto drainer,
   phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
   cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
-  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/09/2025-09.md
-  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/08/2025-08.md
-  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/10/2025-10.md
+  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/09
+  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/08
+  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/10
   Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/09/2025-09-threats.json
 -->
 
 <div align="center">
 
-[**← Aug 2025**](../../2025/08/2025-08.md) &nbsp;·&nbsp; 📅 **September 2025** &nbsp;·&nbsp; [**Oct 2025 →**](../../2025/10/2025-10.md)
+[**← Aug 2025**](../../2025/08/) &nbsp;·&nbsp; 📅 **September 2025** &nbsp;·&nbsp; [**Oct 2025 →**](../../2025/10/)
 
 <br>
 
@@ -105,43 +105,43 @@
 
 ### Executive Summary
 
-In September 2025, PhishDestroy identified a total of 7,307 phishing domains, marking a significant 92.9% increase from the previous month's 3,788 domains. Of these, 2,343 domains remain active, while 4,955 have been neutralized, achieving a kill rate of 67.8%. The most notable finding is the sharp rise in phishing domains targeting the cryptocurrency sector, particularly with 517 domains related to generic crypto brands. The average response time for takedowns was 3,827.1 hours, emphasizing a critical need for faster intervention.
+In September 2025, PhishDestroy detected a total of 7,307 phishing domains, representing a significant 92.9% increase from the previous month’s 3,788 domains. Of these, 2,343 domains remain active, while 4,955 have been neutralized, resulting in a kill rate of 67.8%. The most notable finding this month is the surge in phishing domains targeting cryptocurrency platforms, particularly the Angel Drainer, which accounted for 1,120 instances. The average response time for takedown efforts was 3,827.1 hours.
 
 ### Key Trends
 
-- **Crypto/Drainer Landscape** — The number of crypto-related phishing domains surged to 517, up from 350 last month, highlighting a growing threat in the digital asset sector.
-- **Brand Targeting Shifts** — SushiSwap and Ledger saw significant targeting, with 398 and 180 domains respectively, indicating a shift towards popular DeFi platforms and hardware wallets.
-- **Geographic Hotspots** — The USA leads with 3,049 domains, a 60% increase from August, followed by Hong Kong and Malaysia with 747 and 675 domains respectively.
-- **TLD Abuse Patterns** — .com remains the most abused TLD with 2,561 domains, while .xyz usage increased by 12%, reaching 748 domains.
-- **Registrar Abuse Concentration** — NICENIC INTERNATIONAL GROUP CO., LIMITED and PDR Ltd. exhibited the highest abuse rates, with 721 and 527 domains respectively.
-- **Detection/Response Metrics** — VT flagged 6,342 domains, a notable increase from 5,000 in August, with Google Safe Browsing detecting only 297, indicating possible gaps in real-time detection capabilities.
+- **Crypto/Drainer Landscape** — Angel Drainer led with 1,120 occurrences, marking a substantial increase in drainer activity. Wallet Connect Abuse was also prominent with 305 instances.
+- **Brand Targeting Shifts** — Generic Crypto brands were targeted 517 times, a shift from last month where SushiSwap was the primary focus with 398 instances this month.
+- **Geographic Hotspots** — The USA remained the top source with 3,049 domains, a notable increase compared to last month, followed by Hong Kong (747) and Malaysia (675).
+- **TLD Abuse Patterns** — The `.com` TLD was used in 2,561 domains, maintaining its lead. The `.xyz` TLD saw an increase to 748 domains, becoming the second most abused TLD.
+- **Registrar Abuse Concentration** — NICENIC INTERNATIONAL GROUP CO., LIMITED registered 721 domains, closely following an unidentified registrar with 726 domains.
+- **Detection/Response Metrics** — 6,342 domains were flagged by VirusTotal, with Google Safe Browsing detecting 297, highlighting a gap in detection capabilities.
 
 ### Threat Actor Tactics
 
-Threat actors are increasingly utilizing fast-flux techniques and bulletproof hosting services to maintain domain resilience and evade takedowns. Nameserver clustering has been observed, particularly in domains connected to the Angel Drainer, complicating attribution and mitigation efforts.
+Threat actors continued to exploit infrastructure vulnerabilities, with a notable increase in fast-flux hosting patterns, allowing domains to evade detection by frequently changing IP addresses. Bulletproof hosting services remain a favored choice, providing resilience against takedown efforts. Nameserver clustering was also observed, facilitating coordinated attacks across multiple domains.
 
-The evolution of drainer kits is evident with the emergence of sophisticated tools like Angel Drainer and Solana Drainer, which collectively account for 1,452 domains. These kits have advanced in their ability to mimic legitimate wallet interfaces, particularly targeting Wallet Connect users, thereby increasing their success rate.
+Drainer and phishing kit evolution showed increased sophistication. The Angel Drainer emerged as a dominant threat, employing advanced techniques to target cryptocurrency wallets. Additionally, there was a rise in the use of customized phishing kits tailored to specific platforms, such as Solana and Ledger, indicating a strategic shift towards high-value targets.
 
-In terms of evasion and obfuscation, the VT vendor detection spread reveals that alphaMountain.ai and Fortinet lead in accurate detections, yet there remain significant gaps, especially in identifying novel obfuscation techniques. Threat actors continue to innovate by avoiding detection from less robust engines, exploiting their slower update cycles.
+Evasion and obfuscation tactics were prevalent, with threat actors leveraging gaps in VirusTotal vendor coverage. While alphaMountain.ai and Fortinet led in detections, there was a noticeable deficiency in certain engines, allowing some phishing domains to persist undetected. Actors employed obfuscation techniques to bypass specific detection engines, indicating a need for enhanced detection capabilities.
 
 ### Registrar Accountability
 
-The top five registrars involved in domain abuse include NICENIC INTERNATIONAL GROUP CO., LIMITED (721 domains) and PDR Ltd. d/b/a PublicDomainRegistry.com (527 domains), comprising a significant portion of the phishing landscape. These registrars account for over 20% of all detected phishing domains, highlighting an urgent need for improved oversight and enforcement.
+The top five registrars responsible for the most phishing domains were: N/A (726 domains), NICENIC INTERNATIONAL GROUP CO., LIMITED (721 domains), PDR Ltd. d/b/a PublicDomainRegistry.com (527 domains), NameSilo, LLC (481 domains), and WEBCC (387 domains), collectively accounting for a significant portion of the phishing landscape. These registrars must enhance their domain verification processes to mitigate abuse.
 
-While some registrars like NameSilo, LLC showed marginal improvement in reducing phishing domain registrations, others such as WEBCC have seen an increase. New entrants contributing to the problem include smaller, lesser-known registrars, which need to be closely monitored to prevent further abuse.
+While NICENIC INTERNATIONAL GROUP CO., LIMITED and WEBCC saw an increase in phishing domain registrations, NameSilo, LLC showed slight improvement. New entrants to the list include an unidentified registrar, indicating a potential area for further investigation and accountability.
 
 ### Detection Landscape
 
-Analysis of VT vendor data shows alphaMountain.ai and Fortinet as leading engines in phishing domain detection, with 3,011 and 2,933 hits respectively. However, significant detection gaps remain, particularly among engines with less frequent updates. This inconsistency poses challenges for defenders, underscoring the necessity for comprehensive and synchronized detection capabilities across platforms.
+Analysis of VirusTotal vendor data shows that alphaMountain.ai and Fortinet are leading in phishing domain detections, with 3,011 and 2,933 detections respectively. However, there remain significant detection gaps, particularly in engines less focused on phishing threats, allowing certain domains to persist longer. This underscores the need for comprehensive detection strategies across all vendor platforms to enhance defender capabilities.
 
 ### Recommendations
 
-- **For Security Teams** — Implement continuous monitoring and rapid response protocols to address the increased volume of phishing domains, particularly those targeting cryptocurrency.
-- **For SOC Analysts** — Prioritize threat intelligence feeds focusing on fast-flux domains and bulletproof hosting indicators to enhance detection accuracy.
-- **For Registrars** — Tighten domain registration processes and enhance verification to mitigate abuse, especially for high-risk TLDs like .xyz and .com.
-- **For Browser Vendors** — Strengthen integration with threat intelligence sources to improve real-time detection and blocking of phishing sites.
-- **For Crypto Projects** — Educate users on identifying phishing attempts, particularly those mimicking wallet interfaces, and promote the use of hardware wallets.
-- **For End Users** — Remain vigilant against unexpected crypto-related communications and verify URLs before engaging with any online wallet or exchange platform.
+- **For Security Teams** — Prioritize monitoring and response efforts on cryptocurrency-targeted phishing, particularly those involving Angel Drainer and Wallet Connect Abuse.
+- **For SOC Analysts** — Enhance detection capabilities by integrating threat intelligence feeds with real-time updates on emerging drainer tactics and phishing kits.
+- **For Registrars** — Implement stricter domain registration verification processes to prevent abuse and collaborate with cybersecurity firms for rapid takedown of malicious domains.
+- **For Browser Vendors** — Strengthen browser-based phishing detection mechanisms and integrate with external threat intelligence sources to improve real-time protection.
+- **For Crypto Projects** — Educate users on identifying phishing attempts and enhance wallet security features to protect against drainer attacks.
+- **For End Users** — Remain vigilant against unsolicited communications and verify URLs before interacting with cryptocurrency platforms to avoid phishing traps.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -255,7 +255,7 @@ Analysis of VT vendor data shows alphaMountain.ai and Fortinet as leading engine
 
 | Format | File | Description |
 |:-------|:-----|:------------|
-| 📋 Report | [`2025-09.md`](2025-09.md) | This report |
+| 📋 Report | [`README.md`](.) | This report |
 | 🗃️ Threats | [`2025-09-threats.json`](2025-09-threats.json) | **7,307** threats with VT vendors, scan URLs, IPs |
 | 📈 Chart | [`2025-09-activity.svg`](2025-09-activity.svg) | Daily detection activity graph |
 
@@ -299,21 +299,27 @@ Analysis of VT vendor data shows alphaMountain.ai and Fortinet as leading engine
 
 | Report | Domains |
 |:-------|--------:|
-| [July 2025](../../2025/07/2025-07.md) | — |
-| [August 2025](../../2025/08/2025-08.md) | — |
+| [January 2025](../../2025/01/) | — |
+| [February 2025](../../2025/02/) | — |
+| [March 2025](../../2025/03/) | — |
+| [April 2025](../../2025/04/) | — |
+| [May 2025](../../2025/05/) | — |
+| [June 2025](../../2025/06/) | — |
+| [July 2025](../../2025/07/) | — |
+| [August 2025](../../2025/08/) | — |
 | 📍 **September 2025** | **7,307** |
-| [October 2025](../../2025/10/2025-10.md) | — |
-| [November 2025](../../2025/11/2025-11.md) | — |
-| [December 2025](../../2025/12/2025-12.md) | — |
-| [January 2026](../../2026/01/2026-01.md) | — |
-| [February 2026](../../2026/02/2026-02.md) | — |
-| [March 2026](../../2026/03/2026-03.md) | — |
+| [October 2025](../../2025/10/) | — |
+| [November 2025](../../2025/11/) | — |
+| [December 2025](../../2025/12/) | — |
+| [January 2026](../../2026/01/) | — |
+| [February 2026](../../2026/02/) | — |
+| [March 2026](../../2026/03/) | — |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
 <div align="center">
 
-[**← Aug 2025**](../../2025/08/2025-08.md) &nbsp;·&nbsp; 📅 **September 2025** &nbsp;·&nbsp; [**Oct 2025 →**](../../2025/10/2025-10.md)
+[**← Aug 2025**](../../2025/08/) &nbsp;·&nbsp; 📅 **September 2025** &nbsp;·&nbsp; [**Oct 2025 →**](../../2025/10/)
 
 <br>
 
