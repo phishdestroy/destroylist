@@ -102,38 +102,44 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-In February 2026, PhishDestroy identified 18,207 phishing domains, marking a significant 103.8% increase compared to January's total of 8,932. Of these, 12,754 were live, and 3,456 had been taken down, reflecting a kill rate of 19.0%. The most substantial finding was the surge in domains targeting cryptocurrency users, with the "solana_drainer" responsible for 355 instances. The average response time for takedown was 273.1 hours, highlighting room for improvement in response efficiency.
+
+February 2026 witnessed a significant surge in phishing domain detections, totaling 18,207, marking a 103.8% increase from the previous month's 8,932. The live domains numbered 12,754, while the kill rate stood at 19.0%, with 3,456 domains taken down. Notably, 17,987 domains were flagged by VirusTotal vendors, with Google Safe Browsing identifying 1,001. The average response time for takedowns was recorded at 273.1 hours. The most significant finding this month was the increased concentration of phishing domains registered through NICENIC INTERNATIONAL GROUP CO., LIMITED, accounting for 7,471 domains.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — "solana_drainer" was the most prevalent, with 355 instances, compared to 16 for "Solana Drainer" last month, indicating a focus on Solana wallet theft.
-- **Brand Targeting Shifts** — Facebook Pixel was the most targeted brand with 778 domains, up from 620 last month, showing growing interest in exploiting social media platforms.
-- **Geographic Hotspots** — The USA and Hong Kong remained top hotspots with 3,956 and 2,353 domains, respectively, while domains from unknown locations surged to 5,482.
-- **TLD Abuse Patterns** — .com TLDs dominated with 6,427 domains, a 15% increase from last month, followed by .xyz with 1,309, reflecting a preference for generic TLDs.
-- **Registrar Abuse Concentration** — NICENIC INTERNATIONAL GROUP CO., LIMITED saw 7,471 domains registered, a 20% increase, indicating ongoing registrar challenges.
-- **Detection/Response Metrics** — 17,987 domains were flagged by VirusTotal, a slight increase from 17,456 last month, while Google Safe Browsing flagged 1,001 domains, showing detection consistency.
+
+- **Crypto/Drainer Landscape** — Solana-related drainers dominated with "solana_drainer" appearing 355 times, a marked increase in crypto-targeted attacks compared to January.
+- **Brand Targeting Shifts** — Facebook Pixel topped brand impersonations with 778 occurrences, while Generic Crypto scams rose to 464, highlighting a shift towards exploiting well-known digital platforms.
+- **Geographic Hotspots** — The USA emerged as a key hotspot with 3,956 phishing domains, a substantial increase from last month, while Hong Kong reported 2,353 domains.
+- **TLD Abuse Patterns** — The ".com" TLD remains the most abused with 6,427 domains, followed by ".xyz" at 1,309, indicating persistent exploitation of popular TLDs.
+- **Registrar Abuse Concentration** — NICENIC INTERNATIONAL GROUP CO., LIMITED was responsible for 7,471 domains, a significant rise from January, signaling a need for enhanced registrar oversight.
+- **Detection/Response Metrics** — Average response time was 273.1 hours, an increase, suggesting a need to improve takedown efficiency.
 
 ### Threat Actor Tactics
-Infrastructure & hosting tactics showed increased usage of fast-flux techniques and bulletproof hosting, particularly leveraging hosting services with lenient abuse policies. Nameserver clustering was evident, with several domains using the same clusters to obfuscate true hosting locations.
 
-Drainer and kit evolution saw a marked increase in sophistication, particularly with "solana_drainer" kits. These kits demonstrated advanced wallet targeting capabilities, exploiting weaknesses in wallet connect protocols to siphon funds without detection.
+Threat actors have increasingly turned to fast-flux networks and CDN abuse to obscure their infrastructure. This month saw a marked rise in nameserver clustering, complicating the attribution and takedown efforts. Bulletproof hosting services continue to be a preferred choice, allowing phishing domains to remain active longer.
 
-Evasion and obfuscation techniques revealed that threat actors are increasingly using complex JavaScript obfuscation to evade detection. VirusTotal vendor analyses showed gaps, particularly in engines not updated for new evasion techniques, allowing actors to bypass specific detection engines effectively.
+In the realm of drainers and phishing kits, there is clear evolution in sophistication. Solana-related drainers, particularly "solana_drainer," have been prevalent, illustrating a focus on exploiting wallet vulnerabilities. These kits have become more advanced, targeting specific wallets and leveraging advanced obfuscation techniques to bypass security measures.
+
+Evasion and obfuscation tactics have seen increased complexity, with a significant spread in VirusTotal vendor detection. Despite high detection rates, gaps remain, particularly with newer engines. Actors often tailor their obfuscation to evade specific engines, indicating a need for continuous adaptation by defenders.
 
 ### Registrar Accountability
-The top five registrars for phishing domains were NICENIC INTERNATIONAL GROUP CO., LIMITED (7,471 domains, 41% share), PDR Ltd. d/b/a PublicDomainRegistry.com (787 domains), Cloudflare, Inc. (744 domains), GoDaddy.com, LLC (674 domains), and Dead domain (672 domains). This concentration indicates a persistent issue with registrar accountability and enforcement.
 
-Compared to last month, NICENIC INTERNATIONAL GROUP CO., LIMITED worsened significantly, while Cloudflare showed slight improvement in response times. New entrants like Dead domain highlight emerging registrar challenges.
+NICENIC INTERNATIONAL GROUP CO., LIMITED registered 7,471 phishing domains, holding a dominant 41% share of detected domains. Other significant registrars include PDR Ltd. with 787, Cloudflare, Inc. with 744, GoDaddy.com, LLC with 674, and a notable 672 from "Dead domain."
+
+While NICENIC INTERNATIONAL GROUP CO., LIMITED and Cloudflare have worsened, PDR Ltd. showed moderate improvement in reducing domain abuse. New entrants in the registrar landscape have not yet shown significant impact, but ongoing monitoring is essential.
 
 ### Detection Landscape
-VirusTotal data showed SOCRadar leading with 15,397 detections, followed by Fortinet with 11,281. Detection gaps remain with newer obfuscation techniques, underscoring the need for continuous updates and intelligence sharing among vendors to adapt to evolving threats.
+
+VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, followed by Fortinet at 11,281. Despite high detection rates, gaps persist, particularly with emerging threats. Engines like CyRadar and Sophos show potential but require continued enhancement. For defenders, this means leveraging multiple engines to ensure comprehensive coverage.
 
 ### Recommendations
-- **For Security Teams** — Prioritize monitoring and takedown of domains registered with NICENIC INTERNATIONAL GROUP CO., LIMITED and similar registrars.
-- **For SOC Analysts** — Enhance detection capabilities for Solana-based drainer kits and improve response times to threats.
-- **For Registrars** — Implement stricter verification processes and rapid abuse response to reduce domain misuse.
-- **For Browser Vendors** — Update browser security features to detect and block obfuscated phishing scripts more effectively.
-- **For Crypto Projects** — Strengthen wallet connect protocols and educate users on recognizing phishing attempts.
-- **For End Users** — Increase awareness of phishing tactics targeting Facebook Pixel and cryptocurrency wallets, urging cautious interaction with unsolicited links.
+
+- **For Security Teams** — Implement continuous monitoring of registrar activities, focusing on those with high abuse rates like NICENIC INTERNATIONAL GROUP CO., LIMITED.
+- **For SOC Analysts** — Prioritize analysis of domains using fast-flux and CDN abuse patterns to identify and mitigate threats swiftly.
+- **For Registrars** — Enhance verification processes and monitoring to reduce the registration of phishing domains, especially those exploiting ".com" and ".xyz" TLDs.
+- **For Browser Vendors** — Increase collaboration with security vendors to incorporate more comprehensive threat feeds into browser protection mechanisms.
+- **For Crypto Projects** — Strengthen wallet security protocols to counteract advanced drainer kits, particularly those targeting Solana.
+- **For End Users** — Remain vigilant of phishing attempts masquerading as popular brands like Facebook Pixel, and employ multi-factor authentication for added security.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -286,21 +292,21 @@ VirusTotal data showed SOCRadar leading with 15,397 detections, followed by Fort
 
 | Report | Domains |
 |:-------|--------:|
-| [January 2025](../../2025/01/) | — |
-| [February 2025](../../2025/02/) | — |
-| [March 2025](../../2025/03/) | — |
-| [April 2025](../../2025/04/) | — |
-| [May 2025](../../2025/05/) | — |
-| [June 2025](../../2025/06/) | — |
-| [July 2025](../../2025/07/) | — |
-| [August 2025](../../2025/08/) | — |
-| [September 2025](../../2025/09/) | — |
-| [October 2025](../../2025/10/) | — |
-| [November 2025](../../2025/11/) | — |
-| [December 2025](../../2025/12/) | — |
-| [January 2026](../../2026/01/) | — |
+| [January 2025](../../2025/01/) | **1** |
+| [February 2025](../../2025/02/) | **13** |
+| [March 2025](../../2025/03/) | **2** |
+| [April 2025](../../2025/04/) | **2** |
+| [May 2025](../../2025/05/) | **2** |
+| [June 2025](../../2025/06/) | **4** |
+| [July 2025](../../2025/07/) | **700** |
+| [August 2025](../../2025/08/) | **3,788** |
+| [September 2025](../../2025/09/) | **7,307** |
+| [October 2025](../../2025/10/) | **8,841** |
+| [November 2025](../../2025/11/) | **12,581** |
+| [December 2025](../../2025/12/) | **11,773** |
+| [January 2026](../../2026/01/) | **8,932** |
 | 📍 **February 2026** | **18,207** |
-| [March 2026](../../2026/03/) | — |
+| [March 2026](../../2026/03/) | **4,042** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

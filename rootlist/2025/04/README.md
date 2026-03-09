@@ -76,38 +76,38 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-April 2025 remained static in phishing domain activity, with a total of 2 detected domains, unchanged from March 2025, reflecting a 0.0% change. The kill rate was 50.0%, with one domain still live. Notably, both domains were flagged by VirusTotal, but none were detected by Google Safe Browsing. This month highlighted the continued abuse of lesser-known TLDs and the involvement of minor registrars.
+In April 2025, PhishDestroy identified a total of 2 phishing domains, consistent with the previous month, reflecting a 0.0% change. Of these, 1 domain remains active while the other has been neutralized, resulting in a kill rate of 50.0%. The most significant finding is the consistent detection by all VirusTotal (VT) vendors, highlighting effective detection capabilities among major cybersecurity engines.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — No new crypto drainer patterns emerged in April, similar to March, indicating a potential pause or shift in tactics.
-- **Brand Targeting Shifts** — No specific brands were targeted this month, a continuation of the previous month's trend, suggesting a possible diversification in phishing strategies.
-- **Geographic Hotspots** — Domains were evenly split between Russia and the USA, maintaining the same distribution as last month.
-- **TLD Abuse Patterns** — The TLDs ".online" and ".mom" were each used once, consistent with last month, highlighting a persistent abuse of these domains.
-- **Registrar Abuse Concentration** — "Registrar of Domain Names REG.RU, LLC" and "Spaceship, Inc." each registered one domain, unchanged from March, indicating stable registrar abuse.
-- **Detection/Response Metrics** — With a 50.0% kill rate and zero average response hours, the response time remains critically delayed, unchanged from last month.
+- **Crypto/Drainer Landscape** — No new crypto drainers were identified this month, mirroring the previous month's findings, suggesting a temporary lull in this threat vector.
+- **Brand Targeting Shifts** — No specific brands were targeted this month, indicating a potential shift in attacker strategy or focus.
+- **Geographic Hotspots** — The domains were hosted in Russia and the USA, maintaining the same geographic distribution as last month.
+- **TLD Abuse Patterns** — The top-level domains (TLDs) `.online` and `.mom` were each abused once, consistent with last month's distribution.
+- **Registrar Abuse Concentration** — Registrar of Domain Names REG.RU, LLC and Spaceship, Inc. each registered one domain, maintaining their previous month's involvement.
+- **Detection/Response Metrics** — VirusTotal flagged both domains, maintaining a 100% detection rate, consistent with last month. However, Google Safe Browsing (GSB) did not flag any, indicating a gap in detection.
 
 ### Threat Actor Tactics
-Threat actors continue to leverage resilient hosting infrastructures, with patterns such as fast-flux and nameserver clustering observed. This month, no significant use of bulletproof hosting or CDN abuse was detected, suggesting a potential shift towards more decentralized hosting strategies.
+Threat actors continued to leverage diverse infrastructure, with a noticeable use of fast-flux techniques to obscure hosting locations. No significant use of bulletproof hosting or CDN abuse was detected, indicating a possible shift towards more transient hosting solutions. Nameserver clustering patterns were not prominent this month.
 
-In terms of drainer and phishing kit evolution, the absence of new drainers or kits being identified this month may indicate a refinement in existing tools rather than the development of new ones. The focus appears to be on enhancing sophistication and evasion techniques rather than expanding wallet targeting.
+In terms of drainer and phishing kit evolution, there were no new drainer types identified, suggesting a period of stagnation or retooling among threat actors. The absence of wallet-targeting drainers could indicate a strategic pause or evasion from detection mechanisms.
 
-Evasion tactics remain a critical component, with VirusTotal vendor detection showing a spread across various engines. Notably, alphaMountain.ai flagged both domains, while others had limited visibility, underscoring the need for comprehensive detection across all engines to close evasion gaps.
+Evasion and obfuscation tactics showed a consistent VT vendor detection spread, with no specific engines being bypassed. This comprehensive detection suggests that current evasion techniques are less effective against major cybersecurity engines, but the lack of GSB detections highlights potential areas for improvement.
 
 ### Registrar Accountability
-In April 2025, the registrars "Registrar of Domain Names REG.RU, LLC" and "Spaceship, Inc." were each responsible for one domain, representing 50.0% of the total detections. This concentration indicates a persistent issue with these registrars in handling malicious registrations.
+The top registrars involved were Registrar of Domain Names REG.RU, LLC and Spaceship, Inc., each with 1 domain representing a 50% share of the detected phishing domains. This indicates a stable pattern of abuse concentration among these registrars.
 
-Comparatively, there was no change in the top registrars from March 2025, with no new entrants or significant improvements noted. This stability suggests a need for increased scrutiny and proactive measures by these registrars to mitigate domain abuse.
+Both registrars maintained their level of involvement from the previous month, with no significant improvements or deteriorations in their accountability measures. No new registrars were identified, suggesting a consistent threat landscape in terms of domain registration.
 
 ### Detection Landscape
-Analysis of VirusTotal data shows that alphaMountain.ai led in detection, flagging both domains. However, the limited engagement from other engines like Google Safe Browsing, which flagged none, highlights significant detection gaps. This lack of comprehensive coverage poses challenges for defenders, emphasizing the importance of multi-engine monitoring and collaboration to enhance detection efficacy.
+VirusTotal vendor data shows leadership by alphaMountain.ai, which detected all domains, indicating robust detection capabilities. Detection gaps remain with Google Safe Browsing, which flagged none of the domains. This gap suggests an opportunity for defenders to enhance collaboration with GSB to improve early warning capabilities.
 
 ### Recommendations
-- **For Security Teams** — Implement multi-engine scanning protocols to ensure broader detection coverage, leveraging diverse threat intelligence sources.
-- **For SOC Analysts** — Prioritize monitoring of lesser-known TLDs such as ".online" and ".mom" for early detection of phishing domains.
-- **For Registrars** — Enhance verification processes to identify and prevent the registration of potentially malicious domains, particularly from repeat offenders.
-- **For Browser Vendors** — Integrate more robust phishing detection capabilities, including collaboration with a wider range of threat intelligence platforms.
-- **For Crypto Projects** — Increase awareness and education efforts around phishing tactics, emphasizing the importance of wallet security and vigilance.
-- **For End Users** — Encourage the use of browser extensions that offer real-time phishing protection and regularly update security settings to safeguard against evolving threats.
+- **For Security Teams** — Increase monitoring of .online and .mom TLDs due to their consistent abuse patterns.
+- **For SOC Analysts** — Prioritize analysis of domains registered with REG.RU and Spaceship for proactive threat hunting.
+- **For Registrars** — Implement stricter verification processes to prevent abuse by threat actors.
+- **For Browser Vendors** — Collaborate with security vendors to improve detection, especially focusing on gaps like those seen with Google Safe Browsing.
+- **For Crypto Projects** — Enhance user education on identifying phishing domains and secure wallet practices.
+- **For End Users** — Be vigilant of phishing attempts and verify domain legitimacy, especially those using less common TLDs like .mom.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -208,21 +208,21 @@ Analysis of VirusTotal data shows that alphaMountain.ai led in detection, flaggi
 
 | Report | Domains |
 |:-------|--------:|
-| [January 2025](../../2025/01/) | — |
-| [February 2025](../../2025/02/) | — |
-| [March 2025](../../2025/03/) | — |
+| [January 2025](../../2025/01/) | **1** |
+| [February 2025](../../2025/02/) | **13** |
+| [March 2025](../../2025/03/) | **2** |
 | 📍 **April 2025** | **2** |
-| [May 2025](../../2025/05/) | — |
-| [June 2025](../../2025/06/) | — |
-| [July 2025](../../2025/07/) | — |
-| [August 2025](../../2025/08/) | — |
-| [September 2025](../../2025/09/) | — |
-| [October 2025](../../2025/10/) | — |
-| [November 2025](../../2025/11/) | — |
-| [December 2025](../../2025/12/) | — |
-| [January 2026](../../2026/01/) | — |
-| [February 2026](../../2026/02/) | — |
-| [March 2026](../../2026/03/) | — |
+| [May 2025](../../2025/05/) | **2** |
+| [June 2025](../../2025/06/) | **4** |
+| [July 2025](../../2025/07/) | **700** |
+| [August 2025](../../2025/08/) | **3,788** |
+| [September 2025](../../2025/09/) | **7,307** |
+| [October 2025](../../2025/10/) | **8,841** |
+| [November 2025](../../2025/11/) | **12,581** |
+| [December 2025](../../2025/12/) | **11,773** |
+| [January 2026](../../2026/01/) | **8,932** |
+| [February 2026](../../2026/02/) | **18,207** |
+| [March 2026](../../2026/03/) | **4,042** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

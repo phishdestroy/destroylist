@@ -76,38 +76,38 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-In May 2025, PhishDestroy identified a total of 2 phishing domains, maintaining the same count as the previous month with no percentage change. Both domains detected were taken down, resulting in a 100% kill rate. One domain was flagged by VirusTotal while none were identified by Google Safe Browsing. The most significant finding is the complete eradication of live phishing domains within the month, indicating effective response measures.
+In May 2025, PhishDestroy detected 2 phishing domains, maintaining the same level as the previous month with no percentage change. Both domains were neutralized, resulting in a 100.0% kill rate. The most significant finding was the complete elimination of live threats, demonstrating effective takedown strategies. However, only one domain was flagged by VirusTotal, indicating potential detection gaps in some engines.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — No new drainer domains were detected this month, consistent with the previous month, suggesting a possible shift in threat actor focus or improved evasion tactics.
-- **Brand Targeting Shifts** — Magic Eden was the sole brand targeted this month with one domain, showing no change in targeting patterns from April.
-- **Geographic Hotspots** — Domains were hosted in Lithuania and Hong Kong, each accounting for 50% of the detected phishing sites, mirroring last month's geographic distribution.
-- **TLD Abuse Patterns** — The domains used `.org` and `.com` TLDs, each representing 50% of the abuse, consistent with the previous month's TLD usage.
-- **Registrar Abuse Concentration** — HOSTINGER operations, UAB and NICENIC INTERNATIONAL GROUP CO., LIMITED each hosted one domain, maintaining their involvement from the prior month.
-- **Detection/Response Metrics** — With a 100% kill rate and an average response time of 0 hours, the efficiency of detection and takedown operations remains high, unchanged from last month.
+- **Crypto/Drainer Landscape** — No drainer domains were identified, consistent with last month, indicating a temporary lull in crypto-targeted phishing.
+- **Brand Targeting Shifts** — Only Magic Eden was targeted, consistent with April, suggesting focused but limited brand exploitation.
+- **Geographic Hotspots** — Domains were hosted in Lithuania and Hong Kong, unchanged from last month, highlighting persistent regional hosting choices.
+- **TLD Abuse Patterns** — Both .org and .com TLDs were used, identical to April, showing no diversification in TLD abuse.
+- **Registrar Abuse Concentration** — HOSTINGER operations, UAB and NICENIC INTERNATIONAL GROUP CO., LIMITED each registered one domain, unchanged from last month.
+- **Detection/Response Metrics** — Average response time remained at 0 hours, maintaining a prompt neutralization rate.
 
 ### Threat Actor Tactics
-Threat actors continued to utilize diverse infrastructure and hosting solutions, with a noticeable absence of fast-flux techniques and bulletproof hosting, potentially indicating a strategic shift towards less detectable methods. CDN abuse and nameserver clustering were not prominent this month, suggesting a downtrend in these tactics.
+Threat actors continued to leverage basic infrastructure setups without adopting fast-flux techniques or bulletproof hosting, suggesting reliance on standard hosting services. No significant CDN abuse or nameserver clustering was observed, indicating a lack of sophisticated infrastructure management.
 
-Regarding drainer and phishing kit evolution, no new drainer types were identified, and there were no significant advancements in phishing kits targeting cryptocurrency wallets. This stability might imply either a plateau in innovation or effective countermeasures by security teams.
+In terms of drainer and phishing kit evolution, no new drainer domains were detected, and no sophisticated phishing kits were identified, implying a possible decline in the evolution or deployment of such tools this month. Wallet targeting was absent, reflecting a potential shift away from direct financial theft.
 
-Evasion and obfuscation tactics reveal that six VirusTotal vendors, including Fortinet and Sophos, detected the phishing domains. However, the absence of detection by Google Safe Browsing indicates potential gaps in its coverage, which threat actors may be exploiting to bypass certain security engines.
+Evasion and obfuscation tactics revealed limitations in VT vendor detection, with only one domain flagged. This indicates that actors may be exploiting weaknesses in certain engines, potentially avoiding detection by engines like GSB, which failed to flag any domains. This underscores the need for enhanced detection methodologies to close these gaps.
 
 ### Registrar Accountability
-The top registrars involved were HOSTINGER operations, UAB, and NICENIC INTERNATIONAL GROUP CO., LIMITED, each with one domain, representing 50% of the total. Their continued presence highlights ongoing registrar accountability issues.
+The top registrars this month were HOSTINGER operations, UAB and NICENIC INTERNATIONAL GROUP CO., LIMITED, each responsible for one domain, representing 50% each of the total detected. This consistent pattern suggests a need for these registrars to enhance their vetting processes to prevent abuse.
 
-This month saw no new registrar entrants, with neither registrar showing improvement or deterioration in their abuse handling. This static situation calls for increased scrutiny and pressure on these entities to enhance their monitoring and response capabilities.
+No registrars showed marked improvement or deterioration in accountability compared to last month, and no new entrants were identified. This stability in registrar behavior highlights a persistent challenge in addressing registrar-level vulnerabilities.
 
 ### Detection Landscape
-VirusTotal data shows that alphaMountain.ai, Bfore.Ai PreCrime, and four other engines successfully flagged the phishing domains. This indicates a robust detection landscape among these vendors but highlights a critical gap in Google Safe Browsing's detection capabilities. For defenders, this means relying on a diversified set of detection engines remains crucial to cover potential blind spots.
+Analysis of VirusTotal data shows that engines like alphaMountain.ai, Bfore.Ai PreCrime, and others flagged one domain each, indicating a limited detection spread. The absence of detection by GSB suggests a critical gap that could be exploited by threat actors, emphasizing the need for comprehensive coverage across all engines to enhance overall threat detection capabilities.
 
 ### Recommendations
-- **For Security Teams** — Regularly update detection signatures and expand monitoring to include less commonly used TLDs and registrars.
-- **For SOC Analysts** — Focus on rapid response and takedown procedures, aiming to maintain or improve the current 100% kill rate.
-- **For Registrars** — Implement stricter domain registration vetting processes to deter abuse and enhance cooperation with cybersecurity firms for faster remediation.
-- **For Browser Vendors** — Address detection gaps by integrating additional threat intelligence feeds beyond current capabilities.
-- **For Crypto Projects** — Educate users on recognizing phishing attempts and implement stronger wallet transaction verification methods.
-- **For End Users** — Stay vigilant for phishing attempts, especially those targeting cryptocurrency platforms like Magic Eden, and verify URLs before engaging with any online services.
+- **For Security Teams** — Implement multi-layered threat detection systems to identify phishing domains not flagged by existing solutions.
+- **For SOC Analysts** — Prioritize monitoring for regional hosting patterns in Lithuania and Hong Kong to preemptively identify potential threats.
+- **For Registrars** — Enhance domain registration vetting processes to mitigate the registration of phishing domains.
+- **For Browser Vendors** — Collaborate with security vendors to improve real-time detection capabilities in browsers, especially focusing on the .org and .com TLDs.
+- **For Crypto Projects** — Continuously educate users on the risks of phishing and promote the use of trusted platforms for transactions.
+- **For End Users** — Remain vigilant and verify the authenticity of websites, particularly when engaging with platforms like Magic Eden.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -205,21 +205,21 @@ VirusTotal data shows that alphaMountain.ai, Bfore.Ai PreCrime, and four other e
 
 | Report | Domains |
 |:-------|--------:|
-| [January 2025](../../2025/01/) | — |
-| [February 2025](../../2025/02/) | — |
-| [March 2025](../../2025/03/) | — |
-| [April 2025](../../2025/04/) | — |
+| [January 2025](../../2025/01/) | **1** |
+| [February 2025](../../2025/02/) | **13** |
+| [March 2025](../../2025/03/) | **2** |
+| [April 2025](../../2025/04/) | **2** |
 | 📍 **May 2025** | **2** |
-| [June 2025](../../2025/06/) | — |
-| [July 2025](../../2025/07/) | — |
-| [August 2025](../../2025/08/) | — |
-| [September 2025](../../2025/09/) | — |
-| [October 2025](../../2025/10/) | — |
-| [November 2025](../../2025/11/) | — |
-| [December 2025](../../2025/12/) | — |
-| [January 2026](../../2026/01/) | — |
-| [February 2026](../../2026/02/) | — |
-| [March 2026](../../2026/03/) | — |
+| [June 2025](../../2025/06/) | **4** |
+| [July 2025](../../2025/07/) | **700** |
+| [August 2025](../../2025/08/) | **3,788** |
+| [September 2025](../../2025/09/) | **7,307** |
+| [October 2025](../../2025/10/) | **8,841** |
+| [November 2025](../../2025/11/) | **12,581** |
+| [December 2025](../../2025/12/) | **11,773** |
+| [January 2026](../../2026/01/) | **8,932** |
+| [February 2026](../../2026/02/) | **18,207** |
+| [March 2026](../../2026/03/) | **4,042** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

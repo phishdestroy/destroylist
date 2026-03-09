@@ -78,38 +78,38 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-In June 2025, PhishDestroy identified and analyzed four phishing domains, marking a 100% increase from the previous month, which recorded only two domains. Of these, one domain remained active while three were neutralized, resulting in a 75% kill rate. Notably, three of the domains were flagged by VirusTotal, yet none were detected by Google Safe Browsing. The most significant finding this month is the absence of any targeted brand in the phishing attempts, suggesting a shift in attacker focus or strategy.
+In June 2025, PhishDestroy detected and analyzed 4 phishing domains, marking a 100.0% increase from the previous month's total of 2. Notably, 75.0% of these domains were neutralized, with 3 out of 4 domains rendered inactive. The significant finding this month is the complete lack of brand targeting, which contrasts starkly with prior patterns. Additionally, no domains were flagged by Google Safe Browsing, indicating a possible gap in proactive detection measures.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — No specific crypto or drainer activity was detected this month, consistent with the previous month, indicating a potential decline or evasion in this threat vector.
-- **Brand Targeting Shifts** — There was a complete absence of brand-specific targeting, a shift from last month where at least one brand was implicated.
-- **Geographic Hotspots** — Domains were traced to three distinct regions: India, USA, and one unidentified, reflecting a broader distribution compared to last month’s concentration.
-- **TLD Abuse Patterns** — Each domain utilized a unique TLD: .click, .live, .org, and .com, showcasing a diverse approach in TLD exploitation compared to a more concentrated pattern previously.
-- **Registrar Abuse Concentration** — Registrations were spread across four registrars, with no single registrar accounting for more than one domain, demonstrating a more dispersed registrar abuse pattern.
-- **Detection/Response Metrics** — VirusTotal flagged three domains, an indication of improved detection from last month, though Google Safe Browsing’s zero detections highlight a persistent gap.
+- **Crypto/Drainer Landscape** — No crypto drainer domains were identified, consistent with the previous month, indicating a potential shift in threat actor focus.
+- **Brand Targeting Shifts** — There were zero instances of brand targeting, a decrease from May, suggesting a temporary decline in this tactic.
+- **Geographic Hotspots** — Domains were distributed across India, the USA, and an unknown location, with no significant change from last month’s pattern.
+- **TLD Abuse Patterns** — The use of TLDs such as .click, .live, .org, and .com remained diverse, with each TLD appearing once, a pattern not observed in May.
+- **Registrar Abuse Concentration** — Each domain was registered with a different registrar, including Unknown, PDR Ltd., NameSilo, and Infomaniak, showing a dispersion in registrar usage.
+- **Detection/Response Metrics** — The average response time was 0 hours, a remarkable improvement, reflecting rapid domain neutralization compared to May.
 
 ### Threat Actor Tactics
-Threat actors demonstrated a varied infrastructure approach with no distinct pattern of fast-flux or bulletproof hosting observed this month. The use of disparate hosting regions and lack of nameserver clustering suggest a decentralized hosting strategy, potentially to evade takedown efforts.
+Threat actors continued to exploit infrastructure with diverse tactics, but no significant patterns of fast-flux, bulletproof hosting, or CDN abuse were detected this month. Nameserver clustering was not observed, indicating a potential shift in hosting strategies.
 
-In terms of drainer and phishing kit evolution, the absence of identifiable drainers or kits could imply either a reduction in such activities or more sophisticated concealment techniques. Wallet targeting was not evident, aligning with the trend of non-specific brand targeting.
+Despite the absence of specific drainer domains, the evolution of phishing kits and techniques persists. No new wallet-targeting techniques were reported, suggesting a stagnation or strategic redirection in drainer activities.
 
-Evasion and obfuscation techniques were notable in the VirusTotal vendor detection spread. With seven vendors detecting the threats, the coverage was relatively comprehensive, yet the lack of detection by Google Safe Browsing indicates a strategic evasion of certain engines. This suggests that threat actors may be leveraging specific obfuscation methods to bypass particular detection systems.
+Evasion tactics remain sophisticated, with threat actors effectively avoiding detection by Google Safe Browsing. The spread of detections across VT vendors such as Gridinsoft, Trustwave, and Webroot illustrates a varied detection landscape, but also highlights gaps, particularly in engines like Google.
 
 ### Registrar Accountability
-The top registrars implicated this month were PDR Ltd. d/b/a PublicDomainRegistry.com, NameSilo, LLC, Infomaniak Network SA, and an unknown registrar, each hosting one domain. This diverse distribution represents a shift from last month’s concentration in a single registrar.
+The top registrars implicated in this month's phishing domains include Unknown (1), PDR Ltd. (1), NameSilo (1), and Infomaniak (1), each holding a 25% share of detected domains. This dispersion indicates no single registrar is overwhelmingly responsible, but vigilance is required across all.
 
-While PDR Ltd. and NameSilo continued to appear in reports, Infomaniak Network SA emerged as a new entrant this month. None of the registrars showed significant improvement or decline, indicating a stable but concerning level of accountability across these entities.
+Comparatively, registrars like NameSilo showed consistent involvement, while others such as Infomaniak are new entrants this month. No registrar exhibited a marked improvement or decline, suggesting a stable but concerning baseline of accountability.
 
 ### Detection Landscape
-VirusTotal data indicated that Gridinsoft, Trustwave, Webroot, alphaMountain.ai, G-Data, SOCRadar, and Sophos were the leading engines in detecting the identified threats. The absence of detection by Google Safe Browsing highlights a critical gap and underscores the need for enhanced cross-platform threat intelligence sharing. For defenders, this suggests a reliance on multiple detection sources to ensure comprehensive coverage.
+VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead in detection, each flagging one domain. However, the absence of Google Safe Browsing flags indicates a significant detection gap. This suggests a need for enhanced collaboration and data sharing among vendors to bolster early detection capabilities.
 
 ### Recommendations
-- **For Security Teams** — Implement multi-layered detection systems combining VirusTotal and other threat intelligence feeds to cover detection gaps.
-- **For SOC Analysts** — Focus on anomalous TLD registrations and diverse registrar activity as indicators of potential phishing campaigns.
-- **For Registrars** — Enhance verification processes to prevent abuse, especially for TLDs like .click and .live known for higher phishing activity.
-- **For Browser Vendors** — Collaborate with threat intelligence platforms to improve real-time threat detection capabilities, particularly integrating with VirusTotal data.
-- **For Crypto Projects** — Maintain vigilance for indirect phishing attempts, even when direct wallet targeting is not evident, as threat actors might shift tactics.
-- **For End Users** — Stay informed about phishing tactics and report suspicious domains, especially those using uncommon TLDs or originating from new regions.
+- **For Security Teams** — Implement continuous monitoring and rapid response protocols to mitigate phishing threats within hours of detection.
+- **For SOC Analysts** — Focus on cross-referencing VT vendor data to identify patterns and gaps in threat detection.
+- **For Registrars** — Enhance scrutiny and verification processes to prevent domain abuse, particularly for TLDs like .click and .live.
+- **For Browser Vendors** — Strengthen partnerships with threat intelligence platforms to improve the visibility and detection of phishing domains.
+- **For Crypto Projects** — Increase education and awareness campaigns to protect users from emerging phishing tactics targeting crypto.
+- **For End Users** — Encourage vigilance and the use of security tools that incorporate VT data for real-time phishing detection.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -215,21 +215,21 @@ VirusTotal data indicated that Gridinsoft, Trustwave, Webroot, alphaMountain.ai,
 
 | Report | Domains |
 |:-------|--------:|
-| [January 2025](../../2025/01/) | — |
-| [February 2025](../../2025/02/) | — |
-| [March 2025](../../2025/03/) | — |
-| [April 2025](../../2025/04/) | — |
-| [May 2025](../../2025/05/) | — |
+| [January 2025](../../2025/01/) | **1** |
+| [February 2025](../../2025/02/) | **13** |
+| [March 2025](../../2025/03/) | **2** |
+| [April 2025](../../2025/04/) | **2** |
+| [May 2025](../../2025/05/) | **2** |
 | 📍 **June 2025** | **4** |
-| [July 2025](../../2025/07/) | — |
-| [August 2025](../../2025/08/) | — |
-| [September 2025](../../2025/09/) | — |
-| [October 2025](../../2025/10/) | — |
-| [November 2025](../../2025/11/) | — |
-| [December 2025](../../2025/12/) | — |
-| [January 2026](../../2026/01/) | — |
-| [February 2026](../../2026/02/) | — |
-| [March 2026](../../2026/03/) | — |
+| [July 2025](../../2025/07/) | **700** |
+| [August 2025](../../2025/08/) | **3,788** |
+| [September 2025](../../2025/09/) | **7,307** |
+| [October 2025](../../2025/10/) | **8,841** |
+| [November 2025](../../2025/11/) | **12,581** |
+| [December 2025](../../2025/12/) | **11,773** |
+| [January 2026](../../2026/01/) | **8,932** |
+| [February 2026](../../2026/02/) | **18,207** |
+| [March 2026](../../2026/03/) | **4,042** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

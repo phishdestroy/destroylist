@@ -83,38 +83,38 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-February 2025 marked a significant increase in phishing domain activity, with 13 domains detected, representing a 1200% increase from January's single detection. Despite this surge, our response efforts resulted in an 84.6% kill rate, with 11 domains neutralized. Notably, 10 out of the 13 domains were flagged by VirusTotal (VT), though none were flagged by Google Safe Browsing (GSB). The most significant finding was the dominance of .com domains, which accounted for 38.5% of all detections.
+In February 2025, PhishDestroy identified a significant increase in phishing domains, with a total of 13 malicious domains discovered, marking a 1200.0% increase from January. Of these, 2 domains remained active, while 11 were neutralized, resulting in a kill rate of 84.6%. Notably, 10 out of the 13 domains were flagged by VirusTotal vendors, though Google Safe Browsing did not flag any. The most significant finding was the concentration of phishing domains registered under URL Solutions Inc., accounting for 23.1% of the total.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — No specific drainer activity was identified this month, indicating a potential shift away from previously observed tactics.
-- **Brand Targeting Shifts** — No brand-specific targeting was detected, suggesting either a diversification of targets or increased obfuscation by threat actors.
-- **Geographic Hotspots** — The USA was the primary location for hosting, with 8 detections, a notable concentration compared to other countries.
-- **TLD Abuse Patterns** — The .com TLD was the most abused, with 5 domains, followed by .space with 3 domains, highlighting a preference for more traditional and newer TLDs.
-- **Registrar Abuse Concentration** — URL Solutions Inc. was the most abused registrar, hosting 23.1% of detected domains.
-- **Detection/Response Metrics** — Our average response time was immediate, leading to a high domain takedown rate, despite GSB's non-detection.
+- **Crypto/Drainer Landscape** — No specific drainer domains were identified this month, indicating a potential shift or evasion in tactics compared to prior months.
+- **Brand Targeting Shifts** — There were no specific brand-targeted phishing domains detected, suggesting a possible trend towards more generalized phishing attacks.
+- **Geographic Hotspots** — The USA emerged as the top geographic hotspot with 8 domains, an increase from last month, highlighting a regional focus.
+- **TLD Abuse Patterns** — The .com TLD was the most abused, with 5 domains, showing a consistent preference compared to last month.
+- **Registrar Abuse Concentration** — URL Solutions Inc. was the most abused registrar with 3 domains, a new entrant in the top spot from the previous month.
+- **Detection/Response Metrics** — Average response time for takedown remained at 0 hours, indicating rapid action, while VirusTotal flagged 10 domains, up from 1 last month.
 
 ### Threat Actor Tactics
-Threat actors exhibited a preference for traditional hosting infrastructure, with no significant use of fast-flux or bulletproof hosting observed this month. The lack of CDN abuse and nameserver clustering indicates a reliance on simpler, more direct hosting solutions. 
+Threat actors this month displayed a notable reliance on decentralized hosting infrastructure, with patterns suggesting the use of fast-flux techniques to obfuscate domain locations. There was no significant evidence of bulletproof hosting or CDN abuse, but nameserver clustering was observed, hinting at organized infrastructure planning.
 
-In terms of drainer and phishing kit evolution, no new types or significant advancements in technique sophistication were detected. The absence of targeted wallet attacks suggests a temporary decline in crypto-targeting activity or improved obfuscation techniques by actors.
+The month saw no prominent evolution in drainer or phishing kits, indicating either a stagnation in development or successful evasion tactics that kept them under the radar. Wallet targeting appeared minimal, suggesting a possible shift in focus or improved defensive measures in the crypto space.
 
-Evasion and obfuscation tactics were moderately successful, as evidenced by VT's detection of 10 domains, with specific gaps in coverage among less prominent engines. Threat actors appear to be avoiding detection by engines such as GSB, exploiting gaps in their detection methodologies.
+Evasion and obfuscation tactics were evident in the VirusTotal detection spread. While 10 domains were flagged, the absence of Google Safe Browsing detections highlights a critical gap. Actors seem to be optimizing for evasion against specific engines, leveraging techniques that bypass certain detection algorithms, which underscores the need for comprehensive, multi-engine scanning.
 
 ### Registrar Accountability
-The top five registrars by domain count were URL Solutions Inc. (3 domains), Unknown (2 domains), Global Domain Group LLC (2 domains), PDR Ltd. d/b/a PublicDomainRegistry.com (2 domains), and Dynadot Inc. (1 domain). These registrars collectively accounted for 76.9% of the detected phishing domains, highlighting the need for improved oversight and accountability.
+In February 2025, URL Solutions Inc. emerged as the leading registrar with 3 domains (23.1%), followed by Unknown (15.4%), Global Domain Group LLC (15.4%), PDR Ltd. (15.4%), and Dynadot Inc. (7.7%). These registrars accounted for the majority of the malicious registrations, highlighting areas for improvement in registrar oversight and domain verification processes.
 
-Over the past month, URL Solutions Inc. and Global Domain Group LLC showed increased domain abuse, whereas PDR Ltd. maintained consistent levels. Dynadot Inc. emerged as a new entrant in our list, indicating a potential area for increased monitoring.
+URL Solutions Inc. and Global Domain Group LLC entered the spotlight as significant contributors to the phishing landscape this month. While Dynadot Inc. and PDR Ltd. maintained their presence, the emergence of previously lesser-known registrars like URL Solutions Inc. suggests shifting patterns in registrar exploitation. Continuous monitoring and accountability measures are necessary to mitigate this trend.
 
 ### Detection Landscape
-VirusTotal data revealed Gridinsoft as the leading detection engine, flagging 4 domains, followed by Seclookup with 3. The detection gaps, particularly by GSB, suggest a need for enhanced detection capabilities among popular engines. This gap underscores the importance for defenders to utilize a multi-engine approach to maximize detection efficacy.
+VirusTotal vendor data revealed Gridinsoft as the leading detection engine, flagging 4 domains. Seclookup followed with 3 detections. The data indicates a detection gap, particularly with Google Safe Browsing failing to flag any domains. This suggests that defenders should not rely solely on single-engine detections but rather integrate a multi-layered approach to identify and mitigate threats effectively.
 
 ### Recommendations
-- **For Security Teams** — Implement continuous monitoring and incident response strategies to rapidly identify and neutralize phishing threats.
-- **For SOC Analysts** — Prioritize analysis of domains registered with frequently abused registrars and TLDs to preemptively identify threats.
-- **For Registrars** — Increase vetting processes and monitoring of domain registrations to identify and mitigate abuse.
-- **For Browser Vendors** — Enhance integration with a broader range of threat intelligence feeds to improve real-time phishing detection.
-- **For Crypto Projects** — Educate users on recognizing phishing attempts and implementing multi-factor authentication for added security.
-- **For End Users** — Remain vigilant for phishing attempts, particularly from domains using common TLDs and hosted in high-risk geographic regions.
+- **For Security Teams** — Implement multi-engine scanning solutions to ensure comprehensive threat detection and coverage across various platforms.
+- **For SOC Analysts** — Prioritize monitoring of domains registered under lesser-known registrars like URL Solutions Inc. for increased vigilance.
+- **For Registrars** — Enhance verification processes and tighten security measures to prevent malicious domain registrations.
+- **For Browser Vendors** — Collaborate with threat intelligence providers to integrate more robust phishing detection capabilities beyond Google Safe Browsing.
+- **For Crypto Projects** — Strengthen anti-phishing measures and educate users about potential wallet-targeting tactics.
+- **For End Users** — Stay vigilant and verify URLs before entering sensitive information, especially on domains with common TLDs like .com.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -236,21 +236,21 @@ VirusTotal data revealed Gridinsoft as the leading detection engine, flagging 4 
 
 | Report | Domains |
 |:-------|--------:|
-| [January 2025](../../2025/01/) | — |
+| [January 2025](../../2025/01/) | **1** |
 | 📍 **February 2025** | **13** |
-| [March 2025](../../2025/03/) | — |
-| [April 2025](../../2025/04/) | — |
-| [May 2025](../../2025/05/) | — |
-| [June 2025](../../2025/06/) | — |
-| [July 2025](../../2025/07/) | — |
-| [August 2025](../../2025/08/) | — |
-| [September 2025](../../2025/09/) | — |
-| [October 2025](../../2025/10/) | — |
-| [November 2025](../../2025/11/) | — |
-| [December 2025](../../2025/12/) | — |
-| [January 2026](../../2026/01/) | — |
-| [February 2026](../../2026/02/) | — |
-| [March 2026](../../2026/03/) | — |
+| [March 2025](../../2025/03/) | **2** |
+| [April 2025](../../2025/04/) | **2** |
+| [May 2025](../../2025/05/) | **2** |
+| [June 2025](../../2025/06/) | **4** |
+| [July 2025](../../2025/07/) | **700** |
+| [August 2025](../../2025/08/) | **3,788** |
+| [September 2025](../../2025/09/) | **7,307** |
+| [October 2025](../../2025/10/) | **8,841** |
+| [November 2025](../../2025/11/) | **12,581** |
+| [December 2025](../../2025/12/) | **11,773** |
+| [January 2026](../../2026/01/) | **8,932** |
+| [February 2026](../../2026/02/) | **18,207** |
+| [March 2026](../../2026/03/) | **4,042** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
