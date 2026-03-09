@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "month": "2025-01",
+    "name": "January 2025",
+    "generated": "2026-03-09T04:59:31.521293+00:00",
+    "total": 1,
+    "source": "https://github.com/phishdestroy/destroylist",
+    "report": "2025-01.md",
+    "prev_report": "../../2024/12/",
+    "next_report": "../../2025/02/"
+  },
+  "stats": {
+    "live": 0,
+    "dead": 1,
+    "enriched": 0,
+    "kill_rate": 100.0,
+    "vt_flagged": 1,
+    "vt_rate": 100.0,
+    "gsb_flagged": 0,
+    "avg_response_h": 0,
+    "median_response_h": 0
+  },
+  "top": {
+    "registrars": [
+      {
+        "name": "GoDaddy.com, LLC",
+        "count": 1
+      }
+    ],
+    "tlds": [
+      {
+        "tld": "com",
+        "count": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "USA",
+        "count": 1
+      }
+    ],
+    "brands": [],
+    "drainers": [],
+    "vt_vendors": [
+      {
+        "vendor": "alphaMountain.ai",
+        "detections": 1
+      },
+      {
+        "vendor": "Fortinet",
+        "detections": 1
+      },
+      {
+        "vendor": "Sophos",
+        "detections": 1
+      }
+    ]
+  },
+  "daily": {
+    "2025-01-21": 1
+  },
+  "threats": [
+    {
+      "domain": "natroglobal.com",
+      "detected_at": "2025-01-21 13:42:44",
+      "registrar": "GoDaddy.com, LLC",
+      "registrar_country": "USA",
+      "tld": "com",
+      "ip_address": "45.77.59.29",
+      "nameservers": "1",
+      "status": "dead",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "Sophos"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-08-26 18:59:31",
+      "urlscan": "https://urlscan.io/result/18b13e26-3e81-4004-8136-5e13435b2fa5/",
+      "screenshot": "https://urlscan.io/screenshots/18b13e26-3e81-4004-8136-5e13435b2fa5.png"
+    }
+  ]
+}

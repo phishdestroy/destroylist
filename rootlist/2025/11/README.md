@@ -4,15 +4,15 @@
   Keywords: phishing report, threat intelligence, 2025-11, destroylist, scam domains, crypto drainer,
   phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
   cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
-  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/11/2025-11.md
-  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/10/2025-10.md
-  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12/2025-12.md
+  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/11
+  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/10
+  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12
   Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/11/2025-11-threats.json
 -->
 
 <div align="center">
 
-[**← Oct 2025**](../../2025/10/2025-10.md) &nbsp;·&nbsp; 📅 **November 2025** &nbsp;·&nbsp; [**Dec 2025 →**](../../2025/12/2025-12.md)
+[**← Oct 2025**](../../2025/10/) &nbsp;·&nbsp; 📅 **November 2025** &nbsp;·&nbsp; [**Dec 2025 →**](../../2025/12/)
 
 <br>
 
@@ -104,38 +104,44 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-In November 2025, PhishDestroy identified a total of 12,581 phishing domains, marking a significant 42.3% increase from the previous month's 8,841 domains. Of these, 5,165 domains were live, while 7,416 were inactive, resulting in a kill rate of 58.9%. The most noteworthy finding was the surge in phishing domains targeting the cryptocurrency sector, with "Crypto Scam" being the most impersonated brand with 991 instances. The average response time for takedowns was 2,181.7 hours, reflecting a need for improvement in reaction times.
+
+In November 2025, PhishDestroy identified a total of 12,581 phishing domains, marking a significant 42.3% increase from the previous month's count of 8,841. The kill rate for these domains was 58.9%, with 5,165 still active and 7,416 successfully taken down. Notably, VirusTotal flagged 12,215 of these domains, while Google Safe Browsing identified 1,442. The average response time for takedown actions was 2,181.7 hours. The most significant finding of the month is the surge in phishing domains targeting cryptocurrencies, with a notable increase in the use of drainers.
 
 ### Key Trends
-- **Crypto/Drainer Landscape** — The prevalence of crypto-related phishing increased, with "Angel Drainer" identified in 842 cases, a notable rise from last month.
-- **Brand Targeting Shifts** — "Crypto Scam" was the top targeted brand with 991 incidents, significantly higher than last month's figures, indicating a concentrated effort on crypto platforms.
-- **Geographic Hotspots** — The USA remained the leading host country with 6,894 incidents, up from 5,100, followed by notable increases in Hong Kong (1,533) and Malaysia (862).
-- **TLD Abuse Patterns** — The ".com" TLD was most abused, hosting 3,945 phishing domains, an increase from 2,800 last month, followed by ".io" (644) and ".xyz" (634).
-- **Registrar Abuse Concentration** — Cloudflare, Inc. led with 1,421 domains, followed by Dynadot LLC with 1,086. Both showed increases in abuse compared to the previous month.
-- **Detection/Response Metrics** — VirusTotal flagged 12,215 domains, a marked improvement in detection over the previous month, though Google Safe Browsing only flagged 1,442, indicating potential gaps in coverage.
+
+- **Crypto/Drainer Landscape** — A notable rise in drainer activity was observed with "Angel Drainer" being the most prevalent, accounting for 842 instances. This is a substantial increase compared to previous months, indicating a shift towards more sophisticated crypto-targeted phishing schemes.
+- **Brand Targeting Shifts** — "Crypto Scam" domains saw the highest targeting with 991 instances, followed by "Generic Gambling" with 400. This highlights a broadening focus on financial deception.
+- **Geographic Hotspots** — The USA remains the primary hotspot with 6,894 domains, an increase from the previous month. Hong Kong follows with 1,533, showing a significant rise in phishing activities.
+- **TLD Abuse Patterns** — The ".com" TLD was the most abused with 3,945 domains, consistent with past trends. However, there was notable abuse of ".io" and ".xyz" TLDs with 644 and 634 instances, respectively.
+- **Registrar Abuse Concentration** — Cloudflare, Inc. led with 1,421 domains registered, followed by Dynadot LLC with 1,086. These registrars represent a significant portion of the phishing landscape.
+- **Detection/Response Metrics** — The average response time for domain takedowns was 2,181.7 hours, indicating a need for faster response mechanisms to mitigate threats effectively.
 
 ### Threat Actor Tactics
-Threat actors continued to leverage sophisticated infrastructure and hosting techniques. Fast-flux DNS and bulletproof hosting were prevalent, with increased clustering around specific nameservers to evade detection. CDN abuse was also noted, complicating takedown efforts.
 
-In the realm of drainers and kits, there was a notable evolution in technique sophistication. The "Angel Drainer" was the most prevalent, targeting wallets with advanced phishing kits that mimic legitimate interfaces. The emergence of "Inferno Drainer," albeit minimal, suggests ongoing innovation in wallet targeting methods.
+Threat actors continue to leverage sophisticated infrastructure setups, including fast-flux techniques and bulletproof hosting services, to increase the resilience of phishing operations. Nameserver clustering and CDN abuse remain prevalent, complicating takedown efforts and enhancing domain longevity.
 
-Evasion and obfuscation tactics were increasingly sophisticated, with threat actors employing techniques to avoid detection by specific VT engines. The spread of VT vendor detection highlighted gaps, particularly in engines with lower detection rates, allowing actors to bypass defenses and prolong domain lifetimes.
+The drainer and phishing kit landscape has evolved, with an increase in the use of advanced techniques such as "Angel Drainer" and "Wallet Connect Abuse." These methods indicate a tactical shift towards draining cryptocurrency wallets, leveraging fake wallet interfaces and deceptive transaction prompts to exploit user trust.
+
+Evasion and obfuscation tactics have advanced, with actors employing complex code obfuscation and leveraging gaps in VirusTotal vendor coverage. Despite high detection rates, certain engines remain blind spots, allowing actors to bypass specific detection mechanisms and maintain domain activity for extended periods.
 
 ### Registrar Accountability
-The top five registrars involved were Cloudflare, Inc. with 1,421 domains (11.3% of total), Dynadot LLC with 1,086 (8.6%), NICENIC INTERNATIONAL GROUP CO., LIMITED with 1,083 (8.6%), WEBCC with 695 (5.5%), and DYNADOT LLC with 497 (3.9%). These registrars need to enhance their monitoring and takedown processes to curb abuse.
 
-Improvements were seen in some registrars, with others worsening in their handling of malicious domains. Notably, Cloudflare, Inc. showed an increase in abuse cases, while new entrants in the registrar space have yet to demonstrate effective countermeasures against phishing activities.
+The top five registrars associated with phishing domains this month are Cloudflare, Inc. (1,421 domains), Dynadot LLC (1,086), NICENIC INTERNATIONAL GROUP CO., LIMITED (1,083), WEBCC (695), and DYNADOT LLC (497). These registrars collectively account for a substantial portion of phishing domain registrations, underscoring the need for improved oversight and collaboration with cybersecurity entities.
+
+Notably, Cloudflare, Inc. and Dynadot LLC remain consistent in their high volume of associated domains, while NICENIC INTERNATIONAL GROUP CO., LIMITED has seen an increase. WEBCC has shown improvement in reducing domain abuse, whereas new entrants have emerged with significant domain counts, suggesting shifting tactics by threat actors.
 
 ### Detection Landscape
-The VirusTotal vendor data revealed CyRadar as the leading engine with 8,779 detections, closely followed by Fortinet with 8,698. However, gaps remain, particularly among engines with lower detection capabilities. This indicates a need for enhanced threat intelligence sharing and collaboration among vendors to improve coverage and detection rates.
+
+CyRadar leads the VirusTotal detection landscape with 8,779 flagged domains, closely followed by Fortinet with 8,698. However, despite high detection rates, there are still notable gaps, particularly in real-time detection capabilities. This underscores the need for vendors to enhance proactive detection measures to mitigate threats more effectively.
 
 ### Recommendations
-- **For Security Teams** — Implement continuous monitoring and rapid response protocols to address the increasing volume of phishing domains.
-- **For SOC Analysts** — Prioritize the analysis of crypto-targeted phishing domains, utilizing advanced threat intelligence tools to identify and mitigate threats.
-- **For Registrars** — Enhance domain registration vetting processes and collaborate with cybersecurity firms to swiftly take down malicious domains.
-- **For Browser Vendors** — Integrate more comprehensive phishing detection mechanisms to protect users from emerging threats.
-- **For Crypto Projects** — Conduct regular security audits and user education campaigns to safeguard against phishing attacks targeting crypto assets.
-- **For End Users** — Stay informed about the latest phishing tactics and employ security tools such as multi-factor authentication to protect personal and financial information.
+
+- **For Security Teams** — Enhance monitoring of cryptocurrency-related domains and prioritize takedown actions for identified drainers.
+- **For SOC Analysts** — Focus on identifying fast-flux and CDN abuse patterns to improve threat detection capabilities.
+- **For Registrars** — Implement stricter domain registration verification processes to prevent abuse.
+- **For Browser Vendors** — Strengthen real-time phishing detection mechanisms to protect users from emerging threats.
+- **For Crypto Projects** — Educate users on identifying phishing attempts and implement multi-factor authentication to secure wallets.
+- **For End Users** — Remain vigilant against unsolicited requests for wallet information and verify URLs before entering sensitive data.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -249,7 +255,7 @@ The VirusTotal vendor data revealed CyRadar as the leading engine with 8,779 det
 
 | Format | File | Description |
 |:-------|:-----|:------------|
-| 📋 Report | [`2025-11.md`](2025-11.md) | This report |
+| 📋 Report | [`README.md`](.) | This report |
 | 🗃️ Threats | [`2025-11-threats.json`](2025-11-threats.json) | **12,581** threats with VT vendors, scan URLs, IPs |
 | 📈 Chart | [`2025-11-activity.svg`](2025-11-activity.svg) | Daily detection activity graph |
 
@@ -296,21 +302,27 @@ The VirusTotal vendor data revealed CyRadar as the leading engine with 8,779 det
 
 | Report | Domains |
 |:-------|--------:|
-| [July 2025](../../2025/07/2025-07.md) | — |
-| [August 2025](../../2025/08/2025-08.md) | — |
-| [September 2025](../../2025/09/2025-09.md) | — |
-| [October 2025](../../2025/10/2025-10.md) | — |
+| [January 2025](../../2025/01/) | — |
+| [February 2025](../../2025/02/) | — |
+| [March 2025](../../2025/03/) | — |
+| [April 2025](../../2025/04/) | — |
+| [May 2025](../../2025/05/) | — |
+| [June 2025](../../2025/06/) | — |
+| [July 2025](../../2025/07/) | — |
+| [August 2025](../../2025/08/) | — |
+| [September 2025](../../2025/09/) | — |
+| [October 2025](../../2025/10/) | — |
 | 📍 **November 2025** | **12,581** |
-| [December 2025](../../2025/12/2025-12.md) | — |
-| [January 2026](../../2026/01/2026-01.md) | — |
-| [February 2026](../../2026/02/2026-02.md) | — |
-| [March 2026](../../2026/03/2026-03.md) | — |
+| [December 2025](../../2025/12/) | — |
+| [January 2026](../../2026/01/) | — |
+| [February 2026](../../2026/02/) | — |
+| [March 2026](../../2026/03/) | — |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
 <div align="center">
 
-[**← Oct 2025**](../../2025/10/2025-10.md) &nbsp;·&nbsp; 📅 **November 2025** &nbsp;·&nbsp; [**Dec 2025 →**](../../2025/12/2025-12.md)
+[**← Oct 2025**](../../2025/10/) &nbsp;·&nbsp; 📅 **November 2025** &nbsp;·&nbsp; [**Dec 2025 →**](../../2025/12/)
 
 <br>
 
