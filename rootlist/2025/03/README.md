@@ -76,44 +76,38 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
-
-In March 2025, PhishDestroy identified a total of 2 phishing domains, marking a significant decrease of 84.6% compared to February's count of 13. Notably, all detected domains were inactive by the end of the month, resulting in a 100.0% kill rate. The most significant finding this month was the complete absence of live phishing domains, reflecting effective takedown efforts. Despite the low volume, vigilance remains crucial as threat actors continually adapt.
+In March 2025, PhishDestroy observed a significant reduction in phishing domain activity, with only 2 new domains detected, marking an 84.6% decrease from the previous month's count of 13. Notably, all detected domains were neutralized, achieving a 100% kill rate. The complete absence of live domains underscores effective detection and response strategies. The most significant finding is the total lack of ongoing phishing campaigns during this period.
 
 ### Key Trends
-
-- **Crypto/Drainer Landscape** — No new crypto drainers were detected this month, maintaining a static landscape compared to February.
-- **Brand Targeting Shifts** — There were no specific brand-targeted domains identified, contrasting with previous months where brand impersonation was prevalent.
-- **Geographic Hotspots** — Phishing domains were traced back to Malaysia and India, each hosting one domain, indicating a shift from the previous month's hotspots.
-- **TLD Abuse Patterns** — The ".com" TLD was exclusively abused, consistent with last month's trends, highlighting its continued exploitation in phishing schemes.
-- **Registrar Abuse Concentration** — Web Commerce Communications Limited and PDR Ltd. each registered one domain, emphasizing a need for increased scrutiny at these registrars.
-- **Detection/Response Metrics** — The average response time for takedowns was reduced to zero hours, a notable improvement from prior months, ensuring rapid neutralization of threats.
+- **Crypto/Drainer Landscape** — No new drainer domains were detected this month, compared to previous months where such domains were prevalent.
+- **Brand Targeting Shifts** — There were no specific brand-focused phishing domains identified, suggesting a potential shift or lull in brand targeting activities.
+- **Geographic Hotspots** — Domains were registered in Malaysia and India, each hosting one domain, indicating a decrease in geographic diversity compared to earlier months.
+- **TLD Abuse Patterns** — The `.com` TLD was exclusively used for phishing domains, consistent with prior trends but showing reduced volume.
+- **Registrar Abuse Concentration** — Two registrars were involved: Web Commerce Communications Limited and PDR Ltd., each accounting for one domain, reflecting a decrease in registrar abuse concentration.
+- **Detection/Response Metrics** — All detected domains were flagged by VirusTotal, maintaining a 100% detection rate, yet none were flagged by Google Safe Browsing, indicating a potential gap in cross-platform detection.
 
 ### Threat Actor Tactics
+Phishing infrastructure this month showed minimal activity, with no evidence of fast-flux techniques, bulletproof hosting, or CDN abuse. The limited scope of detected domains suggests a possible retreat or regrouping by threat actors.
 
-Phishing infrastructure this month showed limited diversity, with no evidence of fast-flux techniques or bulletproof hosting. Instead, domains were hosted through conventional means, potentially due to the reduced scale of operations. Nameserver clustering was not a significant factor, indicating a more straightforward setup by threat actors.
+No new drainer kits or phishing kits were identified, indicating either a stagnation in drainer tactics or a shift to more covert operations. Wallet targeting was not observed, which may suggest a temporary pause in cryptocurrency-related phishing activities.
 
-The drainer and phishing kits landscape remained static, with no new kits identified. This lack of innovation in techniques could suggest a temporary lull or re-strategizing phase among threat actors. Wallet targeting was not observed, marking a departure from the aggressive crypto-targeting seen earlier in the year.
-
-Evasion and obfuscation tactics were minimal, as evidenced by the detection spread across VT vendors. With only three vendors, including alphaMountain.ai, Gridinsoft, and MalwareURL, flagging the domains, there remains a gap in detection coverage. This suggests that while the domains were eventually identified, initial evasion techniques were effective against several engines.
+Evasion techniques appeared consistent with previous months, as all domains were detected by VirusTotal. However, the lack of Google Safe Browsing detections highlights potential evasion strategies targeting specific detection engines, possibly through obfuscation or novel evasion tactics that bypass certain security layers.
 
 ### Registrar Accountability
+The top registrars involved were Web Commerce Communications Limited and PDR Ltd., each with one domain, representing 50% of detected domains respectively. This marks a significant decrease in registrar involvement compared to previous months.
 
-Top registrars implicated this month include Web Commerce Communications Limited and PDR Ltd., each with one domain, accounting for 50% of the total phishing domains for March. This concentration highlights the need for these registrars to enhance their domain vetting processes to prevent abuse.
-
-While these registrars have maintained consistent levels of accountability, neither showed improvement nor deterioration. There were no new entrants to the list of registrars, suggesting a static pattern in registrar abuse.
+While no registrars showed improvement due to the low activity, both identified registrars maintained their positions. There were no new entrants this month, suggesting a stabilization or reduction in registrar exploitation.
 
 ### Detection Landscape
-
-VT vendor data indicated that three engines successfully identified the phishing domains. However, the limited detection across a broader range of engines points to persistent gaps in coverage. This underlines the importance of continuous enhancement of detection capabilities among VT vendors to ensure comprehensive protection for defenders.
+VirusTotal vendors such as alphaMountain.ai, Gridinsoft, and MalwareURL led in detecting the phishing domains, each flagging one domain. The absence of Google Safe Browsing detections suggests a potential area for improvement in multi-platform threat intelligence sharing and detection coverage.
 
 ### Recommendations
-
-- **For Security Teams** — Implement continuous monitoring strategies to quickly adapt to the changing threat landscape and maintain low detection times.
-- **For SOC Analysts** — Prioritize investigation of domains registered through Web Commerce Communications Limited and PDR Ltd. due to their recent association with phishing activity.
-- **For Registrars** — Enhance domain verification processes and collaborate with cybersecurity firms to detect and mitigate potential abuse early.
-- **For Browser Vendors** — Strengthen browser-based phishing protection mechanisms to provide an additional layer of security against newly registered domains.
-- **For Crypto Projects** — Maintain proactive monitoring of domain registrations to prevent potential phishing attacks targeting your brand and users.
-- **For End Users** — Stay informed about common phishing tactics and exercise caution with unsolicited communications, especially those involving financial transactions.
+- **For Security Teams** — Regularly update threat intelligence feeds to ensure comprehensive coverage of emerging threats, even during periods of low activity.
+- **For SOC Analysts** — Focus on cross-verifying detections with multiple sources to address potential gaps in platform-specific detections.
+- **For Registrars** — Implement stricter domain registration monitoring to prevent abuse and improve early threat identification.
+- **For Browser Vendors** — Enhance integration with diverse threat intelligence sources to improve detection rates beyond traditional engines.
+- **For Crypto Projects** — Maintain vigilance against potential phishing threats, even when current activity appears low, to prepare for sudden surges.
+- **For End Users** — Stay informed about the latest phishing tactics and ensure that browser and security tool updates are applied promptly to protect against potential threats.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -208,21 +202,21 @@ VT vendor data indicated that three engines successfully identified the phishing
 
 | Report | Domains |
 |:-------|--------:|
-| [January 2025](../../2025/01/) | — |
-| [February 2025](../../2025/02/) | — |
+| [January 2025](../../2025/01/) | **1** |
+| [February 2025](../../2025/02/) | **13** |
 | 📍 **March 2025** | **2** |
-| [April 2025](../../2025/04/) | — |
-| [May 2025](../../2025/05/) | — |
-| [June 2025](../../2025/06/) | — |
-| [July 2025](../../2025/07/) | — |
-| [August 2025](../../2025/08/) | — |
-| [September 2025](../../2025/09/) | — |
-| [October 2025](../../2025/10/) | — |
-| [November 2025](../../2025/11/) | — |
-| [December 2025](../../2025/12/) | — |
-| [January 2026](../../2026/01/) | — |
-| [February 2026](../../2026/02/) | — |
-| [March 2026](../../2026/03/) | — |
+| [April 2025](../../2025/04/) | **2** |
+| [May 2025](../../2025/05/) | **2** |
+| [June 2025](../../2025/06/) | **4** |
+| [July 2025](../../2025/07/) | **700** |
+| [August 2025](../../2025/08/) | **3,788** |
+| [September 2025](../../2025/09/) | **7,307** |
+| [October 2025](../../2025/10/) | **8,841** |
+| [November 2025](../../2025/11/) | **12,581** |
+| [December 2025](../../2025/12/) | **11,773** |
+| [January 2026](../../2026/01/) | **8,932** |
+| [February 2026](../../2026/02/) | **18,207** |
+| [March 2026](../../2026/03/) | **4,042** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
