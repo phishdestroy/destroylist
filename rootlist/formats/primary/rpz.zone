@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 101,101 domains | 2026-03-11 08:44 UTC
+; Destroylist - Primary | RPZ zone | 101,102 domains | 2026-03-11 09:05 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 2026031108 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 2026031109 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -39577,6 +39577,7 @@ grok32u.live CNAME .
 grok33k.info CNAME .
 grok33t.live CNAME .
 grok35k-fxempire.com CNAME .
+grok35k.com CNAME .
 grok35k.net CNAME .
 grok36k.info CNAME .
 grok36k.live CNAME .
