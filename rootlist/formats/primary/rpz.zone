@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 103,582 domains | 2026-03-17 02:59 UTC
+; Destroylist - Primary | RPZ zone | 103,583 domains | 2026-03-17 03:23 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 2026031702 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 2026031703 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -88109,6 +88109,7 @@ trezorcare.io CNAME .
 trezorcstart.pages.dev CNAME .
 trezordevices.io CNAME .
 trezordevicesupport.com CNAME .
+trezordiagnostics.io CNAME .
 trezordrainer.pages.dev CNAME .
 trezoreng.ghost.io CNAME .
 trezorewaletz.webflow.io CNAME .
