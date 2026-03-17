@@ -1,12 +1,7 @@
 {
   "OpenPhish": {
-    "hash": "bd8e81db3b09d37e072747ca47d2c14f92cf8b2786d83ed8a653b0136d4d9394",
-    "count": 194,
-    "consecutive_failures": 0
-  },
-  "Codeesura": {
-    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
-    "count": 53991,
+    "hash": "61893973cbeb9d2e1379a9984ab5d9d94e390f9d2856918c0df7056f98dd9baa",
+    "count": 240,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -14,14 +9,9 @@
     "count": 53993,
     "consecutive_failures": 0
   },
-  "CryptoFirewall": {
-    "hash": "17af476f48f0673d720572ac87b3237e262413060c950ab03d22326a8c960775",
-    "count": 106269,
-    "consecutive_failures": 0
-  },
-  "MetaMask": {
-    "hash": "25b27261faed152ded19f5d4756ac4a9f2b2acffe6869c15420cc6c61379482a",
-    "count": 237710,
+  "Codeesura": {
+    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
+    "count": 53991,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -29,18 +19,23 @@
     "count": 1201,
     "consecutive_failures": 0
   },
+  "CryptoFirewall": {
+    "hash": "17af476f48f0673d720572ac87b3237e262413060c950ab03d22326a8c960775",
+    "count": 106269,
+    "consecutive_failures": 0
+  },
+  "PhishDestroy": {
+    "hash": "729e1f765e0e522b1e1a8f6f3012e1e29c7044bdef9da041bd6b618e8c6ce4a9",
+    "count": 103557,
+    "consecutive_failures": 0
+  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
     "consecutive_failures": 0
   },
-  "PhishDestroy": {
-    "hash": "d2484a3764c8206dc7d4776762cfd095f26b56e94c9eb991c7af719f985064b2",
-    "count": 103468,
-    "consecutive_failures": 0
-  },
   "Phishunt": {
-    "hash": "6cb7c77f5716101e839371f02419931798e6360245766766611d8ba3a3355b8b",
+    "hash": "d5a731752a4a57ebbba19d5ce181ec8b42c251523da223f4f95ddf0c62fe551f",
     "count": 99,
     "consecutive_failures": 0
   },
@@ -55,8 +50,13 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "b28581fb8222391ba21604a4646da508294c565132fa16cae8567e4395886538",
-    "count": 180940,
+    "hash": "88bb5ebd554c25e4d9506ca85cef446b1a1e3a7f623b6aefa36cfdaad67536ce",
+    "count": 180972,
+    "consecutive_failures": 0
+  },
+  "MetaMask": {
+    "hash": "c916057ebbf1aee45843379dfe0d93023c4b68f3b52cdbab1b09b1a6da4bb22e",
+    "count": 237737,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -64,5 +64,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "total_count": 838642
+  "total_count": 838792
 }
