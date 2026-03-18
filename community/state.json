@@ -1,7 +1,7 @@
 {
   "OpenPhish": {
-    "hash": "3c16ca442cb711d0f94407e18ace6a4dac0532a357c2904025340c644456533c",
-    "count": 208,
+    "hash": "0f2dcbd740e348cf7c9b30f7de14933ed9de4020d3977addc3e1450024b86505",
+    "count": 228,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -24,19 +24,19 @@
     "count": 106269,
     "consecutive_failures": 0
   },
-  "ScamSniffer": {
-    "hash": "a856224df0473d8340c8d75c4d7b90f9a6fa690aac0860360441fd0e48bca56c",
-    "count": 343844,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
     "consecutive_failures": 0
   },
   "PhishDestroy": {
-    "hash": "39fefd6d1829b78cbf45971e2e9d2356e2ef6e9c54db77678d0006fc07f072df",
-    "count": 103828,
+    "hash": "0a430cb0639fa97ba620ee0a6437e8fc697df9e8df938010de5f5eb522c5e697",
+    "count": 103834,
+    "consecutive_failures": 0
+  },
+  "Phishunt": {
+    "hash": "f784e23b98dcef64f552349a03a2f6398d13c0b469c893a0f3b94866722f5b0a",
+    "count": 99,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -44,14 +44,19 @@
     "count": 37080,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "9cfee38d1e3cff261ff97ceb1a841e1021786436e65c566ffa6e50430f7f96a1",
-    "count": 99,
+  "MetaMask": {
+    "hash": "71140111f4755f4dbc80fe554779a2c7bc26446bd94bd4fa69d32eb9346dbf37",
+    "count": 237996,
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "568ef4c736b18dd737e6ec862a1314290c8ea96f995fd4f34dbb514e8b4f2e89",
-    "count": 181491,
+    "hash": "f4ead0dbe6835a9d218ec116fd50e27ccf3a10cea65698de472aed2f9fe6375f",
+    "count": 181516,
+    "consecutive_failures": 0
+  },
+  "ScamSniffer": {
+    "hash": "a856224df0473d8340c8d75c4d7b90f9a6fa690aac0860360441fd0e48bca56c",
+    "count": 343844,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -59,10 +64,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "797010aeac5ff8d5e7868b74f87982a27fb48372882ed64f3cc9064bb0b6868d",
-    "count": 237987,
-    "consecutive_failures": 0
-  },
-  "total_count": 839347
+  "total_count": 839472
 }
