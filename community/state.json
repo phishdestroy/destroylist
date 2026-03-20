@@ -1,7 +1,7 @@
 {
   "OpenPhish": {
-    "hash": "73a420189c8ce64da75132666165c0afdce47f8f57b8204ef854e8153eb17c14",
-    "count": 223,
+    "hash": "c5300f7da909a9c474917acbd7d59c695a8ca1a7178334072159d3fcd18cc540",
+    "count": 248,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -20,8 +20,13 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "5dcd9a4748de14fbe7c907753109ac650cf06add74596b6249cc4b8a1842be2f",
-    "count": 239940,
+    "hash": "3f06753b314c16289f929d79b24ff676ef876def9f9bf716ee85259e04df4007",
+    "count": 239961,
+    "consecutive_failures": 0
+  },
+  "PhishDestroy": {
+    "hash": "5a8854cd4482ec2da913447181105c2c183ce020208ef66359c0f9e80a3b15db",
+    "count": 104959,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -34,13 +39,8 @@
     "count": 21852,
     "consecutive_failures": 0
   },
-  "PhishDestroy": {
-    "hash": "5a8854cd4482ec2da913447181105c2c183ce020208ef66359c0f9e80a3b15db",
-    "count": 104959,
-    "consecutive_failures": 0
-  },
   "Phishunt": {
-    "hash": "40bd4f9b2e100ea5f244c70f24f5b94cf7d5efecdf6876640521ccc40986df96",
+    "hash": "acf48e61d3f98f0fa932d7ba65a35bba2c0731a6b4296dbcf64855e47dead524",
     "count": 141,
     "consecutive_failures": 0
   },
@@ -55,8 +55,8 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "9f8c61b27962f1071ccfbf439a275ca1225a7ca28a01fc9cdb6d0dcc51c38cc7",
-    "count": 184021,
+    "hash": "992bd0896e5cccc73f2e5b501cc009226e68f6ef32e18fb2b29efe376b01234d",
+    "count": 184074,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -64,5 +64,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "total_count": 842472
+  "total_count": 842580
 }
