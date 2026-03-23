@@ -11,7 +11,8 @@ import requests
 from tqdm import tqdm
 
 from utils import (
-    PROJECT_ROOT, IPV4_RE, load_allowlist, save_json, make_badge, log,
+    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
+    load_allowlist_split, is_allowed, save_json, make_badge, log,
 )
 
 COMMUNITY_DIR = PROJECT_ROOT / "community"
@@ -64,7 +65,11 @@ def normalize_domain(d: str) -> str:
     d = d.strip().strip(".").lower()
     if IPV4_RE.fullmatch(d):
         return ""
-    return d if is_valid_domain(d) else ""
+    if not is_valid_domain(d):
+        return ""
+    if d in INFRA_ROOTS:
+        return ""
+    return d
 
 
 def add_norm(dst: set, candidate: str):
@@ -212,14 +217,13 @@ def fetch_source(name: str, cfg: dict) -> tuple:
 
 # ── Allowlist filter ─────────────────────────────────────────────────────────
 
-def filter_by_allowlist(domains: set, allowlist: set) -> tuple:
-    patterns = {d for d in allowlist if d.startswith(".")}
-    exact = allowlist - patterns
+def filter_by_allowlist(domains: set) -> tuple:
+    exact, patterns = load_allowlist_split()
+    if not exact and not patterns:
+        return domains, 0
     filtered, removed = set(), 0
     for domain in domains:
-        if domain in exact:
-            removed += 1
-        elif any(domain.endswith(p) or domain == p[1:] for p in patterns):
+        if is_allowed(domain, exact, patterns):
             removed += 1
         else:
             filtered.add(domain)
@@ -317,9 +321,8 @@ def main():
         return
 
     # Filter allowlist
-    allowlist = load_allowlist()
-    if allowlist:
-        all_domains, removed = filter_by_allowlist(all_domains, allowlist)
+    all_domains, removed = filter_by_allowlist(all_domains)
+    if removed:
         log(f"Allowlist: removed {removed:,} domains")
 
     new_state["total_count"] = len(all_domains)
