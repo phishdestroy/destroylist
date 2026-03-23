@@ -36,7 +36,7 @@ def load_domains(filepath: Path, allowlist: Set[str]) -> list:
         domains = data if isinstance(data, list) else data.get("domains", [])
         clean = set()
         for d in domains:
-            d = str(d).strip().lower().replace("https://", "").replace("http://", "")
+            d = str(d).strip().lower().removeprefix("https://").removeprefix("http://")
             d = extract_domain(d)
             if not d or "." not in d:
                 continue
