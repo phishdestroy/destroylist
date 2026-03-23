@@ -14,6 +14,7 @@ ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
 
 # ── Regex ────────────────────────────────────────────────────────────────────
 IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
+IPV6_RE = re.compile(r"^\[?[0-9a-fA-F:]{2,39}\]?$")
 
 # ── Infrastructure providers (hosting platforms where subdomains ≠ root) ─────
 PROVIDER_GROUPS: Dict[str, Set[str]] = {
@@ -23,12 +24,16 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
         "sslip.io", "duckdns.org", "replit.dev", "surge.sh", "typedream.app",
         "hostingersite.com", "firebaseapp.com", "web.app", "pages.dev",
         "workers.dev", "ghost.io", "amazonaws.com", "cloudfront.net",
+        "fly.dev", "fly.io", "railway.app", "herokuapp.com", "azurewebsites.net",
+        "ngrok.io", "ngrok-free.app", "glitch.me", "stackblitz.io",
+        "gitlab.io", "bitbucket.io", "gitpod.io",
     },
     "site_builders": {
         "weebly.com", "weeblysite.com", "wixsite.com", "wordpress.com",
         "blogspot.com", "blogspot.am", "square.site", "webflow.io",
         "godaddysites.com", "webcindario.com", "home.pl", "pineapple.page",
-        "gitbook.io",
+        "gitbook.io", "carrd.co", "framer.app", "framer.ai",
+        "softr.app", "bubble.io", "strikingly.com",
     },
     "decentralized_storage": {
         "ipfs.io", "cloudflare-ipfs.com", "dweb.link", "infura-ipfs.io",
@@ -60,10 +65,19 @@ def get_root(host: str) -> str:
     return rd.lower() if rd else ""
 
 
+def is_infra_root(domain: str) -> bool:
+    """Check if domain is a bare infrastructure/hosting root (e.g. pages.dev).
+
+    These must never appear in blocklists — only their subdomains are malicious.
+    """
+    return domain.lower() in INFRA_ROOTS
+
+
 def is_valid_entry(entry: str) -> bool:
     """Check if an entry is a plausible domain.
 
-    Rejects: empty, no dots, pure numbers, single-char/non-alpha TLD.
+    Rejects: empty, no dots, pure numbers, single-char/non-alpha TLD,
+    bare infrastructure roots (pages.dev, vercel.app, etc.).
     Accepts Punycode TLDs (xn--*).
     """
     if not entry:
@@ -73,6 +87,8 @@ def is_valid_entry(entry: str) -> bool:
         return False
     if not any(c.isalpha() for c in domain):
         return False
+    if is_infra_root(domain):
+        return False
     tld = domain.rsplit(".", 1)[-1]
     if tld.startswith("xn--"):
         return len(tld) >= 6
@@ -80,8 +96,9 @@ def is_valid_entry(entry: str) -> bool:
 
 
 def is_ip(entry: str) -> bool:
-    """Check if the domain part is an IPv4 address."""
-    return bool(IPV4_RE.fullmatch(extract_domain(entry)))
+    """Check if the domain part is an IPv4 or IPv6 address."""
+    domain = extract_domain(entry)
+    return bool(IPV4_RE.fullmatch(domain) or IPV6_RE.fullmatch(domain))
 
 
 # ── JSON I/O ─────────────────────────────────────────────────────────────────
