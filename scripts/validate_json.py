@@ -4,7 +4,7 @@ import json
 import sys
 from pathlib import Path
 
-from utils import PROJECT_ROOT, IPV4_RE, log
+from utils import PROJECT_ROOT, IPV4_RE, INFRA_ROOTS, log
 
 FILES_TO_CHECK = [
     PROJECT_ROOT / "list.json",
@@ -58,6 +58,11 @@ def validate_file(filepath: Path) -> bool:
     ips = [d for d in str_entries if IPV4_RE.fullmatch(d.split("/")[0])]
     if ips:
         log(f"{rel} — {len(ips)} IP address entries", "info")
+
+    if "allowlist" not in filepath.name:
+        bare_infra = [d for d in str_entries if d.strip().lower() in INFRA_ROOTS]
+        if bare_infra:
+            log(f"{rel} — {len(bare_infra)} bare infra roots (should not be blocked): {bare_infra[:5]}", "warn")
 
     log(f"{rel} — {len(data):,} entries", "ok")
     return True
