@@ -13996,7 +13996,7 @@
     },
     "site_builders": {
       "total_domains": 16,
-      "total_entries": 4062,
+      "total_entries": 4063,
       "items": [
         {
           "domain": "webflow.io",
@@ -18143,17 +18143,18 @@
           ]
         },
         {
+          "domain": "wixsite.com",
+          "count": 2,
+          "hosts": [
+            "ledgerlivedesktop.wixsite.com",
+            "live-ledgerapp.wixsite.com"
+          ]
+        },
+        {
           "domain": "home.pl",
           "count": 1,
           "hosts": [
             "cloudserver138970.home.pl"
-          ]
-        },
-        {
-          "domain": "wixsite.com",
-          "count": 1,
-          "hosts": [
-            "ledgerlivedesktop.wixsite.com"
           ]
         }
       ]
