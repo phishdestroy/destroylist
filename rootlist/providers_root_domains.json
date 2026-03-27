@@ -6,7 +6,7 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 28,
-      "total_entries": 15167,
+      "total_entries": 15168,
       "items": [
         {
           "domain": "pages.dev",
@@ -15288,20 +15288,21 @@
           ]
         },
         {
+          "domain": "windows.net",
+          "count": 3,
+          "hosts": [
+            "coine59.z13.web.core.windows.net",
+            "storeb0e9df2409c1.blob.core.windows.net",
+            "web3defi89.z13.web.core.windows.net"
+          ]
+        },
+        {
           "domain": "cloudfront.net",
           "count": 3,
           "hosts": [
             "d12tgvynb5e7un.cloudfront.net",
             "d32pfsnllezjue.cloudfront.net",
             "di6y7cb0tkbww.cloudfront.net"
-          ]
-        },
-        {
-          "domain": "windows.net",
-          "count": 2,
-          "hosts": [
-            "coine59.z13.web.core.windows.net",
-            "web3defi89.z13.web.core.windows.net"
           ]
         },
         {
