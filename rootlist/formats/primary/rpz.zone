@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 116,998 domains | 2026-03-28 23:50 UTC
+; Destroylist - Primary | RPZ zone | 117,102 domains | 2026-03-29 00:01 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 2026032823 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 2026032900 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -1075,6 +1075,7 @@ $TTL 300
 2kr.cc CNAME .
 2kra27.cc CNAME .
 2krab5cc.online CNAME .
+2krak.cc CNAME .
 2krakenrustore.com CNAME .
 2krkn-mp.org CNAME .
 2krkraken.com CNAME .
@@ -10480,6 +10481,7 @@ asymmetrypool.live CNAME .
 at-es-ch-uk-409889bc.azurewebsites.net CNAME .
 at-kra15.cc CNAME .
 at-kra17.cc CNAME .
+at-kra18.cc CNAME .
 at-kra19.cc CNAME .
 at-kra20.cc CNAME .
 at-kra21.cc CNAME .
@@ -27240,9 +27242,11 @@ cr7officialsol.live CNAME .
 cr7officialsol.xyz CNAME .
 cr7token-drop.xyz CNAME .
 cr7win.fun CNAME .
+cra22.cc CNAME .
 cra29.cc CNAME .
 cra30.cc CNAME .
 cra33.cc CNAME .
+cra34.cc CNAME .
 cra38.com CNAME .
 cra45.com CNAME .
 crab-3.cc CNAME .
@@ -48143,6 +48147,7 @@ https------slon2-at.ru CNAME .
 https---slon1-at.ru CNAME .
 https---slon2-at.ru CNAME .
 https--captcha-kra8--cc.proxy.hbcoal.com CNAME .
+https--kra34--at.sbs CNAME .
 https--kra42--at.ru CNAME .
 https--krab--3cc.ru CNAME .
 https--krab2.cc CNAME .
@@ -48169,10 +48174,13 @@ https-kra--32cc.ru CNAME .
 https-kra--33-cc.ru CNAME .
 https-kra--36cc.ru CNAME .
 https-kra-36--------cc.ru CNAME .
+https-kra31-at.top CNAME .
+https-kra31-cc.top CNAME .
 https-kra31.at CNAME .
 https-kra32-cc.com CNAME .
 https-kra33---cc.ru CNAME .
 https-kra33--at.ru CNAME .
+https-kra33-at.top CNAME .
 https-kra34--cc.ru CNAME .
 https-kra36----cc.ru CNAME .
 https-kra36--cc.ru CNAME .
@@ -53695,7 +53703,9 @@ kmspicodl.com CNAME .
 kmtaswit.space CNAME .
 kmupdate.live CNAME .
 kn2025.cc CNAME .
+kna23.cc CNAME .
 kna25.cc CNAME .
+kna28.cc CNAME .
 knab1at.ru CNAME .
 knab5cc.ru CNAME .
 kneitiq.xyz CNAME .
@@ -53965,12 +53975,14 @@ kpa28.cc CNAME .
 kpa29.cc CNAME .
 kpa30.cc CNAME .
 kpa31.cc CNAME .
+kpa32.cc CNAME .
 kpa33.cc CNAME .
 kpa34.cc CNAME .
 kpa36.cc CNAME .
 kpa37.cc CNAME .
 kpa38.cc CNAME .
 kpa39.cc CNAME .
+kpa41.cc CNAME .
 kpa42.cc CNAME .
 kpa45.cc CNAME .
 kpa47.cc CNAME .
@@ -54108,6 +54120,9 @@ kra----43---at.ru CNAME .
 kra----43--at.ru CNAME .
 kra----44-cc.ru CNAME .
 kra----46----at.ru CNAME .
+kra---32---cc.top CNAME .
+kra---32--cc.sbs CNAME .
+kra---32-cc.top CNAME .
 kra---32.cc CNAME .
 kra---34cc.com CNAME .
 kra---37.cc CNAME .
@@ -54134,19 +54149,31 @@ kra--26.cc CNAME .
 kra--26cc.com CNAME .
 kra--27-cc.com CNAME .
 kra--28-cc.com CNAME .
+kra--31--at.top CNAME .
 kra--31-at.top CNAME .
+kra--31-cc.top CNAME .
 kra--31at.com CNAME .
 kra--31cc.cc CNAME .
 kra--31cc.com CNAME .
+kra--31cc.top CNAME .
 kra--32--at.com CNAME .
+kra--32--at.top CNAME .
+kra--32-at.top CNAME .
 kra--32-cc.top CNAME .
 kra--32at.com CNAME .
 kra--32cc.com CNAME .
+kra--32cc.top CNAME .
+kra--33----cc.sbs CNAME .
 kra--33--at.com CNAME .
 kra--33.cc CNAME .
 kra--33at.com CNAME .
+kra--33at.top CNAME .
+kra--33cc.com CNAME .
 kra--33cc.top CNAME .
+kra--34--at.sbs CNAME .
+kra--34--cc.top CNAME .
 kra--34.cc CNAME .
+kra--34at.com CNAME .
 kra--34cc.com CNAME .
 kra--35.cc CNAME .
 kra--36---------cc.ru CNAME .
@@ -54234,6 +54261,8 @@ kra-30l.cc CNAME .
 kra-30x.cc CNAME .
 kra-31-at.cc CNAME .
 kra-31-at.com CNAME .
+kra-31-cc-at.top CNAME .
+kra-31-cc.cc CNAME .
 kra-31-cc.com CNAME .
 kra-31-cc.net CNAME .
 kra-31.cc CNAME .
@@ -54245,6 +54274,7 @@ kra-31at.com CNAME .
 kra-31c.cc CNAME .
 kra-31cc.com CNAME .
 kra-31cc.net CNAME .
+kra-32---cc.sbs CNAME .
 kra-32-at.cc CNAME .
 kra-32-cc.cc CNAME .
 kra-32.cc CNAME .
@@ -54255,6 +54285,7 @@ kra-32cc.cc CNAME .
 kra-32cc.com CNAME .
 kra-33-at.cc CNAME .
 kra-33-cc.cc CNAME .
+kra-33-cc.sbs CNAME .
 kra-33.com CNAME .
 kra-33.net CNAME .
 kra-33cc.net CNAME .
@@ -54264,6 +54295,7 @@ kra-34-cc.com CNAME .
 kra-34at.com CNAME .
 kra-34cc.com CNAME .
 kra-34cc.net CNAME .
+kra-34cc.top CNAME .
 kra-35-at.cc CNAME .
 kra-35-at.com CNAME .
 kra-35.cc CNAME .
@@ -54433,9 +54465,12 @@ kra02-store.top CNAME .
 kra021.cc CNAME .
 kra024.com CNAME .
 kra028.com CNAME .
+kra029at.com CNAME .
 kra039.at CNAME .
 kra045cc.ru CNAME .
 kra05.com CNAME .
+kra08.com CNAME .
+kra09-official.top CNAME .
 kra1-at.shop CNAME .
 kra1.biz CNAME .
 kra1.krakenonion.top CNAME .
@@ -54445,11 +54480,14 @@ kra10-cc.com CNAME .
 kra10.at-t.top CNAME .
 kra10.com CNAME .
 kra10.net CNAME .
+kra10.top CNAME .
 kra10.vip CNAME .
 kra100.com CNAME .
 kra100.top CNAME .
+kra102.cc CNAME .
 kra104.cc CNAME .
 kra106.cc CNAME .
+kra10at.net CNAME .
 kra10c.cc CNAME .
 kra10cc-gl.com CNAME .
 kra10gl.net CNAME .
@@ -54470,6 +54508,7 @@ kra11gll.com CNAME .
 kra11market.top CNAME .
 kra12--cc.com CNAME .
 kra12-at.cc CNAME .
+kra12-at.com CNAME .
 kra12-cc.com CNAME .
 kra12.ink CNAME .
 kra12.vip CNAME .
@@ -54512,6 +54551,7 @@ kra14at.net CNAME .
 kra14cc.com CNAME .
 kra14cc.net CNAME .
 kra14gl.com CNAME .
+kra14gll.com CNAME .
 kra15--cc.com CNAME .
 kra15-at.cc CNAME .
 kra15-at.com CNAME .
@@ -54594,6 +54634,7 @@ kra20al.com CNAME .
 kra20at-cc.com CNAME .
 kra20at-cc.ru CNAME .
 kra20at.cc CNAME .
+kra20at.org CNAME .
 kra20att.cc CNAME .
 kra20c.cc CNAME .
 kra20cc-at.com CNAME .
@@ -54611,6 +54652,7 @@ kra21.org CNAME .
 kra21.top CNAME .
 kra21a.cc CNAME .
 kra21at.cc CNAME .
+kra21at.com CNAME .
 kra21att.cc CNAME .
 kra21c.cc CNAME .
 kra21cc.top CNAME .
@@ -54648,6 +54690,7 @@ kra24-zerkalo.top CNAME .
 kra24-zerkalo.vip CNAME .
 kra24.at CNAME .
 kra24.cc CNAME .
+kra24.cfd CNAME .
 kra247.cc CNAME .
 kra24at.cc CNAME .
 kra24at.com CNAME .
@@ -54672,6 +54715,7 @@ kra26-at-cc.com CNAME .
 kra26-at.cc CNAME .
 kra26-at.com CNAME .
 kra26-at.net CNAME .
+kra26-cc-at.com CNAME .
 kra26-cc.com CNAME .
 kra26-cc.net CNAME .
 kra26-ccc.com CNAME .
@@ -54685,6 +54729,7 @@ kra26at.cc CNAME .
 kra26at.com CNAME .
 kra26att.cc CNAME .
 kra26c.cc CNAME .
+kra26cc.net CNAME .
 kra26n.cc CNAME .
 kra26s.cc CNAME .
 kra27-28.cc CNAME .
@@ -54702,6 +54747,7 @@ kra27att.cc CNAME .
 kra27c.cc CNAME .
 kra27cc-at.com CNAME .
 kra27cc.net CNAME .
+kra27s.cc CNAME .
 kra28-at.at CNAME .
 kra28-at.cc CNAME .
 kra28-at.com CNAME .
@@ -54760,10 +54806,12 @@ kra30-at.com CNAME .
 kra30-att.cc CNAME .
 kra30-cc.com CNAME .
 kra30-cc.net CNAME .
+kra30.at-login-ref.shop CNAME .
 kra30.cz CNAME .
 kra30.net CNAME .
 kra301.cc CNAME .
 kra30a.top CNAME .
+kra30at-cc.top CNAME .
 kra30at.com CNAME .
 kra30at.net CNAME .
 kra30atcc.com CNAME .
@@ -54816,6 +54864,7 @@ kra32-web.top CNAME .
 kra32.com.ru CNAME .
 kra322cc.com CNAME .
 kra32a.cc CNAME .
+kra32at--kra32cc.top CNAME .
 kra32at-cc.com CNAME .
 kra32at-cc.net CNAME .
 kra32at.cc CNAME .
@@ -54835,9 +54884,12 @@ kra32f.cc CNAME .
 kra32g.cc CNAME .
 kra32l.cc CNAME .
 kra32s.cc CNAME .
+kra33----at.sbs CNAME .
 kra33---at.cc CNAME .
 kra33--at.at CNAME .
 kra33--at.com CNAME .
+kra33--at.top CNAME .
+kra33--cc.top CNAME .
 kra33-at-cc.com CNAME .
 kra33-at.cc CNAME .
 kra33-at.com CNAME .
@@ -54882,12 +54934,16 @@ kra34aaa.com CNAME .
 kra34at.cc CNAME .
 kra34at.net CNAME .
 kra34at.top CNAME .
+kra34at.vip CNAME .
 kra34att.cc CNAME .
 kra34c.cc CNAME .
 kra34c.com CNAME .
+kra34cc--kra34at.top CNAME .
 kra34cc.cc CNAME .
 kra34cc.com CNAME .
 kra34cc.net CNAME .
+kra34cc.top CNAME .
+kra34cc.vip CNAME .
 kra34ccc.com CNAME .
 kra34l.cc CNAME .
 kra34s.cc CNAME .
@@ -54924,6 +54980,7 @@ kra37at.cc CNAME .
 kra37at.com CNAME .
 kra37at.net CNAME .
 kra37att.at CNAME .
+kra37c.cc CNAME .
 kra37cc--vhod.ru CNAME .
 kra37cc-kra38cc.ru CNAME .
 kra37cc.com CNAME .
@@ -54936,6 +54993,7 @@ kra38.cfd CNAME .
 kra38.com CNAME .
 kra38.net CNAME .
 kra38at.com CNAME .
+kra38at.top CNAME .
 kra38c.cc CNAME .
 kra38cc.com CNAME .
 kra38r.ru CNAME .
@@ -55631,6 +55689,8 @@ kra4at.com CNAME .
 kra4cc.com CNAME .
 kra4cc.net CNAME .
 kra4l.cc CNAME .
+kra4web.top CNAME .
+kra5.vip CNAME .
 kra50.icu CNAME .
 kra50.shop CNAME .
 kra50at.com CNAME .
@@ -55681,6 +55741,7 @@ kra6.net CNAME .
 kra61.com CNAME .
 kra67.at CNAME .
 kra67.com CNAME .
+kra6at.net CNAME .
 kra6cc.xyz CNAME .
 kra6gll.com CNAME .
 kra7-at.net CNAME .
@@ -56340,6 +56401,7 @@ krac2.com CNAME .
 krac22.cc CNAME .
 krac31.cc CNAME .
 kracc1.com CNAME .
+kracc20.com CNAME .
 kraccount.krakenus.cz CNAME .
 kracen-support.framer.ai CNAME .
 kracenloegin.webflow.io CNAME .
@@ -56418,6 +56480,7 @@ krak19.com CNAME .
 krak19.net CNAME .
 krak19cc.com CNAME .
 krak2.net CNAME .
+krak20.com CNAME .
 krak21cc.com CNAME .
 krak25.com CNAME .
 krak25at.com CNAME .
@@ -56427,6 +56490,7 @@ krak27at.com CNAME .
 krak27cc.com CNAME .
 krak28-cc.com CNAME .
 krak28at.com CNAME .
+krak29at.com CNAME .
 krak29cc.com CNAME .
 krak29web.cc CNAME .
 krak3-at.com CNAME .
@@ -56435,6 +56499,7 @@ krak30at.com CNAME .
 krak31cc.cc CNAME .
 krak32.cc CNAME .
 krak33.cc CNAME .
+krak33.top CNAME .
 krak37.info CNAME .
 krak39.cfd CNAME .
 krak39.net CNAME .
@@ -56449,6 +56514,7 @@ krak46.net CNAME .
 krak47.pw CNAME .
 krak49.info CNAME .
 krak4at.com CNAME .
+krak5-at.com CNAME .
 krak5.net CNAME .
 krak5.sbs CNAME .
 krak51.cc CNAME .
@@ -56513,6 +56579,7 @@ kraken-18at.net CNAME .
 kraken-19.net CNAME .
 kraken-1kd.pages.dev CNAME .
 kraken-2.com CNAME .
+kraken-20-at.com CNAME .
 kraken-24--at.com CNAME .
 kraken-24.cc CNAME .
 kraken-24.com CNAME .
@@ -56580,6 +56647,7 @@ kraken-fees-calculator.github.io CNAME .
 kraken-formular.xyz CNAME .
 kraken-forum.cc CNAME .
 kraken-foundation-cc.pages.dev CNAME .
+kraken-foundation.cc CNAME .
 kraken-front-epc.pages.dev CNAME .
 kraken-front-react.pages.dev CNAME .
 kraken-fun.com CNAME .
@@ -56648,6 +56716,7 @@ kraken-loginn.webflow.io CNAME .
 kraken-loginnus.webflow.io CNAME .
 kraken-loginus.gitbook.io CNAME .
 kraken-market-24.top CNAME .
+kraken-market-link.com CNAME .
 kraken-market-onion.com CNAME .
 kraken-market-tor.com CNAME .
 kraken-market.cc CNAME .
@@ -56666,10 +56735,12 @@ kraken-official.cc CNAME .
 kraken-official.top CNAME .
 kraken-officials.top CNAME .
 kraken-one.com CNAME .
+kraken-onion-darknet.com CNAME .
 kraken-onion-site-com.pages.dev CNAME .
 kraken-onion.cc CNAME .
 kraken-onion.org CNAME .
 kraken-onion2.com CNAME .
+kraken-online.cc CNAME .
 kraken-os.com CNAME .
 kraken-plugins.com CNAME .
 kraken-pro-signals.netlify.app CNAME .
@@ -56696,6 +56767,7 @@ kraken-shop24.com CNAME .
 kraken-signup.pages.dev CNAME .
 kraken-site-dark-net.pages.dev CNAME .
 kraken-site-dark.net CNAME .
+kraken-site-onion.com CNAME .
 kraken-site.net CNAME .
 kraken-site1.store CNAME .
 kraken-sitedark-net.pages.dev CNAME .
@@ -56719,6 +56791,7 @@ kraken-telegram.cc CNAME .
 kraken-telegram.com CNAME .
 kraken-telegrama.com CNAME .
 kraken-topshop.com CNAME .
+kraken-tor-onion.cc CNAME .
 kraken-tor-online.cc CNAME .
 kraken-tor36.online CNAME .
 kraken-torion.net CNAME .
@@ -56891,7 +56964,9 @@ kraken28.cc CNAME .
 kraken28at.com CNAME .
 kraken29-at.net CNAME .
 kraken29.cat CNAME .
+kraken29.cc CNAME .
 kraken29at.com CNAME .
+kraken2at.com CNAME .
 kraken2krab1.com CNAME .
 kraken2krnqodidvlh4aa337cpzfrhdlfldhve5nf7njhumwr7instad.com CNAME .
 kraken2onion.com CNAME .
@@ -56914,6 +56989,7 @@ kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7.com CNAME .
 kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf77instad.com CNAME .
 kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7instad.com CNAME .
 kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7n.com CNAME .
+kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7n7instad.com CNAME .
 kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7nj7instad.com CNAME .
 kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7njh.com CNAME .
 kraken2trfqodidvlh4aa337cpzfrhdlfldhve5nf7njh7instad.com CNAME .
@@ -56952,6 +57028,7 @@ kraken30-at.com CNAME .
 kraken31-at-kra.com CNAME .
 kraken31-at.com CNAME .
 kraken31cc.com CNAME .
+kraken32-at.com CNAME .
 kraken33-at.com CNAME .
 kraken35at.com CNAME .
 kraken36-at.com CNAME .
@@ -56984,6 +57061,7 @@ kraken4att.com CNAME .
 kraken4link.com CNAME .
 kraken4qzqnoi7ogpzpzwrxk7mw53n5i56loydwiyonu4owxsh4g67yd--onion.com CNAME .
 kraken4qzqnoi7ogpzpzwrxk7mw53n5i56loydwiyonu4owxsh4g67yd-onion.shop CNAME .
+kraken4qzqnoi7ogpzpzwrxk7mw53n5i56loydwiyonu4owxsh4g67yd.com CNAME .
 kraken4qzqnoi7ogpzpzwrxk7mw53n5i56loydwiyonu4owxsh4g67ydonion.org CNAME .
 kraken4you.com CNAME .
 kraken5-at.net CNAME .
@@ -57000,6 +57078,7 @@ kraken56.net CNAME .
 kraken58.com CNAME .
 kraken59.cc CNAME .
 kraken59.net CNAME .
+kraken5af44k24fwzohe6fvqfgxfsee4lgydb3ayzkfhlzqhuwlo33ad--onion.com CNAME .
 kraken5af44k24fwzohe6fvqfgxfsee4lgydb3ayzkfhlzqhuwlo33ad-onion.ru CNAME .
 kraken5af44k24fwzohe6fvqfgxfsee4lgydb3ayzkfhlzqhuwlo33ad-onion.shop CNAME .
 kraken5af44k24fwzohe6fvqfgxfsee4lgydb3ayzkfhlzqhuwlo33ad.com CNAME .
@@ -57020,6 +57099,7 @@ kraken664.net CNAME .
 kraken6at.net CNAME .
 kraken6at.shop CNAME .
 kraken6at.su CNAME .
+kraken6gf6o4rxewycqwjgfchzgxyfeoj5xafqbfm4vgvyaig2vmxvyd-onion.com CNAME .
 kraken6gf6o4rxewycqwjgfchzgxyfeoj5xafqbfm4vgvyaig2vmxvyd-onion.info.updowntoday.com CNAME .
 kraken6gf6o4rxewycqwjgfchzgxyfeoj5xafqbfm4vgvyaig2vmxvyd.com CNAME .
 kraken6gf6o4rxewycqwjgfchzgxyfeoj5xafqbfm4vgvyaig2vmxvyd.shop CNAME .
@@ -57028,6 +57108,7 @@ kraken6t.com CNAME .
 kraken7.cc CNAME .
 kraken7.net CNAME .
 kraken7.us CNAME .
+kraken7.vip CNAME .
 kraken732.net CNAME .
 kraken76.at CNAME .
 kraken777.net CNAME .
@@ -57036,6 +57117,8 @@ kraken7jmgt7yhhe2c4iyilthnhcugfylcztsdhh7otrr6jgdw667pqd-onion.com CNAME .
 kraken7jmgt7yhhe2c4iyilthnhcugfylcztsdhh7otrr6jgdw667pqd-onion.net CNAME .
 kraken7jmgt7yhhe2c4iyilthnhcugfylcztsdhh7otrr6jgdw667pqd.com CNAME .
 kraken7jmgt7yhhe2c4iyilthnhcugfylcztsdhh7otrr6jgdw667pqdonion.net CNAME .
+kraken7jmgt7yhhe2c4iyilthnhcugfylcztsdhh7otrr6jgdw667pqdonion.org CNAME .
+kraken7jmgt7yhhe2c4iyilthnhcugfylcztsdhh7otrr6jgdw667qd.com CNAME .
 kraken8-at.net CNAME .
 kraken8.cc CNAME .
 kraken8.net CNAME .
@@ -57044,6 +57127,7 @@ kraken8dm.com CNAME .
 kraken8site.com CNAME .
 kraken9-gl.com CNAME .
 kraken9.cc CNAME .
+kraken9.vip CNAME .
 kraken96.at CNAME .
 kraken9k.com CNAME .
 kraken9login.wordpress.com CNAME .
@@ -57105,6 +57189,7 @@ krakendarknet2.com CNAME .
 krakendarknetbot.com CNAME .
 krakendarknetlink.com CNAME .
 krakendarknetofficial.com CNAME .
+krakendarknetonion.shop CNAME .
 krakendarknets.net CNAME .
 krakendarkoffical.org CNAME .
 krakendarkstore.com CNAME .
@@ -57255,6 +57340,8 @@ krakenoff-cc.pages.dev CNAME .
 krakenoff.cc CNAME .
 krakenoi.com CNAME .
 krakenomni.com CNAME .
+krakenonion.com CNAME .
+krakenonion.sbs CNAME .
 krakenonionbot.com CNAME .
 krakenoniondark.com CNAME .
 krakenonionoff.com CNAME .
@@ -57304,6 +57391,7 @@ krakenshop.cc CNAME .
 krakensinghi.godaddysites.com CNAME .
 krakensite-market.cc CNAME .
 krakensite-shop.cc CNAME .
+krakensitedark.com CNAME .
 krakenslotsk.com CNAME .
 krakensong-com.pages.dev CNAME .
 krakensongs.cc CNAME .
@@ -57441,6 +57529,7 @@ kramarket.cc CNAME .
 kramirror.cc CNAME .
 kramoney-cc.pages.dev CNAME .
 kramoney.cc CNAME .
+kramp.top CNAME .
 kran11.at CNAME .
 kran13at.com CNAME .
 kranataloooggin.godaddysites.com CNAME .
@@ -57466,6 +57555,7 @@ kraroulette.cc CNAME .
 kras4.cc CNAME .
 kras46-cc.ru CNAME .
 krashop.cc CNAME .
+krashop.net CNAME .
 krasite.cc CNAME .
 krat32.cc CNAME .
 kratg.cc CNAME .
@@ -57496,6 +57586,7 @@ krd30.at CNAME .
 krd30.cc CNAME .
 krdarknet.com CNAME .
 kre30.cc CNAME .
+kre36.cc CNAME .
 kre47.cc CNAME .
 kreab11.at CNAME .
 kreab5.at CNAME .
@@ -57588,6 +57679,7 @@ krkm.online CNAME .
 krkm.to CNAME .
 krkmp.cc CNAME .
 krkmto.at CNAME .
+krkn-21.cc CNAME .
 krkn-markets.com CNAME .
 krkn-national.com CNAME .
 krkn-portal-help-web.pages.dev CNAME .
@@ -57613,6 +57705,7 @@ krkr30.com CNAME .
 krkr31.com CNAME .
 krkr43.com CNAME .
 krkr45.com CNAME .
+krkr8.cc CNAME .
 krkrdynj.godaddysites.com CNAME .
 krkrnin-lgn.webflow.io CNAME .
 krla30.cc CNAME .
@@ -57634,6 +57727,7 @@ krn16cc.com CNAME .
 krn19cc.com CNAME .
 krn20cc.com CNAME .
 krn21cc.com CNAME .
+krn22cc.com CNAME .
 krn27cc.com CNAME .
 krn28at.com CNAME .
 krn28cc.com CNAME .
@@ -57651,6 +57745,7 @@ krnb8.xyz CNAME .
 krnikinlogin.webflow.io CNAME .
 krnk.today CNAME .
 krnkn4.online CNAME .
+krnmarket.cc CNAME .
 krnmp-to.pages.dev CNAME .
 krnweb.shop CNAME .
 kro31.cc CNAME .
@@ -87085,6 +87180,7 @@ sellerproduklokal.com CNAME .
 sellersgift.com CNAME .
 sellusdt.ae CNAME .
 selmec.cl CNAME .
+selogistic.net CNAME .
 selrix-biz-silvax-15126.pages.dev CNAME .
 selsipad.com CNAME .
 selurin.com CNAME .
@@ -106605,11 +106701,13 @@ vixo.guru CNAME .
 vixwex.com CNAME .
 vizamekroad.pro CNAME .
 vjjnvhk.life CNAME .
+vk-at-kraken.cc CNAME .
 vk-auth-id.com CNAME .
 vk12at.com CNAME .
 vk234ooc3f72jeo0qmymld0f.pages.dev CNAME .
 vk37.at CNAME .
 vk5.at CNAME .
+vk8.ai CNAME .
 vkfcz.my CNAME .
 vkftnhaberler.com CNAME .
 vkltpojgv.localto.net CNAME .
@@ -111629,6 +111727,8 @@ www--kra--37-cc.ru CNAME .
 www--kra-33cc.ru CNAME .
 www--kra-46-cc.ru CNAME .
 www--kra-47-cc.ru.www-kra44-cc.ru CNAME .
+www--kra33.cc CNAME .
+www--kra34.cc CNAME .
 www--kra42--at.ru CNAME .
 www--kra46cc.ru CNAME .
 www--krab4--at.ru CNAME .
@@ -111730,9 +111830,11 @@ www-kra19.cc CNAME .
 www-kra21.cc CNAME .
 www-kra32at.com CNAME .
 www-kra32cc.com CNAME .
+www-kra33-at.com CNAME .
 www-kra33-cc.com CNAME .
 www-kra33cc.com CNAME .
 www-kra34--at.com CNAME .
+www-kra34at.cc CNAME .
 www-kra4.at CNAME .
 www-kra42at.ru CNAME .
 www-kra46cc.ru CNAME .
@@ -114562,6 +114664,7 @@ xn--kr31-1na.com CNAME .
 xn--kr32-1na.cc CNAME .
 xn--kr32-1na.com CNAME .
 xn--kr33-1na.cc CNAME .
+xn--kr37-1na.cc CNAME .
 xn--kr37-rzb.com CNAME .
 xn--kr41-1na.cc CNAME .
 xn--kr41-onb.com CNAME .
@@ -114909,6 +115012,7 @@ xn--pump-ve-vfba.fun CNAME .
 xn--pump-vra.fun CNAME .
 xn--quiksw-8nf2ke.xn--hng-6cdxe3f5a.xn--a-5tba957z.xn--sw-8kc8dw20r.xn--trde-63d9714b.xn--nnteddshbrd-3ije4duhm1be7617kja.xn--unchind-5fg1c2532c.oushedwallet.eu.com CNAME .
 xn--r-7sbo6bq.xn--flrvult-5fg5bc1hwa8d4mc4535ihag.vault-s1.eu.com CNAME .
+xn--ra2-6ua.cc CNAME .
 xn--ra7-62y.cc CNAME .
 xn--rab2-f0a.cc CNAME .
 xn--rab3-fb5a.cc CNAME .
