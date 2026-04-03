@@ -1,7 +1,7 @@
 {
   "OpenPhish": {
-    "hash": "a087816ff49aadb5f558c6b34a325a523b196c198f50e708df0b3946962b98d2",
-    "count": 230,
+    "hash": "13e25e4ecd687eb93342157ed34042c433567982d12817e40f75897a4fcfcb19",
+    "count": 235,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -19,19 +19,24 @@
     "count": 1224,
     "consecutive_failures": 0
   },
+  "MetaMask": {
+    "hash": "e726be406da10dbc4cad5fb603a964c6f8fcc235a0ca19b9c65951004a55d0b3",
+    "count": 244544,
+    "consecutive_failures": 0
+  },
   "CryptoFirewall": {
     "hash": "17af476f48f0673d720572ac87b3237e262413060c950ab03d22326a8c960775",
     "count": 106238,
     "consecutive_failures": 0
   },
-  "PhishDestroy": {
-    "hash": "2e0c61ed0abdfbd9cd9accef5c54f7f6b216e9d2d06bdb28f60e6085d89cc8c1",
-    "count": 120099,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
+    "consecutive_failures": 0
+  },
+  "PhishDestroy": {
+    "hash": "cbbba75f7c3b173872bbe398bdc4091ddf8329dee77459cd92440aecb0537252",
+    "count": 120179,
     "consecutive_failures": 0
   },
   "Phishunt": {
@@ -44,19 +49,14 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "0159a1dcb8283ba68a18977080d98973b03619f6d0217be6022435928c529d8e",
-    "count": 244604,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "7a0b11316e98fb8c0618a4436f08b319bb9266fed628cd1522d347fef4c4ad73",
-    "count": 194429,
-    "consecutive_failures": 0
-  },
   "ScamSniffer": {
     "hash": "e60136a41bc36e92c8be9bb2f7fb23d7e42931b3f4108204615af05f5cc585cd",
     "count": 344597,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "a777812b2782652e6a60fada1c59519fa09c8209b51c9cf83e4b87ede67476d2",
+    "count": 194464,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -64,5 +64,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "total_count": 863354
+  "total_count": 863511
 }
