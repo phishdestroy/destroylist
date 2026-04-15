@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 128,433 domains | 2026-04-15 04:57 UTC
+; Destroylist - Primary | RPZ zone | 128,469 domains | 2026-04-15 05:05 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 2026041504 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 2026041505 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -4928,6 +4928,7 @@ airdropambient.live CNAME .
 airdropanimix.live CNAME .
 airdropavalon.live CNAME .
 airdropavalonlabs.live CNAME .
+airdropaztec.live CNAME .
 airdropbeacon.com CNAME .
 airdropbeamablenetwork.live CNAME .
 airdropbeep.com CNAME .
@@ -4957,6 +4958,7 @@ airdropclaim.jointherealworldtrade.com CNAME .
 airdropclaim.live CNAME .
 airdropclaiming.pages.dev CNAME .
 airdropconfidentiallayer.live CNAME .
+airdropconnext.live CNAME .
 airdropcoti.live CNAME .
 airdropcredible.live CNAME .
 airdropcrypto.net CNAME .
@@ -5030,8 +5032,10 @@ airdropmangonetwork.live CNAME .
 airdropmatchain.xyz CNAME .
 airdropmeganet.live CNAME .
 airdropmemecoin.live CNAME .
+airdropmeteora.live CNAME .
 airdropmezo.live CNAME .
 airdropmidas.live CNAME .
+airdropmilkyway.live CNAME .
 airdropmitosis.com CNAME .
 airdropmitosis.run CNAME .
 airdropmitosis.xyz CNAME .
@@ -5051,6 +5055,7 @@ airdropofc.vercel.app CNAME .
 airdropolab.live CNAME .
 airdroponefootballclub.live CNAME .
 airdroppaintswap.io CNAME .
+airdropparadex.live CNAME .
 airdropparrot.com CNAME .
 airdropparticle.network CNAME .
 airdropped-hyperliquid.xyz CNAME .
@@ -8436,6 +8441,7 @@ app-hypxrliquid.xyz CNAME .
 app-hyrerliiquid.eu.com CNAME .
 app-iex.xyz CNAME .
 app-ikq-whatshktw.com CNAME .
+app-imtoken.net CNAME .
 app-imu-whatshktw.com CNAME .
 app-infinifi.xyz CNAME .
 app-intents.xyz CNAME .
@@ -8573,6 +8579,7 @@ app-metamrks.pages.dev CNAME .
 app-meteora-ag.run CNAME .
 app-meteora-v2.com CNAME .
 app-meteora.co CNAME .
+app-meteora.world CNAME .
 app-meteora.xyz CNAME .
 app-meteoraag.xyz CNAME .
 app-meteorag.com CNAME .
@@ -8825,6 +8832,7 @@ app-thorswap.finance CNAME .
 app-thorupdate.live CNAME .
 app-tkasiashop.shop CNAME .
 app-token.click CNAME .
+app-tokenpocket.com CNAME .
 app-tornado.com CNAME .
 app-tornadocash.com CNAME .
 app-tpwallet.com CNAME .
@@ -31586,6 +31594,7 @@ dapp-hyperliquid.xyz CNAME .
 dapp-hyperswap.network CNAME .
 dapp-i.pages.dev CNAME .
 dapp-im-token.com CNAME .
+dapp-imtoken.net CNAME .
 dapp-integrated-trading.com CNAME .
 dapp-j.pages.dev CNAME .
 dapp-jupuary.xyz CNAME .
@@ -32493,6 +32502,7 @@ dcentwalletpc.com CNAME .
 dcentwallets.app CNAME .
 dcentwalletsdesktop.com CNAME .
 dcentwalletweb.com CNAME .
+dcentweb3ledger.com CNAME .
 dcfedcbupdate.zyxwvutsnmlkjihgfedsummer-conference-2026.mario-s-event-organization.fullsailevents.com CNAME .
 dcit323coinbase.netlify.app CNAME .
 dclnyjli.click CNAME .
@@ -32865,6 +32875,7 @@ defi-swap.net CNAME .
 defi-swap.org CNAME .
 defi-swap.xyz CNAME .
 defi-syntax.in CNAME .
+defi-tokenpocket.com CNAME .
 defi-ton.com CNAME .
 defi-update.com CNAME .
 defi-uphold-ai.com CNAME .
@@ -41325,6 +41336,7 @@ exoduspayweb3.com CNAME .
 exodusproof.net CNAME .
 exodusprop.com CNAME .
 exodusprotector.pages.dev CNAME .
+exodusrecoverytool.com CNAME .
 exodusrpc.pages.dev CNAME .
 exodusru.com CNAME .
 exoduss-lgn-web3-en-doc.pages.dev CNAME .
@@ -45510,6 +45522,7 @@ ftrustinvest.online CNAME .
 ftsplatform.net CNAME .
 ftx-ai-agent.entry-cryptolist.app CNAME .
 ftx-portal-notice.com CNAME .
+ftx-portals.com CNAME .
 ftx.case-debtors.com CNAME .
 ftx7.coinbaseiotc.com CNAME .
 ftxlimited-krollra.net CNAME .
@@ -54152,7 +54165,9 @@ iloveyourglasses.com CNAME .
 ilr-na.global.ssl.fastly.net CNAME .
 ilv--sushi.xyz CNAME .
 ilv-sushi.pro CNAME .
+im-token-official.net CNAME .
 im-token-zh.com CNAME .
+im-tokenapp.net CNAME .
 im-tokenex.cc CNAME .
 im-whatsappweb.com.cn CNAME .
 imaayushkumar.github.io CNAME .
@@ -54295,9 +54310,11 @@ imtohen.im CNAME .
 imtokan.co CNAME .
 imtoken-blockchain.com CNAME .
 imtoken-crypto.com CNAME .
+imtoken-defi.net CNAME .
 imtoken-digitals.com CNAME .
 imtoken-finance.com CNAME .
 imtoken-gf.org.cn CNAME .
+imtoken-officialwebsite.com CNAME .
 imtoken-pc.com.cn CNAME .
 imtoken-phone.com CNAME .
 imtoken-plw.com.cn CNAME .
@@ -54329,12 +54346,16 @@ imtokenav.com CNAME .
 imtokenay.com CNAME .
 imtokenbg.com CNAME .
 imtokencbn.com CNAME .
+imtokendefi-apps.net CNAME .
 imtokendex.net CNAME .
 imtokendrainer.pages.dev CNAME .
 imtokenflp.com CNAME .
 imtokengw.org.cn CNAME .
 imtokeniks.com CNAME .
 imtokennex.com CNAME .
+imtokenofficial-cn.com CNAME .
+imtokenofficial-zh.com CNAME .
+imtokenofficial.net CNAME .
 imtokenpay.top CNAME .
 imtokenpro.top CNAME .
 imtokens-dapp.com CNAME .
@@ -76709,6 +76730,7 @@ multichainapp.pro CNAME .
 multichainappsconnect.live CNAME .
 multichainbyzenoclaus.vercel.app CNAME .
 multichainconnect.live CNAME .
+multichainconnect.site CNAME .
 multichainconnects.com CNAME .
 multichaindapps.pages.dev CNAME .
 multichaindefiappssolve.pages.dev CNAME .
@@ -77325,6 +77347,7 @@ myprzone444.xyz CNAME .
 myprzone555.xyz CNAME .
 mypuolas.live CNAME .
 myqfs.quantumflowsystems.com CNAME .
+myrecoveryledger.com CNAME .
 myrectify.com CNAME .
 myreferralclaim.link CNAME .
 myrewardsol.live CNAME .
@@ -88858,6 +88881,7 @@ qfs1776spacex.com CNAME .
 qfsallbackup.com CNAME .
 qfsasset-backup.com CNAME .
 qfsassetbackups.com CNAME .
+qfsassetsecureledger.com CNAME .
 qfsassetsphrasebackup.com CNAME .
 qfsbackup.online CNAME .
 qfsbackup.pro CNAME .
@@ -91608,6 +91632,7 @@ resolvedappclearification.pages.dev CNAME .
 resolvedapps.com CNAME .
 resolvedapps.diy CNAME .
 resolvedappwallet.pages.dev CNAME .
+resolvedefiserver.org CNAME .
 resolvedesk.site CNAME .
 resolvedexnode.online CNAME .
 resolvedocureview.us CNAME .
@@ -100560,6 +100585,7 @@ spinly.win CNAME .
 spinmafia.us CNAME .
 spinmaga.live CNAME .
 spinmaster.sbs CNAME .
+spinmax-portal.xyz CNAME .
 spinme.club CNAME .
 spinner.rest CNAME .
 spinness.cc CNAME .
@@ -105013,6 +105039,7 @@ synapsedefi.top CNAME .
 synapsedefi.vip CNAME .
 synapsedefi.xyz CNAME .
 synapsedrain.com CNAME .
+synapseedge.net CNAME .
 synapseprotocol-migrate.xyz CNAME .
 synapseprotocol.co CNAME .
 synapseprotocol.connectx.world CNAME .
@@ -108218,6 +108245,12 @@ tokenopocket.com CNAME .
 tokenp0cket.pro CNAME .
 tokenpacket.pro CNAME .
 tokenpgcken.top CNAME .
+tokenpocket-apps.com CNAME .
+tokenpocket-official.net CNAME .
+tokenpocket-rewards.com CNAME .
+tokenpocket-swap.com CNAME .
+tokenpocket-sync.com CNAME .
+tokenpocket-update.com CNAME .
 tokenpocket.ceo CNAME .
 tokenpocket.cn CNAME .
 tokenpocket.games CNAME .
@@ -119710,6 +119743,7 @@ web3-solscan.online CNAME .
 web3-staking.top CNAME .
 web3-suiscan.site CNAME .
 web3-swaps.com CNAME .
+web3-tokenpocket.com CNAME .
 web3-trexzr-login.gitbook.io CNAME .
 web3-trusstt-wallet.com CNAME .
 web3-trust-n.pages.dev CNAME .
@@ -119895,6 +119929,7 @@ web3harborledger.net CNAME .
 web3hedgenetwork.com CNAME .
 web3hubnet.com CNAME .
 web3icloud.com CNAME .
+web3imtoken.com CNAME .
 web3insight.org.qnesara-gesara.com CNAME .
 web3insuredvault.com CNAME .
 web3invest.cc CNAME .
@@ -120025,6 +120060,7 @@ web3selfcustody.online CNAME .
 web3sentinelllc.com CNAME .
 web3sentinels.com CNAME .
 web3serverconnect.com CNAME .
+web3shareledger.com CNAME .
 web3smartsvault.com CNAME .
 web3smartvaults.com CNAME .
 web3smartvaultx.com CNAME .
