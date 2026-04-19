@@ -19,19 +19,14 @@
     "count": 1248,
     "consecutive_failures": 0
   },
+  "MetaMask": {
+    "hash": "c89b50254bd1d1dac917cff99629d0b6f791be8bfde5a9ca7e20080dc31ed0d7",
+    "count": 242848,
+    "consecutive_failures": 0
+  },
   "CryptoFirewall": {
     "hash": "7895aa3fc018a5e476332309de792b55da0f88ad2e7ae1165fd61462d9302066",
     "count": 106433,
-    "consecutive_failures": 0
-  },
-  "ScamSniffer": {
-    "hash": "1d02be1f8b538c2fc161cc626b43cf574ec4c46477d56675d47932963783a52a",
-    "count": 345278,
-    "consecutive_failures": 0
-  },
-  "MetaMask": {
-    "hash": "21934ecb13acebc579a91efbfcd30eb05ad15f14c8c7a2135bb9754105661708",
-    "count": 242898,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -39,9 +34,14 @@
     "count": 21852,
     "consecutive_failures": 0
   },
-  "PhishDestroy": {
-    "hash": "e0aacca962a2899eb6edb5ee7de33c77fe6e6953ab4b95e05d808d5bbf3d0a42",
-    "count": 130529,
+  "Phishunt": {
+    "hash": "15c152bc78b9355559149a69def3a2137c2a25eaae0cc6baf4392691223b8e08",
+    "count": 425,
+    "consecutive_failures": 0
+  },
+  "ScamSniffer": {
+    "hash": "1d02be1f8b538c2fc161cc626b43cf574ec4c46477d56675d47932963783a52a",
+    "count": 345278,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -49,14 +49,14 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "767c42ea329cbc1472b1d668d7c77ce3f6b9eaeb0d8c5acc129a03b71238c662",
-    "count": 426,
+  "PhishDestroy": {
+    "hash": "9c44fde0d5dec84e61f4f324436e5351e5bf07fb86648248bdbd337907257557",
+    "count": 130555,
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "d5eeb1dc9b65a2b8a56699f405d0792e831b579cee294e51488e6ad3d2addf36",
-    "count": 202595,
+    "hash": "9371c5a0833bac74f4b3067bd80d2920eaabe385b7619caa5f1a764c28023bd6",
+    "count": 202576,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -64,5 +64,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "total_count": 880505
+  "total_count": 880532
 }
