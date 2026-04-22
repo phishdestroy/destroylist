@@ -19,14 +19,14 @@
     "count": 1259,
     "consecutive_failures": 0
   },
+  "MetaMask": {
+    "hash": "415167ca3bb9a7e0cf6f80e6d0a99a01e0cb46ee732329ec0e004f8ad17e45c0",
+    "count": 241696,
+    "consecutive_failures": 0
+  },
   "CryptoFirewall": {
     "hash": "7895aa3fc018a5e476332309de792b55da0f88ad2e7ae1165fd61462d9302066",
     "count": 106433,
-    "consecutive_failures": 0
-  },
-  "ScamSniffer": {
-    "hash": "fe3478e58c7b294456310f0818cacba1c6fe69baefab4fc5c5cd3e3566f436af",
-    "count": 345368,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -34,14 +34,9 @@
     "count": 21852,
     "consecutive_failures": 0
   },
-  "PhishDestroy": {
-    "hash": "f0204b172903a3206cbff0455d3f7c410fcacd7477ab340df68df101a623a741",
-    "count": 132538,
-    "consecutive_failures": 0
-  },
   "Phishunt": {
-    "hash": "950156d158ba46e53c531b2d817742b24f158c8d972444a99e60a0232275bea1",
-    "count": 429,
+    "hash": "c666842e866b0fc93ad3abab0e8afabde78cc53f3e79e0e44f7b32d06a5e1cf1",
+    "count": 430,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -49,14 +44,19 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "SEAL": {
-    "hash": "df631131dd6392c08d8788d4a242d7ceb3f300fe0657a5127b069d944d001620",
-    "count": 202539,
+  "PhishDestroy": {
+    "hash": "98b9797dce93e62562ef8901ff7a7679043b36ef098034025e80d803a3c13013",
+    "count": 132882,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "7a9c500a3511bd5020c1eeaaea801eee02001e398d5d11aaf337dffb56b23f62",
-    "count": 241783,
+  "ScamSniffer": {
+    "hash": "fe3478e58c7b294456310f0818cacba1c6fe69baefab4fc5c5cd3e3566f436af",
+    "count": 345368,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "c2dc9844e38d79c8fbc5e7bcd5f09865f01e3f30629d86c9597bbb2a70619606",
+    "count": 202464,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -64,5 +64,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "total_count": 883853
+  "total_count": 884090
 }
