@@ -15,13 +15,8 @@
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
-    "hash": "4b5e833ea3dbc1a657f5a0ae491aa2c4fe58264eb50c60fe62f1b7018438af97",
-    "count": 1259,
-    "consecutive_failures": 0
-  },
-  "MetaMask": {
-    "hash": "e93f0d056ff6725bef13425473ff7eaaaba87124349f115cb58698cb81dc8867",
-    "count": 241716,
+    "hash": "380a1ab2876379a699b7f95bdc7e8ad30413a2844b47228900839cbb978ed018",
+    "count": 1260,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -34,9 +29,19 @@
     "count": 21852,
     "consecutive_failures": 0
   },
+  "MetaMask": {
+    "hash": "5eb5db1397b5673c800f7c5e7e59cece0b05059eb0d56cf5ce47c7922fff616f",
+    "count": 241705,
+    "consecutive_failures": 0
+  },
   "Phishunt": {
     "hash": "56185f3871e2298aab11e7d1d9a27d4a91369fa4d781adb2b38bb1f277c1f09f",
     "count": 427,
+    "consecutive_failures": 0
+  },
+  "PhishDestroy": {
+    "hash": "3b1c9c152a2f0ddef86913e2b1cffa034c0c8b5d5a2350ab006a37631b81b13d",
+    "count": 133276,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -44,19 +49,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "PhishDestroy": {
-    "hash": "142a4f9b35280b45e2fcbd88edf8bf031e779a9b993894411eed9373b93b0eb3",
-    "count": 133264,
-    "consecutive_failures": 0
-  },
   "SEAL": {
-    "hash": "3a6d9b3500bf26626a2f87f04fdc610fcaa5ac9429ff8bd40224ae3b84f4c955",
-    "count": 202613,
-    "consecutive_failures": 0
-  },
-  "Enkrypt_Blacklist": {
-    "hash": "a6fe571e39a1c758bf57802d0793782f475821f9ac51b9030fc06f5bce48e954",
-    "count": 243832,
+    "hash": "a069a4268fb5a1ff4c4e6ec69db3955051576101b08dac3da870bda9caabddaf",
+    "count": 202619,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -64,5 +59,10 @@
     "count": 345389,
     "consecutive_failures": 0
   },
-  "total_count": 884677
+  "Enkrypt_Blacklist": {
+    "hash": "a6fe571e39a1c758bf57802d0793782f475821f9ac51b9030fc06f5bce48e954",
+    "count": 243832,
+    "consecutive_failures": 0
+  },
+  "total_count": 884724
 }
