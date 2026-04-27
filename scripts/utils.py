@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Shared utilities for the destroylist pipeline."""
+import ipaddress
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -15,6 +17,14 @@ ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
 # ── Regex ────────────────────────────────────────────────────────────────────
 IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
 IPV6_RE = re.compile(r"^\[?[0-9a-fA-F:]{2,39}\]?$")
+
+def _is_ip_addr(domain: str) -> bool:
+    """Validate IPv4/IPv6 using the standard library."""
+    try:
+        ipaddress.ip_address(domain)
+        return True
+    except ValueError:
+        return False
 
 # ── Infrastructure providers (hosting platforms where subdomains ≠ root) ─────
 PROVIDER_GROUPS: Dict[str, Set[str]] = {
@@ -49,11 +59,13 @@ INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 # ── Domain parsing ───────────────────────────────────────────────────────────
 
 def extract_domain(entry: str) -> str:
-    """Strip path, query, and fragment from an entry.
+    """Strip scheme, path, query, and fragment from an entry.
 
-    'github.com/ledger-live-download' -> 'github.com'
+    'https://github.com/ledger-live-download' -> 'github.com'
     """
-    return entry.split("/")[0].split("?")[0].split("#")[0]
+    s = str(entry).strip()
+    s = s.removeprefix("https://").removeprefix("http://")
+    return s.split("/")[0].split("?")[0].split("#")[0]
 
 
 def get_root(host: str) -> str:
@@ -98,7 +110,7 @@ def is_valid_entry(entry: str) -> bool:
 def is_ip(entry: str) -> bool:
     """Check if the domain part is an IPv4 or IPv6 address."""
     domain = extract_domain(entry)
-    return bool(IPV4_RE.fullmatch(domain) or IPV6_RE.fullmatch(domain))
+    return _is_ip_addr(domain)
 
 
 # ── JSON I/O ─────────────────────────────────────────────────────────────────
@@ -109,6 +121,9 @@ def load_json(path: Path):
         return None
     try:
         return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError) as e:
+        log(f"{path.name}: read error: {e}", "error")
+        return None
     except json.JSONDecodeError as e:
         log(f"{path.name}: invalid JSON at line {e.lineno}: {e.msg}", "error")
         return None
@@ -132,9 +147,16 @@ def load_json_list(path: Path) -> list:
 
 
 def save_json(path: Path, data, indent: int = 2):
-    """Write data as JSON, creating parent dirs as needed."""
+    """Write data as JSON atomically, creating parent dirs as needed."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=indent, ensure_ascii=False), encoding="utf-8")
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    try:
+        tmp.write_text(json.dumps(data, indent=indent, ensure_ascii=False), encoding="utf-8")
+        os.replace(tmp, path)
+    except Exception:
+        if tmp.exists():
+            tmp.unlink()
+        raise
 
 
 # ── Allowlist ────────────────────────────────────────────────────────────────
