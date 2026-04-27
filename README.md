@@ -335,7 +335,7 @@ flowchart LR
   Legal e3@--> Publish["📡 PUBLISH<br/>Real-time Feed"]
 
   classDef box fill:#000000,stroke:#333333,stroke-width:2px,color:#FFFFFF;
-  classDef animate stroke:#FF0000,stroke-width:2px,stroke-dasharray:10\,5,stroke-dashoffset:900,animation:dash 22s linear infinite;
+  classDef animate stroke:#FF0000,stroke-width:2px,stroke-dasharray:10 5,stroke-dashoffset:900,animation:dash 22s linear infinite;
 
   class Discover,Report,Legal,Publish box;
   
