@@ -16,11 +16,16 @@
 ![format](https://img.shields.io/badge/format-JSON-FF0000?style=for-the-badge)
 ![schedule](https://img.shields.io/badge/schedule-monthly-000000?style=for-the-badge)
 
+<br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+
 </div>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## Files
+## 📂 Files
 
 | Archive | Link |
 |:--------|:----:|
@@ -31,9 +36,7 @@
 
 Each file contains the complete `list.json` state at the end of that month.
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-## Use Cases
+## 📊 Use Cases
 
 - Track blocklist growth month-over-month
 - Analyze domain lifecycle and churn
@@ -41,6 +44,8 @@ Each file contains the complete `list.json` state at the end of that month.
 - Historical threat intelligence lookups
 
 > For detailed monthly analytics with charts and analysis, see [`rootlist/`](../../rootlist/)
+
+---
 
 <div align="center">
 
