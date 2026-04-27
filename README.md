@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/phishdestroy/destroylist">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+100%2C000%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+136%2C498%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -115,6 +115,28 @@
   <img src="scripts/api.png" alt="API" width="700"/>
 </p>
 
+```mermaid
+%%{init: {"theme":"base", "themeVariables": { "background": "transparent", "mainBkg": "#000000", "primaryColor": "#000000", "primaryTextColor": "#FFFFFF", "primaryBorderColor": "#FF0000", "lineColor": "#FF0000", "secondaryColor": "#111111", "tertiaryColor": "#111111", "fontFamily": "Inter, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "htmlLabels": true}}}%%
+flowchart LR
+  Request["🌐 Client Request<br/>(Single / Bulk)"] e1@--> API["⚡ Live API<br/>api.destroy.tools"]
+  API e2@--> Engine["🧠 Threat Engine<br/>(Risk Score 0-100)"]
+  Engine e3@--> DB[("🗄️ Destroylist DB<br/>1M+ Threats")]
+  DB e4@--> Engine
+  Engine e5@--> Response["📋 JSON Response<br/>(Severity & Status)"]
+
+  classDef client fill:#000000,stroke:#333333,stroke-width:2px,color:#FFFFFF;
+  classDef api fill:#000000,stroke:#FF0000,stroke-width:2px,color:#FFFFFF;
+  classDef db fill:#000000,stroke:#333333,stroke-width:2px,stroke-dasharray: 5 5,color:#FFFFFF;
+  classDef animate stroke:#FF0000,stroke-width:2px,stroke-dasharray:10 5,stroke-dashoffset:900,animation:dash 22s linear infinite;
+  classDef animateDark stroke:#333333,stroke-width:2px,stroke-dasharray:10 5,stroke-dashoffset:900,animation:dash 22s linear infinite;
+
+  class Request client;
+  class API,Engine,Response api;
+  class DB db;
+  class e1,e2,e3,e5 animate;
+  class e4 animateDark;
+```
+
 <p align="center">
   <a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/🔥_LIVE_API-api.destroy.tools-FF0000?style=for-the-badge" alt="API"/></a>
   <a href="https://api.destroy.tools/v1/stats"><img src="https://img.shields.io/badge/📊_STATS-000000?style=for-the-badge" alt="Stats"/></a>
@@ -199,6 +221,51 @@ Destroylist is a powerful tool against phishing and scams, powered by **PhishDes
 
 Protect the web, one domain at a time!
 
+### Data Pipeline
+
+```mermaid
+%%{init: {"theme":"base", "themeVariables": { "background": "transparent", "mainBkg": "#000000", "primaryColor": "#000000", "primaryTextColor": "#FFFFFF", "primaryBorderColor": "#FF0000", "lineColor": "#FF0000", "secondaryColor": "#111111", "tertiaryColor": "#111111", "fontFamily": "Inter, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "htmlLabels": true}}}%%
+flowchart TB
+  subgraph Sources["🔍 Threat Sources"]
+    S1[30+ Parsers]
+    S2[Community Feeds]
+    S3[Telegram Bot]
+    S4[CT Logs / DNS]
+  end
+
+  subgraph Ingestion["📥 Ingestion"]
+    I1[smart_aggregator.py]
+    I2[validate_and_clean.py]
+  end
+
+  subgraph Enrichment["🧠 Enrichment"]
+    E1[DNS Validation]
+    E2[HTTP Content Check]
+    E3[VirusTotal / GSB]
+  end
+
+  subgraph Distribution["📡 Distribution"]
+    D1[JSON / TXT]
+    D2[Hosts / AdBlock]
+    D3[RPZ / Unbound]
+    D4[API Feed]
+  end
+
+  Sources --> Ingestion
+  Ingestion --> Enrichment
+  Enrichment --> Distribution
+
+  classDef source fill:#000000,stroke:#333333,stroke-width:2px,color:#FFFFFF;
+  classDef ingest fill:#000000,stroke:#FF0000,stroke-width:2px,color:#FFFFFF;
+  classDef enrich fill:#000000,stroke:#CC0000,stroke-width:2px,color:#FFFFFF;
+  classDef dist fill:#000000,stroke:#FF0000,stroke-width:2px,stroke-dasharray: 5 5,color:#FFFFFF;
+
+  class S1,S2,S3,S4 source;
+  class I1,I2 ingest;
+  class E1,E2,E3 enrich;
+  class D1,D2,D3,D4 dist;
+```
+
 <details>
 <summary>🔧 <b>Quick Integration Examples</b> (Subscribe URLs · curl · Python · Bash)</summary>
 <br>
@@ -260,6 +327,21 @@ curl -s https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" alt="Shield" width="22" height="22" /> Threat Intelligence & Automated Remediation Workflow
 
+```mermaid
+%%{init: {"theme":"base", "themeVariables": { "background": "transparent", "mainBkg": "#000000", "primaryColor": "#000000", "primaryTextColor": "#FFFFFF", "primaryBorderColor": "#FF0000", "lineColor": "#FF0000", "secondaryColor": "#111111", "tertiaryColor": "#111111", "fontFamily": "Inter, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "htmlLabels": true}}}%%
+flowchart LR
+  Discover["🔍 DISCOVER<br/>30+ Parsers"] e1@--> Report["📤 REPORT<br/>50+ Vendors"]
+  Report e2@--> Legal["⚖️ LEGAL<br/>ICANN Compliance"]
+  Legal e3@--> Publish["📡 PUBLISH<br/>Real-time Feed"]
+
+  classDef box fill:#000000,stroke:#333333,stroke-width:2px,color:#FFFFFF;
+  classDef animate stroke:#FF0000,stroke-width:2px,stroke-dasharray:10\,5,stroke-dashoffset:900,animation:dash 22s linear infinite;
+
+  class Discover,Report,Legal,Publish box;
+  
+  class e1,e2,e3 animate;
+```
+
 <p align="center">
   <img src="scripts/about.png" alt="Workflow" width="700"/>
 </p>
@@ -273,6 +355,19 @@ curl -s https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt
 | Social media | VirusTotal, Cloudflare | Evidence packages | Twitter, Mastodon |
 
 </div>
+
+```mermaid
+%%{init: {"theme":"base", "themeVariables": { "background": "transparent", "mainBkg": "#000000", "primaryColor": "#000000", "primaryTextColor": "#FFFFFF", "primaryBorderColor": "#FF0000", "lineColor": "#FF0000", "secondaryColor": "#111111", "tertiaryColor": "#111111", "fontFamily": "Inter, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "htmlLabels": true}}}%%
+flowchart LR
+  D1["🔍 Discovery<br/>30+ parsers"] --> R1["📤 Report<br/>50+ vendors"]
+  R1 --> L1["⚖️ Legal<br/>ICANN / Abuse"]
+  L1 --> P1["📡 Publish<br/>Real-time feeds"]
+  P1 -.-> D1
+
+  classDef phase fill:#000000,stroke:#FF0000,stroke-width:2px,color:#FFFFFF;
+
+  class D1,R1,L1,P1 phase;
+```
 
 <details>
 <summary>📖 <b>Read Full Workflow Details</b></summary>
