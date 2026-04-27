@@ -16,11 +16,16 @@
 ![format](https://img.shields.io/badge/format-JSON-FF0000?style=for-the-badge)
 ![schedule](https://img.shields.io/badge/schedule-weekly_(Sun_01%3A00_UTC)-000000?style=for-the-badge)
 
+<br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+
 </div>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## Files
+## 📂 Files
 
 | Archive | Link |
 |:--------|:----:|
@@ -31,14 +36,14 @@
 
 Each file contains the complete `list.json` state at the end of that week.
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-## Use Cases
+## 📊 Use Cases
 
 - Week-over-week trend analysis
 - Domain churn tracking (added vs removed)
 - Correlate phishing spikes with real-world events
 - Train ML models on temporal patterns
+
+---
 
 <div align="center">
 
