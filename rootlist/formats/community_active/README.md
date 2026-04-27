@@ -5,22 +5,27 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Comet.png" width="60" />
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="60" />
 
 # Community Active Blocklist
 
-**Community feeds — DNS-verified live threats only**
+**Aggregated from 13+ sources — DNS-verified live only**
 
 <br>
 
-![type](https://img.shields.io/badge/type-community_active-FF0000?style=for-the-badge)
-![filter](https://img.shields.io/badge/filter-DNS_verified-000000?style=for-the-badge)
+![type](https://img.shields.io/badge/type-community-FF0000?style=for-the-badge)
+![filter](https://img.shields.io/badge/filter-live_only-000000?style=for-the-badge)
+
+<br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
 
 </div>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## Downloads
+## ⬇️ Downloads
 
 | Format | Description | Link |
 |:-------|:------------|:----:|
@@ -31,7 +36,9 @@
 | `unbound.conf` | Unbound DNS config | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/unbound.conf) |
 | `rpz.zone` | Response Policy Zone (BIND) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/rpz.zone) |
 
-> Only domains with active DNS records from community sources. Best for maximum coverage blocking.
+> Only aggregated domains that currently resolve via DNS.
+
+---
 
 <div align="center">
 
