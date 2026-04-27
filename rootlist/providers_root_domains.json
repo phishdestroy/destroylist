@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 28,
-      "total_entries": 21653,
+      "total_entries": 21650,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 15093,
+          "count": 15095,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -2276,6 +2276,7 @@
             "cobo-wallet-io.pages.dev",
             "cobo-wallet-login.pages.dev",
             "cobo-wallet-secure.pages.dev",
+            "codaxsawepcom.pages.dev",
             "codes-bigtime.pages.dev",
             "codes-for-dress-to-impress.pages.dev",
             "codes-for-pull-a-sword.pages.dev",
@@ -3521,6 +3522,7 @@
             "doc-ledgr-com-strt.pages.dev",
             "doc-ledgr-live.pages.dev",
             "doc-ledgrwalite.pages.dev",
+            "doc-leger-live-lo.pages.dev",
             "doc-live-ledger-app.pages.dev",
             "doc-phntomus-wallet.pages.dev",
             "doc-star-coenbase.pages.dev",
@@ -21650,29 +21652,6 @@
           ]
         },
         {
-          "domain": "amazonaws.com",
-          "count": 22,
-          "hosts": [
-            "benq-vice.s3.us-east-2.amazonaws.com",
-            "bucket-a9d85911fe.s3.amazonaws.com",
-            "cbx-zone.s3.ap-southeast-5.amazonaws.com",
-            "ec2-3-15-93-54.us-east-2.compute.amazonaws.com",
-            "ec2-35-170-63-110.compute-1.amazonaws.com",
-            "ep7pye4bj8.execute-api.eu-west-2.amazonaws.com",
-            "epibucketdata.s3.amazonaws.com",
-            "epibucketdata.s3.amazonaws.com/1ede0b.html",
-            "gxu4vr8kwtirlk9.s3-website-us-east-1.amazonaws.com",
-            "le7et-l9eiv-w4g6t.s3.amazonaws.com",
-            "lkdjfudh0-oskdjddd11.s3.eu-north-1.amazonaws.com",
-            "lsksuud-sis0s-sjihss22.s3.eu-north-1.amazonaws.com",
-            "net-wok.s3-website.us-east-2.amazonaws.com",
-            "redirect-q5nff703802.s3-website-us-east-1.amazonaws.com",
-            "s3.dualstack.us-east-1.amazonaws.com",
-            "s3.us-east-2.amazonaws.com",
-            "tbiodpt0-spsksjd33.s3.eu-north-1.amazonaws.com"
-          ]
-        },
-        {
           "domain": "azurewebsites.net",
           "count": 17,
           "hosts": [
@@ -21693,6 +21672,29 @@
             "tt-rezor.azurewebsites.net",
             "usps-wa-dev-gedsgvf9gad3g5bp.eastus-01.azurewebsites.net",
             "www-autocontratar.azurewebsites.net"
+          ]
+        },
+        {
+          "domain": "amazonaws.com",
+          "count": 17,
+          "hosts": [
+            "benq-vice.s3.us-east-2.amazonaws.com",
+            "bucket-a9d85911fe.s3.amazonaws.com",
+            "cbx-zone.s3.ap-southeast-5.amazonaws.com",
+            "ec2-3-15-93-54.us-east-2.compute.amazonaws.com",
+            "ec2-35-170-63-110.compute-1.amazonaws.com",
+            "ep7pye4bj8.execute-api.eu-west-2.amazonaws.com",
+            "epibucketdata.s3.amazonaws.com",
+            "epibucketdata.s3.amazonaws.com/1ede0b.html",
+            "gxu4vr8kwtirlk9.s3-website-us-east-1.amazonaws.com",
+            "le7et-l9eiv-w4g6t.s3.amazonaws.com",
+            "lkdjfudh0-oskdjddd11.s3.eu-north-1.amazonaws.com",
+            "lsksuud-sis0s-sjihss22.s3.eu-north-1.amazonaws.com",
+            "net-wok.s3-website.us-east-2.amazonaws.com",
+            "redirect-q5nff703802.s3-website-us-east-1.amazonaws.com",
+            "s3.dualstack.us-east-1.amazonaws.com",
+            "s3.us-east-2.amazonaws.com",
+            "tbiodpt0-spsksjd33.s3.eu-north-1.amazonaws.com"
           ]
         },
         {
