@@ -82,7 +82,7 @@ def adblock_header(name: str, source_key: str, count: int) -> str:
 def rpz_header(name: str, count: int) -> str:
     now = datetime.now(timezone.utc)
     ts = now.strftime("%Y-%m-%d %H:%M UTC")
-    serial = now.strftime("%Y%m%d%H")
+    serial = now.strftime("%Y%m%d%H%M")
     return (
         f"; Destroylist - {name} | RPZ zone | {count:,} domains | {ts}\n"
         f"; https://github.com/phishdestroy/destroylist\n"

@@ -123,7 +123,7 @@ def main():
     save_json(OUT_ACTIVE, {"domains": sorted(roots)})
     write_txt(OUT_ACTIVE, roots)
     save_json(OUT_PROVIDERS, build_providers_payload(providers, "list.json"))
-    save_json(OUT_SERVICES, sorted(services))
+    save_json(OUT_SERVICES, {"domains": sorted(services)})
     write_txt(OUT_SERVICES, services)
     log(f"Primary: {len(roots):,} root domains, {len(services):,} service domains", "ok")
 
@@ -142,7 +142,7 @@ def main():
         save_json(OUT_COMMUNITY, {"domains": sorted(roots)})
         write_txt(OUT_COMMUNITY, roots)
         save_json(OUT_COMMUNITY_PROVIDERS, build_providers_payload(providers, "community/blocklist.json"))
-        save_json(OUT_COMMUNITY_SERVICES, sorted(services))
+        save_json(OUT_COMMUNITY_SERVICES, {"domains": sorted(services)})
         write_txt(OUT_COMMUNITY_SERVICES, services)
         log(f"Community: {len(roots):,} root domains, {len(services):,} service domains", "ok")
 

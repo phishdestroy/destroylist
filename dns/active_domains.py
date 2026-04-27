@@ -3,8 +3,11 @@ import json
 import sys
 import os
 import time
+import threading
+import ipaddress
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import Counter
+from pathlib import Path
 from tqdm import tqdm
 import logging
 from typing import List, Set, Dict, Tuple
@@ -13,14 +16,25 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 MAX_WORKERS = int(os.getenv('DNS_MAX_WORKERS', '100'))
 DNS_TIMEOUT = float(os.getenv('DNS_TIMEOUT', '3.0'))
-CUSTOM_RESOLVERS = [r.strip() for r in os.getenv('DNS_RESOLVERS', '1.1.1.1,8.8.8.8,9.9.9.9,208.67.222.222').split(',')]
+CUSTOM_RESOLVERS = [r.strip() for r in os.getenv('DNS_RESOLVERS', '1.1.1.1,8.8.8.8,9.9.9.9,208.67.222.222').split(',') if r.strip()]
 MAX_RETRIES = int(os.getenv('DNS_MAX_RETRIES', '2'))
 
+# Validate resolver IPs
+_valid_resolvers = []
+for r in CUSTOM_RESOLVERS:
+    try:
+        ipaddress.ip_address(r)
+        _valid_resolvers.append(r)
+    except ValueError:
+        logging.warning(f"Invalid resolver IP skipped: {r}")
+CUSTOM_RESOLVERS = _valid_resolvers or ['1.1.1.1']
+
+SCRIPT_DIR = Path(__file__).resolve().parent
 SOURCE_URL = "https://github.com/phishdestroy/destroylist/raw/main/list.json"
-ACTIVE_DOMAINS_FILE = "active_domains.json"
-DEAD_DOMAINS_FILE = "dead_domains.json"
-ACTIVE_COUNT_FILE = "active_count.json"
-CACHE_FILENAME = "dns_check_cache.json"
+ACTIVE_DOMAINS_FILE = SCRIPT_DIR / "active_domains.json"
+DEAD_DOMAINS_FILE = SCRIPT_DIR / "dead_domains.json"
+ACTIVE_COUNT_FILE = SCRIPT_DIR / "active_count.json"
+CACHE_FILENAME = SCRIPT_DIR / "dns_check_cache.json"
 CACHE_EXPIRATION_SECONDS = 86400
 
 try:
@@ -59,7 +73,7 @@ def check_domain(domain: str, resolver: dns.resolver.Resolver, retry: int = 0) -
             return (domain, 'no_answer')
     except dns.exception.Timeout:
         if retry < MAX_RETRIES:
-            time.sleep(0.5)
+            time.sleep(0.1 * (retry + 1))
             return check_domain(domain, resolver, retry + 1)
         return (domain, 'timeout')
     except Exception:
@@ -79,7 +93,7 @@ def fetch_domains(url: str) -> Set[str]:
             logging.error("Bad JSON format")
             return set()
         
-        return {d.lower().strip() for d in domains if d.strip() and '.' in d}
+        return {str(d).lower().strip() for d in domains if str(d).strip() and '.' in str(d)}
     except Exception as e:
         logging.error(f"Fetch error: {e}")
         return set()
@@ -90,7 +104,7 @@ def load_file(path: str) -> Set[str]:
     try:
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-            return {d.lower().strip() for d in data if d.strip()}
+            return {str(d).lower().strip() for d in data if str(d).strip()}
     except Exception as e:
         logging.warning(f"Could not load {path}: {e}")
         return set()
@@ -175,15 +189,18 @@ def main():
         resolver = dns.resolver.Resolver()
         resolver.nameservers = CUSTOM_RESOLVERS
         resolver.timeout = DNS_TIMEOUT
-        resolver.lifetime = DNS_TIMEOUT
+        resolver.lifetime = DNS_TIMEOUT * max(1, len(CUSTOM_RESOLVERS))
         
+        cache_lock = threading.Lock()
+
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
             futures = {ex.submit(check_domain, d, resolver): d for d in to_check}
             
             for future in tqdm(as_completed(futures), total=len(to_check), desc="DNS checks"):
                 domain, status = future.result()
                 stats[status] += 1
-                cache[domain] = {'status': status, 'timestamp': now}
+                with cache_lock:
+                    cache[domain] = {'status': status, 'timestamp': now}
                 
                 if status == 'live':
                     live.add(domain)

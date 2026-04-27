@@ -3,6 +3,7 @@
 import hashlib
 import json
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import urlparse
@@ -26,7 +27,7 @@ SOURCES_CONFIG = {
     "Codeesura": {"url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json", "parser": "json_list"},
     "CryptoFirewall": {"url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt", "parser": "text_lines"},
     "OpenPhish": {"url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt", "parser": "text_lines"},
-    "PhishDestroy": {"url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json", "parser": "json_list"},
+
     "SEAL": {"url": "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt", "parser": "text_lines"},
     "SPMedia_DetectedURLs": {"url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt", "parser": "urls_list"},
     "Enkrypt_Blacklist": {"url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json", "parser": "json_list"},
@@ -190,16 +191,26 @@ PARSERS = {
 # ── Network ──────────────────────────────────────────────────────────────────
 
 def fetch_content(url: str) -> str | None:
-    try:
-        r = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0 Aggregator/2.0"})
-        r.raise_for_status()
-        return r.text
-    except requests.exceptions.Timeout:
-        log(f"TIMEOUT: {url}", "warn")
-    except requests.exceptions.HTTPError as e:
-        log(f"HTTP {e.response.status_code}: {url}", "warn")
-    except Exception as e:
-        log(f"{type(e).__name__}: {e}", "error")
+    headers = {"User-Agent": "Mozilla/5.0 Aggregator/2.0"}
+    for attempt in range(1, 4):
+        try:
+            r = requests.get(url, timeout=30, headers=headers)
+            r.raise_for_status()
+            return r.text
+        except requests.exceptions.Timeout:
+            log(f"TIMEOUT (attempt {attempt}/3): {url}", "warn")
+        except requests.exceptions.HTTPError as e:
+            status = e.response.status_code if e.response else 0
+            log(f"HTTP {status}: {url}", "warn")
+            if status < 500:
+                break
+        except requests.exceptions.ConnectionError:
+            log(f"Connection error (attempt {attempt}/3): {url}", "warn")
+        except Exception as e:
+            log(f"{type(e).__name__}: {e}", "error")
+            break
+        if attempt < 3:
+            time.sleep(0.5 * attempt)
     return None
 
 
@@ -332,7 +343,8 @@ def main():
     commit_body = f"Total domains: {len(all_domains):,}\n\n"
     if changes:
         title_parts = [f"{c['sign']}{c['diff']} {c['name']}" for c in changes]
-        commit_title = f"Sync: {', '.join(title_parts)}"
+        raw_title = f"Sync: {', '.join(title_parts)}"
+        commit_title = raw_title if len(raw_title) <= 72 else raw_title[:69] + "..."
         commit_body += "Changes:\n" + "\n".join(f"- {c['name']}: {c['sign']}{c['diff']}" for c in changes)
 
     COMMIT_MSG_FILE.write_text(commit_title + "\n\n" + commit_body, encoding="utf-8")
