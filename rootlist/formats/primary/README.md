@@ -16,11 +16,16 @@
 ![type](https://img.shields.io/badge/type-primary-FF0000?style=for-the-badge)
 ![filter](https://img.shields.io/badge/filter-all_domains-000000?style=for-the-badge)
 
+<br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+
 </div>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## Downloads
+## ⬇️ Downloads
 
 | Format | Description | Link |
 |:-------|:------------|:----:|
@@ -32,6 +37,8 @@
 | `rpz.zone` | Response Policy Zone (BIND) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/rpz.zone) |
 
 > Includes all curated domains (live + dead). For live-only, use [`primary_active/`](../primary_active/)
+
+---
 
 <div align="center">
 

@@ -1,15 +1,21 @@
+<!--
+  PhishDestroy DNS Intelligence
+  Real-time DNS validation and active domain tracking
+  https://github.com/phishdestroy/destroylist/tree/main/dns
+-->
+
 <div align="center">
 
-<img src="image.png" alt="Community Blocklist Banner" width="720"/>
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Satellite.png" width="80" />
 
-# Community Blocklist
+# DNS Intelligence
 
-**Auto-aggregated threat intelligence from 13+ public sources**
+**Real-time DNS validation & active domain tracking**
 
 <br>
 
-![sources](https://img.shields.io/badge/sources-13%2B-FF0000?style=for-the-badge)
-![type](https://img.shields.io/badge/type-research-000000?style=for-the-badge)
+![active](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_count.json&query=$.count&label=active%20domains&color=FF0000&style=for-the-badge)
+![status](https://img.shields.io/badge/DNS_validated-live-000000?style=for-the-badge)
 
 <br>
 
@@ -20,77 +26,68 @@
 
 ---
 
-> [!CAUTION]
-> **Research Dataset — Not for Direct Production Blocking**
->
-> Auto-aggregated collection of phishing/scam domains from **13+ public threat intelligence sources**. Intended for **research**, pattern analysis, and ML model training.
+## How It Works
 
-## 📌 Purpose
+Multithreaded DNS resolver validates every domain in the blocklist against live DNS records (A, AAAA, CNAME, MX, NS). Only domains with active infrastructure are flagged as live threats.
 
-- Aggregate domains from multiple community feeds
-- Analyze domain abuse and phishing patterns at scale
-- Train AI/ML models and heuristic detection systems
-- **No operational impact** — being listed here doesn't block anything
+```mermaid
+%%{init: {"theme":"base", "themeVariables": { "background": "transparent", "mainBkg": "#000000", "primaryColor": "#000000", "primaryTextColor": "#FFFFFF", "primaryBorderColor": "#FF0000", "lineColor": "#FF0000", "secondaryColor": "#111111", "tertiaryColor": "#111111", "fontFamily": "Inter, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "htmlLabels": true}}}%%
+flowchart LR
+  Input["📥 list.json"] --> Script["⚙️ active_domains.py<br/>100 threads"]
+  Script --> DNS[("🌐 DNS Resolver<br/>A / AAAA / CNAME / MX / NS")]
+  DNS --> Live["✅ active_domains.json"]
+  DNS --> Dead["❌ dead_domains.json"]
 
-## 📂 Files
+  classDef input fill:#000000,stroke:#333333,stroke-width:2px,color:#FFFFFF;
+  classDef script fill:#000000,stroke:#FF0000,stroke-width:2px,color:#FFFFFF;
+  classDef dns fill:#000000,stroke:#CC0000,stroke-width:2px,stroke-dasharray: 5 5,color:#FFFFFF;
+  classDef live fill:#000000,stroke:#00CC00,stroke-width:2px,color:#FFFFFF;
+  classDef dead fill:#000000,stroke:#666666,stroke-width:2px,color:#FFFFFF;
+
+  class Input input;
+  class Script script;
+  class DNS dns;
+  class Live live;
+  class Dead dead;
+```
+
+## 📂 Data Files
+
+| File | Description | Format |
+|:-----|:------------|:------:|
+| [`active_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json) | All DNS-validated live domains | JSON |
+| [`active_domains.txt`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.txt) | Same as above, plain text | TXT |
+| [`active_count.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_count.json) | Current active domain count | JSON |
+| [`dead_domains.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/dead_domains.json) | Domains with no DNS records | JSON |
+| [`content_active.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json) | Active domains with HTTP content | JSON |
+| [`content_active.txt`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.txt) | Same as above, plain text | TXT |
+
+## ⏱️ Time-Based Feeds
 
 | File | Description |
 |:-----|:------------|
-| `blocklist.json` | Merged & normalized domains |
-| `blocklist.txt` | Plain text version |
-| `live_blocklist.json` | DNS-verified (resolvable) |
-| `live_blocklist.txt` | Plain text version |
-| `content_live.json` | HTTP content-verified domains |
-| `content_live.txt` | Plain text version |
-| `dead_blocklist.json` | Non-resolving domains (research) |
-| `state.json` | Per-source hash & counts |
-| `count.json` | Total count badge |
-| `live_count.json` | Live domain count badge |
-| `content_active_count.json` | Content-verified count badge |
-| `dns_cache.json` | Cached DNS lookups |
+| [`today_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_added.json) | Domains added today |
+| [`today_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_community.json) | Community domains added today |
+| [`week_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_added.json) | Domains added this week |
+| [`week_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_community.json) | Community domains this week |
+| [`month_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_added.json) | Domains added this month |
+| [`month_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_community.json) | Community domains this month |
 
-## 🚦 Policy
+## ⚙️ Script
 
-- **No manual removals** — fully automated, edits get overwritten
-- To remove a domain → report to the **original source feed**
-- For production use → prefer the curated `list.json` instead
+[`active_domains.py`](active_domains.py) — Multithreaded DNS validator
 
-## 🛠️ How It's Built
-
-Generated by `smart_aggregator.py`:
-
-1. Fetches from all source feeds
-2. Normalizes and deduplicates
-3. Outputs `blocklist.json` + metadata
-
-DNS validation runs separately on the server via `dns/active_domains.py`:
-
-```powershell
-py smart_aggregator.py
-py dns\active_domains.py --force
-```
-
-## 📡 Sources
-
-| Source | URL |
-|:-------|:----|
-| MetaMask | [eth-phishing-detect](https://github.com/MetaMask/eth-phishing-detect) |
-| ScamSniffer | [scam-database](https://github.com/scamsniffer/scam-database) |
-| Polkadot JS | [phishing](https://github.com/polkadot-js/phishing) |
-| OpenPhish | [public_feed](https://github.com/openphish/public_feed) |
-| Security Alliance | [blocklists](https://github.com/security-alliance/blocklists) |
-| Crypto Firewall | [crypto-firewall](https://github.com/chartingshow/crypto-firewall) |
-| Phishing.Database | [Ultimate-Hosts-Blacklist](https://github.com/Ultimate-Hosts-Blacklist/Phishing.Database) |
-| Enkrypt | [phishing-detect](https://github.com/enkryptcom/phishing-detect) |
-| SPMedia | [Crypto-Scam-Threat-Intel](https://github.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed) |
-| Codeesura | [Anti-phishing-extension](https://github.com/codeesura/Anti-phishing-extension) |
-
-*...and more*
+- Resolves A, AAAA, CNAME, MX, NS records
+- 100 concurrent threads for fast scanning
+- Outputs JSON + TXT with deduplication
+- Runs automatically via GitHub Actions
 
 ---
 
 <div align="center">
 
-[![back](https://img.shields.io/badge/←_destroylist-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist)
+[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
+[![Feeds](https://img.shields.io/badge/data_feeds-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
 
 </div>
