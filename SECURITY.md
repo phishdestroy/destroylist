@@ -1,16 +1,36 @@
-# 🛡️ Security Policy
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="80" />
+
+# Security Policy
+
+**Responsible disclosure, blocklist accuracy, and threat actor awareness**
+
+<br>
+
+![response](https://img.shields.io/badge/response-48h-FF0000?style=for-the-badge)
+![severity](https://img.shields.io/badge/severity-all_levels-000000?style=for-the-badge)
+
+<br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
+
+</div>
 
 ---
 
 ## 🔐 Reporting Security Issues
 
-**DO NOT** report security vulnerabilities through public GitHub issues.
+> [!WARNING]
+> **DO NOT** report security vulnerabilities through public GitHub issues.
 
 If you discover a security vulnerability in our infrastructure or data processing:
 
 📧 **security@phishdestroy.io**
 
-We respond within 48 hours.
+We respond within **48 hours**.
 
 ---
 
@@ -19,13 +39,17 @@ We respond within 48 hours.
 ### False Positive — Your Domain Was Blocked
 
 **Primary Lists** (`list.json`, `dns/active_domains.json`):
-- [Appeals Form](https://phishdestroy.io/appeals/) — fastest option
-- [GitHub Issue](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) with ownership proof
+
+| Method | Link | Speed |
+|:-------|:-----|:-----:|
+| 📝 Appeals Form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) | ⚡ Fastest |
+| 🐛 GitHub Issue | [New Issue → Appeal](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) | 🕐 Reviewed |
 
 **Community Lists** (`community/blocklist.json`, `community/live_blocklist.json`):
-- Auto-aggregated from external sources
-- Manual removal is **not possible**
-- Report to the original feed → auto-removed on next sync
+
+> [!CAUTION]
+> Auto-aggregated from external sources. **Manual removal is not possible.**
+> Report to the original feed → auto-removed on next sync.
 
 ### Missing Malicious Domain
 
@@ -46,7 +70,7 @@ These individuals have no legitimate recourse — their domains are blocked for 
 - Coordinated manipulation attempts
 - Harassment campaigns
 
-**There is exactly one solution: stop running phishing operations.**
+> **There is exactly one solution: stop running phishing operations.**
 
 No amount of reporting or manipulation makes inevitable bans less inevitable. Registrars and platforms don't reverse legitimate abuse decisions because someone clicked "report" a hundred times.
 
@@ -56,13 +80,13 @@ We remain unaffected. The blocklist continues to grow.
 
 ## ⚠️ Important Warnings
 
-### For Victims
+### 💔 For Victims
 
 If you were defrauded by a domain already in our list, check its addition date via [commit history](https://github.com/phishdestroy/destroylist/commits/main/) or [Telegram channel](https://t.me/destroy_phish).
 
 Per ICANN rules, registrars must review abuse complaints within 24 hours. If fraud occurred after the domain was listed, the registrar or hosting provider may share responsibility for your financial loss.
 
-### For Users
+### 👤 For Users
 
 This blocklist is for **legitimate security purposes only**.
 
@@ -80,9 +104,9 @@ Violators will be reported to appropriate authorities.
 
 | Feed | Update | Editable |
 |:-----|:------:|:--------:|
-| `list.json` | Real-time | ✅ |
-| `dns/active_domains.json` | Real-time | ✅ |
-| `community/*` | Hourly | ❌ |
+| `list.json` | Real-time | ✅ Yes |
+| `dns/active_domains.json` | Real-time | ✅ Yes |
+| `community/*` | Hourly | ❌ No (auto-aggregated) |
 
 ---
 
@@ -99,3 +123,11 @@ Available for academic and security research.
 ## 📜 License
 
 MIT License — Free for any use with attribution.
+
+---
+
+<div align="center">
+
+[![back](https://img.shields.io/badge/←_destroylist-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist)
+
+</div>
