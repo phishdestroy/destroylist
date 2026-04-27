@@ -1,18 +1,29 @@
-# 🌐 Community Blocklist
+<div align="center">
 
-<p align="center">
-  <img src="image.png" alt="Community Blocklist Banner" width="800"/>
-</p>
+<img src="image.png" alt="Community Blocklist Banner" width="720"/>
+
+# Community Blocklist
+
+**Auto-aggregated threat intelligence from 13+ public sources**
+
+<br>
+
+![sources](https://img.shields.io/badge/sources-13%2B-FF0000?style=for-the-badge)
+![type](https://img.shields.io/badge/type-research-000000?style=for-the-badge)
+
+<br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+
+</div>
 
 ---
 
-## ⚠️ Research Dataset — Not for Direct Production Blocking
-
-Auto-aggregated collection of phishing/scam domains from **13+ public threat intelligence sources**. 
-
-Intended for **research**, pattern analysis, and ML model training.
-
----
+> [!CAUTION]
+> **Research Dataset — Not for Direct Production Blocking**
+>
+> Auto-aggregated collection of phishing/scam domains from **13+ public threat intelligence sources**. Intended for **research**, pattern analysis, and ML model training.
 
 ## 📌 Purpose
 
@@ -20,8 +31,6 @@ Intended for **research**, pattern analysis, and ML model training.
 - Analyze domain abuse and phishing patterns at scale
 - Train AI/ML models and heuristic detection systems
 - **No operational impact** — being listed here doesn't block anything
-
----
 
 ## 📂 Files
 
@@ -40,15 +49,11 @@ Intended for **research**, pattern analysis, and ML model training.
 | `content_active_count.json` | Content-verified count badge |
 | `dns_cache.json` | Cached DNS lookups |
 
----
-
 ## 🚦 Policy
 
 - **No manual removals** — fully automated, edits get overwritten
 - To remove a domain → report to the **original source feed**
 - For production use → prefer the curated `list.json` instead
-
----
 
 ## 🛠️ How It's Built
 
@@ -64,8 +69,6 @@ DNS validation runs separately on the server via `dns/active_domains.py`:
 py smart_aggregator.py
 py dns\active_domains.py --force
 ```
-
----
 
 ## 📡 Sources
 
@@ -83,3 +86,11 @@ py dns\active_domains.py --force
 | Codeesura | [Anti-phishing-extension](https://github.com/codeesura/Anti-phishing-extension) |
 
 *...and more*
+
+---
+
+<div align="center">
+
+[![back](https://img.shields.io/badge/←_destroylist-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist)
+
+</div>
