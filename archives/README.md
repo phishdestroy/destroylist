@@ -37,7 +37,7 @@ archives/
 
 | Directory | Schedule | Pattern | Details |
 |:----------|:---------|:--------|:--------|
-| [`weekly/`](weekly/) | Every Sunday at 01:00 UTC | `YYYY-WXX.json` | ISO 8601 week number |
+| [`weekly/`](weekly/) | Every Monday at 01:00 UTC | `YYYY-WXX.json` | ISO 8601 week number |
 | [`monthly/`](monthly/) | End of each month | `YYYY-MM.json` | Monthly snapshot |
 
 ## 📋 Format

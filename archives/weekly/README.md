@@ -9,12 +9,12 @@
 
 # Weekly Archives
 
-**Full blocklist snapshots — every Sunday**
+**Full blocklist snapshots — every Monday**
 
 <br>
 
 ![format](https://img.shields.io/badge/format-JSON-FF0000?style=for-the-badge)
-![schedule](https://img.shields.io/badge/schedule-weekly_(Sun_01%3A00_UTC)-000000?style=for-the-badge)
+![schedule](https://img.shields.io/badge/schedule-weekly_(Mon_01%3A00_UTC)-000000?style=for-the-badge)
 
 <br>
 
@@ -30,7 +30,7 @@
 | Archive | Link |
 |:--------|:----:|
 | `2025-W49.json` — `2025-W52.json` | Weeks 49–52 of 2025 |
-| `2026-W01.json` — `2026-W10.json` | Weeks 1–10 of 2026 |
+| `2026-W01.json` — `2026-W18.json` | Weeks 1–18 of 2026 (W08–W10 missing) |
 
 **Filename pattern:** `YYYY-WXX.json` (ISO 8601 week number)
 
