@@ -6,11 +6,10 @@ body:
   - type: textarea
     id: domains
     attributes:
-      label: Malicious domains or IPs
+      label: Malicious domains
       description: One per line
       placeholder: |
         https://phishing-site.com
-        192.168.1.100
         scam-domain.net
     validations:
       required: true

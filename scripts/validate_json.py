@@ -72,7 +72,8 @@ def main():
     extra = [Path(a) for a in sys.argv[1:] if Path(a).exists()]
     files = FILES_TO_CHECK + extra
 
-    ok = all(validate_file(f) for f in files)
+    results = [validate_file(f) for f in files]
+    ok = all(results)
 
     if not ok:
         log("Validation FAILED — fix JSON errors before proceeding", "error")

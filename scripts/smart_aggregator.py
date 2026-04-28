@@ -87,10 +87,21 @@ def clean_hosts_ips(text: str) -> str:
 
 # ── Parsers ──────────────────────────────────────────────────────────────────
 
+def _normalize_set(items) -> set:
+    """Normalize a list of domain strings, dropping empty results."""
+    out = set()
+    for x in items:
+        if isinstance(x, str):
+            nd = normalize_domain(x)
+            if nd:
+                out.add(nd)
+    return out
+
+
 def parse_metamask(content: str) -> set:
     try:
         data = json.loads(content)
-        return {normalize_domain(x) for x in data.get("blacklist", []) if normalize_domain(x)}
+        return _normalize_set(data.get("blacklist", []))
     except Exception:
         return set()
 
@@ -100,7 +111,7 @@ def parse_polkadot(content: str) -> set:
         data = json.loads(content)
         deny = data.get("deny", [])
         if isinstance(deny, list):
-            return {normalize_domain(x) for x in deny if normalize_domain(x)}
+            return _normalize_set(deny)
     except Exception:
         pass
     return set()
@@ -110,7 +121,7 @@ def parse_json_list(content: str) -> set:
     try:
         data = json.loads(content)
         if isinstance(data, list):
-            return {normalize_domain(x) for x in data if isinstance(x, str) and normalize_domain(x)}
+            return _normalize_set(data)
     except Exception:
         pass
     return set()
@@ -121,7 +132,7 @@ def parse_json_key_domains(content: str) -> set:
         data = json.loads(content)
         arr = data.get("domains", [])
         if isinstance(arr, list):
-            return {normalize_domain(x) for x in arr if isinstance(x, str) and normalize_domain(x)}
+            return _normalize_set(arr)
     except Exception:
         pass
     return set()

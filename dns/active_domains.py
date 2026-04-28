@@ -59,7 +59,20 @@ def save_cache(cache: Dict[str, Dict]):
     except Exception as e:
         logging.error(f"Cache save failed: {e}")
 
-def check_domain(domain: str, resolver: dns.resolver.Resolver, retry: int = 0) -> Tuple[str, str]:
+_thread_local = threading.local()
+
+def _get_resolver() -> dns.resolver.Resolver:
+    """Get a thread-local resolver instance (Resolver is not thread-safe)."""
+    if not hasattr(_thread_local, 'resolver'):
+        r = dns.resolver.Resolver()
+        r.nameservers = CUSTOM_RESOLVERS
+        r.timeout = DNS_TIMEOUT
+        r.lifetime = DNS_TIMEOUT * max(1, len(CUSTOM_RESOLVERS))
+        _thread_local.resolver = r
+    return _thread_local.resolver
+
+def check_domain(domain: str, retry: int = 0) -> Tuple[str, str]:
+    resolver = _get_resolver()
     try:
         resolver.resolve(domain, 'A', lifetime=DNS_TIMEOUT)
         return (domain, 'live')
@@ -74,7 +87,7 @@ def check_domain(domain: str, resolver: dns.resolver.Resolver, retry: int = 0) -
     except dns.exception.Timeout:
         if retry < MAX_RETRIES:
             time.sleep(0.1 * (retry + 1))
-            return check_domain(domain, resolver, retry + 1)
+            return check_domain(domain, retry + 1)
         return (domain, 'timeout')
     except Exception:
         return (domain, 'error')
@@ -186,15 +199,10 @@ def main():
     
     # Run DNS checks
     if to_check:
-        resolver = dns.resolver.Resolver()
-        resolver.nameservers = CUSTOM_RESOLVERS
-        resolver.timeout = DNS_TIMEOUT
-        resolver.lifetime = DNS_TIMEOUT * max(1, len(CUSTOM_RESOLVERS))
-        
         cache_lock = threading.Lock()
 
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-            futures = {ex.submit(check_domain, d, resolver): d for d in to_check}
+            futures = {ex.submit(check_domain, d): d for d in to_check}
             
             for future in tqdm(as_completed(futures), total=len(to_check), desc="DNS checks"):
                 domain, status = future.result()
@@ -244,7 +252,7 @@ def main():
         badge = {
             "schemaVersion": 1,
             "label": "Active Phishing Domains",
-            "message": str(len(active_list)),
+            "message": f"{len(active_list):,}",
             "color": "red"
         }
         save_file(ACTIVE_COUNT_FILE, badge)
