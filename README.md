@@ -1,29 +1,64 @@
 # <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Performing%20Arts.png" alt="Performing Arts" width="28" height="28" /> Destroylist: Phishing & Scam Domain Blacklist
 
-![Destroyolist Illustration](scripts/destroyolist_image.png)
+<p align="center">
+  <img src="scripts/destroylist_image.png" alt="Destroylist" width="100%"/>
+</p>
 
 <p align="center">
   <a href="https://github.com/phishdestroy/destroylist">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+136%2C498%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+136%2C857%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
   </a>
 </p>
 
 <p align="center">
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/rootlist.yml/badge.svg" alt="Rootlist"/>
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/on_list_update.yml/badge.svg" alt="On List Update"/>
-
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/update_stats.yml/badge.svg" alt="Update Statistics"/>
   <img src="https://github.com/phishdestroy/destroylist/actions/workflows/pages.yml/badge.svg" alt="Deploy GitHub Pages"/>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/status-maintained-FF0000?style=flat-square" alt="Status"/>
   <img src="https://img.shields.io/badge/license-MIT-000000?style=flat-square" alt="License"/>
   <img src="https://img.shields.io/badge/contributions-welcome-FF0000?style=flat-square" alt="Contributions"/>
   <img src="https://img.shields.io/github/last-commit/phishdestroy/destroylist?style=flat-square&color=000000" alt="Last Commit"/>
   <img src="https://img.shields.io/github/stars/phishdestroy/destroylist?style=flat-square&color=FF0000" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/phishdestroy/destroylist?style=flat-square&color=000000" alt="Forks"/>
 </p>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="22" height="22" /> Quick Start
+
+Add to **Pi-hole** or **AdGuard Home** in one click — paste this URL into your blocklist settings:
+
+```
+https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/hosts.txt
+```
+
+> More formats: [Hosts](#-data-feeds) · [AdBlock](#-data-feeds) · [Dnsmasq](#-data-feeds) · [Unbound](#-data-feeds) · [RPZ](#-data-feeds) · [API](#-threat-intelligence-api)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="22" height="22" /> Quick Access
+
+<details>
+<summary><b>Table of Contents</b></summary>
+
+- [Quick Start](#-quick-start)
+- [Live Statistics](#live-statistics)
+- [Data Feeds](#-data-feeds)
+- [Root Lists](#-root-lists)
+- [Content-Verified Feeds](#-content-verified-feeds-)
+- [Threat Intelligence API](#-threat-intelligence-api)
+- [About Destroylist](#-about-destroylist)
+- [Workflow & Remediation](#-threat-intelligence--automated-remediation-workflow)
+- [Fraud Victims Info](#-key-info-for-online-fraud-victims)
+- [Appeals Process](#-appeals-process)
+- [Connect With Us](#-connect-with-us)
+- [Join the Fight](#-join-the-fight)
+
+</details>
 
 ### Live Statistics
 
@@ -41,8 +76,6 @@
 | **Community** | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_community.json&style=flat-square&color=000000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_community.json&style=flat-square&color=000000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_community.json&style=flat-square&color=000000&label=) |
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="File Folder" width="22" height="22" /> Data Feeds
-
-
 
 | Feed | Description | Update | Download |
 |:-----|:------------|:------:|:--------:|
@@ -87,8 +120,7 @@
 
 > **All Roots** — clean root domains (no infra) · **Live Only** — DNS-verified active · **Services Only** — hosting platform subdomains (Vercel, Pages.dev, Netlify, etc.)
 
-
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Fire.webp" width="25" /> Content-Verified Feeds <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Right.webp" width="25" />
 
@@ -98,16 +130,17 @@
 [![Primary Content](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active_count.json&style=for-the-badge)](https://github.com/phishdestroy/destroylist/raw/main/dns/content_active.json)
 [![Community Content](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_active_count.json&style=for-the-badge)](https://github.com/phishdestroy/destroylist/raw/main/community/content_live.json)
 
-| Feed | Description | ⏰ Update | Download |
-|:-----|:------------|:------:|:--------:|
-| 💥 **Primary Content** | Curated phishing with verified active content | `12h` (06:00 / 18:00 UTC) | [![JSON](https://img.shields.io/badge/JSON-dc2626?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.txt) |
-| 🌐 **Community Content** | Aggregated feeds with verified active content | `24h` (03:00 UTC) | [![JSON](https://img.shields.io/badge/JSON-991b1b?style=flat-square&logo=json&logoColor=white)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json) [![TXT](https://img.shields.io/badge/TXT-000000?style=flat-square)](https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.txt) |
+| Feed | Update | Description |
+|:-----|:------:|:------------|
+| **Primary Content** | `12h` (06:00 / 18:00 UTC) | Curated phishing with verified active content |
+| **Community Content** | `24h` (03:00 UTC) | Aggregated feeds with verified active content |
+
+> Download links: see [Data Feeds](#-data-feeds) above
 
 > [!WARNING]
-> **Cloaking Alert:** Scammers use cloaking to hide phishing from bots — showing blank/fake pages to scanners. Domain **NOT** in content list ≠ safe! Use **Primary All** or **Community General** for full protection.
+> **Cloaking Alert:** Scammers use cloaking to hide phishing from bots — showing blank/fake pages to scanners. Domain **NOT** in content list ≠ safe! Use **Primary** or **Community** full lists for complete protection.
 
----
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Alien%20Monster.webp" alt="Alien Monster" width="25" height="25" /> Threat Intelligence API
 
@@ -142,7 +175,7 @@ flowchart LR
   <a href="https://api.destroy.tools/v1/stats"><img src="https://img.shields.io/badge/📊_STATS-000000?style=for-the-badge" alt="Stats"/></a>
 </p>
 
-> **Free, open, no API key.** Real-time domain risk scoring (0-100) across 770K+ threats · Hourly sync · Single & bulk check (500/req) · Keyword search · Full feeds
+> **Free, open, no API key.** Real-time domain risk scoring (0-100) across 888K+ threats · 2h sync · Single & bulk check (500/req) · Keyword search · Full feeds
 
 <details>
 <summary>📖 <b>API Endpoints, Scoring & Integration Examples</b></summary>
@@ -204,22 +237,20 @@ curl -X POST "https://api.destroy.tools/v1/check/bulk" \
 
 </details>
 
----
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Telescope.png" alt="Telescope" width="22" height="22" /> About Destroylist
 
 > [!NOTE]
 > Live data collection began on July 1, 2025
 
-Destroylist is a powerful tool against phishing and scams, powered by **PhishDestroy**. It provides reliable intel for:
+<div align="center">
 
-- ✔️ Firewalls
-- ✔️ DNS resolvers
-- ✔️ Threat platforms
-- ✔️ Security research
+**888K+ domains tracked** · **13+ threat sources** · **50+ vendor reports** · **6 output formats** · **Free API**
 
-Protect the web, one domain at a time!
+</div>
+
+Destroylist is a real-time threat intelligence platform by **PhishDestroy** — protecting firewalls, DNS resolvers, browser extensions, and security teams worldwide. Every domain is discovered, verified, reported to registrars, and published transparently.
 
 ### Data Pipeline
 
@@ -323,7 +354,7 @@ curl -s https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt
 
 </details>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" alt="Shield" width="22" height="22" /> Threat Intelligence & Automated Remediation Workflow
 
@@ -356,24 +387,11 @@ flowchart LR
 
 </div>
 
-```mermaid
-%%{init: {"theme":"base", "themeVariables": { "background": "transparent", "mainBkg": "#000000", "primaryColor": "#000000", "primaryTextColor": "#FFFFFF", "primaryBorderColor": "#FF0000", "lineColor": "#FF0000", "secondaryColor": "#111111", "tertiaryColor": "#111111", "fontFamily": "Inter, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "htmlLabels": true}}}%%
-flowchart LR
-  D1["🔍 Discovery<br/>30+ parsers"] --> R1["📤 Report<br/>50+ vendors"]
-  R1 --> L1["⚖️ Legal<br/>ICANN / Abuse"]
-  L1 --> P1["📡 Publish<br/>Real-time feeds"]
-  P1 -.-> D1
-
-  classDef phase fill:#000000,stroke:#FF0000,stroke-width:2px,color:#FFFFFF;
-
-  class D1,R1,L1,P1 phase;
-```
-
 <details>
 <summary>📖 <b>Read Full Workflow Details</b></summary>
 <br>
 
-### Phase 1: Pre-emptive Discovery & Ingestion
+### 🔍 Phase 1: Pre-emptive Discovery & Ingestion
 
 🔎 We utilize a distributed network of **30+ proprietary parsers** to identify malicious domains at their earliest stage:
 
@@ -414,7 +432,7 @@ PhishStats        PhishReport               IsItPhish               ThreatCenter
 
 </details>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Police%20Car.png" alt="Police Car" width="22" height="22" /> Key Info for Online Fraud Victims
 
@@ -472,32 +490,16 @@ Official government or law-enforcement requests may be answered privately.
 
 </details>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Bar Chart" width="22" height="22" /> Goals, Usage & Historical Vault
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Bar Chart" width="22" height="22" /> Use Cases & Historical Vault
 
-<div align="center">
-
-| ✔️ Network security | ✔️ Automation | ✔️ Threat research | ✔️ ML training |
-|:---:|:---:|:---:|:---:|
-
-</div>
-
-<div align="center">
-
-| 🤖 | 🔬 | 📈 |
-|:---:|:---:|:---:|
-| **AI Training** | **Research** | **Trend Analysis** |
-
-</div>
-
-> [!IMPORTANT]
-> **Open collaboration = Stronger security. Let's team up!**
+Network security · Threat research · AI/ML training · Trend analysis · Automation
 
 > [!TIP]
 > 📩 **Historical Vault** (500K+ domains, 5+ years archived): [contact@phishdestroy.io](mailto:contact@phishdestroy.io)
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Magic%20Wand.png" alt="Magic Wand" width="22" height="22" /> Appeals Process
 
@@ -515,7 +517,7 @@ Wrongly listed? Fix it fast:
 
 Accuracy first! 🔭
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Black%20Heart.webp" alt="Black Heart" width="25" height="25" /> Connect With Us
 
@@ -534,7 +536,7 @@ Accuracy first! 🔭
   <a href="mailto:contact@phishdestroy.io"><img src="https://img.shields.io/badge/✉️_CONTACT-FF0000?style=for-the-badge" alt="Email"/></a>
 </p>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Star.png" alt="Star" width="22" height="22" /> Star History
 
@@ -546,7 +548,7 @@ Accuracy first! 🔭
  </picture>
 </a>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## 📄 License
 
@@ -554,17 +556,26 @@ Accuracy first! 🔭
 
 **MIT** — Free, open, yours to use!
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" alt="Handshake" width="22" height="22" /> Join the Fight!
 
-Got ideas, sources, or improvements? We welcome:
+<div align="center">
 
-- 💡 Detection algorithm tweaks
-- 📢 Integration tips
-- 🔍 Fresh threat intelligence
+**Every star helps this project reach more security teams and protect more users.**
+
+[![Star this repo](https://img.shields.io/badge/⭐_Star_Destroylist-FF0000?style=for-the-badge)](https://github.com/phishdestroy/destroylist)
+[![Open an Issue](https://img.shields.io/badge/🐛_Open_Issue-000000?style=for-the-badge)](https://github.com/phishdestroy/destroylist/issues/new)
+[![Submit a PR](https://img.shields.io/badge/🔧_Submit_PR-FF0000?style=for-the-badge)](https://github.com/phishdestroy/destroylist/pulls)
+
+</div>
+
+We welcome contributions:
+
+- 🔍 Fresh threat intelligence & new blocklist sources
+- 💡 Detection algorithm improvements
+- 📢 Integration guides for new platforms
+- 🌐 Translations & documentation
 
 **Drop an Issue or PR — let's crush phishing together!** 💪
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

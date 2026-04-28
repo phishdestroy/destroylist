@@ -106,7 +106,7 @@ Violators will be reported to appropriate authorities.
 |:-----|:------:|:--------:|
 | `list.json` | Real-time | ✅ Yes |
 | `dns/active_domains.json` | Real-time | ✅ Yes |
-| `community/*` | Hourly | ❌ No (auto-aggregated) |
+| `community/*` | Every 2h | ❌ No (auto-aggregated) |
 
 ---
 

@@ -14,7 +14,7 @@ on:
 
 concurrency:
   group: repo-updates
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   process:
