@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 139,310 domains | 2026-04-28 18:32 UTC
+; Destroylist - Primary | RPZ zone | 139,312 domains | 2026-04-28 18:39 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202604281832 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202604281839 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -6105,6 +6105,7 @@ allocation-cascade.com CNAME .
 allocation-chillhouse.com CNAME .
 allocation-curve.app CNAME .
 allocation-doublezero.live CNAME .
+allocation-enosys.app CNAME .
 allocation-ethena.com CNAME .
 allocation-fetch.com CNAME .
 allocation-flare.app CNAME .
@@ -120425,6 +120426,7 @@ trustnets.surge.sh CNAME .
 trustnodes.app CNAME .
 trustnodes.dev CNAME .
 trustones.org CNAME .
+trustoptima.com CNAME .
 trustorainvest.com CNAME .
 trustowallet.cc CNAME .
 trustpad-306.pages.dev CNAME .
