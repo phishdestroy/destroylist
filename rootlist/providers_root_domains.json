@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 28,
-      "total_entries": 22404,
+      "total_entries": 22410,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 15687,
+          "count": 15693,
           "hosts": [
             "00000000000000000000000.pages.dev",
             "0145-53l.pages.dev",
@@ -1108,6 +1108,7 @@
             "avantisfixclaim.pages.dev",
             "ave-protcol-auth.pages.dev",
             "ave-protcol-eng-us.pages.dev",
+            "avee-account.pages.dev",
             "aveentoken.pages.dev",
             "avevswap.pages.dev",
             "aviraphantomvpnlogin.pages.dev",
@@ -7573,6 +7574,7 @@
             "learn-en-thorchan-wallet.pages.dev",
             "learn-eng-bridge.pages.dev",
             "learn-eng-ldger.pages.dev",
+            "learn-eng-lives.pages.dev",
             "learn-esktop-live-ledzr.pages.dev",
             "learn-exodass-io.pages.dev",
             "learn-exodesweb3wallet.pages.dev",
@@ -7792,6 +7794,7 @@
             "ledgeer-live-app-desktop.pages.dev",
             "ledgeer-live-auth.pages.dev",
             "ledgeer-live-cloud.pages.dev",
+            "ledgeer-live-deskt.pages.dev",
             "ledgeer-live-desktop-iny.pages.dev",
             "ledgeer-live-desktop-uss.pages.dev",
             "ledgeer-live-en.pages.dev",
@@ -8634,6 +8637,7 @@
             "ledgrs-live-en.pages.dev",
             "ledgrs-oi-li.pages.dev",
             "ledgrwallat.pages.dev",
+            "ledgrwallet-learn.pages.dev",
             "ledgrwallte-org.pages.dev",
             "ledgtdg.pages.dev",
             "ledguar-live-wellat.pages.dev",
@@ -12949,6 +12953,7 @@
             "start-ledgerlive-auth.pages.dev",
             "start-ledgerlive-cd.pages.dev",
             "start-ledgerlive.pages.dev",
+            "start-ledgge-com-en-app.pages.dev",
             "start-ledgger-live-en.pages.dev",
             "start-ledggr-en.pages.dev",
             "start-ledgirs.pages.dev",
@@ -14350,6 +14355,7 @@
             "ultrascalingsyncingsolxz.pages.dev",
             "ultymatumiss.pages.dev",
             "umbra-41f.pages.dev",
+            "umg-phntom.pages.dev",
             "un-exodeusweb.pages.dev",
             "un-ico.pages.dev",
             "un-leder-com-strt.pages.dev",
@@ -27528,7 +27534,7 @@
     },
     "decentralized_storage": {
       "total_domains": 5,
-      "total_entries": 286,
+      "total_entries": 287,
       "items": [
         {
           "domain": "dweb.link",
@@ -27761,6 +27767,41 @@
           ]
         },
         {
+          "domain": "eth.limo",
+          "count": 29,
+          "hosts": [
+            "aero.drome.eth.limo",
+            "claim.wizardao.eth.limo",
+            "dashboard-layeredge.eth.limo",
+            "e5fd.pinit.eth.limo",
+            "estfor.deif.eth.limo",
+            "event-exclusive.eth.limo",
+            "firefnd.eth.limo",
+            "flaer-network.eth.limo",
+            "flare-net.eth.limo",
+            "flareapp.eth.limo",
+            "flarefi.eth.limo",
+            "flarelabs.eth.limo",
+            "flarenetwork-xrp.eth.limo",
+            "galxe-check-info.eth.limo",
+            "loggiecid.eth.limo",
+            "mega-app.eth.limo",
+            "mega-fi.eth.limo",
+            "megaeco-tge.eth.limo",
+            "megafnd.eth.limo",
+            "megatge.eth.limo",
+            "meme2016.eth.limo",
+            "nadoxyz.eth.limo",
+            "nexus-box.eth.limo",
+            "pharos-app.eth.limo",
+            "pharos-tge.eth.limo",
+            "playzkasino.eth.limo",
+            "terminalmega.eth.limo",
+            "tomatocash.eth.limo",
+            "tornadoproxy.eth.limo"
+          ]
+        },
+        {
           "domain": "infura-ipfs.io",
           "count": 29,
           "hosts": [
@@ -27793,40 +27834,6 @@
             "bafybeigz3zfosvwiso3abzamcwdp6v2o4xasnj4smntd4uienjeb2sklle.ipfs.infura-ipfs.io",
             "bafybeih6fxh7ch7c4wi2x2jm5m6xteqeogdynpxenl4u4p6vxotkcrruna.ipfs.infura-ipfs.io",
             "bafybeihczcpxvywbbj5ntggfaa4tlv25atott5rwtsx2rybahshk3hr4b4.ipfs.infura-ipfs.io"
-          ]
-        },
-        {
-          "domain": "eth.limo",
-          "count": 28,
-          "hosts": [
-            "aero.drome.eth.limo",
-            "claim.wizardao.eth.limo",
-            "dashboard-layeredge.eth.limo",
-            "e5fd.pinit.eth.limo",
-            "estfor.deif.eth.limo",
-            "event-exclusive.eth.limo",
-            "firefnd.eth.limo",
-            "flaer-network.eth.limo",
-            "flare-net.eth.limo",
-            "flareapp.eth.limo",
-            "flarefi.eth.limo",
-            "flarelabs.eth.limo",
-            "flarenetwork-xrp.eth.limo",
-            "galxe-check-info.eth.limo",
-            "loggiecid.eth.limo",
-            "mega-app.eth.limo",
-            "mega-fi.eth.limo",
-            "megaeco-tge.eth.limo",
-            "megafnd.eth.limo",
-            "megatge.eth.limo",
-            "meme2016.eth.limo",
-            "nexus-box.eth.limo",
-            "pharos-app.eth.limo",
-            "pharos-tge.eth.limo",
-            "playzkasino.eth.limo",
-            "terminalmega.eth.limo",
-            "tomatocash.eth.limo",
-            "tornadoproxy.eth.limo"
           ]
         },
         {
