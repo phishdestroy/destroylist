@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 143,249 domains | 2026-05-05 05:04 UTC
+; Destroylist - Primary | RPZ zone | 143,250 domains | 2026-05-05 05:07 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202605050504 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202605050507 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -138166,6 +138166,7 @@ www.moonshot-enter.live CNAME .
 www.moonshot-explore.com CNAME .
 www.moonshot-favorite.com CNAME .
 www.moonshot-list.live CNAME .
+www.moonshot-polling.live CNAME .
 www.moonshot-polls.com CNAME .
 www.moonshot-s1.xyz CNAME .
 www.moonshot-s15.xyz CNAME .
