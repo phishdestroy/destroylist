@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 143,432 domains | 2026-05-06 08:50 UTC
+; Destroylist - Primary | RPZ zone | 143,433 domains | 2026-05-06 09:13 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202605060850 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202605060913 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -124642,6 +124642,7 @@ trxdrop.com CNAME .
 trxdrop.live CNAME .
 trxed8.com CNAME .
 trxenergy.app CNAME .
+trxenergy.vercel.app CNAME .
 trxes.org CNAME .
 trxev.com CNAME .
 trxev.org CNAME .
