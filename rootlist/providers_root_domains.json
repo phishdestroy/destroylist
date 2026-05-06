@@ -6,7 +6,7 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 28,
-      "total_entries": 22999,
+      "total_entries": 23000,
       "items": [
         {
           "domain": "pages.dev",
@@ -22996,6 +22996,32 @@
           ]
         },
         {
+          "domain": "amazonaws.com",
+          "count": 20,
+          "hosts": [
+            "benq-vice.s3.us-east-2.amazonaws.com",
+            "bucket-a9d85911fe.s3.amazonaws.com",
+            "cbx-zone.s3.ap-southeast-5.amazonaws.com",
+            "dpdbitkouyem-rlsaq0in-mhd0c9gt.s3.amazonaws.com",
+            "ec2-3-15-93-54.us-east-2.compute.amazonaws.com",
+            "ec2-35-170-63-110.compute-1.amazonaws.com",
+            "ep7pye4bj8.execute-api.eu-west-2.amazonaws.com",
+            "epibucketdata.s3.amazonaws.com",
+            "epibucketdata.s3.amazonaws.com/1ede0b.html",
+            "gxu4vr8kwtirlk9.s3-website-us-east-1.amazonaws.com",
+            "ip97iv5t630sgnz047ijwapdlnd068ptehjenddup5hq4rg4y4e2qj6unfr3.s3-website-us-east-1.amazonaws.com",
+            "le7et-l9eiv-w4g6t.s3.amazonaws.com",
+            "lkdjfudh0-oskdjddd11.s3.eu-north-1.amazonaws.com",
+            "lsksuud-sis0s-sjihss22.s3.eu-north-1.amazonaws.com",
+            "net-wok.s3-website.us-east-2.amazonaws.com",
+            "redirect-q5nff703802.s3-website-us-east-1.amazonaws.com",
+            "s3.dualstack.us-east-1.amazonaws.com",
+            "s3.us-east-2.amazonaws.com",
+            "setupussser-9prwbpa9-x2atj696.s3.amazonaws.com",
+            "tbiodpt0-spsksjd33.s3.eu-north-1.amazonaws.com"
+          ]
+        },
+        {
           "domain": "hostingersite.com",
           "count": 19,
           "hosts": [
@@ -23018,31 +23044,6 @@
             "pink-hedgehog-860187.hostingersite.com",
             "sandybrown-wolverine-124843.hostingersite.com",
             "tan-frog-637510.hostingersite.com"
-          ]
-        },
-        {
-          "domain": "amazonaws.com",
-          "count": 19,
-          "hosts": [
-            "benq-vice.s3.us-east-2.amazonaws.com",
-            "bucket-a9d85911fe.s3.amazonaws.com",
-            "cbx-zone.s3.ap-southeast-5.amazonaws.com",
-            "dpdbitkouyem-rlsaq0in-mhd0c9gt.s3.amazonaws.com",
-            "ec2-3-15-93-54.us-east-2.compute.amazonaws.com",
-            "ec2-35-170-63-110.compute-1.amazonaws.com",
-            "ep7pye4bj8.execute-api.eu-west-2.amazonaws.com",
-            "epibucketdata.s3.amazonaws.com",
-            "epibucketdata.s3.amazonaws.com/1ede0b.html",
-            "gxu4vr8kwtirlk9.s3-website-us-east-1.amazonaws.com",
-            "le7et-l9eiv-w4g6t.s3.amazonaws.com",
-            "lkdjfudh0-oskdjddd11.s3.eu-north-1.amazonaws.com",
-            "lsksuud-sis0s-sjihss22.s3.eu-north-1.amazonaws.com",
-            "net-wok.s3-website.us-east-2.amazonaws.com",
-            "redirect-q5nff703802.s3-website-us-east-1.amazonaws.com",
-            "s3.dualstack.us-east-1.amazonaws.com",
-            "s3.us-east-2.amazonaws.com",
-            "setupussser-9prwbpa9-x2atj696.s3.amazonaws.com",
-            "tbiodpt0-spsksjd33.s3.eu-north-1.amazonaws.com"
           ]
         },
         {
