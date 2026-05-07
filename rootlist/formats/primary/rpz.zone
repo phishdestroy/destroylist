@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 144,038 domains | 2026-05-07 06:19 UTC
+; Destroylist - Primary | RPZ zone | 144,067 domains | 2026-05-07 06:29 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202605070619 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202605070629 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -2414,6 +2414,7 @@ aave-app.xyz CNAME .
 aave-bloggy.com CNAME .
 aave-bonus.com CNAME .
 aave-capital.com CNAME .
+aave-check.app CNAME .
 aave-claim.io CNAME .
 aave-com-help.pages.dev CNAME .
 aave-compensation.com CNAME .
@@ -2433,6 +2434,7 @@ aave-defi.org CNAME .
 aave-desktopwalletinstaller.com CNAME .
 aave-earn.layeroffer.online CNAME .
 aave-earning.com CNAME .
+aave-eligibility.xyz CNAME .
 aave-en-wallet.pages.dev CNAME .
 aave-eta.vercel.app CNAME .
 aave-eth-v3.com CNAME .
@@ -2445,9 +2447,13 @@ aave-gho.com CNAME .
 aave-gho.eu.com CNAME .
 aave-gov.com CNAME .
 aave-governance.net CNAME .
+aave-interface.com CNAME .
 aave-lending.com CNAME .
 aave-logis.pages.dev CNAME .
+aave-portals.net CNAME .
+aave-pro.com CNAME .
 aave-protocoll.pages.dev CNAME .
+aave-snapshot.org CNAME .
 aave-stake.com CNAME .
 aave-stake.web.app CNAME .
 aave-staking-markets-defi-v3-v2-aave-swap.com CNAME .
@@ -2455,6 +2461,7 @@ aave-staking-markets-defi-v3-v2-aave-swap.net CNAME .
 aave-staking-markets-defi-v3-v2-aave-swap.org CNAME .
 aave-staking-markets-defi-v3-v2.net CNAME .
 aave-v3-eth.cc CNAME .
+aave-v3swap.com CNAME .
 aave-v4.net CNAME .
 aave-verification.com CNAME .
 aave-voting.app CNAME .
@@ -2466,6 +2473,7 @@ aave.3v-gho.it.com CNAME .
 aave.aave-coin.it.com CNAME .
 aave.airdropalert.cfd CNAME .
 aave.aiweb3.top CNAME .
+aave.arkeomarketplace.com CNAME .
 aave.bet CNAME .
 aave.com-api-gateway-connect-alpha.cloud CNAME .
 aave.com-api-gateway-wallets-v1-edge.cloud CNAME .
@@ -2526,6 +2534,7 @@ aave.exchain.it.com CNAME .
 aave.exchan.it.com CNAME .
 aave.gho-v3.it.com CNAME .
 aave.ghosmart.it.com CNAME .
+aave.global CNAME .
 aave.kgen.team CNAME .
 aave.life CNAME .
 aave.ltd CNAME .
@@ -2534,6 +2543,7 @@ aave.polymarket.loan CNAME .
 aave.protocol-v3.it.com CNAME .
 aave.report CNAME .
 aave.smart-update.it.com CNAME .
+aave.srvincs.com CNAME .
 aave.stake-3v.it.com CNAME .
 aave.stake-smart.it.com CNAME .
 aave.sushistakes.biz CNAME .
@@ -2544,12 +2554,14 @@ aave.v3-gho.it.com CNAME .
 aave.vote CNAME .
 aave.web-stake.it.com CNAME .
 aave2.com CNAME .
+aaveapp.club CNAME .
 aaveapp.co.com CNAME .
 aaveapp.pages.dev CNAME .
 aavebank.net CNAME .
 aavebeta.com CNAME .
 aavecasifreespins.click CNAME .
 aavecasinonodeposit.click CNAME .
+aavechan.io CNAME .
 aavechan.stkaaveclaim.com CNAME .
 aaveclassic.com CNAME .
 aaveclassic.org CNAME .
@@ -2563,6 +2575,7 @@ aavedropslive.xyz CNAME .
 aavee.at CNAME .
 aavee.bet CNAME .
 aavee.live CNAME .
+aavee.run CNAME .
 aavef.com CNAME .
 aavefi.one CNAME .
 aavefinance.one CNAME .
@@ -2573,6 +2586,7 @@ aavegain.com CNAME .
 aaveget.com CNAME .
 aavegotchighst.pages.dev CNAME .
 aavegotchimigrate.com CNAME .
+aavegov.com CNAME .
 aavegovernance.net CNAME .
 aavegsystem.com CNAME .
 aaveinvestment.org CNAME .
@@ -2610,6 +2624,7 @@ aavev4.com CNAME .
 aaveve.eu.com CNAME .
 aavevevev2.com CNAME .
 aavewallet-dfg.pages.dev CNAME .
+aavewebrewards.icu CNAME .
 aaveyield.com CNAME .
 aavf.app CNAME .
 aavids.top CNAME .
@@ -21960,6 +21975,7 @@ bybitcoinvn.com CNAME .
 bybitcopy-trade.com CNAME .
 bybitdex.network CNAME .
 bybitdigital.com CNAME .
+bybitenphg.com CNAME .
 bybitenur.com CNAME .
 bybitewf.pages.dev CNAME .
 bybitexchangecoin.com CNAME .
@@ -21968,6 +21984,7 @@ bybitexe.com CNAME .
 bybitexm.com CNAME .
 bybitexp.com CNAME .
 bybitfiatpay.com CNAME .
+bybitfx.io CNAME .
 bybitga.com CNAME .
 bybitgem.live CNAME .
 bybitgloba1.xyz CNAME .
@@ -21977,6 +21994,9 @@ bybitgum.com CNAME .
 bybitgum.org CNAME .
 bybiti.com.cn CNAME .
 bybitii.com.cn CNAME .
+bybititent.com CNAME .
+bybititjue.com CNAME .
+bybititoiu.com CNAME .
 bybititru.com CNAME .
 bybititsr.com CNAME .
 bybitiz.com.cn CNAME .
@@ -21988,6 +22008,7 @@ bybitlz.com.cn CNAME .
 bybitn.com.cn CNAME .
 bybitnn.com.cn CNAME .
 bybitones.com CNAME .
+bybitosent.com CNAME .
 bybitpartner.com CNAME .
 bybitpayback.goksan.co.kr CNAME .
 bybitperu.com CNAME .
@@ -22007,7 +22028,9 @@ bybitprokg.com CNAME .
 bybitproki.com CNAME .
 bybitprokr.com CNAME .
 bybitprokx.com CNAME .
+bybitprow.com CNAME .
 bybitrade.com CNAME .
+bybitrally.ru CNAME .
 bybitreceipt.pages.dev CNAME .
 bybitrewards.digital CNAME .
 bybitron.com CNAME .
@@ -22023,6 +22046,7 @@ bybitterflame.com CNAME .
 bybittr5678.vip CNAME .
 bybittrading.goksan.co.kr CNAME .
 bybittradingpk.com CNAME .
+bybittrc.com CNAME .
 bybittt.com.cn CNAME .
 bybittt.eu CNAME .
 bybittvn.com CNAME .
@@ -123616,6 +123640,7 @@ tron-claim.xyz CNAME .
 tron-coin.pro CNAME .
 tron-convert.homes CNAME .
 tron-convert.sbs CNAME .
+tron-cs.cc CNAME .
 tron-drop.com CNAME .
 tron-ekovirta-app.com CNAME .
 tron-ems.lv CNAME .
@@ -123630,6 +123655,7 @@ tron-guard.com CNAME .
 tron-impact.org CNAME .
 tron-jst.com CNAME .
 tron-link.online CNAME .
+tron-links.xyz CNAME .
 tron-list.com CNAME .
 tron-mixer.com CNAME .
 tron-mixer.top CNAME .
@@ -123642,6 +123668,7 @@ tron-qr-code-generator.com CNAME .
 tron-quality.com CNAME .
 tron-scan.to CNAME .
 tron-scan.us CNAME .
+tron-skan.com CNAME .
 tron-swap.io CNAME .
 tron-swap.org CNAME .
 tron-swap.pages.dev CNAME .
@@ -123662,7 +123689,9 @@ tron.deals CNAME .
 tron.farm CNAME .
 tron.faucetminer.cloud CNAME .
 tron.gd CNAME .
+tron.my-card.icu CNAME .
 tron.pordoin.com CNAME .
+tron.townmanage.com CNAME .
 tron.transits.cc CNAME .
 tron.trustscan.eu CNAME .
 tron.trustscan.info CNAME .
