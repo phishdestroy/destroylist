@@ -5,18 +5,18 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "a8687773e969e109387db1e9ec2fe6819720e28b815d63aecc636739251b553c",
-    "count": 106969,
-    "consecutive_failures": 0
-  },
-  "Polkadot": {
-    "hash": "5013c149b7a1b8e220f9b5c2fc18e571cc8135553de8e9bba789972938e08acb",
-    "count": 53992,
+    "hash": "27befbb52362b501df1c7826d5aa6c790caffe84d30e8559b1e4835ef47eb522",
+    "count": 107004,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
     "hash": "2f60d8e249b57f65228871bf788f98d2de4e87e12b75d1d77b0dd9da6ba9248f",
     "count": 1290,
+    "consecutive_failures": 0
+  },
+  "Polkadot": {
+    "hash": "5013c149b7a1b8e220f9b5c2fc18e571cc8135553de8e9bba789972938e08acb",
+    "count": 53992,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -34,19 +34,24 @@
     "count": 553,
     "consecutive_failures": 0
   },
-  "CryptoFirewall": {
-    "hash": "964fccaf53b30f8d2cac981d3b9d0750124246f2b71e778a6304b15e8395654e",
-    "count": 107539,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
     "consecutive_failures": 0
   },
+  "CryptoFirewall": {
+    "hash": "964fccaf53b30f8d2cac981d3b9d0750124246f2b71e778a6304b15e8395654e",
+    "count": 107539,
+    "consecutive_failures": 0
+  },
   "SEAL": {
-    "hash": "d9bb8f379207090d0245c8f50feab58abd5d7a943f912b9c3b27bbb7474623b7",
-    "count": 106421,
+    "hash": "865d11e2e3891b27b5ce97eeac767f7c1c8043bbe57f41b0babc3404f6898f11",
+    "count": 106454,
+    "consecutive_failures": 0
+  },
+  "ScamSniffer": {
+    "hash": "b89b843fbd929fd7dc63a7050c0ff6b30ab5c82cdc07efbe509d664997f662c7",
+    "count": 346446,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -54,10 +59,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "ScamSniffer": {
-    "hash": "6bd762f51e62cc0b31a0049043ec2d6fc1c70d12e88054d4fca644a63d7098e8",
-    "count": 346412,
-    "consecutive_failures": 0
-  },
-  "total_count": 916462
+  "total_count": 916568
 }
