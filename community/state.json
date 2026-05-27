@@ -5,8 +5,13 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "4d595356a50fd398ccfb91d8169be5cb1f7469488c17dc9c4f46f09072c3b525",
-    "count": 105599,
+    "hash": "3e1660289bab02049f1ab440739cf6e1b3418f325272fb2b8a07f31a16d6c887",
+    "count": 105587,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "84234ce6b9b1794407a8d59c98d8c6ae4721fb1b05f0dcb367f452f48c24aba7",
+    "count": 1295,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -14,14 +19,14 @@
     "count": 53992,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "d00d6b582c40c11be6ea03926851024471b8761da49a1aff82d8c5e39f1293fa",
-    "count": 1294,
-    "consecutive_failures": 0
-  },
   "Codeesura": {
     "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
     "count": 53991,
+    "consecutive_failures": 0
+  },
+  "ScamSniffer": {
+    "hash": "da6adadc29a046cbd02709862cb8ec64e3a5ac76c8054b5ea9b64ab2175582b5",
+    "count": 346635,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -34,11 +39,6 @@
     "count": 192,
     "consecutive_failures": 0
   },
-  "SEAL": {
-    "hash": "45977c68b95a54a11b046bfbfa5303080f6512df5424688f5faa68674ede7451",
-    "count": 105044,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
@@ -49,15 +49,15 @@
     "count": 107539,
     "consecutive_failures": 0
   },
+  "SEAL": {
+    "hash": "aaca4b526af10992b4aab0ad81eec5e3c04323251b44b18ae3e9a21b40213da4",
+    "count": 105032,
+    "consecutive_failures": 0
+  },
   "Enkrypt_Blacklist": {
     "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
     "count": 243832,
     "consecutive_failures": 0
   },
-  "ScamSniffer": {
-    "hash": "da6adadc29a046cbd02709862cb8ec64e3a5ac76c8054b5ea9b64ab2175582b5",
-    "count": 346635,
-    "consecutive_failures": 0
-  },
-  "total_count": 924410
+  "total_count": 924737
 }
