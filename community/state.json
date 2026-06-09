@@ -9,14 +9,14 @@
     "count": 102256,
     "consecutive_failures": 0
   },
-  "Codeesura": {
-    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
-    "count": 53991,
-    "consecutive_failures": 0
-  },
   "SPMedia_DetectedURLs": {
     "hash": "424f77e259befbb759b961a08deafc476f9a63fb0d11d75f58d8e541e061d839",
     "count": 1323,
+    "consecutive_failures": 0
+  },
+  "Codeesura": {
+    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
+    "count": 53991,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -29,6 +29,16 @@
     "count": 21852,
     "consecutive_failures": 0
   },
+  "Phishunt": {
+    "hash": "d8e7e4392f84734b77586ec58ca3132c0ea40d14fc6d1fe3500ed62436735e74",
+    "count": 218,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "25e966d740c0791476a9567a7e4c5fa329c3c752ce35ae807aab771bf707fef8",
+    "count": 102071,
+    "consecutive_failures": 0
+  },
   "CryptoFirewall": {
     "hash": "cfd9a5fe1e5fb6a7a0267c666dd72d33cd6a1a3f508f9ac1748e8b7e4f6679c3",
     "count": 107539,
@@ -37,11 +47,6 @@
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "398631884932c9cce94d469789e3919d4b228530041e8f71d464b7d77bccedef",
-    "count": 102097,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -54,10 +59,5 @@
     "count": 243832,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "e722b12750b8fbe0c06d948de8e853993fb52a1985453dc18c6b3352610cf27a",
-    "count": 217,
-    "consecutive_failures": 0
-  },
-  "total_count": 939911
+  "total_count": 939938
 }
