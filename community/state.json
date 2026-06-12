@@ -4,14 +4,14 @@
     "count": 247,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "954b48987d26dd15046dc653dc780e3316eea20f7df04eb84d6f3aadba2c9f5c",
-    "count": 100792,
+  "SEAL": {
+    "hash": "9161dde3109c275169ec100fa41b08934f38fdd86a7a15d4d5947a78f44d96ce",
+    "count": 100196,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "b1343157d268bf0fae36b4d89562c4204e8fd398fd3630f5692593b0f933294c",
-    "count": 1328,
+  "MetaMask": {
+    "hash": "840cd26d5cdb9dafdb76e919f95cf64683ee8541f26287c97584cf3678d0533f",
+    "count": 100765,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -24,14 +24,19 @@
     "count": 53991,
     "consecutive_failures": 0
   },
-  "DiscordPhishing_Nikolai": {
-    "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
-    "count": 21852,
+  "SPMedia_DetectedURLs": {
+    "hash": "b1343157d268bf0fae36b4d89562c4204e8fd398fd3630f5692593b0f933294c",
+    "count": 1328,
     "consecutive_failures": 0
   },
   "Phishunt": {
     "hash": "dbcac86a6feaa6994a3025deb0f9e4e2db09383de070b76adc03f6753923bb78",
     "count": 189,
+    "consecutive_failures": 0
+  },
+  "DiscordPhishing_Nikolai": {
+    "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
+    "count": 21852,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -44,9 +49,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "SEAL": {
-    "hash": "59ee5464bfedb9a1b64cfbd61ce79a7c4d9acc2e9a87cd445468eff79ca9a0ac",
-    "count": 100200,
+  "Enkrypt_Blacklist": {
+    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
+    "count": 243832,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -54,10 +59,5 @@
     "count": 347143,
     "consecutive_failures": 0
   },
-  "Enkrypt_Blacklist": {
-    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
-    "count": 243832,
-    "consecutive_failures": 0
-  },
-  "total_count": 944610
+  "total_count": 944685
 }
