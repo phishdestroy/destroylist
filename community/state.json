@@ -1,12 +1,12 @@
 {
-  "MetaMask": {
-    "hash": "74a0ff66a5a7e8957bd516babfa2ee489bf8f440e2b3cc179f2e195022767156",
-    "count": 101258,
-    "consecutive_failures": 0
-  },
   "OpenPhish": {
     "hash": "050bf3cfff64b7ce646e9499871766fcf9c981c226009e15a67411ee628ff92d",
     "count": 237,
+    "consecutive_failures": 0
+  },
+  "MetaMask": {
+    "hash": "db88f1b9f284c002e0ce5f9e7131bce27a8ea513abc64a9dc3f251cbdafbda28",
+    "count": 101238,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -30,23 +30,8 @@
     "consecutive_failures": 0
   },
   "Phishunt": {
-    "hash": "680ef543a5773fd5a06f43a85feea0f4ef2859c06a95c2915e2fbdff2b43f25f",
-    "count": 194,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "f185559a9b39c0558358feb6cc2087d57e40e63d39c2bf88186e7ec02f11f67f",
-    "count": 100689,
-    "consecutive_failures": 0
-  },
-  "CryptoFirewall": {
-    "hash": "cfd9a5fe1e5fb6a7a0267c666dd72d33cd6a1a3f508f9ac1748e8b7e4f6679c3",
-    "count": 107539,
-    "consecutive_failures": 0
-  },
-  "DiscordPhishing_Dogino": {
-    "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
-    "count": 37078,
+    "hash": "1cc8f683fb1b00b17bcffee36746d59c17625d8ca0e6189de9e5a420119b75d7",
+    "count": 189,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -54,10 +39,25 @@
     "count": 347266,
     "consecutive_failures": 0
   },
+  "DiscordPhishing_Dogino": {
+    "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
+    "count": 37078,
+    "consecutive_failures": 0
+  },
+  "CryptoFirewall": {
+    "hash": "cfd9a5fe1e5fb6a7a0267c666dd72d33cd6a1a3f508f9ac1748e8b7e4f6679c3",
+    "count": 107539,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "960b906fc198fc052fbd5a69ffd29df369b5eb4594f70ff09ea61ccd9183192f",
+    "count": 100671,
+    "consecutive_failures": 0
+  },
   "Enkrypt_Blacklist": {
     "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
     "count": 243832,
     "consecutive_failures": 0
   },
-  "total_count": 949513
+  "total_count": 949535
 }
