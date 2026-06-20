@@ -30,30 +30,30 @@
         to   { opacity: 1; transform: translateX(0);   }
       }
 
-      .lbl  { animation: fadein 0.7s ease both 0.10s; }
-      .ttl  { animation: fadein 0.7s ease both 0.30s; }
-      .sub  { animation: fadein 0.7s ease both 0.55s; }
+      .lbl  { animation: fadein 0.7s ease  0.10s; }
+      .ttl  { animation: fadein 0.7s ease  0.30s; }
+      .sub  { animation: fadein 0.7s ease  0.55s; }
       .d1   { animation: pulse 2.5s ease-in-out infinite 0.0s; }
       .d2   { animation: pulse 2.5s ease-in-out infinite 0.8s; }
       .d3   { animation: pulse 2.5s ease-in-out infinite 1.6s; }
       .cur  { animation: blink 1.0s step-end   infinite; }
       .scan { animation: scanline 4s linear     infinite 1.0s; }
-      .a1   { animation: arc1  2.0s ease-out   both 0.20s; }
-      .a2   { animation: arc2  2.5s ease-out   both 0.50s; }
+      .a1   { animation: arc1  2.0s ease-out    0.20s; }
+      .a2   { animation: arc2  2.5s ease-out    0.50s; }
       .bar  { animation: glow  3.0s ease-in-out infinite; }
 
-      .s0  { animation: br 0.5s ease both 0.70s; }
-      .s1  { animation: br 0.5s ease both 0.82s; }
-      .s2  { animation: br 0.5s ease both 0.94s; }
-      .s3  { animation: br 0.5s ease both 1.06s; }
-      .s4  { animation: br 0.5s ease both 1.18s; }
-      .s5  { animation: br 0.5s ease both 1.30s; }
-      .s6  { animation: br 0.5s ease both 1.42s; }
-      .s7  { animation: br 0.5s ease both 1.54s; }
-      .s8  { animation: br 0.5s ease both 1.66s; }
-      .s9  { animation: br 0.5s ease both 1.78s; }
-      .s10 { animation: br 0.5s ease both 1.90s; }
-      .s11 { animation: br 0.5s ease both 2.02s; }
+      .s0  { animation: br 0.5s ease  0.70s; }
+      .s1  { animation: br 0.5s ease  0.82s; }
+      .s2  { animation: br 0.5s ease  0.94s; }
+      .s3  { animation: br 0.5s ease  1.06s; }
+      .s4  { animation: br 0.5s ease  1.18s; }
+      .s5  { animation: br 0.5s ease  1.30s; }
+      .s6  { animation: br 0.5s ease  1.42s; }
+      .s7  { animation: br 0.5s ease  1.54s; }
+      .s8  { animation: br 0.5s ease  1.66s; }
+      .s9  { animation: br 0.5s ease  1.78s; }
+      .s10 { animation: br 0.5s ease  1.90s; }
+      .s11 { animation: br 0.5s ease  2.02s; }
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
