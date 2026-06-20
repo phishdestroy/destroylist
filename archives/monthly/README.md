@@ -5,7 +5,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Calendar.png" width="60" />
+<img src="banner.svg" alt="Banner" width="900"/>
 
 # Monthly Archives
 
