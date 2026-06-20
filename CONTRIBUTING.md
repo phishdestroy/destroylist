@@ -1,10 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="80" />
-
-# Contributing to Destroylist
-
-**Every submission helps protect real people from phishing**
+<img src=".github/banner_contributing.svg" alt="Contributing" width="900"/>
 
 <br>
 
