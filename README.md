@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/phishdestroy/destroylist">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+165%2C840%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+165%2C855%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -153,7 +153,7 @@ https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats
 flowchart LR
   Request["🌐 Client Request<br/>(Single / Bulk)"] e1@--> API["⚡ Live API<br/>api.destroy.tools"]
   API e2@--> Engine["🧠 Threat Engine<br/>(Risk Score 0-100)"]
-  Engine e3@--> DB[("🗄️ Destroylist DB<br/>1M+ Threats")]
+  Engine e3@--> DB[("🗄️ Destroylist DB<br/>954K+ Threats")]
   DB e4@--> Engine
   Engine e5@--> Response["📋 JSON Response<br/>(Severity & Status)"]
 
@@ -175,7 +175,7 @@ flowchart LR
   <a href="https://api.destroy.tools/v1/stats"><img src="https://img.shields.io/badge/📊_STATS-000000?style=for-the-badge" alt="Stats"/></a>
 </p>
 
-> **Free, open, no API key.** Real-time domain risk scoring (0-100) across 888K+ threats · 2h sync · Single & bulk check (500/req) · Keyword search · Full feeds
+> **Free, open, no API key.** Real-time domain risk scoring (0-100) across 954K+ threats · 2h sync · Single & bulk check (500/req) · Keyword search · Full feeds
 
 <details>
 <summary>📖 <b>API Endpoints, Scoring & Integration Examples</b></summary>
@@ -246,7 +246,7 @@ curl -X POST "https://api.destroy.tools/v1/check/bulk" \
 
 <div align="center">
 
-**888K+ domains tracked** · **13+ threat sources** · **50+ vendor reports** · **6 output formats** · **Free API**
+**954K+ domains tracked** · **13+ threat sources** · **50+ vendor reports** · **6 output formats** · **Free API**
 
 </div>
 
