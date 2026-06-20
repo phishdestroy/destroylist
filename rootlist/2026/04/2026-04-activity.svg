@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
+  <rect width="900" height="280" rx="8" fill="#0A0A0A"/>
+  <text x="450" y="26" fill="#F0F0F0" font-size="14" text-anchor="middle" font-family="monospace" font-weight="bold">DAILY THREAT DETECTIONS — APRIL 2026</text>
+
+<line x1="60" y1="230" x2="870" y2="230" stroke="#1C1C1C" stroke-width="1"/>
+<text x="52" y="234" fill="#666" font-size="10" text-anchor="end" font-family="monospace">0</text>
+<line x1="60" y1="182" x2="870" y2="182" stroke="#1C1C1C" stroke-width="1"/>
+<text x="52" y="186" fill="#666" font-size="10" text-anchor="end" font-family="monospace">242</text>
+<line x1="60" y1="135" x2="870" y2="135" stroke="#1C1C1C" stroke-width="1"/>
+<text x="52" y="139" fill="#666" font-size="10" text-anchor="end" font-family="monospace">484</text>
+<line x1="60" y1="88" x2="870" y2="88" stroke="#1C1C1C" stroke-width="1"/>
+<text x="52" y="92" fill="#666" font-size="10" text-anchor="end" font-family="monospace">726</text>
+<line x1="60" y1="40" x2="870" y2="40" stroke="#1C1C1C" stroke-width="1"/>
+<text x="52" y="44" fill="#666" font-size="10" text-anchor="end" font-family="monospace">968</text>
+
+  <defs>
+    <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF0000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF0000" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <path d="M60.0,230 L60.0,148.2 L87.9,162.1 L115.9,140.7 L143.8,53.0 L171.7,130.7 L199.7,105.2 L227.6,129.1 L255.5,143.2 L283.4,136.2 L311.4,153.8 L339.3,138.3 L367.2,152.5 L395.2,105.6 L423.1,130.7 L451.0,103.4 L479.0,186.4 L506.9,193.9 L534.8,112.4 L562.8,158.9 L590.7,140.7 L618.6,60.0 L646.6,141.1 L674.5,163.9 L702.4,99.9 L730.3,143.2 L758.3,161.7 L786.2,89.1 L814.1,40.0 L842.1,135.8 L870.0,72.0 L870.0,230 Z" fill="url(#areaGrad)"/>
+  <polyline points="60.0,148.2 87.9,162.1 115.9,140.7 143.8,53.0 171.7,130.7 199.7,105.2 227.6,129.1 255.5,143.2 283.4,136.2 311.4,153.8 339.3,138.3 367.2,152.5 395.2,105.6 423.1,130.7 451.0,103.4 479.0,186.4 506.9,193.9 534.8,112.4 562.8,158.9 590.7,140.7 618.6,60.0 646.6,141.1 674.5,163.9 702.4,99.9 730.3,143.2 758.3,161.7 786.2,89.1 814.1,40.0 842.1,135.8 870.0,72.0" fill="none" stroke="#FF0000" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="814.1" cy="40.0" r="5" fill="#FF0000" stroke="#0A0A0A" stroke-width="2"/>
+  <text x="814.1" y="28.0" fill="#F0F0F0" font-size="11" text-anchor="middle" font-family="monospace" font-weight="bold">968</text>
+
+<text x="60" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-01</text>
+<text x="116" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-03</text>
+<text x="172" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-05</text>
+<text x="228" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-07</text>
+<text x="283" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-09</text>
+<text x="339" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-11</text>
+<text x="395" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-13</text>
+<text x="451" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-15</text>
+<text x="507" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-17</text>
+<text x="563" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-19</text>
+<text x="619" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-21</text>
+<text x="674" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-23</text>
+<text x="730" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-25</text>
+<text x="786" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-27</text>
+<text x="842" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-29</text>
+<text x="870" y="270" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">04-30</text>
+
+  <text x="870" y="270" fill="#666" font-size="9" text-anchor="end" font-family="monospace">15,633 domains</text>
+</svg>
