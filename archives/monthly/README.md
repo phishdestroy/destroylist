@@ -27,14 +27,20 @@
 
 ## 📂 Files
 
-| Archive | Link |
-|:--------|:----:|
-| `2026-01.json` | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-01.json) |
-| `2026-02.json` | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-02.json) |
+| Archive | Domains | Link |
+|:--------|--------:|:----:|
+| `2026-01.json` | 59,791 | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-01.json) |
+| `2026-02.json` | 77,566 | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-02.json) |
+| `2026-03.json` | ~96,224 | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-03.json) |
+| `2026-04.json` | ~118,392 | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-04.json) |
+| `2026-05.json` | 141,881 | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-05.json) |
+| `2026-06.json` | 154,936 | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/archives/monthly/2026-06.json) |
+
+> `~` — retroactive estimate (archive not generated on the 1st; counts interpolated from adjacent snapshots)
 
 **Filename pattern:** `YYYY-MM.json`
 
-Each file contains the complete `list.json` state at the end of that month.
+Each file contains the complete `list.json` state at the start of that month.
 
 ## 📊 Use Cases
 
