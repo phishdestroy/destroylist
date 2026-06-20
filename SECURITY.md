@@ -8,123 +8,91 @@
 
 <br>
 
-![response](https://img.shields.io/badge/response-48h-FF0000?style=for-the-badge)
-![severity](https://img.shields.io/badge/severity-all_levels-000000?style=for-the-badge)
-
-<br>
-
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
+[![Destroylist](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github&logoColor=white)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-api.destroy.tools-000000?style=flat-square)](https://api.destroy.tools)
+[![Appeals](https://img.shields.io/badge/Appeals-phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
 
 </div>
 
 ---
 
-## 🔐 Reporting Security Issues
+## Reporting Security Issues
 
 > [!WARNING]
-> **DO NOT** report security vulnerabilities through public GitHub issues.
+> Do **not** report infrastructure vulnerabilities through public GitHub issues.
 
-If you discover a security vulnerability in our infrastructure or data processing:
+If you find a security issue in our systems, scripts, or data pipeline:
 
-📧 **security@phishdestroy.io**
-
-We respond within **48 hours**.
+**security@phishdestroy.io** — we respond within 48 hours.
 
 ---
 
-## 🎯 Blocklist Accuracy
+## Blocklist Accuracy
 
-### False Positive — Your Domain Was Blocked
+### Your domain was blocked by mistake
 
-**Primary Lists** (`list.json`, `dns/active_domains.json`):
+**Primary lists** (`list.json`, `dns/active_domains.json`, `dns/content_active.json`):
 
-| Method | Link | Speed |
-|:-------|:-----|:-----:|
-| 📝 Appeals Form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) | ⚡ Fastest |
-| 🐛 GitHub Issue | [New Issue → Appeal](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) | 🕐 Reviewed |
+| Method | Link |
+|:-------|:-----|
+| Appeals form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) |
+| GitHub issue | [Open appeal →](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) |
 
-**Community Lists** (`community/blocklist.json`, `community/live_blocklist.json`):
+Approved domains are added to `allow/allowlist.json` and automatically removed from all lists within the next update cycle.
+
+**Community lists** (`community/*`):
 
 > [!CAUTION]
-> Auto-aggregated from external sources. **Manual removal is not possible.**
-> Report to the original feed → auto-removed on next sync.
+> Auto-aggregated from 13+ external sources. Manual removal is not possible — report to the original feed provider and it will be removed on next sync.
 
-### Missing Malicious Domain
+### A malicious domain is missing
 
-➕ [Submit addition request](https://github.com/phishdestroy/destroylist/issues/new?template=blocklist-addition.yml)
-
----
-
-## 🚨 A Note on Repository Attacks
-
-Our repository periodically receives fake reports, star manipulation, and harassment from **owners of blocked scam domains**.
-
-This is expected and changes nothing.
-
-These individuals have no legitimate recourse — their domains are blocked for valid reasons. Instead of stopping their fraudulent activities, they resort to:
-
-- Fake DMCA takedowns
-- Mass-reporting our repository
-- Coordinated manipulation attempts
-- Harassment campaigns
-
-> **There is exactly one solution: stop running phishing operations.**
-
-No amount of reporting or manipulation makes inevitable bans less inevitable. Registrars and platforms don't reverse legitimate abuse decisions because someone clicked "report" a hundred times.
-
-We remain unaffected. The blocklist continues to grow.
+[Submit addition →](https://github.com/phishdestroy/destroylist/issues/new?template=blocklist-addition.yml)
 
 ---
 
-## ⚠️ Important Warnings
+## Data Feeds
 
-### 💔 For Victims
-
-If you were defrauded by a domain already in our list, check its addition date via [commit history](https://github.com/phishdestroy/destroylist/commits/main/) or [Telegram channel](https://t.me/destroy_phish).
-
-Per ICANN rules, registrars must review abuse complaints within 24 hours. If fraud occurred after the domain was listed, the registrar or hosting provider may share responsibility for your financial loss.
-
-### 👤 For Users
-
-This blocklist is for **legitimate security purposes only**.
-
-Prohibited uses:
-- DDoS attacks against listed domains
-- Censorship abuse
-- Harassment campaigns
-- Any malicious activity
-
-Violators will be reported to appropriate authorities.
+| Feed | Frequency | Content |
+|:-----|:---------:|:--------|
+| `list.json` | Real-time | Curated phishing domains |
+| `dns/active_domains.json` | Every 2h | DNS-verified active subset |
+| `dns/content_active.json` | Every 12h | HTTP content-verified active |
+| `community/blocklist.json` | Every 2h | Aggregated from 13+ sources |
+| `community/live_blocklist.json` | Every 2h | DNS-verified community subset |
+| `community/content_live.json` | Every 24h | Content-verified community subset |
 
 ---
 
-## 📊 Data Feeds
+## On Repository Attacks
 
-| Feed | Update | Editable |
-|:-----|:------:|:--------:|
-| `list.json` | Real-time | ✅ Yes |
-| `dns/active_domains.json` | Real-time | ✅ Yes |
-| `community/*` | Every 2h | ❌ No (auto-aggregated) |
+This repository periodically receives harassment from operators of blocked scam domains — fake DMCA claims, mass-reports, star manipulation, coordinated abuse campaigns.
 
----
+This is expected. It changes nothing.
 
-## 🗄️ Archive Access
-
-Historical archive: **500,000+ domains** over **5+ years**
-
-Available for academic and security research.
-
-📧 **contact@phishdestroy.io**
+Domains stay blocked. The list keeps growing. Registrars and platforms don't reverse legitimate abuse decisions because someone filed a hundred fake reports.
 
 ---
 
-## 📜 License
+## For Victims
 
-MIT License — Free for any use with attribution.
+If you were defrauded by a domain in our list, check its addition date via [commit history](https://github.com/phishdestroy/destroylist/commits/main/) or the [Telegram channel](https://t.me/destroy_phish).
+
+Per ICANN rules, registrars must review abuse complaints within 24 hours. If fraud occurred after the domain was listed, the registrar or hosting provider may share liability for your loss.
 
 ---
+
+## Archive Access
+
+Historical data: 500,000+ domains over 5+ years — available for academic and security research.
+
+**contact@phishdestroy.io**
+
+---
+
+## License
+
+MIT — free for any use with attribution.
 
 <div align="center">
 
