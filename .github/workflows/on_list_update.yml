@@ -77,24 +77,9 @@ jobs:
           git commit -m "Update processed files [skip ci]"
 
           for i in {1..5}; do
-            git pull --rebase --autostash origin main && git push && exit 0
-            echo "Attempt $i failed, resetting and retrying..."
+            git pull --rebase -X theirs origin main && git push && exit 0
             git rebase --abort 2>/dev/null || true
-            git reset --hard HEAD
-            git pull origin main
-            git add list.json list.txt count.json \
-                   community/blocklist.json community/blocklist.txt \
-                   community/live_blocklist.json community/live_blocklist.txt \
-                   community/content_live.txt \
-                   community/count.json community/live_count.json \
-                   community/content_active_count.json \
-                   dns/*.json dns/*.txt \
-                   rootlist/
-            if git diff --staged --quiet; then
-              echo "Changes already applied"
-              exit 0
-            fi
-            git commit -m "Update processed files [skip ci]"
-            sleep 5
+            echo "Push attempt $i failed, retrying in $((i * 3))s..."
+            sleep $((i * 3))
           done
           exit 1
