@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="image.png" alt="Community Blocklist Banner" width="720"/>
+<img src="banner.svg" alt="Community" width="900"/>
 
 # Community Blocklist
 
