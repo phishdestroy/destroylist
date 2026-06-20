@@ -4,103 +4,88 @@
 
 # Contributing to Destroylist
 
-**Thanks for helping fight phishing — every contribution matters**
+**Every submission helps protect real people from phishing**
 
 <br>
 
-![status](https://img.shields.io/badge/status-open-FF0000?style=for-the-badge)
-![type](https://img.shields.io/badge/type-community_driven-000000?style=for-the-badge)
-
-<br>
-
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Telegram](https://img.shields.io/badge/Telegram-bot-FF0000?style=flat-square&logo=telegram)](https://t.me/PhishDestroy_bot)
+[![Destroylist](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github&logoColor=white)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-api.destroy.tools-000000?style=flat-square)](https://api.destroy.tools)
+[![Telegram](https://img.shields.io/badge/Telegram-@PhishDestroy__bot-FF0000?style=flat-square&logo=telegram)](https://t.me/PhishDestroy_bot)
 
 </div>
 
 ---
 
-## 🚨 Report a Phishing Domain
-
-**Fastest ways:**
+## Report a Phishing Domain
 
 | Method | Link | Speed |
 |:-------|:-----|:-----:|
-| 🤖 Telegram Bot | [@PhishDestroy_bot](https://t.me/PhishDestroy_bot) | ⚡ Instant |
-| ⚡ API | [api.destroy.tools](https://api.destroy.tools) | ⚡ Instant |
-| 🐛 GitHub Issue | [New Issue → Blocklist Addition](https://github.com/phishdestroy/destroylist/issues/new?template=blocklist-addition.yml) | 🕐 Reviewed |
+| Telegram bot | [@PhishDestroy_bot](https://t.me/PhishDestroy_bot) | Instant |
+| API | [api.destroy.tools](https://api.destroy.tools) | Instant |
+| GitHub issue | [Blocklist addition →](https://github.com/phishdestroy/destroylist/issues/new?template=blocklist-addition.yml) | Reviewed |
 
-> 💡 Include evidence when possible: screenshots, VirusTotal links, URLScan results
-
----
-
-## 🛡️ Request Domain Removal (False Positive)
-
-If a legitimate domain was listed by mistake:
-
-| Method | Link | Speed |
-|:-------|:-----|:-----:|
-| 📝 Appeals Form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) | ⚡ Fastest |
-| 🐛 GitHub Issue | [New Issue → Appeal](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) | 🕐 Reviewed |
-
-Approved domains are added to [`allow/allowlist.json`](allow/allowlist.json) and automatically removed from all lists.
+Include evidence where possible: screenshots, VirusTotal or URLScan links.
 
 ---
 
-## 💻 Contribute Code or Pipeline Improvements
+## Request Domain Removal (False Positive)
+
+| Method | Link |
+|:-------|:-----|
+| Appeals form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) |
+| GitHub issue | [Appeal →](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) |
+
+Approved domains are added to `allow/allowlist.json` and automatically cleaned from all lists.
+
+---
+
+## Code or Pipeline Contributions
 
 ```bash
-# 1. Fork & clone
+# Fork & clone
 git clone https://github.com/YOUR_USERNAME/destroylist.git
 cd destroylist
 
-# 2. Create a branch
+# Create a branch
 git checkout -b feature/my-improvement
 
-# 3. Make changes
-
-# 4. Validate locally
+# Install dependencies
 pip install -r requirements.txt
+
+# Validate before submitting
 python scripts/validate_json.py
 python scripts/validate_and_clean.py
+python scripts/build_rootlist.py
 
-# 5. Open a Pull Request with a clear description
+# Open a Pull Request with a clear description
 ```
 
 ---
 
-## 📡 Add a New Blocklist Source
+## Add a New Community Source
 
-If you maintain a phishing blocklist and want it aggregated into our Community feed:
+If you maintain a publicly accessible, regularly updated phishing feed and want it aggregated into the Community list:
 
 1. Open an issue with the feed URL and format (JSON array, plain text, hosts file, etc.)
-2. The feed should be publicly accessible and updated regularly
-3. We'll review and add it to [`scripts/smart_aggregator.py`](scripts/smart_aggregator.py)
+2. We'll review and add it to [`scripts/smart_aggregator.py`](scripts/smart_aggregator.py)
+
+Current sources: MetaMask, ScamSniffer, OpenPhish, SEAL, Phishunt, Enkrypt, CryptoFirewall, DiscordPhishing, Polkadot, SPMedia, Codeesura and more.
 
 ---
 
-## 📏 Guidelines
+## Guidelines
 
-| Rule | Why |
-|:-----|:----|
-| All JSON files must be valid and sorted | Consistency & diffs |
+| Rule | Reason |
+|:-----|:-------|
+| JSON files must be valid and sorted | Consistency, clean diffs |
 | No IP addresses in domain lists | We block domains, not IPs |
-| No duplicates across lists | Clean data |
-| Respect the allowlist | Never re-add allowed domains |
-| Keep PRs focused | One fix or feature per PR |
-
----
-
-## 📜 Code of Conduct
-
-This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold a respectful, harassment-free environment. Spam, abuse, and fake reports will not be tolerated.
+| No duplicates | Clean data |
+| Respect the allowlist | Never re-add an allowed domain |
+| One fix or feature per PR | Easier review |
 
 ---
 
 <div align="center">
-
-**Drop an Issue or PR — let's crush phishing together!** 💪
 
 [![back](https://img.shields.io/badge/←_destroylist-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist)
 
