@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/phishdestroy/destroylist">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+165%2C068%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+165%2C840%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -535,6 +535,16 @@ Accuracy first! 🔭
   <a href="https://ban.destroy.tools"><img src="https://img.shields.io/badge/🚫_BAN_SERVICE-000000?style=for-the-badge" alt="Ban Service"/></a>
   <a href="mailto:contact@phishdestroy.io"><img src="https://img.shields.io/badge/✉️_CONTACT-FF0000?style=for-the-badge" alt="Email"/></a>
 </p>
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+## 🐍 Contribution Graph
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/phishdestroy/destroylist/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/phishdestroy/destroylist/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/phishdestroy/destroylist/output/github-snake.svg" width="100%" />
+</picture>
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 

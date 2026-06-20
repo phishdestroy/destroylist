@@ -27,14 +27,21 @@
 
 ## 📂 Files
 
-| Archive | Link |
-|:--------|:----:|
-| `2025-W49.json` — `2025-W52.json` | Weeks 49–52 of 2025 |
-| `2026-W01.json` — `2026-W18.json` | Weeks 1–18 of 2026 (W08–W10 missing) |
+| Archive | Date | Domains |
+|:--------|:----:|--------:|
+| `2025-W49.json` | 2025-12-08 | 51,404 |
+| `2025-W50.json` – `2025-W52.json` | Dec 2025 | — |
+| `2026-W01.json` – `2026-W07.json` | Jan–Feb 2026 | — |
+| `2026-W08.json` | 2026-02-23 | ~93,107 |
+| `2026-W09.json` | 2026-03-02 | ~96,744 |
+| `2026-W10.json` | 2026-03-09 | ~100,381 |
+| `2026-W11.json` – `2026-W25.json` | Mar–Jun 2026 | — |
+
+> `~` — retroactive estimate (archive not generated that week; counts interpolated from adjacent snapshots)
 
 **Filename pattern:** `YYYY-WXX.json` (ISO 8601 week number)
 
-Each file contains the complete `list.json` state at the end of that week.
+Each file contains the complete `list.json` state captured on Monday of that week.
 
 ## 📊 Use Cases
 
