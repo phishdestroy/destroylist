@@ -95,19 +95,19 @@
 
 ## 🚫 Excluded Infrastructure
 
-Root domains that should **never** be blocked globally:
+Root domains that should **never** be blocked globally — phishing subdomains on these platforms are separated into `services_domains.json` instead.
 
 **Multi-tenant hosting:**
-`vercel.app` · `netlify.app` · `github.io` · `render.com` · `firebaseapp.com` · `web.app` · `pages.dev` · `workers.dev` · `replit.dev` · `surge.sh`
+`vercel.app` · `netlify.app` · `github.io` · `render.com` · `onrender.com` · `firebaseapp.com` · `web.app` · `pages.dev` · `workers.dev` · `replit.dev` · `replit.app` · `surge.sh` · `typedream.app` · `hostingersite.com` · `fly.dev` · `fly.io` · `railway.app` · `herokuapp.com` · `azurewebsites.net` · `amazonaws.com` · `cloudfront.net` · `amplifyapp.com` · `r2.dev` · `edgeone.dev` · `edgeone.app` · `trycloudflare.com` · `ngrok.io` · `ngrok-free.app` · `glitch.me` · `stackblitz.io` · `stackblitz.com` · `codesandbox.io` · `webcontainer.io` · `gitlab.io` · `bitbucket.io` · `gitpod.io` · `ghost.io` · `wasmer.app` · `lovable.app` · `mybluehost.me` · `wpenginepowered.com` · `tiiny.host` · `hosted.app` · `temporary.site` · `rollout.site` · `dora.run` · `mdbgo.io` · `sslip.io` · `duckdns.org` · `dynv6.net` · `cprapid.com`
 
 **Website builders:**
-`wixsite.com` · `weebly.com` · `wordpress.com` · `blogspot.com` · `webflow.io` · `square.site` · `godaddysites.com`
+`wixsite.com` · `wixstudio.com` · `weebly.com` · `weeblysite.com` · `wordpress.com` · `blogspot.com` · `blogspot.am` · `blogspot.be` · `blogspot.ru` · `blogspot.it` · `blogspot.cz` · `blogspot.md` · `blogspot.mk` · `blogspot.hk` · `blogspot.in` · `blogspot.pe` · `webflow.io` · `square.site` · `godaddysites.com` · `webcindario.com` · `pineapple.page` · `gitbook.io` · `carrd.co` · `framer.app` · `framer.ai` · `framer.media` · `framer.wiki` · `softr.app` · `bubble.io` · `bubbleapps.io` · `strikingly.com` · `daftpage.com` · `created.app` · `canva.site` · `home.pl`
 
-**Web3 gateways:**
-`ipfs.io` · `cloudflare-ipfs.com` · `dweb.link` · `eth.limo`
+**Web3 / decentralized storage:**
+`ipfs.io` · `cloudflare-ipfs.com` · `dweb.link` · `infura-ipfs.io` · `eth.limo` · `fleek.co` · `arweave.net` · `ic0.app` · `ipfs.w3s.link` · `4everland.app` · `pinata.cloud`
 
-**Other:**
-`teachable.com` · `gitbook.io` · `duckdns.org`
+**SaaS platforms:**
+`teachable.com` · `zapier.app`
 
 ---
 
