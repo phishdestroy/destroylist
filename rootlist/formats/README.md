@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="80" />
+<img src="banner.svg" alt="Banner" width="900"/>
 
 # Blocklist Formats
 

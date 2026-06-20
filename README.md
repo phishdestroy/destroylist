@@ -548,6 +548,16 @@ Accuracy first! 🔭
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
+## 🔗 Related Investigations & Repositories
+
+| Repository | Description |
+|:-----------|:------------|
+| [**nicenic-evidence**](https://github.com/phishdestroy/nicenic-evidence) | Evidence archive — NiceNIC registrar abuse investigation |
+| [**namesilo-evidence**](https://github.com/phishdestroy/namesilo-evidence) | Evidence archive — NameSilo registrar abuse investigation |
+| [**Operation-Takedown**](https://github.com/phishdestroy/Operation-Takedown) | Coordinated domain takedown operations |
+| [**DestroyScammers**](https://github.com/phishdestroy/DestroyScammers) | Scammer exposure and disruption |
+| [**Anti-Phishing-Research**](https://github.com/phishdestroy/Anti-Phishing-Research) | Research, tools, and findings |
+
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## 📄 License
