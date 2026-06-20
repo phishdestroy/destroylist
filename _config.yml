@@ -1,5 +1,36 @@
-title: Destroylist
-description: Phishing & Scam Domain Blacklist
+title: "Destroylist — Phishing & Scam Domain Blacklist"
+description: "Real-time phishing and scam domain blocklist with 165K+ verified threats. DNS-validated feeds for Pi-hole, AdGuard, pfSense, BIND. Free threat intelligence API."
+url: "https://phishdestroy.github.io"
+baseurl: "/destroylist"
+lang: en
+
+author:
+  name: PhishDestroy
+  url: https://phishdestroy.io
+
+social:
+  name: PhishDestroy
+  links:
+    - https://x.com/Phish_Destroy
+    - https://t.me/destroy_phish
+    - https://github.com/phishdestroy
+    - https://mastodon.social/@phishdestroy
+
+keywords:
+  - phishing blocklist
+  - scam domains
+  - threat intelligence
+  - DNS blocklist
+  - Pi-hole blocklist
+  - AdGuard blocklist
+  - phishing detection
+  - cybersecurity feeds
+  - destroylist
+  - PhishDestroy
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Exclude large data files from GitHub Pages build
 exclude:
