@@ -14,12 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: Platane/snk/svg-only@v3
+      - uses: actions/setup-python@v6
         with:
-          github_user_name: phishdestroy
-          outputs: |
-            dist/github-snake.svg?color_snake=%23FFD700&color_dots=%23eee,%239be9a8,%2340c463,%2330a14e,%23216e39&type=pac-man
-            dist/github-snake-dark.svg?color_snake=%23FFD700&color_dots=%23161b22,%230d4429,%23006d32,%2326a641,%2339d353&type=pac-man
+          python-version: "3.12"
+
+      - name: Generate Pac-Man SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: phishdestroy
+          OUTPUT_DIR: dist
+        run: python scripts/generate_pacman.py
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
