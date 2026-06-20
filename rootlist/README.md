@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="image.png" alt="Rootlist Banner" width="720"/>
+<img src="banner.svg" alt="Root Domains" width="900"/>
 
 # Root Domains
 
