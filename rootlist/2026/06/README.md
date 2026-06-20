@@ -11,6 +11,9 @@
 
 <div align="center">
 
+<img src="banner.svg" alt="June 2026" width="900"/>
+
+
 [**← May 2026**](../../2026/05/) &nbsp;·&nbsp; 📅 **June 2026** &nbsp;·&nbsp; *ongoing...*
 
 <br>

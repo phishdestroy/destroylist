@@ -12,6 +12,9 @@
 
 <div align="center">
 
+<img src="banner.svg" alt="February 2025" width="900"/>
+
+
 [**← Jan 2025**](../../2025/01/) &nbsp;·&nbsp; 📅 **February 2025** &nbsp;·&nbsp; [**Mar 2025 →**](../../2025/03/)
 
 <br>
