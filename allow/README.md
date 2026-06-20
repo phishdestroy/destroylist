@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="image.png" alt="Allowlist Banner" width="720"/>
+<img src="banner.svg" alt="Allowlist" width="900"/>
 
 # Allowlist
 
