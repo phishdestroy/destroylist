@@ -27,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -74,12 +74,27 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update processed files [skip ci]"
+          # Save processed outputs before any git reset can overwrite them
+          git diff --staged --name-only > /tmp/staged_files.txt
+          tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
 
           for i in {1..5}; do
-            git pull --rebase -X theirs origin main && git push && exit 0
-            git rebase --abort 2>/dev/null || true
-            echo "Push attempt $i failed, retrying in $((i * 3))s..."
-            sleep $((i * 3))
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Restore our processed file versions on top of latest remote
+            tar -xf /tmp/processed.tar
+
+            git add $(cat /tmp/staged_files.txt | tr '\n' ' ')
+            if git diff --staged --quiet; then
+              echo "Changes already present in remote"
+              exit 0
+            fi
+
+            git commit -m "Update processed files [skip ci]"
+            git push && exit 0
+
+            echo "Push attempt $i failed, retrying in $((i * 2))s..."
+            sleep $((i * 2))
           done
           exit 1
