@@ -1,4 +1,4 @@
-name: Snake
+name: Pac-Man
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  snake:
+  pacman:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -18,8 +18,8 @@ jobs:
         with:
           github_user_name: phishdestroy
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg?color_snake=%23FFD700&color_dots=%23eee,%239be9a8,%2340c463,%2330a14e,%23216e39
+            dist/github-snake-dark.svg?color_snake=%23FFD700&color_dots=%23161b22,%230d4429,%23006d32,%2326a641,%2339d353
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
