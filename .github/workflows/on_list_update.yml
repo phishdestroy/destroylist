@@ -27,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -55,9 +55,6 @@ jobs:
       - name: Build array shards
         run: python scripts/build_shards.py
 
-      - name: Update statistics
-        run: python scripts/calculate_stats.py
-
       - name: Commit and push
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -70,7 +67,6 @@ jobs:
                  community/count.json community/live_count.json \
                  community/content_active_count.json \
                  dns/*.json dns/*.txt \
-                 dns/stats_snapshot.json \
                  rootlist/
 
           if git diff --staged --quiet; then
@@ -93,7 +89,6 @@ jobs:
                    community/count.json community/live_count.json \
                    community/content_active_count.json \
                    dns/*.json dns/*.txt \
-                   dns/stats_snapshot.json \
                    rootlist/
             if git diff --staged --quiet; then
               echo "Changes already applied"
