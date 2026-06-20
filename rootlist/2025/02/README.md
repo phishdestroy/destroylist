@@ -251,6 +251,9 @@ VirusTotal vendor data revealed Gridinsoft as the leading detection engine, flag
 | [January 2026](../../2026/01/) | **8,932** |
 | [February 2026](../../2026/02/) | **18,207** |
 | [March 2026](../../2026/03/) | **4,042** |
+| [April 2026](../../2026/04/) | **15,633** |
+| [May 2026](../../2026/05/) | **7,021** |
+| [June 2026](../../2026/06/) | **8,102** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
