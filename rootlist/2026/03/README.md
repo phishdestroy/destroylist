@@ -12,6 +12,9 @@
 
 <div align="center">
 
+<img src="banner.svg" alt="March 2026" width="900"/>
+
+
 [**← Feb 2026**](../../2026/02/) &nbsp;·&nbsp; 📅 **March 2026** &nbsp;·&nbsp; [**Apr 2026 →**](../../2026/04/)
 
 <br>

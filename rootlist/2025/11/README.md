@@ -12,6 +12,9 @@
 
 <div align="center">
 
+<img src="banner.svg" alt="November 2025" width="900"/>
+
+
 [**← Oct 2025**](../../2025/10/) &nbsp;·&nbsp; 📅 **November 2025** &nbsp;·&nbsp; [**Dec 2025 →**](../../2025/12/)
 
 <br>
