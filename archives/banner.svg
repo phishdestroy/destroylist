@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+  <defs>
+    <style>
+      @keyframes fadein {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0);   }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1;   }
+        50%       { opacity: 0.2; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0; }
+      }
+      @keyframes scanline {
+        0%   { transform: translateY(-20px); opacity: 0;   }
+        5%   {                               opacity: 0.4; }
+        95%  {                               opacity: 0.4; }
+        100% { transform: translateY(240px); opacity: 0;   }
+      }
+      @keyframes arc1 {
+        from { stroke-dashoffset: 566; }
+        to   { stroke-dashoffset: 0;   }
+      }
+      @keyframes arc2 {
+        from { stroke-dashoffset: 440; }
+        to   { stroke-dashoffset: 0;   }
+      }
+      @keyframes glow {
+        0%, 100% { opacity: 1;   }
+        50%       { opacity: 0.7; }
+      }
+
+      .lbl  { animation: fadein  0.7s ease both 0.10s; }
+      .ttl  { animation: fadein  0.7s ease both 0.30s; }
+      .sub  { animation: fadein  0.7s ease both 0.55s; }
+      .d1   { animation: pulse  2.5s ease-in-out infinite 0.0s; }
+      .d2   { animation: pulse  2.5s ease-in-out infinite 0.8s; }
+      .d3   { animation: pulse  2.5s ease-in-out infinite 1.6s; }
+      .cur  { animation: blink  1.0s step-end   infinite;       }
+      .scan { animation: scanline 4s linear      infinite 1.0s; }
+      .a1   { animation: arc1   2.0s ease-out   both     0.20s; }
+      .a2   { animation: arc2   2.5s ease-out   both     0.50s; }
+      .bar  { animation: glow   3.0s ease-in-out infinite;      }
+    </style>
+
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#030810"/>
+      <stop offset="100%" stop-color="#050d1a"/>
+    </linearGradient>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#fff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#fff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cp"><rect width="900" height="220" rx="8"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="220" rx="8" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g clip-path="url(#cp)" stroke="#0d1f35" stroke-width="1">
+    <line x1="90"  y1="0" x2="90"  y2="220"/>
+    <line x1="180" y1="0" x2="180" y2="220"/>
+    <line x1="270" y1="0" x2="270" y2="220"/>
+    <line x1="360" y1="0" x2="360" y2="220"/>
+    <line x1="450" y1="0" x2="450" y2="220"/>
+    <line x1="540" y1="0" x2="540" y2="220"/>
+    <line x1="630" y1="0" x2="630" y2="220"/>
+    <line x1="720" y1="0" x2="720" y2="220"/>
+    <line x1="810" y1="0" x2="810" y2="220"/>
+    <line x1="0" y1="55"  x2="900" y2="55"/>
+    <line x1="0" y1="110" x2="900" y2="110"/>
+    <line x1="0" y1="165" x2="900" y2="165"/>
+  </g>
+
+  <!-- Animated arcs (right side) -->
+  <g clip-path="url(#cp)">
+    <circle class="a1" cx="870" cy="110" r="90" fill="none"
+            stroke="#CC0000" stroke-opacity="0.22" stroke-width="1.5"
+            stroke-dasharray="566" stroke-dashoffset="566"/>
+    <circle class="a2" cx="870" cy="110" r="65" fill="none"
+            stroke="#CC0000" stroke-opacity="0.14" stroke-width="1"
+            stroke-dasharray="440" stroke-dashoffset="440"/>
+  </g>
+
+  <!-- Scanline sweep -->
+  <rect class="scan" x="0" y="-20" width="900" height="20"
+        fill="url(#sg)" clip-path="url(#cp)"/>
+
+  <!-- Red left bar -->
+  <rect class="bar" x="0" y="0" width="5" height="220" fill="#CC0000" rx="0"/>
+
+  <!-- Pulse dots -->
+  <circle class="d1" cx="26" cy="55"  r="3" fill="#CC0000"/>
+  <circle class="d2" cx="26" cy="110" r="3" fill="#CC0000"/>
+  <circle class="d3" cx="26" cy="165" r="3" fill="#CC0000"/>
+
+  <!-- Text -->
+  <text class="lbl" x="50" y="90"
+        font-family="monospace" font-size="11" fill="#CC0000"
+        letter-spacing="4">PHISHDESTROY</text>
+
+  <text class="ttl" x="50" y="138"
+        font-family="monospace" font-size="40" font-weight="bold"
+        fill="#dde8f5" letter-spacing="3">ARCHIVES</text>
+
+  <text class="sub" x="50" y="164"
+        font-family="monospace" font-size="11" fill="#3a5570"
+        letter-spacing="2">PHISHING BLOCKLIST — HISTORICAL RECORDS<tspan class="cur" fill="#CC0000">_</tspan></text>
+</svg>
