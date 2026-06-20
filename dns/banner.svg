@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="redglow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF0000" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#FF0000" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FF0000" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="400" fill="url(#bg)"/>
+
+  <!-- Red glow left panel -->
+  <rect width="500" height="400" fill="url(#redglow)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1280" height="2" fill="#FF0000" opacity="0.8"/>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="398" width="1280" height="2" fill="#FF0000" opacity="0.3"/>
+
+  <!-- Diagonal decorative lines -->
+  <line x1="0" y1="80" x2="180" y2="0" stroke="#FF0000" stroke-width="1" opacity="0.2"/>
+  <line x1="0" y1="160" x2="300" y2="0" stroke="#FF0000" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="320" x2="420" y2="400" stroke="#FF0000" stroke-width="1" opacity="0.15"/>
+
+  <!-- Right side diagonal -->
+  <line x1="1280" y1="100" x2="960" y2="400" stroke="#FF0000" stroke-width="0.5" opacity="0.1"/>
+  <line x1="1280" y1="0" x2="1100" y2="400" stroke="#FF0000" stroke-width="1" opacity="0.08"/>
+
+  <!-- Grid dots pattern -->
+  <g opacity="0.06" fill="#FF0000">
+    <circle cx="900" cy="80" r="1.5"/><circle cx="930" cy="80" r="1.5"/><circle cx="960" cy="80" r="1.5"/>
+    <circle cx="990" cy="80" r="1.5"/><circle cx="1020" cy="80" r="1.5"/><circle cx="1050" cy="80" r="1.5"/>
+    <circle cx="900" cy="110" r="1.5"/><circle cx="930" cy="110" r="1.5"/><circle cx="960" cy="110" r="1.5"/>
+    <circle cx="990" cy="110" r="1.5"/><circle cx="1020" cy="110" r="1.5"/><circle cx="1050" cy="110" r="1.5"/>
+    <circle cx="900" cy="140" r="1.5"/><circle cx="930" cy="140" r="1.5"/><circle cx="960" cy="140" r="1.5"/>
+    <circle cx="990" cy="140" r="1.5"/><circle cx="1020" cy="140" r="1.5"/><circle cx="1050" cy="140" r="1.5"/>
+    <circle cx="900" cy="170" r="1.5"/><circle cx="930" cy="170" r="1.5"/><circle cx="960" cy="170" r="1.5"/>
+    <circle cx="990" cy="170" r="1.5"/><circle cx="1020" cy="170" r="1.5"/><circle cx="1050" cy="170" r="1.5"/>
+    <circle cx="1080" cy="80" r="1.5"/><circle cx="1110" cy="80" r="1.5"/><circle cx="1140" cy="80" r="1.5"/>
+    <circle cx="1080" cy="110" r="1.5"/><circle cx="1110" cy="110" r="1.5"/><circle cx="1140" cy="110" r="1.5"/>
+    <circle cx="1080" cy="140" r="1.5"/><circle cx="1110" cy="140" r="1.5"/><circle cx="1140" cy="140" r="1.5"/>
+    <circle cx="1080" cy="170" r="1.5"/><circle cx="1110" cy="170" r="1.5"/><circle cx="1140" cy="170" r="1.5"/>
+  </g>
+
+  <!-- DNS Icon - stylized radar/signal circles -->
+  <g transform="translate(160, 200)" filter="url(#softglow)">
+    <!-- Outer rings -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#FF0000" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="65" fill="none" stroke="#FF0000" stroke-width="1.5" opacity="0.35"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#FF0000" stroke-width="2" opacity="0.6"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="10" fill="#FF0000" opacity="0.9"/>
+    <!-- Signal lines -->
+    <line x1="0" y1="-40" x2="0" y2="-90" stroke="#FF0000" stroke-width="1.5" opacity="0.4"/>
+    <line x1="28" y1="-28" x2="64" y2="-64" stroke="#FF0000" stroke-width="1" opacity="0.25"/>
+    <line x1="40" y1="0" x2="90" y2="0" stroke="#FF0000" stroke-width="1.5" opacity="0.4"/>
+    <!-- Sweep line -->
+    <line x1="0" y1="0" x2="63" y2="-63" stroke="#FF0000" stroke-width="2" opacity="0.7"/>
+    <circle cx="63" cy="-63" r="4" fill="#FF0000" opacity="0.8"/>
+  </g>
+
+  <!-- Vertical separator -->
+  <line x1="310" y1="60" x2="310" y2="340" stroke="#FF0000" stroke-width="1" opacity="0.3"/>
+
+  <!-- Main title -->
+  <text x="370" y="165" font-family="'JetBrains Mono', 'Courier New', monospace"
+        font-size="58" font-weight="700" fill="#FFFFFF" letter-spacing="-1">
+    DNS Intelligence
+  </text>
+
+  <!-- Red underline -->
+  <rect x="370" y="178" width="560" height="3" fill="#FF0000" opacity="0.9"/>
+
+  <!-- Subtitle -->
+  <text x="370" y="225" font-family="'JetBrains Mono', 'Courier New', monospace"
+        font-size="20" fill="#999999" letter-spacing="1">
+    Real-time validation · Active domain tracking · 24h cycle
+  </text>
+
+  <!-- Stats row -->
+  <g transform="translate(370, 290)">
+    <!-- Stat 1 -->
+    <rect x="0" y="0" width="160" height="60" rx="4" fill="#FF0000" fill-opacity="0.08" stroke="#FF0000" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="80" y="22" font-family="monospace" font-size="11" fill="#FF0000" text-anchor="middle" opacity="0.7">DNS VERIFIED</text>
+    <text x="80" y="46" font-family="monospace" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">ACTIVE</text>
+
+    <!-- Stat 2 -->
+    <rect x="175" y="0" width="160" height="60" rx="4" fill="#FF0000" fill-opacity="0.05" stroke="#FF0000" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="255" y="22" font-family="monospace" font-size="11" fill="#FF0000" text-anchor="middle" opacity="0.7">RESOLVERS</text>
+    <text x="255" y="46" font-family="monospace" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">A·AAAA·MX</text>
+
+    <!-- Stat 3 -->
+    <rect x="350" y="0" width="160" height="60" rx="4" fill="#FF0000" fill-opacity="0.05" stroke="#FF0000" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="430" y="22" font-family="monospace" font-size="11" fill="#FF0000" text-anchor="middle" opacity="0.7">THREADS</text>
+    <text x="430" y="46" font-family="monospace" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">100</text>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="640" y="380" font-family="monospace" font-size="11" fill="#333333" text-anchor="middle" letter-spacing="3">
+    PHISHDESTROY · DESTROYLIST
+  </text>
+</svg>
