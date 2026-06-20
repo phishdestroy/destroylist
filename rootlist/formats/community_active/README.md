@@ -5,6 +5,8 @@
 
 <div align="center">
 
+<img src="banner.svg" alt="Community Active" width="900"/>
+
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="60" />
 
 # Community Active Blocklist
