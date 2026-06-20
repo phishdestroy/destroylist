@@ -6,9 +6,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Satellite.png" width="80" />
-
-# DNS Intelligence
+<img src="banner.svg" alt="DNS Intelligence" width="900"/>
 
 **Real-time DNS validation & active domain tracking**
 
