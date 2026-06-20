@@ -548,16 +548,6 @@ Accuracy first! 🔭
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Star.png" alt="Star" width="22" height="22" /> Star History
-
-<a href="https://star-history.com/#phishdestroy/destroylist&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=phishdestroy/destroylist&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=phishdestroy/destroylist&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=phishdestroy/destroylist&type=Date" />
- </picture>
-</a>
-
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## 📄 License
