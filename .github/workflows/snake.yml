@@ -5,23 +5,22 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  pacman:
+  generate:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
+    timeout-minutes: 10
 
-      - uses: Platane/snk/svg-only@v3
+    steps:
+      - name: Generate Pac-Man contribution graph
+        uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: phishdestroy
-          outputs: |
-            dist/github-snake.svg?color_snake=%23FFD700&color_dots=%23ebedf0,%239be9a8,%2340c463,%2330a14e,%23216e39
-            dist/github-snake-dark.svg?color_snake=%23FFD700&color_dots=%23161b22,%230d4429,%23006d32,%2326a641,%2339d353
+          games: pacman
 
-      - uses: crazy-max/ghaction-github-pages@v4
+      - name: Deploy to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
           build_dir: dist
