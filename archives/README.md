@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" width="80" />
-
-# Archives
+<img src="banner.svg" alt="Archives" width="900"/>
 
 **Historical snapshots of the blocklist for research and analysis**
 
