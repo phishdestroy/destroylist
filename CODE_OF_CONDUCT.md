@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=".github/banner_conduct.svg" alt="Code of Conduct" width="900"/>
+<img src="https://raw.githubusercontent.com/phishdestroy/destroylist/main/.github/banner_conduct.svg" alt="Code of Conduct" width="900"/>
 
 <br>
 

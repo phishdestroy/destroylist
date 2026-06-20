@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=".github/banner_security.svg" alt="Security Policy" width="900"/>
+<img src="https://raw.githubusercontent.com/phishdestroy/destroylist/main/.github/banner_security.svg" alt="Security Policy" width="900"/>
 
 <br>
 
