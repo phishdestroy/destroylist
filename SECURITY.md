@@ -1,10 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="80" />
-
-# Security Policy
-
-**Responsible disclosure, blocklist accuracy, and threat actor awareness**
+<img src=".github/banner_security.svg" alt="Security Policy" width="900"/>
 
 <br>
 

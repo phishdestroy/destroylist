@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="80" />
-
-# Code of Conduct
+<img src=".github/banner_conduct.svg" alt="Code of Conduct" width="900"/>
 
 <br>
 
