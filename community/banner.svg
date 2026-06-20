@@ -5,10 +5,6 @@
         from { opacity: 0; transform: translateY(8px); }
         to   { opacity: 1; transform: translateY(0);   }
       }
-      @keyframes floatin {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-      }
       @keyframes pulse {
         0%, 100% { opacity: 1;   }
         50%       { opacity: 0.2; }
@@ -19,56 +15,54 @@
       }
       @keyframes scanline {
         0%   { transform: translateY(-20px); opacity: 0;   }
-        5%   {                               opacity: 0.4; }
-        95%  {                               opacity: 0.4; }
+        5%   {                               opacity: 0.35; }
+        95%  {                               opacity: 0.35; }
         100% { transform: translateY(240px); opacity: 0;   }
       }
-      @keyframes arc1 {
-        from { stroke-dashoffset: 566; }
-        to   { stroke-dashoffset: 0;   }
-      }
-      @keyframes arc2 {
-        from { stroke-dashoffset: 440; }
-        to   { stroke-dashoffset: 0;   }
-      }
+      @keyframes arc1 { from { stroke-dashoffset: 440; } to { stroke-dashoffset: 0; } }
+      @keyframes arc2 { from { stroke-dashoffset: 314; } to { stroke-dashoffset: 0; } }
       @keyframes glow {
         0%, 100% { opacity: 1;   }
         50%       { opacity: 0.7; }
       }
-      @keyframes drift {
-        0%, 100% { transform: translateY(0px);  }
-        50%       { transform: translateY(-3px); }
+      @keyframes br {
+        from { opacity: 0; transform: translateX(6px); }
+        to   { opacity: 1; transform: translateX(0);   }
       }
 
-      .lbl   { animation: fadein  0.7s ease both 0.10s; }
-      .ttl   { animation: fadein  0.7s ease both 0.30s; }
-      .sub   { animation: fadein  0.7s ease both 0.55s; }
-      .d1    { animation: pulse  2.5s ease-in-out infinite 0.0s; }
-      .d2    { animation: pulse  2.5s ease-in-out infinite 0.8s; }
-      .d3    { animation: pulse  2.5s ease-in-out infinite 1.6s; }
-      .cur   { animation: blink  1.0s step-end   infinite;       }
-      .scan  { animation: scanline 4s linear      infinite 1.0s; }
-      .a1    { animation: arc1   2.0s ease-out   both     0.20s; }
-      .a2    { animation: arc2   2.5s ease-out   both     0.50s; }
-      .bar   { animation: glow   3.0s ease-in-out infinite;      }
+      .lbl  { animation: fadein 0.7s ease both 0.10s; }
+      .ttl  { animation: fadein 0.7s ease both 0.30s; }
+      .sub  { animation: fadein 0.7s ease both 0.55s; }
+      .d1   { animation: pulse 2.5s ease-in-out infinite 0.0s; }
+      .d2   { animation: pulse 2.5s ease-in-out infinite 0.8s; }
+      .d3   { animation: pulse 2.5s ease-in-out infinite 1.6s; }
+      .cur  { animation: blink 1.0s step-end   infinite; }
+      .scan { animation: scanline 4s linear     infinite 1.0s; }
+      .a1   { animation: arc1  2.0s ease-out   both 0.20s; }
+      .a2   { animation: arc2  2.5s ease-out   both 0.50s; }
+      .bar  { animation: glow  3.0s ease-in-out infinite; }
 
-      .br1  { animation: floatin 1.2s ease both 0.6s;  }
-      .br2  { animation: floatin 1.2s ease both 0.75s; }
-      .br3  { animation: floatin 1.2s ease both 0.9s;  }
-      .br4  { animation: floatin 1.2s ease both 1.05s; }
-      .br5  { animation: floatin 1.2s ease both 1.2s;  }
-      .br6  { animation: floatin 1.2s ease both 1.35s; }
-      .br7  { animation: floatin 1.2s ease both 1.5s;  }
-      .br8  { animation: floatin 1.2s ease both 1.65s; }
-      .br9  { animation: floatin 1.2s ease both 1.8s;  }
-      .br10 { animation: floatin 1.2s ease both 1.95s; }
-      .br11 { animation: floatin 1.2s ease both 2.1s;  }
-      .br12 { animation: floatin 1.2s ease both 2.25s; }
+      .s0  { animation: br 0.5s ease both 0.70s; }
+      .s1  { animation: br 0.5s ease both 0.82s; }
+      .s2  { animation: br 0.5s ease both 0.94s; }
+      .s3  { animation: br 0.5s ease both 1.06s; }
+      .s4  { animation: br 0.5s ease both 1.18s; }
+      .s5  { animation: br 0.5s ease both 1.30s; }
+      .s6  { animation: br 0.5s ease both 1.42s; }
+      .s7  { animation: br 0.5s ease both 1.54s; }
+      .s8  { animation: br 0.5s ease both 1.66s; }
+      .s9  { animation: br 0.5s ease both 1.78s; }
+      .s10 { animation: br 0.5s ease both 1.90s; }
+      .s11 { animation: br 0.5s ease both 2.02s; }
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"   stop-color="#030810"/>
       <stop offset="100%" stop-color="#050d1a"/>
+    </linearGradient>
+    <linearGradient id="rp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#0a1628" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#030810" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#fff" stop-opacity="0"/>
@@ -78,6 +72,7 @@
     <clipPath id="cp"><rect width="900" height="220" rx="8"/></clipPath>
   </defs>
 
+  <!-- Background -->
   <rect width="900" height="220" rx="8" fill="url(#bg)"/>
 
   <!-- Grid -->
@@ -96,30 +91,20 @@
     <line x1="0" y1="165" x2="900" y2="165"/>
   </g>
 
-  <!-- Brand names floating in background -->
-  <g clip-path="url(#cp)" font-family="sans-serif" font-weight="700" fill="#c8d8ea">
-    <text class="br1"  x="60"  y="42"  font-size="18" opacity="0.10">MetaMask</text>
-    <text class="br2"  x="580" y="35"  font-size="16" opacity="0.09">ScamSniffer</text>
-    <text class="br3"  x="300" y="55"  font-size="14" opacity="0.08">Polkadot JS</text>
-    <text class="br4"  x="700" y="90"  font-size="15" opacity="0.09">OpenPhish</text>
-    <text class="br5"  x="60"  y="185" font-size="17" opacity="0.10">SEAL</text>
-    <text class="br6"  x="730" y="180" font-size="16" opacity="0.09">SPMedia</text>
-    <text class="br7"  x="420" y="198" font-size="14" opacity="0.08">Phishunt</text>
-    <text class="br8"  x="155" y="200" font-size="15" opacity="0.09">Enkrypt</text>
-    <text class="br9"  x="560" y="195" font-size="13" opacity="0.08">CryptoFirewall</text>
-    <text class="br10" x="430" y="30"  font-size="13" opacity="0.07">Codeesura</text>
-    <text class="br11" x="60"  y="115" font-size="13" opacity="0.07">DiscordPhishing</text>
-    <text class="br12" x="700" y="140" font-size="13" opacity="0.07">Nikolai · Dogino</text>
-  </g>
+  <!-- Right panel subtle tint -->
+  <rect x="510" y="0" width="390" height="220" fill="url(#rp)" clip-path="url(#cp)"/>
 
-  <!-- Arcs -->
+  <!-- Divider -->
+  <line x1="510" y1="20" x2="510" y2="200" stroke="#1a3050" stroke-width="1"/>
+
+  <!-- Arcs (right panel) -->
   <g clip-path="url(#cp)">
-    <circle class="a1" cx="870" cy="110" r="90" fill="none"
-            stroke="#CC0000" stroke-opacity="0.22" stroke-width="1.5"
-            stroke-dasharray="566" stroke-dashoffset="566"/>
-    <circle class="a2" cx="870" cy="110" r="65" fill="none"
-            stroke="#CC0000" stroke-opacity="0.14" stroke-width="1"
+    <circle class="a1" cx="870" cy="110" r="70" fill="none"
+            stroke="#CC0000" stroke-opacity="0.18" stroke-width="1.5"
             stroke-dasharray="440" stroke-dashoffset="440"/>
+    <circle class="a2" cx="870" cy="110" r="50" fill="none"
+            stroke="#CC0000" stroke-opacity="0.10" stroke-width="1"
+            stroke-dasharray="314" stroke-dashoffset="314"/>
   </g>
 
   <!-- Scanline -->
@@ -134,15 +119,40 @@
   <circle class="d2" cx="26" cy="110" r="3" fill="#CC0000"/>
   <circle class="d3" cx="26" cy="165" r="3" fill="#CC0000"/>
 
-  <!-- Main text -->
-  <text class="lbl" x="50" y="90"
+  <!-- LEFT: main text -->
+  <text class="lbl" x="50" y="88"
         font-family="monospace" font-size="11" fill="#CC0000" letter-spacing="4">PHISHDESTROY</text>
 
-  <text class="ttl" x="50" y="138"
+  <text class="ttl" x="50" y="136"
         font-family="monospace" font-size="40" font-weight="bold"
         fill="#dde8f5" letter-spacing="3">COMMUNITY</text>
 
-  <text class="sub" x="50" y="164"
+  <text class="sub" x="50" y="162"
         font-family="monospace" font-size="11" fill="#3a5570"
-        letter-spacing="2">AGGREGATED THREAT INTELLIGENCE — 12 PUBLIC FEEDS<tspan class="cur" fill="#CC0000">_</tspan></text>
+        letter-spacing="2">AGGREGATED THREAT INTELLIGENCE FEEDS<tspan class="cur" fill="#CC0000">_</tspan></text>
+
+  <!-- RIGHT: sources header -->
+  <text class="s0" x="530" y="38"
+        font-family="monospace" font-size="10" fill="#CC0000"
+        letter-spacing="3">SOURCES</text>
+
+  <!-- RIGHT: source list — column 1 (x=530), column 2 (x=720) -->
+  <!-- col 1 -->
+  <g font-family="monospace" font-size="11" fill="#8aaac8">
+    <text class="s1"  x="530" y="65" >▸ MetaMask</text>
+    <text class="s2"  x="530" y="86" >▸ ScamSniffer</text>
+    <text class="s3"  x="530" y="107">▸ OpenPhish</text>
+    <text class="s4"  x="530" y="128">▸ Polkadot JS</text>
+    <text class="s5"  x="530" y="149">▸ SEAL</text>
+    <text class="s6"  x="530" y="170">▸ Enkrypt</text>
+  </g>
+
+  <!-- col 2 -->
+  <g font-family="monospace" font-size="11" fill="#8aaac8">
+    <text class="s7"  x="718" y="65" >▸ SPMedia</text>
+    <text class="s8"  x="718" y="86" >▸ CryptoFirewall</text>
+    <text class="s9"  x="718" y="107">▸ Codeesura</text>
+    <text class="s10" x="718" y="128">▸ Phishunt</text>
+    <text class="s11" x="718" y="149">▸ DiscordPhishing</text>
+  </g>
 </svg>
