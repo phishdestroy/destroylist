@@ -5,6 +5,10 @@
         from { opacity: 0; transform: translateY(8px); }
         to   { opacity: 1; transform: translateY(0);   }
       }
+      @keyframes floatin {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
       @keyframes pulse {
         0%, 100% { opacity: 1;   }
         50%       { opacity: 0.2; }
@@ -31,18 +35,35 @@
         0%, 100% { opacity: 1;   }
         50%       { opacity: 0.7; }
       }
+      @keyframes drift {
+        0%, 100% { transform: translateY(0px);  }
+        50%       { transform: translateY(-3px); }
+      }
 
-      .lbl  { animation: fadein  0.7s ease both 0.10s; }
-      .ttl  { animation: fadein  0.7s ease both 0.30s; }
-      .sub  { animation: fadein  0.7s ease both 0.55s; }
-      .d1   { animation: pulse  2.5s ease-in-out infinite 0.0s; }
-      .d2   { animation: pulse  2.5s ease-in-out infinite 0.8s; }
-      .d3   { animation: pulse  2.5s ease-in-out infinite 1.6s; }
-      .cur  { animation: blink  1.0s step-end   infinite;       }
-      .scan { animation: scanline 4s linear      infinite 1.0s; }
-      .a1   { animation: arc1   2.0s ease-out   both     0.20s; }
-      .a2   { animation: arc2   2.5s ease-out   both     0.50s; }
-      .bar  { animation: glow   3.0s ease-in-out infinite;      }
+      .lbl   { animation: fadein  0.7s ease both 0.10s; }
+      .ttl   { animation: fadein  0.7s ease both 0.30s; }
+      .sub   { animation: fadein  0.7s ease both 0.55s; }
+      .d1    { animation: pulse  2.5s ease-in-out infinite 0.0s; }
+      .d2    { animation: pulse  2.5s ease-in-out infinite 0.8s; }
+      .d3    { animation: pulse  2.5s ease-in-out infinite 1.6s; }
+      .cur   { animation: blink  1.0s step-end   infinite;       }
+      .scan  { animation: scanline 4s linear      infinite 1.0s; }
+      .a1    { animation: arc1   2.0s ease-out   both     0.20s; }
+      .a2    { animation: arc2   2.5s ease-out   both     0.50s; }
+      .bar   { animation: glow   3.0s ease-in-out infinite;      }
+
+      .br1  { animation: floatin 1.2s ease both 0.6s;  }
+      .br2  { animation: floatin 1.2s ease both 0.75s; }
+      .br3  { animation: floatin 1.2s ease both 0.9s;  }
+      .br4  { animation: floatin 1.2s ease both 1.05s; }
+      .br5  { animation: floatin 1.2s ease both 1.2s;  }
+      .br6  { animation: floatin 1.2s ease both 1.35s; }
+      .br7  { animation: floatin 1.2s ease both 1.5s;  }
+      .br8  { animation: floatin 1.2s ease both 1.65s; }
+      .br9  { animation: floatin 1.2s ease both 1.8s;  }
+      .br10 { animation: floatin 1.2s ease both 1.95s; }
+      .br11 { animation: floatin 1.2s ease both 2.1s;  }
+      .br12 { animation: floatin 1.2s ease both 2.25s; }
     </style>
 
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
@@ -59,6 +80,7 @@
 
   <rect width="900" height="220" rx="8" fill="url(#bg)"/>
 
+  <!-- Grid -->
   <g clip-path="url(#cp)" stroke="#0d1f35" stroke-width="1">
     <line x1="90"  y1="0" x2="90"  y2="220"/>
     <line x1="180" y1="0" x2="180" y2="220"/>
@@ -74,6 +96,23 @@
     <line x1="0" y1="165" x2="900" y2="165"/>
   </g>
 
+  <!-- Brand names floating in background -->
+  <g clip-path="url(#cp)" font-family="sans-serif" font-weight="700" fill="#c8d8ea">
+    <text class="br1"  x="60"  y="42"  font-size="18" opacity="0.10">MetaMask</text>
+    <text class="br2"  x="580" y="35"  font-size="16" opacity="0.09">ScamSniffer</text>
+    <text class="br3"  x="300" y="55"  font-size="14" opacity="0.08">Polkadot JS</text>
+    <text class="br4"  x="700" y="90"  font-size="15" opacity="0.09">OpenPhish</text>
+    <text class="br5"  x="60"  y="185" font-size="17" opacity="0.10">SEAL</text>
+    <text class="br6"  x="730" y="180" font-size="16" opacity="0.09">SPMedia</text>
+    <text class="br7"  x="420" y="198" font-size="14" opacity="0.08">Phishunt</text>
+    <text class="br8"  x="155" y="200" font-size="15" opacity="0.09">Enkrypt</text>
+    <text class="br9"  x="560" y="195" font-size="13" opacity="0.08">CryptoFirewall</text>
+    <text class="br10" x="430" y="30"  font-size="13" opacity="0.07">Codeesura</text>
+    <text class="br11" x="60"  y="115" font-size="13" opacity="0.07">DiscordPhishing</text>
+    <text class="br12" x="700" y="140" font-size="13" opacity="0.07">Nikolai · Dogino</text>
+  </g>
+
+  <!-- Arcs -->
   <g clip-path="url(#cp)">
     <circle class="a1" cx="870" cy="110" r="90" fill="none"
             stroke="#CC0000" stroke-opacity="0.22" stroke-width="1.5"
@@ -83,15 +122,19 @@
             stroke-dasharray="440" stroke-dashoffset="440"/>
   </g>
 
+  <!-- Scanline -->
   <rect class="scan" x="0" y="-20" width="900" height="20"
         fill="url(#sg)" clip-path="url(#cp)"/>
 
+  <!-- Red left bar -->
   <rect class="bar" x="0" y="0" width="5" height="220" fill="#CC0000"/>
 
+  <!-- Pulse dots -->
   <circle class="d1" cx="26" cy="55"  r="3" fill="#CC0000"/>
   <circle class="d2" cx="26" cy="110" r="3" fill="#CC0000"/>
   <circle class="d3" cx="26" cy="165" r="3" fill="#CC0000"/>
 
+  <!-- Main text -->
   <text class="lbl" x="50" y="90"
         font-family="monospace" font-size="11" fill="#CC0000" letter-spacing="4">PHISHDESTROY</text>
 
@@ -101,5 +144,5 @@
 
   <text class="sub" x="50" y="164"
         font-family="monospace" font-size="11" fill="#3a5570"
-        letter-spacing="2">AGGREGATED THREAT INTELLIGENCE FEEDS<tspan class="cur" fill="#CC0000">_</tspan></text>
+        letter-spacing="2">AGGREGATED THREAT INTELLIGENCE — 12 PUBLIC FEEDS<tspan class="cur" fill="#CC0000">_</tspan></text>
 </svg>
