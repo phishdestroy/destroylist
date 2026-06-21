@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: repo-updates
+  group: scheduled-updates
   cancel-in-progress: false
 
 jobs:
