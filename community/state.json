@@ -1,17 +1,17 @@
 {
   "OpenPhish": {
-    "hash": "52ecd55bbdf44fb92a99b10358525ed6bef9ca9be50bf713a02e1789d4825078",
-    "count": 289,
+    "hash": "db058e90303d957117efb2ed6c8cfe50db2c2b55977733dcd1ee1e6fda5e3892",
+    "count": 275,
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "b1a2d9e3be43d185d8fa87457513bd18105d159e151f9a25cb89aac60cf4d54b",
-    "count": 100746,
+    "hash": "6e2b938cea146d8fe2f68bcb4ce8b8281d31a87ff1daa34fe729bf5c850f53ec",
+    "count": 100789,
     "consecutive_failures": 0
   },
-  "Polkadot": {
-    "hash": "5013c149b7a1b8e220f9b5c2fc18e571cc8135553de8e9bba789972938e08acb",
-    "count": 53991,
+  "SPMedia_DetectedURLs": {
+    "hash": "cc9b5b256b156ceae21bf4e67a808f00b37dc4be8d88fcd498e623e2a413c45e",
+    "count": 1339,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -19,14 +19,19 @@
     "count": 53990,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "bd8c1944ed42519af85b968d487d9db130d1ee1dde08f7b51cd328fd969b515d",
-    "count": 1338,
+  "Polkadot": {
+    "hash": "5013c149b7a1b8e220f9b5c2fc18e571cc8135553de8e9bba789972938e08acb",
+    "count": 53991,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
+    "consecutive_failures": 0
+  },
+  "Phishunt": {
+    "hash": "6d31cd88c33589679bff2393ad9d3a1b6a01e1bbc8f09949ec29b9f36484fedb",
+    "count": 200,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -39,14 +44,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "6d31cd88c33589679bff2393ad9d3a1b6a01e1bbc8f09949ec29b9f36484fedb",
-    "count": 200,
-    "consecutive_failures": 0
-  },
   "SEAL": {
-    "hash": "5c9c5a9cc489a796d0023dd9d0d5a1539321020495347050a0eae51c481e792b",
-    "count": 100180,
+    "hash": "c10a07ea9c1940d37d46a939098877de5f9f4e0441f9cf7a3b1b5bd1d9280222",
+    "count": 100223,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +59,5 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 955558
+  "total_count": 955771
 }
