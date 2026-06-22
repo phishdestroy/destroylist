@@ -98,3 +98,18 @@ jobs:
             sleep $((i * 2))
           done
           exit 1
+
+      - name: Mirror to Codeberg
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          if [ -z "$CODEBERG_TOKEN" ]; then exit 0; fi
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH="${GITHUB_REF_NAME}"
+          git remote add codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git 2>/dev/null ||             git remote set-url codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git
+          if git ls-remote codeberg HEAD 2>/dev/null | grep -q HEAD; then
+            git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
+          else
+            git fetch --unshallow 2>/dev/null || true
+            git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
+          fi
