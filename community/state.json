@@ -1,17 +1,17 @@
 {
-  "MetaMask": {
-    "hash": "5a17648bb3ee84b1b59e283d0324a08e7c539e2286a5b984cf7ea2a8d3a5e11c",
-    "count": 100434,
-    "consecutive_failures": 0
-  },
-  "SPMedia_DetectedURLs": {
-    "hash": "7e743d0eea0661195a271dbe14c9d7699743488e21934f10f55a234485d5d74b",
-    "count": 1341,
-    "consecutive_failures": 0
-  },
   "OpenPhish": {
     "hash": "2467772fc608fbcbb2f62d643401208719cc07bea918381956c23895ef530b13",
     "count": 261,
+    "consecutive_failures": 0
+  },
+  "MetaMask": {
+    "hash": "cb1cb74297abac27a15c971897dd5773015b6b3a6aef31c21b1d41cac7a5cb97",
+    "count": 100488,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "df944875251599ea7a765cf5b374aa4a92f9a094db79135dca00d0a6e33491b1",
+    "count": 1342,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -34,11 +34,6 @@
     "count": 107532,
     "consecutive_failures": 0
   },
-  "SEAL": {
-    "hash": "1b01622fc0212521430bea8d62c220660f2fee417c288568000dc4cd01ad2d3e",
-    "count": 99905,
-    "consecutive_failures": 0
-  },
   "Phishunt": {
     "hash": "1c98922bb10a1d8440b3aea51644182382a6c016a230b57afd54599e1d58277d",
     "count": 197,
@@ -49,9 +44,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "ScamSniffer": {
-    "hash": "9193e954ecbdc65432d30bc0599e2e88ab1f36f2d052fe7135edcfcc9b171405",
-    "count": 347529,
+  "SEAL": {
+    "hash": "c3dae32607af65522c6c14c5227a1004621927cbd1bcd79712b86f865d9e3fe2",
+    "count": 99916,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -59,5 +54,10 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 958606
+  "ScamSniffer": {
+    "hash": "9193e954ecbdc65432d30bc0599e2e88ab1f36f2d052fe7135edcfcc9b171405",
+    "count": 347529,
+    "consecutive_failures": 0
+  },
+  "total_count": 958737
 }
