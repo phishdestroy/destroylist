@@ -1,17 +1,12 @@
 {
-  "MetaMask": {
-    "hash": "de460780b81c702f64f84a3d7a20b1600e2371789f55c0db9e986f3a33032e3a",
-    "count": 100675,
-    "consecutive_failures": 0
-  },
-  "Codeesura": {
-    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
-    "count": 53990,
-    "consecutive_failures": 0
-  },
   "OpenPhish": {
-    "hash": "11e1efb77c2a482e1b7fde18eafeb4baad0790121ddac0ae4e47f6d3adc89ca6",
+    "hash": "4f99a316c53163e43e5e98721f988135685b174b41d1f7f9a2cbf4160ae288bc",
     "count": 255,
+    "consecutive_failures": 0
+  },
+  "MetaMask": {
+    "hash": "e06410401c007181e9ad15e61f9be5089c8cca0a416bfb3e39219d7f3e493ef3",
+    "count": 100740,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -24,14 +19,24 @@
     "count": 53991,
     "consecutive_failures": 0
   },
+  "Codeesura": {
+    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
+    "count": 53990,
+    "consecutive_failures": 0
+  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
     "consecutive_failures": 0
   },
   "Phishunt": {
-    "hash": "ce82a46462afd0f8e1032b188af6d2154ecaacd6e79ae73ad666e3d944993405",
+    "hash": "72d3fcc39ca0d40caf0528603c5b9fb82c78858348eebeafb8fe604f5e706167",
     "count": 196,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "c95b99d318ae002aa59ba09ed07ca4e27bc3e62ae90e2cfd9736899b1725909b",
+    "count": 100169,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -44,9 +49,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "SEAL": {
-    "hash": "611c27e1e0824cf1392860b75a89e0240df8324f00789e337ba2dd338237fe3a",
-    "count": 100102,
+  "ScamSniffer": {
+    "hash": "604240c200e739dc4832881b5ebffb47a4528ebb9839e4c2a91c556d299c3621",
+    "count": 347559,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -54,10 +59,5 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "ScamSniffer": {
-    "hash": "604240c200e739dc4832881b5ebffb47a4528ebb9839e4c2a91c556d299c3621",
-    "count": 347559,
-    "consecutive_failures": 0
-  },
-  "total_count": 959743
+  "total_count": 959957
 }
