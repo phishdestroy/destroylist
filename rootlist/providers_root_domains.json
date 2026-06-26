@@ -6,7 +6,7 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 44,
-      "total_entries": 26982,
+      "total_entries": 26997,
       "items": [
         {
           "domain": "pages.dev",
@@ -27032,6 +27032,30 @@
           ]
         },
         {
+          "domain": "gitlab.io",
+          "count": 18,
+          "hosts": [
+            "chatgpt-codex-app.gitlab.io",
+            "chatgpt-codex-lm.gitlab.io",
+            "cladesktop.gitlab.io",
+            "claude-app-new.gitlab.io",
+            "claude-code-app.gitlab.io",
+            "claude-desktop-lm.gitlab.io",
+            "claude-desktop.gitlab.io",
+            "claudeapp.gitlab.io",
+            "claudecode-desktop.gitlab.io",
+            "claudesktop-app.gitlab.io",
+            "claudesktop.gitlab.io",
+            "codexgpt.gitlab.io",
+            "cursor-8ced8a.gitlab.io",
+            "jetbrains-apps-group.gitlab.io",
+            "ledger-start.gitlab.io",
+            "ledger-wallet.gitlab.io",
+            "perplexity-platform.gitlab.io",
+            "terzor-io.gitlab.io"
+          ]
+        },
+        {
           "domain": "rollout.site",
           "count": 17,
           "hosts": [
@@ -27220,15 +27244,6 @@
             "156.67.218.149.sslip.io",
             "246.uc4wwk4cow48gok0s4ks0cww.65.109.18.60.sslip.io",
             "363.k44os4c4wcwk0gwo0ckwccww.162.55.81.185.sslip.io"
-          ]
-        },
-        {
-          "domain": "gitlab.io",
-          "count": 3,
-          "hosts": [
-            "ledger-start.gitlab.io",
-            "ledger-wallet.gitlab.io",
-            "terzor-io.gitlab.io"
           ]
         },
         {
