@@ -16,7 +16,7 @@ jobs:
   process:
     if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     permissions:
       contents: write
     steps:
