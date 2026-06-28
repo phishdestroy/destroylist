@@ -12,10 +12,6 @@ on:
       - main
   workflow_dispatch:
 
-concurrency:
-  group: repo-updates
-  cancel-in-progress: false
-
 jobs:
   process:
     if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
@@ -78,7 +74,7 @@ jobs:
           git diff --staged --name-only > /tmp/staged_files.txt
           tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
 
-          for i in {1..5}; do
+          for i in {1..10}; do
             git fetch origin main
             git reset --hard origin/main
 
@@ -94,7 +90,8 @@ jobs:
             git commit -m "Update processed files [skip ci]"
             git push && exit 0
 
-            echo "Push attempt $i failed, retrying in $((i * 2))s..."
-            sleep $((i * 2))
+            WAIT=$(( RANDOM % 10 + i * 3 ))
+            echo "Push attempt $i failed, retrying in ${WAIT}s..."
+            sleep $WAIT
           done
           exit 1
