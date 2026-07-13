@@ -1,12 +1,17 @@
 {
-  "OpenPhish": {
-    "hash": "7d6644a5028e7a9e6e9c51c2bf147bde4b7cf3a1e1e678254ddefb642e982955",
-    "count": 271,
+  "MetaMask": {
+    "hash": "88f30102da81caca6f3eee9979aa38290699c7f4b67ef4df56e30ed05fb673a8",
+    "count": 105178,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "58e87d41287a74af2722e4ddff496c791c86255c52282303e76e69725bd8b587",
-    "count": 105037,
+  "OpenPhish": {
+    "hash": "a0bba07ff30331e3e725943c3af1b7d3e8481b8c50e72b50368cc6b833e319bb",
+    "count": 262,
+    "consecutive_failures": 0
+  },
+  "Codeesura": {
+    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
+    "count": 53990,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -19,24 +24,9 @@
     "count": 53991,
     "consecutive_failures": 0
   },
-  "Codeesura": {
-    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
-    "count": 53990,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
-    "consecutive_failures": 0
-  },
-  "Phishunt": {
-    "hash": "655da0c0cadc857d49c86dd216ec2ff92212d11c7de1e8052357f7a7d19ab110",
-    "count": 323,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "6396a46ab4efec2ee7f8312a51c4dd2ce044f09056b301f618e92fd2c47bc25f",
-    "count": 104468,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -49,6 +39,16 @@
     "count": 107532,
     "consecutive_failures": 0
   },
+  "Phishunt": {
+    "hash": "f2f4b9ef4f967596f81da9fecd45f656c3023ecc3fa2022bebf6ee3b4711a663",
+    "count": 324,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "cedc05a3077bc3e0e651104e961e6d21e018ad4f14721812a85392473377262b",
+    "count": 104609,
+    "consecutive_failures": 0
+  },
   "ScamSniffer": {
     "hash": "cb4a557d5789486b56b8eeec46c3d96605beb3191e2980f68313c28d9947a24a",
     "count": 347977,
@@ -59,5 +59,5 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 979794
+  "total_count": 980168
 }
