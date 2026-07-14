@@ -1,7 +1,17 @@
 {
+  "MetaMask": {
+    "hash": "065abe903f0337af6c5a42de8d142c0e37e04dd86bf5b7c1a8bb80a0e582582d",
+    "count": 105162,
+    "consecutive_failures": 0
+  },
   "OpenPhish": {
     "hash": "5fd45393a4ed8ec3bc9554de6071f0d0c888a4f50f9281df01a955f0a5554f62",
     "count": 267,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "3108c3dee82e923555f69024425084bffdae4d86aa22ac368644d6ac2bfef4d1",
+    "count": 1377,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -14,24 +24,14 @@
     "count": 53990,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "3108c3dee82e923555f69024425084bffdae4d86aa22ac368644d6ac2bfef4d1",
-    "count": 1377,
-    "consecutive_failures": 0
-  },
-  "MetaMask": {
-    "hash": "ef7e27b72278f00bffd52c26d8082edb86d7abbe78160a37facfc0b3bfac9f38",
-    "count": 105163,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
     "consecutive_failures": 0
   },
   "Phishunt": {
-    "hash": "97a96f9003c0a15e15c03098945e4313609b080700513e60aaec63542ae54ee4",
-    "count": 357,
+    "hash": "e9ee1c3861296e36c58d258583bcf3320810e3e7273c22da32f4f0a10f1aa8fa",
+    "count": 363,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -39,14 +39,14 @@
     "count": 107532,
     "consecutive_failures": 0
   },
-  "SEAL": {
-    "hash": "b39a1c596f622750297daf16fda18f53a075d929e8015b77aa2301b822208112",
-    "count": 104594,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "30d0c7c43262c139c0b0cf0f808b89f5d13f15c41745ebc6c51a1f5183f516d9",
+    "count": 104593,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +59,5 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 981554
+  "total_count": 981591
 }
