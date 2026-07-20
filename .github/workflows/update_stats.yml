@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          filter: blob:none
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
@@ -25,6 +26,26 @@ jobs:
         run: pip install -r requirements.txt
       - name: Calculate statistics
         run: python scripts/calculate_stats.py
+      - name: Rotate old archives to Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Full-dump snapshots >32MB are not indexed by GitHub code search
+          # (arrays shards handle searchability), so only the current month
+          # stays in the tree; older snapshots move to the permanent Release.
+          gh release view archives >/dev/null 2>&1 || \
+            gh release create archives --title "Historical archives" \
+              --notes "Weekly and monthly full-list snapshots rotated out of the working tree. Current month lives in archives/."
+          rotate() {
+            dir=$1; keep=$2
+            ls "$dir"/*.json 2>/dev/null | sort | head -n -"$keep" | while read -r f; do
+              echo "Rotating $f to Release"
+              gh release upload archives "$f" --clobber || { echo "Upload failed for $f, keeping in tree"; continue; }
+              git rm -q "$f"
+            done
+          }
+          rotate archives/weekly 4
+          rotate archives/monthly 1
       - name: Update daily gist
         continue-on-error: true
         env:
