@@ -46,6 +46,30 @@ jobs:
           }
           rotate archives/weekly 4
           rotate archives/monthly 1
+          # Regenerate release notes with an up-to-date asset table
+          {
+            echo "Weekly and monthly full-list snapshots rotated out of the working tree."
+            echo "The current month lives in [\`archives/\`](https://github.com/${GITHUB_REPOSITORY}/tree/main/archives)."
+            echo "Daily added/removed diffs (searchable) live in [\`changes/\`](https://github.com/${GITHUB_REPOSITORY}/tree/main/changes)."
+            echo
+            echo "| Snapshot | Size |"
+            echo "|---|---|"
+            gh release view archives --json assets \
+              --jq '.assets[] | "| \(.name) | \(.size / 1048576 | floor) MB |"' | sort
+          } > /tmp/release_notes.md
+          gh release edit archives --notes-file /tmp/release_notes.md || echo "notes update failed, continuing"
+      - name: Monitor repository size
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SIZE_KB=$(gh api "repos/${GITHUB_REPOSITORY}" --jq '.size')
+          SIZE_GB=$((SIZE_KB / 1048576))
+          echo "Repository size: ${SIZE_GB} GB (${SIZE_KB} KB)"
+          if [ "$SIZE_GB" -ge 10 ]; then
+            echo "::warning::Repository has grown to ${SIZE_GB} GB — run the 'History Maintenance' workflow to slim git history"
+          fi
+
       - name: Update daily gist
         continue-on-error: true
         env:
@@ -56,7 +80,7 @@ jobs:
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add dns/*.json archives/ dns/stats_snapshot.json
+          git add dns/*.json archives/ changes/ dns/stats_snapshot.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0

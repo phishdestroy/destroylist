@@ -123,6 +123,56 @@ def get_delta_from_snapshot(key_primary: str, key_community: str, current_primar
     return p, c
 
 
+def save_daily_diff(now: datetime):
+    """Write a small daily added/removed diff to changes/YYYY-MM/DD.json.
+
+    These files stay under GitHub's code-search indexing limit, so every
+    domain that was ever added or removed remains searchable even after it
+    leaves the live lists. Non-fatal: any error is logged and skipped.
+    """
+    try:
+        changes_dir = PROJECT_ROOT / "changes" / now.strftime("%Y-%m")
+        out_file = changes_dir / f"{now.strftime('%Y-%m-%d')}.json"
+        if out_file.exists():
+            return
+
+        current_primary = load_current_domains(LIST_FILE)
+        current_community = load_current_domains(COMMUNITY_FILE)
+
+        def domains_at(file_path: str, since: str):
+            commits = run_git(["git", "log", f"--since={since}", "--reverse", "--format=%H", "--", file_path]).strip().split("\n")
+            if not commits or not commits[0]:
+                return None
+            parent = run_git(["git", "rev-parse", f"{commits[0]}^"]).strip()
+            if not parent:
+                return None
+            content = run_git(["git", "show", f"{parent}:{file_path}"])
+            return get_domains_from_json(content) if content else None
+
+        old_primary = domains_at(LIST_FILE, "1 day ago")
+        old_community = domains_at(COMMUNITY_FILE, "1 day ago")
+        if old_primary is None and old_community is None:
+            log("Daily diff: no history baseline available, skipping", "warn")
+            return
+
+        diff = {"date": now.strftime("%Y-%m-%d")}
+        if old_primary is not None:
+            diff["primary_added"] = sorted(current_primary - old_primary)
+            diff["primary_removed"] = sorted(old_primary - current_primary)
+            diff["primary_count"] = len(current_primary)
+        if old_community is not None:
+            diff["community_added"] = sorted(current_community - old_community)
+            diff["community_removed"] = sorted(old_community - current_community)
+            diff["community_count"] = len(current_community)
+
+        changes_dir.mkdir(parents=True, exist_ok=True)
+        out_file.write_text(json.dumps(diff, indent=1), encoding="utf-8")
+        log(f"Daily diff: {out_file.name} "
+            f"(+{len(diff.get('primary_added', []))}/-{len(diff.get('primary_removed', []))} primary)", "ok")
+    except Exception as e:
+        log(f"Daily diff failed (non-fatal): {e}", "warn")
+
+
 def save_archive():
     now = datetime.now(timezone.utc)
 
@@ -206,6 +256,7 @@ def main():
     # Save/refresh snapshot baseline after writing badges
     save_snapshot(now, current_primary, current_community)
 
+    save_daily_diff(now)
     save_archive()
     log("Done", "ok")
 
@@ -219,3 +270,4 @@ if __name__ == "__main__":
         traceback.print_exc()
         import sys
         sys.exit(1)
+
