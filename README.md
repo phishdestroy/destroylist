@@ -33,8 +33,11 @@
 Add to **Pi-hole** or **AdGuard Home** in one click — paste this URL into your blocklist settings:
 
 ```
-https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/hosts.txt
+https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/hosts.txt
 ```
+
+> **CDN link above is recommended** — served via jsDelivr global CDN, no rate limits.
+> Raw GitHub mirror (may return 429 on heavy traffic): `https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/hosts.txt`
 
 > More formats: [Hosts](#-data-feeds) · [AdBlock](#-data-feeds) · [Dnsmasq](#-data-feeds) · [Unbound](#-data-feeds) · [RPZ](#-data-feeds) · [API](#-threat-intelligence-api)
 
@@ -95,6 +98,22 @@ https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats
 <summary>📁 <b>All Download Formats</b> (TXT, Hosts, AdBlock, Dnsmasq, Unbound, RPZ)</summary>
 <br>
 
+> **Getting 429 errors?** Use the jsDelivr CDN links below — they bypass GitHub rate limits.
+
+**Via jsDelivr CDN (recommended, no rate limits):**
+
+| Format | Primary | Primary Live | Community | Community Live |
+|:------:|:-------:|:------------:|:---------:|:--------------:|
+| **TXT** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/domains.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/domains.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/domains.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/domains.txt) |
+| **Hosts** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/hosts.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/hosts.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/hosts.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/hosts.txt) |
+| **AdBlock** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/adblock.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/adblock.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/adblock.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/adblock.txt) |
+| **Dnsmasq** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/dnsmasq.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/dnsmasq.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/dnsmasq.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/dnsmasq.conf) |
+| **Unbound** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/unbound.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/unbound.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/unbound.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/unbound.conf) |
+| **RPZ** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/rpz.zone) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/rpz.zone) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/rpz.zone) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/rpz.zone) |
+
+<details>
+<summary>Via raw.githubusercontent.com (may return 429 under heavy traffic)</summary>
+
 | Format | Primary | Primary Live | Community | Community Live |
 |:------:|:-------:|:------------:|:---------:|:--------------:|
 | **TXT** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/domains.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/domains.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/domains.txt) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/domains.txt) |
@@ -103,6 +122,8 @@ https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats
 | **Dnsmasq** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/dnsmasq.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/dnsmasq.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/dnsmasq.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/dnsmasq.conf) |
 | **Unbound** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/unbound.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/unbound.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/unbound.conf) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/unbound.conf) |
 | **RPZ** | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/rpz.zone) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/rpz.zone) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/rpz.zone) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/rpz.zone) |
+
+</details>
 
 > **Hosts** → Pi-hole, /etc/hosts, Windows · **AdBlock** → uBlock Origin, AdGuard · **Dnsmasq** → dnsmasq DNS · **Unbound** → pfSense, OPNsense · **RPZ** → BIND, Knot DNS
 
@@ -588,4 +609,5 @@ We welcome contributions:
 - 🌐 Translations & documentation
 
 **Drop an Issue or PR — let's crush phishing together!** 💪
+
 
