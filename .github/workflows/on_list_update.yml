@@ -56,14 +56,16 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
+          # Heavy rootlist/ artifacts are committed twice a day by the
+          # scheduled workflow (and immediately by purge.yml); committing
+          # them on every list push bloats git history.
           git add list.json list.txt count.json \
                  community/blocklist.json community/blocklist.txt \
                  community/live_blocklist.json community/live_blocklist.txt \
                  community/content_live.json community/content_live.txt \
                  community/count.json community/live_count.json \
                  community/content_active_count.json \
-                 dns/*.json dns/*.txt \
-                 rootlist/
+                 dns/*.json dns/*.txt
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -75,7 +77,11 @@ jobs:
           tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
 
           for i in {1..10}; do
-            git fetch origin main
+            if ! git fetch origin main; then
+              echo "Fetch attempt $i failed, retrying in $((i * 3))s..."
+              sleep $((i * 3))
+              continue
+            fi
             git reset --hard origin/main
 
             # Restore our processed file versions on top of latest remote

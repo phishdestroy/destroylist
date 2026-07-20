@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: "0 */2 * * *"
   workflow_dispatch:
+    inputs:
+      force_rootlist:
+        description: "Commit rootlist/ artifacts regardless of time gate"
+        required: false
+        default: "false"
 
 concurrency:
   group: scheduled-updates
@@ -55,19 +60,33 @@ jobs:
         run: python scripts/build_shards.py
 
       - name: Commit and push
+        env:
+          FORCE_ROOTLIST: ${{ github.event.inputs.force_rootlist }}
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-          git add list.json list.txt count.json \
+          # Live feeds are committed every run; heavy generated artifacts in
+          # rootlist/ (formats, arrays, root lists — ~95% of history weight)
+          # are committed only twice a day to keep git history small.
+          ADD_PATHS="list.json list.txt count.json \
                  community/blocklist.json community/blocklist.txt \
                  community/live_blocklist.json community/live_blocklist.txt \
                  community/content_live.json community/content_live.txt \
                  community/count.json community/live_count.json \
                  community/content_active_count.json \
                  community/state.json community/commit_message.txt \
-                 dns/*.json dns/*.txt \
-                 rootlist/
+                 dns/*.json dns/*.txt"
+
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "04" ] || [ "$HOUR" = "16" ] || [ "$FORCE_ROOTLIST" = "true" ]; then
+            ADD_PATHS="$ADD_PATHS rootlist/"
+            echo "Rootlist artifacts included in this commit (hour=$HOUR)"
+          else
+            echo "Rootlist artifacts skipped this run (hour=$HOUR, committed at 04/16 UTC)"
+          fi
+
+          git add $ADD_PATHS
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -80,7 +99,11 @@ jobs:
           tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
 
           for i in {1..5}; do
-            git fetch origin main
+            if ! git fetch origin main; then
+              echo "Fetch attempt $i failed, retrying in $((i * 3))s..."
+              sleep $((i * 3))
+              continue
+            fi
             git reset --hard origin/main
 
             tar -xf /tmp/processed.tar
@@ -106,7 +129,8 @@ jobs:
           if [ -z "$CODEBERG_TOKEN" ]; then exit 0; fi
           REPO_NAME="${GITHUB_REPOSITORY##*/}"
           BRANCH="${GITHUB_REF_NAME}"
-          git remote add codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git 2>/dev/null ||             git remote set-url codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git
+          git remote add codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git 2>/dev/null || \
+            git remote set-url codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git
           if git ls-remote codeberg HEAD 2>/dev/null | grep -q HEAD; then
             git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
           else
