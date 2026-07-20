@@ -1,0 +1,85 @@
+name: History Maintenance (manual)
+# Strips historical versions of heavy generated artifacts (>2MB blobs not in
+# current HEAD) from git history while preserving every commit. Run manually
+# when the repository grows past ~10 GB again. Requires a MAINT_TOKEN secret
+# (classic PAT with repo scope) because GITHUB_TOKEN cannot force-push
+# rewritten history reliably on large repos.
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type REWRITE to confirm force-push of slimmed history"
+        required: true
+
+jobs:
+  slim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: write
+    steps:
+      - name: Guard
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "REWRITE" ]; then
+            echo "::error::confirmation phrase mismatch"; exit 1
+          fi
+
+      - name: Free runner disk
+        run: |
+          sudo rm -rf /usr/local/lib/android /opt/hostedtoolcache/CodeQL /usr/share/dotnet /opt/ghc || true
+          df -h /
+
+      - name: Install git-filter-repo
+        run: pip install git-filter-repo
+
+      - name: Partial clone (skeleton without heavy blobs)
+        env:
+          GH_TOKEN: ${{ secrets.MAINT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git clone --bare --single-branch --branch main --filter=blob:limit=2m \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo.git
+          cd repo.git
+          BEFORE_COMMITS=$(git rev-list --count main)
+          echo "BEFORE_COMMITS=$BEFORE_COMMITS" >> $GITHUB_ENV
+          git rev-parse main^{tree} > /tmp/tree_before.sha
+          git rev-parse main > /tmp/head_before.sha
+
+      - name: Build strip list (missing = heavy, minus HEAD blobs)
+        run: |
+          cd repo.git
+          git rev-list --objects --missing=print main | awk '/^\?/ {print substr($1,2)}' | sort -u > /tmp/missing.txt
+          git ls-tree -r main | awk '{print $3}' | sort -u > /tmp/head_blobs.txt
+          comm -23 /tmp/missing.txt /tmp/head_blobs.txt > /tmp/strip_ids.txt
+          echo "to strip: $(wc -l < /tmp/strip_ids.txt); head blobs kept: $(comm -12 /tmp/missing.txt /tmp/head_blobs.txt | wc -l) will be fetched"
+          # blobs of current HEAD that exceed the filter limit must be present locally
+          comm -12 /tmp/missing.txt /tmp/head_blobs.txt | while read -r sha; do git cat-file -s "$sha" >/dev/null; done
+
+      - name: Filter history
+        run: |
+          cd repo.git
+          git filter-repo --strip-blobs-with-ids /tmp/strip_ids.txt --force
+          git gc --prune=now
+
+      - name: Verify integrity
+        run: |
+          cd repo.git
+          AFTER_COMMITS=$(git rev-list --count main)
+          TREE_AFTER=$(git rev-parse main^{tree})
+          TREE_BEFORE=$(cat /tmp/tree_before.sha)
+          echo "commits: $BEFORE_COMMITS -> $AFTER_COMMITS; tree: $TREE_BEFORE -> $TREE_AFTER"
+          [ "$AFTER_COMMITS" = "$BEFORE_COMMITS" ] || { echo "::error::commit count changed"; exit 1; }
+          [ "$TREE_AFTER" = "$TREE_BEFORE" ] || { echo "::error::HEAD tree changed"; exit 1; }
+          du -sh .
+
+      - name: Force-push rewritten history
+        env:
+          GH_TOKEN: ${{ secrets.MAINT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          cd repo.git
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch origin main
+          if [ "$(git rev-parse FETCH_HEAD)" != "$(cat /tmp/head_before.sha)" ]; then
+            echo "::error::main advanced during maintenance — rerun"; exit 1
+          fi
+          git push origin +refs/heads/main:refs/heads/main
+          echo "History slimmed and pushed. Open a GitHub Support ticket to expedite server-side GC."
