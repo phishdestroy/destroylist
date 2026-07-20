@@ -1,0 +1,57 @@
+name: History Size Diagnostics (dry run)
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Free runner disk
+        run: |
+          sudo rm -rf /usr/local/lib/android /opt/hostedtoolcache/CodeQL /usr/share/dotnet /opt/ghc || true
+          df -h /
+
+      - name: Bare clone main only
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone --bare --single-branch --branch main \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo.git
+          echo "=== FRESH CLONE SIZE ==="
+          du -sh repo.git
+          cd repo.git
+          git count-objects -vH
+          echo "=== COMMIT COUNT ==="
+          git rev-list --count main
+
+      - name: Top 30 largest blobs in history
+        run: |
+          cd repo.git
+          git rev-list --objects main | \
+            git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
+            awk '/^blob/ {print $3, $4}' | sort -rn | head -30
+
+      - name: Space by path prefix
+        run: |
+          cd repo.git
+          git rev-list --objects main | \
+            git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
+            awk '/^blob/ {split($4, a, "/"); prefix=a[1]; if (a[2] != "") prefix=a[1]"/"a[2]; sum[prefix]+=$3} END {for (p in sum) printf "%12d MB  %s\n", sum[p]/1048576, p}' | \
+            sort -rn | head -25
+
+      - name: Dry-run strip blobs over 2MB
+        run: |
+          pip install git-filter-repo
+          cp -r repo.git repo_slim.git
+          cd repo_slim.git
+          git filter-repo --strip-blobs-bigger-than 2M --force
+          git reflog expire --expire=now --all || true
+          git gc --prune=now --aggressive 2>/dev/null || git gc --prune=now
+          echo "=== SLIMMED SIZE (all commits kept, blobs >2MB stripped) ==="
+          du -sh .
+          git count-objects -vH
+          echo "=== COMMIT COUNT AFTER (must equal before) ==="
+          git rev-list --count main
