@@ -1,22 +1,22 @@
 {
   "OpenPhish": {
-    "hash": "b934fffdb63f4dcce408b7c871102841a3e26b9775e4ecbdc19c540234342f36",
-    "count": 264,
+    "hash": "109e4bf9d1d6625b35caa1a670078af8c1c2447360370e7ec02098a36f6468ba",
+    "count": 265,
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "d58af243be7204ed73e6c42d74d11a0810084405b3d9d1351dbf692ea30868d8",
-    "count": 106582,
-    "consecutive_failures": 0
-  },
-  "SPMedia_DetectedURLs": {
-    "hash": "6106cd5a0f78007996c61e03554004e010371d774018f3f7690d756ac63518aa",
-    "count": 1388,
+    "hash": "7de66803a678a76579f180c0a7b9d9512e2b241c18b76299edee888f56f4f937",
+    "count": 106603,
     "consecutive_failures": 0
   },
   "Polkadot": {
     "hash": "5013c149b7a1b8e220f9b5c2fc18e571cc8135553de8e9bba789972938e08acb",
     "count": 53991,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "6106cd5a0f78007996c61e03554004e010371d774018f3f7690d756ac63518aa",
+    "count": 1388,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -29,9 +29,14 @@
     "count": 21852,
     "consecutive_failures": 0
   },
+  "CryptoFirewall": {
+    "hash": "cfd9a5fe1e5fb6a7a0267c666dd72d33cd6a1a3f508f9ac1748e8b7e4f6679c3",
+    "count": 107532,
+    "consecutive_failures": 0
+  },
   "Phishunt": {
-    "hash": "e4827f5d69aff752d139b5f99708d3b523ea7c2e9a0cd523863565b147c188aa",
-    "count": 389,
+    "hash": "c4fb1ab94d9992e300ef131de2c67e17d974d4180c1c695dafadd2e78bd20386",
+    "count": 390,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -40,13 +45,8 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "5b93dc72109e4d5d6c9aeb96de6643a685d2371e38da0a74b93bc106ae40d7e9",
-    "count": 106011,
-    "consecutive_failures": 0
-  },
-  "CryptoFirewall": {
-    "hash": "cfd9a5fe1e5fb6a7a0267c666dd72d33cd6a1a3f508f9ac1748e8b7e4f6679c3",
-    "count": 107532,
+    "hash": "6f9fed9d49e5ec1e3460315bf98d7ccab39a271dd5a8c0d4f41f4df8734e526b",
+    "count": 106032,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -59,5 +59,5 @@
     "count": 348437,
     "consecutive_failures": 0
   },
-  "total_count": 994711
+  "total_count": 994914
 }
