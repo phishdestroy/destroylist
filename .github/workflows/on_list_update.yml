@@ -111,9 +111,10 @@ jobs:
           BRANCH="${GITHUB_REF_NAME}"
           git remote add codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git 2>/dev/null || \
             git remote set-url codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git
-          if git ls-remote codeberg HEAD 2>/dev/null | grep -q HEAD; then
-            git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
+          if git push codeberg HEAD:${BRANCH} --force 2>/dev/null; then
+            echo "Mirror updated (shallow push)"
           else
+            echo "Shallow push rejected, unshallowing (repo history is slim now)"
             git fetch --unshallow 2>/dev/null || true
             git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
           fi
