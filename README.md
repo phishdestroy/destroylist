@@ -110,6 +110,13 @@ https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/prima
 | **Dnsmasq** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/dnsmasq.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/dnsmasq.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/dnsmasq.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/dnsmasq.conf) |
 | **Unbound** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/unbound.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/unbound.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/unbound.conf) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/unbound.conf) |
 | **RPZ** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/rpz.zone) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/rpz.zone) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/rpz.zone) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/rpz.zone) |
+| **Redis** | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/redis.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary_active/redis.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community/redis.txt) | [⬇️](https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/community_active/redis.txt) |
+
+> **Redis one-liner** — load the full list into a Redis set (atomic swap, zero-downtime reload):
+> ```
+> curl -s https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/primary/redis.txt | redis-cli --pipe
+> ```
+> Then check any domain in O(1): `SISMEMBER destroylist:primary evil-domain.com`
 
 <details>
 <summary>Via raw.githubusercontent.com (may return 429 under heavy traffic)</summary>
@@ -125,7 +132,7 @@ https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/prima
 
 </details>
 
-> **Hosts** → Pi-hole, /etc/hosts, Windows · **AdBlock** → uBlock Origin, AdGuard · **Dnsmasq** → dnsmasq DNS · **Unbound** → pfSense, OPNsense · **RPZ** → BIND, Knot DNS
+> **Hosts** → Pi-hole, /etc/hosts, Windows · **AdBlock** → uBlock Origin, AdGuard · **Dnsmasq** → dnsmasq DNS · **Unbound** → pfSense, OPNsense · **RPZ** → BIND, Knot DNS · **Redis** → `redis-cli --pipe` bulk load
 
 </details>
 
@@ -516,6 +523,14 @@ Official government or law-enforcement requests may be answered privately.
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Bar Chart" width="22" height="22" /> Use Cases & Historical Vault
 
 Network security · Threat research · AI/ML training · Trend analysis · Automation
+
+**Point-in-time history** — every state of the list is reconstructable:
+
+| Granularity | Where | Retention |
+|:---|:---|:---|
+| Every change | [Commit history](https://github.com/phishdestroy/destroylist/commits/main/) | Forever (41,000+ commits) |
+| Daily added/removed diffs | [`changes/`](changes/) | Forever, searchable in GitHub code search |
+| Weekly & monthly full snapshots | [`archives/`](archives/) → [Release assets](https://github.com/phishdestroy/destroylist/releases/tag/archives) | Recent in tree, older rotated to the permanent Release |
 
 > [!TIP]
 > 📩 **Historical Vault** (500K+ domains, 5+ years archived): [contact@phishdestroy.io](mailto:contact@phishdestroy.io)

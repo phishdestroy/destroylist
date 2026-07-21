@@ -92,6 +92,29 @@ def rpz_header(name: str, count: int) -> str:
     )
 
 
+def redis_format(source_key: str, domains: list) -> str:
+    """redis-cli --pipe compatible loader.
+
+    Builds the set under a temporary key and atomically swaps it in with
+    RENAME, so readers never observe a partially loaded set. Usage:
+        curl -s <url>/redis.txt | redis-cli --pipe
+    Lookup: SISMEMBER destroylist:primary example.com
+    """
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    key = f"destroylist:{source_key}"
+    tmp = f"{key}:loading"
+    lines = [
+        f'ECHO "Destroylist {source_key} | {len(domains):,} domains | {ts}"',
+        f"DEL {tmp}",
+    ]
+    batch_size = 500
+    for i in range(0, len(domains), batch_size):
+        lines.append(f"SADD {tmp} " + " ".join(domains[i:i + batch_size]))
+    lines.append(f"RENAME {tmp} {key}")
+    lines.append(f'ECHO "Loaded {key}"')
+    return "\n".join(lines) + "\n"
+
+
 def write(path: Path, content: str):
     path.write_text(content, encoding="utf-8")
 
@@ -115,8 +138,9 @@ def main():
         write(out / "dnsmasq.conf", header(n, len(domains), "dnsmasq") + "\n".join(f"address=/{d}/0.0.0.0" for d in domains) + "\n")
         write(out / "unbound.conf", header(n, len(domains), "unbound") + "\n".join(f'local-zone: "{d}" always_nxdomain' for d in domains) + "\n")
         write(out / "rpz.zone", rpz_header(n, len(domains)) + "\n".join(f"{d} CNAME ." for d in domains) + "\n")
+        write(out / "redis.txt", redis_format(name, domains))
 
-        log(f"{name}: {len(domains):,} domains -> 6 formats", "ok")
+        log(f"{name}: {len(domains):,} domains -> 7 formats", "ok")
 
     primary = load_domains(SOURCES["primary"], allowlist)
     if primary:
