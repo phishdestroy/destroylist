@@ -34,15 +34,17 @@ jobs:
           if [ "$CODE" != "404" ]; then echo "::error::old repo still present (HTTP $CODE)"; exit 1; fi
           echo "old mirror deleted"
 
-          # recreate (org endpoint first, then user endpoint)
+          # recreate; server purges the old repo asynchronously, so same-name
+          # creation may 500 for a while — retry with backoff
           BODY='{"name":"destroylist","description":"Mirror of github.com/phishdestroy/destroylist — phishing & scam domain blocklist","private":false,"default_branch":"main"}'
-          CODE=$(curl -s -o /tmp/mk.out -w "%{http_code}" -X POST -H "$AUTH" -H "Content-Type: application/json" -d "$BODY" "$API/orgs/phishdestroy/repos")
-          echo "org create: HTTP $CODE"
-          if [ "$CODE" != "201" ]; then
+          CREATED=0
+          for a in 1 2 3 4 5 6 7 8; do
             CODE=$(curl -s -o /tmp/mk.out -w "%{http_code}" -X POST -H "$AUTH" -H "Content-Type: application/json" -d "$BODY" "$API/user/repos")
-            echo "user create: HTTP $CODE $(cat /tmp/mk.out | head -c 200)"
-          fi
-          [ "$CODE" = "201" ] || { echo "::error::repo creation failed"; exit 1; }
+            echo "create attempt $a: HTTP $CODE $(cat /tmp/mk.out | head -c 150)"
+            if [ "$CODE" = "201" ]; then CREATED=1; break; fi
+            sleep $((a * 30))
+          done
+          [ "$CREATED" = "1" ] || { echo "::error::repo creation failed after retries"; exit 1; }
           echo "fresh mirror created"
 
       - name: Seed mirror in chunks
