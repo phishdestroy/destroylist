@@ -1,6 +1,7 @@
 name: Mirror Seed (one-off)
-# One-time full push of the slimmed history to Codeberg. Regular mirror steps
-# do cheap shallow pushes once this has run. Delete this workflow afterwards.
+# One-time reset and full seed of the Codeberg mirror. The old mirror holds
+# 19 GB of stale unrelated history and Codeberg 502/504s on pushes into it,
+# so it is deleted and recreated empty first. Delete this workflow afterwards.
 on:
   workflow_dispatch:
 
@@ -14,24 +15,52 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Seed Codeberg mirror in chunks
+      - name: Recreate Codeberg repo
         env:
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
         run: |
           if [ -z "$CODEBERG_TOKEN" ]; then echo "::error::CODEBERG_TOKEN missing"; exit 1; fi
+          AUTH="Authorization: token ${CODEBERG_TOKEN}"
+          API="https://codeberg.org/api/v1"
+
+          # delete stale mirror (retry through transient DB deadlocks)
+          for a in 1 2 3 4 5 6; do
+            CODE=$(curl -s -o /tmp/del.out -w "%{http_code}" -X DELETE -H "$AUTH" "$API/repos/phishdestroy/destroylist")
+            echo "delete attempt $a: HTTP $CODE $(cat /tmp/del.out | head -c 200)"
+            if [ "$CODE" = "204" ] || [ "$CODE" = "404" ]; then break; fi
+            sleep $((a * 15))
+          done
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" "$API/repos/phishdestroy/destroylist")
+          if [ "$CODE" != "404" ]; then echo "::error::old repo still present (HTTP $CODE)"; exit 1; fi
+          echo "old mirror deleted"
+
+          # recreate (org endpoint first, then user endpoint)
+          BODY='{"name":"destroylist","description":"Mirror of github.com/phishdestroy/destroylist — phishing & scam domain blocklist","private":false,"default_branch":"main"}'
+          CODE=$(curl -s -o /tmp/mk.out -w "%{http_code}" -X POST -H "$AUTH" -H "Content-Type: application/json" -d "$BODY" "$API/orgs/phishdestroy/repos")
+          echo "org create: HTTP $CODE"
+          if [ "$CODE" != "201" ]; then
+            CODE=$(curl -s -o /tmp/mk.out -w "%{http_code}" -X POST -H "$AUTH" -H "Content-Type: application/json" -d "$BODY" "$API/user/repos")
+            echo "user create: HTTP $CODE $(cat /tmp/mk.out | head -c 200)"
+          fi
+          [ "$CODE" = "201" ] || { echo "::error::repo creation failed"; exit 1; }
+          echo "fresh mirror created"
+
+      - name: Seed mirror in chunks
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
           git config http.postBuffer 1610612736
           git config http.version HTTP/1.1
           git remote add codeberg "https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/destroylist.git"
 
-          TOTAL=$(git rev-list --count HEAD)
-          echo "total commits: $TOTAL"
           git rev-list --reverse HEAD > /tmp/revs.txt
+          echo "total commits: $(wc -l < /tmp/revs.txt)"
 
           push_ref() {
             local sha=$1
-            for a in 1 2 3; do
+            for a in 1 2 3 4; do
               if git push codeberg "+${sha}:refs/heads/main"; then return 0; fi
-              echo "push attempt $a failed for $sha, retrying in $((a*10))s"; sleep $((a*10))
+              echo "push attempt $a failed for $sha, retrying in $((a*15))s"; sleep $((a*15))
             done
             return 1
           }
@@ -39,7 +68,7 @@ jobs:
           for pos in 8000 16000 24000 32000 38000 40000 41000 41500; do
             SHA=$(sed -n "${pos}p" /tmp/revs.txt)
             [ -z "$SHA" ] && continue
-            echo "=== chunk at commit #$pos ($SHA) ==="
+            echo "=== chunk at commit #$pos ==="
             push_ref "$SHA" || { echo "::error::chunk $pos failed"; exit 1; }
           done
 
