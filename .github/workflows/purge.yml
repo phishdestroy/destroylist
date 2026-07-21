@@ -20,7 +20,7 @@ jobs:
   purge:
     if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
     permissions:
       contents: write
     steps:
