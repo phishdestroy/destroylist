@@ -1,7 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Mark generated data files — excludes from GitHub language stats and diffs
+# Mark generated data files — excludes from GitHub language stats and diffs.
+# NOTE: rootlist/arrays/** and changes/** are deliberately NOT marked:
+# GitHub code search excludes generated files from its index, and those two
+# directories exist precisely so every domain is findable via code search.
 list.json linguist-generated
 list.txt linguist-generated
 count.json linguist-generated
@@ -17,7 +20,6 @@ community/content_live.txt linguist-generated
 community/count.json linguist-generated
 community/live_count.json linguist-generated
 community/content_active_count.json linguist-generated
-rootlist/arrays/** linguist-generated
 rootlist/formats/** linguist-generated
 rootlist/*.json linguist-generated
 rootlist/*.txt linguist-generated
