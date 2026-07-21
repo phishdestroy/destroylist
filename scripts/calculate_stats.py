@@ -12,6 +12,10 @@ DNS_DIR = PROJECT_ROOT / "dns"
 ARCHIVES_DIR = PROJECT_ROOT / "archives"
 SNAPSHOT_FILE = DNS_DIR / "stats_snapshot.json"
 
+# Above this many added+removed entries a daily diff file would exceed
+# GitHub's 350 KiB code-search indexing limit; fall back to counts only.
+MAX_DIFF_ENTRIES = 12_000
+
 LIST_FILE = "list.json"
 COMMUNITY_FILE = "community/blocklist.json"
 
@@ -52,6 +56,16 @@ def load_current_domains(file_path: str) -> Set[str]:
         return set()
 
 
+def plausible_baseline(old: Set[str], current: Set[str]) -> bool:
+    """Guard against false baselines left behind by history slimming.
+
+    Stripped blobs can make `git show` resolve to an ancient surviving
+    version of the file; a real baseline within any stats window is never
+    less than half the current list size.
+    """
+    return bool(old) and len(old) >= len(current) * 0.5
+
+
 def get_domains_added_since(file_path: str, since_date: str) -> int:
     """Return count of domains added since since_date using git history.
 
@@ -76,7 +90,13 @@ def get_domains_added_since(file_path: str, since_date: str) -> int:
         log(f"Could not read parent content for {file_path} — returning 0", "warn")
         return 0
 
-    return len(current - get_domains_from_json(old_content))
+    old = get_domains_from_json(old_content)
+    if not plausible_baseline(old, current):
+        log(f"Baseline for {file_path} since {since_date} looks stripped/ancient "
+            f"({len(old):,} vs {len(current):,} current) — returning 0", "warn")
+        return 0
+
+    return len(current - old)
 
 
 # ── Snapshot-based baseline (fallback when git history is shallow) ────────────
@@ -139,7 +159,7 @@ def save_daily_diff(now: datetime):
         current_primary = load_current_domains(LIST_FILE)
         current_community = load_current_domains(COMMUNITY_FILE)
 
-        def domains_at(file_path: str, since: str):
+        def domains_at(file_path: str, since: str, current: Set[str]):
             commits = run_git(["git", "log", f"--since={since}", "--reverse", "--format=%H", "--", file_path]).strip().split("\n")
             if not commits or not commits[0]:
                 return None
@@ -147,23 +167,37 @@ def save_daily_diff(now: datetime):
             if not parent:
                 return None
             content = run_git(["git", "show", f"{parent}:{file_path}"])
-            return get_domains_from_json(content) if content else None
+            if not content:
+                return None
+            old = get_domains_from_json(content)
+            return old if plausible_baseline(old, current) else None
 
-        old_primary = domains_at(LIST_FILE, "1 day ago")
-        old_community = domains_at(COMMUNITY_FILE, "1 day ago")
-        if old_primary is None and old_community is None:
-            log("Daily diff: no history baseline available, skipping", "warn")
-            return
+        old_primary = domains_at(LIST_FILE, "1 day ago", current_primary)
+        old_community = domains_at(COMMUNITY_FILE, "1 day ago", current_community)
 
         diff = {"date": now.strftime("%Y-%m-%d")}
+        entries = 0
         if old_primary is not None:
             diff["primary_added"] = sorted(current_primary - old_primary)
             diff["primary_removed"] = sorted(old_primary - current_primary)
-            diff["primary_count"] = len(current_primary)
+            entries += len(diff["primary_added"]) + len(diff["primary_removed"])
+        diff["primary_count"] = len(current_primary)
         if old_community is not None:
             diff["community_added"] = sorted(current_community - old_community)
             diff["community_removed"] = sorted(old_community - current_community)
-            diff["community_count"] = len(current_community)
+            entries += len(diff["community_added"]) + len(diff["community_removed"])
+        diff["community_count"] = len(current_community)
+
+        if old_primary is None and old_community is None:
+            diff["note"] = "no usable git baseline; counts only"
+            log("Daily diff: no usable baseline, writing counts only", "warn")
+        elif entries > MAX_DIFF_ENTRIES:
+            # A file this big would fall out of GitHub's code-search index
+            # (350 KiB limit); keep counts so the day is still recorded.
+            for key in [k for k in diff if k.endswith("_added") or k.endswith("_removed")]:
+                diff[key + "_count"] = len(diff.pop(key))
+            diff["note"] = f"{entries:,} changes exceed search-indexable size; counts only"
+            log(f"Daily diff: {entries:,} entries exceed cap, writing counts only", "warn")
 
         changes_dir.mkdir(parents=True, exist_ok=True)
         out_file.write_text(json.dumps(diff, indent=1), encoding="utf-8")
@@ -218,16 +252,22 @@ def main():
     week_c = get_domains_added_since(COMMUNITY_FILE, "1 week ago")
     month_c = get_domains_added_since(COMMUNITY_FILE, "1 month ago")
 
-    # Sanity check: if a value equals the full list size the git fallback fired;
-    # use the snapshot baseline instead.
-    if week_p >= current_primary or month_p >= current_primary:
-        log("Git history gave inflated values — falling back to snapshot baseline", "warn")
-        snap_today_p, snap_today_c = get_delta_from_snapshot("today_primary", "today_community", current_primary, current_community)
-        snap_week_p, snap_week_c = get_delta_from_snapshot("week_primary", "week_community", current_primary, current_community)
-        snap_month_p, snap_month_c = get_delta_from_snapshot("month_primary", "month_community", current_primary, current_community)
-        today_p, today_c = snap_today_p, snap_today_c
-        week_p, week_c = snap_week_p, snap_week_c
-        month_p, month_c = snap_month_p, snap_month_c
+    # Per-window fallback: a git-derived value wins only when it exists and is
+    # sane; anything else (0 = no/implausible baseline, >= list size = inflated)
+    # uses the snapshot baseline instead.
+    snap_today_p, snap_today_c = get_delta_from_snapshot("today_primary", "today_community", current_primary, current_community)
+    snap_week_p, snap_week_c = get_delta_from_snapshot("week_primary", "week_community", current_primary, current_community)
+    snap_month_p, snap_month_c = get_delta_from_snapshot("month_primary", "month_community", current_primary, current_community)
+
+    def pick(git_value: int, snap_value: int, current: int) -> int:
+        return git_value if 0 < git_value < current else snap_value
+
+    today_p = pick(today_p, snap_today_p, current_primary)
+    week_p = pick(week_p, snap_week_p, current_primary)
+    month_p = pick(month_p, snap_month_p, current_primary)
+    today_c = pick(today_c, snap_today_c, current_community)
+    week_c = pick(week_c, snap_week_c, current_community)
+    month_c = pick(month_c, snap_month_c, current_community)
 
     stats = {
         "today_added": today_p,
