@@ -5,8 +5,13 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "8543334c502e76596b43c149319735420dd073cebfb64482a58f1c2e8d633caf",
-    "count": 107218,
+    "hash": "51c0130a422f5a16fd737ca0b625fcfa704a169aac14d4215779fb1947f6f7e3",
+    "count": 107209,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "a0731022dc64dbd2a46590c18a7d85c715e6eaeceff40979743f3bea2ec85b41",
+    "count": 1397,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -19,14 +24,14 @@
     "count": 53990,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "a0731022dc64dbd2a46590c18a7d85c715e6eaeceff40979743f3bea2ec85b41",
-    "count": 1397,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
+    "consecutive_failures": 0
+  },
+  "Phishunt": {
+    "hash": "3fc1f86c23ea06ffe54a0720fd018e6508286f9c60a3cbc16d38d848ee191b5a",
+    "count": 519,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -39,19 +44,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "1266c34105850bc67eae56dc79cf410adb3de84139e1689a2d78d9a6897c1071",
-    "count": 523,
-    "consecutive_failures": 0
-  },
   "SEAL": {
-    "hash": "d2eca32c99cadb8cc1cb3428716964de17af871dcbff35c5d6191957b8f7c268",
-    "count": 106646,
-    "consecutive_failures": 0
-  },
-  "ScamSniffer": {
-    "hash": "ad7fadf1a25fdd2a5ab01ee7bc9b5fffdb705a057cc120f2efcf38a97744cd5e",
-    "count": 348913,
+    "hash": "156164bd76f340f341ebfa6c7465ef8ca69806e8e5b7ca44396f8ea2834028bb",
+    "count": 106638,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -59,5 +54,10 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 1018465
+  "ScamSniffer": {
+    "hash": "ad7fadf1a25fdd2a5ab01ee7bc9b5fffdb705a057cc120f2efcf38a97744cd5e",
+    "count": 348913,
+    "consecutive_failures": 0
+  },
+  "total_count": 1019056
 }
