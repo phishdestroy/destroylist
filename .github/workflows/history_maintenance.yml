@@ -2,9 +2,7 @@ name: History Maintenance
 # Strips historical versions of heavy generated artifacts (>2MB blobs not in
 # current HEAD) from git history while preserving every commit and the full HEAD.
 # Runs automatically on the 1st of each month; also dispatched manually when
-# the repository grows past ~3 GB. Requires MAINT_TOKEN secret (classic PAT
-# with repo scope) because GITHUB_TOKEN cannot force-push rewritten history
-# reliably on large repos.
+# the repository grows too large.
 on:
   schedule:
     - cron: "0 3 1 * *"   # 1st of every month at 03:00 UTC
@@ -23,7 +21,6 @@ jobs:
     steps:
       - name: Guard
         run: |
-          # For scheduled runs, auto-confirm. For manual, require REWRITE.
           if [ "${{ github.event_name }}" = "schedule" ]; then
             echo "Scheduled run — auto-confirmed"
           elif [ "${{ github.event.inputs.confirm }}" != "REWRITE" ]; then
@@ -32,36 +29,41 @@ jobs:
 
       - name: Free runner disk
         run: |
-          sudo rm -rf /usr/local/lib/android /opt/hostedtoolcache/CodeQL /usr/share/dotnet /opt/ghc || true
+          sudo rm -rf /usr/local/lib/android /opt/hostedtoolcache/CodeQL \
+            /usr/share/dotnet /opt/ghc /usr/local/share/boost || true
           df -h /
 
       - name: Install git-filter-repo
         run: pip install git-filter-repo
 
-      - name: Partial clone (skeleton without heavy blobs)
+      - name: Full bare clone
         env:
           GH_TOKEN: ${{ secrets.MAINT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          git clone --bare --single-branch --branch main --filter=blob:limit=2m \
+          git clone --bare --single-branch --branch main \
             "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo.git
           cd repo.git
-          BEFORE_COMMITS=$(git rev-list --count main)
-          BEFORE_SIZE=$(du -sh . | cut -f1)
-          echo "BEFORE_COMMITS=$BEFORE_COMMITS" >> $GITHUB_ENV
-          echo "BEFORE_SIZE=$BEFORE_SIZE" >> $GITHUB_ENV
+          echo "BEFORE_COMMITS=$(git rev-list --count main)" >> $GITHUB_ENV
+          echo "BEFORE_SIZE=$(du -sh . | cut -f1)" >> $GITHUB_ENV
           git rev-parse main^{tree} > /tmp/tree_before.sha
-          git rev-parse main > /tmp/head_before.sha
+          git rev-parse main       > /tmp/head_before.sha
 
-      - name: Build strip list (historical heavy blobs not in HEAD)
+      - name: Build strip list (blobs >2MB not in current HEAD)
         run: |
           cd repo.git
-          git rev-list --objects --missing=print main | awk '/^\?/ {print substr($1,2)}' | sort -u > /tmp/missing.txt
+          # All blobs in full history that are larger than 2MB
+          git cat-file --batch-all-objects \
+            --batch-check='%(objecttype) %(objectname) %(objectsize)' \
+            | awk '$1=="blob" && $3>2097152 {print $2}' \
+            | sort -u > /tmp/all_heavy.txt
+          # Blobs present in current HEAD (must never be stripped)
           git ls-tree -r main | awk '{print $3}' | sort -u > /tmp/head_blobs.txt
-          comm -23 /tmp/missing.txt /tmp/head_blobs.txt > /tmp/strip_ids.txt
-          STRIP_COUNT=$(wc -l < /tmp/strip_ids.txt)
-          KEEP_COUNT=$(comm -12 /tmp/missing.txt /tmp/head_blobs.txt | wc -l)
-          echo "Blobs to strip: $STRIP_COUNT | HEAD blobs to keep: $KEEP_COUNT"
-          if [ "$STRIP_COUNT" -eq 0 ]; then
+          # Strip = heavy blobs that are NOT in HEAD
+          comm -23 /tmp/all_heavy.txt /tmp/head_blobs.txt > /tmp/strip_ids.txt
+          STRIP=$(wc -l < /tmp/strip_ids.txt)
+          KEEP=$(wc  -l < /tmp/head_blobs.txt)
+          echo "Blobs to strip: $STRIP | HEAD blobs protected: $KEEP"
+          if [ "$STRIP" -eq 0 ]; then
             echo "Nothing to strip — repo is already clean"
             echo "NOTHING_TO_DO=1" >> $GITHUB_ENV
           fi
@@ -81,12 +83,14 @@ jobs:
           TREE_AFTER=$(git rev-parse main^{tree})
           TREE_BEFORE=$(cat /tmp/tree_before.sha)
           AFTER_SIZE=$(du -sh . | cut -f1)
-          echo "Commits: ${{ env.BEFORE_COMMITS }} -> $AFTER_COMMITS"
-          echo "Size: ${{ env.BEFORE_SIZE }} -> $AFTER_SIZE"
+          echo "Commits : ${{ env.BEFORE_COMMITS }} -> $AFTER_COMMITS"
+          echo "Size    : ${{ env.BEFORE_SIZE }} -> $AFTER_SIZE"
           echo "HEAD tree: $TREE_BEFORE -> $TREE_AFTER"
-          [ "$AFTER_COMMITS" = "${{ env.BEFORE_COMMITS }}" ] || { echo "::error::commit count changed — aborting"; exit 1; }
-          [ "$TREE_AFTER" = "$TREE_BEFORE" ] || { echo "::error::HEAD tree changed — aborting"; exit 1; }
-          echo "✅ Integrity verified. Proceeding with force-push."
+          [ "$AFTER_COMMITS" = "${{ env.BEFORE_COMMITS }}" ] \
+            || { echo "::error::commit count changed — aborting"; exit 1; }
+          [ "$TREE_AFTER" = "$TREE_BEFORE" ] \
+            || { echo "::error::HEAD tree changed — aborting"; exit 1; }
+          echo "✅ Integrity OK. Force-pushing."
 
       - name: Force-push rewritten history
         if: env.NOTHING_TO_DO != '1'
@@ -94,10 +98,10 @@ jobs:
           GH_TOKEN: ${{ secrets.MAINT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           cd repo.git
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git remote set-url origin \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git fetch origin main
-          if [ "$(git rev-parse FETCH_HEAD)" != "$(cat /tmp/head_before.sha)" ]; then
-            echo "::error::main advanced during maintenance — rerun when quiet"; exit 1
-          fi
+          [ "$(git rev-parse FETCH_HEAD)" = "$(cat /tmp/head_before.sha)" ] \
+            || { echo "::error::main advanced during maintenance — rerun"; exit 1; }
           git push origin +refs/heads/main:refs/heads/main
-          echo "✅ History slimmed. Open a GitHub Support ticket to expedite server-side GC if size doesn't update immediately."
+          echo "✅ Done. GitHub server-side GC may take a few minutes to reflect new size."
