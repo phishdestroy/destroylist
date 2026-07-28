@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       force_rootlist:
-        description: "Commit rootlist/ artifacts regardless of time gate"
+        description: "Commit rootlist/ artifacts regardless of change check"
         required: false
         default: "false"
 
@@ -66,9 +66,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-          # Live feeds are committed every run; heavy generated artifacts in
-          # rootlist/ (formats, arrays, root lists — ~95% of history weight)
-          # are committed only twice a day to keep git history small.
+          # Live feeds committed every run (light files only).
           ADD_PATHS="list.json list.txt count.json \
                  community/blocklist.json community/blocklist.txt \
                  community/live_blocklist.json community/live_blocklist.txt \
@@ -78,12 +76,21 @@ jobs:
                  community/state.json community/commit_message.txt \
                  dns/*.json dns/*.txt"
 
+          # rootlist/ is heavy (~600 files). Commit only at 04:00 UTC AND only
+          # when content actually changed vs the current HEAD — this prevents
+          # identical blobs from accumulating in git history every day.
           HOUR=$(date -u +%H)
-          if [ "$HOUR" = "04" ] || [ "$HOUR" = "16" ] || [ "$FORCE_ROOTLIST" = "true" ]; then
-            ADD_PATHS="$ADD_PATHS rootlist/"
-            echo "Rootlist artifacts included in this commit (hour=$HOUR)"
+          if [ "$FORCE_ROOTLIST" = "true" ] || [ "$HOUR" = "04" ]; then
+            git add rootlist/ 2>/dev/null || true
+            if git diff --staged --quiet; then
+              echo "rootlist/ unchanged vs HEAD — skipping rootlist commit"
+            else
+              ADD_PATHS="$ADD_PATHS rootlist/"
+              echo "rootlist/ changed — will commit (hour=$HOUR)"
+            fi
+            git reset HEAD -- . 2>/dev/null || true
           else
-            echo "Rootlist artifacts skipped this run (hour=$HOUR, committed at 04/16 UTC)"
+            echo "rootlist/ skipped this run (hour=$HOUR, only committed at 04:00 UTC when changed)"
           fi
 
           git add $ADD_PATHS
@@ -134,7 +141,7 @@ jobs:
           if git push codeberg HEAD:${BRANCH} --force 2>/dev/null; then
             echo "Mirror updated (shallow push)"
           else
-            echo "Shallow push rejected, unshallowing (repo history is slim now)"
+            echo "Shallow push rejected, unshallowing"
             git fetch --unshallow 2>/dev/null || true
             git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
           fi
