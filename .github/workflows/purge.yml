@@ -106,15 +106,26 @@ jobs:
           fi
 
           git diff --staged --name-only > /tmp/staged_files.txt
-          tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
+          git diff --staged --name-only --diff-filter=D > /tmp/deleted_files.txt
+          git diff --staged --name-only --diff-filter=d > /tmp/existing_files.txt
+          if [ -s /tmp/existing_files.txt ]; then
+            tar -cf /tmp/processed.tar -T /tmp/existing_files.txt
+          else
+            tar -cf /tmp/processed.tar --files-from=/dev/null
+          fi
 
           for i in {1..5}; do
             git fetch origin main
             git reset --hard origin/main
 
-            tar -xf /tmp/processed.tar
+            if [ -s /tmp/existing_files.txt ]; then
+              tar -xf /tmp/processed.tar
+            fi
+            if [ -s /tmp/deleted_files.txt ]; then
+              xargs git rm -f --ignore-unmatch < /tmp/deleted_files.txt 2>/dev/null || true
+            fi
 
-            git add $(cat /tmp/staged_files.txt | tr '\n' ' ')
+            git add  2>/dev/null || true
             if git diff --staged --quiet; then
               echo "Changes already present in remote"
               exit 0
