@@ -38,6 +38,9 @@ jobs:
       - name: Validate JSON (pre-check)
         run: python scripts/validate_json.py
 
+      - name: Run smart aggregator
+        run: python scripts/smart_aggregator.py
+
       - name: Validate and clean all lists
         run: python scripts/validate_and_clean.py
 
