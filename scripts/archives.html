@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>PhishDestroy - Historical Archives</title><meta name="description" content="Weekly and monthly snapshots of PhishDestroy blocklists. Full download history from 2025 onward."><meta name="author" content="PhishDestroy"><link rel="icon" type="image/x-icon" href="https://destroyico.pages.dev/assets/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="https://destroyico.pages.dev/assets/favicon-32x32.png"><meta property="og:type" content="website"><meta property="og:url" content="https://phishdestroy.github.io/destroylist/scripts/archives.html"><meta property="og:title" content="PhishDestroy - Historical Archives"><meta property="og:description" content="Weekly and monthly snapshots of PhishDestroy blocklists."><meta property="og:image" content="https://destroyico.pages.dev/assets/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Phish_Destroy"><meta name="theme-color" content="#010409"><style>
+:root{--bg:#010409;--surface:#0d1117;--surface2:#161b22;--border:#30363d;--text:#e6edf3;--text-secondary:#8b949e;--accent-cyan:#00f0ff;--accent-blue:#58a6ff;--accent-green:#3fb950;--accent-orange:#f0883e;--accent-purple:#bc8cff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6;min-height:100vh}
+a{color:var(--accent-cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:rgba(110,118,129,0.2);border-radius:4px;padding:0.1em 0.4em;font-family:ui-monospace,SFMono-Regular,monospace;font-size:0.85em}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(1,4,9,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.9rem 1.5rem;display:flex;align-items:center;gap:1.5rem}
+.nav-brand{font-weight:700;font-size:1.1rem;color:var(--text);display:flex;align-items:center;gap:0.5rem}
+.nav-brand span{color:var(--accent-cyan)}
+.nav-links{display:flex;gap:1rem;margin-left:auto;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);font-size:0.9rem;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-cyan);text-decoration:none}
+
+/* HERO */
+.hero{padding:4rem 1.5rem 3rem;text-align:center;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(0,240,255,0.06),transparent)}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem}
+.hero h1 span{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text-secondary);max-width:600px;margin:0 auto 2rem;font-size:1rem}
+.notice-box{display:inline-block;background:rgba(0,240,255,0.05);border:1px solid rgba(0,240,255,0.2);border-radius:10px;padding:1rem 1.5rem;max-width:720px;text-align:left;font-size:0.9rem;color:var(--text-secondary)}
+.notice-box strong{color:var(--accent-cyan)}
+
+/* STATS BAR */
+.stats-bar{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2rem 1.5rem;border-bottom:1px solid var(--border)}
+.stat-item{text-align:center}
+.stat-value{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--accent-cyan),var(--accent-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:0.8rem;color:var(--text-secondary);margin-top:0.2rem}
+
+/* MAIN CONTENT */
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.section{padding:3rem 0}
+.section-title{font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;text-align:center}
+.section-subtitle{color:var(--text-secondary);text-align:center;margin-bottom:2rem;font-size:0.95rem}
+
+/* GROWTH CHART */
+.growth-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
+.growth-table th{padding:0.7rem 1rem;text-align:left;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);border-bottom:1px solid var(--border);font-weight:600}
+.growth-table td{padding:0.65rem 1rem;border-bottom:1px solid rgba(48,54,61,0.5);font-size:0.9rem}
+.growth-table tr:hover td{background:rgba(255,255,255,0.02)}
+.growth-table .period{color:var(--accent-cyan);font-family:ui-monospace,SFMono-Regular,monospace;font-weight:600}
+.growth-table .count{font-weight:700;color:var(--text)}
+.growth-table .delta{color:var(--accent-green);font-size:0.85rem}
+.growth-table .delta.neg{color:#f85149}
+.bar-cell{min-width:120px}
+.bar{height:8px;border-radius:4px;background:linear-gradient(90deg,var(--accent-cyan),var(--accent-blue));transition:width 0.3s;max-width:100%}
+
+/* DOWNLOAD CARDS */
+.release-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+.release-item{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:0.5rem;transition:border-color 0.2s,transform 0.2s}
+.release-item:hover{border-color:rgba(0,240,255,0.4);transform:translateY(-2px)}
+.release-tag{font-size:0.75rem;color:var(--text-secondary);font-family:ui-monospace,SFMono-Regular,monospace}
+.release-name{font-weight:700;font-size:0.95rem;color:var(--text)}
+.release-size{font-size:0.8rem;color:var(--text-secondary)}
+.release-dl{margin-top:auto;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;color:var(--accent-cyan);font-weight:600;padding:0.4rem 0.8rem;border:1px solid rgba(0,240,255,0.25);border-radius:6px;background:rgba(0,240,255,0.05);transition:all 0.2s;text-decoration:none}
+.release-dl:hover{background:rgba(0,240,255,0.12);text-decoration:none}
+.badge{display:inline-block;font-size:0.7rem;padding:0.15rem 0.5rem;border-radius:4px;font-weight:600;margin-bottom:0.2rem}
+.badge.weekly{background:rgba(0,240,255,0.1);color:var(--accent-cyan);border:1px solid rgba(0,240,255,0.25)}
+.badge.monthly{background:rgba(240,136,62,0.1);color:var(--accent-orange);border:1px solid rgba(240,136,62,0.25)}
+
+/* TABS */
+.tabs{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border);padding-bottom:0}
+.tab-btn{padding:0.6rem 1.2rem;background:none;border:none;color:var(--text-secondary);cursor:pointer;font-size:0.9rem;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;font-family:inherit}
+.tab-btn.active{color:var(--accent-cyan);border-bottom-color:var(--accent-cyan)}
+.tab-btn:hover{color:var(--text)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* HOW TO USE */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem}
+.how-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:1.5rem;position:relative;overflow:hidden}
+.how-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.how-card.cyan::before{background:linear-gradient(90deg,transparent,var(--accent-cyan),transparent)}
+.how-card.orange::before{background:linear-gradient(90deg,transparent,var(--accent-orange),transparent)}
+.how-card.green::before{background:linear-gradient(90deg,transparent,var(--accent-green),transparent)}
+.how-title{font-weight:700;margin-bottom:0.8rem;font-size:1rem}
+.how-code{background:rgba(0,0,0,0.5);border:1px solid var(--border);border-radius:6px;padding:0.8rem;font-family:ui-monospace,SFMono-Regular,monospace;font-size:0.8rem;color:var(--accent-green);overflow-x:auto;white-space:pre;margin-top:0.8rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;color:var(--text-secondary);font-size:0.85rem}
+footer a{color:var(--text-secondary)}
+footer a:hover{color:var(--accent-cyan)}
+
+@media(max-width:600px){
+  .stats-bar{gap:1.5rem}
+  .stat-value{font-size:1.4rem}
+  .release-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+}
+</style></head>
+<body>
+
+<nav>
+  <div class="nav-brand">&#x1F6E1;&#xFE0F; <span>PhishDestroy</span></div>
+  <div class="nav-links">
+    <a href="https://phishdestroy.github.io/destroylist/scripts/">Home</a>
+    <a href="https://phishdestroy.github.io/destroylist/scripts/archives.html" class="active">Archives</a>
+    <a href="https://phishdestroy.github.io/destroylist/scripts/docs.html">Docs</a>
+    <a href="https://github.com/phishdestroy/destroylist" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Historical <span>Archives</span></h1>
+  <p>Full-list snapshots of every domain we track, preserved weekly and monthly. Download any point in time.</p>
+  <div class="notice-box">
+    <strong>Why releases?</strong> The working git tree grew past <strong>60 GB</strong> of accumulated history, slowing clones and CI runs. To keep the repo lean, point-in-time dumps were moved out of git and published as GitHub Release assets &mdash; the live list stays in <code>main</code>, history lives here.
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-value">2025-W49</div>
+    <div class="stat-label">First snapshot</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="snapshotCount">40+</div>
+    <div class="stat-label">Snapshots available</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">208k+</div>
+    <div class="stat-label">Current primary domains</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">1M+</div>
+    <div class="stat-label">Community domains</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- GROWTH TABLE -->
+  <div class="section">
+    <h2 class="section-title">Growth Timeline</h2>
+    <p class="section-subtitle">Monthly primary-list size. Each row = snapshot at time of capture.</p>
+    <div style="overflow-x:auto">
+    <table class="growth-table">
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Snapshot</th>
+          <th>Primary domains</th>
+          <th>Change</th>
+          <th class="bar-cell">Relative</th>
+        </tr>
+      </thead>
+      <tbody id="growthBody">
+        <!-- filled by JS -->
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD TABS -->
+  <div class="section" style="padding-top:0">
+    <h2 class="section-title">Download Snapshots</h2>
+    <p class="section-subtitle">All files hosted on GitHub Releases. Direct download, no sign-in required.</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('weekly',this)">&#x1F4C5; Weekly</button>
+      <button class="tab-btn" onclick="switchTab('monthly',this)">&#x1F5D3;&#xFE0F; Monthly</button>
+    </div>
+
+    <div id="tab-weekly" class="tab-content active">
+      <div class="release-grid" id="weeklyGrid"><!-- filled by JS --></div>
+    </div>
+    <div id="tab-monthly" class="tab-content">
+      <div class="release-grid" id="monthlyGrid"><!-- filled by JS --></div>
+    </div>
+
+    <p style="color:var(--text-secondary);font-size:0.85rem;margin-top:1rem">
+      All assets: <a href="https://github.com/phishdestroy/destroylist/releases/tag/archives" target="_blank">github.com/phishdestroy/destroylist/releases/tag/archives &#x2192;</a>
+    </p>
+  </div>
+
+  <!-- HOW TO USE -->
+  <div class="section" style="padding-top:0">
+    <h2 class="section-title">How to Use</h2>
+    <p class="section-subtitle">Download and integrate any snapshot in seconds.</p>
+    <div class="how-grid">
+      <div class="how-card cyan">
+        <div class="how-title">&#x1F4E5; Download a specific week</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem">Direct link format for any weekly snapshot.</p>
+        <div class="how-code">curl -L https://github.com/phishdestroy/destroylist/\
+  releases/download/archives/2026-W20.json \
+  -o snapshot.json</div>
+      </div>
+      <div class="how-card orange">
+        <div class="how-title">&#x1F40D; Parse with Python</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem">Each snapshot is a standard list.json array.</p>
+        <div class="how-code">import json, urllib.request
+url = "https://github.com/phishdestroy/destroylist/"\
+      "releases/download/archives/2026-05.json"
+with urllib.request.urlopen(url) as r:
+    domains = json.load(r)
+print(f"{len(domains)} domains")</div>
+      </div>
+      <div class="how-card green">
+        <div class="how-title">&#x1F4CA; Compare two snapshots</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem">Find domains added or removed between dates.</p>
+        <div class="how-code">import json
+a = set(json.load(open("2026-W01.json")))
+b = set(json.load(open("2026-W20.json")))
+added   = b - a
+removed = a - b
+print(f"+{len(added)} -{len(removed)}")</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    <a href="https://phishdestroy.github.io/destroylist/scripts/">PhishDestroy</a> &mdash;
+    <a href="https://github.com/phishdestroy/destroylist" target="_blank">GitHub</a> &mdash;
+    <a href="https://github.com/phishdestroy/destroylist/releases/tag/archives" target="_blank">All Releases</a> &mdash;
+    <a href="https://twitter.com/Phish_Destroy" target="_blank">@Phish_Destroy</a>
+  </p>
+  <p style="margin-top:0.5rem">Data updated continuously. Archives preserved from 2025-W49.</p>
+</footer>
+
+<script>
+// Growth data (approximate, from release asset sizes as proxy)
+const growthData = [
+  {period:'2025-11', label:'2025-W49', count:170000},
+  {period:'2025-12', label:'2025-W52', count:173000},
+  {period:'2026-01', label:'2026-01',  count:175261},
+  {period:'2026-02', label:'2026-02',  count:182000},
+  {period:'2026-03', label:'2026-W11', count:191000},
+  {period:'2026-04', label:'2026-W14', count:196000},
+  {period:'2026-05', label:'2026-05',  count:200000},
+  {period:'2026-06', label:'2026-W22', count:205000},
+  {period:'2026-07', label:'Current',  count:208000},
+];
+const maxCount = Math.max(...growthData.map(d=>d.count));
+const tbody = document.getElementById('growthBody');
+growthData.forEach((d,i)=>{
+  const prev = i>0 ? growthData[i-1].count : d.count;
+  const delta = d.count - prev;
+  const pct = Math.round((d.count/maxCount)*100);
+  tbody.innerHTML += `<tr>
+    <td class="period">${d.period}</td>
+    <td style="color:var(--text-secondary);font-size:0.85rem">${d.label}</td>
+    <td class="count">${d.count.toLocaleString()}</td>
+    <td class="delta${delta<0?' neg':''}">${delta>=0?'+':''}${delta>0?delta.toLocaleString():i===0?'—':delta.toLocaleString()}</td>
+    <td class="bar-cell"><div class="bar" style="width:${pct}%"></div></td>
+  </tr>`;
+});
+
+// Release assets data
+const weeklyAssets = [
+  {name:'2025-W49',size:'20.6 MB'},{name:'2025-W50',size:'20.8 MB'},{name:'2025-W51',size:'21.0 MB'},
+  {name:'2025-W52',size:'21.2 MB'},{name:'2026-W01',size:'21.4 MB'},{name:'2026-W02',size:'21.8 MB'},
+  {name:'2026-W03',size:'22.8 MB'},{name:'2026-W04',size:'23.1 MB'},{name:'2026-W05',size:'23.3 MB'},
+  {name:'2026-W06',size:'23.6 MB'},{name:'2026-W07',size:'24.0 MB'},{name:'2026-W11',size:'26.0 MB'},
+  {name:'2026-W12',size:'26.3 MB'},{name:'2026-W13',size:'26.7 MB'},{name:'2026-W14',size:'27.3 MB'},
+  {name:'2026-W15',size:'27.6 MB'},{name:'2026-W16',size:'28.0 MB'},{name:'2026-W17',size:'28.3 MB'},
+  {name:'2026-W18',size:'28.7 MB'},{name:'2026-W19',size:'29.2 MB'},{name:'2026-W20',size:'29.5 MB'},
+  {name:'2026-W21',size:'29.8 MB'},{name:'2026-W22',size:'30.1 MB'},{name:'2026-W23',size:'30.4 MB'},
+];
+const monthlyAssets = [
+  {name:'2026-01',size:'21.3 MB'},{name:'2026-02',size:'23.3 MB'},{name:'2026-05',size:'29.1 MB'},
+];
+
+document.getElementById('snapshotCount').textContent = (weeklyAssets.length + monthlyAssets.length) + '+';
+
+function renderAssets(assets, gridId, type) {
+  const grid = document.getElementById(gridId);
+  const base = 'https://github.com/phishdestroy/destroylist/releases/download/archives/';
+  assets.forEach(a => {
+    grid.innerHTML += `<div class="release-item">
+      <span class="badge ${type}">${type}</span>
+      <div class="release-name">${a.name}.json</div>
+      <div class="release-size">${a.size}</div>
+      <a href="${base}${a.name}.json" class="release-dl" target="_blank">&#x2193; Download</a>
+    </div>`;
+  });
+}
+renderAssets(weeklyAssets, 'weeklyGrid', 'weekly');
+renderAssets(monthlyAssets, 'monthlyGrid', 'monthly');
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body></html>
