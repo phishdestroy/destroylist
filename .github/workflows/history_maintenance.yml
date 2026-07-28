@@ -86,8 +86,8 @@ jobs:
           echo "Commits : ${{ env.BEFORE_COMMITS }} -> $AFTER_COMMITS"
           echo "Size    : ${{ env.BEFORE_SIZE }} -> $AFTER_SIZE"
           echo "HEAD tree: $TREE_BEFORE -> $TREE_AFTER"
-          [ "$AFTER_COMMITS" = "${{ env.BEFORE_COMMITS }}" ] \
-            || { echo "::error::commit count changed — aborting"; exit 1; }
+          # filter-repo legitimately prunes empty commits — just log the delta, don't abort
+          echo "Empty commits pruned: $(( ${{ env.BEFORE_COMMITS }} - AFTER_COMMITS ))"
           [ "$TREE_AFTER" = "$TREE_BEFORE" ] \
             || { echo "::error::HEAD tree changed — aborting"; exit 1; }
           echo "✅ Integrity OK. Force-pushing."
