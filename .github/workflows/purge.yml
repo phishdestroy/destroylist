@@ -105,7 +105,10 @@ jobs:
             MSG="Allowlist update: clean all lists [skip ci]"
           fi
 
-          git diff --staged --name-only > /tmp/staged_files.txt
+          # Preserve both present files and deletions before resetting onto a
+          # concurrently updated main branch. A single name list breaks when a
+          # generated shard was deleted because tar cannot archive a path that
+          # no longer exists.
           git diff --staged --name-only --diff-filter=D > /tmp/deleted_files.txt
           git diff --staged --name-only --diff-filter=d > /tmp/existing_files.txt
           if [ -s /tmp/existing_files.txt ]; then
@@ -121,11 +124,17 @@ jobs:
             if [ -s /tmp/existing_files.txt ]; then
               tar -xf /tmp/processed.tar
             fi
-            if [ -s /tmp/deleted_files.txt ]; then
-              xargs git rm -f --ignore-unmatch < /tmp/deleted_files.txt 2>/dev/null || true
-            fi
+            while IFS= read -r path; do
+              if [ -n "$path" ]; then
+                git rm -f --ignore-unmatch -- "$path"
+              fi
+            done < /tmp/deleted_files.txt
 
-            git add  2>/dev/null || true
+            while IFS= read -r path; do
+              if [ -n "$path" ]; then
+                git add -A -- "$path"
+              fi
+            done < /tmp/existing_files.txt
             if git diff --staged --quiet; then
               echo "Changes already present in remote"
               exit 0
@@ -155,4 +164,3 @@ jobs:
             git fetch --unshallow 2>/dev/null || true
             git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
           fi
-
