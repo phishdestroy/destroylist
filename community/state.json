@@ -5,8 +5,13 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "b843f1d3720e631b51b69edfc484f467090c95a6d5b80b4c4c30c60138f80ba1",
-    "count": 107477,
+    "hash": "04f949e8ea14d695908747e9426f57066f973efbbfab0e64456c57fa80a4accd",
+    "count": 107428,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "7c5f23a8d0fa4fc630657c7c41981eba9b17de3c6e3608e384896a3ecfd0a24a",
+    "count": 1400,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -19,9 +24,14 @@
     "count": 53991,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "7c5f23a8d0fa4fc630657c7c41981eba9b17de3c6e3608e384896a3ecfd0a24a",
-    "count": 1400,
+  "DiscordPhishing_Nikolai": {
+    "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
+    "count": 21852,
+    "consecutive_failures": 0
+  },
+  "Phishunt": {
+    "hash": "59da5e044f9c973647953ec5b79d049f81fdd1bc12944a818fdbb331d858fbcb",
+    "count": 549,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -29,24 +39,14 @@
     "count": 107532,
     "consecutive_failures": 0
   },
-  "DiscordPhishing_Nikolai": {
-    "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
-    "count": 21852,
+  "SEAL": {
+    "hash": "477b0da263c815d50910a95d3d50b1fdf0be525dd3bb3723b9eb1871e0334570",
+    "count": 106855,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
-    "consecutive_failures": 0
-  },
-  "Phishunt": {
-    "hash": "f191563832c2d11dde3c29cc448db03f886389ccb17e14b5010a1a41e8330c2d",
-    "count": 549,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "f2be075cd790f460655cbbd30a1bfd3a03a7dceae381be4d873ebaf734bca809",
-    "count": 106907,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +59,5 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 1027446
+  "total_count": 1027469
 }
