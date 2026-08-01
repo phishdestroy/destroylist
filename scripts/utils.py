@@ -70,6 +70,23 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
 }
 INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 
+# A URL path is part of the identity on these services. Bare service roots are
+# not publishable/allowlistable, while an exact tenant hostname may cover paths
+# on that same tenant without affecting sibling tenants.
+PATH_SCOPED_HOSTS: Set[str] = {
+    "npoint.io", "api.npoint.io", "pastebin.com", "hastebin.com", "paste.ee",
+    "dpaste.org", "bit.ly", "tinyurl.com", "cutt.ly", "t.co", "goo.gl",
+    "ow.ly", "is.gd", "v.gd", "t.me", "discord.gg", "discord.com",
+    "docs.google.com", "drive.google.com", "forms.gle", "sites.google.com",
+    "gist.github.com", "raw.githubusercontent.com", "ipfs.io",
+    "gateway.pinata.cloud", "cloudflare-ipfs.com", "dweb.link",
+    "forms.office.com", "airtable.com", "typeform.com", "jotform.com",
+    "framer.app", "framer.media", "webflow.io", "carrd.co",
+    "notion.site", "coda.io", "linktr.ee", "bio.link", "beacons.ai",
+    "solo.to", "replit.dev", "glitch.me", "codepen.io", "jsfiddle.net",
+    "codesandbox.io",
+}
+
 
 # ── Domain parsing ───────────────────────────────────────────────────────────
 
@@ -128,7 +145,9 @@ def is_valid_entry(entry: str) -> bool:
         return False
     if not any(c.isalpha() for c in domain):
         return False
-    if is_infra_root(domain) and "/" not in normalize_entry(entry):
+    if (
+        is_infra_root(domain) or domain in PATH_SCOPED_HOSTS
+    ) and "/" not in normalize_entry(entry):
         return False
     tld = domain.rsplit(".", 1)[-1]
     if tld.startswith("xn--"):
@@ -213,11 +232,13 @@ def load_allowlist_split() -> Tuple[Set[str], Set[str]]:
 
 
 def is_allowed(domain: str, exact: Set[str], patterns: Set[str]) -> bool:
-    """Check if a domain matches the allowlist (exact or suffix pattern)."""
+    """Match an exact entry/host scope or an explicitly approved pattern."""
     candidate = normalize_entry(domain)
     if candidate in exact:
         return True
     host = extract_domain(candidate)
+    if "/" in candidate and host in exact and host not in PATH_SCOPED_HOSTS:
+        return True
     return any(host.endswith(p) or host == p[1:] for p in patterns)
 
 

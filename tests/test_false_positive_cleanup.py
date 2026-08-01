@@ -143,7 +143,7 @@ class FalsePositiveCleanupTests(unittest.TestCase):
             ["microsoft.example", "paypal.com.example", "evil-microsoft.com"],
         )
 
-    def test_exact_allowlist_entry_does_not_expand_to_child_hosts(self):
+    def test_exact_host_covers_own_paths_but_not_child_hosts(self):
         entries = ["example.com", "login.example.com", "example.com/path"]
         filtered, removed = filter_domains(
             entries,
@@ -151,8 +151,29 @@ class FalsePositiveCleanupTests(unittest.TestCase):
             patterns=set(),
         )
 
-        self.assertEqual(removed, 1)
-        self.assertEqual(filtered, ["login.example.com", "example.com/path"])
+        self.assertEqual(removed, 2)
+        self.assertEqual(filtered, ["login.example.com"])
+
+    def test_exact_tenant_covers_own_paths_but_not_sibling_tenants(self):
+        entries = [
+            "foo.webflow.io",
+            "foo.webflow.io/Campaign",
+            "bar.webflow.io/Campaign",
+        ]
+        filtered, removed = filter_domains(
+            entries,
+            exact={"foo.webflow.io"},
+            patterns=set(),
+        )
+
+        self.assertEqual(removed, 2)
+        self.assertEqual(filtered, ["bar.webflow.io/Campaign"])
+
+    def test_bare_path_scoped_roots_are_invalid(self):
+        self.assertFalse(utils.is_valid_entry("bit.ly"))
+        self.assertFalse(utils.is_valid_entry("api.npoint.io"))
+        self.assertTrue(utils.is_valid_entry("bit.ly/AbC"))
+        self.assertTrue(utils.is_valid_entry("foo.webflow.io"))
 
     def test_shared_service_roots_are_removed_but_scoped_entries_survive(self):
         entries = [
