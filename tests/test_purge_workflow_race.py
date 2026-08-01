@@ -70,6 +70,23 @@ class PurgeWorkflowRaceTests(unittest.TestCase):
         self.assertLess(regenerate, commit)
         self.assertLess(commit, push)
 
+    def test_repo_write_lock_is_not_held_by_codeberg_mirror(self):
+        for name, writer in (
+            ("purge.yml", "purge"),
+            ("on_list_update.yml", "process"),
+        ):
+            with self.subTest(workflow=name):
+                text = (ROOT / ".github" / "workflows" / name).read_text(
+                    encoding="utf-8"
+                )
+                writer_block, mirror_block = text.split("\n  mirror:\n", 1)
+                self.assertIn(f"  {writer}:\n", writer_block)
+                self.assertIn("group: repo-updates", writer_block)
+                self.assertNotIn("group: codeberg-mirror", writer_block)
+                self.assertIn("group: codeberg-mirror", mirror_block)
+                self.assertIn("cancel-in-progress: true", mirror_block)
+                self.assertIn("ref: main", mirror_block)
+
     def test_compare_and_swap_retry_preserves_external_pattern(self):
         with tempfile.TemporaryDirectory() as td:
             top = Path(td)

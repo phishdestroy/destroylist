@@ -13,13 +13,12 @@ on:
     branches:
       - main
 
-concurrency:
-  group: repo-updates
-  cancel-in-progress: false
-
 jobs:
   purge:
     if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
+    concurrency:
+      group: repo-updates
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 40
     permissions:
@@ -120,6 +119,24 @@ jobs:
             sleep $((i * 2))
           done
           exit 1
+
+  mirror:
+    name: Mirror latest main to Codeberg
+    needs: purge
+    if: "needs.purge.result == 'success'"
+    concurrency:
+      group: codeberg-mirror
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 1
 
       - name: Mirror to Codeberg
         env:
