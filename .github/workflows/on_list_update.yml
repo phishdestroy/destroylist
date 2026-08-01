@@ -61,6 +61,7 @@ jobs:
           # them on every list push bloats git history.
           git add list.json list.txt count.json \
                  community/blocklist.json community/blocklist.txt \
+                 community/dead_blocklist.json \
                  community/live_blocklist.json community/live_blocklist.txt \
                  community/content_live.json community/content_live.txt \
                  community/count.json community/live_count.json \
