@@ -112,7 +112,7 @@ jobs:
     if: "needs.process.result == 'success'"
     concurrency:
       group: codeberg-mirror
-      cancel-in-progress: true
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
