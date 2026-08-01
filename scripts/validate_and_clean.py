@@ -43,7 +43,8 @@ def filter_domains(domains: List[str], exact: Set[str], patterns: Set[str]) -> T
             continue
 
         # 2. Explicit suffix patterns also apply to the host part. Ordinary
-        # exact entries never expand to a URL path or a child hostname.
+        # exact hosts never expand to child hostnames; is_allowed handles the
+        # same-host path scope and shared-root exception.
         domain = extract_domain(entry)
         if domain != entry and is_allowed(domain, set(), patterns):
             removed += 1
