@@ -146,6 +146,15 @@ class FalsePositiveCleanupTests(unittest.TestCase):
         self.assertIn("community/dead_blocklist.json", relative_targets)
         self.assertIn("dns/dead_domains.json", relative_targets)
 
+    def test_cleanup_workflows_commit_the_cleaned_dead_list(self):
+        for relative_path in (
+            ".github/workflows/purge.yml",
+            ".github/workflows/on_list_update.yml",
+        ):
+            with self.subTest(workflow=relative_path):
+                workflow = (PROJECT_ROOT / relative_path).read_text(encoding="utf-8")
+                self.assertIn("community/dead_blocklist.json", workflow)
+
     def test_allowlist_patterns_are_explicitly_approved(self):
         self.assertEqual(
             utils.APPROVED_ALLOWLIST_PATTERNS, {".microsoft", ".paypal.com"}
