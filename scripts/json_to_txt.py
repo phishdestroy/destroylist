@@ -6,8 +6,9 @@ from pathlib import Path
 from typing import Set
 
 from utils import (
-    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
-    extract_domain, get_root, load_allowlist, save_json, log,
+    PROJECT_ROOT, IPV4_RE,
+    extract_domain, is_allowed, load_allowlist_split, load_json_list, log,
+    normalize_entry,
 )
 
 FORMATS_DIR = PROJECT_ROOT / "rootlist" / "formats"
@@ -28,15 +29,25 @@ ADBLOCK_DESCRIPTIONS = {
 }
 
 
-def load_domains(filepath: Path, allowlist: Set[str]) -> list:
+def load_domains(
+    filepath: Path,
+    exact: Set[str],
+    patterns: Set[str] | None = None,
+) -> list:
     if not filepath.exists():
         return []
     try:
         data = json.loads(filepath.read_text(encoding="utf-8"))
         domains = data if isinstance(data, list) else data.get("domains", [])
         clean = set()
+        suffix_patterns = patterns or set()
         for d in domains:
-            d = str(d).strip().lower().removeprefix("https://").removeprefix("http://")
+            d = normalize_entry(d)
+            # Hosts/Adblock/DNSMasq/RPZ formats cannot represent URL paths.
+            # Converting a path-scoped indicator to its host would block the
+            # entire shared service, so omit it from domain-only formats.
+            if "/" in d or "?" in d or "#" in d:
+                continue
             d = extract_domain(d)
             if not d or "." not in d:
                 continue
@@ -44,16 +55,18 @@ def load_domains(filepath: Path, allowlist: Set[str]) -> list:
                 continue
             if not any(c.isalpha() for c in d):
                 continue
-            if d in allowlist:
-                continue
-            root = get_root(d)
-            if root and root in allowlist and root not in INFRA_ROOTS:
+            if is_allowed(d, exact, suffix_patterns):
                 continue
             clean.add(d)
         return sorted(clean)
     except Exception as e:
         log(f"Failed to load {filepath.name}: {e}", "error")
         return []
+
+
+def load_plain_entries(filepath: Path) -> list:
+    """Load the lossless plain-list representation, including URL paths."""
+    return sorted(set(load_json_list(filepath)))
 
 
 def header(name: str, count: int, fmt: str, c: str = "#") -> str:
@@ -121,10 +134,10 @@ def write(path: Path, content: str):
 
 def main():
     FORMATS_DIR.mkdir(parents=True, exist_ok=True)
-    allowlist = load_allowlist()
+    exact, patterns = load_allowlist_split()
 
     for name, src in SOURCES.items():
-        domains = load_domains(src, allowlist)
+        domains = load_domains(src, exact, patterns)
         if not domains:
             continue
 
@@ -142,7 +155,7 @@ def main():
 
         log(f"{name}: {len(domains):,} domains -> 7 formats", "ok")
 
-    primary = load_domains(SOURCES["primary"], allowlist)
+    primary = load_plain_entries(SOURCES["primary"])
     if primary:
         write(PROJECT_ROOT / "list.txt", "\n".join(primary) + "\n")
 
@@ -155,7 +168,7 @@ def main():
         PROJECT_ROOT / "community" / "content_live.json": PROJECT_ROOT / "community" / "content_live.txt",
     }
     for src_json, dst_txt in TXT_SOURCES.items():
-        domains = load_domains(src_json, allowlist)
+        domains = load_plain_entries(src_json)
         if domains:
             write(dst_txt, "\n".join(domains) + "\n")
             log(f"{dst_txt.relative_to(PROJECT_ROOT)}: {len(domains):,} domains", "ok")

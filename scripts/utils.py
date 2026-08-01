@@ -42,7 +42,10 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
         "edgeone.dev", "edgeone.app", "r2.dev", "amplifyapp.com",
         "lovable.app", "wasmer.app", "mybluehost.me", "wpenginepowered.com",
         "tiiny.host", "hosted.app", "temporary.site", "rollout.site",
-        "mdbgo.io", "onespace.app", "dora.run",
+        "mdbgo.io", "onespace.app", "dora.run", "ondigitalocean.app",
+        "cloudaccess.host", "cloudwaysapps.com", "deno.dev", "oraclecloud.com",
+        "statuspage.io", "cloudflare.net", "scw.cloud", "sendgrid.net",
+        "awstrack.me", "us.com",
     },
     "site_builders": {
         "weebly.com", "weeblysite.com", "wixsite.com", "wixstudio.com", "wordpress.com",
@@ -52,7 +55,8 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
         "godaddysites.com", "webcindario.com", "home.pl", "pineapple.page",
         "gitbook.io", "carrd.co", "framer.app", "framer.ai", "framer.media", "framer.wiki",
         "softr.app", "bubble.io", "bubbleapps.io", "strikingly.com",
-        "daftpage.com", "created.app", "canva.site",
+        "daftpage.com", "created.app", "canva.site", "framer.website",
+        "baseportal.io", "flazio.com", "odoo.com", "squarespace.com",
     },
     "decentralized_storage": {
         "ipfs.io", "cloudflare-ipfs.com", "dweb.link", "infura-ipfs.io",
@@ -60,7 +64,8 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
         "arweave.net", "ic0.app", "ipfs.w3s.link", "4everland.app", "pinata.cloud",
     },
     "saas_platforms": {
-        "teachable.com", "zapier.app",
+        "jotform.com", "npoint.io", "onelink.me", "teachable.com",
+        "typeform.com", "zapier.app",
     },
 }
 INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
@@ -68,13 +73,27 @@ INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 
 # ── Domain parsing ───────────────────────────────────────────────────────────
 
+def normalize_entry(entry: str) -> str:
+    """Lowercase the hostname while preserving a case-sensitive URL path."""
+    s = str(entry).strip()
+    lowered = s.lower()
+    if lowered.startswith("https://"):
+        s = s[8:]
+    elif lowered.startswith("http://"):
+        s = s[7:]
+    if s.startswith(".") and "/" not in s:
+        return "." + s[1:].rstrip(".").lower()
+    host, separator, path = s.partition("/")
+    host = host.strip(".").lower()
+    return host + (separator + path if separator else "")
+
+
 def extract_domain(entry: str) -> str:
     """Strip scheme, path, query, and fragment from an entry.
 
     'https://github.com/ledger-live-download' -> 'github.com'
     """
-    s = str(entry).strip()
-    s = s.removeprefix("https://").removeprefix("http://")
+    s = normalize_entry(entry)
     return s.split("/")[0].split("?")[0].split("#")[0]
 
 
@@ -109,7 +128,7 @@ def is_valid_entry(entry: str) -> bool:
         return False
     if not any(c.isalpha() for c in domain):
         return False
-    if is_infra_root(domain):
+    if is_infra_root(domain) and "/" not in normalize_entry(entry):
         return False
     tld = domain.rsplit(".", 1)[-1]
     if tld.startswith("xn--"):
@@ -149,8 +168,7 @@ def load_json_list(path: Path) -> list:
     for d in arr:
         if not d:
             continue
-        s = str(d).strip().lower()
-        s = s.removeprefix("https://").removeprefix("http://")
+        s = normalize_entry(d)
         if s:
             out.append(s)
     return out
@@ -175,7 +193,7 @@ def load_allowlist() -> Set[str]:
     """Load allowlist as a flat set of domains."""
     data = load_json(ALLOWLIST_FILE)
     if isinstance(data, list):
-        return {str(d).strip().lower() for d in data if d}
+        return {normalize_entry(d) for d in data if d}
     return set()
 
 
@@ -196,9 +214,11 @@ def load_allowlist_split() -> Tuple[Set[str], Set[str]]:
 
 def is_allowed(domain: str, exact: Set[str], patterns: Set[str]) -> bool:
     """Check if a domain matches the allowlist (exact or suffix pattern)."""
-    if domain in exact:
+    candidate = normalize_entry(domain)
+    if candidate in exact:
         return True
-    return any(domain.endswith(p) or domain == p[1:] for p in patterns)
+    host = extract_domain(candidate)
+    return any(host.endswith(p) or host == p[1:] for p in patterns)
 
 
 # ── Badge generation ─────────────────────────────────────────────────────────

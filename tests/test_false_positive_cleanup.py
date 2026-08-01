@@ -1,6 +1,7 @@
 import json
 import re
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -10,6 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from validate_and_clean import TARGETS, filter_domains  # noqa: E402
+from json_to_txt import load_domains, load_plain_entries  # noqa: E402
 import utils  # noqa: E402
 
 
@@ -140,6 +142,67 @@ class FalsePositiveCleanupTests(unittest.TestCase):
             filtered,
             ["microsoft.example", "paypal.com.example", "evil-microsoft.com"],
         )
+
+    def test_exact_allowlist_entry_does_not_expand_to_child_hosts(self):
+        entries = ["example.com", "login.example.com", "example.com/path"]
+        filtered, removed = filter_domains(
+            entries,
+            exact={"example.com"},
+            patterns=set(),
+        )
+
+        self.assertEqual(removed, 1)
+        self.assertEqual(filtered, ["login.example.com", "example.com/path"])
+
+    def test_shared_service_roots_are_removed_but_scoped_entries_survive(self):
+        entries = [
+            "api.npoint.io",
+            "api.npoint.io/phishing-campaign",
+            "jotform.com",
+            "jotform.com/phishing-form",
+            "tenant.jotform.com",
+        ]
+
+        filtered, removed = filter_domains(
+            entries,
+            exact={"api.npoint.io", "jotform.com"},
+            patterns=set(),
+        )
+
+        self.assertEqual(removed, 2)
+        self.assertEqual(
+            filtered,
+            [
+                "api.npoint.io/phishing-campaign",
+                "jotform.com/phishing-form",
+                "tenant.jotform.com",
+            ],
+        )
+
+    def test_domain_formats_never_expand_a_scoped_url_to_its_shared_host(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "domains.json"
+            source.write_text(
+                json.dumps(["api.npoint.io/campaign", "evil.example"]),
+                encoding="utf-8",
+            )
+
+            self.assertEqual(load_domains(source, set()), ["evil.example"])
+            self.assertEqual(
+                load_plain_entries(source),
+                ["api.npoint.io/campaign", "evil.example"],
+            )
+
+    def test_exact_path_rules_are_case_sensitive(self):
+        entries = ["bit.ly/AbC", "bit.ly/abc", "bit.ly/Other"]
+        filtered, removed = filter_domains(
+            entries,
+            exact={"bit.ly/AbC"},
+            patterns=set(),
+        )
+
+        self.assertEqual(removed, 1)
+        self.assertEqual(filtered, ["bit.ly/abc", "bit.ly/Other"])
 
     def test_dead_lists_are_cleaning_targets(self):
         relative_targets = {path.relative_to(PROJECT_ROOT).as_posix() for path in TARGETS}

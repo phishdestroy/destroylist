@@ -7,7 +7,7 @@ from typing import Dict, List, Set
 
 from utils import (
     PROJECT_ROOT, IPV4_RE, PROVIDER_GROUPS, INFRA_ROOTS,
-    get_root, load_allowlist, save_json, log,
+    get_root, is_allowed, load_allowlist_split, normalize_entry, save_json, log,
 )
 
 SOURCE_LIST = PROJECT_ROOT / "list.json"
@@ -44,22 +44,27 @@ def load_list(path: Path) -> List[str]:
         arr = data.get("domains", [])
     else:
         arr = data
-    return [v.strip().strip(".").lower() for v in arr if isinstance(v, str) and v.strip()]
+    return [normalize_entry(v) for v in arr if isinstance(v, str) and v.strip()]
 
 
 def process_items(
     items: List[str],
-    allowlist: Set[str] | None = None,
+    exact: Set[str] | None = None,
+    patterns: Set[str] | None = None,
 ) -> tuple[Set[str], Dict[str, Dict], Set[str], Set[str]]:
     active_roots: Set[str] = set()
     provider_stats: Dict[str, Dict] = {g: {} for g in PROVIDER_GROUPS}
     cleaned_hosts: Set[str] = set()
     service_hosts: Set[str] = set()
-    _allowlist = allowlist or set()
+    _exact = exact or set()
+    _patterns = patterns or set()
 
     for entry in items:
         host = entry.split("/")[0].split("?")[0].split("#")[0]
         if IPV4_RE.fullmatch(host):
+            continue
+
+        if is_allowed(host, _exact, _patterns):
             continue
 
         rd = get_root(host)
@@ -73,9 +78,6 @@ def process_items(
                     rec = provider_stats[group].setdefault(rd, {"count": 0, "hosts": set()})
                     rec["count"] += 1
                     rec["hosts"].add(entry)
-            continue
-
-        if rd in _allowlist:
             continue
 
         active_roots.add(rd)
@@ -112,14 +114,14 @@ def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
 def main():
     log("Build root lists", "step")
     os.makedirs(OUT_DIR, exist_ok=True)
-    allowlist = load_allowlist()
+    exact, patterns = load_allowlist_split()
 
     if not SOURCE_LIST.exists():
         raise SystemExit(f"list.json not found: {SOURCE_LIST}")
 
     # Primary
     items = load_list(SOURCE_LIST)
-    roots, providers, _, services = process_items(items, allowlist)
+    roots, providers, _, services = process_items(items, exact, patterns)
     save_json(OUT_ACTIVE, {"domains": sorted(roots)})
     write_txt(OUT_ACTIVE, roots)
     save_json(OUT_PROVIDERS, build_providers_payload(providers, "list.json"))
@@ -130,7 +132,7 @@ def main():
     # Primary active
     if SOURCE_ACTIVE.exists():
         items = load_list(SOURCE_ACTIVE)
-        _, _, hosts, _ = process_items(items, allowlist)
+        _, _, hosts, _ = process_items(items, exact, patterns)
         save_json(OUT_ONLINE, {"domains": sorted(hosts)})
         write_txt(OUT_ONLINE, hosts)
         log(f"Primary active: {len(hosts):,} hosts", "ok")
@@ -138,7 +140,7 @@ def main():
     # Community
     if SOURCE_COMMUNITY.exists():
         items = load_list(SOURCE_COMMUNITY)
-        roots, providers, _, services = process_items(items, allowlist)
+        roots, providers, _, services = process_items(items, exact, patterns)
         save_json(OUT_COMMUNITY, {"domains": sorted(roots)})
         write_txt(OUT_COMMUNITY, roots)
         save_json(OUT_COMMUNITY_PROVIDERS, build_providers_payload(providers, "community/blocklist.json"))
@@ -149,7 +151,7 @@ def main():
     # Community active
     if SOURCE_COMMUNITY_ACTIVE.exists():
         items = load_list(SOURCE_COMMUNITY_ACTIVE)
-        _, _, hosts, _ = process_items(items, allowlist)
+        _, _, hosts, _ = process_items(items, exact, patterns)
         save_json(OUT_COMMUNITY_ONLINE, {"domains": sorted(hosts)})
         write_txt(OUT_COMMUNITY_ONLINE, hosts)
         log(f"Community active: {len(hosts):,} hosts", "ok")

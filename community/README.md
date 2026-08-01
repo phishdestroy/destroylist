@@ -47,7 +47,6 @@
 | `count.json` | Total count badge |
 | `live_count.json` | Live domain count badge |
 | `content_active_count.json` | Content-verified count badge |
-| `dns_cache.json` | Cached DNS lookups |
 
 ## 🚦 Policy
 
