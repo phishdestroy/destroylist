@@ -1,0 +1,104 @@
+name: Allowlist Pattern Guard
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "allow/allowlist.json"
+
+concurrency:
+  group: allowlist-pattern-guard
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  preserve-patterns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout complete history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detect removed leading-dot patterns
+        id: detect
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.event.after }}
+        run: |
+          set -euo pipefail
+          case "$BEFORE_SHA" in
+            ""|0000000000000000000000000000000000000000)
+              echo "No usable pre-push revision; refusing to guess"
+              exit 1
+              ;;
+          esac
+          if ! git cat-file -e "${BEFORE_SHA}^{commit}" 2>/dev/null; then
+            git fetch --no-tags origin "$BEFORE_SHA"
+          fi
+          cp scripts/allowlist_pattern_guard.py "$RUNNER_TEMP/allowlist_pattern_guard.py"
+          python "$RUNNER_TEMP/allowlist_pattern_guard.py" detect \
+            --before "$BEFORE_SHA" \
+            --after "$AFTER_SHA" \
+            --output "$RUNNER_TEMP/removed-patterns.json"
+          count="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["removed_count"])' "$RUNNER_TEMP/removed-patterns.json")"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Restore removed patterns with compare-and-swap retries
+        if: steps.detect.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
+          restored=false
+          for i in {1..5}; do
+            git fetch origin main
+            git reset --hard origin/main
+            python "$RUNNER_TEMP/allowlist_pattern_guard.py" restore \
+              --removed-file "$RUNNER_TEMP/removed-patterns.json" \
+              --allowlist allow/allowlist.json \
+              --output "$RUNNER_TEMP/restore-result.json"
+            count="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["restored_count"])' "$RUNNER_TEMP/restore-result.json")"
+
+            if [ "$count" = "0" ]; then
+              echo "Patterns are already present in latest main"
+              restored=true
+              break
+            fi
+
+            git add -- allow/allowlist.json
+            git commit -m "Guard: restore ${count} allowlist suffix pattern(s) [allow-pattern-restore]"
+            if git push origin HEAD:main; then
+              restored=true
+              break
+            fi
+            echo "CAS push attempt $i lost a race; refetching latest main"
+            sleep "$((i * 2))"
+          done
+
+          if [ "$restored" != true ]; then
+            echo "Failed to restore patterns after 5 CAS attempts"
+            exit 1
+          fi
+
+          # Commits made with GITHUB_TOKEN do not emit a new push workflow run.
+          # Explicit dispatch guarantees that all derived feeds are rebuilt
+          # from the restored allowlist. purge.yml has an optional domain input.
+          for i in {1..3}; do
+            if gh api --method POST \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/purge.yml/dispatches" \
+              -f ref=main; then
+              exit 0
+            fi
+            sleep "$((i * 2))"
+          done
+          echo "Patterns restored, but purge workflow dispatch failed"
+          exit 1
