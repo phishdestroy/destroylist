@@ -70,6 +70,27 @@ class PurgeWorkflowRaceTests(unittest.TestCase):
         self.assertLess(regenerate, commit)
         self.assertLess(commit, push)
 
+    def test_all_generated_list_writers_rebuild_fresh_and_stage_rootlist(self):
+        for name, loop_text in (
+            ("on_list_update.yml", "for i in {1..10}"),
+            ("rootlist.yml", "for i in {1..5}"),
+        ):
+            with self.subTest(workflow=name):
+                text = (ROOT / ".github" / "workflows" / name).read_text(
+                    encoding="utf-8"
+                )
+                self.assertNotIn("processed.tar", text)
+                self.assertNotIn("tar -xf", text)
+                loop = text.index(loop_text)
+                fetch = text.index("git fetch origin main", loop)
+                rebuild = text.index("python scripts/validate_and_clean.py", fetch)
+                stage = text.index("git add", rebuild)
+                push = text.index("git push", stage)
+                self.assertLess(fetch, rebuild)
+                self.assertLess(rebuild, stage)
+                self.assertLess(stage, push)
+                self.assertIn("rootlist/", text[rebuild:push])
+
     def test_repo_write_lock_is_not_held_by_codeberg_mirror(self):
         for name, writer in (
             ("purge.yml", "purge"),
