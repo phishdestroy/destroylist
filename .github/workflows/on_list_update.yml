@@ -102,21 +102,19 @@ jobs:
         uses: actions/checkout@v7
         with:
           ref: main
-          fetch-depth: 1
+          fetch-depth: 64
+          filter: blob:none
 
       - name: Mirror to Codeberg
         env:
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
         run: |
-          if [ -z "$CODEBERG_TOKEN" ]; then exit 0; fi
+          set -euo pipefail
+          if [ -z "${CODEBERG_TOKEN:-}" ]; then
+            echo "::error::CODEBERG_TOKEN is not configured"
+            exit 1
+          fi
           REPO_NAME="${GITHUB_REPOSITORY##*/}"
           BRANCH="${GITHUB_REF_NAME}"
-          git remote add codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git 2>/dev/null || \
-            git remote set-url codeberg https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git
-          if git push codeberg HEAD:${BRANCH} --force 2>/dev/null; then
-            echo "Mirror updated (shallow push)"
-          else
-            echo "Shallow push rejected, unshallowing (repo history is slim now)"
-            git fetch --unshallow 2>/dev/null || true
-            git push codeberg HEAD:${BRANCH} --force || echo "Mirror push failed, continuing"
-          fi
+          git remote add codeberg "https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git"
+          git push codeberg "HEAD:refs/heads/${BRANCH}"
