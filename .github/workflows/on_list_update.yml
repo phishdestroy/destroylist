@@ -36,49 +36,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Validate JSON
-        run: python scripts/validate_json.py
-
-      - name: Clean all lists against allowlist
-        run: python scripts/validate_and_clean.py
-
-      - name: Convert JSON to TXT
-        run: python scripts/json_to_txt.py
-
-      - name: Update domain counts
-        run: python scripts/update_counts.py
-
-      - name: Build rootlist
-        run: python scripts/build_rootlist.py
-
-      - name: Build array shards
-        run: python scripts/build_shards.py
-
-      - name: Commit and push
+      - name: Rebuild latest main and push with compare-and-swap retries
         run: |
+          set -euo pipefail
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-
-          # Heavy rootlist/ artifacts are committed twice a day by the
-          # scheduled workflow (and immediately by purge.yml); committing
-          # them on every list push bloats git history.
-          git add list.json list.txt count.json \
-                 community/blocklist.json community/blocklist.txt \
-                 community/dead_blocklist.json \
-                 community/live_blocklist.json community/live_blocklist.txt \
-                 community/content_live.json community/content_live.txt \
-                 community/count.json community/live_count.json \
-                 community/content_active_count.json \
-                 dns/*.json dns/*.txt
-
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          # Save processed outputs before any git reset can overwrite them
-          git diff --staged --name-only > /tmp/staged_files.txt
-          tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
 
           for i in {1..10}; do
             if ! git fetch origin main; then
@@ -88,10 +50,28 @@ jobs:
             fi
             git reset --hard origin/main
 
-            # Restore our processed file versions on top of latest remote
-            tar -xf /tmp/processed.tar
+            # Always rebuild from the newest branch head. Restoring outputs
+            # produced from an older checkout can erase a concurrent list
+            # update even when the eventual git push is a fast-forward.
+            python scripts/validate_json.py
+            python scripts/validate_and_clean.py
+            python scripts/json_to_txt.py
+            python scripts/update_counts.py
+            python scripts/build_rootlist.py
+            python scripts/build_shards.py
 
-            git add $(cat /tmp/staged_files.txt | tr '\n' ' ')
+            # Source and every generated consumer must land in one commit.
+            # Otherwise formats/rootlists can advertise domains that no
+            # longer exist in the authoritative source files.
+            git add list.json list.txt count.json \
+                   community/blocklist.json community/blocklist.txt \
+                   community/dead_blocklist.json \
+                   community/live_blocklist.json community/live_blocklist.txt \
+                   community/content_live.json community/content_live.txt \
+                   community/count.json community/live_count.json \
+                   community/content_active_count.json \
+                   dns/*.json dns/*.txt rootlist/
+
             if git diff --staged --quiet; then
               echo "Changes already present in remote"
               exit 0

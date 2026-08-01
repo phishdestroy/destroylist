@@ -3,14 +3,9 @@ on:
   schedule:
     - cron: "0 */2 * * *"
   workflow_dispatch:
-    inputs:
-      force_rootlist:
-        description: "Commit rootlist/ artifacts regardless of change check"
-        required: false
-        default: "false"
 
 concurrency:
-  group: scheduled-updates
+  group: repo-updates
   cancel-in-progress: false
 
 jobs:
@@ -35,75 +30,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Validate JSON (pre-check)
-        run: python scripts/validate_json.py
-
-      - name: Run smart aggregator
-        run: python scripts/smart_aggregator.py
-
-      - name: Validate and clean all lists
-        run: python scripts/validate_and_clean.py
-
-      - name: Validate JSON (post-check)
-        run: python scripts/validate_json.py
-
-      - name: Update count badges
-        run: python scripts/update_counts.py
-
-      - name: Convert JSON to TXT
-        run: python scripts/json_to_txt.py
-
-      - name: Build rootlists
-        run: python scripts/build_rootlist.py
-
-      - name: Build array shards
-        run: python scripts/build_shards.py
-
-      - name: Commit and push
-        env:
-          FORCE_ROOTLIST: ${{ github.event.inputs.force_rootlist }}
+      - name: Rebuild latest main and push with compare-and-swap retries
         run: |
+          set -euo pipefail
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-
-          # Live feeds committed every run (light files only).
-          ADD_PATHS="list.json list.txt count.json \
-                 community/blocklist.json community/blocklist.txt \
-                 community/live_blocklist.json community/live_blocklist.txt \
-                 community/content_live.json community/content_live.txt \
-                 community/count.json community/live_count.json \
-                 community/content_active_count.json \
-                 community/state.json community/commit_message.txt \
-                 dns/*.json dns/*.txt"
-
-          # rootlist/ is heavy (~600 files). Commit only at 04:00 UTC AND only
-          # when content actually changed vs the current HEAD — this prevents
-          # identical blobs from accumulating in git history every day.
-          HOUR=$(date -u +%H)
-          if [ "$FORCE_ROOTLIST" = "true" ] || [ "$HOUR" = "04" ]; then
-            git add rootlist/ 2>/dev/null || true
-            if git diff --staged --quiet; then
-              echo "rootlist/ unchanged vs HEAD — skipping rootlist commit"
-            else
-              ADD_PATHS="$ADD_PATHS rootlist/"
-              echo "rootlist/ changed — will commit (hour=$HOUR)"
-            fi
-            git reset HEAD -- . 2>/dev/null || true
-          else
-            echo "rootlist/ skipped this run (hour=$HOUR, only committed at 04:00 UTC when changed)"
-          fi
-
-          git add $ADD_PATHS
-
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          CHANGES=$(git diff --staged --stat | tail -1)
-
-          git diff --staged --name-only > /tmp/staged_files.txt
-          tar -cf /tmp/processed.tar -T /tmp/staged_files.txt
 
           for i in {1..5}; do
             if ! git fetch origin main; then
@@ -113,14 +44,36 @@ jobs:
             fi
             git reset --hard origin/main
 
-            tar -xf /tmp/processed.tar
+            # Recompute every generated file from the current branch head.
+            # Reapplying a tarball from a stale attempt can silently overwrite
+            # a newer list.json after a concurrent daemon commit.
+            python scripts/validate_json.py
+            python scripts/smart_aggregator.py
+            python scripts/validate_and_clean.py
+            python scripts/validate_json.py
+            python scripts/update_counts.py
+            python scripts/json_to_txt.py
+            python scripts/build_rootlist.py
+            python scripts/build_shards.py
 
-            git add $(cat /tmp/staged_files.txt | tr '\n' ' ')
+            ADD_PATHS="list.json list.txt count.json \
+                   community/blocklist.json community/blocklist.txt \
+                   community/dead_blocklist.json \
+                   community/live_blocklist.json community/live_blocklist.txt \
+                   community/content_live.json community/content_live.txt \
+                   community/count.json community/live_count.json \
+                   community/content_active_count.json \
+                   community/state.json community/commit_message.txt \
+                   dns/*.json dns/*.txt rootlist/"
+
+            git add $ADD_PATHS
+
             if git diff --staged --quiet; then
               echo "Changes already present in remote"
               exit 0
             fi
 
+            CHANGES=$(git diff --staged --stat | tail -1)
             git commit -m "Daily update: ${CHANGES} [skip ci]"
             git push && exit 0
 

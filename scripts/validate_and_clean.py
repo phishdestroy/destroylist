@@ -9,8 +9,8 @@ from pathlib import Path
 from typing import List, Set, Tuple
 
 from utils import (
-    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
-    extract_domain, get_root, is_valid_entry, is_ip,
+    PROJECT_ROOT, IPV4_RE,
+    extract_domain, is_valid_entry, is_ip,
     load_json_list, load_allowlist_split, is_allowed, log,
 )
 
@@ -42,19 +42,10 @@ def filter_domains(domains: List[str], exact: Set[str], patterns: Set[str]) -> T
             removed += 1
             continue
 
-        # 2. Domain part (without path)
+        # 2. Explicit suffix patterns also apply to the host part. Ordinary
+        # exact entries never expand to a URL path or a child hostname.
         domain = extract_domain(entry)
-        if domain != entry and is_allowed(domain, exact, patterns):
-            root = get_root(domain)
-            if root and root in INFRA_ROOTS:
-                filtered.append(entry)
-            else:
-                removed += 1
-            continue
-
-        # 3. Root domain check
-        root = get_root(domain)
-        if root and root != domain and is_allowed(root, exact, patterns) and root not in INFRA_ROOTS:
+        if domain != entry and is_allowed(domain, set(), patterns):
             removed += 1
             continue
 
@@ -111,8 +102,10 @@ def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
     # Anomaly detection: warn if count dropped significantly
     if original_count > 0 and total_removed / original_count > ANOMALY_THRESHOLD:
         drop_pct = total_removed / original_count * 100
-        log(f"ANOMALY {name}: count dropped {drop_pct:.1f}% "
-            f"({original_count:,} -> {len(unique):,})", "warn")
+        raise RuntimeError(
+            f"ANOMALY {name}: refusing {drop_pct:.1f}% count drop "
+            f"({original_count:,} -> {len(unique):,})"
+        )
 
     if total_removed == 0 and not needs_reformat:
         log(f"{name}: {original_count:,} domains — no changes", "ok")
