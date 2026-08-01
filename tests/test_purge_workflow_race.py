@@ -84,7 +84,7 @@ class PurgeWorkflowRaceTests(unittest.TestCase):
                 self.assertIn("group: repo-updates", writer_block)
                 self.assertNotIn("group: codeberg-mirror", writer_block)
                 self.assertIn("group: codeberg-mirror", mirror_block)
-                self.assertIn("cancel-in-progress: true", mirror_block)
+                self.assertIn("cancel-in-progress: false", mirror_block)
                 self.assertIn("ref: main", mirror_block)
 
     def test_compare_and_swap_retry_preserves_external_pattern(self):
