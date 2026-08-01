@@ -21,8 +21,10 @@ TARGETS = [
     PROJECT_ROOT / "community" / "blocklist.json",
     PROJECT_ROOT / "community" / "live_blocklist.json",
     PROJECT_ROOT / "community" / "content_live.json",
+    PROJECT_ROOT / "community" / "dead_blocklist.json",
     PROJECT_ROOT / "dns" / "active_domains.json",
     PROJECT_ROOT / "dns" / "content_active.json",
+    PROJECT_ROOT / "dns" / "dead_domains.json",
 ]
 
 

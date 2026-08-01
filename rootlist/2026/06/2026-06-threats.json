@@ -3,7 +3,7 @@
     "month": "2026-06",
     "name": "June 2026",
     "generated": "2026-06-20T12:01:43.117468+00:00",
-    "total": 8102,
+    "total": 8101,
     "report": "2026-06.md",
     "prev_report": "../../2026/05/",
     "next_report": null
@@ -11,7 +11,7 @@
   "stats": {
     "live": 0,
     "dead": 0,
-    "enriched": 8005,
+    "enriched": 8004,
     "kill_rate": 0.0,
     "vt_flagged": 7654,
     "vt_rate": 94.5,
@@ -107,7 +107,7 @@
     "countries": [
       {
         "country": "",
-        "count": 7376
+        "count": 7375
       },
       {
         "country": "US",
@@ -273,7 +273,7 @@
     "2026-06-11": 416,
     "2026-06-12": 510,
     "2026-06-13": 272,
-    "2026-06-14": 332,
+    "2026-06-14": 331,
     "2026-06-15": 548,
     "2026-06-16": 378,
     "2026-06-17": 721,
@@ -129729,22 +129729,6 @@
         "SOCRadar",
         "Sophos"
       ],
-      "gsb_flagged": false,
-      "creation_date": ""
-    },
-    {
-      "domain": "ms.get",
-      "detected_at": "2026-06-14 18:12:30",
-      "registrar": "",
-      "registrar_country": "",
-      "tld": "get",
-      "ip_address": "",
-      "nameservers": "",
-      "status": "enriched",
-      "target_brand": "",
-      "drainer_type": "clean",
-      "vt_detections": 0,
-      "vt_vendors": [],
       "gsb_flagged": false,
       "creation_date": ""
     },

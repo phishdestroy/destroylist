@@ -13,6 +13,7 @@ import tldextract
 # ── Paths ────────────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
+APPROVED_ALLOWLIST_PATTERNS: Set[str] = {".microsoft", ".paypal.com"}
 
 # ── Regex ────────────────────────────────────────────────────────────────────
 IPV4_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
@@ -185,6 +186,10 @@ def load_allowlist_split() -> Tuple[Set[str], Set[str]]:
     """
     entries = load_allowlist()
     patterns = {d for d in entries if d.startswith(".")}
+    unknown_patterns = patterns - APPROVED_ALLOWLIST_PATTERNS
+    if unknown_patterns:
+        values = ", ".join(sorted(unknown_patterns))
+        raise ValueError(f"unapproved allowlist suffix pattern(s): {values}")
     exact = entries - patterns
     return exact, patterns
 
