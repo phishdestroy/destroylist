@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 178,344 domains | 2026-08-03 10:47 UTC
+; Destroylist - Primary | RPZ zone | 178,347 domains | 2026-08-03 10:59 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202608031047 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202608031059 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -3236,8 +3236,10 @@ aave-gho.eu.com CNAME .
 aave-gov.pro CNAME .
 aave-governance.net CNAME .
 aave-governance.xyz CNAME .
+aave-lend-protocol-dex-relay-v109.vercel.app CNAME .
 aave-lending.com CNAME .
 aave-liquidity.com CNAME .
+aave-live.vercel.app CNAME .
 aave-logis.pages.dev CNAME .
 aave-official-websiite-us.pages.dev CNAME .
 aave-paperwalet.xyz CNAME .
@@ -120364,6 +120366,7 @@ proxy-bridge.wixstudio.com CNAME .
 proxy-de.steganos.com CNAME .
 proxy-desktop.wixstudio.com CNAME .
 proxy-discord.jeemoo.com CNAME .
+proxy-router-eight.vercel.app CNAME .
 proxy-rpc.vercel.app CNAME .
 proxy.jmkjsh.com CNAME .
 proxy.skytale.finance CNAME .
