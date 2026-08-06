@@ -118,11 +118,11 @@ footer a:hover{color:var(--accent-cyan)}
     <div class="stat-label">Snapshots available</div>
   </div>
   <div class="stat-item">
-    <div class="stat-value">208k+</div>
+    <div class="stat-value" id="currentPrimaryCount">&mdash;</div>
     <div class="stat-label">Current primary domains</div>
   </div>
   <div class="stat-item">
-    <div class="stat-value">1M+</div>
+    <div class="stat-value" id="currentCommunityCount">&mdash;</div>
     <div class="stat-label">Community domains</div>
   </div>
 </div>
@@ -231,22 +231,41 @@ const growthData = [
   {period:'2026-04', label:'2026-W14', count:196000},
   {period:'2026-05', label:'2026-05',  count:200000},
   {period:'2026-06', label:'2026-W22', count:205000},
-  {period:'2026-07', label:'Current',  count:208000},
 ];
-const maxCount = Math.max(...growthData.map(d=>d.count));
 const tbody = document.getElementById('growthBody');
-growthData.forEach((d,i)=>{
-  const prev = i>0 ? growthData[i-1].count : d.count;
-  const delta = d.count - prev;
-  const pct = Math.round((d.count/maxCount)*100);
-  tbody.innerHTML += `<tr>
-    <td class="period">${d.period}</td>
-    <td style="color:var(--text-secondary);font-size:0.85rem">${d.label}</td>
-    <td class="count">${d.count.toLocaleString()}</td>
-    <td class="delta${delta<0?' neg':''}">${delta>=0?'+':''}${delta>0?delta.toLocaleString():i===0?'—':delta.toLocaleString()}</td>
-    <td class="bar-cell"><div class="bar" style="width:${pct}%"></div></td>
-  </tr>`;
-});
+function renderGrowth() {
+  const maxCount = Math.max(...growthData.map(d=>d.count));
+  tbody.innerHTML = '';
+  growthData.forEach((d,i)=>{
+    const prev = i>0 ? growthData[i-1].count : d.count;
+    const delta = d.count - prev;
+    const pct = Math.round((d.count/maxCount)*100);
+    tbody.innerHTML += `<tr>
+      <td class="period">${d.period}</td>
+      <td style="color:var(--text-secondary);font-size:0.85rem">${d.label}</td>
+      <td class="count">${d.count.toLocaleString()}</td>
+      <td class="delta${delta<0?' neg':''}">${delta>=0?'+':''}${delta>0?delta.toLocaleString():i===0?'—':delta.toLocaleString()}</td>
+      <td class="bar-cell"><div class="bar" style="width:${pct}%"></div></td>
+    </tr>`;
+  });
+}
+renderGrowth();
+
+fetch('../dns/metrics.json', {cache:'no-cache'})
+  .then(r => r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))
+  .then(metrics => {
+    const primary = Number(metrics?.counts?.primary?.value);
+    const community = Number(metrics?.counts?.community?.value);
+    if (Number.isFinite(primary) && primary > 0) {
+      document.getElementById('currentPrimaryCount').textContent = primary.toLocaleString();
+      growthData.push({period:'Current', label:'Live feed', count:primary});
+      renderGrowth();
+    }
+    if (Number.isFinite(community) && community > 0) {
+      document.getElementById('currentCommunityCount').textContent = community.toLocaleString();
+    }
+  })
+  .catch(() => {});
 
 // Release assets data
 const weeklyAssets = [
