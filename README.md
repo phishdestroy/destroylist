@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/phishdestroy/destroylist">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+207%2C000%2B+Phishing+Domains+Destroyed;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+Continuously+Updated+Threat+Feeds;%F0%9F%9B%A1%EF%B8%8F+Real-time+Threat+Intelligence;%F0%9F%8C%8D+Protecting+Users+Worldwide" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -68,6 +68,8 @@ https://cdn.jsdelivr.net/gh/phishdestroy/destroylist@main/rootlist/formats/prima
 | Primary | Primary Live | Community | Community Live |
 |:-------:|:------------:|:---------:|:--------------:|
 | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/count.json&style=for-the-badge&color=FF0000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_count.json&style=for-the-badge&color=CC0000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/count.json&style=for-the-badge&color=990000&label=) | ![](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_count.json&style=for-the-badge&color=660000&label=) |
+
+Badge values are exact **feed-entry counts**. The API reports normalized unique domains, so its values can be lower after URL, `www` and duplicate normalization. See the machine-readable [`dns/metrics.json`](dns/metrics.json) definitions.
 
 | Primary Content | Community Content |
 |:---------------:|:-----------------:|
@@ -203,7 +205,7 @@ flowchart LR
   <a href="https://api.destroy.tools/v1/stats"><img src="https://img.shields.io/badge/📊_STATS-000000?style=for-the-badge" alt="Stats"/></a>
 </p>
 
-> **Free, open, no API key.** Real-time domain risk scoring (0-100) across 888K+ threats · 2h sync · Single & bulk check (500/req) · Keyword search · Full feeds
+> **Free, open, no API key.** Real-time domain risk scoring (0-100) across the Primary and Community datasets · scheduled sync · Single & bulk check (500/req) · Keyword search · Full feeds
 
 <details>
 <summary>📖 <b>API Endpoints, Scoring & Integration Examples</b></summary>
@@ -274,7 +276,7 @@ curl -X POST "https://api.destroy.tools/v1/check/bulk" \
 
 <div align="center">
 
-**888K+ domains tracked** · **13+ threat sources** · **50+ vendor reports** · **6 output formats** · **Free API**
+**Live feed counts above** · **13+ threat sources** · **50+ vendor reports** · **6 output formats** · **Free API**
 
 </div>
 
@@ -624,5 +626,3 @@ We welcome contributions:
 - 🌐 Translations & documentation
 
 **Drop an Issue or PR — let's crush phishing together!** 💪
-
-

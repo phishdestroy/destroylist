@@ -364,7 +364,7 @@ def main():
     sorted_domains = sorted(all_domains)
     save_json(OUTPUT_FILE, sorted_domains)
     save_json(STATE_FILE, new_state)
-    save_json(BADGE_FILE, make_badge("Community Domains", len(all_domains), "blue"), indent=None)
+    save_json(BADGE_FILE, make_badge("Community Entries", f"{len(all_domains):,}", "blue"), indent=None)
 
     log(f"Done: {len(sorted_domains):,} domains", "ok")
 
