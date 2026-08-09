@@ -5,8 +5,13 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "53e74275c61843ebb72689c10d89fd04829ab80e9e78efe411773fe3144b0830",
-    "count": 105825,
+    "hash": "47ac57950700727b447ce321f47ca79f5cb9bd84060e3a1be9d33d3a2bb17c07",
+    "count": 105611,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "23e3389fb91d8833a693cfb0446cac0e2100f4457c03aeb2a37a58970af1d0eb",
+    "count": 1409,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -19,14 +24,14 @@
     "count": 53990,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "23e3389fb91d8833a693cfb0446cac0e2100f4457c03aeb2a37a58970af1d0eb",
-    "count": 1409,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
+    "consecutive_failures": 0
+  },
+  "Phishunt": {
+    "hash": "49c357244484a8145fcf76634a2addd21ec46479ab6571dfe851fa2771566514",
+    "count": 724,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -39,19 +44,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "588c856d961ed6e91db0a7e8810a93b5ac46887482444eecc63e6a50fb04dc6d",
-    "count": 722,
-    "consecutive_failures": 0
-  },
   "SEAL": {
-    "hash": "8ece6a80f09414b5976955583aad31cefcbb6b050a6b7026bb50197a4b491202",
-    "count": 105244,
-    "consecutive_failures": 0
-  },
-  "Enkrypt_Blacklist": {
-    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
-    "count": 243830,
+    "hash": "d5c639b1aba6b18e43edf189056809a3ea664324ea4e2c87936f827b365cbccc",
+    "count": 105034,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +54,10 @@
     "count": 350009,
     "consecutive_failures": 0
   },
-  "total_count": 1036794
+  "Enkrypt_Blacklist": {
+    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
+    "count": 243830,
+    "consecutive_failures": 0
+  },
+  "total_count": 1036813
 }
