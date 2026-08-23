@@ -140,6 +140,7 @@ jobs:
           filter: blob:none
 
       - name: Mirror to Codeberg
+        continue-on-error: true
         env:
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
         run: |
