@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T05:53:05.254080Z",
+  "generatedAt": "2026-08-26T06:32:41.072014Z",
   "countType": "feed_entries",
   "note": "Counts are exact entries in each published feed. The API may report smaller normalized-unique domain counts after URL, www and duplicate normalization.",
   "counts": {
@@ -15,7 +15,7 @@
       "definition": "Entries published in dns/active_domains.json after DNS validation."
     },
     "community": {
-      "value": 1060633,
+      "value": 1060661,
       "source": "community/blocklist.json",
       "definition": "Entries published in community/blocklist.json."
     },
