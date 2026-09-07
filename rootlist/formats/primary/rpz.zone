@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 200,744 domains | 2026-09-07 22:45 UTC
+; Destroylist - Primary | RPZ zone | 200,745 domains | 2026-09-07 23:45 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202609072245 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202609072345 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -68633,6 +68633,7 @@ flarenetworking.shop CNAME .
 flarenetworkmainnet.com CNAME .
 flarenetworks-distribution.live CNAME .
 flarenetworks-drops.live CNAME .
+flarenetworks-event.xyz CNAME .
 flarenetworks-gover.xyz CNAME .
 flarenetworks-launch.live CNAME .
 flarenetworks-phase1.live CNAME .
