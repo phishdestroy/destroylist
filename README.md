@@ -557,7 +557,7 @@ Accuracy first! 🔭
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Black%20Heart.webp" alt="Black Heart" width="25" height="25" /> Connect With Us
+## <a name="-connect-with-us"></a><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Black%20Heart.webp" alt="Black Heart" width="25" height="25" /> Connect With Us
 
 <p align="center">
   <a href="https://phishdestroy.io"><img src="https://img.shields.io/badge/🌐_WEBSITE-FF0000?style=for-the-badge" alt="Website"/></a>
