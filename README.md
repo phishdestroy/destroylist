@@ -559,6 +559,16 @@ Accuracy first! 🔭
 
 ## <a name="-connect-with-us"></a><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Black%20Heart.webp" alt="Black Heart" width="25" height="25" /> Connect With Us
 
+- 🌐 **Official Website:** [phishdestroy.io](https://phishdestroy.io)
+- 🤖 **Telegram Report Bot:** [@PhishDestroy_bot](https://t.me/PhishDestroy_bot)
+- 📢 **Telegram Channel:** [@destroy_phish](https://t.me/destroy_phish)
+- 🐘 **Mastodon:** [@phishdestroy](https://mastodon.social/@phishdestroy)
+- 𝕏 **Twitter/X:** [@Phish_Destroy](https://x.com/Phish_Destroy)
+- 📝 **Medium Blog:** [phishdestroy.medium.com](https://phishdestroy.medium.com)
+- ✉️ **Email Contact:** [contact@phishdestroy.io](mailto:contact@phishdestroy.io)
+- ⚡ **API Portal:** [api.destroy.tools](https://api.destroy.tools)
+- 🚫 **Ban Service:** [ban.destroy.tools](https://ban.destroy.tools)
+
 <p align="center">
   <a href="https://phishdestroy.io"><img src="https://img.shields.io/badge/🌐_WEBSITE-FF0000?style=for-the-badge" alt="Website"/></a>
   <a href="https://phishdestroy.medium.com"><img src="https://img.shields.io/badge/📝_MEDIUM-000000?style=for-the-badge" alt="Medium"/></a>
