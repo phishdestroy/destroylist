@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 210,210 domains | 2026-09-21 11:31 UTC
+; Destroylist - Primary | RPZ zone | 210,211 domains | 2026-09-21 12:03 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202609211131 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202609211203 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -177114,6 +177114,7 @@ tokenprcket.pro CNAME .
 tokenpredict.app CNAME .
 tokenpredict.live CNAME .
 tokenpredict.online CNAME .
+tokenprinters.online CNAME .
 tokenpump.org CNAME .
 tokenrebalancer.com CNAME .
 tokenredeem.xyz CNAME .
