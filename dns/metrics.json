@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-24T12:01:24.500496Z",
+  "generatedAt": "2026-09-24T12:19:44.105743Z",
   "countType": "feed_entries",
   "note": "Counts are exact entries in each published feed. The API may report smaller normalized-unique domain counts after URL, www and duplicate normalization.",
   "counts": {
     "primary": {
-      "value": 212141,
+      "value": 212142,
       "source": "list.json",
       "definition": "Entries published in list.json; this is not a liveness count."
     },
@@ -30,7 +30,7 @@
       "definition": "Entries published in dns/content_active.json after HTTP content validation."
     },
     "community_content": {
-      "value": 275211,
+      "value": 275213,
       "source": "community/content_live.json",
       "definition": "Entries published in community/content_live.json after HTTP content validation."
     }
