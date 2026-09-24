@@ -5,13 +5,8 @@
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "e7e770ae08cae0c4251964b711c11babdaa68395ff6647b135a1571bb6ffc09f",
-    "count": 100254,
-    "consecutive_failures": 0
-  },
-  "Codeesura": {
-    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
-    "count": 53990,
+    "hash": "09333f9a7f76c7c318fd3be34152af0e641dfb4b046d7c61c29d749a3d88575c",
+    "count": 100219,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -24,14 +19,24 @@
     "count": 53990,
     "consecutive_failures": 0
   },
+  "Codeesura": {
+    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
+    "count": 53990,
+    "consecutive_failures": 0
+  },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
     "consecutive_failures": 0
   },
-  "CryptoFirewall": {
-    "hash": "d99ea5b6e4b44ce0c1326c35441635bd58fa88cf2a32a54b0869a08b7383ac1c",
-    "count": 107934,
+  "Phishunt": {
+    "hash": "6bcdd4c9fe24dbaa440ac6ad95f8aeddee9baca6571bc1e6a95adecba718776d",
+    "count": 769,
+    "consecutive_failures": 0
+  },
+  "SEAL": {
+    "hash": "55e7d6473b58c0b3880f6b701b0e85619f9018dd3540717324ff1b3c1b823660",
+    "count": 99656,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -39,19 +44,9 @@
     "count": 37078,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "711750afccc81b041ef3e59846ffa1baf27b8758ba750a833785b83617be867d",
-    "count": 778,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "4022068bd3277360b6d2d6c6cadf3f5fbcbed7074243a2cf19413e303ba04a72",
-    "count": 99690,
-    "consecutive_failures": 0
-  },
-  "ScamSniffer": {
-    "hash": "15bd4e551cbb5c000f5f473e8501b3448b6fdefe816bc0f6e4d7ba02b47e16a9",
-    "count": 354903,
+  "CryptoFirewall": {
+    "hash": "d99ea5b6e4b44ce0c1326c35441635bd58fa88cf2a32a54b0869a08b7383ac1c",
+    "count": 107934,
     "consecutive_failures": 0
   },
   "Enkrypt_Blacklist": {
@@ -59,5 +54,10 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 1100000
+  "ScamSniffer": {
+    "hash": "15bd4e551cbb5c000f5f473e8501b3448b6fdefe816bc0f6e4d7ba02b47e16a9",
+    "count": 354903,
+    "consecutive_failures": 0
+  },
+  "total_count": 1100078
 }
