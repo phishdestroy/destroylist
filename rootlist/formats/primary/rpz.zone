@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 213,108 domains | 2026-09-27 06:31 UTC
+; Destroylist - Primary | RPZ zone | 213,112 domains | 2026-09-27 06:47 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202609270631 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202609270647 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -12942,6 +12942,7 @@ amlcheck-trc20.com CNAME .
 amlcheck-tron.com CNAME .
 amlcheck-trust.com CNAME .
 amlcheck-trustwallet.com CNAME .
+amlcheck-usdt.com CNAME .
 amlcheck.best CNAME .
 amlcheck.bet CNAME .
 amlcheck.bond CNAME .
@@ -157060,6 +157061,7 @@ secure-bitbox.ch CNAME .
 secure-blokfis---sso-cdn.webflow.io CNAME .
 secure-bot.vip CNAME .
 secure-bots.xyz CNAME .
+secure-bridge.info CNAME .
 secure-bridge.live CNAME .
 secure-bridgedapps.vercel.app CNAME .
 secure-by-ledger.com CNAME .
@@ -165720,9 +165722,11 @@ sparkdex.dev CNAME .
 sparkdex.digital CNAME .
 sparkdex.exchange CNAME .
 sparkdex.finance CNAME .
+sparkdex.fun CNAME .
 sparkdex.help CNAME .
 sparkdex.icu CNAME .
 sparkdex.io CNAME .
+sparkdex.lol CNAME .
 sparkdex.network CNAME .
 sparkdex.page CNAME .
 sparkdex.trade CNAME .
