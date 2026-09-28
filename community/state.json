@@ -1,12 +1,12 @@
 {
   "OpenPhish": {
-    "hash": "8de9c65d146a7b4bae06afaca816ff7207491c44aa3e15b286ff75e793ff26e5",
-    "count": 244,
+    "hash": "0312728150175d52e99889b6f9efcd6b785aecee43348e9a10292765b9c23243",
+    "count": 248,
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "3815a46e7747777709bb68d6fdfd1356603863fd236b77dcb7fa5f5127a9cd68",
-    "count": 100225,
+    "hash": "32f89fdefe1d0708b15da13d2aae82a07392990d5c7917bf6bea89021c04f010",
+    "count": 100220,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -27,16 +27,11 @@
   "Enkrypt_Blacklist": {
     "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
     "count": 243830,
-    "consecutive_failures": 1
-  },
-  "SEAL": {
-    "hash": "4da4860e5f0f5dea71a957db44d3174207a9d62ce2a938ef0e340476c713a025",
-    "count": 99664,
-    "consecutive_failures": 0
+    "consecutive_failures": 2
   },
   "Phishunt": {
-    "hash": "825d13449970183359e61931d533b714031ba939351c6971c7c4c9ba2fa1a4ff",
-    "count": 796,
+    "hash": "2f9bb92b114d2922016debba37b75a202fa851d3a95e4692d1b358c31d080ee3",
+    "count": 791,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -44,14 +39,19 @@
     "count": 21852,
     "consecutive_failures": 0
   },
+  "CryptoFirewall": {
+    "hash": "d99ea5b6e4b44ce0c1326c35441635bd58fa88cf2a32a54b0869a08b7383ac1c",
+    "count": 107934,
+    "consecutive_failures": 0
+  },
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
     "consecutive_failures": 0
   },
-  "CryptoFirewall": {
-    "hash": "d99ea5b6e4b44ce0c1326c35441635bd58fa88cf2a32a54b0869a08b7383ac1c",
-    "count": 107934,
+  "SEAL": {
+    "hash": "f10ff7f327e446d0a61d2e4b7e37c2303a792e4ce68837562637decca8e1e92d",
+    "count": 99659,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +59,5 @@
     "count": 355124,
     "consecutive_failures": 0
   },
-  "total_count": 1103018
+  "total_count": 1103142
 }
