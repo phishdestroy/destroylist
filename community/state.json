@@ -1,12 +1,12 @@
 {
-  "OpenPhish": {
-    "hash": "650aa49b1d273b25bf7e910728497927e2ac822c21475aeee1f003a05c28cd8b",
-    "count": 260,
+  "MetaMask": {
+    "hash": "87f84bb61a96636485e2b29fb1f438def43678828d974f8c714d37c491e6ccb2",
+    "count": 101372,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "6293d4a4459e9011ca38aa2b6bfd5ff92e0305c0b97f0c7e535921afa7206d68",
-    "count": 101370,
+  "Codeesura": {
+    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
+    "count": 53990,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -19,9 +19,9 @@
     "count": 1456,
     "consecutive_failures": 0
   },
-  "Codeesura": {
-    "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
-    "count": 53990,
+  "OpenPhish": {
+    "hash": "650aa49b1d273b25bf7e910728497927e2ac822c21475aeee1f003a05c28cd8b",
+    "count": 260,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -30,23 +30,8 @@
     "consecutive_failures": 0
   },
   "Phishunt": {
-    "hash": "1b47ec1662ecd6d3157c82add3bee61927b0b920a1bc704559da62ee91631bc5",
-    "count": 756,
-    "consecutive_failures": 0
-  },
-  "DiscordPhishing_Dogino": {
-    "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
-    "count": 37078,
-    "consecutive_failures": 0
-  },
-  "SEAL": {
-    "hash": "38f2b2cf12f85302764645c733dd485d2b3cd43f4441e9dc85d328d8fe199e24",
-    "count": 100816,
-    "consecutive_failures": 0
-  },
-  "ScamSniffer": {
-    "hash": "0c61034b4687e86ce4ae761262a096c43eac1a5abbdee8d77cff47c1c44542bd",
-    "count": 355393,
+    "hash": "5d848c80a2fcc7a7318c32cf746c4edc0077d203b701704c9f51d7c423e86731",
+    "count": 768,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -54,10 +39,25 @@
     "count": 107934,
     "consecutive_failures": 0
   },
+  "SEAL": {
+    "hash": "049ec63b296456fe7c9181aaf1a1f4e10021c49dc71133ca6c26bd0e5b2ebe7e",
+    "count": 100817,
+    "consecutive_failures": 0
+  },
+  "DiscordPhishing_Dogino": {
+    "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
+    "count": 37078,
+    "consecutive_failures": 0
+  },
+  "ScamSniffer": {
+    "hash": "0c61034b4687e86ce4ae761262a096c43eac1a5abbdee8d77cff47c1c44542bd",
+    "count": 355393,
+    "consecutive_failures": 0
+  },
   "Enkrypt_Blacklist": {
     "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 1108622
+  "total_count": 1108833
 }
