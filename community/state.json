@@ -1,12 +1,12 @@
 {
   "OpenPhish": {
-    "hash": "eebdf0b061d9f1408631701a5851217a8f6b17f71de6b197177b69c45a3c3003",
-    "count": 261,
+    "hash": "650aa49b1d273b25bf7e910728497927e2ac822c21475aeee1f003a05c28cd8b",
+    "count": 260,
     "consecutive_failures": 0
   },
   "MetaMask": {
-    "hash": "dfc8f58ac09d16fb7a7135abf4a8dd2736be4771cb5f3511012100b62f9943c0",
-    "count": 101273,
+    "hash": "6293d4a4459e9011ca38aa2b6bfd5ff92e0305c0b97f0c7e535921afa7206d68",
+    "count": 101370,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -14,14 +14,14 @@
     "count": 53990,
     "consecutive_failures": 0
   },
+  "SPMedia_DetectedURLs": {
+    "hash": "35a6b0938eeb9309bdf00ba83089934e16d55f229c2415438be8041f413473f8",
+    "count": 1456,
+    "consecutive_failures": 0
+  },
   "Codeesura": {
     "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
     "count": 53990,
-    "consecutive_failures": 0
-  },
-  "SPMedia_DetectedURLs": {
-    "hash": "25da2d594c96726953e43f360c9c9237c88e60c40682c19fff486aad0ff5a16f",
-    "count": 1455,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -30,13 +30,8 @@
     "consecutive_failures": 0
   },
   "Phishunt": {
-    "hash": "3dc50ba37c4ea75efee81bab1c03a8b9349aee650cea87c3fb6c9184d331288e",
-    "count": 757,
-    "consecutive_failures": 0
-  },
-  "ScamSniffer": {
-    "hash": "0c61034b4687e86ce4ae761262a096c43eac1a5abbdee8d77cff47c1c44542bd",
-    "count": 355393,
+    "hash": "1b47ec1662ecd6d3157c82add3bee61927b0b920a1bc704559da62ee91631bc5",
+    "count": 756,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -45,8 +40,13 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "99252f987b00c22bdee40ba61762ef58b6db0119e0e8792d3de471e093cd1faf",
-    "count": 100717,
+    "hash": "38f2b2cf12f85302764645c733dd485d2b3cd43f4441e9dc85d328d8fe199e24",
+    "count": 100816,
+    "consecutive_failures": 0
+  },
+  "ScamSniffer": {
+    "hash": "0c61034b4687e86ce4ae761262a096c43eac1a5abbdee8d77cff47c1c44542bd",
+    "count": 355393,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -59,5 +59,5 @@
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 1108246
+  "total_count": 1108622
 }
