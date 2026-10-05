@@ -1,12 +1,12 @@
 {
   "OpenPhish": {
-    "hash": "d6cae4c80768b96279b5b771c0099b49f02552f5f6f9d63fccdced7173565150",
-    "count": 275,
+    "hash": "a3d2de1bfe5725f312e0563cbdf2ac02e21a1fbf1cf0a352ebf9707ed2da64ac",
+    "count": 259,
     "consecutive_failures": 0
   },
-  "Polkadot": {
-    "hash": "e6dab0ecf95948282d710ead422876cf27a5b4bb46e3e2656ee20eb8cfe4c739",
-    "count": 53990,
+  "MetaMask": {
+    "hash": "6cdbfa548757494b339ef371c4e908fb1929b4e09f372dde63fe47fa704e83d1",
+    "count": 101945,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -19,9 +19,9 @@
     "count": 53990,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "7e093374dcbf2d643c64d873e02ff6804371ad1cf08a9c9e537c369d0c317fce",
-    "count": 101856,
+  "Polkadot": {
+    "hash": "e6dab0ecf95948282d710ead422876cf27a5b4bb46e3e2656ee20eb8cfe4c739",
+    "count": 53990,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
@@ -29,14 +29,14 @@
     "count": 21852,
     "consecutive_failures": 0
   },
-  "Phishunt": {
-    "hash": "3b8a8b8b628c851dc8365cd001f9fc6df30a7becef0939c64e554edd9e6d6a5c",
-    "count": 798,
-    "consecutive_failures": 0
-  },
   "DiscordPhishing_Dogino": {
     "hash": "de5a0e8ec92d9054c3c49f750000f536e786886032255a6b6131c098c0f65250",
     "count": 37078,
+    "consecutive_failures": 0
+  },
+  "Phishunt": {
+    "hash": "5c5a8add50a0073455eb3ecb192f6a0d8493be0cbd1352e4869ddae954c51848",
+    "count": 784,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -45,13 +45,8 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "53db2a218567dd4e59d6271524881bb41680440ae85c46800a3fdae3b9880809",
-    "count": 101299,
-    "consecutive_failures": 0
-  },
-  "Enkrypt_Blacklist": {
-    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
-    "count": 243830,
+    "hash": "abb8bfa8988a7c0dcca2439a88eebb8bb97ec1866ae127cc74765c205d9a03e2",
+    "count": 101433,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +54,10 @@
     "count": 355393,
     "consecutive_failures": 0
   },
-  "total_count": 1111602
+  "Enkrypt_Blacklist": {
+    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
+    "count": 243830,
+    "consecutive_failures": 0
+  },
+  "total_count": 1112256
 }
