@@ -28,6 +28,9 @@ jobs:
       # Jekyll configuration is kept out of the repository root
       - name: Jekyll configuration
         run: cp .github/pages/_config.yml _config.yml
+      # Monthly reports page: data built from rootlist/YYYY/MM on every deploy
+      - name: Monthly reports data
+        run: python3 scripts/monthly-reports/build_data.py
       - uses: actions/jekyll-build-pages@v1
         with:
           source: ./
