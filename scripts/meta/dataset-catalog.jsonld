@@ -1,0 +1,817 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://phishdestroy.io/#organization",
+      "name": "PhishDestroy",
+      "url": "https://phishdestroy.io/",
+      "description": "Independent, non-commercial maintainer of DestroyList.",
+      "sameAs": [
+        "https://github.com/phishdestroy"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#website",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/",
+      "name": "DestroyList",
+      "description": "Free community phishing and scam blocklists for AdGuard, uBlock Origin, Pi-hole and DNS. Transparent sources, public threat intelligence API and free appeals.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#webpage",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/",
+      "name": "DestroyList — Community Phishing & Scam Blocklists",
+      "description": "Free community phishing and scam blocklists for AdGuard, uBlock Origin, Pi-hole and DNS. Transparent sources, public threat intelligence API and free appeals.",
+      "inLanguage": "en",
+      "dateModified": "2026-10-13",
+      "isPartOf": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#website"
+      },
+      "mainEntity": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "mentions": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#tool-directory"
+      }
+    },
+    {
+      "@type": "DataCatalog",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog",
+      "name": "DestroyList public threat intelligence catalog",
+      "description": "Public phishing and scam domain datasets, activity-checked subsets, root-domain projections and a false-positive allowlist. Compiled from project research and credited community sources.",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#downloads",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "isAccessibleForFree": true,
+      "dataset": [
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_dns"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_dns"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_content"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_content"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-allowlist"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-active_root_domains"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-online_root_domains"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-services_domains"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_root_domains"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_online_root_domains"
+        },
+        {
+          "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_services_domains"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#tool-directory",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#community-tools",
+      "name": "Community phishing investigation and reporting tools",
+      "description": "Independently operated scanners, reputation checks, infrastructure research and phishing reporting routes used by the maintainers. Non-exhaustive; access conditions vary.",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 21,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Bitdefender Link Checker",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-bitdefender",
+          "item": {
+            "@type": "WebPage",
+            "name": "Bitdefender Link Checker",
+            "url": "https://www.bitdefender.com/en-us/consumer/link-checker",
+            "description": "Check an individual link against phishing, fraudulent-site and malware signals."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "crt.sh",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-crtsh",
+          "item": {
+            "@type": "WebPage",
+            "name": "crt.sh",
+            "url": "https://crt.sh/",
+            "description": "Search public certificate-transparency records for domain names and related certificates."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DNSDumpster",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-dnsdumpster",
+          "item": {
+            "@type": "WebPage",
+            "name": "DNSDumpster",
+            "url": "https://dnsdumpster.com/",
+            "description": "Explore DNS records and related hosts to understand a domain’s exposed infrastructure."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Google Safe Browsing",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-google",
+          "item": {
+            "@type": "WebPage",
+            "name": "Google Safe Browsing",
+            "url": "https://safebrowsing.google.com/safebrowsing/report_phish/",
+            "description": "Send a suspected phishing page to Google for review by its Safe Browsing service."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "isitphish",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-isitphish",
+          "item": {
+            "@type": "WebPage",
+            "name": "isitphish",
+            "url": "https://www.isitphish.com/",
+            "description": "Get an automated phishing assessment to support your investigation of a suspicious URL."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Microsoft Security Intelligence",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-microsoft",
+          "item": {
+            "@type": "WebPage",
+            "name": "Microsoft Security Intelligence",
+            "url": "https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest",
+            "description": "Report a phishing page or other unsafe website through Microsoft’s guest submission form."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Netcraft",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-netcraft",
+          "item": {
+            "@type": "WebPage",
+            "name": "Netcraft",
+            "url": "https://report.netcraft.com/report",
+            "description": "Send suspected phishing, malware and suspicious URLs to Netcraft’s reporting service."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Norton Safe Web",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-norton",
+          "item": {
+            "@type": "WebPage",
+            "name": "Norton Safe Web",
+            "url": "https://safeweb.norton.com/",
+            "description": "Consult Norton’s website reputation information as another signal in a URL investigation."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "phish.report",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-phishreport",
+          "item": {
+            "@type": "WebPage",
+            "name": "phish.report",
+            "url": "https://phish.report/analysis",
+            "description": "Analyse suspected phishing, inspect hosting context and find reporting routes."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Phishs",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-phishs",
+          "item": {
+            "@type": "WebPage",
+            "name": "Phishs",
+            "url": "https://phishs.com/",
+            "description": "Check URLs for phishing and malicious content, and inspect the resulting risk report."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "PhishTank",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-phishtank",
+          "item": {
+            "@type": "WebPage",
+            "name": "PhishTank",
+            "url": "https://phishtank.org/",
+            "description": "Browse community phishing reports, contribute a suspected phish and help verify reports."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "PolySwarm",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-polyswarm",
+          "item": {
+            "@type": "WebPage",
+            "name": "PolySwarm",
+            "url": "https://polyswarm.network/",
+            "description": "Explore URL and file intelligence from multiple threat-detection engines."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Quttera",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-quttera",
+          "item": {
+            "@type": "WebPage",
+            "name": "Quttera",
+            "url": "https://quttera.com/website-malware-scanner",
+            "description": "Scan publicly accessible website content for suspicious scripts and malicious code."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "ScamAdviser",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-scamadviser",
+          "item": {
+            "@type": "WebPage",
+            "name": "ScamAdviser",
+            "url": "https://www.scamadviser.com/",
+            "description": "Review website trust signals and community context when assessing a suspicious site."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Spamhaus",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-spamhaus",
+          "item": {
+            "@type": "WebPage",
+            "name": "Spamhaus",
+            "url": "https://www.spamhaus.org/",
+            "description": "Investigate IP and domain reputation through Spamhaus’s public resources and checker."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Sucuri SiteCheck",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-sucuri",
+          "item": {
+            "@type": "WebPage",
+            "name": "Sucuri SiteCheck",
+            "url": "https://sitecheck.sucuri.net/",
+            "description": "Check visible website content for malware, blocklist status and common security issues."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Symantec Site Review",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-bluecoat",
+          "item": {
+            "@type": "WebPage",
+            "name": "Symantec Site Review",
+            "url": "https://sitereview.bluecoat.com/#/",
+            "description": "Look up a URL’s category and request a review when its classification appears incorrect."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "urlquery",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-urlquery",
+          "item": {
+            "@type": "WebPage",
+            "name": "urlquery",
+            "url": "https://urlquery.net/",
+            "description": "Inspect website activity, potential malware and reputation through URL analysis reports."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "urlscan.io",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-urlscan",
+          "item": {
+            "@type": "WebPage",
+            "name": "urlscan.io",
+            "url": "https://urlscan.io/",
+            "description": "Capture browser behavior, contacted infrastructure and page evidence, or search existing scans."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "VirusTotal",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-virustotal",
+          "item": {
+            "@type": "WebPage",
+            "name": "VirusTotal",
+            "url": "https://www.virustotal.com/gui/home/url",
+            "description": "Compare URL assessments and inspect domain context across multiple security sources."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Yandex Search",
+          "url": "https://phishdestroy.github.io/destroylist/scripts/#tool-yandex",
+          "item": {
+            "@type": "WebPage",
+            "name": "Yandex Search",
+            "url": "https://yandex.com/support/search/en/troubleshooting/delspam",
+            "description": "Use Yandex Search’s feedback route to report spam or malicious pages in search."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary",
+      "name": "DestroyList Primary",
+      "description": "Curated phishing and scam indicators maintained by the project. This is the full published feed, not a count of active sites or confirmed takedowns.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "phishing",
+        "scam domains",
+        "threat intelligence",
+        "domain blocklist"
+      ],
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Primary JSON",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Primary TXT",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt"
+        }
+      ],
+      "variableMeasured": "Published domain indicators",
+      "license": "https://github.com/phishdestroy/destroylist/blob/main/LICENSE"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_dns",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_dns",
+      "name": "DestroyList Primary Live",
+      "description": "The subset of the primary feed whose entries resolve in DNS at the latest published check. DNS resolution alone does not prove malicious content.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "phishing",
+        "scam domains",
+        "threat intelligence",
+        "domain blocklist"
+      ],
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Primary Live JSON",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Primary Live TXT",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.txt"
+        }
+      ],
+      "variableMeasured": "Published domain indicators",
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary"
+      },
+      "license": "https://github.com/phishdestroy/destroylist/blob/main/LICENSE"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community",
+      "name": "DestroyList Community",
+      "description": "Indicators aggregated from configured public upstream feeds and the primary list. Source licenses remain applicable, and an entry may appear in more than one feed.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "phishing",
+        "scam domains",
+        "threat intelligence",
+        "domain blocklist"
+      ],
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Community JSON",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Community TXT",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.txt"
+        }
+      ],
+      "variableMeasured": "Published domain indicators",
+      "isBasedOn": [
+        "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json",
+        "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json",
+        "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt",
+        "https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt",
+        "https://raw.githubusercontent.com/nikolaischunk/discord-phishing-links/main/domain-list.json",
+        "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json",
+        "https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json",
+        "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt",
+        "https://phishunt.io/feed.txt",
+        "https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json",
+        "https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json",
+        "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt",
+        "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt"
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_dns",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_dns",
+      "name": "DestroyList Community Live",
+      "description": "The DNS-resolving subset of the community dataset at the latest published check. A domain missing from this subset is not established as safe.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "phishing",
+        "scam domains",
+        "threat intelligence",
+        "domain blocklist"
+      ],
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Community Live JSON",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Community Live TXT",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.txt"
+        }
+      ],
+      "variableMeasured": "Published domain indicators",
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_content",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_content",
+      "name": "DestroyList Primary Content",
+      "description": "Primary indicators passing additional HTTP content checks. Cloaking and changing content can limit coverage; use the full feed when broader coverage is needed.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "phishing",
+        "scam domains",
+        "threat intelligence",
+        "domain blocklist"
+      ],
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Primary Content JSON",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Primary Content TXT",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.txt"
+        }
+      ],
+      "variableMeasured": "Published domain indicators",
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary"
+      },
+      "license": "https://github.com/phishdestroy/destroylist/blob/main/LICENSE"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_content",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_content",
+      "name": "DestroyList Community Content",
+      "description": "Community indicators passing additional HTTP content checks. This is a checked subset, not a comprehensive record of every phishing domain.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "phishing",
+        "scam domains",
+        "threat intelligence",
+        "domain blocklist"
+      ],
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Community Content JSON",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Community Content TXT",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.txt"
+        }
+      ],
+      "variableMeasured": "Published domain indicators",
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-allowlist",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-allowlist",
+      "name": "DestroyList Allowlist",
+      "description": "Reviewed domains cleared from false-positive listings. Maintained manually to support corrections and avoid repeated false-positive inclusion.",
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "isAccessibleForFree": true,
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "license": "https://github.com/phishdestroy/destroylist/blob/main/LICENSE",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-active_root_domains",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-active_root_domains",
+      "name": "DestroyList Primary roots",
+      "description": "Root-domain projection of the primary dataset; subdomains and shared hosting infrastructure are excluded.",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-online_root_domains",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-online_root_domains",
+      "name": "DestroyList Primary live roots",
+      "description": "DNS-active root-domain projection of the primary dataset; shared hosting infrastructure is excluded.",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_dns"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-services_domains",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-services_domains",
+      "name": "DestroyList Primary service subdomains",
+      "description": "Individual hosting-platform subdomains from the primary dataset. These should not be treated as a listing of the entire shared hosting provider.",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_root_domains",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_root_domains",
+      "name": "DestroyList Community roots",
+      "description": "Root-domain projection of the community dataset; subdomains and shared hosting infrastructure are excluded.",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_online_root_domains",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_online_root_domains",
+      "name": "DestroyList Community live roots",
+      "description": "DNS-active root-domain projection of the community dataset; shared hosting infrastructure is excluded.",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_dns"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_services_domains",
+      "url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_services_domains",
+      "name": "DestroyList Community service subdomains",
+      "description": "Individual hosting-platform subdomains from the community dataset. These should not be treated as a listing of the entire shared hosting provider.",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@id": "https://phishdestroy.io/#organization"
+      },
+      "includedInDataCatalog": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#catalog"
+      },
+      "isBasedOn": {
+        "@id": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community"
+      },
+      "usageInfo": "https://phishdestroy.github.io/destroylist/scripts/#reuse",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt"
+        }
+      ]
+    }
+  ]
+}
