@@ -65,8 +65,8 @@ HISTORICAL_ARTIFACTS = (
     "archives/weekly/2026-W25.json",
     "archives/weekly/2026-W30.json",
     "archives/weekly/2026-W31.json",
-    "changes/2026-07/2026-07-26.json",
-    "changes/2026-08/2026-08-01.json",
+    "archives/changes/2026-07/2026-07-26.json",
+    "archives/changes/2026-08/2026-08-01.json",
     "rootlist/2026/06/2026-06-threats.json",
 )
 
@@ -274,7 +274,7 @@ class FalsePositiveCleanupTests(unittest.TestCase):
             )
 
         july_changes = json.loads(
-            (PROJECT_ROOT / "changes/2026-07/2026-07-26.json").read_text()
+            (PROJECT_ROOT / "archives/changes/2026-07/2026-07-26.json").read_text()
         )
         self.assertEqual(
             (july_changes["primary_count"], july_changes["community_count"]),
@@ -282,7 +282,7 @@ class FalsePositiveCleanupTests(unittest.TestCase):
         )
 
         august_changes = json.loads(
-            (PROJECT_ROOT / "changes/2026-08/2026-08-01.json").read_text()
+            (PROJECT_ROOT / "archives/changes/2026-08/2026-08-01.json").read_text()
         )
         self.assertEqual(
             (august_changes["primary_count"], august_changes["community_count"]),

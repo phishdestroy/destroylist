@@ -144,14 +144,14 @@ def get_delta_from_snapshot(key_primary: str, key_community: str, current_primar
 
 
 def save_daily_diff(now: datetime):
-    """Write a small daily added/removed diff to changes/YYYY-MM/DD.json.
+    """Write a small daily added/removed diff to archives/changes/YYYY-MM/DD.json.
 
     These files stay under GitHub's code-search indexing limit, so every
     domain that was ever added or removed remains searchable even after it
     leaves the live lists. Non-fatal: any error is logged and skipped.
     """
     try:
-        changes_dir = PROJECT_ROOT / "changes" / now.strftime("%Y-%m")
+        changes_dir = PROJECT_ROOT / "archives" / "changes" / now.strftime("%Y-%m")
         out_file = changes_dir / f"{now.strftime('%Y-%m-%d')}.json"
         if out_file.exists():
             return
