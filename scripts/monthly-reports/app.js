@@ -4,7 +4,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 let data,year,years=[],selected=0,mode='monthly',rows=[],filtered=[],page=0,request=0;const cache=new Map(),size=20,templates=[];
 const mm=i=>data.months[i].meta.month.slice(5),monthName=i=>names[Number(mm(i))-1];
 const delta=i=>i&&data.months[i-1].meta.total?(data.months[i].meta.total/data.months[i-1].meta.total-1)*100:null;
-function change(i){const d=delta(i);return d===null?'No prior month':`${d>=0?'+':''}${d.toLocaleString('en-US',{maximumFractionDigits:1})}% vs previous`;}
+function change(i){if(data.months[i].meta.ongoing)return 'Month in progress';const d=delta(i);return d===null?'No prior month':`${d>=0?'+':''}${d.toLocaleString('en-US',{maximumFractionDigits:1})}% vs previous`;}
 function drawChart(){let sum=0;const vals=data.months.map(m=>mode==='monthly'?m.meta.total:(sum+=m.meta.total));const max=Math.ceil(Math.max(...vals)/5000)*5000;
 $('#axis').innerHTML=[max,max*.75,max*.5,max*.25,0].map(n=>`<span>${n>=1000?(n/1000).toLocaleString('en-US',{maximumFractionDigits:1})+'k':n}</span>`).join('');
 $('#bars').innerHTML=vals.map((v,i)=>`<button class="barcol ${selected===i?'selected':''}" data-month="${i}" aria-pressed="${selected===i}" aria-label="${monthName(i)}: ${fmt(v)} ${mode==='monthly'?'reported domains':'cumulative reported domains'}. Open report." title="${monthName(i)}: ${fmt(v)}"><span class="value">${fmt(v)}</span><span class="bar" style="height:${v/max*83}%"></span><span class="month-label">${monthName(i).slice(0,3).toUpperCase()}</span></button>`).join('');
@@ -36,9 +36,9 @@ document.querySelectorAll('a[href*="2025"]').forEach(a=>templates.push([a,'href'
 for(const [el,attr,orig] of templates){const v=fix(orig);if(attr==='nodeValue'||attr==='title')el[attr]=v;else el.setAttribute(attr,v);}
 const big=document.querySelector('.bigyear span');if(big)big.textContent=String(year).slice(2);}
 async function loadYear(y,monthParam){const r=await fetch(`data/${y}.json`);if(!r.ok)throw Error('Data unavailable');data=await r.json();year=y;rows=[];filtered=[];
-const months=data.months,total=months.reduce((a,m)=>a+m.meta.total,0),peak=months.reduce((a,b)=>a.meta.total>b.meta.total?a:b);yearText(months.length);
-$('#total').textContent=fmt(total);$('#peak').textContent=peak.meta.name.split(' ')[0];$('#peak-note').textContent=`${fmt(peak.meta.total)} reported domains`;
-const latest=years.length&&y===years[years.length-1].year;$('#snapshot-note').textContent=`${y} archive · ${months.length} monthly report${months.length===1?'':'s'} · ${latest?'Updated automatically from the repository':'Historical reports'} · Data built ${data.retrieved_at.slice(0,10)}`;
+const latest=years.length&&y===years[years.length-1].year;const months=data.months,total=months.reduce((a,m)=>a+m.meta.total,0),peak=months.reduce((a,b)=>a.meta.total>b.meta.total?a:b);yearText(months.length);
+$('#total').textContent=fmt(total);$('#report-count').textContent=months.length;$('#archive-tag').textContent=latest?'LIVE ARCHIVE':'HISTORICAL SNAPSHOT';const word=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve'][months.length]||months.length;$('#explore-title').textContent=`${word} month${months.length===1?'':'s'}. More context.`;$('#peak').textContent=peak.meta.name.split(' ')[0];$('#peak-note').textContent=`${fmt(peak.meta.total)} reported domains`;
+$('#snapshot-note').textContent=`${y} archive · ${months.length} monthly report${months.length===1?'':'s'} · ${latest?'Updated automatically from the repository':'Historical reports'} · Data built ${data.retrieved_at.slice(0,10)}`;
 $('#provenance-revision').textContent=` Repository revision: ${data.commit}. Built: ${data.retrieved_at.slice(0,10)}.`;
 $('#years').innerHTML=years.map(x=>`<button class="${x.year===y?'selected':''}" data-year="${x.year}" aria-pressed="${x.year===y}">${x.year}</button>`).join('');
 const idx=months.findIndex(m=>m.meta.month.slice(5)===monthParam);selectMonth(idx>=0?idx:months.length-1);}
