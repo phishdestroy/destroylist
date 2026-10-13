@@ -1,0 +1,53 @@
+'use strict';
+(()=>{
+const formats=__FORMATS__;
+const raw=__RAW__;
+const snapshot=__SNAPSHOT__;
+const snapshotStamp=snapshot.generatedAt.slice(0,16).replace("T"," ")+" UTC";
+const $=id=>document.getElementById(id);
+const all=(s)=>Array.from(document.querySelectorAll(s));
+// Animation is an enhancement, never a precondition for readable content.
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+const motionButton=$('motion-toggle');
+let storedMotion=null;try{storedMotion=localStorage.getItem('destroylist-motion');}catch{}
+let motionOn=!motionPreference.matches&&storedMotion!=='off';
+const runningAnimations=new Set();
+function applyMotion(){document.documentElement.dataset.motion=motionOn?'on':'off';motionButton.setAttribute('aria-pressed',String(motionOn));motionButton.textContent=motionPreference.matches?'Motion: reduced':'Motion: '+(motionOn?'on':'off');motionButton.disabled=motionPreference.matches;const heroMotion=$('hero-motion');if(heroMotion){heroMotion.setAttribute('aria-pressed',String(motionOn));heroMotion.textContent=motionPreference.matches?'Reduced motion':motionOn?'Ⅱ  Pause animation':'▷  Play animation';heroMotion.disabled=motionPreference.matches;}if(!motionOn){for(const animation of runningAnimations)animation.cancel();runningAnimations.clear();}}
+function animateElement(el,delay=0,subtle=false){if(!motionOn||!el||typeof el.animate!=='function')return;const animation=el.animate([{opacity:subtle ? 0.55 : 0.72,transform:'translateY('+(subtle?3:12)+'px)'},{opacity:1,transform:'translateY(0)'}],{duration:subtle?320:520,delay,easing:'cubic-bezier(.2,.7,.2,1)'});runningAnimations.add(animation);animation.onfinish=()=>runningAnimations.delete(animation);animation.oncancel=()=>runningAnimations.delete(animation);}
+applyMotion();
+motionButton.addEventListener('click',()=>{motionOn=!motionOn&&!motionPreference.matches;storedMotion=motionOn?'on':'off';try{localStorage.setItem('destroylist-motion',motionOn?'on':'off');}catch{}applyMotion();});
+$('hero-motion')?.addEventListener('click',()=>motionButton.click());
+if(motionPreference.addEventListener)motionPreference.addEventListener('change',()=>{motionOn=!motionPreference.matches&&storedMotion!=='off';try{motionOn=!motionPreference.matches&&localStorage.getItem('destroylist-motion')!=='off';}catch{}applyMotion();});
+all('.hero-copy > *, .community-panel').forEach((el,i)=>animateElement(el,Math.min(i*45,225)));
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){animateElement(entry.target);observer.unobserve(entry.target);}});},{threshold:.12});all('.section-heading, .format-choice, .source, .pipeline article, .principle-list article, .distribution article, .ecosystem-grid > a, .flow-step, .beyond-copy, .metamask-story, .community-tool, .tools-manifesto, .start-route').forEach(el=>observer.observe(el));}
+function renderCount(el,value){const next=countFormat.format(value);const changed=el.textContent!==next;el.textContent=next;if(changed)animateElement(el,0,true);}
+
+let toastTimer;
+function toast(message){$('toast').textContent=message;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3200);}
+async function copy(text,fallbackId,successMessage){try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text);toast(successMessage||'Copied to clipboard.');}catch{toast('Clipboard unavailable. The text has been selected; use your device’s Copy command.');const target=fallbackId?$(fallbackId):text===$('download-url').textContent?$('download-url'):$('api-code');if(target.tagName==='INPUT'){target.value=text;target.hidden=false;target.focus();target.select();return;}const range=document.createRange();range.selectNodeContents(target);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);}}
+const menu=document.querySelector('.menu-toggle');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));$('navigation').classList.toggle('is-open',open);});
+all('#navigation a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');$('navigation').classList.remove('is-open');}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){menu.setAttribute('aria-expanded','false');$('navigation').classList.remove('is-open');menu.focus();}});
+const feedDescriptions={primary:'Project-curated indicators, including entries that may no longer resolve.',primary_active:'Primary entries resolving in DNS at the latest check. This subset can omit dormant threats.',community:'The primary list combined with configured community feeds. Review upstream terms before redistribution.',community_active:'DNS-resolving entries from the combined community feed. Resolving is an activity signal, not a verdict.'};
+const setupParams=new URLSearchParams(location.search);if(all('#feed-select option').some(option=>option.value===setupParams.get('feed')))$('feed-select').value=setupParams.get('feed');if(formats.some(format=>format[2]===setupParams.get('format')))$('format-select').value=setupParams.get('format');
+function setupLink(){const url=new URL(location.href);url.search='';url.hash='';url.searchParams.set('feed',$('feed-select').value);url.searchParams.set('format',$('format-select').value);url.hash='subscription';return url.href;}
+if(!/^https?:$/.test(location.protocol))$('share-setup').hidden=true;
+$('share-setup').addEventListener('click',()=>copy(setupLink(),'setup-link','Setup link copied. It keeps your dataset and format.'));
+function updateDownload(){const format=formats.find(f=>f[2]===$('format-select').value)||formats[0];const url=raw+'rootlist/formats/'+$('feed-select').value+'/'+format[2];$('download-url').textContent=url;$('download-link').href=url;$('format-badge').textContent=format[0];$('format-name').textContent=format[1];$('format-use').textContent=format[3];$('format-example').textContent=format[4];$('feed-explanation').textContent=feedDescriptions[$('feed-select').value];$('setup-link').value=setupLink();}
+$('feed-select').addEventListener('change',updateDownload);$('format-select').addEventListener('change',updateDownload);$('copy-feed').addEventListener('click',()=>copy($('download-url').textContent));
+all('[data-format]').forEach(button=>button.addEventListener('click',()=>{$('format-select').value=button.dataset.format;updateDownload();$('subscription').scrollIntoView({behavior:motionOn?'smooth':'instant',block:'start'});$('format-select').focus({preventScroll:true});}));
+updateDownload();
+__DIRECTORIES__
+const examples={check:"curl --fail-with-body \\\n  'https://api.destroy.tools/v1/check?domain=example.com'",bulk:"curl --fail-with-body -X POST \\\n  'https://api.destroy.tools/v1/check/bulk' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"domains\":[\"example.com\",\"example.org\"]}'",feed:"curl --fail-with-body --compressed \\\n  -o primary.txt \\\n  'https://api.destroy.tools/v1/feed/primary.txt'"};
+all('[data-example]').forEach(button=>button.addEventListener('click',()=>{all('[data-example]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));$('api-code').textContent=examples[button.dataset.example];}));$('copy-api').addEventListener('click',()=>copy($('api-code').textContent));
+async function getJSON(url){const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),12000);try{const res=await fetch(url,{signal:controller.signal,credentials:'omit',headers:{'Accept':'application/json'}});if(!res.ok)throw new Error('HTTP '+res.status);return await res.json();}finally{clearTimeout(timeout);}}
+// This page uses feed-entry metrics only. API normalized-domain counts are a different measure.
+const metricURL='https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/metrics.json';
+const metricKeys=['primary','primary_dns','community','community_dns','primary_content','community_content'];
+const countFormat=new Intl.NumberFormat('en-US');
+let refreshing=false;
+function parseCounter(data){if(typeof data==='number'&&Number.isFinite(data)&&data>=0)return data;if(typeof data?.count==='number'&&Number.isFinite(data.count)&&data.count>=0)return data.count;if(data?.schemaVersion&&data.message!==undefined){const s=String(data.message).replace(/[+,\s]/g,'');if(/^\d+$/.test(s))return Number(s);}return null;}
+async function loadVelocity(){const result=await Promise.allSettled(['dns/today_added.json','dns/today_community.json'].map(file=>getJSON('https://raw.githubusercontent.com/phishdestroy/destroylist/main/'+file)));let failures=0;result.forEach((r,i)=>{const n=r.status==='fulfilled'?parseCounter(r.value):null;$(i?'today-community':'today-primary').textContent=n!==null?'+'+countFormat.format(n):'—';if(n===null)failures++;});$('velocity-status').textContent=failures?'One or more daily counters are unavailable.':'Published daily counters · UTC day';}
+async function loadStats(){if(refreshing)return;refreshing=true;$('refresh-stats').disabled=true;$('stats-status').textContent='Snapshot '+snapshotStamp+' · checking for updates…';$('stats-dot').className='status-dot';const velocity=loadVelocity();try{const data=await getJSON(metricURL);if(data?.countType!=='feed_entries'||!data.counts)throw new Error('Unexpected metrics');let valid=0;for(const key of metricKeys){const value=data.counts[key]?.value;if(Number.isSafeInteger(value)&&value>=0){valid++;all('[data-count="'+key+'"]').forEach(el=>renderCount(el,value));}else{all('[data-count="'+key+'"]').forEach(el=>el.textContent='—');}}if(!valid)throw new Error('No counts');const date=new Date(data.generatedAt);const stamp=Number.isFinite(date.getTime())?date.toISOString().replace('T',' ').slice(0,16)+' UTC':'timestamp unavailable';const stale=Number.isFinite(date.getTime())&&Date.now()-date.getTime()>48*60*60*1000;$('stats-status').textContent=(stale?'Older snapshot · ':valid===metricKeys.length?'Published ':'Partial snapshot · ')+stamp;$('stats-dot').className='status-dot '+(stale||valid<metricKeys.length?'error':'good');}catch{for(const [key,record] of Object.entries(snapshot.counts)){all('[data-count="'+key+'"]').forEach(el=>renderCount(el,record.value));}$('stats-status').textContent='Snapshot '+snapshotStamp+' · live refresh unavailable.';$('stats-dot').className='status-dot error';}finally{await velocity;refreshing=false;$('refresh-stats').disabled=false;}}
+$('refresh-stats').addEventListener('click',loadStats);loadStats();
+})();

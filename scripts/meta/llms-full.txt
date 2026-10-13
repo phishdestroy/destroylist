@@ -1,0 +1,305 @@
+# DestroyList: community phishing and scam blocklists
+
+Canonical page: https://phishdestroy.github.io/destroylist/scripts/
+Maintainer: PhishDestroy — https://phishdestroy.io/
+Reference reviewed: 2026-10-13
+
+DestroyList is an independent, non-commercial public resource for sharing phishing and scam domain indicators. It combines project research with configured upstream feeds and credits the wider community. Public data, API access and appeals are free. Listings and corrections follow evidence; there are no paid delistings.
+
+## One shared mission: stop phishing
+
+The common objective is to help people avoid phishing through shared observations, analysis and defensive intelligence. Published indicators are starting points for investigation, filtering, detection rules and further research. Counts describe files; they do not measure the total work behind them or downstream protection. The page's animated network illustrates this idea; it is not live attack telemetry.
+
+MetaMask publishes Web3 phishing indicators at https://github.com/MetaMask/eth-phishing-detect . Other defenders can study and reuse this public work under its source license: https://github.com/MetaMask/eth-phishing-detect/blob/main/LICENSE . DestroyList's configured upstream sources include MetaMask; see the aggregation configuration linked below. Attribution is not a claim of sponsorship or endorsement.
+
+## Finding the right starting point
+
+Start with https://phishdestroy.github.io/destroylist/scripts/#start for three routes: add a blocklist to a compatible client, investigate or report a link, or integrate the public API. Listings can be appealed at https://phishdestroy.github.io/destroylist/scripts/#appeals . The subscription selector at https://phishdestroy.github.io/destroylist/scripts/#subscription explains primary/community and full/live datasets. Its copyable setup link preserves the chosen dataset and format.
+
+Source and tool directories are alphabetical. Their initial view is compact; search and filters cover every entry, and Show all reveals the complete directory. All entries remain present in the generated HTML. Individual tool links open their cards even when outside the initial view.
+
+## Scope and interpretation
+
+The primary feed contains project-curated indicators. Community feeds aggregate public sources and the primary list. DNS-active subsets reflect resolving entries, not proof of malicious content. Content-verified subsets add HTTP checks and can miss cloaking. An unlisted domain is not a safety certificate. The project submits evidence to providers; registrars and hosts decide enforcement.
+
+Published feed-entry counts and API normalized unique-domain counts are different measures. Lists overlap. Counts are not confirmed takedowns. Use the timestamp returned with the metrics, not the date a reader opens the page.
+
+Live feed metrics: https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/metrics.json
+API statistics: https://api.destroy.tools/v1/stats
+
+## Downloads
+
+Primary and community lists are available in JSON and plain text. DNS-oriented formats include Hosts, AdBlock for AdGuard and uBlock Origin, Dnsmasq, Unbound and RPZ, with Redis output for application use. Root projections and hosting-platform subdomains are separate datasets. Inspect file scope before blocking an entire parent domain.
+
+Download selector: https://phishdestroy.github.io/destroylist/scripts/#downloads
+Dataset catalog: https://phishdestroy.github.io/destroylist/datasets.json
+Schema.org catalog: https://phishdestroy.github.io/destroylist/dataset-catalog.jsonld
+
+## Public API
+
+Documentation: https://api.destroy.tools/
+OpenAPI contract: https://api.destroy.tools/openapi.json
+Base URL: https://api.destroy.tools
+
+GET /v1/check?domain=example.com — a domain check
+POST /v1/check/bulk — at most 500 domains per request
+GET /v1/search?q=example — substring search
+GET /v1/feed/{list} — a complete feed
+GET /v1/stats — counts and synchronization
+GET /v1/health — service health and freshness
+GET /v1/feeds — available files and checksums
+GET /v1/feed/{list}/delta — incremental additions and removals
+
+No API key is required. Handle errors, timeouts and rate limits. Missing risk fields and failed requests do not mean zero risk. Current API behavior and limits are documented at the API origin.
+
+## Source attribution and reuse
+
+Configured upstream feeds: 12.
+Credited source and community projects: 30.
+Current configuration: https://github.com/phishdestroy/destroylist/blob/main/scripts/smart_aggregator.py
+Complete source directory: https://phishdestroy.github.io/destroylist/sources.json
+
+Configured upstreams are marked separately from broader community credits. Attribution, logos and public maintainer avatars do not imply endorsement or a formal partnership. The repository declares MIT; upstream data may have separate conditions. Reuse must respect those conditions. Community intelligence is shared for defensive cooperation, not claimed as an exclusive discovery.
+
+Repository license: https://github.com/phishdestroy/destroylist/blob/main/LICENSE
+Reuse notes: https://phishdestroy.github.io/destroylist/scripts/#reuse
+
+## Community investigation tools
+
+The maintainers use and credit independently operated scanners, reputation checks, infrastructure research services and reporting channels. Many basic functions are free and work without registration. This is not universal: PhishTank submissions require a free account, PolySwarm has limited anonymous access, and other services apply their own quotas or paid tiers. Public submissions can help other defenders, but visibility and sharing vary by provider. Public scans may expose URLs; check the selected visibility before sharing private links. This directory is non-exhaustive and is distinct from configured upstream feeds.
+
+Tool directory: https://phishdestroy.github.io/destroylist/scripts/#community-tools
+Machine-readable directory and provider references: https://phishdestroy.github.io/destroylist/tools.json
+
+## Appeals and corrections
+
+Submit or track: https://phishdestroy.io/appeals/
+Public issue: https://github.com/phishdestroy/destroylist/issues/new
+
+Appeals are free. The official form accepts a domain and brief context, without requiring an account or ownership proof. The official policy describes its 48-hour review window and auto-approval when no reviewer confirms the listing in time. Refer to that page for current timing and rules. External services control their own refresh schedules.
+
+## Distribution, archives and community
+
+Repository: https://github.com/phishdestroy/destroylist
+Archives: https://github.com/phishdestroy/destroylist/tree/main/archives
+Daily changes: https://github.com/phishdestroy/destroylist/tree/main/changes
+Public commits: https://github.com/phishdestroy/destroylist/commits/main/
+Dataset distribution: https://huggingface.co/datasets/phishdestroy/destroylist
+OTX pulses: https://otx.alienvault.com/user/phishdestroy/pulses
+Toolkit: https://destroy.tools/
+Domain analyzer: https://analyze.destroy.tools/
+URL scanner: https://ban.destroy.tools/
+Threat reports: https://t.me/PhishDestroy_bot
+Alerts: https://t.me/destroy_phish
+Contact: contact@phishdestroy.io
+
+Older snapshots: https://github.com/phishdestroy/destroylist/releases/tag/archives
+
+## Dataset download directory
+
+### Primary
+Curated phishing and scam indicators maintained by the project. This is the full published feed, not a count of active sites or confirmed takedowns.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt
+
+### Primary Live
+The subset of the primary feed whose entries resolve in DNS at the latest published check. DNS resolution alone does not prove malicious content.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.txt
+
+### Community
+Indicators aggregated from configured public upstream feeds and the primary list. Source licenses remain applicable, and an entry may appear in more than one feed.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.txt
+
+### Community Live
+The DNS-resolving subset of the community dataset at the latest published check. A domain missing from this subset is not established as safe.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.txt
+
+### Primary Content
+Primary indicators passing additional HTTP content checks. Cloaking and changing content can limit coverage; use the full feed when broader coverage is needed.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.txt
+
+### Community Content
+Community indicators passing additional HTTP content checks. This is a checked subset, not a comprehensive record of every phishing domain.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.txt
+
+### Allowlist
+Reviewed domains cleared from false-positive listings. Maintained manually to support corrections and avoid repeated false-positive inclusion.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json
+
+### Primary roots
+Root-domain projection of the primary dataset; subdomains and shared hosting infrastructure are excluded.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt
+
+### Primary live roots
+DNS-active root-domain projection of the primary dataset; shared hosting infrastructure is excluded.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt
+
+### Primary service subdomains
+Individual hosting-platform subdomains from the primary dataset. These should not be treated as a listing of the entire shared hosting provider.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt
+
+### Community roots
+Root-domain projection of the community dataset; subdomains and shared hosting infrastructure are excluded.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt
+
+### Community live roots
+DNS-active root-domain projection of the community dataset; shared hosting infrastructure is excluded.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt
+
+### Community service subdomains
+Individual hosting-platform subdomains from the community dataset. These should not be treated as a listing of the entire shared hosting provider.
+- JSON: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json
+- TXT: https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt
+
+## Complete source directory
+
+- AdGuard DNS (community_credit): https://github.com/AdguardTeam/AdGuardSDNSFilter
+- Blackbook (community_credit): https://github.com/stamparm/blackbook
+- Blocklist Project (community_credit): https://github.com/blocklistproject/Lists
+- ChainPatrol (community_credit): https://app.chainpatrol.io/
+- Codeesura (configured_upstream): https://github.com/codeesura/Anti-phishing-extension | Feed: https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json
+- CombinedPrivacy (community_credit): https://github.com/bongochong/CombinedPrivacyBlockLists
+- Crypto Firewall (configured_upstream): https://github.com/chartingshow/crypto-firewall | Feed: https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt
+- Discord Phishing · Dogino (configured_upstream): https://github.com/Dogino/Discord-Phishing-URLs | Feed: https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt
+- Discord Phishing · Nikolai (configured_upstream): https://github.com/nikolaischunk/discord-phishing-links | Feed: https://raw.githubusercontent.com/nikolaischunk/discord-phishing-links/main/domain-list.json
+- Enkrypt (configured_upstream): https://github.com/enkryptcom/phishing-detect | Feed: https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json
+- HaGeZi (community_credit): https://github.com/hagezi/dns-blocklists
+- hosts.extras (community_credit): https://github.com/FadeMind/hosts.extras
+- hostsVN (community_credit): https://github.com/bigdargon/hostsVN
+- Inversion DNSBL (community_credit): https://github.com/elliotwutingfeng/Inversion-DNSBL-Blocklists
+- KAD · PolishFilters (community_credit): https://github.com/PolishFiltersTeam/KADhosts
+- KADhosts · FiltersHeroes (community_credit): https://github.com/FiltersHeroes/KADhosts
+- MetaMask (configured_upstream): https://github.com/MetaMask/eth-phishing-detect | Feed: https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json
+- OpenPhish (configured_upstream): https://openphish.com/ | Feed: https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt
+- Phishing.Database (community_credit): https://github.com/Ultimate-Hosts-Blacklist/Phishing.Database | Feed: https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list
+- PhishTank (community_credit): https://phishtank.org/
+- Phishunt (configured_upstream): https://phishunt.io/ | Feed: https://phishunt.io/feed.txt
+- Polkadot JS (configured_upstream): https://github.com/polkadot-js/phishing | Feed: https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json
+- Scam Blocklist · durablenapkin (community_credit): https://github.com/durablenapkin/scamblocklist
+- Scam-Blocklist · jarelllama (community_credit): https://github.com/jarelllama/Scam-Blocklist
+- ScamSniffer (configured_upstream): https://github.com/scamsniffer/scam-database | Feed: https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json
+- Security Alliance · SEAL (configured_upstream): https://github.com/security-alliance | Feed: https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt
+- SPMedia (configured_upstream): https://github.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed | Feed: https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt
+- Unified hosts (community_credit): https://github.com/StevenBlack/hosts
+- URLhaus (community_credit): https://urlhaus.abuse.ch/
+- URLhaus Filter (community_credit): https://gitlab.com/malware-filter/urlhaus-filter
+
+## Community tools: check, investigate and report
+
+The maintainers use these independently operated services in their work and credit them alongside data sources. This is an open-ended directory, not a ranking, partnership list or list of configured upstream feeds. Many basic functions are free without registration; some use free accounts, quotas or paid plans. Public scans can expose submitted URLs. Check visibility before sharing sensitive links.
+
+### Bitdefender Link Checker
+Check an individual link against phishing, fraudulent-site and malware signals.
+Access: Free web check. The browser checker is free; other Bitdefender products are separate.
+https://www.bitdefender.com/en-us/consumer/link-checker
+
+### crt.sh
+Search public certificate-transparency records for domain names and related certificates.
+Access: Free public search. A certificate is an infrastructure clue, not a trust or safety verdict.
+https://crt.sh/
+
+### DNSDumpster
+Explore DNS records and related hosts to understand a domain’s exposed infrastructure.
+Access: Free tier · query limits. Free membership and paid plans have different quotas. Follow current access requirements.
+https://dnsdumpster.com/
+
+### Google Safe Browsing
+Send a suspected phishing page to Google for review by its Safe Browsing service.
+Access: Public reporting form. Submit the suspicious URL and relevant context. Google decides its own classification.
+https://safebrowsing.google.com/safebrowsing/report_phish/
+
+### isitphish
+Get an automated phishing assessment to support your investigation of a suspicious URL.
+Access: Online checker. A free plan is advertised. Check current account and usage requirements.
+https://www.isitphish.com/
+
+### Microsoft Security Intelligence
+Report a phishing page or other unsafe website through Microsoft’s guest submission form.
+Access: Free guest reporting. No account needed for this guest route; the form includes a verification challenge.
+https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest
+
+### Netcraft
+Send suspected phishing, malware and suspicious URLs to Netcraft’s reporting service.
+Access: Public reporting form. Use the report form’s requested details; Netcraft reviews submissions under its own process.
+https://report.netcraft.com/report
+
+### Norton Safe Web
+Consult Norton’s website reputation information as another signal in a URL investigation.
+Access: Public reputation tool. Lookup and account-based participation are different functions; follow the service’s current access rules.
+https://safeweb.norton.com/
+
+### phish.report
+Analyse suspected phishing, inspect hosting context and find reporting routes.
+Access: Free analysis. Free tools for individual volunteers, nonprofits and governments; team plans are separate.
+https://phish.report/analysis
+https://phish.report/
+
+### Phishs
+Check URLs for phishing and malicious content, and inspect the resulting risk report.
+Access: Free checking available. Public scanner; API and expanded features have separate plans.
+https://phishs.com/
+
+### PhishTank
+Browse community phishing reports, contribute a suspected phish and help verify reports.
+Access: Free account to submit. Browsing is public. Submitting and verifying require sign-in.
+https://phishtank.org/
+
+### PolySwarm
+Explore URL and file intelligence from multiple threat-detection engines.
+Access: Limited guest access. A free Community account unlocks more functions. Quotas and paid tiers apply.
+https://polyswarm.network/
+
+### Quttera
+Scan publicly accessible website content for suspicious scripts and malicious code.
+Access: Free remote scan. Provide a URL to start. Remote scanning has coverage and processing limits.
+https://quttera.com/website-malware-scanner
+
+### ScamAdviser
+Review website trust signals and community context when assessing a suspicious site.
+Access: Free website check. Treat reputation scores as context; a favorable score is not proof of safety.
+https://www.scamadviser.com/
+
+### Spamhaus
+Investigate IP and domain reputation through Spamhaus’s public resources and checker.
+Access: Public tools & lookup. Public lookups and commercial data use have separate conditions.
+https://www.spamhaus.org/
+
+### Sucuri SiteCheck
+Check visible website content for malware, blocklist status and common security issues.
+Access: Free remote scan. The public checker does not inspect hidden server-side files.
+https://sitecheck.sucuri.net/
+
+### Symantec Site Review
+Look up a URL’s category and request a review when its classification appears incorrect.
+Access: Public review portal. Category review is a provider assessment, not a website takedown.
+https://sitereview.bluecoat.com/#/
+
+### urlquery
+Inspect website activity, potential malware and reputation through URL analysis reports.
+Access: Public reports & scanner. Report visibility and account features vary; check the selected submission settings.
+https://urlquery.net/
+
+### urlscan.io
+Capture browser behavior, contacted infrastructure and page evidence, or search existing scans.
+Access: Free community service. Anonymous use has limits. Accounts add features; public scans are visible to others.
+https://urlscan.io/
+
+### VirusTotal
+Compare URL assessments and inspect domain context across multiple security sources.
+Access: Free web search. Web queries may enter the shared dataset. API access requires an account; usage terms apply.
+https://www.virustotal.com/gui/home/url
+
+### Yandex Search
+Use Yandex Search’s feedback route to report spam or malicious pages in search.
+Access: Public feedback route. Use the embedded form and its current requirements; this is not a universal takedown service.
+https://yandex.com/support/search/en/troubleshooting/delspam

@@ -1,0 +1,253 @@
+{
+  "name": "DestroyList source directory",
+  "reviewed_at": "2026-10-13",
+  "canonical_url": "https://phishdestroy.github.io/destroylist/scripts/#sources",
+  "configuration_url": "https://github.com/phishdestroy/destroylist/blob/main/scripts/smart_aggregator.py",
+  "notes": [
+    "Configured upstream entries are taken from SOURCES_CONFIG.",
+    "Community credits do not imply current ingestion, endorsement or a partnership.",
+    "Source data and logos retain their own rights and licenses."
+  ],
+  "sources": [
+    {
+      "name": "AdGuard DNS",
+      "category": "DNS & filtering",
+      "description": "AdGuard simplified domain filter.",
+      "project_url": "https://github.com/AdguardTeam/AdGuardSDNSFilter",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Blackbook",
+      "category": "Phishing & malware",
+      "description": "stamparm malicious-domain collection.",
+      "project_url": "https://github.com/stamparm/blackbook",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Blocklist Project",
+      "category": "DNS & filtering",
+      "description": "Categorized domain blocklists.",
+      "project_url": "https://github.com/blocklistproject/Lists",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "ChainPatrol",
+      "category": "Web3",
+      "description": "Web3 threat intelligence platform.",
+      "project_url": "https://app.chainpatrol.io/",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Codeesura",
+      "category": "Web3",
+      "description": "Anti-phishing extension community list.",
+      "project_url": "https://github.com/codeesura/Anti-phishing-extension",
+      "feed_url": "https://raw.githubusercontent.com/codeesura/Anti-phishing-extension/main/phishing-sites-list.json",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "CombinedPrivacy",
+      "category": "DNS & filtering",
+      "description": "bongochong combined privacy blocklists.",
+      "project_url": "https://github.com/bongochong/CombinedPrivacyBlockLists",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Crypto Firewall",
+      "category": "Web3",
+      "description": "Cryptocurrency security domain blocklists.",
+      "project_url": "https://github.com/chartingshow/crypto-firewall",
+      "feed_url": "https://raw.githubusercontent.com/chartingshow/crypto-firewall/master/src/blacklists/domains-only.txt",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Discord Phishing · Dogino",
+      "category": "Phishing & malware",
+      "description": "Discord scam URL feed maintained by Dogino.",
+      "project_url": "https://github.com/Dogino/Discord-Phishing-URLs",
+      "feed_url": "https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Discord Phishing · Nikolai",
+      "category": "Phishing & malware",
+      "description": "Discord phishing-link dataset by nikolaischunk.",
+      "project_url": "https://github.com/nikolaischunk/discord-phishing-links",
+      "feed_url": "https://raw.githubusercontent.com/nikolaischunk/discord-phishing-links/main/domain-list.json",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Enkrypt",
+      "category": "Web3",
+      "description": "Multi-chain wallet phishing detection.",
+      "project_url": "https://github.com/enkryptcom/phishing-detect",
+      "feed_url": "https://raw.githubusercontent.com/enkryptcom/phishing-detect/refs/heads/main/dist/lists/blacklist.json",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "HaGeZi",
+      "category": "DNS & filtering",
+      "description": "Community DNS blocklists.",
+      "project_url": "https://github.com/hagezi/dns-blocklists",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "hosts.extras",
+      "category": "DNS & filtering",
+      "description": "FadeMind additional hosts lists.",
+      "project_url": "https://github.com/FadeMind/hosts.extras",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "hostsVN",
+      "category": "DNS & filtering",
+      "description": "Vietnamese community hosts project.",
+      "project_url": "https://github.com/bigdargon/hostsVN",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Inversion DNSBL",
+      "category": "DNS & filtering",
+      "description": "DNS blocklists. Upstream reports a service pause since 19 Sep 2026.",
+      "project_url": "https://github.com/elliotwutingfeng/Inversion-DNSBL-Blocklists",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "KAD · PolishFilters",
+      "category": "DNS & filtering",
+      "description": "PolishFiltersTeam hosts list.",
+      "project_url": "https://github.com/PolishFiltersTeam/KADhosts",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "KADhosts · FiltersHeroes",
+      "category": "DNS & filtering",
+      "description": "FiltersHeroes community hosts list.",
+      "project_url": "https://github.com/FiltersHeroes/KADhosts",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "MetaMask",
+      "category": "Web3",
+      "description": "Public Web3 phishing indicators for study and defensive reuse.",
+      "project_url": "https://github.com/MetaMask/eth-phishing-detect",
+      "feed_url": "https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/refs/heads/main/src/config.json",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "OpenPhish",
+      "category": "Phishing & malware",
+      "description": "Public phishing intelligence feed.",
+      "project_url": "https://openphish.com/",
+      "feed_url": "https://raw.githubusercontent.com/openphish/public_feed/main/feed.txt",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Phishing.Database",
+      "category": "Phishing & malware",
+      "description": "Phishing indicators via Ultimate-Hosts-Blacklist.",
+      "project_url": "https://github.com/Ultimate-Hosts-Blacklist/Phishing.Database",
+      "feed_url": "https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Phishing.Database/refs/heads/master/domains.list",
+      "relationship": "community_credit"
+    },
+    {
+      "name": "PhishTank",
+      "category": "Phishing & malware",
+      "description": "Community phishing reports.",
+      "project_url": "https://phishtank.org/",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Phishunt",
+      "category": "Phishing & malware",
+      "description": "Public phishing URL intelligence feed.",
+      "project_url": "https://phishunt.io/",
+      "feed_url": "https://phishunt.io/feed.txt",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Polkadot JS",
+      "category": "Web3",
+      "description": "Phishing indicators for the Polkadot ecosystem.",
+      "project_url": "https://github.com/polkadot-js/phishing",
+      "feed_url": "https://raw.githubusercontent.com/polkadot-js/phishing/master/all.json",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Scam Blocklist · durablenapkin",
+      "category": "Phishing & malware",
+      "description": "Community scam domain blocklist.",
+      "project_url": "https://github.com/durablenapkin/scamblocklist",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "Scam-Blocklist · jarelllama",
+      "category": "Phishing & malware",
+      "description": "Community scam and phishing indicators.",
+      "project_url": "https://github.com/jarelllama/Scam-Blocklist",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "ScamSniffer",
+      "category": "Web3",
+      "description": "Web3 scam and phishing intelligence.",
+      "project_url": "https://github.com/scamsniffer/scam-database",
+      "feed_url": "https://raw.githubusercontent.com/scamsniffer/scam-database/main/blacklist/domains.json",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Security Alliance · SEAL",
+      "category": "Web3",
+      "description": "Shared blocklists from the security community.",
+      "project_url": "https://github.com/security-alliance",
+      "feed_url": "https://raw.githubusercontent.com/security-alliance/blocklists/refs/heads/main/domain.txt",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "SPMedia",
+      "category": "Web3",
+      "description": "Crypto scam and phishing threat intelligence.",
+      "project_url": "https://github.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed",
+      "feed_url": "https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt",
+      "relationship": "configured_upstream"
+    },
+    {
+      "name": "Unified hosts",
+      "category": "DNS & filtering",
+      "description": "StevenBlack consolidated hosts lists.",
+      "project_url": "https://github.com/StevenBlack/hosts",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "URLhaus",
+      "category": "Phishing & malware",
+      "description": "abuse.ch malware URL intelligence.",
+      "project_url": "https://urlhaus.abuse.ch/",
+      "feed_url": null,
+      "relationship": "community_credit"
+    },
+    {
+      "name": "URLhaus Filter",
+      "category": "Phishing & malware",
+      "description": "URLhaus-derived filtering formats.",
+      "project_url": "https://gitlab.com/malware-filter/urlhaus-filter",
+      "feed_url": null,
+      "relationship": "community_credit"
+    }
+  ]
+}
