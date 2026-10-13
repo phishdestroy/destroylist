@@ -45,6 +45,11 @@ def main():
                 sys.exit(1)
 
         if OUTPUT_DIR.exists():
+            # Keep the folder's own files (README.md, banner.svg); only the
+            # part_NNN.json shards are regenerated.
+            for item in OUTPUT_DIR.iterdir():
+                if item.is_file() and not (item.name.startswith("part_") and item.suffix == ".json"):
+                    shutil.copy2(item, tmp_dir / item.name)
             shutil.rmtree(OUTPUT_DIR)
         tmp_dir.rename(OUTPUT_DIR)
     except Exception as e:
