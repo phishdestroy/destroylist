@@ -2,8 +2,8 @@
   "meta": {
     "month": "2026-10",
     "name": "October 2026",
-    "generated": "2026-10-13T04:15:07.713650+00:00",
-    "total": 7012,
+    "generated": "2026-10-13T05:29:22.458985+00:00",
+    "total": 7153,
     "report": "README.md",
     "prev_report": "../../2026/09/",
     "next_report": null,
@@ -11,12 +11,12 @@
   },
   "stats": {
     "live": 4921,
-    "dead": 2049,
-    "unknown": 42,
-    "enriched": 6949,
-    "kill_rate": 29.4,
-    "vt_flagged": 6703,
-    "vt_rate": 95.6,
+    "dead": 2161,
+    "unknown": 71,
+    "enriched": 7013,
+    "kill_rate": 30.5,
+    "vt_flagged": 6806,
+    "vt_rate": 95.1,
     "gsb_flagged": 157,
     "avg_response_h": 33.4,
     "median_response_h": 15
@@ -25,7 +25,7 @@
     "registrars": [
       {
         "name": "Dynadot Inc.",
-        "count": 3168
+        "count": 3213
       },
       {
         "name": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
@@ -33,45 +33,45 @@
       },
       {
         "name": "Spaceship, Inc.",
-        "count": 208
+        "count": 210
       },
       {
         "name": "Gname.com Pte. Ltd.",
-        "count": 190
+        "count": 191
       },
       {
         "name": "GoDaddy.com, LLC",
         "count": 122
       },
       {
+        "name": "DYNADOT LLC",
+        "count": 112
+      },
+      {
         "name": "NameSilo, LLC",
         "count": 111
       },
       {
-        "name": "DYNADOT LLC",
-        "count": 109
-      },
-      {
         "name": "Dominet (HK) Limited",
-        "count": 97
+        "count": 98
       },
       {
         "name": "Global Domain Group LLC",
-        "count": 87
+        "count": 88
       },
       {
         "name": "PDR Ltd. d/b/a PublicDomainRegistry.com",
-        "count": 87
+        "count": 88
       }
     ],
     "tlds": [
       {
         "tld": "shop",
-        "count": 3129
+        "count": 3259
       },
       {
         "tld": "com",
-        "count": 1632
+        "count": 1642
       },
       {
         "tld": "xyz",
@@ -99,7 +99,7 @@
       },
       {
         "tld": "cc",
-        "count": 74
+        "count": 75
       },
       {
         "tld": "icu",
@@ -109,7 +109,7 @@
     "countries": [
       {
         "country": "",
-        "count": 4954
+        "count": 5086
       },
       {
         "country": "UNKNOWN",
@@ -117,7 +117,7 @@
       },
       {
         "country": "US",
-        "count": 353
+        "count": 356
       },
       {
         "country": "CN",
@@ -133,11 +133,11 @@
       },
       {
         "country": "HK",
-        "count": 43
+        "count": 44
       },
       {
         "country": "RU",
-        "count": 30
+        "count": 33
       },
       {
         "country": "SG",
@@ -151,7 +151,7 @@
     "brands": [
       {
         "brand": "MetaMask",
-        "count": 632
+        "count": 690
       },
       {
         "brand": "Across",
@@ -159,7 +159,7 @@
       },
       {
         "brand": "Google",
-        "count": 242
+        "count": 260
       },
       {
         "brand": "Apple",
@@ -171,15 +171,15 @@
       },
       {
         "brand": "Investment Scam",
-        "count": 68
+        "count": 69
       },
       {
         "brand": "Facebook",
-        "count": 61
+        "count": 62
       },
       {
         "brand": "Ledger",
-        "count": 46
+        "count": 47
       },
       {
         "brand": "Ethereum",
@@ -202,16 +202,16 @@
     ],
     "vt_vendors": [
       {
-        "vendor": "alphaMountain.ai",
-        "detections": 5915
+        "vendor": "Gridinsoft",
+        "detections": 5996
       },
       {
-        "vendor": "Gridinsoft",
-        "detections": 5898
+        "vendor": "alphaMountain.ai",
+        "detections": 5992
       },
       {
         "vendor": "Forcepoint ThreatSeeker",
-        "detections": 4792
+        "detections": 4806
       },
       {
         "vendor": "SOCRadar",
@@ -219,47 +219,47 @@
       },
       {
         "vendor": "CRDF",
-        "detections": 4022
+        "detections": 4069
       },
       {
         "vendor": "Fortinet",
-        "detections": 3560
+        "detections": 3578
       },
       {
         "vendor": "G-Data",
-        "detections": 3268
+        "detections": 3302
       },
       {
         "vendor": "LevelBlue",
-        "detections": 2723
+        "detections": 2774
       },
       {
         "vendor": "BitDefender",
-        "detections": 2694
+        "detections": 2712
       },
       {
         "vendor": "Netcraft",
-        "detections": 2416
+        "detections": 2462
       },
       {
         "vendor": "ESET",
-        "detections": 2190
+        "detections": 2215
       },
       {
         "vendor": "Webroot",
-        "detections": 1905
+        "detections": 1939
       },
       {
         "vendor": "Sophos",
-        "detections": 1551
+        "detections": 1554
       },
       {
         "vendor": "VIPRE",
-        "detections": 1491
+        "detections": 1494
       },
       {
         "vendor": "Kaspersky",
-        "detections": 1377
+        "detections": 1379
       }
     ]
   },
@@ -276,7 +276,7 @@
     "2026-10-10": 467,
     "2026-10-11": 562,
     "2026-10-12": 427,
-    "2026-10-13": 150
+    "2026-10-13": 291
   },
   "threats": [
     {
@@ -1353,7 +1353,7 @@
     {
       "domain": "amandanoviasboutique.shop",
       "detected_at": "2026-10-01 04:39:55",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "146.19.203.210",
@@ -1374,7 +1374,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-17 05:52:46"
     },
     {
       "domain": "amandanoviasofficial.shop",
@@ -3515,7 +3515,7 @@
     {
       "domain": "amuseclubstore.shop",
       "detected_at": "2026-10-01 05:08:57",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "23.252.79.213",
@@ -3534,7 +3534,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-27 20:12:04"
     },
     {
       "domain": "amuletpro.shop",
@@ -4646,7 +4646,7 @@
     {
       "domain": "ambientweather.shop",
       "detected_at": "2026-10-01 13:29:42",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.14",
@@ -4666,7 +4666,7 @@
         "URLQuery"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-23 16:23:30"
     },
     {
       "domain": "amelietejelabel.shop",
@@ -5009,7 +5009,7 @@
       "ip_address": "188.244.119.61",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -5702,7 +5702,7 @@
       "ip_address": "38.55.215.125",
       "nameservers": "harley.ns.cloudflare.com walk.ns.cloudflare.com",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 13,
       "vt_vendors": [
@@ -7433,7 +7433,7 @@
     {
       "domain": "anchalspaces.shop",
       "detected_at": "2026-10-02 16:45:54",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "212.52.28.167",
@@ -7452,7 +7452,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-11 06:01:56"
     },
     {
       "domain": "anchorhockingco.shop",
@@ -9601,7 +9601,7 @@
     {
       "domain": "annaquandress.shop",
       "detected_at": "2026-10-02 17:14:04",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.8",
@@ -9623,7 +9623,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-17 02:03:06"
     },
     {
       "domain": "animetoysco.shop",
@@ -12589,7 +12589,7 @@
     {
       "domain": "apicura.shop",
       "detected_at": "2026-10-02 20:21:49",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "195.96.131.106",
@@ -12607,7 +12607,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-15 02:46:04"
     },
     {
       "domain": "apidotewear.shop",
@@ -15380,7 +15380,7 @@
     {
       "domain": "arianagrandelook.shop",
       "detected_at": "2026-10-03 05:33:27",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "23.252.79.115",
@@ -15399,7 +15399,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-09 10:26:34"
     },
     {
       "domain": "armafbeauty.shop",
@@ -15550,7 +15550,7 @@
         "VIPRE"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-25 14:25:18"
     },
     {
       "domain": "armbuildingsuppliesstore.shop",
@@ -18107,7 +18107,7 @@
     {
       "domain": "anzfashion.shop",
       "detected_at": "2026-10-03 06:30:03",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "212.52.28.178",
@@ -18127,7 +18127,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-15 16:16:30"
     },
     {
       "domain": "anycubishop.shop",
@@ -20638,7 +20638,7 @@
       "ip_address": "188.244.119.61",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 9,
       "vt_vendors": [
@@ -23183,7 +23183,7 @@
     {
       "domain": "asbr.shop",
       "detected_at": "2026-10-03 19:07:21",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "31.222.234.210",
@@ -23202,7 +23202,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-10 22:52:40"
     },
     {
       "domain": "artostride.shop",
@@ -23413,7 +23413,7 @@
     {
       "domain": "asapets.shop",
       "detected_at": "2026-10-03 19:11:22",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -23438,7 +23438,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-05 20:04:23"
     },
     {
       "domain": "arveeparts.shop",
@@ -25591,7 +25591,7 @@
     {
       "domain": "annewilsonstore.shop",
       "detected_at": "2026-10-04 02:35:55",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "23.252.79.189",
@@ -25615,7 +25615,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-09 01:03:39"
     },
     {
       "domain": "fatowin.com",
@@ -29380,7 +29380,7 @@
     {
       "domain": "asiamnaturallystore.shop",
       "detected_at": "2026-10-04 07:01:57",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "194.26.231.222",
@@ -29404,7 +29404,7 @@
         "VIPRE"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 22:38:59"
     },
     {
       "domain": "ashleystewartco.shop",
@@ -48268,7 +48268,7 @@
     {
       "domain": "amazfittech.shop",
       "detected_at": "2026-10-06 23:58:09",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -48286,7 +48286,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-25 08:42:33"
     },
     {
       "domain": "amashade.shop",
@@ -50125,7 +50125,7 @@
     {
       "domain": "amywinehousecollection.shop",
       "detected_at": "2026-10-07 00:23:49",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "37.72.142.130",
@@ -50145,7 +50145,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-22 13:08:51"
     },
     {
       "domain": "pvs.xxx",
@@ -52993,7 +52993,7 @@
     {
       "domain": "anyaactiveshop.shop",
       "detected_at": "2026-10-07 01:01:51",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.218",
@@ -53012,7 +53012,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-04 07:46:20"
     },
     {
       "domain": "annkeshop.shop",
@@ -55576,7 +55576,7 @@
     {
       "domain": "arbitrosilver.shop",
       "detected_at": "2026-10-07 01:56:46",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "176.126.101.61",
@@ -55592,7 +55592,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-20 21:09:02"
     },
     {
       "domain": "arataglow.shop",
@@ -59560,7 +59560,7 @@
     {
       "domain": "argatoys.shop",
       "detected_at": "2026-10-07 02:35:09",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.130.198",
@@ -59581,7 +59581,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-28 02:15:21"
     },
     {
       "domain": "asobuhome.shop",
@@ -63940,7 +63940,7 @@
     {
       "domain": "askandemblashop.shop",
       "detected_at": "2026-10-07 03:50:17",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "62.106.90.244",
@@ -63960,7 +63960,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-21 19:41:00"
     },
     {
       "domain": "athleticclubgear.shop",
@@ -64428,7 +64428,7 @@
     {
       "domain": "atkinshq.shop",
       "detected_at": "2026-10-07 04:01:02",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -64447,7 +64447,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-05 11:14:48"
     },
     {
       "domain": "atlastoys.shop",
@@ -68038,7 +68038,7 @@
     {
       "domain": "atfjoy.shop",
       "detected_at": "2026-10-07 05:57:13",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "31.222.234.210",
@@ -68060,7 +68060,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-15 20:07:09"
     },
     {
       "domain": "atticusstore.shop",
@@ -68271,7 +68271,7 @@
     {
       "domain": "aporroluxe.shop",
       "detected_at": "2026-10-07 06:00:59",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "46.245.239.114",
@@ -68293,7 +68293,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-26 15:44:33"
     },
     {
       "domain": "antibodiesincorporatedwellness.shop",
@@ -68915,7 +68915,7 @@
       "ip_address": "172.237.129.242",
       "nameservers": "[\"ns1.ns306.parklogic.com\", \"ns2.ns306.parklogic.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 15,
       "vt_vendors": [
@@ -97410,7 +97410,7 @@
     {
       "domain": "aulumutech.shop",
       "detected_at": "2026-10-08 00:20:28",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.27",
@@ -97429,7 +97429,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-24 07:02:52"
     },
     {
       "domain": "aulvibe.shop",
@@ -105134,7 +105134,7 @@
     {
       "domain": "avamayofficial.shop",
       "detected_at": "2026-10-08 15:20:07",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.251",
@@ -105153,7 +105153,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-23 01:43:00"
     },
     {
       "domain": "avantgalleryhq.shop",
@@ -105182,7 +105182,7 @@
     {
       "domain": "avantihouse.shop",
       "detected_at": "2026-10-08 15:22:08",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.130.210",
@@ -105199,7 +105199,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-26 16:44:57"
     },
     {
       "domain": "avatarmetalshop.shop",
@@ -115153,7 +115153,7 @@
     {
       "domain": "avidgourmetfoods.shop",
       "detected_at": "2026-10-09 01:55:56",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Spaceship, Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "37.72.142.130",
@@ -115174,7 +115174,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-03-26 15:19:43"
     },
     {
       "domain": "avidloveboutique.shop",
@@ -119786,7 +119786,7 @@
     {
       "domain": "azurana.shop",
       "detected_at": "2026-10-09 03:26:56",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.130.231",
@@ -119812,7 +119812,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-05 15:07:56"
     },
     {
       "domain": "ayurvliving.shop",
@@ -120963,7 +120963,7 @@
     {
       "domain": "babelioofficial.shop",
       "detected_at": "2026-10-09 03:46:43",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.113",
@@ -120974,7 +120974,7 @@
       "vt_detections": 0,
       "vt_vendors": [],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-26 13:14:26"
     },
     {
       "domain": "babesque.shop",
@@ -121363,7 +121363,7 @@
     {
       "domain": "babybrezzababy.shop",
       "detected_at": "2026-10-09 03:51:52",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.101",
@@ -121383,7 +121383,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 13:40:14"
     },
     {
       "domain": "babybrezzame.shop",
@@ -121596,7 +121596,7 @@
     {
       "domain": "ayvastudio.shop",
       "detected_at": "2026-10-09 03:58:28",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "46.245.239.105",
@@ -121614,7 +121614,7 @@
         "URLQuery"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-26 12:50:31"
     },
     {
       "domain": "mixer.money",
@@ -122665,7 +122665,7 @@
     {
       "domain": "babygrandonline.shop",
       "detected_at": "2026-10-09 04:42:01",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.130.215",
@@ -122687,7 +122687,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-09 13:59:43"
     },
     {
       "domain": "babymoovco.shop",
@@ -122771,7 +122771,7 @@
     {
       "domain": "babyshoponline.shop",
       "detected_at": "2026-10-09 04:44:36",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.252",
@@ -122794,7 +122794,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-16 19:29:38"
     },
     {
       "domain": "babys1sthq.shop",
@@ -143142,7 +143142,7 @@
     {
       "domain": "bakedtanningshop.shop",
       "detected_at": "2026-10-10 18:47:57",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.130.245",
@@ -143159,7 +143159,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-23 00:03:23"
     },
     {
       "domain": "bakelvn.shop",
@@ -143363,7 +143363,7 @@
     {
       "domain": "bakeside.shop",
       "detected_at": "2026-10-10 18:50:01",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "80.71.144.126",
@@ -143382,7 +143382,7 @@
         "URLQuery"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-14 17:24:14"
     },
     {
       "domain": "bakingsteelhome.shop",
@@ -143893,7 +143893,7 @@
     {
       "domain": "balancedailylife.shop",
       "detected_at": "2026-10-10 18:59:00",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -143908,7 +143908,7 @@
         "LevelBlue"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-29 19:06:11"
     },
     {
       "domain": "balanceline.shop",
@@ -144289,7 +144289,7 @@
     {
       "domain": "baliebalieshop.shop",
       "detected_at": "2026-10-10 19:03:05",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.181",
@@ -144307,7 +144307,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-09 06:13:47"
     },
     {
       "domain": "balisexstorehub.shop",
@@ -144663,7 +144663,7 @@
     {
       "domain": "ballpro.shop",
       "detected_at": "2026-10-10 19:08:04",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -144680,7 +144680,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-16 10:04:27"
     },
     {
       "domain": "ballspot.shop",
@@ -144898,7 +144898,7 @@
     {
       "domain": "bambibabyhq.shop",
       "detected_at": "2026-10-10 19:12:08",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.9.48.68",
@@ -144911,7 +144911,7 @@
         "Gridinsoft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-06 20:34:11"
     },
     {
       "domain": "bambinomiokids.shop",
@@ -150938,7 +150938,7 @@
     {
       "domain": "bareglow.shop",
       "detected_at": "2026-10-11 01:02:37",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "31.222.234.210",
@@ -150958,7 +150958,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-15 04:25:29"
     },
     {
       "domain": "bareknuckles.shop",
@@ -152362,7 +152362,7 @@
     {
       "domain": "barodemporiumshop.shop",
       "detected_at": "2026-10-11 01:19:51",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "80.71.144.122",
@@ -152378,7 +152378,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-22 05:34:49"
     },
     {
       "domain": "barodsofficial.shop",
@@ -157965,7 +157965,7 @@
     {
       "domain": "baysidebrushcostore.shop",
       "detected_at": "2026-10-11 03:22:42",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.178",
@@ -157990,7 +157990,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-05 10:27:46"
     },
     {
       "domain": "baymoselect.shop",
@@ -158407,7 +158407,7 @@
     {
       "domain": "barevogue.shop",
       "detected_at": "2026-10-11 04:34:58",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "62.106.90.116",
@@ -158426,7 +158426,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-09 08:36:21"
     },
     {
       "domain": "indta.co.id",
@@ -160836,7 +160836,7 @@
       "ip_address": "195.96.130.254",
       "nameservers": "[\"ariadne.ns.cloudflare.com\", \"lee.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -161180,7 +161180,7 @@
       "ip_address": "31.222.234.228",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 11,
       "vt_vendors": [
@@ -161338,7 +161338,7 @@
       "ip_address": "185.234.12.48",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -162171,7 +162171,7 @@
       "ip_address": "130.12.180.128",
       "nameservers": "[\"ns1.openprovider.nl\", \"ns2.openprovider.be\", \"ns3.openprovider.eu\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "Angel Drainer",
       "vt_detections": 9,
       "vt_vendors": [
@@ -162534,7 +162534,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"serena.ns.cloudflare.com\", \"stan.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -163643,7 +163643,7 @@
       "ip_address": "158.94.210.185",
       "nameservers": "[\"ns1.openprovider.nl\", \"ns2.openprovider.be\", \"ns3.openprovider.eu\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -163843,7 +163843,7 @@
       "ip_address": "82.202.171.139",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -163952,7 +163952,7 @@
       "ip_address": "104.21.18.186",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -164085,7 +164085,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -164105,7 +164105,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -164126,7 +164126,7 @@
       "ip_address": "172.67.152.44",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -164222,7 +164222,7 @@
       "ip_address": "80.97.160.174",
       "nameservers": "[\"ns1.pananames.com\", \"ns2.pananames.com\", \"ns3.pananames.com\", \"ns4.pananames.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -164244,7 +164244,7 @@
       "ip_address": "108.157.229.33",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -164294,7 +164294,7 @@
       "ip_address": "108.157.229.8",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -164313,7 +164313,7 @@
       "ip_address": "202.146.222.88",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -164335,7 +164335,7 @@
       "ip_address": "108.157.229.8",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -164417,7 +164417,7 @@
       "ip_address": "209.99.187.200",
       "nameservers": "[\"celine.ns.cloudflare.com.\", \"greg.ns.cloudflare.com.\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -164441,7 +164441,7 @@
       "ip_address": "172.237.111.194",
       "nameservers": "[\"ns1.dnsowl.com\", \"ns2.dnsowl.com\", \"ns3.dnsowl.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -164678,7 +164678,7 @@
       "ip_address": "185.53.179.136",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -164703,7 +164703,7 @@
       "ip_address": "38.54.63.61",
       "nameservers": "[\"ns01.domaincontrol.com\", \"ns02.domaincontrol.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -165004,7 +165004,7 @@
       "ip_address": "34.8.229.132",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 15,
       "vt_vendors": [
@@ -165036,7 +165036,7 @@
       "ip_address": "64.181.217.59",
       "nameservers": "[\"anna.ns.cloudflare.com\", \"josh.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -165057,7 +165057,7 @@
       "ip_address": "172.65.211.209",
       "nameservers": "[\"expire1.gname-dns.com\", \"expire2.gname-dns.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -165084,7 +165084,7 @@
       "ip_address": "172.67.191.68",
       "nameservers": "[\"kurt.ns.cloudflare.com\", \"pam.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -165200,7 +165200,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"addilyn.ns.cloudflare.com\", \"piers.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -165220,7 +165220,7 @@
       "ip_address": "92.112.187.16",
       "nameservers": "[\"ns1.dns-parking.com\", \"ns2.dns-parking.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -165288,7 +165288,7 @@
       "ip_address": "66.165.236.82",
       "nameservers": "[\"dns1.registrar-servers.com\", \"dns2.registrar-servers.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -165386,7 +165386,7 @@
       "ip_address": "62.60.226.163",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -165505,7 +165505,7 @@
       "ip_address": "181.214.221.46",
       "nameservers": "[\"ns-canada.topdns.com\", \"ns-uk.topdns.com\", \"ns-usa.topdns.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -165598,7 +165598,7 @@
       "ip_address": "104.21.17.108",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -165625,7 +165625,7 @@
       "ip_address": "13.249.8.90",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -165643,7 +165643,7 @@
       "ip_address": "65.9.46.61",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -165672,7 +165672,7 @@
       "ip_address": "65.9.46.20",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -165728,7 +165728,7 @@
       "ip_address": "65.9.46.16",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -165755,7 +165755,7 @@
       "ip_address": "65.9.46.4",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -165771,7 +165771,7 @@
       "ip_address": "65.9.46.96",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -165787,7 +165787,7 @@
       "ip_address": "143.204.238.77",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -165808,7 +165808,7 @@
       "ip_address": "13.249.8.93",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -165837,7 +165837,7 @@
       "ip_address": "65.9.46.87",
       "nameservers": "[\"dax.ns.cloudflare.com\", \"magnolia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -165926,7 +165926,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"luciane.ns.cloudflare.com\", \"piotr.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -166354,7 +166354,7 @@
       "ip_address": "104.21.15.186",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -166607,7 +166607,7 @@
       "ip_address": "95.214.53.197",
       "nameservers": "[\"ns14.wixdns.net\", \"ns15.wixdns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 21,
       "vt_vendors": [
@@ -166690,7 +166690,7 @@
       "ip_address": "172.67.151.14",
       "nameservers": "[\"garrett.ns.cloudflare.com\", \"harmony.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -166713,7 +166713,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -166733,7 +166733,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -166754,7 +166754,7 @@
       "ip_address": "104.21.94.126",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -166770,7 +166770,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -166795,7 +166795,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -166836,7 +166836,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -166857,7 +166857,7 @@
       "ip_address": "104.21.38.46",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -166881,7 +166881,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -166919,7 +166919,7 @@
       "ip_address": "104.21.56.58",
       "nameservers": "[\"andronicus.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -167178,7 +167178,7 @@
       "ip_address": "194.238.57.99",
       "nameservers": "[\"a.dnspod.com\", \"c.dnspod.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -167199,7 +167199,7 @@
       "ip_address": "92.118.230.44",
       "nameservers": "[\"nolan.ns.cloudflare.com\", \"ximena.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -167445,7 +167445,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"devin.ns.cloudflare.com\", \"irena.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -167538,7 +167538,7 @@
       "ip_address": "23.153.104.2",
       "nameservers": "[\"ns1.my-control-panel.com\", \"ns2.my-control-panel.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 11,
       "vt_vendors": [
@@ -167967,7 +167967,7 @@
       "ip_address": "172.67.170.227",
       "nameservers": "[\"gabriel.ns.cloudflare.com\", \"tiffany.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 16,
       "vt_vendors": [
@@ -168055,7 +168055,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"gabriel.ns.cloudflare.com\", \"tiffany.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 15,
       "vt_vendors": [
@@ -168137,7 +168137,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"gabriel.ns.cloudflare.com\", \"tiffany.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -168224,7 +168224,7 @@
       "ip_address": "104.21.56.95",
       "nameservers": "[\"ruth.ns.cloudflare.com\", \"ryan.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -168331,7 +168331,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"ruth.ns.cloudflare.com\", \"ryan.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -168400,7 +168400,7 @@
       "ip_address": "172.67.183.61",
       "nameservers": "[\"gabriel.ns.cloudflare.com\", \"tiffany.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 13,
       "vt_vendors": [
@@ -168616,9 +168616,9 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "172.67.223.75",
-      "nameservers": "",
+      "nameservers": "[\"finley.ns.cloudflare.com\", \"iris.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -168629,10 +168629,10 @@
       "domain": "standpromoc.site",
       "detected_at": "2026-10-12 13:45:03",
       "registrar": "Global Domain Group LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "site",
       "ip_address": "93.152.212.164",
-      "nameservers": "",
+      "nameservers": "[\"nina.ns.cloudflare.com\", \"ryan.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -168650,7 +168650,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"ns1.ezydomain.com\", \"ns2.ezydomain.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -169020,11 +169020,11 @@
     {
       "domain": "bancore.shop",
       "detected_at": "2026-10-10 18:56:10",
-      "registrar": "",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.162.133.218",
-      "nameservers": "",
+      "nameservers": "[\"arely.ns.cloudflare.com\", \"joel.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "puffer",
       "drainer_type": "clean",
@@ -169047,7 +169047,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-03 21:50:36"
     },
     {
       "domain": "bananhotstyle.shop",
@@ -169417,7 +169417,7 @@
       "ip_address": "190.115.31.133",
       "nameservers": "[\"curitiba.ns.porkbun.com\", \"fortaleza.ns.porkbun.com\", \"maceio.ns.porkbun.com\", \"salvador.ns.porkbun.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169449,7 +169449,7 @@
       "ip_address": "102.220.163.15",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -169505,7 +169505,7 @@
       "ip_address": "172.67.194.151",
       "nameservers": "[\"dolly.ns.cloudflare.com\", \"micah.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -169521,7 +169521,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "172.67.128.134",
-      "nameservers": "",
+      "nameservers": "[\"derek.ns.cloudflare.com\", \"lily.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "Cloudflare",
       "drainer_type": "clean",
@@ -169539,7 +169539,7 @@
       "ip_address": "102.220.163.7",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169574,7 +169574,7 @@
       "ip_address": "23.227.38.65",
       "nameservers": "[\"dns1.registrar-servers.com\", \"dns2.registrar-servers.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -169610,7 +169610,7 @@
       "ip_address": "104.21.89.61",
       "nameservers": "[\"dana.ns.cloudflare.com\", \"etienne.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169626,7 +169626,7 @@
       "ip_address": "104.21.0.153",
       "nameservers": "[\"jacqueline.ns.cloudflare.com\", \"tom.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -169715,7 +169715,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "188.114.97.1",
-      "nameservers": "",
+      "nameservers": "[\"becky.ns.cloudflare.com\", \"donovan.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -169749,7 +169749,7 @@
       "ip_address": "2.25.250.173",
       "nameservers": "[\"ns1.srv2012470.hstgr.cloud\", \"ns2.srv2012470.hstgr.cloud\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -169767,7 +169767,7 @@
       "ip_address": "2.25.250.173",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169783,7 +169783,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"arushi.ns.cloudflare.com\", \"ricardo.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -169807,7 +169807,7 @@
       "ip_address": "2.25.250.173",
       "nameservers": "[\"ns1.srv2012470.hstgr.cloud\", \"ns2.srv2012470.hstgr.cloud\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169823,7 +169823,7 @@
       "ip_address": "2.25.250.173",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169839,7 +169839,7 @@
       "ip_address": "178.128.137.126",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -169950,7 +169950,7 @@
       "ip_address": "66.29.137.91",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -170024,7 +170024,7 @@
       "ip_address": "198.12.233.44",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 14,
       "vt_vendors": [
@@ -170055,7 +170055,7 @@
       "ip_address": "217.26.48.101",
       "nameservers": "[\"ns.hostpoint.ch\", \"ns2.hostpoint.ch\", \"ns3.hostpoint.ch\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -170124,9 +170124,9 @@
       "registrar_country": "",
       "tld": "uk",
       "ip_address": "195.234.95.53",
-      "nameservers": "",
+      "nameservers": "[\"ns1597.bwfdns.net.\", \"ns1598.bwfdns.net.\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 14,
       "vt_vendors": [
@@ -170224,9 +170224,9 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "154.209.96.207",
-      "nameservers": "",
+      "nameservers": "[\"a12.share-dns.com\", \"b12.share-dns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -170255,7 +170255,7 @@
       "ip_address": "216.198.79.1",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -170282,7 +170282,7 @@
       "ip_address": "185.199.111.153",
       "nameservers": "[\"ns1038.ui-dns.org\", \"ns1068.ui-dns.biz\", \"ns1109.ui-dns.de\", \"ns1122.ui-dns.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 13,
       "vt_vendors": [
@@ -170334,7 +170334,7 @@
       "ip_address": "217.65.159.161",
       "nameservers": "[\"aurora.dns-parking.com\", \"nebula.dns-parking.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -170434,7 +170434,7 @@
       "ip_address": "162.241.27.12",
       "nameservers": "[\"ns1.sh003.webhostbox.net\", \"ns2.sh003.webhostbox.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 11,
       "vt_vendors": [
@@ -170489,7 +170489,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "188.114.96.1",
-      "nameservers": "",
+      "nameservers": "[\"coby.ns.cloudflare.com\", \"tricia.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "facebook",
       "drainer_type": "clean",
@@ -170632,7 +170632,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -170646,9 +170646,9 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "104.21.9.105",
-      "nameservers": "",
+      "nameservers": "[\"bjorn.ns.cloudflare.com\", \"kara.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -170667,7 +170667,7 @@
       "ip_address": "172.234.218.95",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -170742,7 +170742,7 @@
       "ip_address": "199.16.173.19",
       "nameservers": "[\"pdns03.domaincontrol.com\", \"pdns04.domaincontrol.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -170892,7 +170892,7 @@
       "ip_address": "103.224.182.189",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "DappRadar",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -170908,7 +170908,7 @@
       "registrar_country": "",
       "tld": "xyz",
       "ip_address": "172.67.165.4",
-      "nameservers": "",
+      "nameservers": "[\"chan.ns.cloudflare.com\", \"kobe.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "chase",
       "drainer_type": "clean",
@@ -170998,7 +170998,7 @@
       "registrar_country": "",
       "tld": "help",
       "ip_address": "85.239.146.6",
-      "nameservers": "",
+      "nameservers": "[\"houston.ns.cloudflare.com\", \"melany.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "coinmarketcap",
       "drainer_type": "clean",
@@ -171017,7 +171017,7 @@
       "registrar_country": "",
       "tld": "help",
       "ip_address": "2.27.248.103",
-      "nameservers": "",
+      "nameservers": "[\"bethany.ns.cloudflare.com\", \"weston.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -171038,7 +171038,7 @@
       "ip_address": "91.92.43.98",
       "nameservers": "[\"anita.ns.cloudflare.com\", \"bob.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -171134,7 +171134,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"jimmy.ns.cloudflare.com\", \"jo.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -171401,7 +171401,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "216.198.79.1",
-      "nameservers": "",
+      "nameservers": "[\"dns1.p03.nsone.net\", \"dns2.p03.nsone.net\", \"dns3.p03.nsone.net\", \"dns4.p03.nsone.net\"]",
       "status": "enriched",
       "target_brand": "gemini",
       "drainer_type": "clean",
@@ -171502,10 +171502,10 @@
       "domain": "myxavpn.online",
       "detected_at": "2026-10-13 01:32:17",
       "registrar": "Registrar of Domain Names REG.RU LLC",
-      "registrar_country": "",
+      "registrar_country": "RU",
       "tld": "online",
       "ip_address": "212.192.14.75",
-      "nameservers": "",
+      "nameservers": "[\"ns1.reg.ru\", \"ns2.reg.ru\"]",
       "status": "enriched",
       "target_brand": "telegram",
       "drainer_type": "clean",
@@ -171578,7 +171578,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"mcgrory.ns.cloudflare.com\", \"vida.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 13,
       "vt_vendors": [
@@ -171644,7 +171644,7 @@
       "registrar_country": "",
       "tld": "info",
       "ip_address": "104.239.83.200",
-      "nameservers": "",
+      "nameservers": "[\"ns1.turkticaret.net\", \"ns2.turkticaret.net\", \"ns3.turkticaret.net\"]",
       "status": "enriched",
       "target_brand": "Microsoft",
       "drainer_type": "clean",
@@ -171744,7 +171744,7 @@
       "ip_address": "212.192.14.75",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172011,7 +172011,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "62.60.226.69",
-      "nameservers": "",
+      "nameservers": "[\"ares.trustname.com\", \"zeus.trustname.com\"]",
       "status": "enriched",
       "target_brand": "Apple",
       "drainer_type": "clean",
@@ -172243,7 +172243,7 @@
       "ip_address": "47.79.39.190",
       "nameservers": "[\"ns7.alidns.com\", \"ns8.alidns.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -172290,7 +172290,7 @@
       "ip_address": "64.233.162.121",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Amazon",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -172351,7 +172351,7 @@
       "ip_address": "172.67.204.114",
       "nameservers": "[\"harmony.ns.cloudflare.com\", \"rommy.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172399,7 +172399,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "104.21.6.117",
-      "nameservers": "",
+      "nameservers": "[\"jacob.ns.cloudflare.com\", \"lina.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "revolut",
       "drainer_type": "clean",
@@ -172486,7 +172486,7 @@
       "registrar_country": "",
       "tld": "net",
       "ip_address": "104.21.59.244",
-      "nameservers": "",
+      "nameservers": "[\"paul.ns.cloudflare.com\", \"zara.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "google",
       "drainer_type": "clean",
@@ -172538,7 +172538,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"santino.ns.cloudflare.com\", \"sofia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172570,7 +172570,7 @@
       "ip_address": "64.29.17.1",
       "nameservers": "[\"launch1.spaceship.net\", \"launch2.spaceship.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Walmart",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -172607,7 +172607,7 @@
       "ip_address": "172.67.198.8",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172693,7 +172693,7 @@
       "ip_address": "172.67.176.27",
       "nameservers": "[\"crystal.ns.cloudflare.com\", \"leo.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172709,7 +172709,7 @@
       "ip_address": "103.106.191.144",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "generic",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172725,7 +172725,7 @@
       "ip_address": "198.251.84.7",
       "nameservers": "ns105.my-control-panel.com ns106.my-control-panel.com",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172741,7 +172741,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"bristol.ns.cloudflare.com\", \"mcgrory.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172757,7 +172757,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"bristol.ns.cloudflare.com\", \"mcgrory.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172773,7 +172773,7 @@
       "ip_address": "104.21.18.110",
       "nameservers": "[\"bristol.ns.cloudflare.com\", \"mcgrory.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172789,7 +172789,7 @@
       "ip_address": "104.21.69.243",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172969,7 +172969,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "188.114.97.1",
-      "nameservers": "",
+      "nameservers": "[\"hassan.ns.cloudflare.com\", \"sima.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "anthropic",
       "drainer_type": "clean",
@@ -173003,7 +173003,7 @@
       "ip_address": "208.91.198.178",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 11,
       "vt_vendors": [
@@ -173031,7 +173031,7 @@
       "ip_address": "31.31.196.17",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 17,
       "vt_vendors": [
@@ -173239,7 +173239,7 @@
       "ip_address": "212.192.14.75",
       "nameservers": "[\"ns1.reg.ru\", \"ns2.reg.ru\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -173299,10 +173299,10 @@
       "domain": "turbotunnel.space",
       "detected_at": "2026-10-13 01:36:13",
       "registrar": "Registrar of Domain Names REG.RU LLC",
-      "registrar_country": "",
+      "registrar_country": "RU",
       "tld": "space",
       "ip_address": "212.192.14.75",
-      "nameservers": "",
+      "nameservers": "[\"ns1.reg.ru\", \"ns2.reg.ru\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -173335,7 +173335,7 @@
       "domain": "pauktun.space",
       "detected_at": "2026-10-13 01:36:13",
       "registrar": "Registrar of Domain Names REG.RU LLC",
-      "registrar_country": "",
+      "registrar_country": "RU",
       "tld": "space",
       "ip_address": "212.192.14.75",
       "nameservers": "ns1.reg.ru ns2.reg.ru",
@@ -173435,7 +173435,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "216.198.79.1",
-      "nameservers": "",
+      "nameservers": "[\"dns1.p05.nsone.net\", \"dns2.p05.nsone.net\", \"dns3.p05.nsone.net\", \"dns4.p05.nsone.net\"]",
       "status": "enriched",
       "target_brand": "google",
       "drainer_type": "clean",
@@ -173505,7 +173505,7 @@
       "ip_address": "212.192.14.75",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -173645,7 +173645,7 @@
       "ip_address": "104.21.4.33",
       "nameservers": "[\"toby.ns.cloudflare.com\", \"ulla.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 17,
       "vt_vendors": [
@@ -173679,7 +173679,7 @@
       "ip_address": "23.20.116.56",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -173722,7 +173722,7 @@
       "registrar_country": "",
       "tld": "cc",
       "ip_address": "196.251.107.223",
-      "nameservers": "",
+      "nameservers": "[\"fred.ns.cloudflare.com\", \"leanna.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "genericscam",
       "drainer_type": "clean",
@@ -173744,7 +173744,7 @@
       "ip_address": "172.67.153.148",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "MetaMask",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -173760,7 +173760,7 @@
       "ip_address": "132.243.113.25",
       "nameservers": "ns1.timeweb.ru ns2.timeweb.ru ns3.timeweb.org ns4.timeweb.org",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "[]",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -173858,7 +173858,7 @@
       "ip_address": "38.180.161.221",
       "nameservers": "amalia.ns.cloudflare.com rajeev.ns.cloudflare.com",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Facebook",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -173877,7 +173877,7 @@
       "tld": "de",
       "ip_address": "216.150.1.1",
       "nameservers": "ns5.pixelx.de ns6.pixelx.de ns7.pixelx.de ns8.pixelx.de",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
       "vt_detections": 4,
@@ -173899,7 +173899,7 @@
       "ip_address": "75.2.60.5",
       "nameservers": "dns1.registrar-servers.com dns2.registrar-servers.com",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Investment Scam",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -173917,7 +173917,7 @@
       "ip_address": "188.114.96.3",
       "nameservers": "heather.ns.cloudflare.com simon.ns.cloudflare.com",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Google",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -173928,7 +173928,7 @@
       "domain": "conneecttipps.site",
       "detected_at": "2026-10-13 05:43:11",
       "registrar": "NameSilo, LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "site",
       "ip_address": "172.232.24.235",
       "nameservers": "ns1.dnsowl.com ns2.dnsowl.com ns3.dnsowl.com",
@@ -173944,12 +173944,12 @@
       "domain": "s.team-ke.com",
       "detected_at": "2026-10-13 05:43:23",
       "registrar": "Eranet International Limited",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
       "ip_address": "188.114.96.3",
       "nameservers": "corey.ns.cloudflare.com diva.ns.cloudflare.com",
-      "status": "checking",
-      "target_brand": "",
+      "status": "enriched",
+      "target_brand": "Steam",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -173971,14 +173971,11 @@
       "tld": "com",
       "ip_address": "172.67.157.14",
       "nameservers": "beth.ns.cloudflare.com roan.ns.cloudflare.com",
-      "status": "checking",
-      "target_brand": "",
+      "status": "enriched",
+      "target_brand": "Google",
       "drainer_type": "clean",
-      "vt_detections": 2,
-      "vt_vendors": [
-        "CRDF",
-        "DNS8"
-      ],
+      "vt_detections": 0,
+      "vt_vendors": [],
       "gsb_flagged": false,
       "creation_date": "2026-10-12 15:01:53"
     },
@@ -174009,7 +174006,7 @@
       "tld": "app",
       "ip_address": "188.114.97.1",
       "nameservers": "",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "KuCoin",
       "drainer_type": "clean",
       "vt_detections": 1,
@@ -174027,7 +174024,7 @@
       "tld": "ir",
       "ip_address": "94.182.163.148",
       "nameservers": "d.ns.arvancdn.ir ns1.faranlms.ir ns2.faranlms.ir x.ns.arvancdn.ir",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
       "vt_detections": 6,
@@ -174046,11 +174043,11 @@
       "domain": "armureriecible21.fr",
       "detected_at": "2026-10-13 05:43:53",
       "registrar": "OVH",
-      "registrar_country": "",
+      "registrar_country": "FR",
       "tld": "fr",
       "ip_address": "89.116.111.18",
       "nameservers": "ns1.armureriecible21.fr ns2.armureriecible21.fr",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
       "vt_detections": 5,
@@ -174103,7 +174100,7 @@
       "tld": "app",
       "ip_address": "188.114.96.1",
       "nameservers": "",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "Ledger",
       "drainer_type": "clean",
       "vt_detections": 6,
@@ -174126,9 +174123,9 @@
       "tld": "net",
       "ip_address": "208.109.33.211",
       "nameservers": "ns77.domaincontrol.com ns78.domaincontrol.com",
-      "status": "pending",
+      "status": "enriched",
       "target_brand": "",
-      "drainer_type": "",
+      "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
         "CRDF"
@@ -174140,15 +174137,20 @@
       "domain": "s.team-gu.com",
       "detected_at": "2026-10-13 05:46:24",
       "registrar": "Dominet (HK) Limited",
-      "registrar_country": "",
+      "registrar_country": "HK",
       "tld": "com",
       "ip_address": "188.114.96.3",
       "nameservers": "sevki.ns.cloudflare.com vera.ns.cloudflare.com",
-      "status": "pending",
-      "target_brand": "",
-      "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "status": "enriched",
+      "target_brand": "Steam",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "DNS8",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-05 12:31:15"
     },
@@ -174160,7 +174162,7 @@
       "tld": "com",
       "ip_address": "45.200.67.223",
       "nameservers": "pdns107.ultradns.biz pdns107.ultradns.com pdns107.ultradns.net pdns107.ultradns.org",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
       "vt_detections": 15,
@@ -174223,7 +174225,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "",
       "status": "checking",
-      "target_brand": "",
+      "target_brand": "Ledger",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -174236,11 +174238,11 @@
       "domain": "ibero-aurelis.com",
       "detected_at": "2026-10-13 05:45:12",
       "registrar": "TUCOWS.COM, CO.",
-      "registrar_country": "",
+      "registrar_country": "KN",
       "tld": "com",
       "ip_address": "188.114.97.3",
       "nameservers": "candy.ns.cloudflare.com garret.ns.cloudflare.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
       "vt_detections": 2,
@@ -174287,6 +174289,2851 @@
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-06 15:22:45"
+    },
+    {
+      "domain": "cemwin.com",
+      "detected_at": "2026-10-13 06:18:25",
+      "registrar": "GMO Internet Group, Inc. d/b/a Onamae.com",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.97.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-08 21:51:37"
+    },
+    {
+      "domain": "moyowin.com",
+      "detected_at": "2026-10-13 06:19:22",
+      "registrar": "GMO Internet Group, Inc. d/b/a Onamae.com",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "104.21.37.123",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-05 22:31:53"
+    },
+    {
+      "domain": "canowex.com",
+      "detected_at": "2026-10-13 06:19:14",
+      "registrar": "Dynadot Inc",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-10 19:52:51"
+    },
+    {
+      "domain": "zalewin.com",
+      "detected_at": "2026-10-13 06:19:03",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "172.67.191.94",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-09 01:01:28"
+    },
+    {
+      "domain": "saikobets.com",
+      "detected_at": "2026-10-13 06:18:52",
+      "registrar": "Dominet (HK) Limited",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-10 00:26:06"
+    },
+    {
+      "domain": "catowin.com",
+      "detected_at": "2026-10-13 06:18:36",
+      "registrar": "Fewmoretaps OU d/b/a Trustname.com",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-08-20 21:14:40"
+    },
+    {
+      "domain": "dafodex.com",
+      "detected_at": "2026-10-13 06:20:29",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-10 19:50:59"
+    },
+    {
+      "domain": "mikawin.com",
+      "detected_at": "2026-10-13 06:20:17",
+      "registrar": "Gname.com Pte. Ltd.",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-09-30 15:27:55"
+    },
+    {
+      "domain": "kcspin.com",
+      "detected_at": "2026-10-13 06:20:03",
+      "registrar": "DotWee Limited",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.97.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-08 17:39:37"
+    },
+    {
+      "domain": "vuzwin.com",
+      "detected_at": "2026-10-13 06:19:33",
+      "registrar": "DotWee Limited",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-08 10:59:23"
+    },
+    {
+      "domain": "xwine.cc",
+      "detected_at": "2026-10-13 06:21:27",
+      "registrar": "Global Domain Group LLC",
+      "registrar_country": "",
+      "tld": "cc",
+      "ip_address": "104.21.32.93",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-09-03 09:29:55"
+    },
+    {
+      "domain": "behomestore.shop",
+      "detected_at": "2026-10-13 06:27:51",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.212",
+      "nameservers": "brady.ns.cloudflare.com khloe.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "behomehome.shop",
+      "detected_at": "2026-10-13 06:27:51",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.151",
+      "nameservers": "darl.ns.cloudflare.com mary.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beheronline.shop",
+      "detected_at": "2026-10-13 06:28:34",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "behemothonline.shop",
+      "detected_at": "2026-10-13 06:28:34",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.212",
+      "nameservers": "amit.ns.cloudflare.com deb.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "behemothfashion.shop",
+      "detected_at": "2026-10-13 06:28:36",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.9.48.147",
+      "nameservers": "lia.ns.cloudflare.com martin.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "ESET",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beldecor.shop",
+      "detected_at": "2026-10-13 06:29:38",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.78",
+      "nameservers": "aisha.ns.cloudflare.com max.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bekacolstore.shop",
+      "detected_at": "2026-10-13 06:29:02",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.145",
+      "nameservers": "hans.ns.cloudflare.com sofia.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bejeweledatsoulstyle.shop",
+      "detected_at": "2026-10-13 06:28:57",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.93",
+      "nameservers": "jacqueline.ns.cloudflare.com yahir.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-25 06:59:45"
+    },
+    {
+      "domain": "behngiepsenghq.shop",
+      "detected_at": "2026-10-13 06:30:11",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.106.90.114",
+      "nameservers": "sara.ns.cloudflare.com titan.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "behomeofficial.shop",
+      "detected_at": "2026-10-13 06:30:39",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.115",
+      "nameservers": "eugene.ns.cloudflare.com raquel.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beifashion.shop",
+      "detected_at": "2026-10-13 06:30:55",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "arely.ns.cloudflare.com joel.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beinatreeoutdoor.shop",
+      "detected_at": "2026-10-13 06:31:12",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beinghumanclothing.shop",
+      "detected_at": "2026-10-13 06:31:39",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "cris.ns.cloudflare.com dolly.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beislane.shop",
+      "detected_at": "2026-10-13 06:32:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.172",
+      "nameservers": "darl.ns.cloudflare.com mary.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beisstyle.shop",
+      "detected_at": "2026-10-13 06:32:22",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.58",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beisbolmxonline.shop",
+      "detected_at": "2026-10-13 06:32:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.219",
+      "nameservers": "henrik.ns.cloudflare.com marissa.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "ESET",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellech.shop",
+      "detected_at": "2026-10-13 06:33:56",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.240",
+      "nameservers": "chuck.ns.cloudflare.com destiny.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellanottelinensstyle.shop",
+      "detected_at": "2026-10-13 06:32:59",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.130",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bekawood.shop",
+      "detected_at": "2026-10-13 06:34:48",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.90",
+      "nameservers": "alaric.ns.cloudflare.com zoe.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellanaturahq.shop",
+      "detected_at": "2026-10-13 06:32:43",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.217",
+      "nameservers": "anirban.ns.cloudflare.com ollie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-28 10:31:29"
+    },
+    {
+      "domain": "bellamihair.shop",
+      "detected_at": "2026-10-13 06:32:07",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellaliving.shop",
+      "detected_at": "2026-10-13 06:31:36",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.70",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabelle.shop",
+      "detected_at": "2026-10-13 06:30:57",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.246",
+      "nameservers": "evan.ns.cloudflare.com paloma.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belivestretch.shop",
+      "detected_at": "2026-10-13 06:30:36",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.239",
+      "nameservers": "ara.ns.cloudflare.com nash.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "believeleotardsstore.shop",
+      "detected_at": "2026-10-13 06:30:27",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.10",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belierstudio.shop",
+      "detected_at": "2026-10-13 06:30:16",
+      "registrar": "Spaceship, Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-16 16:56:58"
+    },
+    {
+      "domain": "belicohatsshop.shop",
+      "detected_at": "2026-10-13 06:30:09",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.172",
+      "nameservers": "meiling.ns.cloudflare.com nikon.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "behrstyle.shop",
+      "detected_at": "2026-10-13 06:35:11",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bekacookwarekitchen.shop",
+      "detected_at": "2026-10-13 06:35:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.206",
+      "nameservers": "margo.ns.cloudflare.com marjory.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belalane.shop",
+      "detected_at": "2026-10-13 06:35:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "ines.ns.cloudflare.com jerome.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bekopartstorehome.shop",
+      "detected_at": "2026-10-13 06:35:33",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "ESET",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belanivastore.shop",
+      "detected_at": "2026-10-13 06:35:47",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.200",
+      "nameservers": "fred.ns.cloudflare.com sandra.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belayeredonline.shop",
+      "detected_at": "2026-10-13 06:36:47",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.249",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 11,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belath.shop",
+      "detected_at": "2026-10-13 06:36:50",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.9.48.147",
+      "nameservers": "gracie.ns.cloudflare.com hassan.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellrossvibe.shop",
+      "detected_at": "2026-10-13 06:36:06",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "194.26.231.109",
+      "nameservers": "ns1.dyna-ns.net ns2.dyna-ns.net",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellroad.shop",
+      "detected_at": "2026-10-13 06:35:52",
+      "registrar": "Dynadot Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.144",
+      "nameservers": "darl.ns.cloudflare.com mary.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-22 17:33:02"
+    },
+    {
+      "domain": "bellinibaby.shop",
+      "detected_at": "2026-10-13 06:35:05",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.9",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Fortinet",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beldar.shop",
+      "detected_at": "2026-10-13 06:37:12",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.26",
+      "nameservers": "amber.ns.cloudflare.com ricardo.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belectrics.shop",
+      "detected_at": "2026-10-13 06:37:38",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "arely.ns.cloudflare.com joel.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belierofficial.shop",
+      "detected_at": "2026-10-13 06:38:09",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.215",
+      "nameservers": "alice.ns.cloudflare.com tadeo.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belltentboutiquehq.shop",
+      "detected_at": "2026-10-13 06:37:05",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.209",
+      "nameservers": "aron.ns.cloudflare.com nash.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belltasty.shop",
+      "detected_at": "2026-10-13 06:37:03",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "cullen.ns.cloudflare.com erin.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "believeleotardsactive.shop",
+      "detected_at": "2026-10-13 06:38:49",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.214",
+      "nameservers": "emily.ns.cloudflare.com remy.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellaball.shop",
+      "detected_at": "2026-10-13 06:39:37",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabeautyproshoppeonline.shop",
+      "detected_at": "2026-10-13 06:39:40",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.25",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabohemeboutique.shop",
+      "detected_at": "2026-10-13 06:40:11",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.215",
+      "nameservers": "eleanor.ns.cloudflare.com mike.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabohemefashion.shop",
+      "detected_at": "2026-10-13 06:40:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabohemestudio.shop",
+      "detected_at": "2026-10-13 06:40:22",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.23",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "ESET",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellaboobaby.shop",
+      "detected_at": "2026-10-13 06:40:36",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellacosajewelersjewelry.shop",
+      "detected_at": "2026-10-13 06:40:58",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.99",
+      "nameservers": "chloe.ns.cloudflare.com phil.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belladonnafashion.shop",
+      "detected_at": "2026-10-13 06:41:10",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.243",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellacosajewelersshop.shop",
+      "detected_at": "2026-10-13 06:41:22",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.205",
+      "nameservers": "gabriella.ns.cloudflare.com ken.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belladonnastore.shop",
+      "detected_at": "2026-10-13 06:41:28",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.170",
+      "nameservers": "quentin.ns.cloudflare.com vivienne.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamiacollection.shop",
+      "detected_at": "2026-10-13 06:42:18",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.10",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellaly.shop",
+      "detected_at": "2026-10-13 06:42:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.218",
+      "nameservers": "alice.ns.cloudflare.com tadeo.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamiantabeauty.shop",
+      "detected_at": "2026-10-13 06:42:40",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.178",
+      "nameservers": "maleah.ns.cloudflare.com morgan.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamiantashop.shop",
+      "detected_at": "2026-10-13 06:43:04",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamiantacosmetics.shop",
+      "detected_at": "2026-10-13 06:43:13",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.106",
+      "nameservers": "bailey.ns.cloudflare.com milan.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamihairbeauty.shop",
+      "detected_at": "2026-10-13 06:43:19",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.73",
+      "nameservers": "melnicoff.ns.cloudflare.com ximena.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellanottelinensstore.shop",
+      "detected_at": "2026-10-13 06:44:05",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.196",
+      "nameservers": "hugh.ns.cloudflare.com sloan.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellanaturawellness.shop",
+      "detected_at": "2026-10-13 06:44:22",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.26",
+      "nameservers": "oaklyn.ns.cloudflare.com salvador.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellapure.shop",
+      "detected_at": "2026-10-13 06:44:33",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellasort.shop",
+      "detected_at": "2026-10-13 06:44:49",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.213",
+      "nameservers": "andy.ns.cloudflare.com haley.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellarosequiltsstyle.shop",
+      "detected_at": "2026-10-13 06:44:53",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxeglow.shop",
+      "detected_at": "2026-10-13 06:45:18",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.219",
+      "nameservers": "ariadne.ns.cloudflare.com maciej.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 14,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Sophos",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxeofficial.shop",
+      "detected_at": "2026-10-13 06:45:34",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.250",
+      "nameservers": "anastasia.ns.cloudflare.com kayden.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxestore.shop",
+      "detected_at": "2026-10-13 06:45:58",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.124",
+      "nameservers": "lilith.ns.cloudflare.com marvin.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxurybeauty.shop",
+      "detected_at": "2026-10-13 06:46:03",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.138",
+      "nameservers": "doug.ns.cloudflare.com val.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxuryco.shop",
+      "detected_at": "2026-10-13 06:46:15",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.43",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belanivaboutique.shop",
+      "detected_at": "2026-10-13 06:47:07",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.62",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beingly.shop",
+      "detected_at": "2026-10-13 06:47:35",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "cullen.ns.cloudflare.com erin.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belanoshop.shop",
+      "detected_at": "2026-10-13 06:48:03",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "beliershop.shop",
+      "detected_at": "2026-10-13 06:48:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.106.90.114",
+      "nameservers": "archer.ns.cloudflare.com raquel.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belevelshealth.shop",
+      "detected_at": "2026-10-13 06:48:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.145",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belierstyle.shop",
+      "detected_at": "2026-10-13 06:49:00",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.195",
+      "nameservers": "chuck.ns.cloudflare.com destiny.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabridesmaidsstyle.shop",
+      "detected_at": "2026-10-13 06:49:19",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.217",
+      "nameservers": "emily.ns.cloudflare.com remy.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellafra.shop",
+      "detected_at": "2026-10-13 06:49:45",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "ines.ns.cloudflare.com jerome.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxuryonline.shop",
+      "detected_at": "2026-10-13 06:50:23",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.226",
+      "nameservers": "cullen.ns.cloudflare.com desi.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaorganic.shop",
+      "detected_at": "2026-10-13 06:50:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.106.90.114",
+      "nameservers": "anderson.ns.cloudflare.com monroe.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaorganichq.shop",
+      "detected_at": "2026-10-13 06:50:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "ESET",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleekshop.shop",
+      "detected_at": "2026-10-13 06:51:17",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.53",
+      "nameservers": "emily.ns.cloudflare.com remy.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellecourmart.shop",
+      "detected_at": "2026-10-13 06:51:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.196",
+      "nameservers": "kia.ns.cloudflare.com otto.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleepoqueco.shop",
+      "detected_at": "2026-10-13 06:51:22",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.162",
+      "nameservers": "lilith.ns.cloudflare.com marvin.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleepoquedecor.shop",
+      "detected_at": "2026-10-13 06:52:03",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.226",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellemini.shop",
+      "detected_at": "2026-10-13 06:52:11",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 12,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "Netcraft",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleroseofficial.shop",
+      "detected_at": "2026-10-13 06:52:32",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 12,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellerosestyle.shop",
+      "detected_at": "2026-10-13 06:52:36",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.10",
+      "nameservers": "brianna.ns.cloudflare.com jim.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belletots.shop",
+      "detected_at": "2026-10-13 06:52:59",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellgong.shop",
+      "detected_at": "2026-10-13 06:53:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.73",
+      "nameservers": "lily.ns.cloudflare.com margo.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellezaficollection.shop",
+      "detected_at": "2026-10-13 06:53:22",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.211",
+      "nameservers": "aron.ns.cloudflare.com nash.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellevionboutique.shop",
+      "detected_at": "2026-10-13 06:53:23",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellissimabazaar.shop",
+      "detected_at": "2026-10-13 06:54:08",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.144",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellissimadirect.shop",
+      "detected_at": "2026-10-13 06:54:18",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.158",
+      "nameservers": "bayan.ns.cloudflare.com desiree.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellissimastyle.shop",
+      "detected_at": "2026-10-13 06:54:37",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.171",
+      "nameservers": "boyd.ns.cloudflare.com treasure.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "alphaMountain.ai"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellmansymfonglobal.shop",
+      "detected_at": "2026-10-13 06:54:50",
+      "registrar": "Dynadot Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.202",
+      "nameservers": "frida.ns.cloudflare.com simon.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-16 03:42:40"
+    },
+    {
+      "domain": "bellmansymfonstore.shop",
+      "detected_at": "2026-10-13 06:54:51",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.253",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellrossstudio.shop",
+      "detected_at": "2026-10-13 06:55:33",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.104",
+      "nameservers": "jacqueline.ns.cloudflare.com yahir.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellrosswatch.shop",
+      "detected_at": "2026-10-13 06:55:49",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.248",
+      "nameservers": "emerson.ns.cloudflare.com irma.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellrossworld.shop",
+      "detected_at": "2026-10-13 06:56:11",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.10",
+      "nameservers": "cameron.ns.cloudflare.com stevie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellsofsteelonline.shop",
+      "detected_at": "2026-10-13 06:56:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.89",
+      "nameservers": "melnicoff.ns.cloudflare.com ximena.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellsofsteelactive.shop",
+      "detected_at": "2026-10-13 06:56:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.136",
+      "nameservers": "john.ns.cloudflare.com thea.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Netcraft",
+        "Sophos",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belltechonline.shop",
+      "detected_at": "2026-10-13 06:56:59",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.53",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belltentboutiqueoutdoor.shop",
+      "detected_at": "2026-10-13 06:57:10",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.249",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belltentsussexoutdoor.shop",
+      "detected_at": "2026-10-13 06:57:13",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.243",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellufr.shop",
+      "detected_at": "2026-10-13 06:57:35",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "cris.ns.cloudflare.com dolly.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellybandscare.shop",
+      "detected_at": "2026-10-13 06:57:50",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.210",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "behrly.shop",
+      "detected_at": "2026-10-13 06:59:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabellewear.shop",
+      "detected_at": "2026-10-13 07:00:05",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.224",
+      "nameservers": "lars.ns.cloudflare.com sonia.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belindasstorehq.shop",
+      "detected_at": "2026-10-13 07:00:07",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.51",
+      "nameservers": "michael.ns.cloudflare.com nena.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellalunagownsstore.shop",
+      "detected_at": "2026-10-13 07:00:11",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.187",
+      "nameservers": "cash.ns.cloudflare.com jacqueline.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamiaboutiquehq.shop",
+      "detected_at": "2026-10-13 07:00:34",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.152",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamiacollectionshome.shop",
+      "detected_at": "2026-10-13 07:00:48",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.219",
+      "nameservers": "macy.ns.cloudflare.com ned.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellamisalon.shop",
+      "detected_at": "2026-10-13 07:00:52",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.236",
+      "nameservers": "bradley.ns.cloudflare.com lana.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellavitaluxecosmetics.shop",
+      "detected_at": "2026-10-13 07:00:57",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.250",
+      "nameservers": "armfazh.ns.cloudflare.com zainab.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellasleep.shop",
+      "detected_at": "2026-10-13 07:01:04",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.246",
+      "nameservers": "ara.ns.cloudflare.com nash.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellecourliteriehq.shop",
+      "detected_at": "2026-10-13 07:01:33",
+      "registrar": "Dynadot Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "146.19.203.202",
+      "nameservers": "ariadne.ns.cloudflare.com maciej.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "G-Data"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-28 10:30:40"
+    },
+    {
+      "domain": "belledonneparisstyle.shop",
+      "detected_at": "2026-10-13 07:01:36",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.134",
+      "nameservers": "quentin.ns.cloudflare.com vivienne.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleepoquegarden.shop",
+      "detected_at": "2026-10-13 07:01:43",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.221",
+      "nameservers": "glen.ns.cloudflare.com indie.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellmode.shop",
+      "detected_at": "2026-10-13 07:03:03",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "cullen.ns.cloudflare.com erin.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleviecosmeticlabs.shop",
+      "detected_at": "2026-10-13 07:03:03",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.145",
+      "nameservers": "maleah.ns.cloudflare.com morgan.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellish.shop",
+      "detected_at": "2026-10-13 07:03:05",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "arely.ns.cloudflare.com joel.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellissimabeauty.shop",
+      "detected_at": "2026-10-13 07:03:05",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.207",
+      "nameservers": "joaquin.ns.cloudflare.com suzanne.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellrossaccessories.shop",
+      "detected_at": "2026-10-13 07:03:55",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellwoodsbreweryonline.shop",
+      "detected_at": "2026-10-13 07:03:59",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "162.222.90.234",
+      "nameservers": "michael.ns.cloudflare.com nena.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellyard.shop",
+      "detected_at": "2026-10-13 07:04:37",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belamuse.shop",
+      "detected_at": "2026-10-13 07:09:33",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "cris.ns.cloudflare.com dolly.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellabeautyprofessionalbeauty.shop",
+      "detected_at": "2026-10-13 07:09:42",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.72",
+      "nameservers": "bonnie.ns.cloudflare.com sid.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belleepoquehq.shop",
+      "detected_at": "2026-10-13 07:15:29",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.113",
+      "nameservers": "bonnie.ns.cloudflare.com sid.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bellissimahq.shop",
+      "detected_at": "2026-10-13 07:17:26",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.124",
+      "nameservers": "jacqueline.ns.cloudflare.com yahir.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "belcore.shop",
+      "detected_at": "2026-10-13 07:26:39",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "194.26.231.220",
+      "nameservers": "lilith.ns.cloudflare.com marvin.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": ""
     }
   ]
 }
