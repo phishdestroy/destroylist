@@ -14,7 +14,7 @@
 <img src="banner.svg" alt="June 2026" width="900"/>
 
 
-[**← May 2026**](../../2026/05/) &nbsp;·&nbsp; 📅 **June 2026** &nbsp;·&nbsp; *ongoing...*
+[**← May 2026**](../../2026/05/) &nbsp;·&nbsp; 📅 **June 2026** &nbsp;·&nbsp; [**July 2026 →**](../../2026/07/)
 
 <br>
 
@@ -276,7 +276,7 @@ alphaMountain.ai led with 4,851 detections (59.9%), followed by Gridinsoft at 4,
 
 <div align="center">
 
-[**← May 2026**](../../2026/05/) &nbsp;·&nbsp; 📅 **June 2026** &nbsp;·&nbsp; *ongoing...*
+[**← May 2026**](../../2026/05/) &nbsp;·&nbsp; 📅 **June 2026** &nbsp;·&nbsp; [**July 2026 →**](../../2026/07/)
 
 <br>
 
