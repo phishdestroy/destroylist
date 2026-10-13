@@ -2,7 +2,7 @@
 * text=auto
 
 # Mark generated data files — excludes from GitHub language stats and diffs.
-# NOTE: rootlist/arrays/** and changes/** are deliberately NOT marked:
+# NOTE: rootlist/arrays/** and archives/changes/** are deliberately NOT marked:
 # GitHub code search excludes generated files from its index, and those two
 # directories exist precisely so every domain is findable via code search.
 list.json linguist-generated
@@ -24,3 +24,5 @@ rootlist/formats/** linguist-generated
 rootlist/*.json linguist-generated
 rootlist/*.txt linguist-generated
 archives/** linguist-generated
+# Daily diffs stay searchable in GitHub code search
+archives/changes/** -linguist-generated
