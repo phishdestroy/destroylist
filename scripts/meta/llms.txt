@@ -1,0 +1,26 @@
+# DestroyList
+
+> A non-commercial community resource for open phishing and scam blocklists, credited sources, public API access and free appeals. Maintained by PhishDestroy.
+
+Canonical page: https://phishdestroy.github.io/destroylist/scripts/
+
+## Project references
+
+- [Readable overview](https://phishdestroy.github.io/destroylist/overview.txt): scope, definitions, methods, limits, reuse and appeals.
+- [Full reference](https://phishdestroy.github.io/destroylist/llms-full.txt): the overview plus dataset downloads and source attribution.
+- [Dataset catalog](https://phishdestroy.github.io/destroylist/datasets.json): exact download URLs and documented refresh schedules.
+- [Structured datasets](https://phishdestroy.github.io/destroylist/dataset-catalog.jsonld): Schema.org metadata matching the visible page.
+- [Source registry](https://phishdestroy.github.io/destroylist/sources.json): configured upstreams distinguished from wider community credits.
+- [Community tools](https://phishdestroy.github.io/destroylist/tools.json): scanners, investigation and reporting routes, with individual access notes and provider references.
+
+## Current services
+
+- [API reference](https://api.destroy.tools/): authoritative endpoints, limits and response semantics.
+- [OpenAPI description](https://api.destroy.tools/openapi.json): the API's published contract.
+- [Feed metrics](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/metrics.json): dated feed-entry counts.
+- [Repository](https://github.com/phishdestroy/destroylist): source, license and change history.
+- [Official appeals](https://phishdestroy.io/appeals/): submission, tracking and current review policy.
+
+## Interpretation
+
+The shared objective is to stop phishing through open observations, analysis and defensive reuse. Feed size is not an impact score; an animated illustration is not live telemetry. Unlisted does not mean safe. DNS-active does not prove malicious content. HTTP checks can miss cloaking. Feed counts overlap and differ from API normalized-domain totals. Listings and reports are not confirmed takedowns. Source attribution does not imply a partnership. Upstream licenses remain applicable. The reference contains no live-domain safety guarantee.
