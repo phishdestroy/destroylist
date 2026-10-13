@@ -1,0 +1,288 @@
+{
+  "name": "DestroyList download catalog",
+  "canonical_url": "https://phishdestroy.github.io/destroylist/scripts/",
+  "metadata_reviewed_at": "2026-10-13",
+  "counts_url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/metrics.json",
+  "api_catalog_url": "https://api.destroy.tools/v1/feeds",
+  "license_notes": "Repository MIT license; upstream data can retain separate conditions. See source registry and project license.",
+  "datasets": [
+    {
+      "id": "primary",
+      "name": "Primary",
+      "description": "Curated phishing and scam indicators maintained by the project. This is the full published feed, not a count of active sites or confirmed takedowns.",
+      "documented_update_schedule": "On verification",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt"
+      }
+    },
+    {
+      "id": "primary_dns",
+      "name": "Primary Live",
+      "description": "The subset of the primary feed whose entries resolve in DNS at the latest published check. DNS resolution alone does not prove malicious content.",
+      "documented_update_schedule": "24 hours",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_dns",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_domains.txt"
+      }
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "description": "Indicators aggregated from configured public upstream feeds and the primary list. Source licenses remain applicable, and an entry may appear in more than one feed.",
+      "documented_update_schedule": "2 hours",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/blocklist.txt"
+      }
+    },
+    {
+      "id": "community_dns",
+      "name": "Community Live",
+      "description": "The DNS-resolving subset of the community dataset at the latest published check. A domain missing from this subset is not established as safe.",
+      "documented_update_schedule": "24 hours",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_dns",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/live_blocklist.txt"
+      }
+    },
+    {
+      "id": "primary_content",
+      "name": "Primary Content",
+      "description": "Primary indicators passing additional HTTP content checks. Cloaking and changing content can limit coverage; use the full feed when broader coverage is needed.",
+      "documented_update_schedule": "12 hours",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-primary_content",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/content_active.txt"
+      }
+    },
+    {
+      "id": "community_content",
+      "name": "Community Content",
+      "description": "Community indicators passing additional HTTP content checks. This is a checked subset, not a comprehensive record of every phishing domain.",
+      "documented_update_schedule": "24 hours",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-community_content",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/community/content_live.txt"
+      }
+    },
+    {
+      "id": "allowlist",
+      "name": "Allowlist",
+      "description": "Reviewed domains cleared from false-positive listings. Maintained manually to support corrections and avoid repeated false-positive inclusion.",
+      "documented_update_schedule": "Manual review",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-allowlist",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/allow/allowlist.json"
+      }
+    },
+    {
+      "id": "root-active_root_domains",
+      "name": "Primary roots",
+      "description": "Root-domain projection of the primary dataset; subdomains and shared hosting infrastructure are excluded.",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-active_root_domains",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt"
+      }
+    },
+    {
+      "id": "root-online_root_domains",
+      "name": "Primary live roots",
+      "description": "DNS-active root-domain projection of the primary dataset; shared hosting infrastructure is excluded.",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-online_root_domains",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt"
+      }
+    },
+    {
+      "id": "root-services_domains",
+      "name": "Primary service subdomains",
+      "description": "Individual hosting-platform subdomains from the primary dataset. These should not be treated as a listing of the entire shared hosting provider.",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-services_domains",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt"
+      }
+    },
+    {
+      "id": "root-community_root_domains",
+      "name": "Community roots",
+      "description": "Root-domain projection of the community dataset; subdomains and shared hosting infrastructure are excluded.",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_root_domains",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt"
+      }
+    },
+    {
+      "id": "root-community_online_root_domains",
+      "name": "Community live roots",
+      "description": "DNS-active root-domain projection of the community dataset; shared hosting infrastructure is excluded.",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_online_root_domains",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt"
+      }
+    },
+    {
+      "id": "root-community_services_domains",
+      "name": "Community service subdomains",
+      "description": "Individual hosting-platform subdomains from the community dataset. These should not be treated as a listing of the entire shared hosting provider.",
+      "landing_url": "https://phishdestroy.github.io/destroylist/scripts/#dataset-root-community_services_domains",
+      "files": {
+        "json": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json",
+        "txt": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt"
+      }
+    }
+  ],
+  "format_subscriptions": [
+    {
+      "dataset": "primary",
+      "format": "Plain text",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/domains.txt"
+    },
+    {
+      "dataset": "primary",
+      "format": "Hosts file",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/hosts.txt"
+    },
+    {
+      "dataset": "primary",
+      "format": "AdGuard / uBlock Origin",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/adblock.txt"
+    },
+    {
+      "dataset": "primary",
+      "format": "Dnsmasq",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/dnsmasq.conf"
+    },
+    {
+      "dataset": "primary",
+      "format": "RPZ zone",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/rpz.zone"
+    },
+    {
+      "dataset": "primary",
+      "format": "Unbound",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/unbound.conf"
+    },
+    {
+      "dataset": "primary",
+      "format": "Redis",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary/redis.txt"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "Plain text",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/domains.txt"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "Hosts file",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/hosts.txt"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "AdGuard / uBlock Origin",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/adblock.txt"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "Dnsmasq",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/dnsmasq.conf"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "RPZ zone",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/rpz.zone"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "Unbound",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/unbound.conf"
+    },
+    {
+      "dataset": "primary_active",
+      "format": "Redis",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/redis.txt"
+    },
+    {
+      "dataset": "community",
+      "format": "Plain text",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/domains.txt"
+    },
+    {
+      "dataset": "community",
+      "format": "Hosts file",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/hosts.txt"
+    },
+    {
+      "dataset": "community",
+      "format": "AdGuard / uBlock Origin",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/adblock.txt"
+    },
+    {
+      "dataset": "community",
+      "format": "Dnsmasq",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/dnsmasq.conf"
+    },
+    {
+      "dataset": "community",
+      "format": "RPZ zone",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/rpz.zone"
+    },
+    {
+      "dataset": "community",
+      "format": "Unbound",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/unbound.conf"
+    },
+    {
+      "dataset": "community",
+      "format": "Redis",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community/redis.txt"
+    },
+    {
+      "dataset": "community_active",
+      "format": "Plain text",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/domains.txt"
+    },
+    {
+      "dataset": "community_active",
+      "format": "Hosts file",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/hosts.txt"
+    },
+    {
+      "dataset": "community_active",
+      "format": "AdGuard / uBlock Origin",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/adblock.txt"
+    },
+    {
+      "dataset": "community_active",
+      "format": "Dnsmasq",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/dnsmasq.conf"
+    },
+    {
+      "dataset": "community_active",
+      "format": "RPZ zone",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/rpz.zone"
+    },
+    {
+      "dataset": "community_active",
+      "format": "Unbound",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/unbound.conf"
+    },
+    {
+      "dataset": "community_active",
+      "format": "Redis",
+      "url": "https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/community_active/redis.txt"
+    }
+  ]
+}
