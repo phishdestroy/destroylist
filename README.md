@@ -531,7 +531,7 @@ Network security · Threat research · AI/ML training · Trend analysis · Autom
 | Granularity | Where | Retention |
 |:---|:---|:---|
 | Every change | [Commit history](https://github.com/phishdestroy/destroylist/commits/main/) | Forever (41,000+ commits) |
-| Daily added/removed diffs | [`changes/`](changes/) | Forever, searchable in GitHub code search |
+| Daily added/removed diffs | [`archives/changes/`](archives/changes/) | Forever, searchable in GitHub code search |
 | Weekly & monthly full snapshots | [`archives/`](archives/) → [Release assets](https://github.com/phishdestroy/destroylist/releases/tag/archives) | Recent in tree, older rotated to the permanent Release |
 
 > [!TIP]

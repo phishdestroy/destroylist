@@ -40,7 +40,7 @@ automatically to the permanent
 so the repository stays small while nothing is ever deleted.
 
 Daily added/removed diffs (indexed by GitHub code search) live in
-[`changes/`](../changes/).
+[`changes/`](changes/).
 
 ## 📋 Format
 
