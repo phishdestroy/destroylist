@@ -7,7 +7,7 @@ from contextlib import chdir
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SPEC = importlib.util.spec_from_file_location(
     "allowlist_pattern_guard",
     ROOT / "scripts" / "allowlist_pattern_guard.py",

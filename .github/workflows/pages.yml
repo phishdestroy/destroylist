@@ -29,6 +29,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      # robots.txt and sitemap.xml live in scripts/meta/ but are served from the site root
+      - name: Publish metadata files at the site root
+        run: sudo cp scripts/meta/* _site/
       - uses: actions/upload-pages-artifact@v5
 
   deploy:
