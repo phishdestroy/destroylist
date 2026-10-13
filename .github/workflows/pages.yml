@@ -25,6 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: actions/configure-pages@v6
+      # Jekyll configuration is kept out of the repository root
+      - name: Jekyll configuration
+        run: cp .github/pages/_config.yml _config.yml
       - uses: actions/jekyll-build-pages@v1
         with:
           source: ./
