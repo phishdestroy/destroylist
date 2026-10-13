@@ -2,20 +2,20 @@
   "meta": {
     "month": "2026-10",
     "name": "October 2026",
-    "generated": "2026-10-13T02:30:02.011310+00:00",
-    "total": 6995,
+    "generated": "2026-10-13T04:15:07.713650+00:00",
+    "total": 7012,
     "report": "README.md",
     "prev_report": "../../2026/09/",
     "next_report": null,
     "ongoing": true
   },
   "stats": {
-    "live": 4925,
-    "dead": 2041,
-    "unknown": 29,
-    "enriched": 6944,
-    "kill_rate": 29.3,
-    "vt_flagged": 6688,
+    "live": 4921,
+    "dead": 2049,
+    "unknown": 42,
+    "enriched": 6949,
+    "kill_rate": 29.4,
+    "vt_flagged": 6703,
     "vt_rate": 95.6,
     "gsb_flagged": 157,
     "avg_response_h": 33.4,
@@ -25,7 +25,7 @@
     "registrars": [
       {
         "name": "Dynadot Inc.",
-        "count": 3132
+        "count": 3168
       },
       {
         "name": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
@@ -33,7 +33,7 @@
       },
       {
         "name": "Spaceship, Inc.",
-        "count": 207
+        "count": 208
       },
       {
         "name": "Gname.com Pte. Ltd.",
@@ -41,11 +41,11 @@
       },
       {
         "name": "GoDaddy.com, LLC",
-        "count": 120
+        "count": 122
       },
       {
         "name": "NameSilo, LLC",
-        "count": 110
+        "count": 111
       },
       {
         "name": "DYNADOT LLC",
@@ -53,7 +53,7 @@
       },
       {
         "name": "Dominet (HK) Limited",
-        "count": 95
+        "count": 97
       },
       {
         "name": "Global Domain Group LLC",
@@ -61,7 +61,7 @@
       },
       {
         "name": "PDR Ltd. d/b/a PublicDomainRegistry.com",
-        "count": 86
+        "count": 87
       }
     ],
     "tlds": [
@@ -71,7 +71,7 @@
       },
       {
         "tld": "com",
-        "count": 1625
+        "count": 1632
       },
       {
         "tld": "xyz",
@@ -79,19 +79,19 @@
       },
       {
         "tld": "net",
-        "count": 229
+        "count": 230
       },
       {
         "tld": "org",
         "count": 105
       },
       {
-        "tld": "cfd",
-        "count": 92
+        "tld": "app",
+        "count": 96
       },
       {
-        "tld": "app",
-        "count": 91
+        "tld": "cfd",
+        "count": 92
       },
       {
         "tld": "live",
@@ -109,7 +109,7 @@
     "countries": [
       {
         "country": "",
-        "count": 4939
+        "count": 4954
       },
       {
         "country": "UNKNOWN",
@@ -117,7 +117,7 @@
       },
       {
         "country": "US",
-        "count": 352
+        "count": 353
       },
       {
         "country": "CN",
@@ -151,15 +151,15 @@
     "brands": [
       {
         "brand": "MetaMask",
-        "count": 631
+        "count": 632
       },
       {
         "brand": "Across",
-        "count": 351
+        "count": 350
       },
       {
         "brand": "Google",
-        "count": 243
+        "count": 242
       },
       {
         "brand": "Apple",
@@ -175,15 +175,15 @@
       },
       {
         "brand": "Facebook",
-        "count": 62
+        "count": 61
+      },
+      {
+        "brand": "Ledger",
+        "count": 46
       },
       {
         "brand": "Ethereum",
         "count": 45
-      },
-      {
-        "brand": "Ledger",
-        "count": 44
       },
       {
         "brand": "Curve",
@@ -203,15 +203,15 @@
     "vt_vendors": [
       {
         "vendor": "alphaMountain.ai",
-        "detections": 5909
+        "detections": 5915
       },
       {
         "vendor": "Gridinsoft",
-        "detections": 5893
+        "detections": 5898
       },
       {
         "vendor": "Forcepoint ThreatSeeker",
-        "detections": 4790
+        "detections": 4792
       },
       {
         "vendor": "SOCRadar",
@@ -219,47 +219,47 @@
       },
       {
         "vendor": "CRDF",
-        "detections": 4015
+        "detections": 4022
       },
       {
         "vendor": "Fortinet",
-        "detections": 3554
+        "detections": 3560
       },
       {
         "vendor": "G-Data",
-        "detections": 3265
+        "detections": 3268
       },
       {
         "vendor": "LevelBlue",
-        "detections": 2720
+        "detections": 2723
       },
       {
         "vendor": "BitDefender",
-        "detections": 2691
+        "detections": 2694
       },
       {
         "vendor": "Netcraft",
-        "detections": 2414
+        "detections": 2416
       },
       {
         "vendor": "ESET",
-        "detections": 2187
+        "detections": 2190
       },
       {
         "vendor": "Webroot",
-        "detections": 1898
+        "detections": 1905
       },
       {
         "vendor": "Sophos",
-        "detections": 1550
+        "detections": 1551
       },
       {
         "vendor": "VIPRE",
-        "detections": 1490
+        "detections": 1491
       },
       {
         "vendor": "Kaspersky",
-        "detections": 1376
+        "detections": 1377
       }
     ]
   },
@@ -275,8 +275,8 @@
     "2026-10-09": 861,
     "2026-10-10": 467,
     "2026-10-11": 562,
-    "2026-10-12": 431,
-    "2026-10-13": 129
+    "2026-10-12": 427,
+    "2026-10-13": 150
   },
   "threats": [
     {
@@ -4851,7 +4851,7 @@
     {
       "domain": "americansalehome.shop",
       "detected_at": "2026-10-01 14:32:59",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "46.245.239.161",
@@ -4872,7 +4872,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-07 03:31:04"
     },
     {
       "domain": "americanmadestoreco.shop",
@@ -7533,7 +7533,7 @@
     {
       "domain": "anamuse.shop",
       "detected_at": "2026-10-02 16:48:16",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -7558,7 +7558,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-16 05:17:58"
     },
     {
       "domain": "anbertech.shop",
@@ -8688,7 +8688,7 @@
     {
       "domain": "angoliodirect.shop",
       "detected_at": "2026-10-02 17:02:52",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.14",
@@ -8714,7 +8714,7 @@
         "Webroot"
       ],
       "gsb_flagged": true,
-      "creation_date": ""
+      "creation_date": "2026-04-23 23:16:16"
     },
     {
       "domain": "anhaengercentral.shop",
@@ -9779,7 +9779,7 @@
     {
       "domain": "anmajewelleryhq.shop",
       "detected_at": "2026-10-02 17:18:48",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "193.162.133.218",
@@ -9803,7 +9803,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-23 06:02:45"
     },
     {
       "domain": "annecoleswimwearboutique.shop",
@@ -12763,7 +12763,7 @@
     {
       "domain": "apollountoldgems.shop",
       "detected_at": "2026-10-02 20:24:15",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.33",
@@ -12784,7 +12784,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-13 11:17:17"
     },
     {
       "domain": "apollountoldco.shop",
@@ -14002,7 +14002,7 @@
     {
       "domain": "annaquanx.shop",
       "detected_at": "2026-10-03 03:28:13",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.240",
@@ -14024,7 +14024,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-18 06:22:08"
     },
     {
       "domain": "anndemeulemeesterhq.shop",
@@ -15182,7 +15182,7 @@
     {
       "domain": "antoneshq.shop",
       "detected_at": "2026-10-03 05:31:52",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "62.233.61.26",
@@ -15202,7 +15202,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-14 04:20:31"
     },
     {
       "domain": "ardoreyewearboutique.shop",
@@ -16882,7 +16882,7 @@
     {
       "domain": "aromaticstore.shop",
       "detected_at": "2026-10-03 05:50:48",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.48",
@@ -16904,7 +16904,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-10 08:14:59"
     },
     {
       "domain": "aromatiquehome.shop",
@@ -17218,7 +17218,7 @@
     {
       "domain": "armansfinejewelleryshop.shop",
       "detected_at": "2026-10-03 05:55:14",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "162.222.90.197",
@@ -17238,7 +17238,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-19 23:35:58"
     },
     {
       "domain": "armbuildingsupplieshome.shop",
@@ -17586,7 +17586,7 @@
     {
       "domain": "arlowe.shop",
       "detected_at": "2026-10-03 06:03:40",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "23.252.79.216",
@@ -17615,7 +17615,7 @@
         "Webroot"
       ],
       "gsb_flagged": true,
-      "creation_date": ""
+      "creation_date": "2026-05-27 09:25:44"
     },
     {
       "domain": "armoniasfashion.shop",
@@ -20096,7 +20096,7 @@
     {
       "domain": "arcadiapublishinghub.shop",
       "detected_at": "2026-10-03 13:28:20",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "46.245.239.146",
@@ -20114,7 +20114,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 18:24:36"
     },
     {
       "domain": "arcanebound.shop",
@@ -20293,7 +20293,7 @@
     {
       "domain": "archic.shop",
       "detected_at": "2026-10-03 13:32:50",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "46.245.239.176",
@@ -20311,7 +20311,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-19 13:41:42"
     },
     {
       "domain": "arcagearstoreonline.shop",
@@ -21482,11 +21482,11 @@
     {
       "domain": "reactivar-aquimx000.zya.me",
       "detected_at": "2026-10-03 18:36:46",
-      "registrar": "",
+      "registrar": "Porkbun LLC",
       "registrar_country": "",
       "tld": "me",
       "ip_address": "185.27.134.225",
-      "nameservers": "",
+      "nameservers": "[\"ns1.byet.org\", \"ns2.byet.org\", \"ns3.byet.org\", \"ns4.byet.org\", \"ns5.byet.org\"]",
       "status": "enriched",
       "target_brand": "microsoft",
       "drainer_type": "clean",
@@ -21509,7 +21509,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2021-09-01 17:30:39"
     },
     {
       "domain": "blinda.it",
@@ -25739,7 +25739,7 @@
     {
       "domain": "anthemofficial.shop",
       "detected_at": "2026-10-04 02:49:33",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "Unknown",
       "tld": "shop",
       "ip_address": "23.252.79.84",
@@ -25757,7 +25757,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 15:29:24"
     },
     {
       "domain": "anticajerseysapparel.shop",
@@ -48439,7 +48439,7 @@
     {
       "domain": "amcan.shop",
       "detected_at": "2026-10-06 23:59:36",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.130.197",
@@ -48450,7 +48450,7 @@
       "vt_detections": 0,
       "vt_vendors": [],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-26 13:44:19"
     },
     {
       "domain": "ameolifeonline.shop",
@@ -50303,7 +50303,7 @@
     {
       "domain": "anacoach.shop",
       "detected_at": "2026-10-07 00:24:54",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "37.72.142.130",
@@ -50321,12 +50321,12 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-08 00:29:56"
     },
     {
       "domain": "analogcasesdirect.shop",
       "detected_at": "2026-10-07 00:25:01",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.243",
@@ -50351,7 +50351,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-18 08:04:36"
     },
     {
       "domain": "annieshallmarkhome.shop",
@@ -53954,7 +53954,7 @@
     {
       "domain": "apollonnutritionstore.shop",
       "detected_at": "2026-10-07 01:18:43",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.237",
@@ -53982,7 +53982,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-17 19:39:29"
     },
     {
       "domain": "apeksgear.shop",
@@ -62336,7 +62336,7 @@
     {
       "domain": "andcollarstyle.shop",
       "detected_at": "2026-10-07 03:27:55",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.154",
@@ -62355,7 +62355,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 05:50:14"
     },
     {
       "domain": "andiataco.shop",
@@ -63203,7 +63203,7 @@
     {
       "domain": "animestorenearmeonline.shop",
       "detected_at": "2026-10-07 03:40:15",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "31.222.234.102",
@@ -63230,12 +63230,12 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-18 10:01:20"
     },
     {
       "domain": "annabellestore.shop",
       "detected_at": "2026-10-07 03:41:01",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "46.245.239.144",
@@ -63254,7 +63254,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 15:02:08"
     },
     {
       "domain": "anipaws.shop",
@@ -64452,7 +64452,7 @@
     {
       "domain": "atlastoys.shop",
       "detected_at": "2026-10-07 04:01:22",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "195.96.131.106",
@@ -64471,7 +64471,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-10 02:11:31"
     },
     {
       "domain": "atmjewels.shop",
@@ -64591,7 +64591,7 @@
     {
       "domain": "audelane.shop",
       "detected_at": "2026-10-07 04:04:35",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "62.106.90.116",
@@ -64609,7 +64609,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-20 03:17:08"
     },
     {
       "domain": "proxy.vin",
@@ -68320,7 +68320,7 @@
     {
       "domain": "anogems.shop",
       "detected_at": "2026-10-07 06:01:25",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "188.244.119.42",
@@ -68340,7 +68340,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-14 15:17:23"
     },
     {
       "domain": "carding.cm",
@@ -115078,7 +115078,7 @@
     {
       "domain": "avi8official.shop",
       "detected_at": "2026-10-09 01:55:56",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "146.19.199.189",
@@ -115099,7 +115099,7 @@
         "Netcraft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-25 16:31:45"
     },
     {
       "domain": "aviatoreight.shop",
@@ -119760,7 +119760,7 @@
     {
       "domain": "azurajewelrystore.shop",
       "detected_at": "2026-10-09 03:26:56",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.227",
@@ -119781,7 +119781,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-27 13:09:28"
     },
     {
       "domain": "azurana.shop",
@@ -120369,7 +120369,7 @@
     {
       "domain": "azproperformanceauto.shop",
       "detected_at": "2026-10-09 03:37:38",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.144",
@@ -120394,7 +120394,7 @@
         "VIPRE"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-07 18:32:27"
     },
     {
       "domain": "ayurkartpro.shop",
@@ -121128,7 +121128,7 @@
     {
       "domain": "baboontothemoonfashion.shop",
       "detected_at": "2026-10-09 03:49:46",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "31.222.234.210",
@@ -121144,7 +121144,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-04-22 18:16:25"
     },
     {
       "domain": "babossashop.shop",
@@ -121922,7 +121922,7 @@
     {
       "domain": "babossabbqhq.shop",
       "detected_at": "2026-10-09 04:05:04",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.206",
@@ -121940,7 +121940,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-08 12:32:56"
     },
     {
       "domain": "babybrezzashop.shop",
@@ -143528,7 +143528,7 @@
     {
       "domain": "bakkerhq.shop",
       "detected_at": "2026-10-10 18:52:03",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.230",
@@ -143542,7 +143542,7 @@
         "Gridinsoft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-18 15:31:43"
     },
     {
       "domain": "bakkershop.shop",
@@ -149477,7 +149477,7 @@
     {
       "domain": "barabasfashion.shop",
       "detected_at": "2026-10-11 00:46:11",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "162.222.90.236",
@@ -149491,12 +149491,12 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-22 23:50:17"
     },
     {
       "domain": "barakatopticalstore.shop",
       "detected_at": "2026-10-11 00:46:19",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "188.244.119.53",
@@ -149518,7 +149518,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-18 11:09:47"
     },
     {
       "domain": "baratokids.shop",
@@ -153680,7 +153680,7 @@
     {
       "domain": "barrasport.shop",
       "detected_at": "2026-10-11 01:37:05",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "193.9.48.156",
@@ -153704,7 +153704,7 @@
         "SOCRadar"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-27 01:52:14"
     },
     {
       "domain": "jejakdesa.com",
@@ -160817,7 +160817,7 @@
       "ip_address": "172.67.190.131",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -160861,7 +160861,7 @@
       "ip_address": "91.246.50.210",
       "nameservers": "[\"piers.ns.cloudflare.com\", \"tara.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -160879,7 +160879,7 @@
       "ip_address": "23.252.79.122",
       "nameservers": "[\"bonnie.ns.cloudflare.com\", \"sid.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -160902,7 +160902,7 @@
       "ip_address": "162.222.90.9",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -160918,7 +160918,7 @@
       "ip_address": "162.222.90.29",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -160942,7 +160942,7 @@
       "ip_address": "23.252.79.221",
       "nameservers": "[\"anastasia.ns.cloudflare.com\", \"kayden.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -160958,7 +160958,7 @@
       "ip_address": "37.72.142.130",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 9,
       "vt_vendors": [
@@ -160984,7 +160984,7 @@
       "ip_address": "195.96.131.106",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -161020,7 +161020,7 @@
       "ip_address": "194.26.231.120",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -161036,7 +161036,7 @@
       "ip_address": "162.222.90.6",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -161057,7 +161057,7 @@
       "ip_address": "185.252.210.25",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -161079,7 +161079,7 @@
       "ip_address": "62.233.61.66",
       "nameservers": "[\"hazel.ns.cloudflare.com\", \"jonah.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -161097,7 +161097,7 @@
       "ip_address": "195.96.131.13",
       "nameservers": "[\"barbara.ns.cloudflare.com\", \"hans.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -161118,7 +161118,7 @@
       "ip_address": "23.252.79.250",
       "nameservers": "[\"gabe.ns.cloudflare.com\", \"ollie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -161141,7 +161141,7 @@
       "ip_address": "195.96.130.211",
       "nameservers": "[\"glen.ns.cloudflare.com\", \"kelly.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -161159,7 +161159,7 @@
       "ip_address": "185.252.210.5",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -161229,7 +161229,7 @@
       "ip_address": "62.233.61.68",
       "nameservers": "[\"gerald.ns.cloudflare.com\", \"meilani.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -161319,7 +161319,7 @@
       "ip_address": "31.222.234.210",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -161459,7 +161459,7 @@
       "ip_address": "185.234.12.88",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -161497,7 +161497,7 @@
       "ip_address": "195.96.130.237",
       "nameservers": "[\"ara.ns.cloudflare.com\", \"nash.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -161539,7 +161539,7 @@
       "ip_address": "212.52.28.160",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -161636,7 +161636,7 @@
       "ip_address": "5.255.61.15",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -161695,7 +161695,7 @@
       "ip_address": "80.71.144.122",
       "nameservers": "[\"harlan.ns.cloudflare.com\", \"holly.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -161756,7 +161756,7 @@
       "ip_address": "193.162.133.218",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -161778,7 +161778,7 @@
       "ip_address": "46.245.239.136",
       "nameservers": "[\"doug.ns.cloudflare.com\", \"val.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -161829,7 +161829,7 @@
       "ip_address": "31.222.234.210",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -161842,13 +161842,13 @@
     {
       "domain": "beautiesofvermontstore.shop",
       "detected_at": "2026-10-12 08:57:38",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "176.126.101.22",
-      "nameservers": "",
+      "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -161856,7 +161856,7 @@
         "Gridinsoft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-19 14:19:51"
     },
     {
       "domain": "beautel.shop",
@@ -161867,7 +161867,7 @@
       "ip_address": "62.233.61.70",
       "nameservers": "[\"eloise.ns.cloudflare.com\", \"kyle.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -161904,7 +161904,7 @@
       "ip_address": "46.245.239.88",
       "nameservers": "[\"aaron.ns.cloudflare.com\", \"kia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -161927,7 +161927,7 @@
       "ip_address": "193.9.48.156",
       "nameservers": "[\"chuck.ns.cloudflare.com\", \"destiny.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -161950,7 +161950,7 @@
       "ip_address": "46.245.239.107",
       "nameservers": "[\"adaline.ns.cloudflare.com\", \"maxim.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -162233,7 +162233,7 @@
       "ip_address": "5.255.61.13",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -162333,7 +162333,7 @@
       "ip_address": "62.106.90.116",
       "nameservers": "[\"annalise.ns.cloudflare.com\", \"garrett.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -162425,7 +162425,7 @@
       "ip_address": "62.233.61.26",
       "nameservers": "[\"megan.ns.cloudflare.com\", \"osmar.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -162508,7 +162508,7 @@
       "ip_address": "176.126.101.27",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 9,
       "vt_vendors": [
@@ -162630,7 +162630,7 @@
       "ip_address": "23.252.79.220",
       "nameservers": "[\"addilyn.ns.cloudflare.com\", \"alan.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -162662,7 +162662,7 @@
       "ip_address": "31.222.234.241",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -162677,18 +162677,18 @@
     {
       "domain": "beachwaverhq.shop",
       "detected_at": "2026-10-11 15:03:30",
-      "registrar": "",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "5.255.61.101",
-      "nameservers": "",
+      "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
       "target_brand": "paypal",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-18 11:35:45"
     },
     {
       "domain": "beachwaverco.shop",
@@ -162699,7 +162699,7 @@
       "ip_address": "162.222.90.203",
       "nameservers": "[\"cullen.ns.cloudflare.com\", \"desi.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -162739,11 +162739,11 @@
     {
       "domain": "beachbumsupgear.shop",
       "detected_at": "2026-10-11 15:02:44",
-      "registrar": "",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "146.19.203.200",
-      "nameservers": "",
+      "nameservers": "[\"emily.ns.cloudflare.com\", \"remy.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -162761,7 +162761,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-05-20 21:33:51"
     },
     {
       "domain": "beachbronchq.shop",
@@ -162772,7 +162772,7 @@
       "ip_address": "62.233.61.26",
       "nameservers": "[\"oaklyn.ns.cloudflare.com\", \"salvador.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -162793,7 +162793,7 @@
       "ip_address": "212.52.28.20",
       "nameservers": "[\"anderson.ns.cloudflare.com\", \"michelle.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -162811,7 +162811,7 @@
       "ip_address": "37.72.142.20",
       "nameservers": "[\"indie.ns.cloudflare.com\", \"mike.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -162833,7 +162833,7 @@
       "ip_address": "5.255.61.88",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -162860,7 +162860,7 @@
       "ip_address": "188.244.119.43",
       "nameservers": "[\"shubhi.ns.cloudflare.com\", \"will.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -162903,7 +162903,7 @@
       "ip_address": "5.255.61.101",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -162930,7 +162930,7 @@
       "ip_address": "185.252.210.48",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -162950,7 +162950,7 @@
       "ip_address": "195.96.130.225",
       "nameservers": "[\"leland.ns.cloudflare.com\", \"nora.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -163017,7 +163017,7 @@
       "ip_address": "185.252.210.50",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -163037,7 +163037,7 @@
       "ip_address": "185.252.210.10",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -163099,7 +163099,7 @@
       "ip_address": "195.96.131.106",
       "nameservers": "[\"cris.ns.cloudflare.com\", \"dolly.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -163128,7 +163128,7 @@
       "ip_address": "193.162.133.218",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -163165,7 +163165,7 @@
       "ip_address": "146.19.203.189",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 7,
       "vt_vendors": [
@@ -163259,7 +163259,7 @@
       "ip_address": "146.19.203.210",
       "nameservers": "[\"ariadne.ns.cloudflare.com\", \"maciej.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -163319,7 +163319,7 @@
       "ip_address": "194.26.231.81",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -163342,7 +163342,7 @@
       "ip_address": "31.222.234.243",
       "nameservers": "[\"bradley.ns.cloudflare.com\", \"lana.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -163360,7 +163360,7 @@
       "ip_address": "162.222.90.223",
       "nameservers": "[\"michael.ns.cloudflare.com\", \"nena.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -163499,7 +163499,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "[\"coraline.ns.cloudflare.com\", \"finley.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "cryptoscam",
       "drainer_type": "clean",
       "vt_detections": 14,
       "vt_vendors": [
@@ -163530,7 +163530,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "[\"garret.ns.cloudflare.com.\", \"oaklyn.ns.cloudflare.com.\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "cryptoscam",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -164173,7 +164173,7 @@
       "ip_address": "216.69.175.71",
       "nameservers": "[\"ns-cloud-a1.googledomains.com\", \"ns-cloud-a2.googledomains.com\", \"ns-cloud-a3.googledomains.com\", \"ns-cloud-a4.googledomains.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -164357,7 +164357,7 @@
       "ip_address": "94.23.162.163",
       "nameservers": "[\"ns1.emailverification.info\", \"ns2.emailverification.info\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 14,
       "vt_vendors": [
@@ -164588,7 +164588,7 @@
       "ip_address": "128.14.74.124",
       "nameservers": "[\"ns1-domain-expired.myhostadmin.net\", \"ns2-domain-expired.myhostadmin.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 13,
       "vt_vendors": [
@@ -165329,7 +165329,7 @@
       "ip_address": "136.243.91.236",
       "nameservers": "[\"bonnie.ns.cloudflare.com\", \"robert.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -165410,7 +165410,7 @@
       "ip_address": "104.18.71.116",
       "nameservers": "[\"aldo.ns.cloudflare.com\", \"ulla.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 16,
       "vt_vendors": [
@@ -165443,7 +165443,7 @@
       "ip_address": "44.208.83.180",
       "nameservers": "[\"ns1.namebrightdns.com\", \"ns2.namebrightdns.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Eigenlayer",
       "drainer_type": "clean",
       "vt_detections": 12,
       "vt_vendors": [
@@ -166585,7 +166585,7 @@
       "ip_address": "43.129.237.150",
       "nameservers": "[\"a3.share-dns.com\", \"b3.share-dns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "whatsapp",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -167330,7 +167330,7 @@
       "ip_address": "138.124.67.118",
       "nameservers": "[\"clay.ns.cloudflare.com\", \"maleah.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "ledger",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -167566,7 +167566,7 @@
       "ip_address": "23.252.79.118",
       "nameservers": "[\"isaac.ns.cloudflare.com\", \"kay.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 13,
       "vt_vendors": [
@@ -167596,7 +167596,7 @@
       "ip_address": "23.252.79.76",
       "nameservers": "[\"buck.ns.cloudflare.com\", \"vida.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -167612,7 +167612,7 @@
       "ip_address": "188.244.119.42",
       "nameservers": "[\"isaac.ns.cloudflare.com\", \"savanna.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 16,
       "vt_vendors": [
@@ -167871,7 +167871,7 @@
       "ip_address": "23.252.79.167",
       "nameservers": "[\"hans.ns.cloudflare.com\", \"sofia.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -167893,7 +167893,7 @@
       "ip_address": "62.233.61.67",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 17,
       "vt_vendors": [
@@ -168862,7 +168862,7 @@
       "ip_address": "91.230.49.19",
       "nameservers": "[\"ns100.mypowerfulserver.com\", \"ns200.mypowerfulserver.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericbanking",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -168903,7 +168903,7 @@
       "ip_address": "23.252.79.111",
       "nameservers": "[\"buck.ns.cloudflare.com\", \"vida.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -168928,7 +168928,7 @@
       "ip_address": "176.126.101.19",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 4,
       "vt_vendors": [
@@ -168949,7 +168949,7 @@
       "ip_address": "195.96.131.106",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -168976,7 +168976,7 @@
       "ip_address": "193.162.133.218",
       "nameservers": "[\"amos.ns.cloudflare.com\", \"millie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -168999,7 +168999,7 @@
       "ip_address": "62.106.90.114",
       "nameservers": "[\"khalid.ns.cloudflare.com\", \"mckenzie.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 10,
       "vt_vendors": [
@@ -169083,7 +169083,7 @@
       "ip_address": "162.222.90.162",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 5,
       "vt_vendors": [
@@ -169105,7 +169105,7 @@
       "ip_address": "23.252.79.118",
       "nameservers": "[\"fish.ns.cloudflare.com\", \"zeus.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -169150,7 +169150,7 @@
       "ip_address": "46.245.239.124",
       "nameservers": "[\"lilith.ns.cloudflare.com\", \"marvin.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -169196,7 +169196,7 @@
       "ip_address": "194.26.231.124",
       "nameservers": "[\"ns1.dyna-ns.net\", \"ns2.dyna-ns.net\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -169214,7 +169214,7 @@
       "ip_address": "62.233.61.70",
       "nameservers": "[\"adel.ns.cloudflare.com\", \"luke.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "fakeshop",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -169322,7 +169322,7 @@
       "ip_address": "104.21.71.52",
       "nameservers": "[\"lara.ns.cloudflare.com\", \"lou.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -169407,80 +169407,6 @@
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-05 11:31:35"
-    },
-    {
-      "domain": "socprofile.com",
-      "detected_at": "2026-09-18 22:33:40",
-      "registrar": "Danesco Trading Ltd.",
-      "registrar_country": "STATUTORY MASKING FOR DATA PRIVACY",
-      "tld": "com",
-      "ip_address": "38.180.161.221",
-      "nameservers": "amalia.ns.cloudflare.com rajeev.ns.cloudflare.com",
-      "status": "enriched",
-      "target_brand": "facebook",
-      "drainer_type": "clean",
-      "vt_detections": 2,
-      "vt_vendors": [
-        "Forcepoint ThreatSeeker",
-        "VIPRE"
-      ],
-      "gsb_flagged": false,
-      "creation_date": "2020-10-01 10:14:29"
-    },
-    {
-      "domain": "vodafoneelevation.de",
-      "detected_at": "2026-09-12 16:11:55",
-      "registrar": "REGISTRAR_NOT_FOUND",
-      "registrar_country": "",
-      "tld": "de",
-      "ip_address": "216.150.1.1",
-      "nameservers": "ns5.pixelx.de ns6.pixelx.de ns7.pixelx.de ns8.pixelx.de",
-      "status": "enriched",
-      "target_brand": "google",
-      "drainer_type": "clean",
-      "vt_detections": 4,
-      "vt_vendors": [
-        "AlphaSOC",
-        "ESET",
-        "MalwareURL",
-        "URLQuery"
-      ],
-      "gsb_flagged": false,
-      "creation_date": ""
-    },
-    {
-      "domain": "hoodbtc.com",
-      "detected_at": "2026-08-04 05:26:41",
-      "registrar": "NameCheap, Inc.",
-      "registrar_country": "IS",
-      "tld": "com",
-      "ip_address": "75.2.60.5",
-      "nameservers": "dns1.registrar-servers.com dns2.registrar-servers.com",
-      "status": "enriched",
-      "target_brand": "",
-      "drainer_type": "clean",
-      "vt_detections": 1,
-      "vt_vendors": [
-        "Gridinsoft"
-      ],
-      "gsb_flagged": false,
-      "creation_date": "2026-07-14 07:54:55"
-    },
-    {
-      "domain": "ogaudit.com",
-      "detected_at": "2026-04-30 12:32:25",
-      "registrar": "Squarespace Domains II LLC",
-      "registrar_country": "TR",
-      "tld": "com",
-      "ip_address": "188.114.96.3",
-      "nameservers": "heather.ns.cloudflare.com simon.ns.cloudflare.com",
-      "status": "enriched",
-      "target_brand": "across",
-      "drainer_type": "clean",
-      "vt_detections": 0,
-      "vt_vendors": [],
-      "gsb_flagged": false,
-      "creation_date": "2023-08-22 21:39:00"
     },
     {
       "domain": "trackajy.cc",
@@ -169940,7 +169866,7 @@
       "ip_address": "172.67.219.74",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcloudflare",
       "drainer_type": "clean",
       "vt_detections": 14,
       "vt_vendors": [
@@ -170354,7 +170280,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "185.199.111.153",
-      "nameservers": "",
+      "nameservers": "[\"ns1038.ui-dns.org\", \"ns1068.ui-dns.biz\", \"ns1109.ui-dns.de\", \"ns1122.ui-dns.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -170384,7 +170310,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "216.198.79.1",
-      "nameservers": "",
+      "nameservers": "[\"ns.gabia.co.kr\", \"ns.gabia.net\", \"ns1.gabia.co.kr\"]",
       "status": "enriched",
       "target_brand": "instagram",
       "drainer_type": "clean",
@@ -170774,7 +170700,7 @@
       "registrar_country": "",
       "tld": "live",
       "ip_address": "193.108.130.12",
-      "nameservers": "",
+      "nameservers": "[\"ns1.private-nameserver.net\", \"ns2.private-nameserver.net\"]",
       "status": "enriched",
       "target_brand": "tiktok",
       "drainer_type": "clean",
@@ -170832,7 +170758,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "192.185.181.49",
-      "nameservers": "",
+      "nameservers": "[\"ns1455.websitewelcome.com\", \"ns1456.websitewelcome.com\"]",
       "status": "enriched",
       "target_brand": "apple",
       "drainer_type": "clean",
@@ -171039,7 +170965,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcrypto",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -171206,7 +171132,7 @@
       "registrar_country": "",
       "tld": "live",
       "ip_address": "188.114.97.1",
-      "nameservers": "",
+      "nameservers": "[\"jimmy.ns.cloudflare.com\", \"jo.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -171229,9 +171155,9 @@
       "registrar_country": "",
       "tld": "xyz",
       "ip_address": "188.114.97.1",
-      "nameservers": "",
+      "nameservers": "[\"arnold.ns.cloudflare.com\", \"tess.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcrypto",
       "drainer_type": "clean",
       "vt_detections": 2,
       "vt_vendors": [
@@ -171263,10 +171189,10 @@
       "domain": "com-qr.to",
       "detected_at": "2026-10-13 01:24:58",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "to",
       "ip_address": "172.67.180.28",
-      "nameservers": "",
+      "nameservers": "[\"gwen.ns.cloudflare.com\", \"keanu.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "youtube",
       "drainer_type": "clean",
@@ -171313,7 +171239,7 @@
       "ip_address": "104.21.23.29",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "generic",
       "drainer_type": "clean",
       "vt_detections": 18,
       "vt_vendors": [
@@ -171438,7 +171364,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "216.198.79.1",
-      "nameservers": "",
+      "nameservers": "[\"dns1.p03.nsone.net\", \"dns2.p03.nsone.net\", \"dns3.p03.nsone.net\", \"dns4.p03.nsone.net\"]",
       "status": "enriched",
       "target_brand": "gemini",
       "drainer_type": "clean",
@@ -171952,7 +171878,7 @@
     {
       "domain": "vpn-myxa.ru",
       "detected_at": "2026-10-13 01:29:11",
-      "registrar": "",
+      "registrar": "REGISTRAR_NOT_FOUND",
       "registrar_country": "",
       "tld": "ru",
       "ip_address": "37.140.192.68",
@@ -172046,11 +171972,11 @@
     {
       "domain": "affordableonline.online",
       "detected_at": "2026-10-13 01:29:06",
-      "registrar": "",
-      "registrar_country": "",
+      "registrar": "IONOS SE",
+      "registrar_country": "DE",
       "tld": "online",
       "ip_address": "104.21.6.194",
-      "nameservers": "",
+      "nameservers": "[\"rob.ns.cloudflare.com\", \"roxy.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "across",
       "drainer_type": "clean",
@@ -172076,7 +172002,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-01-06 10:41:13"
     },
     {
       "domain": "applediag.com",
@@ -172169,13 +172095,13 @@
     {
       "domain": "er.wpprja.com",
       "detected_at": "2026-10-13 01:28:26",
-      "registrar": "",
+      "registrar": "IONOS SE",
       "registrar_country": "",
       "tld": "com",
       "ip_address": "81.0.220.177",
-      "nameservers": "",
+      "nameservers": "[\"ns1.frjxp.com\", \"ns2.frjxp.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "docusign",
       "drainer_type": "clean",
       "vt_detections": 11,
       "vt_vendors": [
@@ -172192,7 +172118,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-09-08 15:42:14"
     },
     {
       "domain": "facebook.web1click.com",
@@ -172201,7 +172127,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "160.187.147.221",
-      "nameservers": "",
+      "nameservers": "[\"anuj.ns.cloudflare.com\", \"mary.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "facebook",
       "drainer_type": "clean",
@@ -172218,13 +172144,13 @@
     {
       "domain": "account.cupricclumbers.com",
       "detected_at": "2026-10-13 01:28:21",
-      "registrar": "",
+      "registrar": "Metaregistrar BV",
       "registrar_country": "",
       "tld": "com",
       "ip_address": "107.158.150.233",
-      "nameservers": "",
+      "nameservers": "[\"john.ns.cloudflare.com\", \"stella.ns.cloudflare.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "bet365",
       "drainer_type": "clean",
       "vt_detections": 8,
       "vt_vendors": [
@@ -172238,16 +172164,16 @@
         "Sophos"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-01-24 19:18:23"
     },
     {
       "domain": "store.communitydeveloper.shop",
       "detected_at": "2026-10-13 01:28:18",
-      "registrar": "",
+      "registrar": "PDR Ltd. d/b/a PublicDomainRegistry.com",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "188.114.97.1",
-      "nameservers": "",
+      "nameservers": "[\"chelsea.ns.cloudflare.com\", \"kareem.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "counter-strike",
       "drainer_type": "clean",
@@ -172260,7 +172186,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-10-07 16:08:32"
     },
     {
       "domain": "tunishopia.tn",
@@ -172291,7 +172217,7 @@
       "ip_address": "188.114.96.1",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "microsoft",
       "drainer_type": "clean",
       "vt_detections": 9,
       "vt_vendors": [
@@ -172311,11 +172237,11 @@
     {
       "domain": "auspost.adqwi.com",
       "detected_at": "2026-10-13 01:28:03",
-      "registrar": "",
+      "registrar": "Dominet (HK) Limited",
       "registrar_country": "",
       "tld": "com",
       "ip_address": "47.79.39.190",
-      "nameservers": "",
+      "nameservers": "[\"ns7.alidns.com\", \"ns8.alidns.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -172330,7 +172256,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-10-12 02:18:23"
     },
     {
       "domain": "albertsonstore.us",
@@ -172341,7 +172267,7 @@
       "ip_address": "198.251.89.144",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "microsoft",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -172441,7 +172367,7 @@
       "ip_address": "172.67.210.143",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcrypto",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -172507,7 +172433,7 @@
       "ip_address": "47.76.139.211",
       "nameservers": "[\"ns7.alidns.com\", \"ns8.alidns.com\"]",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "metamask",
       "drainer_type": "clean",
       "vt_detections": 6,
       "vt_vendors": [
@@ -172530,7 +172456,7 @@
       "ip_address": "144.31.223.117",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericcrypto",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172610,7 +172536,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "188.114.97.1",
-      "nameservers": "",
+      "nameservers": "[\"santino.ns.cloudflare.com\", \"sofia.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -172638,11 +172564,11 @@
     {
       "domain": "wal.perklyspot.com",
       "detected_at": "2026-10-13 01:40:52",
-      "registrar": "",
+      "registrar": "Spaceship, Inc.",
       "registrar_country": "",
       "tld": "com",
       "ip_address": "64.29.17.1",
-      "nameservers": "",
+      "nameservers": "[\"launch1.spaceship.net\", \"launch2.spaceship.net\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -172651,7 +172577,7 @@
         "Gridinsoft"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-08-07 17:01:58"
     },
     {
       "domain": "investmen.game",
@@ -172711,7 +172637,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "5.135.193.192",
-      "nameservers": "",
+      "nameservers": "[\"ns5.claudpodserver.com\", \"ns6.claudpodserver.com\"]",
       "status": "enriched",
       "target_brand": "apple",
       "drainer_type": "clean",
@@ -172783,7 +172709,7 @@
       "ip_address": "103.106.191.144",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "generic",
       "drainer_type": "clean",
       "vt_detections": 0,
       "vt_vendors": [],
@@ -172981,7 +172907,7 @@
       "registrar_country": "",
       "tld": "com",
       "ip_address": "172.67.207.84",
-      "nameservers": "",
+      "nameservers": "[\"hassan.ns.cloudflare.com\", \"sima.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "across",
       "drainer_type": "clean",
@@ -173045,7 +172971,7 @@
       "ip_address": "188.114.97.1",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "anthropic",
       "drainer_type": "clean",
       "vt_detections": 15,
       "vt_vendors": [
@@ -173099,7 +173025,7 @@
     {
       "domain": "internetprvpn.ru",
       "detected_at": "2026-10-13 01:36:57",
-      "registrar": "",
+      "registrar": "REGISTRAR_NOT_FOUND",
       "registrar_country": "",
       "tld": "ru",
       "ip_address": "31.31.196.17",
@@ -173701,7 +173627,7 @@
       "ip_address": "104.21.88.251",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "magalu",
       "drainer_type": "clean",
       "vt_detections": 1,
       "vt_vendors": [
@@ -173713,11 +173639,11 @@
     {
       "domain": "usuario.hips-warehouse.com",
       "detected_at": "2026-10-13 01:24:12",
-      "registrar": "",
+      "registrar": "Dynadot Inc",
       "registrar_country": "",
       "tld": "com",
       "ip_address": "104.21.4.33",
-      "nameservers": "",
+      "nameservers": "[\"toby.ns.cloudflare.com\", \"ulla.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "clean",
@@ -173742,7 +173668,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2022-11-15 19:18:53"
     },
     {
       "domain": "wbacq.com",
@@ -173798,7 +173724,7 @@
       "ip_address": "196.251.107.223",
       "nameservers": "",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "genericscam",
       "drainer_type": "clean",
       "vt_detections": 3,
       "vt_vendors": [
@@ -173922,6 +173848,445 @@
       ],
       "gsb_flagged": false,
       "creation_date": "2026-08-22 12:15:21"
+    },
+    {
+      "domain": "socprofile.com",
+      "detected_at": "2026-09-18 22:33:40",
+      "registrar": "Danesco Trading Ltd.",
+      "registrar_country": "STATUTORY MASKING FOR DATA PRIVACY",
+      "tld": "com",
+      "ip_address": "38.180.161.221",
+      "nameservers": "amalia.ns.cloudflare.com rajeev.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "URLQuery"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2020-10-01 10:14:29"
+    },
+    {
+      "domain": "vodafoneelevation.de",
+      "detected_at": "2026-09-12 16:11:55",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "de",
+      "ip_address": "216.150.1.1",
+      "nameservers": "ns5.pixelx.de ns6.pixelx.de ns7.pixelx.de ns8.pixelx.de",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "AlphaSOC",
+        "ESET",
+        "MalwareURL",
+        "URLQuery"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "hoodbtc.com",
+      "detected_at": "2026-08-04 05:26:41",
+      "registrar": "NameCheap, Inc.",
+      "registrar_country": "IS",
+      "tld": "com",
+      "ip_address": "75.2.60.5",
+      "nameservers": "dns1.registrar-servers.com dns2.registrar-servers.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-07-14 07:54:55"
+    },
+    {
+      "domain": "ogaudit.com",
+      "detected_at": "2026-04-30 12:32:25",
+      "registrar": "Squarespace Domains II LLC",
+      "registrar_country": "TR",
+      "tld": "com",
+      "ip_address": "188.114.96.3",
+      "nameservers": "heather.ns.cloudflare.com simon.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2023-08-22 21:39:00"
+    },
+    {
+      "domain": "conneecttipps.site",
+      "detected_at": "2026-10-13 05:43:11",
+      "registrar": "NameSilo, LLC",
+      "registrar_country": "",
+      "tld": "site",
+      "ip_address": "172.232.24.235",
+      "nameservers": "ns1.dnsowl.com ns2.dnsowl.com ns3.dnsowl.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-12 11:19:44"
+    },
+    {
+      "domain": "s.team-ke.com",
+      "detected_at": "2026-10-13 05:43:23",
+      "registrar": "Eranet International Limited",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.3",
+      "nameservers": "corey.ns.cloudflare.com diva.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "DNS8",
+        "Fortinet",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-08 16:26:16"
+    },
+    {
+      "domain": "gov-sp.com",
+      "detected_at": "2026-10-13 05:43:11",
+      "registrar": "Cloudflare, Inc.",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "172.67.157.14",
+      "nameservers": "beth.ns.cloudflare.com roan.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "DNS8"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-12 15:01:53"
+    },
+    {
+      "domain": "lmtoken.wchmn.com",
+      "detected_at": "2026-10-13 05:44:36",
+      "registrar": "Metaregistrar BV",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "72.62.196.92",
+      "nameservers": "a2.share-dns.com b2.share-dns.net",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "DNS8"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2025-11-15 10:03:36"
+    },
+    {
+      "domain": "secure-webs-kucoin-en.typedream.app",
+      "detected_at": "2026-10-13 05:44:14",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "app",
+      "ip_address": "188.114.97.1",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "KuCoin",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "DNS8"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "faran.ac.ir",
+      "detected_at": "2026-10-13 05:43:59",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "ir",
+      "ip_address": "94.182.163.148",
+      "nameservers": "d.ns.arvancdn.ir ns1.faranlms.ir ns2.faranlms.ir x.ns.arvancdn.ir",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "ADMINUSLabs",
+        "alphaMountain.ai",
+        "DNS8",
+        "Fortinet",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "armureriecible21.fr",
+      "detected_at": "2026-10-13 05:43:53",
+      "registrar": "OVH",
+      "registrar_country": "",
+      "tld": "fr",
+      "ip_address": "89.116.111.18",
+      "nameservers": "ns1.armureriecible21.fr ns2.armureriecible21.fr",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "DNS8",
+        "Fortinet",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2021-07-28 12:22:40"
+    },
+    {
+      "domain": "io-suite-help.typedream.app",
+      "detected_at": "2026-10-13 05:43:52",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "app",
+      "ip_address": "188.114.97.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 14,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "DNS8",
+        "ESET",
+        "Emsisoft",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Seclookup",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bd-jh-ledger-laern.typedream.app",
+      "detected_at": "2026-10-13 05:43:39",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "app",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "Ledger",
+      "drainer_type": "clean",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "DNS8",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "aligra.net",
+      "detected_at": "2026-10-13 05:46:10",
+      "registrar": "GoDaddy.com, LLC",
+      "registrar_country": "",
+      "tld": "net",
+      "ip_address": "208.109.33.211",
+      "nameservers": "ns77.domaincontrol.com ns78.domaincontrol.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "CRDF"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2001-06-29 01:40:36"
+    },
+    {
+      "domain": "s.team-gu.com",
+      "detected_at": "2026-10-13 05:46:24",
+      "registrar": "Dominet (HK) Limited",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.96.3",
+      "nameservers": "sevki.ns.cloudflare.com vera.ns.cloudflare.com",
+      "status": "pending",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-05 12:31:15"
+    },
+    {
+      "domain": "m.ezhj2znh069c.com",
+      "detected_at": "2026-10-13 05:45:29",
+      "registrar": "GoDaddy.com, LLC",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "45.200.67.223",
+      "nameservers": "pdns107.ultradns.biz pdns107.ultradns.com pdns107.ultradns.net pdns107.ultradns.org",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 15,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "DNS8",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2021-06-21 08:00:20"
+    },
+    {
+      "domain": "bill.you-track.cloud",
+      "detected_at": "2026-10-13 05:45:24",
+      "registrar": "Tucows Domains Inc.",
+      "registrar_country": "",
+      "tld": "cloud",
+      "ip_address": "52.211.252.184",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "BitDefender",
+        "Certego",
+        "Chong Lua Dao",
+        "CyRadar",
+        "DNS8",
+        "ESET",
+        "G-Data",
+        "LevelBlue",
+        "Lionic",
+        "SafeToOpen",
+        "URLQuery",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2023-10-05 11:06:31"
+    },
+    {
+      "domain": "faq-ledge-r-live-aa-p.typedream.app",
+      "detected_at": "2026-10-13 05:45:21",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "app",
+      "ip_address": "188.114.96.1",
+      "nameservers": "",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "DNS8"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "ibero-aurelis.com",
+      "detected_at": "2026-10-13 05:45:12",
+      "registrar": "TUCOWS.COM, CO.",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.97.3",
+      "nameservers": "candy.ns.cloudflare.com garret.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Gridinsoft",
+        "desenmascara.me"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-02 14:22:23"
+    },
+    {
+      "domain": "learn-start-ledgr-faq.typedream.app",
+      "detected_at": "2026-10-13 05:45:07",
+      "registrar": "",
+      "registrar_country": "",
+      "tld": "app",
+      "ip_address": "188.114.97.1",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "clean",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "DNS8"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "trezor.ustdguide.com",
+      "detected_at": "2026-10-13 05:44:53",
+      "registrar": "Cloud Yuqu LLC",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "23.148.180.108",
+      "nameservers": "",
+      "status": "enriched",
+      "target_brand": "Trezor",
+      "drainer_type": "clean",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "DNS8"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-06 15:22:45"
     }
   ]
 }
