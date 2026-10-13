@@ -1,0 +1,345 @@
+{
+  "name": "Community phishing investigation and reporting tools",
+  "canonical_url": "https://phishdestroy.github.io/destroylist/scripts/#community-tools",
+  "reviewed_at": "2026-10-13",
+  "scope": "Tools the maintainers use, credited independently from configured data feeds. Non-exhaustive; not a ranking or partnership list.",
+  "access_notes": "Many basic web functions are free without registration. Account requirements, quotas and paid features differ by provider. See each service and its references.",
+  "visibility_notes": "Public scans may expose submitted URLs. A clean verdict is not a guarantee; reporting does not guarantee blocking or removal.",
+  "tools": [
+    {
+      "id": "bitdefender",
+      "name": "Bitdefender Link Checker",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://www.bitdefender.com/en-us/consumer/link-checker",
+      "action": "Check a link",
+      "description": "Check an individual link against phishing, fraudulent-site and malware signals.",
+      "access": "Free web check",
+      "note": "The browser checker is free; other Bitdefender products are separate.",
+      "references": [
+        "https://www.bitdefender.com/en-us/consumer/link-checker"
+      ]
+    },
+    {
+      "id": "crtsh",
+      "name": "crt.sh",
+      "tasks": [
+        "research"
+      ],
+      "url": "https://crt.sh/",
+      "action": "Search certificates",
+      "description": "Search public certificate-transparency records for domain names and related certificates.",
+      "access": "Free public search",
+      "note": "A certificate is an infrastructure clue, not a trust or safety verdict.",
+      "references": [
+        "https://crt.sh/"
+      ]
+    },
+    {
+      "id": "dnsdumpster",
+      "name": "DNSDumpster",
+      "tasks": [
+        "research"
+      ],
+      "url": "https://dnsdumpster.com/",
+      "action": "Research a domain",
+      "description": "Explore DNS records and related hosts to understand a domain’s exposed infrastructure.",
+      "access": "Free tier · query limits",
+      "note": "Free membership and paid plans have different quotas. Follow current access requirements.",
+      "references": [
+        "https://dnsdumpster.com/",
+        "https://dnsdumpster.com/about-faq/"
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google Safe Browsing",
+      "tasks": [
+        "report"
+      ],
+      "url": "https://safebrowsing.google.com/safebrowsing/report_phish/",
+      "action": "Report phishing",
+      "description": "Send a suspected phishing page to Google for review by its Safe Browsing service.",
+      "access": "Public reporting form",
+      "note": "Submit the suspicious URL and relevant context. Google decides its own classification.",
+      "references": [
+        "https://safebrowsing.google.com/safebrowsing/report_phish/"
+      ]
+    },
+    {
+      "id": "isitphish",
+      "name": "isitphish",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://www.isitphish.com/",
+      "action": "Open the checker",
+      "description": "Get an automated phishing assessment to support your investigation of a suspicious URL.",
+      "access": "Online checker",
+      "note": "A free plan is advertised. Check current account and usage requirements.",
+      "references": [
+        "https://www.isitphish.com/",
+        "https://www.isitphish.com/pricing"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft Security Intelligence",
+      "tasks": [
+        "report"
+      ],
+      "url": "https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest",
+      "action": "Report an unsafe site",
+      "description": "Report a phishing page or other unsafe website through Microsoft’s guest submission form.",
+      "access": "Free guest reporting",
+      "note": "No account needed for this guest route; the form includes a verification challenge.",
+      "references": [
+        "https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest"
+      ]
+    },
+    {
+      "id": "netcraft",
+      "name": "Netcraft",
+      "tasks": [
+        "report"
+      ],
+      "url": "https://report.netcraft.com/report",
+      "action": "Report a suspicious URL",
+      "description": "Send suspected phishing, malware and suspicious URLs to Netcraft’s reporting service.",
+      "access": "Public reporting form",
+      "note": "Use the report form’s requested details; Netcraft reviews submissions under its own process.",
+      "references": [
+        "https://report.netcraft.com/report"
+      ]
+    },
+    {
+      "id": "norton",
+      "name": "Norton Safe Web",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://safeweb.norton.com/",
+      "action": "Check a website",
+      "description": "Consult Norton’s website reputation information as another signal in a URL investigation.",
+      "access": "Public reputation tool",
+      "note": "Lookup and account-based participation are different functions; follow the service’s current access rules.",
+      "references": [
+        "https://safeweb.norton.com/"
+      ]
+    },
+    {
+      "id": "phishreport",
+      "name": "phish.report",
+      "tasks": [
+        "check",
+        "report"
+      ],
+      "url": "https://phish.report/analysis",
+      "action": "Analyse a site",
+      "description": "Analyse suspected phishing, inspect hosting context and find reporting routes.",
+      "access": "Free analysis",
+      "note": "Free tools for individual volunteers, nonprofits and governments; team plans are separate.",
+      "extra_url": "https://phish.report/",
+      "extra_label": "Project & response tools",
+      "references": [
+        "https://phish.report/features/phishing-site-analysis",
+        "https://phish.report/about"
+      ]
+    },
+    {
+      "id": "phishs",
+      "name": "Phishs",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://phishs.com/",
+      "action": "Check a URL",
+      "description": "Check URLs for phishing and malicious content, and inspect the resulting risk report.",
+      "access": "Free checking available",
+      "note": "Public scanner; API and expanded features have separate plans.",
+      "references": [
+        "https://phishs.com/",
+        "https://phishs.com/pricing"
+      ]
+    },
+    {
+      "id": "phishtank",
+      "name": "PhishTank",
+      "tasks": [
+        "report",
+        "research"
+      ],
+      "url": "https://phishtank.org/",
+      "action": "Explore or submit",
+      "description": "Browse community phishing reports, contribute a suspected phish and help verify reports.",
+      "access": "Free account to submit",
+      "note": "Browsing is public. Submitting and verifying require sign-in.",
+      "references": [
+        "https://phishtank.org/",
+        "https://phishtank.org/login_required.php"
+      ]
+    },
+    {
+      "id": "polyswarm",
+      "name": "PolySwarm",
+      "tasks": [
+        "check",
+        "research"
+      ],
+      "url": "https://polyswarm.network/",
+      "action": "Explore intelligence",
+      "description": "Explore URL and file intelligence from multiple threat-detection engines.",
+      "access": "Limited guest access",
+      "note": "A free Community account unlocks more functions. Quotas and paid tiers apply.",
+      "references": [
+        "https://docs.polyswarm.io/customers/",
+        "https://docs.polyswarm.io/customers/subscription-plans/"
+      ]
+    },
+    {
+      "id": "quttera",
+      "name": "Quttera",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://quttera.com/website-malware-scanner",
+      "action": "Scan a website",
+      "description": "Scan publicly accessible website content for suspicious scripts and malicious code.",
+      "access": "Free remote scan",
+      "note": "Provide a URL to start. Remote scanning has coverage and processing limits.",
+      "references": [
+        "https://quttera.com/website-malware-scanner"
+      ]
+    },
+    {
+      "id": "scamadviser",
+      "name": "ScamAdviser",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://www.scamadviser.com/",
+      "action": "Check website reputation",
+      "description": "Review website trust signals and community context when assessing a suspicious site.",
+      "access": "Free website check",
+      "note": "Treat reputation scores as context; a favorable score is not proof of safety.",
+      "references": [
+        "https://www.scamadviser.com/"
+      ]
+    },
+    {
+      "id": "spamhaus",
+      "name": "Spamhaus",
+      "tasks": [
+        "research",
+        "check"
+      ],
+      "url": "https://www.spamhaus.org/",
+      "action": "Explore reputation tools",
+      "description": "Investigate IP and domain reputation through Spamhaus’s public resources and checker.",
+      "access": "Public tools & lookup",
+      "note": "Public lookups and commercial data use have separate conditions.",
+      "references": [
+        "https://www.spamhaus.org/"
+      ]
+    },
+    {
+      "id": "sucuri",
+      "name": "Sucuri SiteCheck",
+      "tasks": [
+        "check"
+      ],
+      "url": "https://sitecheck.sucuri.net/",
+      "action": "Run SiteCheck",
+      "description": "Check visible website content for malware, blocklist status and common security issues.",
+      "access": "Free remote scan",
+      "note": "The public checker does not inspect hidden server-side files.",
+      "references": [
+        "https://sitecheck.sucuri.net/"
+      ]
+    },
+    {
+      "id": "bluecoat",
+      "name": "Symantec Site Review",
+      "tasks": [
+        "check",
+        "report"
+      ],
+      "url": "https://sitereview.bluecoat.com/#/",
+      "action": "Check a category",
+      "description": "Look up a URL’s category and request a review when its classification appears incorrect.",
+      "access": "Public review portal",
+      "note": "Category review is a provider assessment, not a website takedown.",
+      "references": [
+        "https://knowledge.broadcom.com/external/article?legacyId=tech242187"
+      ]
+    },
+    {
+      "id": "urlquery",
+      "name": "urlquery",
+      "tasks": [
+        "check",
+        "research"
+      ],
+      "url": "https://urlquery.net/",
+      "action": "Explore URL reports",
+      "description": "Inspect website activity, potential malware and reputation through URL analysis reports.",
+      "access": "Public reports & scanner",
+      "note": "Report visibility and account features vary; check the selected submission settings.",
+      "references": [
+        "https://urlquery.net/",
+        "https://urlquery.net/about"
+      ]
+    },
+    {
+      "id": "urlscan",
+      "name": "urlscan.io",
+      "tasks": [
+        "check",
+        "research"
+      ],
+      "url": "https://urlscan.io/",
+      "action": "Scan or search",
+      "description": "Capture browser behavior, contacted infrastructure and page evidence, or search existing scans.",
+      "access": "Free community service",
+      "note": "Anonymous use has limits. Accounts add features; public scans are visible to others.",
+      "references": [
+        "https://urlscan.io/about/",
+        "https://urlscan.io/user/signup",
+        "https://urlscan.io/docs/faq/"
+      ]
+    },
+    {
+      "id": "virustotal",
+      "name": "VirusTotal",
+      "tasks": [
+        "check",
+        "research"
+      ],
+      "url": "https://www.virustotal.com/gui/home/url",
+      "action": "Inspect a URL",
+      "description": "Compare URL assessments and inspect domain context across multiple security sources.",
+      "access": "Free web search",
+      "note": "Web queries may enter the shared dataset. API access requires an account; usage terms apply.",
+      "references": [
+        "https://docs.virustotal.com/docs/searching",
+        "https://docs.virustotal.com/docs/please-give-me-an-api-key"
+      ]
+    },
+    {
+      "id": "yandex",
+      "name": "Yandex Search",
+      "tasks": [
+        "report"
+      ],
+      "url": "https://yandex.com/support/search/en/troubleshooting/delspam",
+      "action": "Report spam or viruses",
+      "description": "Use Yandex Search’s feedback route to report spam or malicious pages in search.",
+      "access": "Public feedback route",
+      "note": "Use the embedded form and its current requirements; this is not a universal takedown service.",
+      "references": [
+        "https://yandex.com/support/search/en/troubleshooting/delspam"
+      ]
+    }
+  ]
+}
