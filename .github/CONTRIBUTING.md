@@ -46,7 +46,7 @@ cd destroylist
 git checkout -b feature/my-improvement
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r scripts/requirements.txt
 
 # Validate before submitting
 python scripts/validate_json.py
