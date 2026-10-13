@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r scripts/requirements.txt
       - name: Calculate statistics
         run: python scripts/calculate_stats.py
       - name: Rotate old archives to Release
