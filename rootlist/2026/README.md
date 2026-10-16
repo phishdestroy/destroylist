@@ -1,6 +1,6 @@
 <!--
   PhishDestroy — 2026 Yearly Threat Overview
-  125,810 phishing domains detected across 10 months (ongoing)
+  126,233 phishing domains detected across 10 months (ongoing)
   Keywords: phishing 2026, threat intelligence, destroylist, yearly report, scam domains
   https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026
 -->
@@ -10,12 +10,12 @@
 <img src="banner.svg" alt="Yearly Report" width="900"/>
 
 <a href="https://github.com/phishdestroy/destroylist">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+2026+Threat+Overview;125%2C810%2B+Phishing+Domains+Detected" alt="2026 Threat Overview" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+2026+Threat+Overview;126%2C233%2B+Phishing+Domains+Detected" alt="2026 Threat Overview" />
 </a>
 
 <br><br>
 
-![total](https://img.shields.io/badge/total_2026-125%2C810%2B-FF0000?style=for-the-badge)
+![total](https://img.shields.io/badge/total_2026-126%2C233%2B-FF0000?style=for-the-badge)
 ![months](https://img.shields.io/badge/months-10_(ongoing)-000000?style=for-the-badge)
 ![peak](https://img.shields.io/badge/peak-Jul_2026_(19%2C796)-CC0000?style=for-the-badge)
 
@@ -42,9 +42,9 @@
 | 07 | [July 2026](07/) | **19,796** | `████████████████████` |
 | 08 | [August 2026](08/) | **19,782** | `████████████████████` |
 | 09 | [September 2026](09/) | **16,250** | `████████████████░░░░` |
-| 10 | [October 2026](10/) | **8,046** *(ongoing)* | `████████░░░░░░░░░░░░` |
+| 10 | [October 2026](10/) | **8,469** *(ongoing)* | `█████████░░░░░░░░░░░` |
 
-> Peak: **July 2026** — 19,796 domains &nbsp;·&nbsp; Total 2026: **125,810+**
+> Peak: **July 2026** — 19,796 domains &nbsp;·&nbsp; Total 2026: **126,233+**
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
