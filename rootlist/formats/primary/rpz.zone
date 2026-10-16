@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 222,453 domains | 2026-10-16 13:50 UTC
+; Destroylist - Primary | RPZ zone | 222,454 domains | 2026-10-16 14:23 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202610161350 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202610161423 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -116485,6 +116485,7 @@ listsupport.help CNAME .
 listup.blog CNAME .
 listup.help CNAME .
 listvote.help CNAME .
+listvotes.help CNAME .
 lit-lighter.org CNAME .
 lit-pass.xyz CNAME .
 lit.solcheck.site CNAME .
