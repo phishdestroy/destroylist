@@ -16,8 +16,11 @@ on:
 jobs:
   purge:
     if: "!contains(github.event.head_commit.message || '', '[skip ci]')"
+    # Separate from repo-updates: a newer routine rebuild must not replace a
+    # pending purge (that drops a dispatched domain). Parallel rebuilds are
+    # safe because every writer pushes with compare-and-swap retries.
     concurrency:
-      group: repo-updates
+      group: repo-purge
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 40

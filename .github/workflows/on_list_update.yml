@@ -19,7 +19,7 @@ jobs:
       group: repo-updates
       cancel-in-progress: false
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 15
     permissions:
       contents: write
     steps:
@@ -42,7 +42,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-          for i in {1..10}; do
+          for i in {1..5}; do
             if ! git fetch origin main; then
               echo "Fetch attempt $i failed, retrying in $((i * 3))s..."
               sleep $((i * 3))
