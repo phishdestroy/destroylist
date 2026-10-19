@@ -9,7 +9,7 @@
 <br>
 
 ![format](https://img.shields.io/badge/format-STIX_2.1-FF0000?style=for-the-badge)
-![indicators](https://img.shields.io/badge/indicators-121%2C467-000000?style=for-the-badge)
+![updated](https://img.shields.io/badge/updated-twice_daily-000000?style=for-the-badge)
 
 <br>
 
@@ -25,18 +25,23 @@
 
 `bundle.json` is a single [STIX 2.1](https://oasis-open.github.io/cti-documentation/stix/intro) bundle: one
 `identity` object for PhishDestroy and one `indicator` per DNS-verified active domain from
-[`dns/active_domains.json`](../dns/).
+[`dns/active_domains.json`](../dns/), excluding [`allow/allowlist.json`](../allow/allowlist.json).
 
-> [!NOTE]
-> This bundle is a snapshot generated on **2026-08-17** and is not refreshed automatically.
-> Domains cleared on appeal (listed in [`allow/allowlist.json`](../allow/allowlist.json)) were removed from it on 2026-10-19.
-> For current data use the [live feeds](../dns/) or regenerate it (see below).
+It is rebuilt twice a day (after DNS validation) and on every allowlist change by
+[`stix.yml`](../.github/workflows/stix.yml), and published as an asset of the
+[`stix` Release](https://github.com/phishdestroy/destroylist/releases/tag/stix) — not committed, to keep the repository small.
+
+- **Stable objects** — an indicator keeps its `id`, `created` and `valid_from` for as long as the domain stays listed,
+  so re-importing the bundle updates rather than duplicates.
+- **False positives are revoked** — when a domain is cleared on appeal, its indicator is republished with
+  `"revoked": true` (same `id`, new `modified`), so platforms that already imported it retract it.
+- Domains that merely stop resolving are left out of the next build.
 
 ## 📂 Contents
 
 | File | Description |
 |:-----|:------------|
-| `bundle.json` | STIX 2.1 bundle — 1 identity + 121,467 indicators (≈ 59 MB, minified) |
+| [`bundle.json`](https://github.com/phishdestroy/destroylist/releases/download/stix/bundle.json) | STIX 2.1 bundle — 1 identity + one indicator per active domain + revoked false positives (≈ 64 MB, minified) |
 
 **Indicator example:**
 
@@ -56,11 +61,13 @@
 
 ## 🔌 Use it
 
-- **OpenCTI / MISP / Microsoft Sentinel / Splunk ES** — import `bundle.json` as a STIX 2.1 file.
-- **Download:** `https://raw.githubusercontent.com/phishdestroy/destroylist/main/stix/bundle.json`
+- **OpenCTI / MISP / Microsoft Sentinel / Splunk ES** — import `bundle.json` as a STIX 2.1 file; honour `revoked`.
+- **Download:** `https://github.com/phishdestroy/destroylist/releases/download/stix/bundle.json`
 
 ## 🔄 Regenerate
 
 ```bash
-python scripts/generate_stix.py   # reads dns/active_domains.json, writes stix/bundle.json
+pip install -r scripts/requirements.txt
+# --previous keeps ids/dates and revokes allowlisted domains; omit it for a fresh bundle
+python scripts/generate_stix.py --previous old-bundle.json --output bundle.json
 ```
