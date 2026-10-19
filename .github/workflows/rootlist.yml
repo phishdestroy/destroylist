@@ -92,18 +92,3 @@ jobs:
             sleep $((i * 2))
           done
           exit 1
-
-      - name: Mirror to Codeberg
-        continue-on-error: true
-        env:
-          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
-        run: |
-          set -euo pipefail
-          if [ -z "${CODEBERG_TOKEN:-}" ]; then
-            echo "::error::CODEBERG_TOKEN is not configured"
-            exit 1
-          fi
-          REPO_NAME="${GITHUB_REPOSITORY##*/}"
-          BRANCH="${GITHUB_REF_NAME}"
-          git remote add codeberg "https://phishdestroy:${CODEBERG_TOKEN}@codeberg.org/phishdestroy/${REPO_NAME}.git"
-          git push codeberg "HEAD:refs/heads/${BRANCH}"

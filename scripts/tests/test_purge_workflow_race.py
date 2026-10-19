@@ -72,7 +72,7 @@ class PurgeWorkflowRaceTests(unittest.TestCase):
 
     def test_all_generated_list_writers_rebuild_fresh_and_stage_rootlist(self):
         for name, loop_text in (
-            ("on_list_update.yml", "for i in {1..10}"),
+            ("on_list_update.yml", "for i in {1..5}"),
             ("rootlist.yml", "for i in {1..5}"),
         ):
             with self.subTest(workflow=name):
@@ -91,22 +91,21 @@ class PurgeWorkflowRaceTests(unittest.TestCase):
                 self.assertLess(stage, push)
                 self.assertIn("rootlist/", text[rebuild:push])
 
-    def test_repo_write_lock_is_not_held_by_codeberg_mirror(self):
-        for name, writer in (
-            ("purge.yml", "purge"),
-            ("on_list_update.yml", "process"),
+    def test_writers_use_their_concurrency_groups(self):
+        # Purge has its own group so a newer routine rebuild cannot replace a
+        # pending purge; writers stay safe in parallel through CAS pushes.
+        for name, writer, group in (
+            ("purge.yml", "purge", "repo-purge"),
+            ("on_list_update.yml", "process", "repo-updates"),
+            ("rootlist.yml", "update", "repo-updates"),
         ):
             with self.subTest(workflow=name):
                 text = (ROOT / ".github" / "workflows" / name).read_text(
                     encoding="utf-8"
                 )
-                writer_block, mirror_block = text.split("\n  mirror:\n", 1)
-                self.assertIn(f"  {writer}:\n", writer_block)
-                self.assertIn("group: repo-updates", writer_block)
-                self.assertNotIn("group: codeberg-mirror", writer_block)
-                self.assertIn("group: codeberg-mirror", mirror_block)
-                self.assertIn("cancel-in-progress: false", mirror_block)
-                self.assertIn("ref: main", mirror_block)
+                self.assertIn(f"  {writer}:\n", text)
+                self.assertIn(f"group: {group}\n", text)
+                self.assertNotIn("codeberg", text.lower())
 
     def test_compare_and_swap_retry_preserves_external_pattern(self):
         with tempfile.TemporaryDirectory() as td:
