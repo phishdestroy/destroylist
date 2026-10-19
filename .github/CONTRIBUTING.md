@@ -63,7 +63,7 @@ python scripts/build_rootlist.py
 If you maintain a publicly accessible, regularly updated phishing feed and want it aggregated into the Community list:
 
 1. Open an issue with the feed URL and format (JSON array, plain text, hosts file, etc.)
-2. We'll review and add it to [`scripts/smart_aggregator.py`](scripts/smart_aggregator.py)
+2. We'll review and add it to [`scripts/smart_aggregator.py`](../scripts/smart_aggregator.py)
 
 Current sources: MetaMask, ScamSniffer, OpenPhish, SEAL, Phishunt, Enkrypt, CryptoFirewall, DiscordPhishing, Polkadot, SPMedia, Codeesura and more.
 
