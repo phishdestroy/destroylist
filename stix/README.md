@@ -9,7 +9,7 @@
 <br>
 
 ![format](https://img.shields.io/badge/format-STIX_2.1-FF0000?style=for-the-badge)
-![indicators](https://img.shields.io/badge/indicators-122%2C617-000000?style=for-the-badge)
+![indicators](https://img.shields.io/badge/indicators-121%2C467-000000?style=for-the-badge)
 
 <br>
 
@@ -29,13 +29,14 @@
 
 > [!NOTE]
 > This bundle is a snapshot generated on **2026-08-17** and is not refreshed automatically.
+> Domains cleared on appeal (listed in [`allow/allowlist.json`](../allow/allowlist.json)) were removed from it on 2026-10-19.
 > For current data use the [live feeds](../dns/) or regenerate it (see below).
 
 ## 📂 Contents
 
 | File | Description |
 |:-----|:------------|
-| `bundle.json` | STIX 2.1 bundle — 1 identity + 122,617 indicators (≈ 59 MB, minified) |
+| `bundle.json` | STIX 2.1 bundle — 1 identity + 121,467 indicators (≈ 59 MB, minified) |
 
 **Indicator example:**
 
