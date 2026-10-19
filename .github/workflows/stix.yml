@@ -1,0 +1,76 @@
+name: STIX Bundle
+# Rebuilds the STIX 2.1 bundle from dns/active_domains.json and publishes it
+# as the bundle.json asset of the "stix" Release (not committed: ~60 MB).
+# Runs after the 12-hourly DNS validation and on every allowlist change, so
+# appealed domains are revoked promptly.
+on:
+  schedule:
+    - cron: "40 5,17 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "allow/allowlist.json"
+  workflow_dispatch:
+
+concurrency:
+  group: stix-bundle
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Build from the published bundle and replace the asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view stix >/dev/null 2>&1 || \
+            gh release create stix --latest=false --title "STIX 2.1 bundle" \
+              --notes "PhishDestroy domains as STIX 2.1 indicators. See stix/README.md."
+
+          # The previous bundle carries ids, created dates and revocations.
+          # If it exists it must be read; building without it would re-date
+          # every indicator and drop published revocations.
+          PREVIOUS=()
+          if gh release view stix --json assets --jq '.assets[].name' | grep -qx bundle.json; then
+            gh release download stix --pattern bundle.json --dir "$RUNNER_TEMP/previous"
+            PREVIOUS=(--previous "$RUNNER_TEMP/previous/bundle.json")
+          fi
+          SUMMARY=$(python scripts/generate_stix.py "${PREVIOUS[@]}" --output "$RUNNER_TEMP/bundle.json")
+          echo "$SUMMARY"
+
+          # Upload under a temporary name, then swap, so bundle.json is never
+          # missing for more than one API call.
+          cp "$RUNNER_TEMP/bundle.json" "$RUNNER_TEMP/bundle.json.next"
+          gh release upload stix "$RUNNER_TEMP/bundle.json.next" --clobber
+          API="repos/${GITHUB_REPOSITORY}/releases"
+          RELEASE_ID=$(gh api "$API/tags/stix" --jq .id)
+          asset_id() { gh api "$API/$RELEASE_ID/assets" --paginate --jq ".[] | select(.name == \"$1\") | .id"; }
+          OLD=$(asset_id bundle.json)
+          NEXT=$(asset_id bundle.json.next)
+          if [ -n "$OLD" ]; then gh api --method DELETE "$API/assets/$OLD"; fi
+          gh api --method PATCH "$API/assets/$NEXT" -f name=bundle.json >/dev/null
+
+          COUNTS=${SUMMARY#Generated: }
+          gh release edit stix --notes "PhishDestroy domains as STIX 2.1 indicators. See [stix/README.md](https://github.com/${GITHUB_REPOSITORY}/tree/main/stix).
+
+          Last build: $(date -u '+%Y-%m-%d %H:%M UTC') from ${GITHUB_SHA::7}: ${COUNTS%% →*}."
