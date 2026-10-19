@@ -73,8 +73,19 @@ jobs:
               exit 0
             fi
 
-            CHANGES=$(git diff --staged --stat | tail -1)
-            git commit -m "Daily update: ${CHANGES} [skip ci]"
+            # diff --stat counts every domain once per generated format;
+            # report the real list.json delta instead.
+            SUMMARY=$(python - <<'PY'
+          import json
+          import subprocess
+
+          before = set(json.loads(subprocess.check_output(["git", "show", "HEAD:list.json"])))
+          with open("list.json", encoding="utf-8") as source:
+              after = set(json.load(source))
+          print(f"+{len(after - before):,} added, -{len(before - after):,} purged, {len(after):,} total")
+          PY
+            )
+            git commit -m "Daily update: ${SUMMARY} [skip ci]"
             git push && exit 0
 
             echo "Push attempt $i failed, retrying in $((i * 2))s..."
