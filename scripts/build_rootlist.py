@@ -71,7 +71,10 @@ def process_items(
         if not rd:
             continue
 
-        if rd in INFRA_ROOTS:
+        # An allowlisted root (e.g. cleared on appeal) must not be blocked as a
+        # whole because one of its subdomains is listed: treat it like a
+        # provider root and keep only the listed host, in the services list.
+        if rd in INFRA_ROOTS or is_allowed(rd, _exact, _patterns):
             service_hosts.add(host)
             for group, roots in PROVIDER_GROUPS.items():
                 if rd in roots:
