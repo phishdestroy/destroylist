@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 229,368 domains | 2026-10-25 15:16 UTC
+; Destroylist - Primary | RPZ zone | 229,370 domains | 2026-10-25 15:37 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202610251516 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202610251537 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -70698,7 +70698,9 @@ ee-account-repayment.web.app CNAME .
 ee-info-update.web.app CNAME .
 ee-payment-issue.web.app CNAME .
 ee-payment-method-issue.firebaseapp.com CNAME .
+ee-payment-method-issue.web.app CNAME .
 ee-payment-pending.web.app CNAME .
+ee-pending-payment.firebaseapp.com CNAME .
 ee-pending-payment.web.app CNAME .
 ee-portal-auth.web.app CNAME .
 ee-portal-info.firebaseapp.com CNAME .
