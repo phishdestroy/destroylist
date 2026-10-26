@@ -154,6 +154,37 @@ class FalsePositiveCleanupTests(unittest.TestCase):
         self.assertEqual(removed, 2)
         self.assertEqual(filtered, ["login.example.com"])
 
+    def test_exact_host_covers_its_www_form_but_no_other_child(self):
+        entries = [
+            "www.example.com",
+            "www.example.com/path",
+            "www.login.example.com",
+            "wwwexample.com",
+            "www2.example.com",
+        ]
+        filtered, removed = filter_domains(
+            entries,
+            exact={"example.com"},
+            patterns=set(),
+        )
+
+        self.assertEqual(removed, 2)
+        self.assertEqual(
+            filtered,
+            ["www.login.example.com", "wwwexample.com", "www2.example.com"],
+        )
+
+    def test_www_form_of_a_shared_service_keeps_its_scoped_entries(self):
+        entries = ["www.jotform.com", "www.jotform.com/phishing-form"]
+        filtered, removed = filter_domains(
+            entries,
+            exact={"jotform.com"},
+            patterns=set(),
+        )
+
+        self.assertEqual(removed, 1)
+        self.assertEqual(filtered, ["www.jotform.com/phishing-form"])
+
     def test_exact_tenant_covers_own_paths_but_not_sibling_tenants(self):
         entries = [
             "foo.webflow.io",
