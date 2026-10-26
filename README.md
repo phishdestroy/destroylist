@@ -373,13 +373,44 @@ curl -fsSL https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootl
 ### Python
 ```python
 import requests
-blocklist = requests.get('https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json').json()
-is_malicious = "suspicious-domain.com" in blocklist
+
+response = requests.get(
+    "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.json",
+    timeout=(5, 30),
+)
+response.raise_for_status()
+blocklist = set(response.json())
+domain = "suspicious-domain.com".lower().rstrip(".").encode("idna").decode("ascii")
+is_listed = domain in blocklist
+print("LISTED" if is_listed else "NOT LISTED")
 ```
+
+These examples check exact hostname membership. `NOT LISTED` means absent from this downloaded snapshot; it is not a safety verdict. For bulk lookups, reuse the downloaded set or file instead of fetching it per domain.
 
 ### Bash
 ```bash
-curl -s https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt | grep -q "suspicious-domain.com" && echo "BLOCKED"
+# Run as a Bash script. A download failure exits before any lookup result.
+set -euo pipefail
+feed_file=$(mktemp)
+trap 'rm -f "$feed_file"' EXIT
+
+curl --fail --silent --show-error --location \
+  --connect-timeout 5 --max-time 60 \
+  https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt \
+  --output "$feed_file"
+
+# Exact hostname match: dots are literal, and partial matches do not count.
+if grep -Fxq -- "suspicious-domain.com" "$feed_file"; then
+  echo "LISTED"
+else
+  lookup_status=$?
+  if [ "$lookup_status" -eq 1 ]; then
+    echo "NOT LISTED"
+  else
+    echo "LOOKUP FAILED" >&2
+    exit "$lookup_status"
+  fi
+fi
 ```
 
 </details>
@@ -482,7 +513,7 @@ Before a domain is added, we:
 
 📥 Send an official complaint to the registrar and the hosting provider (via WHOIS), including scan results, screenshots, and a request for client investigation. The complaint also notifies them about inclusion in our public database.
 
-🚔 According to ICANN rules, registrars must review such complaints within 24 hours.
+🚔 Under the [RAA amendments effective 5 April 2024](https://www.icann.org/en/system/files/files/registrar-accreditation-agreement-global-amendment-05apr24-en.pdf), §3.18.1 requires receipt confirmation and reasonable, prompt investigation and appropriate responses. §3.18.2 requires prompt mitigation when there is actionable evidence of DNS abuse. The specific 24-hour review duty in §3.18.3 applies to well-founded reports from designated authorities sent to the dedicated contact; it is not a universal deadline for resolving public complaints.
 
 ---
 
