@@ -232,12 +232,19 @@ def load_allowlist_split() -> Tuple[Set[str], Set[str]]:
 
 
 def is_allowed(domain: str, exact: Set[str], patterns: Set[str]) -> bool:
-    """Match an exact entry/host scope or an explicitly approved pattern."""
+    """Match an exact entry/host scope or an explicitly approved pattern.
+
+    An exact host also covers its www. form: www.example.com is the same site as
+    example.com, so allowlisting one must not leave the other listed.
+    """
     candidate = normalize_entry(domain)
     if candidate in exact:
         return True
     host = extract_domain(candidate)
     if "/" in candidate and host in exact and host not in PATH_SCOPED_HOSTS:
+        return True
+    bare = host[4:] if host.startswith("www.") else None
+    if bare and bare in exact and ("/" not in candidate or bare not in PATH_SCOPED_HOSTS):
         return True
     return any(host.endswith(p) or host == p[1:] for p in patterns)
 
