@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,015 domains | 2026-10-27 20:32 UTC
+; Destroylist - Primary | RPZ zone | 231,016 domains | 2026-10-27 21:11 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202610272032 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202610272111 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -13907,6 +13907,7 @@ aml-limited.com CNAME .
 aml-link.com CNAME .
 aml-logs.com CNAME .
 aml-looker.com CNAME .
+aml-master.com CNAME .
 aml-monitoring.site CNAME .
 aml-neat.com CNAME .
 aml-now.com CNAME .
