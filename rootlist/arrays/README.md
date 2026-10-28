@@ -6,16 +6,18 @@
 
 **The primary list split into small JSON shards**
 
-<br>
 
-![shards](https://img.shields.io/badge/shards-74-FF0000?style=for-the-badge)
-![size](https://img.shields.io/badge/shard_size-3%2C000_domains-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/shards-74-c52237?style=for-the-badge" alt="shards"/>
+<img src="https://img.shields.io/badge/shard_size-3%2C000_domains-252532?style=for-the-badge" alt="size"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Feeds](https://img.shields.io/badge/data_feeds-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+<a href="https://github.com/phishdestroy/destroylist#data-feeds"><img src="https://img.shields.io/badge/data_feeds-c52237?style=flat-square" alt="Feeds"/></a>
+</p>
 
 </div>
 
@@ -31,7 +33,7 @@ purge workflows).
 > `list.json` is too large for GitHub code search; the shards are not. Search any domain across the shards:
 > [`repo:phishdestroy/destroylist path:rootlist/arrays example.com`](https://github.com/search?q=repo%3Aphishdestroy%2Fdestroylist+path%3Arootlist%2Farrays+example.com&type=code)
 
-## 📋 Format
+## Format
 
 Each shard is a JSON array of domains:
 

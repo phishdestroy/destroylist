@@ -6,16 +6,18 @@
 
 **One small file per day: which domains entered or left the lists**
 
-<br>
 
-![updated](https://img.shields.io/badge/updated-daily-FF0000?style=for-the-badge)
-![since](https://img.shields.io/badge/since-2026--07--21-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/updated-daily-c52237?style=for-the-badge" alt="updated"/>
+<img src="https://img.shields.io/badge/since-2026--07--21-252532?style=for-the-badge" alt="since"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Feeds](https://img.shields.io/badge/data_feeds-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+<a href="https://github.com/phishdestroy/destroylist#data-feeds"><img src="https://img.shields.io/badge/data_feeds-c52237?style=flat-square" alt="Feeds"/></a>
+</p>
 
 </div>
 
@@ -31,7 +33,7 @@ the full history stays in the tree.
 > These files are indexed by GitHub code search. Search for a domain to see the day it was added or removed:
 > [`repo:phishdestroy/destroylist path:archives/changes example.com`](https://github.com/search?q=repo%3Aphishdestroy%2Fdestroylist+path%3Aarchives%2Fchanges+example.com&type=code)
 
-## 📋 Format
+## Format
 
 ```json
 {

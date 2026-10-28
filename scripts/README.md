@@ -1,8 +1,8 @@
-# ⚙️ Scripts
-
 <div align="center">
 <img src="banner.svg" alt="Scripts" width="900"/>
 </div>
+
+# Scripts
 
 Automation, analytics, and validation utilities for the destroylist pipeline.
 
@@ -10,7 +10,7 @@ Each script runs independently.
 
 ---
 
-## 📜 Script Reference
+## Script Reference
 
 ### `validate_json.py`
 
@@ -120,7 +120,7 @@ Updates a GitHub Gist with current statistics.
 
 ---
 
-## 🔄 Execution Order
+## Execution Order
 
 Full pipeline:
 
@@ -138,7 +138,7 @@ Full pipeline:
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.10+
 - Dependencies: `pip install -r requirements.txt`
