@@ -31,6 +31,8 @@ Include evidence where possible: screenshots, VirusTotal or URLScan links.
 | Appeals form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) |
 | GitHub issue | [Appeal →](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) |
 
+For either route, send the domain and a short explanation. No evidence or proof of ownership is required. Screenshots and links are optional; we review the listing ourselves.
+
 Approved domains are added to `allow/allowlist.json` and automatically cleaned from all lists.
 
 ---

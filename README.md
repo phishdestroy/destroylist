@@ -589,7 +589,9 @@ Network security · Threat research · AI/ML training · Trend analysis · Autom
 </p>
 
 - [Appeals Form](https://phishdestroy.io/appeals/) — fastest option
-- GitHub Issue with proof
+- [GitHub Issue](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) — alternative option
+
+For either route, send the domain and a short explanation. No evidence or proof of ownership is required. Screenshots and links are optional; we review the listing ourselves.
 
 **Accuracy first!**
 

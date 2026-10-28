@@ -34,6 +34,8 @@ If you find a security issue in our systems, scripts, or data pipeline:
 | Appeals form | [phishdestroy.io/appeals](https://phishdestroy.io/appeals/) |
 | GitHub issue | [Open appeal →](https://github.com/phishdestroy/destroylist/issues/new?template=appeal.yml) |
 
+For either route, send the domain and a short explanation. No evidence or proof of ownership is required. Screenshots and links are optional; we review the listing ourselves.
+
 Approved domains are added to `allow/allowlist.json` and automatically removed from all lists within the next update cycle.
 
 **Community lists** (`community/*`):
