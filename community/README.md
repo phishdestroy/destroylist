@@ -23,16 +23,16 @@
 ---
 
 > [!CAUTION]
-> **Research Dataset — Not for Direct Production Blocking**
+> **Community Dataset — Research and Optional Filtering**
 >
-> Auto-aggregated collection of phishing/scam domains from **13+ public threat intelligence sources**. Intended for **research**, pattern analysis, and ML model training.
+> Auto-aggregated collection of phishing/scam domains from **13+ public threat intelligence sources**. Available for **research**, pattern analysis, ML model training and optional filtering. Source coverage and false-positive rates vary; review the dataset before deploying it.
 
 ## Purpose
 
 - Aggregate domains from multiple community feeds
 - Analyze domain abuse and phishing patterns at scale
 - Train AI/ML models and heuristic detection systems
-- **No operational impact** — being listed here doesn't block anything
+- **Consumer-controlled filtering** — a listing takes effect when a user or service imports the feed into its own controls
 
 ## Files
 
@@ -52,9 +52,9 @@
 
 ## Policy
 
-- **No manual removals** — fully automated, edits get overwritten
-- To remove a domain → report to the **original source feed**
-- For production use → prefer the curated `list.json` instead
+Our community feeds are generated automatically. To correct a listing in our published copies, [submit an appeal](https://phishdestroy.io/appeals/); reviewed exclusions are applied through our allowlist. The original source maintains its own feed and must be contacted separately for a correction there.
+
+Direct edits to generated feeds are overwritten; use the correction process. For a narrower starting point, choose the curated `list.json` feed.
 
 ## How It's Built
 
