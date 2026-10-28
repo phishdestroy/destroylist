@@ -6,15 +6,17 @@
 
 **Minimal, DNS-validated list of registrable root domains for blocking at the domain level**
 
-<br>
 
-![scope](https://img.shields.io/badge/scope-root_only-FF0000?style=for-the-badge)
-![infra](https://img.shields.io/badge/infrastructure-excluded-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/scope-root_only-c52237?style=for-the-badge" alt="scope"/>
+<img src="https://img.shields.io/badge/infrastructure-excluded-252532?style=for-the-badge" alt="infra"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
 
 </div>
 
@@ -23,34 +25,34 @@
 > [!TIP]
 > No subdomains. No hosting providers. Clean data for firewalls and DNS resolvers.
 
-## 📥 Download Links
+## Download Links
 
-### 🔴 Primary (Curated)
-
-| List | Description | JSON | TXT |
-|:-----|:------------|:----:|:---:|
-| Root domains | All validated roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt) |
-| Live only | DNS-verified active | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt) |
-| Services only | Hosting platform subdomains | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt) |
-
-### ⚫ Community (Aggregated)
+### Primary (Curated)
 
 | List | Description | JSON | TXT |
 |:-----|:------------|:----:|:---:|
-| Root domains | All community roots | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt) |
-| Live only | DNS-verified active | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt) |
-| Services only | Hosting platform subdomains | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json) | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt) |
+| Root domains | All validated roots | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.json) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/active_root_domains.txt) |
+| Live only | DNS-verified active | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.json) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/online_root_domains.txt) |
+| Services only | Hosting platform subdomains | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.json) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/services_domains.txt) |
 
-### 📊 Provider Analytics
+### Community (Aggregated)
+
+| List | Description | JSON | TXT |
+|:-----|:------------|:----:|:---:|
+| Root domains | All community roots | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.json) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_root_domains.txt) |
+| Live only | DNS-verified active | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.json) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_online_root_domains.txt) |
+| Services only | Hosting platform subdomains | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.json) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_services_domains.txt) |
+
+### Provider Analytics
 
 | List | Description | Link |
 |:-----|:------------|:----:|
-| `providers_root_domains.json` | Primary — breakdown by hosting provider | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/providers_root_domains.json) |
-| `community_providers_root_domains.json` | Community — breakdown by hosting provider | [⬇️](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_providers_root_domains.json) |
+| `providers_root_domains.json` | Primary — breakdown by hosting provider | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/providers_root_domains.json) |
+| `community_providers_root_domains.json` | Community — breakdown by hosting provider | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/community_providers_root_domains.json) |
 
 ---
 
-## 📁 Output Files
+## Output Files
 
 ### `active_root_domains.json`
 - Source: `list.json`
@@ -93,7 +95,7 @@
 
 ---
 
-## 🚫 Excluded Infrastructure
+## Excluded Infrastructure
 
 Root domains that should **never** be blocked globally — phishing subdomains on these platforms are separated into `services_domains.json` instead.
 
@@ -111,7 +113,7 @@ Root domains that should **never** be blocked globally — phishing subdomains o
 
 ---
 
-## ⚙️ Generation
+## Generation
 
 Produced by [`scripts/build_rootlist.py`](../scripts/build_rootlist.py):
 
@@ -124,9 +126,11 @@ Produced by [`scripts/build_rootlist.py`](../scripts/build_rootlist.py):
 
 <div align="center">
 
-[![Formats](https://img.shields.io/badge/📁_formats-FF0000?style=flat-square)](formats/)
-[![Arrays](https://img.shields.io/badge/🔢_arrays-000000?style=flat-square)](arrays/)
-[![History](https://img.shields.io/badge/📅_history-FF0000?style=flat-square)](2025/)
-[![back](https://img.shields.io/badge/←_destroylist-000000?style=flat-square)](https://github.com/phishdestroy/destroylist)
+<p align="center">
+<a href="formats/"><img src="https://img.shields.io/badge/formats-c52237?style=flat-square" alt="Formats"/></a>
+<a href="arrays/"><img src="https://img.shields.io/badge/arrays-252532?style=flat-square" alt="Arrays"/></a>
+<a href="2025/"><img src="https://img.shields.io/badge/history-c52237?style=flat-square" alt="History"/></a>
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/%E2%86%90_destroylist-252532?style=flat-square" alt="back"/></a>
+</p>
 
 </div>

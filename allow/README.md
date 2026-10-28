@@ -6,16 +6,18 @@
 
 **Scanner exclusion list — false-positive control for crypto & Web3**
 
-<br>
 
-![scope](https://img.shields.io/badge/scope-exclusion_only-FF0000?style=for-the-badge)
-![format](https://img.shields.io/badge/format-apex_only-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/scope-exclusion_only-c52237?style=for-the-badge" alt="scope"/>
+<img src="https://img.shields.io/badge/format-apex_only-252532?style=for-the-badge" alt="format"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+<a href="https://phishdestroy.io/appeals/"><img src="https://img.shields.io/badge/appeals-c52237?style=flat-square" alt="Appeals"/></a>
+</p>
 
 </div>
 
@@ -38,14 +40,14 @@ It exists for one reason: to stop our own detection from flagging the obvious. P
 
 If a listed domain is compromised, we remove it and record it in the commit.
 
-## ⚠️ Format Rules
+## Format Rules
 
 - **Apex domains only** (e.g., `example.org`)
 - No subdomains
 - No paths
 - Lowercase only
 
-## 📂 Contents
+## Contents
 
 | File | Description |
 |:-----|:------------|
@@ -61,7 +63,7 @@ If a listed domain is compromised, we remove it and record it in the commit.
 ]
 ```
 
-## ➕ Request Addition
+## Request Addition
 
 Open an issue: [github.com/phishdestroy/destroylist/issues](https://github.com/phishdestroy/destroylist/issues)
 
@@ -74,7 +76,7 @@ Include:
 > [!TIP]
 > If your domain is **currently listed** by us, use [Appeals](https://phishdestroy.io/appeals/) instead. It is faster, needs no GitHub account, and auto-approves within 48 hours if no operator gets to it.
 
-## 🙏 Credits
+## Credits
 
 The initial list came from [SEAL (Security Alliance)](https://github.com/security-alliance/allowlists), and a large part of it is still theirs. Thanks to SEAL for maintaining it in the open so projects like ours can build on top of it instead of starting from nothing.
 
@@ -84,6 +86,6 @@ Entries added by us are our own decisions — any mistakes in them are ours, not
 
 <div align="center">
 
-[![back](https://img.shields.io/badge/←_destroylist-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist)
+[![back](https://img.shields.io/badge/%E2%86%90_destroylist-c52237?style=flat-square)](https://github.com/phishdestroy/destroylist)
 
 </div>

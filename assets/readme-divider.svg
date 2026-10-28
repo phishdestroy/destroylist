@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="24" viewBox="0 0 1000 24" role="img" aria-label="">
+  <defs>
+    <linearGradient id="line" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="1000" y2="12"><stop stop-color="#c52237" stop-opacity="0"/><stop offset=".12" stop-color="#c52237" stop-opacity=".7"/><stop offset=".5" stop-color="#c52237" stop-opacity=".3"/><stop offset="1" stop-color="#c52237" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path d="M0 12H1000" fill="none" stroke="url(#line)"/>
+  <path d="M0 12H52" stroke="#c52237" stroke-width="2"/>
+  <circle cx="65" cy="12" r="2" fill="#c52237"/>
+  <circle cx="65" cy="12" r="3" fill="#c52237" opacity=".3">
+    <animate attributeName="cx" values="65;950" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;.5;.5;0" keyTimes="0;.1;.85;1" dur="9s" repeatCount="indefinite"/>
+  </circle>
+</svg>

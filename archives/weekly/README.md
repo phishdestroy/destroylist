@@ -11,21 +11,23 @@
 
 **Full blocklist snapshots — every Monday**
 
-<br>
 
-![format](https://img.shields.io/badge/format-JSON-FF0000?style=for-the-badge)
-![schedule](https://img.shields.io/badge/schedule-weekly_(Mon_01%3A00_UTC)-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/format-JSON-c52237?style=for-the-badge" alt="format"/>
+<img src="https://img.shields.io/badge/schedule-weekly_%28Mon_01:00_UTC%29-252532?style=for-the-badge" alt="schedule"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
 
 </div>
 
 ---
 
-## 📂 Files
+## Files
 
 | Archive | Date | Domains |
 |:--------|:----:|--------:|
@@ -43,7 +45,7 @@
 
 Each file contains the complete `list.json` state captured on Monday of that week.
 
-## 📊 Use Cases
+## Use Cases
 
 - Week-over-week trend analysis
 - Domain churn tracking (added vs removed)
@@ -54,6 +56,6 @@ Each file contains the complete `list.json` state captured on Monday of that wee
 
 <div align="center">
 
-[![back](https://img.shields.io/badge/←_archives-FF0000?style=flat-square)](../)
+[![back](https://img.shields.io/badge/%E2%86%90_archives-c52237?style=flat-square)](../)
 
 </div>
