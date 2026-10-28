@@ -33,7 +33,7 @@ Include evidence where possible: screenshots, VirusTotal or URLScan links.
 
 For either route, send the domain and a short explanation. No evidence or proof of ownership is required. Screenshots and links are optional; we review the listing ourselves.
 
-Approved domains are added to `allow/allowlist.json` and automatically cleaned from all lists.
+Approved appeals remove the domain from our published data. Operator-confirmed false positives are also added to `allow/allowlist.json` to prevent repeated listing. Automatic approval does not itself add a permanent allowlist entry.
 
 ---
 

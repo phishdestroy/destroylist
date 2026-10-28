@@ -9,7 +9,7 @@
 
 <p align="center">
 <img src="https://img.shields.io/badge/scope-exclusion_only-c52237?style=for-the-badge" alt="scope"/>
-<img src="https://img.shields.io/badge/format-apex_only-252532?style=for-the-badge" alt="format"/>
+<img src="https://img.shields.io/badge/format-exact_hosts_%2B_patterns-252532?style=for-the-badge" alt="format"/>
 </p>
 
 
@@ -25,7 +25,7 @@
 
 ## Overview
 
-A list of apex domains our scanner will not add to Destroylist automatically.
+Exact hostnames and explicitly approved suffix patterns used to prevent repeated false-positive listings and clean our published feeds.
 
 It exists for one reason: to stop our own detection from flagging the obvious. Primitive heuristics make mistakes, and this list is where we keep the domains those mistakes keep hitting.
 
@@ -42,16 +42,16 @@ If a listed domain is compromised, we remove it and record it in the commit.
 
 ## Format Rules
 
-- **Apex domains only** (e.g., `example.org`)
-- No subdomains
-- No paths
-- Lowercase only
+- **Exact hostnames**, including individual subdomains (e.g., `example.org` or `trade.example.org`).
+- An exact hostname does not whitelist all child hostnames. The cleaner also handles its `www.` form and same-host paths, with exceptions for shared hosting.
+- **Approved suffix patterns** begin with a dot. `.paypal.com` covers that hostname and its subdomains; `.microsoft` covers that suffix. New patterns must be explicitly approved in the code.
+- Keep entries lowercase. Do not broaden a shared-hosting exclusion to cover unrelated tenants.
 
 ## Contents
 
 | File | Description |
 |:-----|:------------|
-| `allowlist.json` | Array of apex domains excluded from detection |
+| `allowlist.json` | Exact hostnames and approved suffix patterns used for exclusions |
 
 **Example:**
 
@@ -70,11 +70,11 @@ Open an issue: [github.com/phishdestroy/destroylist/issues](https://github.com/p
 Include:
 - Project name
 - Homepage URL
-- Apex domain(s)
+- Exact hostname(s) to review
 - Brief rationale
 
 > [!TIP]
-> If your domain is **currently listed** by us, use [Appeals](https://phishdestroy.io/appeals/) instead. It is faster, needs no GitHub account, and auto-approves within 48 hours if no operator gets to it.
+> If your domain is **currently listed** by us, use [Appeals](https://phishdestroy.io/appeals/) instead. It is faster, needs no GitHub account, and auto-approves within 24 hours if no operator gets to it.
 
 ## Credits
 

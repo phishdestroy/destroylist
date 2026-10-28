@@ -36,12 +36,12 @@ If you find a security issue in our systems, scripts, or data pipeline:
 
 For either route, send the domain and a short explanation. No evidence or proof of ownership is required. Screenshots and links are optional; we review the listing ourselves.
 
-Approved domains are added to `allow/allowlist.json` and automatically removed from all lists within the next update cycle.
+Approved appeals remove the domain from our published data. Operator-confirmed false positives are also added to `allow/allowlist.json` to prevent repeated listing. Automatic approval does not itself add a permanent allowlist entry.
 
 **Community lists** (`community/*`):
 
 > [!CAUTION]
-> Auto-aggregated from 13+ external sources. Manual removal is not possible — report to the original feed provider and it will be removed on next sync.
+Our community feeds are generated automatically. To correct a listing in our published copies, [submit an appeal](https://phishdestroy.io/appeals/); reviewed exclusions are applied through our allowlist. The original source maintains its own feed and must be contacted separately for a correction there.
 
 ### A malicious domain is missing
 
@@ -76,7 +76,7 @@ Domains stay blocked. The list keeps growing. Registrars and platforms don't rev
 
 If you were defrauded by a domain in our list, check its addition date via [commit history](https://github.com/phishdestroy/destroylist/commits/main/) or the [Telegram channel](https://t.me/destroy_phish).
 
-Per ICANN rules, registrars must review abuse complaints within 24 hours. If fraud occurred after the domain was listed, the registrar or hosting provider may share liability for your loss.
+ICANN's [RAA §3.18.1](https://www.icann.org/resources/pages/approved-with-specs-2013-09-17-en#3.18.1) requires reasonable and prompt steps to investigate and respond appropriately to abuse reports. The **24-hour review requirement** in [§3.18.2](https://www.icann.org/resources/pages/approved-with-specs-2013-09-17-en#3.18.2) applies to well-founded reports of illegal activity from the specified authorities, submitted through the registrar's dedicated contact. If fraud occurred after the domain was listed, the registrar or hosting provider may share liability for your loss.
 
 ---
 
