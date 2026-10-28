@@ -11,30 +11,32 @@
 
 **Full blocklist snapshots — end of each month**
 
-<br>
 
-![format](https://img.shields.io/badge/format-JSON-FF0000?style=for-the-badge)
-![schedule](https://img.shields.io/badge/schedule-monthly-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/format-JSON-c52237?style=for-the-badge" alt="format"/>
+<img src="https://img.shields.io/badge/schedule-monthly-252532?style=for-the-badge" alt="schedule"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
 
 </div>
 
 ---
 
-## 📂 Files
+## Files
 
 | Archive | Domains | Link |
 |:--------|--------:|:----:|
-| `2026-01.json` | 59,791 | [⬇️](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-01.json) |
-| `2026-02.json` | 77,566 | [⬇️](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-02.json) |
-| `2026-03.json` | ~96,224 | [⬇️](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-03.json) |
-| `2026-04.json` | ~118,392 | [⬇️](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-04.json) |
-| `2026-05.json` | 141,881 | [⬇️](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-05.json) |
-| `2026-06.json` | 154,936 | [⬇️](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-06.json) |
+| `2026-01.json` | 59,791 | [Download](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-01.json) |
+| `2026-02.json` | 77,566 | [Download](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-02.json) |
+| `2026-03.json` | ~96,224 | [Download](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-03.json) |
+| `2026-04.json` | ~118,392 | [Download](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-04.json) |
+| `2026-05.json` | 141,881 | [Download](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-05.json) |
+| `2026-06.json` | 154,936 | [Download](https://github.com/phishdestroy/destroylist/releases/download/archives/2026-06.json) |
 
 > `~` — retroactive estimate (archive not generated on the 1st; counts interpolated from adjacent snapshots)
 
@@ -42,7 +44,7 @@
 
 Each file contains the complete `list.json` state at the start of that month.
 
-## 📊 Use Cases
+## Use Cases
 
 - Track blocklist growth month-over-month
 - Analyze domain lifecycle and churn
@@ -55,6 +57,6 @@ Each file contains the complete `list.json` state at the start of that month.
 
 <div align="center">
 
-[![back](https://img.shields.io/badge/←_archives-FF0000?style=flat-square)](../)
+[![back](https://img.shields.io/badge/%E2%86%90_archives-c52237?style=flat-square)](../)
 
 </div>

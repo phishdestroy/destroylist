@@ -6,16 +6,18 @@
 
 **Destroylist phishing domains as STIX 2.1 indicators — ready to import into SIEM and threat-intelligence platforms**
 
-<br>
 
-![format](https://img.shields.io/badge/format-STIX_2.1-FF0000?style=for-the-badge)
-![updated](https://img.shields.io/badge/updated-twice_daily-000000?style=for-the-badge)
+<p align="center">
+<img src="https://img.shields.io/badge/format-STIX_2.1-c52237?style=for-the-badge" alt="format"/>
+<img src="https://img.shields.io/badge/updated-twice_daily-252532?style=for-the-badge" alt="updated"/>
+</p>
 
-<br>
 
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Feeds](https://img.shields.io/badge/data_feeds-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+<a href="https://github.com/phishdestroy/destroylist#data-feeds"><img src="https://img.shields.io/badge/data_feeds-c52237?style=flat-square" alt="Feeds"/></a>
+</p>
 
 </div>
 
@@ -37,7 +39,7 @@ It is rebuilt twice a day (after DNS validation) and on every allowlist change b
   `"revoked": true` (same `id`, new `modified`), so platforms that already imported it retract it.
 - Domains that merely stop resolving are left out of the next build.
 
-## 📂 Contents
+## Contents
 
 | File | Description |
 |:-----|:------------|
@@ -59,12 +61,12 @@ It is rebuilt twice a day (after DNS validation) and on every allowlist change b
 }
 ```
 
-## 🔌 Use it
+## Use it
 
 - **OpenCTI / MISP / Microsoft Sentinel / Splunk ES** — import `bundle.json` as a STIX 2.1 file; honour `revoked`.
 - **Download:** `https://github.com/phishdestroy/destroylist/releases/download/stix/bundle.json`
 
-## 🔄 Regenerate
+## Regenerate
 
 ```bash
 pip install -r scripts/requirements.txt
