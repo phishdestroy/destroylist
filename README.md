@@ -517,7 +517,7 @@ DestroyList aims to disable malicious domains: scams, phishing, and other illici
 1. **Scan it across cybersecurity platforms** for threat intelligence.
 2. **Send an official complaint to the registrar and the hosting provider** (via WHOIS), including scan results, screenshots, and a request for client investigation. The complaint also notifies them about inclusion in our public database.
 
-According to ICANN rules, registrars must review such complaints **within 24 hours**.
+ICANN's [2013 RAA §3.18.1](https://www.icann.org/resources/pages/approved-with-specs-2013-09-17-en#3.18.1) requires registrars to take **reasonable and prompt steps to investigate and respond appropriately to abuse reports**. The **24-hour review requirement** in [§3.18.2](https://www.icann.org/resources/pages/approved-with-specs-2013-09-17-en#3.18.2) applies to well-founded reports of illegal activity from law enforcement, consumer-protection and other qualifying authorities, sent to the registrar's dedicated contact.
 
 ### When reports go ignored
 
