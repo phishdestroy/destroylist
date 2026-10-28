@@ -246,24 +246,19 @@ flowchart LR
 | `GET` | [`/v1/feed/{list}`](https://api.destroy.tools/v1/feed/primary) | Download full domain feeds (primary, community, active) |
 | `GET` | [`/v1/stats`](https://api.destroy.tools/v1/stats) | Live statistics & domain counts |
 
+**Per-IP quotas:** 300 data units/minute; intelligence routes have 30 units/minute and 1,000/day. Request costs vary by endpoint. On HTTP 429, respect `Retry-After`. [Current limits and response schemas](https://api.destroy.tools/openapi.json).
+
 ### Threat Scoring
 
-Every domain gets a **risk score (0-100)** based on multiple signals:
+Listed-domain results include a **risk score (0–100)** and the API's severity verdict. Signals include curated and community listings, DNS/HTTP liveness, multiple sources and naming patterns. Unlisted domains can return separate heuristic signals; a missing listing is not a safety guarantee.
 
-| Signal | Points | Description |
-|:-------|:------:|:------------|
-| Curated blocklist | **+40** | In primary destroylist |
-| Community reported | **+20** | Reported by community sources |
-| DNS active | **+30** | Domain currently resolves |
-| Multi-source | **+10** | Confirmed by multiple feeds |
-| Suspicious keywords | **+5 each** | metamask, wallet, airdrop, etc. |
-| Risky TLD | **+5** | .xyz, .top, .club, .icu, etc. |
+Use the returned `threat`, `severity` and `flags` fields. The [current OpenAPI specification](https://api.destroy.tools/openapi.json) defines each response shape.
 
 <p>
-<img src="assets/severity-critical.svg" alt="Critical 70-100" width="150" height="30"/>
-<img src="assets/severity-high.svg" alt="High 40-69" width="150" height="30"/>
-<img src="assets/severity-medium.svg" alt="Medium 20-39" width="150" height="30"/>
-<img src="assets/severity-low.svg" alt="Low 1-19" width="150" height="30"/>
+<img src="assets/severity-critical.svg" alt="Critical severity" width="150" height="30"/>
+<img src="assets/severity-high.svg" alt="High severity" width="150" height="30"/>
+<img src="assets/severity-medium.svg" alt="Medium severity" width="150" height="30"/>
+<img src="assets/severity-low.svg" alt="Low severity" width="150" height="30"/>
 </p>
 
 ### Quick Integration
@@ -276,14 +271,19 @@ curl "https://api.destroy.tools/v1/check?domain=suspicious-site.xyz"
 **Python**
 ```python
 import requests
-r = requests.get(f"https://api.destroy.tools/v1/check?domain={domain}")
-if r.json()["threat"]:
-    print(f"BLOCKED: {r.json()['severity']} (score: {r.json()['risk_score']})")
+domain = "example.com"
+r = requests.get("https://api.destroy.tools/v1/check", params={"domain": domain}, timeout=30)
+r.raise_for_status()
+result = r.json()
+if result["threat"]:
+    print(f"BLOCKED: {result['severity']} (score: {result['risk_score']})")
 ```
 
 **JavaScript**
 ```javascript
-const r = await fetch(`https://api.destroy.tools/v1/check?domain=${domain}`);
+const domain = "example.com";
+const r = await fetch(`https://api.destroy.tools/v1/check?domain=${encodeURIComponent(domain)}`);
+if (!r.ok) throw new Error(`API returned HTTP ${r.status}`);
 const data = await r.json();
 if (data.threat) console.warn("PHISHING:", data.severity, data.risk_score);
 ```
@@ -485,7 +485,7 @@ PhishStats        PhishReport               IsItPhish               ThreatCenter
 - **Abuse Notifications:** Formal alerts to domain registrars and hosting providers
 - **Forensic Evidence Disclosure:** Complete evidence packages including metadata, screenshots, and PDF reports
 - **ICANN Compliance Support:** Reports aligned with ICANN standards
-- **Conditional Re-Detection Logic:** Follow-up alerts only if threat remains active beyond 24 hours
+- **Conditional Re-Detection Logic:** Follow-up reports only while the threat remains active, never sooner than 48 hours after the previous report ([current reporting policy](https://phishdestroy.io/appeals/))
 
 ---
 
