@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,333 domains | 2026-10-30 15:36 UTC
+; Destroylist - Primary | RPZ zone | 232,334 domains | 2026-10-30 16:07 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202610301536 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202610301607 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -159665,6 +159665,7 @@ proxy-test-001.pages.dev CNAME .
 proxy.jmkjsh.com CNAME .
 proxy.skytale.finance CNAME .
 proxy.vin CNAME .
+proxyapiopenai.com CNAME .
 proxycas.com CNAME .
 proxycc.cc CNAME .
 proxyf.ai CNAME .
