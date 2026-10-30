@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,314 domains | 2026-10-30 14:38 UTC
+; Destroylist - Primary | RPZ zone | 232,315 domains | 2026-10-30 14:44 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202610301438 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202610301444 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -45550,6 +45550,7 @@ chain-sync-5s1.pages.dev CNAME .
 chain-trustwallet.com CNAME .
 chain-update.com CNAME .
 chain-validation.pages.dev CNAME .
+chain-vest.info CNAME .
 chain.link-distribution.com CNAME .
 chain.link-distributions.com CNAME .
 chain.link-snapshot.com CNAME .
