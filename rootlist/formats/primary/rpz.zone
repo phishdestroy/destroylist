@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,929 domains | 2026-10-31 12:47 UTC
+; Destroylist - Primary | RPZ zone | 232,931 domains | 2026-10-31 12:55 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202610311247 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202610311255 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -129817,6 +129817,8 @@ manage-trezoor-es-login.typedream.app CNAME .
 manage-trezoor-learn-login.typedream.app CNAME .
 manage-trezoor-learn.typedream.app CNAME .
 manage-trezor-info-learn.typedream.app CNAME .
+manage-unauthorised-payee.firebaseapp.com CNAME .
+manage-unauthorised-payee.web.app CNAME .
 manage-uphod-login-io.pages.dev CNAME .
 manage-view-livledgerr.pages.dev CNAME .
 manage.alphaq-dex.com CNAME .
