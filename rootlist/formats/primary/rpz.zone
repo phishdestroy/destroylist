@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 234,688 domains | 2026-11-02 14:40 UTC
+; Destroylist - Primary | RPZ zone | 234,689 domains | 2026-11-02 14:46 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 202611021440 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 202611021446 86400 7200 2592000 300
   NS  localhost.
 
 0-105.com CNAME .
@@ -169635,6 +169635,7 @@ revoke-benqfi.com CNAME .
 revoke-bitgetwallet.com CNAME .
 revoke-bonzo.finance CNAME .
 revoke-button.com CNAME .
+revoke-cash-lahana.vercel.app CNAME .
 revoke-coldcard.xyz CNAME .
 revoke-curve.com CNAME .
 revoke-curvesfinance.com CNAME .
