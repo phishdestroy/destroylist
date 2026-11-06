@@ -118,7 +118,7 @@ curl --fail-with-body "https://api.destroy.tools/v1/check?domain=example.com"
 | [scripts](scripts/) | Pipeline utilities and website sources |
 | [docs](docs/) | API, integrations and project background |
 | [assets](assets/) | Shared documentation artwork |
-| [.github](.github/) | Contribution guides and automation |
+| [.github](.github/AUTOMATION.md) | Contribution guides and automation |
 
 ## About Destroylist
 
