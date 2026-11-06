@@ -1,29 +1,57 @@
-[Destroylist](../../../README.md) / [rootlist](../../README.md) / [2025](../README.md) / 12
-
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="December 2025" width="960">
-</picture>
-</h1>
-
-Monthly threat report · activity, infrastructure and detection.
-
-[Dashboard](#dashboard) · [Analysis](#intelligence-analysis) · [Downloads](#downloads--data) · [Year overview](../)
-
----
-
-![domains](https://img.shields.io/badge/domains-11%2C773-c52237?style=flat-square) ![vs prev month](https://img.shields.io/badge/vs%20prev%20month--6%25-c52237?style=flat-square) ![kill rate](https://img.shields.io/badge/kill%20rate-39.9%25-535b69?style=flat-square) ![VT coverage](https://img.shields.io/badge/VT%20coverage-98.2%25-c52237?style=flat-square)
-
-## Dashboard
+<!--
+  PhishDestroy Threat Intelligence Report — December 2025
+  11,773 phishing & scam domains detected · Kill rate: 39.9%
+  Keywords: phishing report, threat intelligence, 2025-12, destroylist, scam domains, crypto drainer,
+  phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
+  cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
+  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12
+  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/11
+  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01
+  Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/12/2025-12-threats.json
+-->
 
 <div align="center">
 
-| detected | live | dead | enriched |
+<img src="banner.svg" alt="December 2025" width="900"/>
+
+
+[**← Nov 2025**](../../2025/11/) &nbsp;·&nbsp; 📅 **December 2025** &nbsp;·&nbsp; [**Jan 2026 →**](../../2026/01/)
+
+<br>
+
+<a href="https://github.com/phishdestroy/destroylist">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%2011%2C773%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%2039.9%25%20Kill%20Rate%3B%F0%9F%93%8A%20December%202025%20Report" alt="December 2025 Threat Intelligence Report" />
+</a>
+
+<br><br>
+
+![domains](https://img.shields.io/badge/domains-11%2C773-FF0000?style=for-the-badge)
+![vs prev month](https://img.shields.io/badge/vs%20prev%20month--6%25-CC0000?style=for-the-badge)
+![kill rate](https://img.shields.io/badge/kill%20rate-39.9%25-000000?style=for-the-badge)
+![VT coverage](https://img.shields.io/badge/VT%20coverage-98.2%25-FF0000?style=for-the-badge)
+
+<br><br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+[![Website](https://img.shields.io/badge/phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io)
+[![Telegram](https://img.shields.io/badge/Telegram-channel-000000?style=flat-square&logo=telegram)](https://t.me/destroy_phish)
+[![Twitter](https://img.shields.io/badge/Twitter-FF0000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
+[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="22" /> Dashboard
+
+<div align="center">
+
+| ![detected](https://img.shields.io/badge/detected--FF0000?style=flat-square) | ![live](https://img.shields.io/badge/live--CC0000?style=flat-square) | ![dead](https://img.shields.io/badge/dead--000000?style=flat-square) | ![enriched](https://img.shields.io/badge/enriched--333333?style=flat-square) |
 |:---:|:---:|:---:|:---:|
 | **11,773** | **7,080** | **4,693** | **0** |
 
-| VirusTotal | Google SB | Avg Response | Median |
+| ![VirusTotal](https://img.shields.io/badge/VirusTotal--FF0000?style=flat-square) | ![Google SB](https://img.shields.io/badge/Google%20SB--000000?style=flat-square) | ![Avg Response](https://img.shields.io/badge/Avg%20Response--FF0000?style=flat-square) | ![Median](https://img.shields.io/badge/Median--000000?style=flat-square) |
 |:---:|:---:|:---:|:---:|
 | **11,557** (98.2%) | **1,963** | **1434.4h** | **1541.0h** |
 
@@ -36,7 +64,8 @@ Monthly threat report · activity, infrastructure and detection.
 > `▃▁▃▂▃▃▃▂▃▃ ▅▁▃ █▂▂▄▂▂▃▂▂▁▂▁▂▂▂` &nbsp; Peak: **2025-12-16** (1,062) &nbsp;·&nbsp; Low: **2025-12-11** (16) &nbsp;·&nbsp; Active days: **30**
 
 <details>
-<summary><b>Daily breakdown</b></summary>
+<summary>📊 <b>Daily breakdown</b></summary>
+<br>
 
 | Date | Domains | Activity |
 |:-----|--------:|:---------|
@@ -73,9 +102,9 @@ Monthly threat report · activity, infrastructure and detection.
 
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Intelligence Analysis
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
 In December 2025, PhishDestroy identified a total of 11,773 phishing domains, marking a 6.4% decrease from November's count of 12,581. Of these, 7,080 domains were active, while 4,693 were rendered inactive, resulting in a kill rate of 39.9%. VirusTotal flagged 11,557 domains, with Google Safe Browsing identifying 1,963. The average response time for takedowns was 1,434.4 hours. The most significant finding was the dominance of NICENIC INTERNATIONAL GROUP CO., LIMITED as the top registrar for malicious domains, responsible for 1,270 registrations.
@@ -111,9 +140,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 - **For Crypto Projects** — Educate users on identifying and avoiding phishing attacks, particularly those targeting wallets and authentication methods.
 - **For End Users** — Regularly update antivirus and security software to ensure comprehensive protection against the latest phishing techniques and exploits.
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Top Registrars
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Police%20Car.png" width="22" /> Top Registrars
 
 | # | Registrar | Domains | Share | Trend |
 |:--:|:---|------:|:---|:---:|
@@ -130,9 +159,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 
 > ⚠️ Top 3 registrars = **2,924** domains (25% of all threats)
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Domain Zones
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Americas.png" width="22" /> Domain Zones
 
 | # | TLD | Domains | Share | vs Prev |
 |:--:|:---|------:|------:|:---:|
@@ -147,9 +176,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | **9** | `.net` | **294** | 2.5% | ➡️ |
 | **10** | `.cc` | **265** | 2.3% | 🔺 |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Registrar Geography
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Europe-Africa.png" width="22" /> Registrar Geography
 
 | # | Country | Domains | Share |
 |:--:|:---|------:|------:|
@@ -164,9 +193,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | **9** | Unknown | **375** | 3.2% |
 | **10** | Germany | **291** | 2.5% |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Targeted Brands
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="22" /> Targeted Brands
 
 | # | Brand | Domains | Share |
 |:--:|:---|------:|------:|
@@ -181,9 +210,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | **9** | Bet365 | **106** | 0.9% |
 | **10** | Moonshot | **100** | 0.8% |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Crypto Drainers & Kits
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
 
 | # | Type | Domains |
 |:--:|:---|------:|
@@ -194,9 +223,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | **5** | Ice Phishing | **2** |
 | **6** | MS Drainer | **1** |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Detection Engines (VirusTotal)
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |
 |:--:|:---|------:|------:|
@@ -216,11 +245,11 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | **14** | Forcepoint ThreatSeeker | **4,511** | 38.3% |
 | **15** | VIPRE | **4,287** | 36.4% |
 
-> ![VT flagged](https://img.shields.io/badge/VT%20flagged-11%2C557%20/%2011%2C773-c52237?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-1963-535b69?style=flat-square)
+> ![VT flagged](https://img.shields.io/badge/VT%20flagged-11%2C557%20/%2011%2C773-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-1963-000000?style=flat-square)
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Downloads & Data
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" width="22" /> Downloads & Data
 
 | Format | File | Description |
 |:-------|:-----|:------------|
@@ -229,7 +258,7 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | 📈 Chart | [`2025-12-activity.svg`](2025-12-activity.svg) | Daily detection activity graph |
 
 <details>
-<summary><b>Threat JSON example</b></summary>
+<summary>🔍 <b>Threat JSON example</b></summary>
 
 ```json
 {
@@ -272,9 +301,9 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 
 > 💡 **API access**: Query any domain at [`api.destroy.tools/v1/check`](https://api.destroy.tools/v1/check?domain=example.com) — free, no API key
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## All Reports
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Link.png" width="22" /> All Reports
 
 | Report | Domains |
 |:-------|--------:|
@@ -297,10 +326,24 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 | [May 2026](../../2026/05/) | **7,021** |
 | [June 2026](../../2026/06/) | **8,102** |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
+<div align="center">
 
 [**← Nov 2025**](../../2025/11/) &nbsp;·&nbsp; 📅 **December 2025** &nbsp;·&nbsp; [**Jan 2026 →**](../../2026/01/)
 
----
+<br>
 
-[Destroylist](../../../README.md) · [All feeds](../../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
+[![Stats](https://img.shields.io/badge/live_stats-FF0000?style=flat-square)](https://api.destroy.tools/v1/stats)
+[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
+[![Twitter](https://img.shields.io/badge/Twitter-000000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
+[![Mastodon](https://img.shields.io/badge/Mastodon-FF0000?style=flat-square&logo=mastodon&logoColor=white)](https://mastodon.social/@phishdestroy)
+
+<br>
+
+Data: [destroylist](https://github.com/phishdestroy/destroylist)
+
+</div>

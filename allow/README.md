@@ -1,15 +1,25 @@
-[Destroylist](../README.md) / allow
+<div align="center">
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Allowlist" width="960">
-</picture>
-</h1>
+<img src="banner.svg" alt="Allowlist" width="900"/>
 
-Exclusions that help reduce false positives.
+# Allowlist
 
-[View exclusions](allowlist.json) · [Request a correction](https://phishdestroy.io/appeals/)
+**Scanner exclusion list — false-positive control for crypto & Web3**
+
+
+<p align="center">
+<img src="https://img.shields.io/badge/scope-exclusion_only-c52237?style=for-the-badge" alt="scope"/>
+<img src="https://img.shields.io/badge/format-exact_hosts_%2B_patterns-252532?style=for-the-badge" alt="format"/>
+</p>
+
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+<a href="https://phishdestroy.io/appeals/"><img src="https://img.shields.io/badge/appeals-c52237?style=flat-square" alt="Appeals"/></a>
+</p>
+
+</div>
 
 ---
 
@@ -74,4 +84,8 @@ Entries added by us are our own decisions — any mistakes in them are ours, not
 
 ---
 
-[Destroylist](../README.md) · [All feeds](../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+<div align="center">
+
+[![back](https://img.shields.io/badge/%E2%86%90_destroylist-c52237?style=flat-square)](https://github.com/phishdestroy/destroylist)
+
+</div>
