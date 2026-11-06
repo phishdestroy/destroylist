@@ -1,33 +1,19 @@
-<!--
-  PhishDestroy — 2025 Yearly Threat Overview
-  45,014 phishing domains detected across 12 months
-  Keywords: phishing 2025, threat intelligence, destroylist, yearly report, scam domains
-  https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025
--->
+[Destroylist](../../README.md) / [rootlist](../README.md) / 2025
 
-<div align="center">
+<h1>
+<picture>
+  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
+  <img src="banner.svg" alt="2025 in review" width="960">
+</picture>
+</h1>
 
-<img src="banner.svg" alt="Yearly Report" width="900"/>
+Monthly reports from the Destroylist archive.
 
-<a href="https://github.com/phishdestroy/destroylist">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=100&lines=%F0%9F%94%A5+2025+Threat+Overview;45%2C014+Phishing+Domains+Detected" alt="2025 Threat Overview" />
-</a>
+[Monthly reports](#monthly-reports) · [Year navigation](#year-navigation)
 
-<br><br>
+---
 
-![total](https://img.shields.io/badge/total_2025-45%2C014-FF0000?style=for-the-badge)
-![months](https://img.shields.io/badge/months-12-000000?style=for-the-badge)
-![peak](https://img.shields.io/badge/peak-Nov_2025_(12%2C581)-CC0000?style=for-the-badge)
-
-<br><br>
-
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Website](https://img.shields.io/badge/phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io)
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+![total](https://img.shields.io/badge/total_2025-45%2C014-c52237?style=flat-square) ![months](https://img.shields.io/badge/months-12-535b69?style=flat-square) ![peak](https://img.shields.io/badge/peak-Nov_2025_(12%2C581)-CC0000?style=for-the-badge)
 
 ## Monthly Reports
 
@@ -48,7 +34,7 @@
 
 > Peak: **November 2025** — 12,581 domains &nbsp;·&nbsp; Total 2025: **45,014**
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
 ## Year Navigation
 
@@ -57,17 +43,6 @@
 | **2025** | 📍 You are here |
 | [2026](../2026/) | 139,985+ domains (11 months, ongoing) |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
-[![Feeds](https://img.shields.io/badge/data_feeds-FF0000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
-[![Appeals](https://img.shields.io/badge/appeals-000000?style=flat-square)](https://phishdestroy.io/appeals/)
-
-<br>
-
-Data: [destroylist](https://github.com/phishdestroy/destroylist)
-
-</div>
+[Destroylist](../../README.md) · [All feeds](../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)

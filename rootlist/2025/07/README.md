@@ -1,57 +1,29 @@
-<!--
-  PhishDestroy Threat Intelligence Report — July 2025
-  700 phishing & scam domains detected · Kill rate: 74.0%
-  Keywords: phishing report, threat intelligence, 2025-07, destroylist, scam domains, crypto drainer,
-  phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
-  cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
-  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/07
-  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/06
-  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/08
-  Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/07/2025-07-threats.json
--->
+[Destroylist](../../../README.md) / [rootlist](../../README.md) / [2025](../README.md) / 07
+
+<h1>
+<picture>
+  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
+  <img src="banner.svg" alt="July 2025" width="960">
+</picture>
+</h1>
+
+Monthly threat report · activity, infrastructure and detection.
+
+[Dashboard](#dashboard) · [Analysis](#intelligence-analysis) · [Downloads](#downloads--data) · [Year overview](../)
+
+---
+
+![domains](https://img.shields.io/badge/domains-700-c52237?style=flat-square) ![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B17400%25-c52237?style=flat-square) ![kill rate](https://img.shields.io/badge/kill%20rate-74.0%25-535b69?style=flat-square) ![VT coverage](https://img.shields.io/badge/VT%20coverage-93.7%25-c52237?style=flat-square)
+
+## Dashboard
 
 <div align="center">
 
-<img src="banner.svg" alt="July 2025" width="900"/>
-
-
-[**← Jun 2025**](../../2025/06/) &nbsp;·&nbsp; 📅 **July 2025** &nbsp;·&nbsp; [**Aug 2025 →**](../../2025/08/)
-
-<br>
-
-<a href="https://github.com/phishdestroy/destroylist">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%20700%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%2074.0%25%20Kill%20Rate%3B%F0%9F%93%8A%20July%202025%20Report" alt="July 2025 Threat Intelligence Report" />
-</a>
-
-<br><br>
-
-![domains](https://img.shields.io/badge/domains-700-FF0000?style=for-the-badge)
-![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B17400%25-FF0000?style=for-the-badge)
-![kill rate](https://img.shields.io/badge/kill%20rate-74.0%25-000000?style=for-the-badge)
-![VT coverage](https://img.shields.io/badge/VT%20coverage-93.7%25-FF0000?style=for-the-badge)
-
-<br><br>
-
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Website](https://img.shields.io/badge/phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io)
-[![Telegram](https://img.shields.io/badge/Telegram-channel-000000?style=flat-square&logo=telegram)](https://t.me/destroy_phish)
-[![Twitter](https://img.shields.io/badge/Twitter-FF0000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
-[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="22" /> Dashboard
-
-<div align="center">
-
-| ![detected](https://img.shields.io/badge/detected--FF0000?style=flat-square) | ![live](https://img.shields.io/badge/live--CC0000?style=flat-square) | ![dead](https://img.shields.io/badge/dead--000000?style=flat-square) | ![enriched](https://img.shields.io/badge/enriched--333333?style=flat-square) |
+| detected | live | dead | enriched |
 |:---:|:---:|:---:|:---:|
 | **700** | **182** | **518** | **0** |
 
-| ![VirusTotal](https://img.shields.io/badge/VirusTotal--FF0000?style=flat-square) | ![Google SB](https://img.shields.io/badge/Google%20SB--000000?style=flat-square) | ![Avg Response](https://img.shields.io/badge/Avg%20Response--FF0000?style=flat-square) | ![Median](https://img.shields.io/badge/Median--000000?style=flat-square) |
+| VirusTotal | Google SB | Avg Response | Median |
 |:---:|:---:|:---:|:---:|
 | **656** (93.7%) | **19** | **4981.9h** | **5121.0h** |
 
@@ -64,8 +36,7 @@
 > `      ▁▁  █▂▁▁▁▂▁▃▁▁▂ ▁ ▂▃▁▂▁▂` &nbsp; Peak: **2025-07-12** (113) &nbsp;·&nbsp; Low: **2025-07-02** (1) &nbsp;·&nbsp; Active days: **30**
 
 <details>
-<summary>📊 <b>Daily breakdown</b></summary>
-<br>
+<summary><b>Daily breakdown</b></summary>
 
 | Date | Domains | Activity |
 |:-----|--------:|:---------|
@@ -102,9 +73,9 @@
 
 </details>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
+## Intelligence Analysis
 
 ### Executive Summary
 
@@ -146,9 +117,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 - **For Crypto Projects** — Educate users on identifying phishing attempts and enhance platform security measures, particularly around wallet access.
 - **For End Users** — Exercise caution with unsolicited links and verify domain authenticity, especially when engaging with crypto-related services.
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Police%20Car.png" width="22" /> Top Registrars
+## Top Registrars
 
 | # | Registrar | Domains | Share | Trend |
 |:--:|:---|------:|:---|:---:|
@@ -165,9 +136,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 
 > ⚠️ Top 3 registrars = **188** domains (27% of all threats)
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Americas.png" width="22" /> Domain Zones
+## Domain Zones
 
 | # | TLD | Domains | Share | vs Prev |
 |:--:|:---|------:|------:|:---:|
@@ -182,9 +153,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | **9** | `.website` | **13** | 1.9% | 🆕 |
 | **10** | `.world` | **12** | 1.7% | 🆕 |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Europe-Africa.png" width="22" /> Registrar Geography
+## Registrar Geography
 
 | # | Country | Domains | Share |
 |:--:|:---|------:|------:|
@@ -199,9 +170,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | **9** | Netherlands | **13** | 1.9% |
 | **10** | Singapore | **13** | 1.9% |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="22" /> Targeted Brands
+## Targeted Brands
 
 | # | Brand | Domains | Share |
 |:--:|:---|------:|------:|
@@ -216,9 +187,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | **9** | Solana | **3** | 0.4% |
 | **10** | Pendle | **2** | 0.3% |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
+## Crypto Drainers & Kits
 
 | # | Type | Domains |
 |:--:|:---|------:|
@@ -227,9 +198,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | **3** | Inferno Drainer | **1** |
 | **4** | Solana Drainer | **1** |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
+## Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |
 |:--:|:---|------:|------:|
@@ -249,11 +220,11 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | **14** | Kaspersky | **79** | 11.3% |
 | **15** | SOCRadar | **67** | 9.6% |
 
-> ![VT flagged](https://img.shields.io/badge/VT%20flagged-656%20/%20700-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-19-000000?style=flat-square)
+> ![VT flagged](https://img.shields.io/badge/VT%20flagged-656%20/%20700-c52237?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-19-535b69?style=flat-square)
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" width="22" /> Downloads & Data
+## Downloads & Data
 
 | Format | File | Description |
 |:-------|:-----|:------------|
@@ -262,7 +233,7 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | 📈 Chart | [`2025-07-activity.svg`](2025-07-activity.svg) | Daily detection activity graph |
 
 <details>
-<summary>🔍 <b>Threat JSON example</b></summary>
+<summary><b>Threat JSON example</b></summary>
 
 ```json
 {
@@ -296,9 +267,9 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 
 > 💡 **API access**: Query any domain at [`api.destroy.tools/v1/check`](https://api.destroy.tools/v1/check?domain=example.com) — free, no API key
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Link.png" width="22" /> All Reports
+## All Reports
 
 | Report | Domains |
 |:-------|--------:|
@@ -321,24 +292,10 @@ Analysis of VirusTotal vendor data reveals that alphaMountain.ai, with 360 detec
 | [May 2026](../../2026/05/) | **7,021** |
 | [June 2026](../../2026/06/) | **8,102** |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-<div align="center">
+---
 
 [**← Jun 2025**](../../2025/06/) &nbsp;·&nbsp; 📅 **July 2025** &nbsp;·&nbsp; [**Aug 2025 →**](../../2025/08/)
 
-<br>
+---
 
-[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
-[![Stats](https://img.shields.io/badge/live_stats-FF0000?style=flat-square)](https://api.destroy.tools/v1/stats)
-[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
-[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
-[![Twitter](https://img.shields.io/badge/Twitter-000000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
-[![Mastodon](https://img.shields.io/badge/Mastodon-FF0000?style=flat-square&logo=mastodon&logoColor=white)](https://mastodon.social/@phishdestroy)
-
-<br>
-
-Data: [destroylist](https://github.com/phishdestroy/destroylist)
-
-</div>
+[Destroylist](../../../README.md) · [All feeds](../../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
