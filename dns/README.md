@@ -1,15 +1,28 @@
-[Destroylist](../README.md) / dns
+<!--
+  PhishDestroy DNS Intelligence
+  Real-time DNS validation and active domain tracking
+  https://github.com/phishdestroy/destroylist/tree/main/dns
+-->
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="DNS intelligence" width="960">
-</picture>
-</h1>
+<div align="center">
 
-Resolution checks, content checks and activity metrics.
+<img src="banner.svg" alt="DNS Intelligence" width="900"/>
 
-[Data files](#data-files) · [Activity metrics](#time-based-feeds) · [API](https://api.destroy.tools)
+**Real-time DNS validation & active domain tracking**
+
+
+<p align="center">
+<img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/active_count.json&query=$.count&label=active+domains&color=c52237&style=for-the-badge" alt="active"/>
+<img src="https://img.shields.io/badge/DNS_validated-live-252532?style=for-the-badge" alt="status"/>
+</p>
+
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
+
+</div>
 
 ---
 
@@ -53,12 +66,12 @@ flowchart LR
 
 | File | Description |
 |:-----|:------------|
-| [`today_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_added.json) | Count of domains added today |
-| [`today_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_community.json) | Count of community domains added today |
-| [`week_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_added.json) | Count of domains added this week |
-| [`week_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_community.json) | Count of community domains added this week |
-| [`month_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_added.json) | Count of domains added this month |
-| [`month_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_community.json) | Count of community domains added this month |
+| [`today_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_added.json) | Domains added today |
+| [`today_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/today_community.json) | Community domains added today |
+| [`week_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_added.json) | Domains added this week |
+| [`week_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/week_community.json) | Community domains this week |
+| [`month_added.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_added.json) | Domains added this month |
+| [`month_community.json`](https://raw.githubusercontent.com/phishdestroy/destroylist/main/dns/month_community.json) | Community domains this month |
 
 ## Script
 
@@ -71,4 +84,12 @@ flowchart LR
 
 ---
 
-[Destroylist](../README.md) · [All feeds](../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+<div align="center">
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-c52237?style=flat-square&logo=github" alt="GitHub"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-252532?style=flat-square" alt="API"/></a>
+<a href="https://github.com/phishdestroy/destroylist#data-feeds"><img src="https://img.shields.io/badge/data_feeds-c52237?style=flat-square" alt="Feeds"/></a>
+</p>
+
+</div>

@@ -1,15 +1,23 @@
-[Destroylist](../README.md) / archives
+<div align="center">
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Archives" width="960">
-</picture>
-</h1>
+<img src="banner.svg" alt="Archives" width="900"/>
 
-Historical snapshots and changes to the domain feeds.
+**Historical snapshots of the blocklist for research and analysis**
 
-[Daily changes](changes/) · [Weekly](weekly/) · [Monthly](monthly/) · [Release archive](https://github.com/phishdestroy/destroylist/releases/tag/archives)
+
+<p align="center">
+<img src="https://img.shields.io/badge/snapshots-weekly_%26_monthly-c52237?style=for-the-badge" alt="snapshots"/>
+<img src="https://img.shields.io/badge/data-1M%2B_domains-252532?style=for-the-badge" alt="data"/>
+</p>
+
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://github.com/phishdestroy/destroylist/releases/tag/archives"><img src="https://img.shields.io/badge/older_snapshots-release_assets-252532?style=flat-square&logo=github" alt="Release"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
+
+</div>
 
 ---
 
@@ -72,4 +80,8 @@ For access to the complete historical archive (500K+ domains, 5+ years):
 
 ---
 
-[Destroylist](../README.md) · [All feeds](../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+<div align="center">
+
+[![back](https://img.shields.io/badge/%E2%86%90_destroylist-c52237?style=flat-square)](https://github.com/phishdestroy/destroylist)
+
+</div>

@@ -1,29 +1,57 @@
-[Destroylist](../../../README.md) / [rootlist](../../README.md) / [2025](../README.md) / 01
-
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="January 2025" width="960">
-</picture>
-</h1>
-
-Monthly threat report · activity, infrastructure and detection.
-
-[Dashboard](#dashboard) · [Analysis](#intelligence-analysis) · [Downloads](#downloads--data) · [Year overview](../)
-
----
-
-![domains](https://img.shields.io/badge/domains-1-c52237?style=flat-square) ![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B0%25-c52237?style=flat-square) ![kill rate](https://img.shields.io/badge/kill%20rate-100.0%25-535b69?style=flat-square) ![VT coverage](https://img.shields.io/badge/VT%20coverage-100.0%25-c52237?style=flat-square)
-
-## Dashboard
+<!--
+  PhishDestroy Threat Intelligence Report — January 2025
+  1 phishing & scam domains detected · Kill rate: 100.0%
+  Keywords: phishing report, threat intelligence, 2025-01, destroylist, scam domains, crypto drainer,
+  phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
+  cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
+  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/01
+  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2024/12
+  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/02
+  Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/01/2025-01-threats.json
+-->
 
 <div align="center">
 
-| detected | live | dead | enriched |
+<img src="banner.svg" alt="January 2025" width="900"/>
+
+
+*← Dec 2024* &nbsp;·&nbsp; 📅 **January 2025** &nbsp;·&nbsp; [**Feb 2025 →**](../../2025/02/)
+
+<br>
+
+<a href="https://github.com/phishdestroy/destroylist">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%201%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%20100.0%25%20Kill%20Rate%3B%F0%9F%93%8A%20January%202025%20Report" alt="January 2025 Threat Intelligence Report" />
+</a>
+
+<br><br>
+
+![domains](https://img.shields.io/badge/domains-1-FF0000?style=for-the-badge)
+![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B0%25-FF0000?style=for-the-badge)
+![kill rate](https://img.shields.io/badge/kill%20rate-100.0%25-000000?style=for-the-badge)
+![VT coverage](https://img.shields.io/badge/VT%20coverage-100.0%25-FF0000?style=for-the-badge)
+
+<br><br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+[![Website](https://img.shields.io/badge/phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io)
+[![Telegram](https://img.shields.io/badge/Telegram-channel-000000?style=flat-square&logo=telegram)](https://t.me/destroy_phish)
+[![Twitter](https://img.shields.io/badge/Twitter-FF0000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
+[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="22" /> Dashboard
+
+<div align="center">
+
+| ![detected](https://img.shields.io/badge/detected--FF0000?style=flat-square) | ![live](https://img.shields.io/badge/live--CC0000?style=flat-square) | ![dead](https://img.shields.io/badge/dead--000000?style=flat-square) | ![enriched](https://img.shields.io/badge/enriched--333333?style=flat-square) |
 |:---:|:---:|:---:|:---:|
 | **1** | **0** | **1** | **0** |
 
-| VirusTotal | Google SB | Avg Response | Median |
+| ![VirusTotal](https://img.shields.io/badge/VirusTotal--FF0000?style=flat-square) | ![Google SB](https://img.shields.io/badge/Google%20SB--000000?style=flat-square) | ![Avg Response](https://img.shields.io/badge/Avg%20Response--FF0000?style=flat-square) | ![Median](https://img.shields.io/badge/Median--000000?style=flat-square) |
 |:---:|:---:|:---:|:---:|
 | **1** (100.0%) | **0** | **0h** | **0h** |
 
@@ -36,7 +64,8 @@ Monthly threat report · activity, infrastructure and detection.
 > ` ` &nbsp; Peak: **2025-01-21** (1) &nbsp;·&nbsp; Low: **2025-01-21** (1) &nbsp;·&nbsp; Active days: **1**
 
 <details>
-<summary><b>Daily breakdown</b></summary>
+<summary>📊 <b>Daily breakdown</b></summary>
+<br>
 
 | Date | Domains | Activity |
 |:-----|--------:|:---------|
@@ -44,9 +73,9 @@ Monthly threat report · activity, infrastructure and detection.
 
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Intelligence Analysis
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
 In January 2025, PhishDestroy monitored and analyzed phishing domain activities, identifying a total of 1 domain, consistent with the previous month, resulting in a 0.0% change. The kill rate was exceptionally high at 100.0%, with all detected domains being neutralized. Notably, the domain was flagged by VirusTotal but not by Google Safe Browsing, indicating a potential detection gap. The most significant finding was the absence of live phishing domains, showcasing effective mitigation efforts.
@@ -82,9 +111,9 @@ VirusTotal data showed alphaMountain.ai, Fortinet, and Sophos as the leading eng
 - **For Crypto Projects** — Monitor for emerging drainer threats, despite the current lull, to preemptively secure user assets.
 - **For End Users** — Remain vigilant for phishing attempts, even with low current activity, by verifying URL legitimacy before engagement.
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Top Registrars
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Police%20Car.png" width="22" /> Top Registrars
 
 | # | Registrar | Domains | Share | Trend |
 |:--:|:---|------:|:---|:---:|
@@ -92,32 +121,32 @@ VirusTotal data showed alphaMountain.ai, Fortinet, and Sophos as the leading eng
 
 > ⚠️ Top 3 registrars = **1** domains (100% of all threats)
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Domain Zones
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Americas.png" width="22" /> Domain Zones
 
 | # | TLD | Domains | Share | vs Prev |
 |:--:|:---|------:|------:|:---:|
 | **1** | `.com` | **1** | 100.0% | 🆕 |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Registrar Geography
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Europe-Africa.png" width="22" /> Registrar Geography
 
 | # | Country | Domains | Share |
 |:--:|:---|------:|------:|
 | **1** | USA | **1** | 100.0% |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Targeted Brands
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="22" /> Targeted Brands
 
 | # | Brand | Domains | Share |
 |:--:|:---|------:|------:|
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Detection Engines (VirusTotal)
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |
 |:--:|:---|------:|------:|
@@ -125,11 +154,11 @@ VirusTotal data showed alphaMountain.ai, Fortinet, and Sophos as the leading eng
 | **2** | Fortinet | **1** | 100.0% |
 | **3** | Sophos | **1** | 100.0% |
 
-> ![VT flagged](https://img.shields.io/badge/VT%20flagged-1%20/%201-c52237?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-0-535b69?style=flat-square)
+> ![VT flagged](https://img.shields.io/badge/VT%20flagged-1%20/%201-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-0-000000?style=flat-square)
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Downloads & Data
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" width="22" /> Downloads & Data
 
 | Format | File | Description |
 |:-------|:-----|:------------|
@@ -138,7 +167,7 @@ VirusTotal data showed alphaMountain.ai, Fortinet, and Sophos as the leading eng
 | 📈 Chart | [`2025-01-activity.svg`](2025-01-activity.svg) | Daily detection activity graph |
 
 <details>
-<summary><b>Threat JSON example</b></summary>
+<summary>🔍 <b>Threat JSON example</b></summary>
 
 ```json
 {
@@ -169,9 +198,9 @@ VirusTotal data showed alphaMountain.ai, Fortinet, and Sophos as the leading eng
 
 > 💡 **API access**: Query any domain at [`api.destroy.tools/v1/check`](https://api.destroy.tools/v1/check?domain=example.com) — free, no API key
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## All Reports
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Link.png" width="22" /> All Reports
 
 | Report | Domains |
 |:-------|--------:|
@@ -194,6 +223,24 @@ VirusTotal data showed alphaMountain.ai, Fortinet, and Sophos as the leading eng
 | [May 2026](../../2026/05/) | **7,021** |
 | [June 2026](../../2026/06/) | **8,102** |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-[Destroylist](../../../README.md) · [All feeds](../../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+<div align="center">
+
+*← Dec 2024* &nbsp;·&nbsp; 📅 **January 2025** &nbsp;·&nbsp; [**Feb 2025 →**](../../2025/02/)
+
+<br>
+
+[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
+[![Stats](https://img.shields.io/badge/live_stats-FF0000?style=flat-square)](https://api.destroy.tools/v1/stats)
+[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
+[![Twitter](https://img.shields.io/badge/Twitter-000000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
+[![Mastodon](https://img.shields.io/badge/Mastodon-FF0000?style=flat-square&logo=mastodon&logoColor=white)](https://mastodon.social/@phishdestroy)
+
+<br>
+
+Data: [destroylist](https://github.com/phishdestroy/destroylist)
+
+</div>

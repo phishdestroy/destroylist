@@ -1,29 +1,57 @@
-[Destroylist](../../../README.md) / [rootlist](../../README.md) / [2025](../README.md) / 06
-
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="June 2025" width="960">
-</picture>
-</h1>
-
-Monthly threat report · activity, infrastructure and detection.
-
-[Dashboard](#dashboard) · [Analysis](#intelligence-analysis) · [Downloads](#downloads--data) · [Year overview](../)
-
----
-
-![domains](https://img.shields.io/badge/domains-4-c52237?style=flat-square) ![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B100%25-c52237?style=flat-square) ![kill rate](https://img.shields.io/badge/kill%20rate-75.0%25-535b69?style=flat-square) ![VT coverage](https://img.shields.io/badge/VT%20coverage-75.0%25-c52237?style=flat-square)
-
-## Dashboard
+<!--
+  PhishDestroy Threat Intelligence Report — June 2025
+  4 phishing & scam domains detected · Kill rate: 75.0%
+  Keywords: phishing report, threat intelligence, 2025-06, destroylist, scam domains, crypto drainer,
+  phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
+  cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
+  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/06
+  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/05
+  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/07
+  Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2025/06/2025-06-threats.json
+-->
 
 <div align="center">
 
-| detected | live | dead | enriched |
+<img src="banner.svg" alt="June 2025" width="900"/>
+
+
+[**← May 2025**](../../2025/05/) &nbsp;·&nbsp; 📅 **June 2025** &nbsp;·&nbsp; [**Jul 2025 →**](../../2025/07/)
+
+<br>
+
+<a href="https://github.com/phishdestroy/destroylist">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%204%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%2075.0%25%20Kill%20Rate%3B%F0%9F%93%8A%20June%202025%20Report" alt="June 2025 Threat Intelligence Report" />
+</a>
+
+<br><br>
+
+![domains](https://img.shields.io/badge/domains-4-FF0000?style=for-the-badge)
+![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B100%25-FF0000?style=for-the-badge)
+![kill rate](https://img.shields.io/badge/kill%20rate-75.0%25-000000?style=for-the-badge)
+![VT coverage](https://img.shields.io/badge/VT%20coverage-75.0%25-FF0000?style=for-the-badge)
+
+<br><br>
+
+[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
+[![Website](https://img.shields.io/badge/phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io)
+[![Telegram](https://img.shields.io/badge/Telegram-channel-000000?style=flat-square&logo=telegram)](https://t.me/destroy_phish)
+[![Twitter](https://img.shields.io/badge/Twitter-FF0000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
+[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="22" /> Dashboard
+
+<div align="center">
+
+| ![detected](https://img.shields.io/badge/detected--FF0000?style=flat-square) | ![live](https://img.shields.io/badge/live--CC0000?style=flat-square) | ![dead](https://img.shields.io/badge/dead--000000?style=flat-square) | ![enriched](https://img.shields.io/badge/enriched--333333?style=flat-square) |
 |:---:|:---:|:---:|:---:|
 | **4** | **1** | **3** | **0** |
 
-| VirusTotal | Google SB | Avg Response | Median |
+| ![VirusTotal](https://img.shields.io/badge/VirusTotal--FF0000?style=flat-square) | ![Google SB](https://img.shields.io/badge/Google%20SB--000000?style=flat-square) | ![Avg Response](https://img.shields.io/badge/Avg%20Response--FF0000?style=flat-square) | ![Median](https://img.shields.io/badge/Median--000000?style=flat-square) |
 |:---:|:---:|:---:|:---:|
 | **3** (75.0%) | **0** | **0h** | **0h** |
 
@@ -36,7 +64,8 @@ Monthly threat report · activity, infrastructure and detection.
 > `    ` &nbsp; Peak: **2025-06-26** (1) &nbsp;·&nbsp; Low: **2025-06-26** (1) &nbsp;·&nbsp; Active days: **4**
 
 <details>
-<summary><b>Daily breakdown</b></summary>
+<summary>📊 <b>Daily breakdown</b></summary>
+<br>
 
 | Date | Domains | Activity |
 |:-----|--------:|:---------|
@@ -47,9 +76,9 @@ Monthly threat report · activity, infrastructure and detection.
 
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Intelligence Analysis
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
 
 ### Executive Summary
 In June 2025, PhishDestroy detected and analyzed 4 phishing domains, marking a 100.0% increase from the previous month's total of 2. Notably, 75.0% of these domains were neutralized, with 3 out of 4 domains rendered inactive. The significant finding this month is the complete lack of brand targeting, which contrasts starkly with prior patterns. Additionally, no domains were flagged by Google Safe Browsing, indicating a possible gap in proactive detection measures.
@@ -85,9 +114,9 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 - **For Crypto Projects** — Increase education and awareness campaigns to protect users from emerging phishing tactics targeting crypto.
 - **For End Users** — Encourage vigilance and the use of security tools that incorporate VT data for real-time phishing detection.
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Top Registrars
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Police%20Car.png" width="22" /> Top Registrars
 
 | # | Registrar | Domains | Share | Trend |
 |:--:|:---|------:|:---|:---:|
@@ -98,9 +127,9 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 
 > ⚠️ Top 3 registrars = **3** domains (75% of all threats)
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Domain Zones
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Americas.png" width="22" /> Domain Zones
 
 | # | TLD | Domains | Share | vs Prev |
 |:--:|:---|------:|------:|:---:|
@@ -109,9 +138,9 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 | **3** | `.org` | **1** | 25.0% | ➡️ |
 | **4** | `.com` | **1** | 25.0% | ➡️ |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Registrar Geography
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Europe-Africa.png" width="22" /> Registrar Geography
 
 | # | Country | Domains | Share |
 |:--:|:---|------:|------:|
@@ -119,16 +148,16 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 | **2** | India | **1** | 25.0% |
 | **3** | USA | **1** | 25.0% |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Targeted Brands
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="22" /> Targeted Brands
 
 | # | Brand | Domains | Share |
 |:--:|:---|------:|------:|
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Detection Engines (VirusTotal)
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |
 |:--:|:---|------:|------:|
@@ -140,11 +169,11 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 | **6** | SOCRadar | **1** | 25.0% |
 | **7** | Sophos | **1** | 25.0% |
 
-> ![VT flagged](https://img.shields.io/badge/VT%20flagged-3%20/%204-c52237?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-0-535b69?style=flat-square)
+> ![VT flagged](https://img.shields.io/badge/VT%20flagged-3%20/%204-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-0-000000?style=flat-square)
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## Downloads & Data
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" width="22" /> Downloads & Data
 
 | Format | File | Description |
 |:-------|:-----|:------------|
@@ -153,7 +182,7 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 | 📈 Chart | [`2025-06-activity.svg`](2025-06-activity.svg) | Daily detection activity graph |
 
 <details>
-<summary><b>Threat JSON example</b></summary>
+<summary>🔍 <b>Threat JSON example</b></summary>
 
 ```json
 {
@@ -183,9 +212,9 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 
 > 💡 **API access**: Query any domain at [`api.destroy.tools/v1/check`](https://api.destroy.tools/v1/check?domain=example.com) — free, no API key
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## All Reports
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Link.png" width="22" /> All Reports
 
 | Report | Domains |
 |:-------|--------:|
@@ -208,10 +237,24 @@ VT vendor data reveals that engines like Gridinsoft, Trustwave, and Webroot lead
 | [May 2026](../../2026/05/) | **7,021** |
 | [June 2026](../../2026/06/) | **8,102** |
 
----
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
+<div align="center">
 
 [**← May 2025**](../../2025/05/) &nbsp;·&nbsp; 📅 **June 2025** &nbsp;·&nbsp; [**Jul 2025 →**](../../2025/07/)
 
----
+<br>
 
-[Destroylist](../../../README.md) · [All feeds](../../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
+[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
+[![Stats](https://img.shields.io/badge/live_stats-FF0000?style=flat-square)](https://api.destroy.tools/v1/stats)
+[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
+[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
+[![Twitter](https://img.shields.io/badge/Twitter-000000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
+[![Mastodon](https://img.shields.io/badge/Mastodon-FF0000?style=flat-square&logo=mastodon&logoColor=white)](https://mastodon.social/@phishdestroy)
+
+<br>
+
+Data: [destroylist](https://github.com/phishdestroy/destroylist)
+
+</div>

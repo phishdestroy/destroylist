@@ -1,15 +1,31 @@
-[Destroylist](../../../README.md) / [rootlist](../../README.md) / [formats](../README.md) / primary_active
+<!--
+  PhishDestroy Primary Active Blocklist Formats
+  https://github.com/phishdestroy/destroylist/tree/main/rootlist/formats/primary_active
+-->
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Primary active formats" width="960">
-</picture>
-</h1>
+<div align="center">
 
-The DNS-resolving subset of the curated feed.
+<img src="banner.svg" alt="Primary Active" width="900"/>
 
-[Downloads](#downloads) · [Compare feeds](../)
+
+
+# Primary Active Blocklist
+
+**DNS-verified live domains — recommended for production**
+
+
+<p align="center">
+<img src="https://img.shields.io/badge/type-primary-c52237?style=for-the-badge" alt="type"/>
+<img src="https://img.shields.io/badge/filter-live_only-252532?style=for-the-badge" alt="filter"/>
+</p>
+
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
+
+</div>
 
 ---
 
@@ -23,10 +39,13 @@ The DNS-resolving subset of the curated feed.
 | `dnsmasq.conf` | DNSMasq / Pi-hole config | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/dnsmasq.conf) |
 | `unbound.conf` | Unbound DNS config | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/unbound.conf) |
 | `rpz.zone` | Response Policy Zone (BIND) | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/rpz.zone) |
-| `redis.txt` | Bulk load into a Redis set | [Download](https://raw.githubusercontent.com/phishdestroy/destroylist/main/rootlist/formats/primary_active/redis.txt) |
 
 > Only domains that currently resolve via DNS. Smaller list, higher confidence.
 
 ---
 
-[Destroylist](../../../README.md) · [All feeds](../../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+<div align="center">
+
+[![back](https://img.shields.io/badge/%E2%86%90_all_formats-c52237?style=flat-square)](../)
+
+</div>

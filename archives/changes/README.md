@@ -1,15 +1,25 @@
-[Destroylist](../../README.md) / [archives](../README.md) / changes
+<div align="center">
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Daily changes" width="960">
-</picture>
-</h1>
+<img src="banner.svg" alt="Daily changes" width="900"/>
 
-Track the domains added to and removed from each feed.
+# Daily Changes
 
-[Format](#format) · [Full snapshots](../)
+**One small file per day: which domains entered or left the lists**
+
+
+<p align="center">
+<img src="https://img.shields.io/badge/updated-daily-c52237?style=for-the-badge" alt="updated"/>
+<img src="https://img.shields.io/badge/since-2026--07--21-252532?style=for-the-badge" alt="since"/>
+</p>
+
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+<a href="https://github.com/phishdestroy/destroylist#data-feeds"><img src="https://img.shields.io/badge/data_feeds-c52237?style=flat-square" alt="Feeds"/></a>
+</p>
+
+</div>
 
 ---
 
@@ -44,7 +54,3 @@ the full history stays in the tree.
 | `primary_count` / `community_count` | List sizes on that day |
 
 Full point-in-time snapshots live one level up in [`archives/`](../).
-
----
-
-[Destroylist](../../README.md) · [All feeds](../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)

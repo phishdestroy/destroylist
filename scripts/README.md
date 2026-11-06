@@ -1,17 +1,8 @@
-[Destroylist](../README.md) / scripts
+<div align="center">
+<img src="banner.svg" alt="Scripts" width="900"/>
+</div>
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Scripts" width="960">
-</picture>
-</h1>
-
-Automation, validation and publishing utilities.
-
-[Script reference](#script-reference) · [Execution order](#execution-order) · [Site sources](_source/)
-
----
+# Scripts
 
 Automation, analytics, and validation utilities for the destroylist pipeline.
 
@@ -153,7 +144,3 @@ Full pipeline:
 - Dependencies: `pip install -r requirements.txt`
 - Run from project root
 - Output folders auto-created
-
----
-
-[Destroylist](../README.md) · [All feeds](../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
