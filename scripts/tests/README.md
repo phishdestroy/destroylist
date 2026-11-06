@@ -1,4 +1,15 @@
-# Tests
+[Destroylist](../../README.md) / [scripts](../README.md) / tests
+
+<h1>
+<picture>
+  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
+  <img src="banner.svg" alt="Pipeline tests" width="960">
+</picture>
+</h1>
+
+Checks for feed generation, exclusions and publishing.
+
+---
 
 Regression tests for the list-maintenance scripts and workflows.
 
@@ -14,3 +25,7 @@ Run from the repository root:
 pip install -r scripts/requirements.txt pytest
 python -m pytest scripts/tests
 ```
+
+---
+
+[Destroylist](../../README.md) · [All feeds](../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)

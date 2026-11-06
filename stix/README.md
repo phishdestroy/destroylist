@@ -1,25 +1,15 @@
-<div align="center">
+[Destroylist](../README.md) / stix
 
-<img src="banner.svg" alt="STIX 2.1" width="900"/>
+<h1>
+<picture>
+  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
+  <img src="banner.svg" alt="STIX intelligence" width="960">
+</picture>
+</h1>
 
-# STIX 2.1 Bundle
+Phishing indicators for threat-intelligence platforms.
 
-**Destroylist phishing domains as STIX 2.1 indicators — ready to import into SIEM and threat-intelligence platforms**
-
-
-<p align="center">
-<img src="https://img.shields.io/badge/format-STIX_2.1-c52237?style=for-the-badge" alt="format"/>
-<img src="https://img.shields.io/badge/updated-twice_daily-252532?style=for-the-badge" alt="updated"/>
-</p>
-
-
-<p align="center">
-<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
-<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
-<a href="https://github.com/phishdestroy/destroylist#data-feeds"><img src="https://img.shields.io/badge/data_feeds-c52237?style=flat-square" alt="Feeds"/></a>
-</p>
-
-</div>
+[Download bundle](https://github.com/phishdestroy/destroylist/releases/download/stix/bundle.json) · [Usage](#use-it) · [Regenerate](#regenerate)
 
 ---
 
@@ -73,3 +63,7 @@ pip install -r scripts/requirements.txt
 # --previous keeps ids/dates and revokes allowlisted domains; omit it for a fresh bundle
 python scripts/generate_stix.py --previous old-bundle.json --output bundle.json
 ```
+
+---
+
+[Destroylist](../README.md) · [All feeds](../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
