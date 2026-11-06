@@ -11,7 +11,7 @@ from typing import List, Set, Tuple
 from utils import (
     PROJECT_ROOT, IPV4_RE,
     extract_domain, is_valid_entry, is_ip,
-    load_json_list, load_allowlist_split, is_allowed, log,
+    load_json_list, load_publication_exclusions, is_allowed, log,
 )
 
 ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
@@ -128,7 +128,7 @@ def clean_file(filepath: Path, exact: Set[str], patterns: Set[str]) -> bool:
 def main():
     log("Validate & Clean", "step")
 
-    exact, patterns = load_allowlist_split()
+    exact, patterns = load_publication_exclusions()
     if not exact and not patterns:
         log("Allowlist is empty or missing", "warn")
         return 0
