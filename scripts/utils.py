@@ -13,6 +13,7 @@ import tldextract
 # ── Paths ────────────────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ALLOWLIST_FILE = PROJECT_ROOT / "allow" / "allowlist.json"
+REMOVALS_FILE = PROJECT_ROOT / "allow" / "removals.json"
 APPROVED_ALLOWLIST_PATTERNS: Set[str] = {".microsoft", ".paypal.com"}
 
 # ── Regex ────────────────────────────────────────────────────────────────────
@@ -247,6 +248,20 @@ def is_allowed(domain: str, exact: Set[str], patterns: Set[str]) -> bool:
     if bare and bare in exact and ("/" not in candidate or bare not in PATH_SCOPED_HOSTS):
         return True
     return any(host.endswith(p) or host == p[1:] for p in patterns)
+
+
+def load_publication_exclusions() -> Tuple[Set[str], Set[str]]:
+    """Keep completed removals out of feeds until a documented new review.
+
+    Unlike the allowlist, removals are decision records, not safety verdicts.
+    Invalid/missing records must stop publication rather than restore entries.
+    """
+    from removal_records import removal_hosts
+    exact, patterns = load_allowlist_split()
+    removed = removal_hosts(json.loads(REMOVALS_FILE.read_text(encoding="utf-8")))
+    if removed & (INFRA_ROOTS | PATH_SCOPED_HOSTS):
+        raise ValueError('removal registry contains a shared service root')
+    return exact | removed, patterns
 
 
 # ── Badge generation ─────────────────────────────────────────────────────────

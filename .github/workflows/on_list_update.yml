@@ -2,6 +2,7 @@ name: On List Update
 on:
   push:
     paths:
+      - "allow/removals.json"
       - "list.json"
       - "dns/active_domains.json"
       - "dns/content_active.json"

@@ -89,3 +89,8 @@ Entries added by us are our own decisions — any mistakes in them are ours, not
 [![back](https://img.shields.io/badge/%E2%86%90_destroylist-c52237?style=flat-square)](https://github.com/phishdestroy/destroylist)
 
 </div>
+
+## Executed removals
+
+[Removal decisions](removals.json) prevent stale feeds from undoing completed appeals.
+They do not grant a safety allowlist exception. See the [review and relisting policy](removals.md).

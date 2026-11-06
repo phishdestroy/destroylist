@@ -20,7 +20,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-from utils import PROJECT_ROOT, is_allowed, load_allowlist_split
+from utils import PROJECT_ROOT, is_allowed, load_publication_exclusions
 
 IDENTITY_ID = "identity--9a8b1427-74d5-4b3e-88a7-b4fa5be17b2c"
 IDENTITY = {
@@ -118,7 +118,7 @@ def main():
     if not isinstance(domains, list):
         sys.exit("active_domains.json must be a JSON array")
     previous = load_previous(args.previous)
-    exact, patterns = load_allowlist_split()
+    exact, patterns = load_publication_exclusions()
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
     bundle, active, revoked = build(domains, previous, exact, patterns, ts)
