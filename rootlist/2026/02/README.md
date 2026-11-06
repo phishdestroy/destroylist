@@ -1,57 +1,29 @@
-<!--
-  PhishDestroy Threat Intelligence Report — February 2026
-  18,207 phishing & scam domains detected · Kill rate: 19.0%
-  Keywords: phishing report, threat intelligence, 2026-02, destroylist, scam domains, crypto drainer,
-  phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
-  cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
-  Canonical: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/02
-  Previous: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/01
-  Next: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/03
-  Data: https://github.com/phishdestroy/destroylist/tree/main/rootlist/2026/02/2026-02-threats.json
--->
+[Destroylist](../../../README.md) / [rootlist](../../README.md) / [2026](../README.md) / 02
+
+<h1>
+<picture>
+  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
+  <img src="banner.svg" alt="February 2026" width="960">
+</picture>
+</h1>
+
+Monthly threat report · activity, infrastructure and detection.
+
+[Dashboard](#dashboard) · [Analysis](#intelligence-analysis) · [Downloads](#downloads--data) · [Year overview](../)
+
+---
+
+![domains](https://img.shields.io/badge/domains-18%2C207-c52237?style=flat-square) ![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B104%25-c52237?style=flat-square) ![kill rate](https://img.shields.io/badge/kill%20rate-19.0%25-535b69?style=flat-square) ![VT coverage](https://img.shields.io/badge/VT%20coverage-98.8%25-c52237?style=flat-square)
+
+## Dashboard
 
 <div align="center">
 
-<img src="banner.svg" alt="February 2026" width="900"/>
-
-
-[**← Jan 2026**](../../2026/01/) &nbsp;·&nbsp; 📅 **February 2026** &nbsp;·&nbsp; [**Mar 2026 →**](../../2026/03/)
-
-<br>
-
-<a href="https://github.com/phishdestroy/destroylist">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%2018%2C207%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%2019.0%25%20Kill%20Rate%3B%F0%9F%93%8A%20February%202026%20Report" alt="February 2026 Threat Intelligence Report" />
-</a>
-
-<br><br>
-
-![domains](https://img.shields.io/badge/domains-18%2C207-FF0000?style=for-the-badge)
-![vs prev month](https://img.shields.io/badge/vs%20prev%20month-%2B104%25-FF0000?style=for-the-badge)
-![kill rate](https://img.shields.io/badge/kill%20rate-19.0%25-000000?style=for-the-badge)
-![VT coverage](https://img.shields.io/badge/VT%20coverage-98.8%25-FF0000?style=for-the-badge)
-
-<br><br>
-
-[![Destroylist](https://img.shields.io/badge/destroylist-source-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-live-000000?style=flat-square)](https://api.destroy.tools)
-[![Website](https://img.shields.io/badge/phishdestroy.io-FF0000?style=flat-square)](https://phishdestroy.io)
-[![Telegram](https://img.shields.io/badge/Telegram-channel-000000?style=flat-square&logo=telegram)](https://t.me/destroy_phish)
-[![Twitter](https://img.shields.io/badge/Twitter-FF0000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
-[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="22" /> Dashboard
-
-<div align="center">
-
-| ![detected](https://img.shields.io/badge/detected--FF0000?style=flat-square) | ![live](https://img.shields.io/badge/live--CC0000?style=flat-square) | ![dead](https://img.shields.io/badge/dead--000000?style=flat-square) | ![enriched](https://img.shields.io/badge/enriched--333333?style=flat-square) |
+| detected | live | dead | enriched |
 |:---:|:---:|:---:|:---:|
 | **18,207** | **12,754** | **3,456** | **1,877** |
 
-| ![VirusTotal](https://img.shields.io/badge/VirusTotal--FF0000?style=flat-square) | ![Google SB](https://img.shields.io/badge/Google%20SB--000000?style=flat-square) | ![Avg Response](https://img.shields.io/badge/Avg%20Response--FF0000?style=flat-square) | ![Median](https://img.shields.io/badge/Median--000000?style=flat-square) |
+| VirusTotal | Google SB | Avg Response | Median |
 |:---:|:---:|:---:|:---:|
 | **17,987** (98.8%) | **1,001** | **273.1h** | **264.0h** |
 
@@ -64,8 +36,7 @@
 > `      ▁   ▁▁█    ▁▁   ▁     ` &nbsp; Peak: **2026-02-13** (4,248) &nbsp;·&nbsp; Low: **2026-02-06** (205) &nbsp;·&nbsp; Active days: **28**
 
 <details>
-<summary>📊 <b>Daily breakdown</b></summary>
-<br>
+<summary><b>Daily breakdown</b></summary>
 
 | Date | Domains | Activity |
 |:-----|--------:|:---------|
@@ -100,9 +71,9 @@
 
 </details>
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Memo.png" width="22" /> Intelligence Analysis
+## Intelligence Analysis
 
 ### Executive Summary
 
@@ -144,9 +115,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 - **For Crypto Projects** — Strengthen wallet security protocols to counteract advanced drainer kits, particularly those targeting Solana.
 - **For End Users** — Remain vigilant of phishing attempts masquerading as popular brands like Facebook Pixel, and employ multi-factor authentication for added security.
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Police%20Car.png" width="22" /> Top Registrars
+## Top Registrars
 
 | # | Registrar | Domains | Share | Trend |
 |:--:|:---|------:|:---|:---:|
@@ -163,9 +134,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 
 > ⚠️ Top 3 registrars = **9,002** domains (49% of all threats)
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Americas.png" width="22" /> Domain Zones
+## Domain Zones
 
 | # | TLD | Domains | Share | vs Prev |
 |:--:|:---|------:|------:|:---:|
@@ -180,9 +151,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | **9** | `.cc` | **530** | 2.9% | 📉 |
 | **10** | `.fun` | **421** | 2.3% | 🔺 |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Globe%20Showing%20Europe-Africa.png" width="22" /> Registrar Geography
+## Registrar Geography
 
 | # | Country | Domains | Share |
 |:--:|:---|------:|------:|
@@ -197,9 +168,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | **9** | DE | **211** | 1.2% |
 | **10** | UA | **188** | 1.0% |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="22" /> Targeted Brands
+## Targeted Brands
 
 | # | Brand | Domains | Share |
 |:--:|:---|------:|------:|
@@ -214,9 +185,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | **9** | Ledger | **81** | 0.4% |
 | **10** | Exodus Wallet | **81** | 0.4% |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
+## Crypto Drainers & Kits
 
 | # | Type | Domains |
 |:--:|:---|------:|
@@ -225,9 +196,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | **3** | unknown_drainer | **1** |
 | **4** | Wallet Connect Abuse | **1** |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
+## Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |
 |:--:|:---|------:|------:|
@@ -247,11 +218,11 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | **14** | BitDefender | **3,924** | 21.6% |
 | **15** | Webroot | **3,494** | 19.2% |
 
-> ![VT flagged](https://img.shields.io/badge/VT%20flagged-17%2C987%20/%2018%2C207-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-1001-000000?style=flat-square)
+> ![VT flagged](https://img.shields.io/badge/VT%20flagged-17%2C987%20/%2018%2C207-c52237?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-1001-535b69?style=flat-square)
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" width="22" /> Downloads & Data
+## Downloads & Data
 
 | Format | File | Description |
 |:-------|:-----|:------------|
@@ -260,7 +231,7 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | 📈 Chart | [`2026-02-activity.svg`](2026-02-activity.svg) | Daily detection activity graph |
 
 <details>
-<summary>🔍 <b>Threat JSON example</b></summary>
+<summary><b>Threat JSON example</b></summary>
 
 ```json
 {
@@ -289,9 +260,9 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 
 > 💡 **API access**: Query any domain at [`api.destroy.tools/v1/check`](https://api.destroy.tools/v1/check?domain=example.com) — free, no API key
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Link.png" width="22" /> All Reports
+## All Reports
 
 | Report | Domains |
 |:-------|--------:|
@@ -314,24 +285,10 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 | [May 2026](../../2026/05/) | **7,021** |
 | [June 2026](../../2026/06/) | **8,102** |
 
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-<div align="center">
+---
 
 [**← Jan 2026**](../../2026/01/) &nbsp;·&nbsp; 📅 **February 2026** &nbsp;·&nbsp; [**Mar 2026 →**](../../2026/03/)
 
-<br>
+---
 
-[![GitHub](https://img.shields.io/badge/destroylist-FF0000?style=flat-square&logo=github)](https://github.com/phishdestroy/destroylist)
-[![API](https://img.shields.io/badge/API-000000?style=flat-square)](https://api.destroy.tools)
-[![Stats](https://img.shields.io/badge/live_stats-FF0000?style=flat-square)](https://api.destroy.tools/v1/stats)
-[![Feeds](https://img.shields.io/badge/data_feeds-000000?style=flat-square)](https://github.com/phishdestroy/destroylist#-data-feeds)
-[![Appeals](https://img.shields.io/badge/appeals-FF0000?style=flat-square)](https://phishdestroy.io/appeals/)
-[![Twitter](https://img.shields.io/badge/Twitter-000000?style=flat-square&logo=x)](https://x.com/Phish_Destroy)
-[![Mastodon](https://img.shields.io/badge/Mastodon-FF0000?style=flat-square&logo=mastodon&logoColor=white)](https://mastodon.social/@phishdestroy)
-
-<br>
-
-Data: [destroylist](https://github.com/phishdestroy/destroylist)
-
-</div>
+[Destroylist](../../../README.md) · [All feeds](../../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
