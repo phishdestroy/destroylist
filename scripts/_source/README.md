@@ -1,17 +1,4 @@
-[Destroylist](../../README.md) / [scripts](../README.md) / _source
-
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Site sources" width="960">
-</picture>
-</h1>
-
-Sources for the public Destroylist website.
-
-[Publishing](#publishing) · [Live site](https://phishdestroy.github.io/destroylist/scripts/)
-
----
+# DestroyList community site
 
 Static, self-contained landing page plus machine-readable reference files for the GitHub Pages site (https://phishdestroy.github.io/destroylist/scripts/). Run `python build.py` (Python standard library only). Build sources: build.py, style.css, app.js, seo.py, mission.py, mission.css, mission.js, community_tools.py, community-tools.css, usability.py, usability.css, directory.js and the attributed local assets directory.
 
@@ -54,7 +41,3 @@ A Start section offers three routes: subscriptions, investigation tools and the 
 Directories show the first nine source projects and six services alphabetically after JavaScript initializes. Show all, category filters and search still cover the full catalogs. All content is present without scripts. Deep links reveal a hidden tool and open containing disclosures. Header navigation indicates the current section; a back-to-top control appears farther down the page. Source cards use a readable single-column mobile layout.
 
 Behavior checks verified compact catalogs, searching entries outside the initial view, category/task filtering, clearing, expansion/collapse, zero results, direct links to hidden cards and disclosures, and configuration links with allowlisted values. Generated HTML retains every external link and all source/tool records. These checks do not replace browser layout or accessibility testing, which remained unavailable.
-
----
-
-[Destroylist](../../README.md) · [All feeds](../../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)

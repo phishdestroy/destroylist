@@ -1,15 +1,24 @@
-[Destroylist](../README.md) / rootlist
+<div align="center">
 
-<h1>
-<picture>
-  <source media="(max-width: 640px)" srcset="banner-mobile.svg">
-  <img src="banner.svg" alt="Root domains" width="960">
-</picture>
-</h1>
+<img src="banner.svg" alt="Root Domains" width="900"/>
 
-Domain-level feeds, hosting-platform entries and provider analytics.
+# Root Domains
 
-[Downloads](#download-links) · [Formats](formats/) · [2026 reports](2026/) · [2025 reports](2025/)
+**Minimal, DNS-validated list of registrable root domains for blocking at the domain level**
+
+
+<p align="center">
+<img src="https://img.shields.io/badge/scope-root_only-c52237?style=for-the-badge" alt="scope"/>
+<img src="https://img.shields.io/badge/infrastructure-excluded-252532?style=for-the-badge" alt="infra"/>
+</p>
+
+
+<p align="center">
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/destroylist-source-c52237?style=flat-square&logo=github" alt="Destroylist"/></a>
+<a href="https://api.destroy.tools"><img src="https://img.shields.io/badge/API-live-252532?style=flat-square" alt="API"/></a>
+</p>
+
+</div>
 
 ---
 
@@ -115,4 +124,13 @@ Produced by [`scripts/build_rootlist.py`](../scripts/build_rootlist.py):
 
 ---
 
-[Destroylist](../README.md) · [All feeds](../README.md#data-feeds) · [Appeals](https://phishdestroy.io/appeals/)
+<div align="center">
+
+<p align="center">
+<a href="formats/"><img src="https://img.shields.io/badge/formats-c52237?style=flat-square" alt="Formats"/></a>
+<a href="arrays/"><img src="https://img.shields.io/badge/arrays-252532?style=flat-square" alt="Arrays"/></a>
+<a href="2025/"><img src="https://img.shields.io/badge/history-c52237?style=flat-square" alt="History"/></a>
+<a href="https://github.com/phishdestroy/destroylist"><img src="https://img.shields.io/badge/%E2%86%90_destroylist-252532?style=flat-square" alt="back"/></a>
+</p>
+
+</div>
