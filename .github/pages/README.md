@@ -1,4 +1,4 @@
-[Destroylist](../../README.md) / [.github](../README.md) / pages
+[Destroylist](../../README.md) / [.github](../AUTOMATION.md) / pages
 
 <h1>
 <picture>

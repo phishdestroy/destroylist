@@ -1,4 +1,4 @@
-[Destroylist](../../README.md) / [.github](../README.md) / workflows
+[Destroylist](../../README.md) / [.github](../AUTOMATION.md) / workflows
 
 <h1>
 <picture>
