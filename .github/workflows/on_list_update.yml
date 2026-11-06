@@ -9,9 +9,13 @@ on:
       - "community/blocklist.json"
       - "community/live_blocklist.json"
       - "community/content_live.json"
+      - "scripts/calculate_stats.py"
+      - ".github/workflows/on_list_update.yml"
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
 
 jobs:
   process:
@@ -27,7 +31,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 1
+          fetch-depth: 0
+          filter: blob:none
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -60,6 +65,7 @@ jobs:
             python scripts/update_counts.py
             python scripts/build_rootlist.py
             python scripts/build_shards.py
+            python scripts/calculate_stats.py --counters-only
 
             # Source and every generated consumer must land in one commit.
             # Otherwise formats/rootlists can advertise domains that no
