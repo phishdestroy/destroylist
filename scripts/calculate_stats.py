@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Calculate domain addition statistics using git history."""
 import json
+import argparse
 import subprocess
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -66,15 +67,14 @@ def plausible_baseline(old: Set[str], current: Set[str]) -> bool:
     return bool(old) and len(old) >= len(current) * 0.5
 
 
-def get_domains_added_since(file_path: str, since_date: str) -> int:
+def get_domains_added_since(file_path: str, since_date: str) -> Optional[int]:
     """Return count of domains added since since_date using git history.
 
-    Returns 0 (not the full count) when history is unavailable,
-    so callers get a conservative/safe result instead of a misleading spike.
+    None means history is unavailable; zero is a valid measured result.
     """
     current = load_current_domains(file_path)
     if not current:
-        return 0
+        return None
 
     commits = run_git(["git", "log", f"--since={since_date}", "--reverse", "--format=%H", "--", file_path]).strip().split("\n")
     if not commits or not commits[0]:
@@ -82,19 +82,19 @@ def get_domains_added_since(file_path: str, since_date: str) -> int:
 
     parent = run_git(["git", "rev-parse", f"{commits[0]}^"]).strip()
     if not parent:
-        log(f"No parent commit accessible for {file_path} since {since_date} — returning 0", "warn")
-        return 0
+        log(f"No parent commit accessible for {file_path} since {since_date}", "warn")
+        return None
 
     old_content = run_git(["git", "show", f"{parent}:{file_path}"])
     if not old_content:
-        log(f"Could not read parent content for {file_path} — returning 0", "warn")
-        return 0
+        log(f"Could not read parent content for {file_path}", "warn")
+        return None
 
     old = get_domains_from_json(old_content)
     if not plausible_baseline(old, current):
         log(f"Baseline for {file_path} since {since_date} looks stripped/ancient "
-            f"({len(old):,} vs {len(current):,} current) — returning 0", "warn")
-        return 0
+            f"({len(old):,} vs {len(current):,} current)", "warn")
+        return None
 
     return len(current - old)
 
@@ -135,9 +135,12 @@ def save_snapshot(now: datetime, primary_count: int, community_count: int):
     save_json(SNAPSHOT_FILE, snap)
 
 
-def get_delta_from_snapshot(key_primary: str, key_community: str, current_primary: int, current_community: int):
+def get_delta_from_snapshot(key_primary: str, key_community: str, current_primary: int, current_community: int,
+                            period_key: str, period_value: str):
     """Compute delta against stored snapshot baseline; returns (primary_delta, community_delta)."""
     snap = load_snapshot()
+    if snap.get(period_key) != period_value:
+        return None, None
     p = max(0, current_primary - snap.get(key_primary, current_primary))
     c = max(0, current_community - snap.get(key_community, current_community))
     return p, c
@@ -236,7 +239,25 @@ def save_archive():
         log(f"Monthly archive: {month_file.name}", "ok")
 
 
-def main():
+def calendar_windows(now: datetime) -> dict:
+    """Badge labels refer to UTC calendar periods, not rolling 24h/7d/30d."""
+    today = now.astimezone(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    return {
+        "today": today.isoformat(),
+        "week": (today - timedelta(days=today.weekday())).isoformat(),
+        "month": today.replace(day=1).isoformat(),
+    }
+
+
+def pick_count(git_value: Optional[int], snapshot_value: Optional[int]) -> Optional[int]:
+    return git_value if git_value is not None else snapshot_value
+
+
+def format_count(value: Optional[int]) -> str:
+    return "unavailable" if value is None else f"+{value:,}"
+
+
+def main(counters_only: bool = False):
     log("Calculate statistics", "step")
     DNS_DIR.mkdir(exist_ok=True)
 
@@ -245,29 +266,26 @@ def main():
     current_community = len(load_current_domains(COMMUNITY_FILE))
 
     # Try git-history based calculation first
-    today_p = get_domains_added_since(LIST_FILE, "1 day ago")
-    week_p = get_domains_added_since(LIST_FILE, "1 week ago")
-    month_p = get_domains_added_since(LIST_FILE, "1 month ago")
-    today_c = get_domains_added_since(COMMUNITY_FILE, "1 day ago")
-    week_c = get_domains_added_since(COMMUNITY_FILE, "1 week ago")
-    month_c = get_domains_added_since(COMMUNITY_FILE, "1 month ago")
+    windows = calendar_windows(now)
+    today_p = get_domains_added_since(LIST_FILE, windows["today"])
+    week_p = get_domains_added_since(LIST_FILE, windows["week"])
+    month_p = get_domains_added_since(LIST_FILE, windows["month"])
+    today_c = get_domains_added_since(COMMUNITY_FILE, windows["today"])
+    week_c = get_domains_added_since(COMMUNITY_FILE, windows["week"])
+    month_c = get_domains_added_since(COMMUNITY_FILE, windows["month"])
 
-    # Per-window fallback: a git-derived value wins only when it exists and is
-    # sane; anything else (0 = no/implausible baseline, >= list size = inflated)
-    # uses the snapshot baseline instead.
-    snap_today_p, snap_today_c = get_delta_from_snapshot("today_primary", "today_community", current_primary, current_community)
-    snap_week_p, snap_week_c = get_delta_from_snapshot("week_primary", "week_community", current_primary, current_community)
-    snap_month_p, snap_month_c = get_delta_from_snapshot("month_primary", "month_community", current_primary, current_community)
+    # A real zero must not revive yesterday's snapshot delta. A stale snapshot
+    # cannot describe the current calendar period when Git history is absent.
+    snap_today_p, snap_today_c = get_delta_from_snapshot("today_primary", "today_community", current_primary, current_community, "today_date", now.strftime("%Y-%m-%d"))
+    snap_week_p, snap_week_c = get_delta_from_snapshot("week_primary", "week_community", current_primary, current_community, "week_id", now.strftime("%G-W%V"))
+    snap_month_p, snap_month_c = get_delta_from_snapshot("month_primary", "month_community", current_primary, current_community, "month_id", now.strftime("%Y-%m"))
 
-    def pick(git_value: int, snap_value: int, current: int) -> int:
-        return git_value if 0 < git_value < current else snap_value
-
-    today_p = pick(today_p, snap_today_p, current_primary)
-    week_p = pick(week_p, snap_week_p, current_primary)
-    month_p = pick(month_p, snap_month_p, current_primary)
-    today_c = pick(today_c, snap_today_c, current_community)
-    week_c = pick(week_c, snap_week_c, current_community)
-    month_c = pick(month_c, snap_month_c, current_community)
+    today_p = pick_count(today_p, snap_today_p)
+    week_p = pick_count(week_p, snap_week_p)
+    month_p = pick_count(month_p, snap_month_p)
+    today_c = pick_count(today_c, snap_today_c)
+    week_c = pick_count(week_c, snap_week_c)
+    month_c = pick_count(month_c, snap_month_c)
 
     stats = {
         "today_added": today_p,
@@ -278,32 +296,37 @@ def main():
         "month_community": month_c,
     }
 
-    log(f"Primary  — today: +{stats['today_added']:,}, week: +{stats['week_added']:,}, month: +{stats['month_added']:,}")
-    log(f"Community — today: +{stats['today_community']:,}, week: +{stats['week_community']:,}, month: +{stats['month_community']:,}")
+    log(f"Primary  — today: {format_count(today_p)}, week: {format_count(week_p)}, month: {format_count(month_p)}")
+    log(f"Community — today: {format_count(today_c)}, week: {format_count(week_c)}, month: {format_count(month_c)}")
 
     badges = {
-        "today_added": make_badge("added today", f"+{stats['today_added']:,}", "success"),
-        "week_added": make_badge("added this week", f"+{stats['week_added']:,}", "success"),
-        "month_added": make_badge("added this month", f"+{stats['month_added']:,}", "success"),
-        "today_community": make_badge("community today", f"+{stats['today_community']:,}", "blue"),
-        "week_community": make_badge("community this week", f"+{stats['week_community']:,}", "blue"),
-        "month_community": make_badge("community this month", f"+{stats['month_community']:,}", "blue"),
+        "today_added": make_badge("added today", format_count(today_p), "success"),
+        "week_added": make_badge("added this week", format_count(week_p), "success"),
+        "month_added": make_badge("added this month", format_count(month_p), "success"),
+        "today_community": make_badge("community today", format_count(today_c), "blue"),
+        "week_community": make_badge("community this week", format_count(week_c), "blue"),
+        "month_community": make_badge("community this month", format_count(month_c), "blue"),
     }
 
     for key, data in badges.items():
+        data["cacheSeconds"] = 300
         save_json(OUTPUT_FILES[key], data)
 
     # Save/refresh snapshot baseline after writing badges
     save_snapshot(now, current_primary, current_community)
 
-    save_daily_diff(now)
-    save_archive()
+    if not counters_only:
+        save_daily_diff(now)
+        save_archive()
     log("Done", "ok")
 
 
 if __name__ == "__main__":
     try:
-        main()
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--counters-only", action="store_true",
+                            help="Refresh badges without writing historical archives")
+        main(counters_only=parser.parse_args().counters_only)
     except Exception as e:
         log(f"FATAL: {e}", "error")
         import traceback
