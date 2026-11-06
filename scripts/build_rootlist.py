@@ -7,7 +7,7 @@ from typing import Dict, List, Set
 
 from utils import (
     PROJECT_ROOT, IPV4_RE, PROVIDER_GROUPS, INFRA_ROOTS,
-    get_root, is_allowed, load_allowlist_split, normalize_entry, save_json, log,
+    get_root, is_allowed, load_publication_exclusions, normalize_entry, save_json, log,
 )
 
 SOURCE_LIST = PROJECT_ROOT / "list.json"
@@ -117,7 +117,7 @@ def build_providers_payload(provider_stats: Dict, source_name: str) -> Dict:
 def main():
     log("Build root lists", "step")
     os.makedirs(OUT_DIR, exist_ok=True)
-    exact, patterns = load_allowlist_split()
+    exact, patterns = load_publication_exclusions()
 
     if not SOURCE_LIST.exists():
         raise SystemExit(f"list.json not found: {SOURCE_LIST}")

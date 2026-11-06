@@ -7,7 +7,7 @@ from typing import Set
 
 from utils import (
     PROJECT_ROOT, IPV4_RE,
-    extract_domain, is_allowed, load_allowlist_split, load_json_list, log,
+    extract_domain, is_allowed, load_publication_exclusions, load_json_list, log,
     normalize_entry,
 )
 
@@ -134,7 +134,7 @@ def write(path: Path, content: str):
 
 def main():
     FORMATS_DIR.mkdir(parents=True, exist_ok=True)
-    exact, patterns = load_allowlist_split()
+    exact, patterns = load_publication_exclusions()
 
     for name, src in SOURCES.items():
         domains = load_domains(src, exact, patterns)

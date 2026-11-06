@@ -13,7 +13,7 @@ from tqdm import tqdm
 
 from utils import (
     PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
-    load_allowlist_split, is_allowed, save_json, make_badge, log,
+    load_publication_exclusions, is_allowed, save_json, make_badge, log,
 )
 
 COMMUNITY_DIR = PROJECT_ROOT / "community"
@@ -240,7 +240,7 @@ def fetch_source(name: str, cfg: dict) -> tuple:
 # ── Allowlist filter ─────────────────────────────────────────────────────────
 
 def filter_by_allowlist(domains: set) -> tuple:
-    exact, patterns = load_allowlist_split()
+    exact, patterns = load_publication_exclusions()
     if not exact and not patterns:
         return domains, 0
     filtered, removed = set(), 0
@@ -337,12 +337,7 @@ def main():
                 if failures >= 3:
                     log(f"HEALTH: {name} has failed {failures} consecutive times", "warn")
 
-    last_total = last_state.get("total_count", 0)
-    if len(all_domains) == last_total and not changes:
-        log("No changes detected", "ok")
-        return
-
-    # Filter allowlist
+    # Apply decisions even when upstream counts/hashes have not changed.
     all_domains, removed = filter_by_allowlist(all_domains)
     if removed:
         log(f"Allowlist: removed {removed:,} domains")

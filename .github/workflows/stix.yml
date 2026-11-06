@@ -11,6 +11,7 @@ on:
       - main
     paths:
       - "allow/allowlist.json"
+      - "allow/removals.json"
   workflow_dispatch:
 
 concurrency:
