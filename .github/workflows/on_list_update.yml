@@ -65,7 +65,7 @@ jobs:
             python scripts/update_counts.py
             python scripts/build_rootlist.py
             python scripts/build_shards.py
-            python scripts/calculate_stats.py --counters-only
+            python scripts/calculate_stats.py --live
 
             # Source and every generated consumer must land in one commit.
             # Otherwise formats/rootlists can advertise domains that no
@@ -77,7 +77,7 @@ jobs:
                    community/content_live.json community/content_live.txt \
                    community/count.json community/live_count.json \
                    community/content_active_count.json \
-                   dns/*.json dns/*.txt rootlist/
+                   dns/*.json dns/*.txt rootlist/ archives/changes/
 
             if git diff --staged --quiet; then
               echo "Changes already present in remote"
