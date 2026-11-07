@@ -146,68 +146,74 @@ def get_delta_from_snapshot(key_primary: str, key_community: str, current_primar
     return p, c
 
 
+def domains_before(file_path: str, boundary: datetime) -> Optional[Set[str]]:
+    """Read the last first-parent snapshot strictly before a UTC boundary."""
+    cutoff = (boundary.astimezone(timezone.utc) - timedelta(seconds=1)).isoformat()
+    commit = run_git(["git", "rev-list", "--first-parent", "-1", f"--before={cutoff}", "HEAD"]).strip()
+    if not commit:
+        return None
+    content = run_git(["git", "show", f"{commit}:{file_path}"])
+    return get_domains_from_json(content) if content else None
+
+
 def save_daily_diff(now: datetime):
-    """Write a small daily added/removed diff to archives/changes/YYYY-MM/DD.json.
+    """Refresh today's UTC diff and finalize yesterday at its own midnight.
 
-    These files stay under GitHub's code-search indexing limit, so every
-    domain that was ever added or removed remains searchable even after it
-    leaves the live lists. Non-fatal: any error is logged and skipped.
+    An early-morning snapshot is provisional. Later additions must be included,
+    while today's additions must never be attributed to yesterday. Older days
+    are left alone; unavailable history never replaces a known archive.
     """
-    try:
-        changes_dir = PROJECT_ROOT / "archives" / "changes" / now.strftime("%Y-%m")
-        out_file = changes_dir / f"{now.strftime('%Y-%m-%d')}.json"
-        if out_file.exists():
-            return
+    now = now.astimezone(timezone.utc)
+    today = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    current = {
+        LIST_FILE: load_current_domains(LIST_FILE),
+        COMMUNITY_FILE: load_current_domains(COMMUNITY_FILE),
+    }
+    snapshots = {}
 
-        current_primary = load_current_domains(LIST_FILE)
-        current_community = load_current_domains(COMMUNITY_FILE)
+    def at(path, boundary):
+        key = (path, boundary)
+        if key not in snapshots:
+            snapshots[key] = domains_before(path, boundary)
+        return snapshots[key]
 
-        def domains_at(file_path: str, since: str, current: Set[str]):
-            commits = run_git(["git", "log", f"--since={since}", "--reverse", "--format=%H", "--", file_path]).strip().split("\n")
-            if not commits or not commits[0]:
-                return None
-            parent = run_git(["git", "rev-parse", f"{commits[0]}^"]).strip()
-            if not parent:
-                return None
-            content = run_git(["git", "show", f"{parent}:{file_path}"])
-            if not content:
-                return None
-            old = get_domains_from_json(content)
-            return old if plausible_baseline(old, current) else None
+    for start in (today - timedelta(days=1), today):
+        try:
+            finished = start < today
+            end = start + timedelta(days=1) if finished else now
+            out_file = (PROJECT_ROOT / "archives" / "changes" /
+                        start.strftime("%Y-%m") / f"{start:%Y-%m-%d}.json")
+            diff = {
+                "date": start.strftime("%Y-%m-%d"),
+                "period_start": start.isoformat(),
+                "period_end": end.isoformat(),
+                "complete": finished,
+            }
+            entries = 0
+            for label, path in (("primary", LIST_FILE), ("community", COMMUNITY_FILE)):
+                old = at(path, start)
+                final = at(path, end) if finished else current[path]
+                if not final or old is None or not plausible_baseline(old, final):
+                    raise ValueError(f"no usable {label} baseline for {start:%Y-%m-%d}")
+                added, removed = sorted(final - old), sorted(old - final)
+                diff[label + "_added"] = added
+                diff[label + "_removed"] = removed
+                diff[label + "_count"] = len(final)
+                entries += len(added) + len(removed)
 
-        old_primary = domains_at(LIST_FILE, "1 day ago", current_primary)
-        old_community = domains_at(COMMUNITY_FILE, "1 day ago", current_community)
+            if entries > MAX_DIFF_ENTRIES:
+                for key in [k for k in diff if k.endswith("_added") or k.endswith("_removed")]:
+                    diff[key + "_count"] = len(diff.pop(key))
+                diff["note"] = f"{entries:,} changes exceed search-indexable size; counts only"
 
-        diff = {"date": now.strftime("%Y-%m-%d")}
-        entries = 0
-        if old_primary is not None:
-            diff["primary_added"] = sorted(current_primary - old_primary)
-            diff["primary_removed"] = sorted(old_primary - current_primary)
-            entries += len(diff["primary_added"]) + len(diff["primary_removed"])
-        diff["primary_count"] = len(current_primary)
-        if old_community is not None:
-            diff["community_added"] = sorted(current_community - old_community)
-            diff["community_removed"] = sorted(old_community - current_community)
-            entries += len(diff["community_added"]) + len(diff["community_removed"])
-        diff["community_count"] = len(current_community)
-
-        if old_primary is None and old_community is None:
-            diff["note"] = "no usable git baseline; counts only"
-            log("Daily diff: no usable baseline, writing counts only", "warn")
-        elif entries > MAX_DIFF_ENTRIES:
-            # A file this big would fall out of GitHub's code-search index
-            # (350 KiB limit); keep counts so the day is still recorded.
-            for key in [k for k in diff if k.endswith("_added") or k.endswith("_removed")]:
-                diff[key + "_count"] = len(diff.pop(key))
-            diff["note"] = f"{entries:,} changes exceed search-indexable size; counts only"
-            log(f"Daily diff: {entries:,} entries exceed cap, writing counts only", "warn")
-
-        changes_dir.mkdir(parents=True, exist_ok=True)
-        out_file.write_text(json.dumps(diff, indent=1), encoding="utf-8")
-        log(f"Daily diff: {out_file.name} "
-            f"(+{len(diff.get('primary_added', []))}/-{len(diff.get('primary_removed', []))} primary)", "ok")
-    except Exception as e:
-        log(f"Daily diff failed (non-fatal): {e}", "warn")
+            out_file.parent.mkdir(parents=True, exist_ok=True)
+            content = json.dumps(diff, indent=1)
+            if not out_file.exists() or out_file.read_text(encoding="utf-8") != content:
+                out_file.write_text(content, encoding="utf-8")
+            added_count = len(diff["primary_added"]) if "primary_added" in diff else diff["primary_added_count"]
+            log(f"Daily diff: {out_file.name} (+{added_count} primary, complete={finished})", "ok")
+        except Exception as e:
+            log(f"Daily diff {start:%Y-%m-%d} retained: {e}", "warn")
 
 
 def save_archive():
@@ -257,7 +263,7 @@ def format_count(value: Optional[int]) -> str:
     return "unavailable" if value is None else f"+{value:,}"
 
 
-def main(counters_only: bool = False):
+def main(counters_only: bool = False, live: bool = False):
     log("Calculate statistics", "step")
     DNS_DIR.mkdir(exist_ok=True)
 
@@ -317,16 +323,21 @@ def main(counters_only: bool = False):
 
     if not counters_only:
         save_daily_diff(now)
-        save_archive()
+        if not live:
+            save_archive()
     log("Done", "ok")
 
 
 if __name__ == "__main__":
     try:
         parser = argparse.ArgumentParser()
-        parser.add_argument("--counters-only", action="store_true",
+        mode = parser.add_mutually_exclusive_group()
+        mode.add_argument("--counters-only", action="store_true",
                             help="Refresh badges without writing historical archives")
-        main(counters_only=parser.parse_args().counters_only)
+        mode.add_argument("--live", action="store_true",
+                          help="Refresh badges and current/recent daily diffs without full snapshots")
+        args = parser.parse_args()
+        main(counters_only=args.counters_only, live=args.live)
     except Exception as e:
         log(f"FATAL: {e}", "error")
         import traceback
