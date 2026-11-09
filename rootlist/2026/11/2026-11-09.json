@@ -1,6 +1,6 @@
 {
   "date": "2026-11-09",
-  "total_scans": 280,
+  "total_scans": 282,
   "scans": [
     {
       "id": 414810,
@@ -4481,6 +4481,38 @@
       "expiration_date": "2027-11-04T03:38:40",
       "updated_date": null,
       "processed_at": "2026-11-09T20:26:01"
+    },
+    {
+      "id": 416301,
+      "domain": "my-settings-google.com",
+      "source_url": "https://my-settings-google.com/",
+      "urlscan_report_url": null,
+      "urlscan_screenshot_url": "https://urlscan.io/screenshots/01a1c094-bd0e-7716-be5e-8dcf0cc23a87.png",
+      "urlscan_uuid": "01a1c094-bd0e-7716-be5e-8dcf0cc23a87",
+      "ip_address": "216.150.16.65",
+      "registrar": "Name.com, Inc.",
+      "nameservers": null,
+      "whois_emails": null,
+      "creation_date": "2026-11-02T21:41:02",
+      "expiration_date": null,
+      "updated_date": null,
+      "processed_at": "2026-11-09T20:28:01"
+    },
+    {
+      "id": 416305,
+      "domain": "googlebookapps.com",
+      "source_url": "https://googlebookapps.com/",
+      "urlscan_report_url": "https://urlscan.io/result/01a1c1c9-49c6-73ef-9b04-85533834c86b/",
+      "urlscan_screenshot_url": "https://i.ibb.co/WNNXLzdm/aad5c3780345.png",
+      "urlscan_uuid": "01a1c1c9-49c6-73ef-9b04-85533834c86b",
+      "ip_address": "216.150.16.65",
+      "registrar": "Name.com, Inc.",
+      "nameservers": "ns1.vercel-dns.com ns2.vercel-dns.com",
+      "whois_emails": "abuse@vercel.com, abuse@name.com",
+      "creation_date": "2026-11-02T01:34:40",
+      "expiration_date": "2027-11-02T01:34:40",
+      "updated_date": null,
+      "processed_at": "2026-11-09T20:30:11"
     }
   ]
 }
