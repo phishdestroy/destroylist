@@ -1,7 +1,17 @@
 {
   "OpenPhish": {
-    "hash": "820b88c6681a423d8590af053a9cc57c4a79401c08db6eb9ada080d8d4c51878",
-    "count": 277,
+    "hash": "6e8b3b79c5f926952fae75998312d4cba3fce3f8e8629cf2f16d7db1d4243c6c",
+    "count": 280,
+    "consecutive_failures": 0
+  },
+  "MetaMask": {
+    "hash": "c5f16713e50207c2460b5713dd75f1692e652a345e2a2dd35f1db597ba956020",
+    "count": 118870,
+    "consecutive_failures": 0
+  },
+  "SPMedia_DetectedURLs": {
+    "hash": "f347b558f1a8c022f106329998c0a657ead5728b049d26f547215b462a6cee6a",
+    "count": 1516,
     "consecutive_failures": 0
   },
   "Polkadot": {
@@ -14,24 +24,19 @@
     "count": 53990,
     "consecutive_failures": 0
   },
-  "SPMedia_DetectedURLs": {
-    "hash": "f347b558f1a8c022f106329998c0a657ead5728b049d26f547215b462a6cee6a",
-    "count": 1516,
+  "Enkrypt_Blacklist": {
+    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
+    "count": 243830,
+    "consecutive_failures": 1
+  },
+  "Phishunt": {
+    "hash": "7aaa44e8016c884a8f5f5669e579d8367e6a4f8711e4c8e8894608af1f2e51e5",
+    "count": 925,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Nikolai": {
     "hash": "70924f3426700d55cbe180c86a91390ee515bccbd5614fb724192e2e260ad301",
     "count": 21852,
-    "consecutive_failures": 0
-  },
-  "MetaMask": {
-    "hash": "25a1466aefba83979c1470a677f0788560cdcdffc0ae32fbf41952f45261d3c3",
-    "count": 118847,
-    "consecutive_failures": 0
-  },
-  "Phishunt": {
-    "hash": "e1d0e689579eae416f14d24c4d1c4b969c3f7b6b10a6eb3e29c7c279e8955699",
-    "count": 937,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -45,13 +50,8 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "fa5ccc8296bc9680a9e7f0e99c7a83d04b8c7a8314226966f4d1c3e83fb1e9f1",
-    "count": 118306,
-    "consecutive_failures": 0
-  },
-  "Enkrypt_Blacklist": {
-    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
-    "count": 243830,
+    "hash": "cec4322b9c62f4689c9d247d8f09968896c40eab6b7f9d34dddc0a483264b821",
+    "count": 118330,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +59,5 @@
     "count": 360264,
     "consecutive_failures": 0
   },
-  "total_count": 1180386
+  "total_count": 1180777
 }
