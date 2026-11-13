@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "total_scans": 1,
+  "total_scans": 2,
   "scans": [
     {
       "id": 422247,
@@ -17,6 +17,22 @@
       "expiration_date": "2027-10-30T00:00:00",
       "updated_date": null,
       "processed_at": "2026-11-13T01:09:30"
+    },
+    {
+      "id": 422336,
+      "domain": "musor.win",
+      "source_url": "https://musor.win/",
+      "urlscan_report_url": null,
+      "urlscan_screenshot_url": "https://urlscan.io/screenshots/01a1cb3b-bb84-73cf-bdc2-2be5c6884fda.png",
+      "urlscan_uuid": "01a1cb3b-bb84-73cf-bdc2-2be5c6884fda",
+      "ip_address": "95.129.238.4",
+      "registrar": "URL Solutions Inc.",
+      "nameservers": "ns1.ddos-guard.net ns2.ddos-guard.net",
+      "whois_emails": "abuse@pananames.com, abuse@ddos-guard.net",
+      "creation_date": "2026-05-22T17:29:05",
+      "expiration_date": "2027-05-22T17:29:05",
+      "updated_date": null,
+      "processed_at": "2026-11-13T02:38:55"
     }
   ]
 }
