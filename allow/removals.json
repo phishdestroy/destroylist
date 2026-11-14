@@ -271,6 +271,12 @@
       "reason": "approved-appeal",
       "reference": "https://phishdestroy.io/appeals/?appeal_id=ca46d408-20c6-4715-b9d7-b4a1ab3015ae"
     },
+    "haveaseat.party": {
+      "reason": "manual-review-insufficient-listing-evidence",
+      "reference": "https://github.com/phishdestroy/destroylist/issues/464",
+      "removed_at": "2026-11-14T03:22:58.289712Z",
+      "review_note": "Community source hits were found in MetaMask and SEAL, but no primary database, scan or analyst evidence supports phishing. Reviewed current archive application and its four client scripts; no credential/payment collection found. Exact removal pending any new substantiated evidence."
+    },
     "home-ledger-cloudkit-probe-20261003.pages.dev": {
       "reason": "source-withdrawal-reviewed",
       "reference": "https://github.com/phishdestroy/destroylist/issues/387",
@@ -805,6 +811,12 @@
       "reference": "https://github.com/phishdestroy/destroylist/issues/387",
       "removed_at": "2026-11-06T18:56:08.605221Z"
     },
+    "tronbid.energy": {
+      "reason": "manual-review-insufficient-listing-evidence",
+      "reference": "https://github.com/phishdestroy/destroylist/issues/465",
+      "removed_at": "2026-11-14T03:22:58.289712Z",
+      "review_note": "Reviewed main database, stored scan record, current rental page and application scripts. Source URL and original scan evidence absent; only self-feed hit remains in blocklist_hits. Stored narrative describes an energy rental form. Vendor scores and generic Impersonation label do not substantiate credential theft. MetaMask removal was confirmed in issue 311561 and current feed. Previous rejected appeal reconsidered on this evidence; no unconditional allowlist."
+    },
     "twist-ledger-f8567b58.pages.dev": {
       "reason": "source-withdrawal-reviewed",
       "reference": "https://github.com/phishdestroy/destroylist/issues/387",
@@ -1121,6 +1133,12 @@
       "removed_at": "2026-11-06T10:14:32Z",
       "reason": "approved-appeal",
       "reference": "https://phishdestroy.io/appeals/?appeal_id=ca46d408-20c6-4715-b9d7-b4a1ab3015ae"
+    },
+    "www.haveaseat.party": {
+      "reason": "manual-review-insufficient-listing-evidence",
+      "reference": "https://github.com/phishdestroy/destroylist/issues/464",
+      "removed_at": "2026-11-14T03:22:58.289712Z",
+      "review_note": "Community source hits were found in MetaMask and SEAL, but no primary database, scan or analyst evidence supports phishing. Reviewed current archive application and its four client scripts; no credential/payment collection found. Exact removal pending any new substantiated evidence."
     },
     "www.home-ledger-cloudkit-probe-20261003.pages.dev": {
       "reason": "source-withdrawal-reviewed",
@@ -1655,6 +1673,12 @@
       "reason": "source-withdrawal-reviewed",
       "reference": "https://github.com/phishdestroy/destroylist/issues/387",
       "removed_at": "2026-11-06T18:56:08.605221Z"
+    },
+    "www.tronbid.energy": {
+      "reason": "manual-review-insufficient-listing-evidence",
+      "reference": "https://github.com/phishdestroy/destroylist/issues/465",
+      "removed_at": "2026-11-14T03:22:58.289712Z",
+      "review_note": "Reviewed main database, stored scan record, current rental page and application scripts. Source URL and original scan evidence absent; only self-feed hit remains in blocklist_hits. Stored narrative describes an energy rental form. Vendor scores and generic Impersonation label do not substantiate credential theft. MetaMask removal was confirmed in issue 311561 and current feed. Previous rejected appeal reconsidered on this evidence; no unconditional allowlist."
     },
     "www.twist-ledger-f8567b58.pages.dev": {
       "reason": "source-withdrawal-reviewed",
