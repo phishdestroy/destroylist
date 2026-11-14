@@ -63,6 +63,10 @@ def is_valid_domain(d: str) -> bool:
 
 
 def normalize_domain(d: str) -> str:
+    if any(marker in d for marker in ("/", "?", "#")):
+        scoped = set()
+        add_url(scoped, d.strip())
+        return next(iter(scoped), "")
     d = d.strip().strip(".").lower()
     if IPV4_RE.fullmatch(d):
         return ""
@@ -146,6 +150,30 @@ def extract_domains_from_text(text: str) -> set:
     return out
 
 
+def add_url(dst: set, candidate: str):
+    """Keep URL scope; a reported page is not a report of its entire host."""
+    try:
+        if any(char.isspace() for char in candidate):
+            return
+        parsed = urlparse(candidate if "://" in candidate else "https://" + candidate)
+        if parsed.scheme not in {"http", "https"} or not parsed.hostname:
+            return
+        host = parsed.hostname.rstrip(".").encode("idna").decode("ascii").lower()
+        if not is_valid_domain(host) or IPV4_RE.fullmatch(host):
+            return
+        # The feed's host/path representation cannot encode a non-default port.
+        if parsed.port not in {None, 80 if parsed.scheme == "http" else 443}:
+            return
+        entry = host + (parsed.path or "/")
+        if parsed.query:
+            entry += "?" + parsed.query
+        if parsed.fragment:
+            entry += "#" + parsed.fragment
+        dst.add(entry)
+    except (UnicodeError, ValueError):
+        return
+
+
 def parse_text_lines(content: str) -> set:
     out = set()
     for raw in content.splitlines():
@@ -154,20 +182,18 @@ def parse_text_lines(content: str) -> set:
             continue
         if line.startswith(("0.0.0.0", "127.0.0.1", "::1")):
             line = clean_hosts_ips(line)
+        if not line.startswith("||") and any(marker in line for marker in ("://", "/", "?")):
+            add_url(out, line)
+            continue
         if line.startswith("||"):
             line = line[2:]
         if "^" in line:
             line = line.split("^", 1)[0]
         if "$" in line:
             line = line.split("$", 1)[0]
-        if "://" in line or line.startswith(("www.", "ftp.", "http.", "https.")):
-            try:
-                host = urlparse(line if "://" in line else "http://" + line).hostname
-                if host:
-                    add_norm(out, host)
-                    continue
-            except Exception:
-                pass
+        if "://" in line or "/" in line or "?" in line:
+            add_url(out, line)
+            continue
         out.update(extract_domains_from_text(line))
     return out
 
@@ -178,14 +204,7 @@ def parse_urls_list(content: str) -> set:
         s = raw.strip()
         if not s or s.startswith(("#", "!", ";")):
             continue
-        try:
-            host = urlparse(s if "://" in s else "http://" + s).hostname
-            if host:
-                add_norm(out, host)
-                continue
-        except Exception:
-            pass
-        out.update(extract_domains_from_text(s))
+        add_url(out, s)
     return out
 
 

@@ -10,6 +10,9 @@ on:
       - "community/live_blocklist.json"
       - "community/content_live.json"
       - "scripts/calculate_stats.py"
+      - "scripts/smart_aggregator.py"
+      - "scripts/build_rootlist.py"
+      - "scripts/tests/test_url_scope.py"
       - ".github/workflows/on_list_update.yml"
     branches:
       - main
@@ -55,6 +58,8 @@ jobs:
               continue
             fi
             git reset --hard origin/main
+
+            python -m unittest discover -s scripts/tests -p test_url_scope.py
 
             # Always rebuild from the newest branch head. Restoring outputs
             # produced from an older checkout can erase a concurrent list
