@@ -60,6 +60,11 @@ def process_items(
     _patterns = patterns or set()
 
     for entry in items:
+        # Root/service lists are also domain-level blocklists. Do not broaden
+        # a page-specific indicator after the format exporter preserved it.
+        entry = normalize_entry(entry)
+        if any(marker in entry for marker in ("/", "?", "#")):
+            continue
         host = entry.split("/")[0].split("?")[0].split("#")[0]
         if IPV4_RE.fullmatch(host):
             continue
