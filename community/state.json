@@ -1,6 +1,6 @@
 {
   "OpenPhish": {
-    "hash": "65b586eb738f220c118406c3ec09823c5f6d07c937ab3aeee6de4ba88baf20d7",
+    "hash": "4a07cb463254c5bea449186d0653ad83ff481dcf83dd3e9c31ad9f30307971a2",
     "count": 300,
     "consecutive_failures": 0
   },
@@ -14,11 +14,6 @@
     "count": 1517,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "f99537ae51089c9af32a2cf9737ac9c8b0eff14624acf6a3387d105d37c0bb15",
-    "count": 121256,
-    "consecutive_failures": 0
-  },
   "Codeesura": {
     "hash": "77fd07f4fd519c4474630daa61948b84ef47e7b0adee8760138076f4150012b5",
     "count": 53990,
@@ -29,9 +24,14 @@
     "count": 21902,
     "consecutive_failures": 0
   },
+  "MetaMask": {
+    "hash": "01570d13a5dcc31c9a47e357b6c2748f66de868e9a106cb653cf445be69a2263",
+    "count": 121529,
+    "consecutive_failures": 0
+  },
   "Phishunt": {
-    "hash": "04b7099863bd2ed8167fe9fa27ba04fa4bc2579adbd63cfb6d02d4e0cf61033d",
-    "count": 701,
+    "hash": "d7a2dad2df7dc0fb7bb2e54a47fbb682ef79364f1ad86bca26d797d26449cd20",
+    "count": 693,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -40,8 +40,8 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "d4abfcfda2ae60c4106891fd199d80a42e88fec0be15530cd3f762dc109a54fd",
-    "count": 118935,
+    "hash": "0b59d93d915a7bf6ca18c819f9a89dc2d8060a83bdc1c6955468498d3c652c58",
+    "count": 119097,
     "consecutive_failures": 0
   },
   "DiscordPhishing_Dogino": {
@@ -49,15 +49,15 @@
     "count": 37079,
     "consecutive_failures": 0
   },
-  "ScamSniffer": {
-    "hash": "7506882c68f744cd5a781e8b62f990bd335821c4a24ba3b66a36f38d68b02f34",
-    "count": 361152,
-    "consecutive_failures": 0
-  },
   "Enkrypt_Blacklist": {
     "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
     "count": 243830,
     "consecutive_failures": 0
   },
-  "total_count": 1183586
+  "ScamSniffer": {
+    "hash": "7506882c68f744cd5a781e8b62f990bd335821c4a24ba3b66a36f38d68b02f34",
+    "count": 361152,
+    "consecutive_failures": 0
+  },
+  "total_count": 1184296
 }
