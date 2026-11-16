@@ -204,15 +204,6 @@ alphaMountain.ai led with 4,851 detections (59.9%), followed by Gridinsoft at 4,
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | Solana Drainer | **13** |
-| **2** | Angel Drainer | **2** |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |

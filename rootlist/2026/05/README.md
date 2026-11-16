@@ -213,17 +213,6 @@ alphaMountain.ai and Fortinet maintained top positions at 2,730 and 2,703 detect
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | Solana Drainer | **30** |
-| **2** | Angel Drainer | **6** |
-| **3** | Inferno Drainer | **2** |
-| **4** | Wallet Connect Abuse | **2** |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |

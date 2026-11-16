@@ -212,18 +212,6 @@ CyRadar led the VirusTotal vendor detection with 8,779 flags, followed closely b
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | Angel Drainer | **842** |
-| **2** | Wallet Connect Abuse | **453** |
-| **3** | Solana Drainer | **359** |
-| **4** | Ice Phishing | **6** |
-| **5** | Inferno Drainer | **1** |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |

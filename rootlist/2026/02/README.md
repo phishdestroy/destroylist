@@ -216,17 +216,6 @@ VirusTotal vendor data reveals that SOCRadar leads with 15,397 detections, follo
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | solana_drainer | **355** |
-| **2** | Solana Drainer | **16** |
-| **3** | unknown_drainer | **1** |
-| **4** | Wallet Connect Abuse | **1** |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |

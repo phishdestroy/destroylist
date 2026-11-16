@@ -122,7 +122,7 @@ October 2026 detected **19,567** phishing and scam domains across 31 active days
 
 Detections peaked on **2026-10-07** with 1,994 domains; the lowest day was 2026-10-14 (159). The daily average was 631 domains. Days below 10% of the peak: 3.
 
-Crypto drainer kits identified this month: Solana Drainer (36), Angel Drainer (33), wallet_drainer (6), Wallet Connect Abuse (1).
+Crypto drainer kits identified this month: wallet_drainer (6).
 
 ### Registrar Accountability
 
@@ -218,10 +218,7 @@ alphaMountain.ai (17,367, 88.8%), Gridinsoft (16,155, 82.6%), Forcepoint ThreatS
 
 | # | Type | Domains |
 |:--:|:---|------:|
-| **1** | Solana Drainer | **36** |
-| **2** | Angel Drainer | **33** |
-| **3** | wallet_drainer | **6** |
-| **4** | Wallet Connect Abuse | **1** |
+| **1** | wallet_drainer | **6** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

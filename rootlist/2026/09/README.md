@@ -121,7 +121,6 @@ September 2026 detected **16,250** phishing and scam domains across 30 active da
 
 Detections peaked on **2026-09-09** with 1,133 domains; the lowest day was 2026-09-30 (33). The daily average was 542 domains. Days below 10% of the peak: 2.
 
-Crypto drainer kits identified this month: Solana Drainer (50), Angel Drainer (10), Wallet Connect Abuse (5).
 
 ### Registrar Accountability
 
@@ -210,16 +209,6 @@ Forcepoint ThreatSeeker (14,233, 87.6%), alphaMountain.ai (13,990, 86.1%), Gridi
 | **8** | Kraken | **175** | 1.1% |
 | **9** | Coinbase | **157** | 1.0% |
 | **10** | Apple | **149** | 0.9% |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | Solana Drainer | **50** |
-| **2** | Angel Drainer | **10** |
-| **3** | Wallet Connect Abuse | **5** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 

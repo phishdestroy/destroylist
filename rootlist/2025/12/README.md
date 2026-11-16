@@ -212,19 +212,6 @@ VirusTotal data highlighted SOCRadar as the leading detection engine, flagging 8
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | Angel Drainer | **746** |
-| **2** | Wallet Connect Abuse | **418** |
-| **3** | Solana Drainer | **252** |
-| **4** | Inferno Drainer | **4** |
-| **5** | Ice Phishing | **2** |
-| **6** | MS Drainer | **1** |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="22" /> Detection Engines (VirusTotal)
 
 | # | Engine | Detections | Coverage |
