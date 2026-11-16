@@ -2,34 +2,34 @@
   "meta": {
     "month": "2026-11",
     "name": "November 2026",
-    "generated": "2026-11-15T05:23:37.210466+00:00",
-    "total": 5293,
+    "generated": "2026-11-16T05:31:31.057351+00:00",
+    "total": 5382,
     "report": "README.md",
     "prev_report": "../../2026/10/",
     "next_report": null,
     "ongoing": true
   },
   "stats": {
-    "live": 3015,
-    "dead": 1972,
-    "unknown": 306,
-    "enriched": 4390,
-    "kill_rate": 39.5,
-    "vt_flagged": 5010,
-    "vt_rate": 94.7,
-    "gsb_flagged": 259,
-    "avg_response_h": 85.1,
-    "median_response_h": 59
+    "live": 3071,
+    "dead": 2266,
+    "unknown": 45,
+    "enriched": 4465,
+    "kill_rate": 42.5,
+    "vt_flagged": 5146,
+    "vt_rate": 95.6,
+    "gsb_flagged": 261,
+    "avg_response_h": 88.7,
+    "median_response_h": 60
   },
   "top": {
     "registrars": [
       {
         "name": "Dynadot Inc",
-        "count": 862
+        "count": 869
       },
       {
         "name": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-        "count": 393
+        "count": 397
       },
       {
         "name": "MarkMonitor Inc.",
@@ -37,15 +37,15 @@
       },
       {
         "name": "Spaceship, Inc.",
-        "count": 338
+        "count": 342
       },
       {
         "name": "NameCheap, Inc.",
-        "count": 211
+        "count": 215
       },
       {
         "name": "Google LLC",
-        "count": 187
+        "count": 188
       },
       {
         "name": "GKG.Net, Inc.",
@@ -53,7 +53,7 @@
       },
       {
         "name": "Cloudflare, Inc.",
-        "count": 171
+        "count": 173
       },
       {
         "name": "Square, Inc.",
@@ -67,7 +67,7 @@
     "tlds": [
       {
         "tld": "com",
-        "count": 2387
+        "count": 2401
       },
       {
         "tld": "app",
@@ -75,11 +75,11 @@
       },
       {
         "tld": "shop",
-        "count": 365
+        "count": 424
       },
       {
         "tld": "dev",
-        "count": 198
+        "count": 199
       },
       {
         "tld": "digital",
@@ -87,7 +87,7 @@
       },
       {
         "tld": "net",
-        "count": 167
+        "count": 170
       },
       {
         "tld": "click",
@@ -99,21 +99,21 @@
       },
       {
         "tld": "live",
-        "count": 109
+        "count": 110
       },
       {
         "tld": "io",
-        "count": 93
+        "count": 95
       }
     ],
     "countries": [
       {
         "country": "",
-        "count": 4528
+        "count": 4562
       },
       {
         "country": "US",
-        "count": 437
+        "count": 470
       },
       {
         "country": "FR",
@@ -121,7 +121,7 @@
       },
       {
         "country": "CN",
-        "count": 48
+        "count": 49
       },
       {
         "country": "HK",
@@ -132,16 +132,16 @@
         "count": 31
       },
       {
-        "country": "SG",
-        "count": 17
+        "country": "GB",
+        "count": 19
       },
       {
-        "country": "GB",
-        "count": 17
+        "country": "SG",
+        "count": 18
       },
       {
         "country": "CY",
-        "count": 14
+        "count": 16
       },
       {
         "country": "IN",
@@ -199,63 +199,63 @@
     "vt_vendors": [
       {
         "vendor": "alphaMountain.ai",
-        "detections": 4486
+        "detections": 4644
       },
       {
         "vendor": "Gridinsoft",
-        "detections": 4369
+        "detections": 4517
       },
       {
         "vendor": "Fortinet",
-        "detections": 4070
-      },
-      {
-        "vendor": "SOCRadar",
-        "detections": 4032
+        "detections": 4136
       },
       {
         "vendor": "Forcepoint ThreatSeeker",
-        "detections": 3977
+        "detections": 4112
+      },
+      {
+        "vendor": "SOCRadar",
+        "detections": 4088
       },
       {
         "vendor": "VIPRE",
-        "detections": 3803
+        "detections": 3860
       },
       {
         "vendor": "G-Data",
-        "detections": 3715
+        "detections": 3783
       },
       {
         "vendor": "BitDefender",
-        "detections": 3652
+        "detections": 3712
       },
       {
         "vendor": "Lionic",
-        "detections": 3561
+        "detections": 3597
       },
       {
         "vendor": "Sophos",
-        "detections": 3531
+        "detections": 3546
       },
       {
         "vendor": "ESET",
-        "detections": 3483
+        "detections": 3523
       },
       {
         "vendor": "DNS8",
-        "detections": 2912
+        "detections": 2915
       },
       {
         "vendor": "Webroot",
-        "detections": 2629
+        "detections": 2680
       },
       {
         "vendor": "Kaspersky",
-        "detections": 2623
+        "detections": 2655
       },
       {
         "vendor": "Seclookup",
-        "detections": 2551
+        "detections": 2569
       }
     ]
   },
@@ -274,7 +274,8 @@
     "2026-11-12": 496,
     "2026-11-13": 28,
     "2026-11-14": 489,
-    "2026-11-15": 85
+    "2026-11-15": 114,
+    "2026-11-16": 60
   },
   "threats": [
     {
@@ -36507,9 +36508,10 @@
       "status": "enriched",
       "target_brand": "celer",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
         "CRDF",
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
@@ -36584,11 +36586,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "LevelBlue",
+        "Seclookup",
         "SOCRadar",
         "Webroot"
       ],
@@ -41280,13 +41283,27 @@
       "status": "enriched",
       "target_brand": "celer",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 19,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "CRDF",
+        "CyRadar",
         "DNS8",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Google Safe Browsing",
         "Gridinsoft",
+        "Kaspersky",
+        "Lionic",
+        "Seclookup",
         "SOCRadar",
-        "VIPRE"
+        "Sophos",
+        "VIPRE",
+        "Webroot"
       ],
       "gsb_flagged": true,
       "creation_date": "2026-07-01 12:09:45"
@@ -41470,11 +41487,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "LevelBlue",
+        "Seclookup",
         "SOCRadar",
         "Webroot"
       ],
@@ -50257,9 +50275,10 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 4,
       "vt_vendors": [
         "Gridinsoft",
+        "Seclookup",
         "SOCRadar",
         "Webroot"
       ],
@@ -51819,9 +51838,10 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 4,
       "vt_vendors": [
         "Gridinsoft",
+        "Seclookup",
         "SOCRadar",
         "Webroot"
       ],
@@ -52053,10 +52073,12 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
         "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
         "Gridinsoft",
         "SOCRadar"
       ],
@@ -55247,14 +55269,14 @@
       "domain": "sabrewin.com",
       "detected_at": "2026-11-04 20:16:30",
       "registrar": "Registrar of Domain Names REG.RU LLC",
-      "registrar_country": "",
+      "registrar_country": "PERSONAL DATA, CAN NOT BE PUBLICLY DISCLOSED ACCORDING TO APPLICABLE LAWS.",
       "tld": "com",
-      "ip_address": "193.23.199.236",
+      "ip_address": "45.115.27.26",
       "nameservers": "dell.ns.cloudflare.com nash.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 9,
+      "vt_detections": 12,
       "vt_vendors": [
         "alphaMountain.ai",
         "BitDefender",
@@ -59652,8 +59674,9 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 3,
       "vt_vendors": [
+        "alphaMountain.ai",
         "Gridinsoft",
         "SOCRadar"
       ],
@@ -60930,11 +60953,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
+        "Fortinet",
         "Gridinsoft",
         "SOCRadar"
       ],
@@ -67365,11 +67389,14 @@
       "status": "enriched",
       "target_brand": "Solana",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Gridinsoft",
-        "SOCRadar"
+        "SOCRadar",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-20 16:51:05"
@@ -68010,12 +68037,15 @@
       "status": "enriched",
       "target_brand": "revolut",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 8,
       "vt_vendors": [
         "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
         "CRDF",
+        "Fortinet",
         "Gridinsoft",
         "SOCRadar",
+        "VIPRE",
         "desenmascara.me"
       ],
       "gsb_flagged": false,
@@ -70536,8 +70566,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "Forcepoint ThreatSeeker",
+        "LevelBlue",
+        "SOCRadar",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2020-01-28 03:03:04"
     },
@@ -70734,9 +70769,12 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
         "PhishFort",
         "VIPRE"
       ],
@@ -71618,8 +71656,9 @@
       "status": "enriched",
       "target_brand": "steam",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 5,
       "vt_vendors": [
+        "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
         "SOCRadar",
@@ -71663,8 +71702,9 @@
       "status": "enriched",
       "target_brand": "signal",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
+        "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
@@ -71847,10 +71887,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 4,
       "vt_vendors": [
         "alphaMountain.ai",
-        "CRDF"
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-02 16:12:40"
@@ -72471,13 +72513,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 7,
       "vt_vendors": [
         "ChainPatrol",
         "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
-        "Seclookup"
+        "Gridinsoft",
+        "Seclookup",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-07-27 06:40:34"
@@ -72743,11 +72787,17 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 9,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
         "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
         "Gridinsoft",
-        "Kaspersky"
+        "Kaspersky",
+        "Lionic"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-25 18:56:54"
@@ -73605,9 +73655,10 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "LevelBlue",
@@ -73936,12 +73987,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 4,
       "vt_vendors": [
         "alphaMountain.ai",
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
-        "LevelBlue",
         "SOCRadar"
       ],
       "gsb_flagged": false,
@@ -84635,11 +84685,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 8,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
         "Forcepoint ThreatSeeker",
+        "G-Data",
         "Gridinsoft",
+        "LevelBlue",
         "SOCRadar",
         "VIPRE"
       ],
@@ -84932,8 +84985,9 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
+        "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
@@ -84977,10 +85031,13 @@
       "status": "enriched",
       "target_brand": "signal",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
+        "Gridinsoft",
         "SOCRadar"
       ],
       "gsb_flagged": false,
@@ -89213,7 +89270,7 @@
         "LevelBlue",
         "Webroot"
       ],
-      "gsb_flagged": false,
+      "gsb_flagged": true,
       "creation_date": "2020-01-28 03:03:04"
     },
     {
@@ -90859,8 +90916,9 @@
       "status": "enriched",
       "target_brand": "Google",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 5,
       "vt_vendors": [
+        "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
         "Fortinet",
@@ -91427,9 +91485,19 @@
       "status": "enriched",
       "target_brand": "Trust Wallet",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 11,
       "vt_vendors": [
-        "CRDF"
+        "ChainPatrol",
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "Lionic"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-06 13:07:35"
@@ -91559,8 +91627,9 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
+        "ChainPatrol",
         "alphaMountain.ai",
         "Forcepoint ThreatSeeker",
         "Gridinsoft",
@@ -92369,7 +92438,7 @@
       "tld": "xyz",
       "ip_address": "172.67.208.30",
       "nameservers": "bradley.ns.cloudflare.com liberty.ns.cloudflare.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
       "vt_detections": 5,
@@ -93945,12 +94014,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 7,
       "vt_vendors": [
         "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
         "G-Data",
         "Gridinsoft",
-        "SOCRadar"
+        "Netcraft",
+        "SOCRadar",
+        "URLQuery"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-07-04 08:38:28"
@@ -94204,9 +94276,10 @@
       "status": "enriched",
       "target_brand": "chase",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 3,
       "vt_vendors": [
         "ChainPatrol",
+        "alphaMountain.ai",
         "Forcepoint ThreatSeeker"
       ],
       "gsb_flagged": false,
@@ -94611,9 +94684,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 4,
       "vt_vendors": [
-        "Netcraft"
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft",
+        "desenmascara.me"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-06 21:12:16"
@@ -96154,10 +96230,11 @@
       "status": "enriched",
       "target_brand": "SushiSwap",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 3,
       "vt_vendors": [
         "CRDF",
-        "SOCRadar"
+        "SOCRadar",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-08-31 08:59:13"
@@ -96173,8 +96250,12 @@
       "status": "enriched",
       "target_brand": "SushiSwap",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-08-31 08:59:13"
     },
@@ -96331,9 +96412,15 @@
       "status": "enriched",
       "target_brand": "sui",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 8,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
         "Netcraft"
       ],
       "gsb_flagged": false,
@@ -96739,8 +96826,9 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 4,
       "vt_vendors": [
+        "alphaMountain.ai",
         "CRDF",
         "Forcepoint ThreatSeeker",
         "Gridinsoft"
@@ -96835,11 +96923,13 @@
       "status": "enriched",
       "target_brand": "Cardano",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 6,
       "vt_vendors": [
+        "alphaMountain.ai",
         "CRDF",
         "Ermes",
         "Forcepoint ThreatSeeker",
+        "Fortinet",
         "Gridinsoft"
       ],
       "gsb_flagged": false,
@@ -102984,8 +103074,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "LevelBlue",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-02 15:18:25"
     },
@@ -104591,9 +104687,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "LevelBlue"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-06 21:14:11"
@@ -104663,9 +104763,11 @@
       "status": "enriched",
       "target_brand": "Google",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 4,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Gridinsoft"
       ],
       "gsb_flagged": false,
@@ -104875,8 +104977,14 @@
       "status": "enriched",
       "target_brand": "Binance",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-02 01:02:06"
     },
@@ -105924,8 +106032,15 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-06 03:38:27"
     },
@@ -107744,8 +107859,9 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 3,
       "vt_vendors": [
+        "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "SOCRadar"
       ],
@@ -109343,8 +109459,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-16 09:22:30"
     },
@@ -109427,12 +109547,17 @@
       "status": "checking",
       "target_brand": "Cloudflare",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 9,
       "vt_vendors": [
         "alphaMountain.ai",
+        "AlphaSOC",
         "CRDF",
+        "CyRadar",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
-        "Gridinsoft"
+        "Gridinsoft",
+        "Seclookup",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 19:17:05"
@@ -109555,8 +109680,11 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 5,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
         "Gridinsoft"
       ],
@@ -111495,7 +111623,7 @@
       "tld": "app",
       "ip_address": "199.36.158.100",
       "nameservers": "ns1.googledomains.com ns2.googledomains.com ns3.googledomains.com ns4.googledomains.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
       "vt_detections": 15,
@@ -113691,11 +113819,10 @@
       "status": "enriched",
       "target_brand": "wells fargo",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 3,
       "vt_vendors": [
         "Gridinsoft",
         "Kaspersky",
-        "SafeToOpen",
         "VIPRE"
       ],
       "gsb_flagged": false,
@@ -114710,13 +114837,20 @@
       "status": "enriched",
       "target_brand": "gmail",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 12,
       "vt_vendors": [
         "alphaMountain.ai",
         "CRDF",
+        "DNS8",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
+        "Google Safe Browsing",
         "Gridinsoft",
-        "SOCRadar"
+        "Lionic",
+        "MalwareURL",
+        "SOCRadar",
+        "URLQuery",
+        "VIPRE"
       ],
       "gsb_flagged": true,
       "creation_date": ""
@@ -115033,10 +115167,10 @@
       "drainer_type": "",
       "vt_detections": 5,
       "vt_vendors": [
+        "Forcepoint ThreatSeeker",
         "Gridinsoft",
-        "SOCRadar",
         "Seclookup",
-        "VIPRE",
+        "SOCRadar",
         "Webroot"
       ],
       "gsb_flagged": false,
@@ -115182,12 +115316,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
-        "Chong Lua Dao",
+        "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "Seclookup",
+        "SOCRadar",
         "VIPRE"
       ],
       "gsb_flagged": false,
@@ -116872,12 +117007,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 5,
       "vt_vendors": [
         "alphaMountain.ai",
         "Chong Lua Dao",
         "Gridinsoft",
-        "Kaspersky"
+        "Kaspersky",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2025-02-28 21:40:04"
@@ -117382,11 +117518,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 5,
       "vt_vendors": [
         "alphaMountain.ai",
         "Chong Lua Dao",
         "Gridinsoft",
+        "SOCRadar",
         "Webroot"
       ],
       "gsb_flagged": false,
@@ -117722,10 +117859,9 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 3,
       "vt_vendors": [
         "alphaMountain.ai",
-        "Chong Lua Dao",
         "Gridinsoft",
         "VIPRE"
       ],
@@ -118006,13 +118142,24 @@
       "status": "checking",
       "target_brand": "Microsoft",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 16,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
         "DNS8",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
         "Gridinsoft",
+        "Kaspersky",
+        "Lionic",
+        "Seclookup",
         "SOCRadar",
-        "VIPRE"
+        "Sophos",
+        "VIPRE",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-08-20 15:26:14"
@@ -120620,9 +120767,14 @@
       "status": "checking",
       "target_brand": "TRON",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Gridinsoft"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-01-16 10:40:14"
@@ -120638,9 +120790,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "Gridinsoft"
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-09-30 02:32:55"
@@ -120698,7 +120854,7 @@
       "tld": "cc",
       "ip_address": "18.244.18.41",
       "nameservers": "ns-1484.awsdns-57.org ns-149.awsdns-18.com ns-1674.awsdns-17.co.uk ns-596.awsdns-10.net olivia.ns.cloudflare.com peyton.ns.cloudflare.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
       "vt_detections": 4,
@@ -120744,8 +120900,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 11:28:05"
     },
@@ -120831,8 +120993,21 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 12,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Kaspersky",
+        "Lionic",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-01-29 15:39:44"
     },
@@ -121656,8 +121831,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-09-28 11:44:30"
     },
@@ -122418,7 +122597,7 @@
         "VIPRE",
         "Webroot"
       ],
-      "gsb_flagged": true,
+      "gsb_flagged": false,
       "creation_date": "2025-12-21 11:01:10"
     },
     {
@@ -128435,8 +128614,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 2,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-02 15:45:31"
     },
@@ -128525,12 +128707,17 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 9,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
         "Ermes",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
-        "LevelBlue"
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 15:49:07"
@@ -128576,9 +128763,9 @@
       "vt_vendors": [
         "alphaMountain.ai",
         "CRDF",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
-        "Gridinsoft",
-        "LevelBlue"
+        "Gridinsoft"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 14:21:10"
@@ -128696,9 +128883,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 19:50:20"
@@ -128750,9 +128942,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 01:41:36"
@@ -128834,9 +129031,13 @@
       "status": "enriched",
       "target_brand": "Pendle",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "CRDF"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Lionic"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-02 08:22:17"
@@ -128852,9 +129053,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 5,
       "vt_vendors": [
         "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
         "LevelBlue",
         "SOCRadar"
       ],
@@ -128872,8 +129075,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2020-09-02 02:33:29"
     },
@@ -128964,9 +129172,14 @@
       "status": "enriched",
       "target_brand": "Discord",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "alphaMountain.ai"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 07:49:42"
@@ -128982,10 +129195,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 6,
       "vt_vendors": [
         "alphaMountain.ai",
-        "Fortinet"
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 10:08:31"
@@ -129001,9 +129218,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 7,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Seclookup",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 17:36:25"
@@ -129091,9 +129314,14 @@
       "status": "enriched",
       "target_brand": "Pump.fun",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 16:22:43"
@@ -129109,10 +129337,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 6,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
-        "LevelBlue"
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 02:30:08"
@@ -129165,9 +129397,13 @@
       "status": "enriched",
       "target_brand": "robux",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 07:48:51"
@@ -129424,8 +129660,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-04 01:05:01"
     },
@@ -129476,8 +129719,13 @@
       "status": "enriched",
       "target_brand": "TRON",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-01 06:11:20"
     },
@@ -129492,9 +129740,21 @@
       "status": "enriched",
       "target_brand": "Trust Wallet",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 13,
       "vt_vendors": [
-        "URLQuery"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Seclookup",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-02 14:14:06"
@@ -129510,8 +129770,17 @@
       "status": "enriched",
       "target_brand": "Trust Wallet",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Netcraft",
+        "SOCRadar",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2019-08-01 07:39:10"
     },
@@ -129668,9 +129937,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 7,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Kaspersky",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 03:45:13"
@@ -129686,10 +129961,20 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 12,
       "vt_vendors": [
         "alphaMountain.ai",
-        "CRDF"
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "Netcraft",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 07:26:18"
@@ -129705,9 +129990,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 7,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 17:08:47"
@@ -129739,9 +130030,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 17:26:31"
@@ -129757,8 +130053,20 @@
       "status": "enriched",
       "target_brand": "TRON",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 11,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Ermes",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Netcraft",
+        "Seclookup",
+        "VIPRE",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 13:24:57"
     },
@@ -129800,8 +130108,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 19:46:39"
     },
@@ -129816,9 +130131,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 15:21:52"
@@ -129834,10 +130154,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 5,
       "vt_vendors": [
         "alphaMountain.ai",
         "CRDF",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
         "Gridinsoft"
       ],
@@ -129873,8 +130194,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 19:22:24"
     },
@@ -129933,9 +130259,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 21:48:40"
@@ -129951,9 +130282,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 21:06:35"
@@ -129969,10 +130305,16 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 8,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
         "Forcepoint ThreatSeeker",
-        "Fortinet"
+        "Fortinet",
+        "Gridinsoft",
+        "Kaspersky",
+        "VIPRE",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-08 12:32:38"
@@ -130061,10 +130403,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 6,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
-        "SOCRadar"
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-12 04:05:43"
@@ -130219,9 +130565,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Netcraft"
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Netcraft",
+        "SOCRadar",
+        "desenmascara.me"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 18:49:40"
@@ -130237,8 +130588,19 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 10,
+      "vt_vendors": [
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "Netcraft",
+        "SOCRadar",
+        "desenmascara.me"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-02-04 14:51:05"
     },
@@ -130253,9 +130615,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 6,
       "vt_vendors": [
-        "Netcraft"
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Netcraft",
+        "SOCRadar",
+        "desenmascara.me"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-03 10:34:24"
@@ -130271,8 +130638,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "SOCRadar",
+        "VIPRE",
+        "desenmascara.me"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 23:52:22"
     },
@@ -130287,10 +130661,17 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 9,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Google Safe Browsing",
         "Gridinsoft",
-        "Netcraft"
+        "Netcraft",
+        "SOCRadar",
+        "VIPRE",
+        "desenmascara.me"
       ],
       "gsb_flagged": true,
       "creation_date": "2026-11-10 23:04:40"
@@ -130338,9 +130719,15 @@
       "status": "enriched",
       "target_brand": "TokenPocket",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 7,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Netcraft",
+        "SOCRadar",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-09 20:19:26"
@@ -130450,8 +130837,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-07-21 07:54:51"
     },
@@ -130466,8 +130859,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "VIPRE",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-27 03:53:33"
     },
@@ -130502,13 +130902,19 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 11,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
         "Forcepoint ThreatSeeker",
         "Fortinet",
+        "G-Data",
         "Gridinsoft",
-        "SOCRadar"
+        "Lionic",
+        "SOCRadar",
+        "VIPRE",
+        "desenmascara.me"
       ],
       "gsb_flagged": false,
       "creation_date": "2025-09-17 23:00:25"
@@ -130524,9 +130930,16 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 8,
       "vt_vendors": [
-        "DNS8"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2025-07-10 16:10:47"
@@ -130542,11 +130955,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 7,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "ESET",
         "Forcepoint ThreatSeeker",
-        "Gridinsoft"
+        "Gridinsoft",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-03-17 10:06:37"
@@ -131587,8 +132004,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar",
+        "VIPRE"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-02-01 22:31:53"
     },
@@ -131633,10 +132056,14 @@
       "status": "enriched",
       "target_brand": "wordpress",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 8,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "DNS8",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
+        "Kaspersky",
         "SOCRadar",
         "VIPRE"
       ],
@@ -131880,9 +132307,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 5,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "SOCRadar"
       ],
@@ -132911,8 +133340,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "VIPRE",
         "Webroot"
       ],
       "gsb_flagged": false,
@@ -132945,8 +133378,17 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-10 11:20:38"
     },
@@ -134243,12 +134685,19 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 12,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
         "DNS8",
-        "LevelBlue",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Lionic",
+        "Seclookup",
         "SOCRadar",
+        "Sophos",
         "VIPRE"
       ],
       "gsb_flagged": false,
@@ -134993,8 +135442,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-12 23:58:38"
     },
@@ -135081,9 +135536,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-05 09:29:17"
@@ -135099,9 +135558,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 4,
       "vt_vendors": [
-        "Bfore.Ai PreCrime"
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "CRDF",
+        "Forcepoint ThreatSeeker"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-09-16 05:05:33"
@@ -135149,8 +135611,14 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 18:38:22"
     },
@@ -135203,8 +135671,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2024-01-19 15:11:54"
     },
@@ -135219,10 +135692,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 5,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
         "Forcepoint ThreatSeeker",
-        "Gridinsoft"
+        "Gridinsoft",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-09-02 10:49:41"
@@ -135254,8 +135730,12 @@
       "status": "enriched",
       "target_brand": "Touchngo",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-01 13:09:53"
     },
@@ -135270,8 +135750,15 @@
       "status": "enriched",
       "target_brand": "Stake",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-03-03 11:18:03"
     },
@@ -135286,8 +135773,11 @@
       "status": "enriched",
       "target_brand": "Touchngo",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 4,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "SOCRadar"
       ],
       "gsb_flagged": false,
@@ -135304,8 +135794,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2013-03-08 19:41:10"
     },
@@ -136515,10 +137008,19 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 2,
+      "vt_detections": 11,
       "vt_vendors": [
         "alphaMountain.ai",
-        "Forcepoint ThreatSeeker"
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "Lionic",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-01-15 05:43:22"
@@ -137147,8 +137649,17 @@
       "status": "enriched",
       "target_brand": "Polymarket",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 8,
+      "vt_vendors": [
+        "ChainPatrol",
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Seclookup",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-07-14 16:05:19"
     },
@@ -137163,13 +137674,20 @@
       "status": "enriched",
       "target_brand": "Atomic Wallet",
       "drainer_type": "",
-      "vt_detections": 5,
+      "vt_detections": 12,
       "vt_vendors": [
         "alphaMountain.ai",
+        "BitDefender",
         "CRDF",
+        "DNS8",
         "Forcepoint ThreatSeeker",
         "Fortinet",
-        "Gridinsoft"
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-27 20:44:53"
@@ -137185,12 +137703,17 @@
       "status": "enriched",
       "target_brand": "Google",
       "drainer_type": "",
-      "vt_detections": 4,
+      "vt_detections": 9,
       "vt_vendors": [
         "alphaMountain.ai",
+        "AlphaSOC",
         "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
         "Gridinsoft",
-        "SOCRadar"
+        "Seclookup",
+        "SOCRadar",
+        "URLQuery"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 19:22:14"
@@ -137235,8 +137758,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 14:51:51"
     },
@@ -137251,9 +137780,18 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 10,
       "vt_vendors": [
-        "LevelBlue"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic"
       ],
       "gsb_flagged": false,
       "creation_date": "2025-11-29 17:07:46"
@@ -137269,8 +137807,19 @@
       "status": "enriched",
       "target_brand": "ethereum",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 10,
+      "vt_vendors": [
+        "BitDefender",
+        "CRDF",
+        "Ermes",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Seclookup",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-21 19:12:12"
     },
@@ -137285,9 +137834,13 @@
       "status": "enriched",
       "target_brand": "Trump Token",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 03:59:50"
@@ -137653,9 +138206,18 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 10,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "Netcraft",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 07:53:50"
@@ -137671,10 +138233,17 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 10,
       "vt_vendors": [
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
         "Kaspersky",
         "LevelBlue",
+        "Lionic",
         "SOCRadar"
       ],
       "gsb_flagged": false,
@@ -137691,8 +138260,12 @@
       "status": "enriched",
       "target_brand": "solana",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2020-09-02 02:33:29"
     },
@@ -137727,8 +138300,19 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-03 12:24:28"
     },
@@ -137762,9 +138346,19 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 11,
       "vt_vendors": [
-        "LevelBlue"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 17:28:02"
@@ -137801,8 +138395,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 01:13:56"
     },
@@ -137817,8 +138418,16 @@
       "status": "enriched",
       "target_brand": "Bybit",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Lionic",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 17:31:59"
     },
@@ -137833,8 +138442,16 @@
       "status": "enriched",
       "target_brand": "HTX",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Lionic",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 17:38:17"
     },
@@ -137849,8 +138466,16 @@
       "status": "enriched",
       "target_brand": "Binance",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Kaspersky",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 17:37:48"
     },
@@ -137865,8 +138490,16 @@
       "status": "enriched",
       "target_brand": "HTX",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Lionic",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 00:22:06"
     },
@@ -137897,8 +138530,13 @@
       "status": "enriched",
       "target_brand": "Polymarket",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "ChainPatrol",
+        "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2020-09-02 02:33:29"
     },
@@ -137929,8 +138567,18 @@
       "status": "enriched",
       "target_brand": "Polymarket",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 9,
+      "vt_vendors": [
+        "ChainPatrol",
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "PhishFort",
+        "Seclookup",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-07-13 01:04:54"
     },
@@ -137976,9 +138624,11 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 5,
       "vt_vendors": [
         "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
         "Gridinsoft",
         "SOCRadar"
       ],
@@ -138195,8 +138845,28 @@
       "status": "enriched",
       "target_brand": "spotify",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 19,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Ermes",
+        "ESET",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic",
+        "MalwareURL",
+        "Netcraft",
+        "SOCRadar",
+        "Sophos",
+        "URLQuery",
+        "VIPRE",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2020-01-28 03:03:04"
     },
@@ -138585,9 +139255,19 @@
       "status": "enriched",
       "target_brand": "bybit",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 11,
       "vt_vendors": [
-        "LevelBlue"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "SOCRadar"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-10 14:34:25"
@@ -138651,8 +139331,12 @@
       "status": "enriched",
       "target_brand": "ups",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-09-14 16:01:15"
     },
@@ -138683,11 +139367,16 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 8,
       "vt_vendors": [
+        "CRDF",
         "Forcepoint ThreatSeeker",
         "Fortinet",
-        "SOCRadar"
+        "Gridinsoft",
+        "Kaspersky",
+        "PhishFort",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-10-27 15:37:51"
@@ -138703,8 +139392,12 @@
       "status": "enriched",
       "target_brand": "ledger",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "Forcepoint ThreatSeeker",
+        "LevelBlue",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2020-09-02 02:33:29"
     },
@@ -138719,8 +139412,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Netcraft"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 11:23:59"
     },
@@ -138751,8 +139451,12 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-01-24 05:57:21"
     },
@@ -138851,8 +139555,15 @@
       "status": "enriched",
       "target_brand": "Polymarket",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "ChainPatrol",
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-03-20 09:10:13"
     },
@@ -138883,8 +139594,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-12 06:49:29"
     },
@@ -138915,8 +139632,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Netcraft"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-12 05:59:26"
     },
@@ -138931,8 +139655,14 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-10-13 15:59:54"
     },
@@ -138947,11 +139677,21 @@
       "status": "enriched",
       "target_brand": "OKX",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 13,
       "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
         "Emsisoft",
+        "Forcepoint ThreatSeeker",
         "Fortinet",
-        "Netcraft"
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "Lionic",
+        "Netcraft",
+        "Webroot"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-11 17:32:01"
@@ -139030,8 +139770,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-08-07 00:32:23"
     },
@@ -139064,11 +139809,15 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 3,
+      "vt_detections": 7,
       "vt_vendors": [
         "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
         "G-Data",
-        "Gridinsoft"
+        "Gridinsoft",
+        "Lionic"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-11-06 20:22:34"
@@ -139201,9 +139950,18 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 10,
       "vt_vendors": [
-        "Fortinet"
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "VIPRE",
+        "desenmascara.me"
       ],
       "gsb_flagged": false,
       "creation_date": "2024-03-05 11:37:08"
@@ -139219,8 +139977,16 @@
       "status": "checking",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "VIPRE",
+        "Yandex Safebrowsing"
+      ],
       "gsb_flagged": false,
       "creation_date": "2026-11-12 08:27:20"
     },
@@ -139253,9 +140019,13 @@
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 1,
+      "vt_detections": 5,
       "vt_vendors": [
-        "alphaMountain.ai"
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "SOCRadar",
+        "VIPRE"
       ],
       "gsb_flagged": false,
       "creation_date": "2026-05-22 17:29:05"
@@ -139909,7 +140679,7 @@
       "tld": "com",
       "ip_address": "188.114.96.1",
       "nameservers": "cecelia.ns.cloudflare.com sam.ns.cloudflare.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
       "vt_detections": 1,
@@ -140248,11 +141018,18 @@
       "tld": "dev",
       "ip_address": "43.174.246.29",
       "nameservers": "NS_NOT_FOUND",
-      "status": "pending",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
-      "vt_detections": 0,
-      "vt_vendors": [],
+      "vt_detections": 6,
+      "vt_vendors": [
+        "Gridinsoft",
+        "LevelBlue",
+        "Seclookup",
+        "SOCRadar",
+        "VIPRE",
+        "Webroot"
+      ],
       "gsb_flagged": false,
       "creation_date": "2025-06-09 00:00:00"
     },
@@ -142237,7 +143014,7 @@
       "tld": "net",
       "ip_address": "153.52.111.64",
       "nameservers": "alberto.ns.cloudflare.com selah.ns.cloudflare.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
       "vt_detections": 3,
@@ -143720,7 +144497,7 @@
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "185.62.58.179",
-      "nameservers": "",
+      "nameservers": "[\"logan.ns.cloudflare.com\", \"rose.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
@@ -144958,7 +145735,7 @@
       "drainer_type": "",
       "vt_detections": 0,
       "vt_vendors": [],
-      "gsb_flagged": true,
+      "gsb_flagged": false,
       "creation_date": "2026-11-01 15:50:10"
     },
     {
@@ -148220,7 +148997,7 @@
     {
       "domain": "salemarketonline.shop",
       "detected_at": "2026-11-04 19:49:30",
-      "registrar": "",
+      "registrar": "Spaceship, Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "3.21.94.155",
@@ -148247,7 +149024,7 @@
         "VIPRE"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-09-30 02:46:35"
     },
     {
       "domain": "scaleenglo.store",
@@ -149120,7 +149897,7 @@
       "tld": "shop",
       "ip_address": "104.16.145.247",
       "nameservers": "[\"ainsley.ns.cloudflare.com\", \"devin.ns.cloudflare.com\"]",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
       "vt_detections": 20,
@@ -149796,7 +150573,7 @@
     {
       "domain": "riskstyle.shop",
       "detected_at": "2026-11-04 19:46:32",
-      "registrar": "",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "46.245.239.71",
@@ -149826,7 +150603,7 @@
         "Webroot"
       ],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-06-05 10:23:38"
     },
     {
       "domain": "reporterwearry.shop",
@@ -150084,11 +150861,11 @@
     {
       "domain": "redmontengine.shop",
       "detected_at": "2026-11-04 19:46:01",
-      "registrar": "",
+      "registrar": "NETIM",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "185.62.56.121",
-      "nameservers": "",
+      "nameservers": "[\"elly.ns.cloudflare.com\", \"gordon.ns.cloudflare.com\"]",
       "status": "enriched",
       "target_brand": "",
       "drainer_type": "",
@@ -150473,7 +151250,7 @@
       "ip_address": "188.114.97.3",
       "nameservers": "NS_NOT_FOUND",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Uphold",
       "drainer_type": "",
       "vt_detections": 2,
       "vt_vendors": [
@@ -150546,7 +151323,7 @@
       "drainer_type": "",
       "vt_detections": 0,
       "vt_vendors": [],
-      "gsb_flagged": false,
+      "gsb_flagged": true,
       "creation_date": "2026-11-14 00:41:08"
     },
     {
@@ -151657,14 +152434,14 @@
       "vt_vendors": [
         "Fortinet"
       ],
-      "gsb_flagged": false,
+      "gsb_flagged": true,
       "creation_date": "2026-11-12 10:58:32"
     },
     {
       "domain": "devcam-pump.fun",
       "detected_at": "2026-11-14 23:06:59",
       "registrar": "NameSilo, LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "fun",
       "ip_address": "172.67.204.35",
       "nameservers": "penny.ns.cloudflare.com scott.ns.cloudflare.com",
@@ -152028,7 +152805,7 @@
       "ip_address": "104.21.28.107",
       "nameservers": "piotr.ns.cloudflare.com treasure.ns.cloudflare.com",
       "status": "enriched",
-      "target_brand": "",
+      "target_brand": "Zara",
       "drainer_type": "",
       "vt_detections": 1,
       "vt_vendors": [
@@ -152175,8 +152952,8 @@
     {
       "domain": "bnvouch.store",
       "detected_at": "2026-11-14 23:14:16",
-      "registrar": "REGISTRAR_NOT_FOUND",
-      "registrar_country": "",
+      "registrar": "Spaceship, Inc.",
+      "registrar_country": "US",
       "tld": "store",
       "ip_address": "172.67.178.139",
       "nameservers": "rayden.ns.cloudflare.com violet.ns.cloudflare.com",
@@ -152402,7 +153179,7 @@
       "domain": "eagleorbit.vip",
       "detected_at": "2026-11-14 23:19:48",
       "registrar": "Dynadot Inc",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "vip",
       "ip_address": "188.114.97.3",
       "nameservers": "buck.ns.cloudflare.com sandra.ns.cloudflare.com",
@@ -152642,7 +153419,7 @@
     {
       "domain": "catharsisclothing.shop",
       "detected_at": "2026-11-15 00:30:45",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "23.252.79.114",
@@ -152681,7 +153458,7 @@
     {
       "domain": "darkmatter-url.shop",
       "detected_at": "2026-11-15 00:30:53",
-      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar": "Dynadot Inc.",
       "registrar_country": "",
       "tld": "shop",
       "ip_address": "188.114.97.3",
@@ -152692,15 +153469,15 @@
       "vt_detections": 0,
       "vt_vendors": [],
       "gsb_flagged": false,
-      "creation_date": ""
+      "creation_date": "2026-07-23 05:44:17"
     },
     {
       "domain": "darkmattermarketplace.com",
       "detected_at": "2026-11-15 00:31:22",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "BS",
       "tld": "com",
-      "ip_address": "172.67.172.102",
+      "ip_address": "104.21.71.245",
       "nameservers": "nadia.ns.cloudflare.com vern.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152714,9 +153491,9 @@
       "domain": "darkmatterofficial.vip",
       "detected_at": "2026-11-15 00:31:27",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "CN",
       "tld": "vip",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "courtney.ns.cloudflare.com dax.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152740,7 +153517,7 @@
       "domain": "darkweb-darknet-markets.com",
       "detected_at": "2026-11-15 00:32:52",
       "registrar": "NameCheap, Inc.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
       "ip_address": "104.21.36.204",
       "nameservers": "armando.ns.cloudflare.com gabriella.ns.cloudflare.com",
@@ -152774,9 +153551,9 @@
       "domain": "dmblackops.com",
       "detected_at": "2026-11-15 00:33:00",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "demi.ns.cloudflare.com lars.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152822,9 +153599,9 @@
       "domain": "drughub-original.com",
       "detected_at": "2026-11-15 00:33:31",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "RU",
       "tld": "com",
-      "ip_address": "104.21.56.10",
+      "ip_address": "172.67.175.171",
       "nameservers": "decker.ns.cloudflare.com roxy.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152854,9 +153631,9 @@
       "domain": "drughubdarknetmarket.com",
       "detected_at": "2026-11-15 00:33:56",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "RS",
       "tld": "com",
-      "ip_address": "104.21.93.90",
+      "ip_address": "172.67.208.123",
       "nameservers": "decker.ns.cloudflare.com tani.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152872,7 +153649,7 @@
       "registrar": "Spaceship, Inc.",
       "registrar_country": "",
       "tld": "cc",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "celine.ns.cloudflare.com noel.ns.cloudflare.com",
       "status": "checking",
       "target_brand": "",
@@ -152905,9 +153682,9 @@
       "domain": "drughubmarketdarknet.com",
       "detected_at": "2026-11-15 00:35:28",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "DE",
       "tld": "com",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "elly.ns.cloudflare.com neil.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152923,7 +153700,7 @@
       "registrar": "Spaceship, Inc.",
       "registrar_country": "",
       "tld": "com",
-      "ip_address": "188.114.97.3",
+      "ip_address": "188.114.96.3",
       "nameservers": "aria.ns.cloudflare.com ezra.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152953,9 +153730,9 @@
       "domain": "market-nexus.co",
       "detected_at": "2026-11-15 00:36:04",
       "registrar": "TLD Registrar Solutions Ltd.",
-      "registrar_country": "",
+      "registrar_country": "ES",
       "tld": "co",
-      "ip_address": "104.21.83.126",
+      "ip_address": "172.67.175.220",
       "nameservers": "kirk.ns.cloudflare.com tess.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152969,9 +153746,9 @@
       "domain": "marsmarket.cc",
       "detected_at": "2026-11-15 00:36:13",
       "registrar": "Internet Domain Service BS Corp.",
-      "registrar_country": "",
+      "registrar_country": "TR",
       "tld": "cc",
-      "ip_address": "104.21.49.5",
+      "ip_address": "172.67.139.251",
       "nameservers": "art.ns.cloudflare.com melinda.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -152987,7 +153764,7 @@
       "registrar": "NameCheap, Inc.",
       "registrar_country": "",
       "tld": "live",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "marge.ns.cloudflare.com west.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153001,7 +153778,7 @@
       "domain": "mars-market.net",
       "detected_at": "2026-11-15 00:36:20",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "TR",
       "tld": "net",
       "ip_address": "104.21.61.186",
       "nameservers": "art.ns.cloudflare.com melinda.ns.cloudflare.com",
@@ -153019,7 +153796,7 @@
       "registrar": "Eranet International Limited",
       "registrar_country": "",
       "tld": "com",
-      "ip_address": "188.114.97.3",
+      "ip_address": "188.114.96.3",
       "nameservers": "bowen.ns.cloudflare.com magdalena.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153033,9 +153810,9 @@
       "domain": "marsmarketofficial.org",
       "detected_at": "2026-11-15 00:36:38",
       "registrar": "NameCheap, Inc.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "org",
-      "ip_address": "172.67.156.197",
+      "ip_address": "104.21.8.37",
       "nameservers": "marge.ns.cloudflare.com west.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153065,9 +153842,9 @@
       "domain": "marsmarketonion.com",
       "detected_at": "2026-11-15 00:37:05",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "TR",
       "tld": "com",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "art.ns.cloudflare.com melinda.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153119,7 +153896,7 @@
       "domain": "nexuslink.tech",
       "detected_at": "2026-11-15 00:38:45",
       "registrar": "Squarespace Domains LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "tech",
       "ip_address": "206.189.75.121",
       "nameservers": "nsd1.squarespacedns.com nsd2.squarespacedns.com nsd3.squarespacedns.com nsd4.squarespacedns.com",
@@ -153141,9 +153918,9 @@
       "domain": "omega-darknet.icu",
       "detected_at": "2026-11-15 00:38:48",
       "registrar": "TLD Registrar Solutions Ltd.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "icu",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "brit.ns.cloudflare.com logan.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153157,9 +153934,9 @@
       "domain": "omega-market.xyz",
       "detected_at": "2026-11-15 00:40:13",
       "registrar": "NameSilo, LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "xyz",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "cesar.ns.cloudflare.com jasmine.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153173,7 +153950,7 @@
       "domain": "omega-market.cc",
       "detected_at": "2026-11-15 00:40:15",
       "registrar": "NAMECHEAP INC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "cc",
       "ip_address": "104.21.68.164",
       "nameservers": "marge.ns.cloudflare.com west.ns.cloudflare.com",
@@ -153191,9 +153968,9 @@
       "domain": "omegadarknet.com",
       "detected_at": "2026-11-15 00:40:17",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
-      "ip_address": "172.67.202.240",
+      "ip_address": "104.21.22.49",
       "nameservers": "fred.ns.cloudflare.com lilith.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153207,7 +153984,7 @@
       "domain": "omegaonion.com",
       "detected_at": "2026-11-15 00:40:26",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
       "ip_address": "104.21.7.10",
       "nameservers": "fred.ns.cloudflare.com lilith.ns.cloudflare.com",
@@ -153225,7 +154002,7 @@
       "domain": "onion-wiki.online",
       "detected_at": "2026-11-15 00:40:39",
       "registrar": "TLD Registrar Solutions Ltd",
-      "registrar_country": "",
+      "registrar_country": "GB",
       "tld": "online",
       "ip_address": "172.67.190.62",
       "nameservers": "fred.ns.cloudflare.com lilith.ns.cloudflare.com",
@@ -153243,7 +154020,7 @@
       "domain": "onionguide.best",
       "detected_at": "2026-11-15 00:40:48",
       "registrar": "NameCheap, Inc.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "best",
       "ip_address": "104.21.4.91",
       "nameservers": "autumn.ns.cloudflare.com jose.ns.cloudflare.com",
@@ -153258,8 +154035,8 @@
     {
       "domain": "prime-market-link.top",
       "detected_at": "2026-11-15 00:40:58",
-      "registrar": "NameSilo, LLC",
-      "registrar_country": "",
+      "registrar": "NameSilo,LLC",
+      "registrar_country": "US",
       "tld": "top",
       "ip_address": "45.147.197.100",
       "nameservers": "ns1.zomro.net ns2.zomro.ru ns3.zomro.com ns4.zomro.su",
@@ -153278,7 +154055,7 @@
       "domain": "prime-main.sbs",
       "detected_at": "2026-11-15 00:41:00",
       "registrar": "Dynadot Inc",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "sbs",
       "ip_address": "45.147.197.100",
       "nameservers": "ns1.zomro.net ns2.zomro.ru ns3.zomro.com ns4.zomro.su",
@@ -153297,7 +154074,7 @@
       "domain": "prime-market-link.cfd",
       "detected_at": "2026-11-15 00:41:18",
       "registrar": "Dynadot Inc",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "cfd",
       "ip_address": "45.147.197.100",
       "nameservers": "ns1.zomro.net ns2.zomro.ru ns3.zomro.com ns4.zomro.su",
@@ -153313,7 +154090,7 @@
       "domain": "prime-market-connect.sbs",
       "detected_at": "2026-11-15 00:41:22",
       "registrar": "Dynadot Inc",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "sbs",
       "ip_address": "45.147.197.100",
       "nameservers": "ns1.zomro.net ns2.zomro.ru ns3.zomro.com ns4.zomro.su",
@@ -153365,9 +154142,9 @@
       "domain": "primedarknet.com",
       "detected_at": "2026-11-15 00:41:54",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "RS",
       "tld": "com",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "decker.ns.cloudflare.com tani.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153381,9 +154158,9 @@
       "domain": "primemarket-link.com",
       "detected_at": "2026-11-15 00:42:07",
       "registrar": "NameCheap, Inc.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
-      "ip_address": "172.67.145.204",
+      "ip_address": "104.21.39.131",
       "nameservers": "dave.ns.cloudflare.com iris.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153465,9 +154242,9 @@
       "domain": "topdarkmarkets.space",
       "detected_at": "2026-11-15 00:44:13",
       "registrar": "NameCheap, Inc.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "space",
-      "ip_address": "172.67.145.154",
+      "ip_address": "104.21.87.185",
       "nameservers": "anirban.ns.cloudflare.com zoe.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153481,9 +154258,9 @@
       "domain": "tor8web.com",
       "detected_at": "2026-11-15 00:44:19",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "RS",
       "tld": "com",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "fattouche.ns.cloudflare.com sofia.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153499,7 +154276,7 @@
       "registrar": "NameCheap, Inc.",
       "registrar_country": "",
       "tld": "info",
-      "ip_address": "188.114.97.3",
+      "ip_address": "188.114.96.3",
       "nameservers": "aldo.ns.cloudflare.com paige.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153563,7 +154340,7 @@
       "domain": "metagprime.com",
       "detected_at": "2026-11-15 01:19:49",
       "registrar": "Tucows Domains Inc.",
-      "registrar_country": "",
+      "registrar_country": "CA",
       "tld": "com",
       "ip_address": "74.50.74.206",
       "nameservers": "vda5800a.trouble-free.net vda5800b.trouble-free.net",
@@ -153617,9 +154394,9 @@
       "domain": "archetyp-market-link.sbs",
       "detected_at": "2026-11-15 01:31:44",
       "registrar": "Dynadot Inc",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "sbs",
-      "ip_address": "188.114.97.3",
+      "ip_address": "188.114.96.3",
       "nameservers": "adel.ns.cloudflare.com javon.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153633,7 +154410,7 @@
       "domain": "app.darkmattermarkets.com",
       "detected_at": "2026-11-15 01:31:53",
       "registrar": "Squarespace Domains LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "com",
       "ip_address": "65.9.130.119",
       "nameservers": "ns-1361.awsdns-42.org ns-1520.awsdns-62.org ns-1670.awsdns-16.co.uk ns-1901.awsdns-45.co.uk ns-308.awsdns-38.com ns-626.awsdns-14.net ns-75.awsdns-09.com ns-821.awsdns-38.net",
@@ -153649,7 +154426,7 @@
       "domain": "app.primemarketpro.net",
       "detected_at": "2026-11-15 01:31:57",
       "registrar": "NAMECHEAP INC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "net",
       "ip_address": "188.114.96.3",
       "nameservers": "demi.ns.cloudflare.com javier.ns.cloudflare.com",
@@ -153697,9 +154474,9 @@
       "domain": "blackopsmarketdarknet.com",
       "detected_at": "2026-11-15 01:34:14",
       "registrar": "Internet Domain Service BS Corp",
-      "registrar_country": "",
+      "registrar_country": "DE",
       "tld": "com",
-      "ip_address": "188.114.97.3",
+      "ip_address": "188.114.96.3",
       "nameservers": "elly.ns.cloudflare.com neil.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153713,9 +154490,9 @@
       "domain": "archetyp-official-link.sbs",
       "detected_at": "2026-11-15 01:34:15",
       "registrar": "Dynadot Inc",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "sbs",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "adel.ns.cloudflare.com javon.ns.cloudflare.com",
       "status": "checking",
       "target_brand": "",
@@ -153731,7 +154508,7 @@
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
       "registrar_country": "",
       "tld": "digital",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "adel.ns.cloudflare.com javon.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153766,7 +154543,7 @@
       "domain": "blackops-tor-access.online",
       "detected_at": "2026-11-15 01:34:23",
       "registrar": "TLD Registrar Solutions Ltd",
-      "registrar_country": "",
+      "registrar_country": "GB",
       "tld": "online",
       "ip_address": "104.21.32.58",
       "nameservers": "fred.ns.cloudflare.com lilith.ns.cloudflare.com",
@@ -153782,9 +154559,9 @@
       "domain": "blackops-link.cfd",
       "detected_at": "2026-11-15 01:34:24",
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
-      "registrar_country": "",
+      "registrar_country": "SC",
       "tld": "cfd",
-      "ip_address": "172.67.154.8",
+      "ip_address": "104.21.4.58",
       "nameservers": "adel.ns.cloudflare.com javon.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153803,7 +154580,7 @@
       "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
       "registrar_country": "",
       "tld": "digital",
-      "ip_address": "188.114.96.3",
+      "ip_address": "188.114.97.3",
       "nameservers": "adel.ns.cloudflare.com javon.ns.cloudflare.com",
       "status": "enriched",
       "target_brand": "",
@@ -153820,7 +154597,7 @@
       "domain": "peakfxtrading.site",
       "detected_at": "2026-11-15 01:41:34",
       "registrar": "Global Domain Group LLC",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "site",
       "ip_address": "163.61.188.9",
       "nameservers": "dns1.lytehosting.com dns2.lytehosting.com dns3.lytehosting.com dns4.lytehosting.com ns1.cprapid.com ns2.cprapid.com",
@@ -153933,17 +154710,2065 @@
       "domain": "runescape.com.gamevote.trade",
       "detected_at": "2026-11-15 03:48:07",
       "registrar": "Cloudflare, Inc.",
-      "registrar_country": "",
+      "registrar_country": "US",
       "tld": "trade",
       "ip_address": "188.114.96.3",
       "nameservers": "dolly.ns.cloudflare.com pranab.ns.cloudflare.com",
-      "status": "checking",
+      "status": "enriched",
       "target_brand": "Jagex",
       "drainer_type": "",
       "vt_detections": 0,
       "vt_vendors": [],
       "gsb_flagged": false,
       "creation_date": "2026-11-14 01:13:39"
+    },
+    {
+      "domain": "revanced.net",
+      "detected_at": "2026-11-15 16:34:28",
+      "registrar": "Cloudflare, Inc.",
+      "registrar_country": "",
+      "tld": "net",
+      "ip_address": "185.199.110.153",
+      "nameservers": "houston.ns.cloudflare.com mckinley.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "URLQuery"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2022-04-01 02:16:30"
+    },
+    {
+      "domain": "pendle.finance-safe.site",
+      "detected_at": "2026-11-15 16:34:39",
+      "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
+      "registrar_country": "CY",
+      "tld": "site",
+      "ip_address": "188.114.96.3",
+      "nameservers": "dahlia.ns.cloudflare.com ian.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "Pendle",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-15 04:37:57"
+    },
+    {
+      "domain": "pendle.finance-claim.site",
+      "detected_at": "2026-11-15 16:34:45",
+      "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
+      "registrar_country": "CY",
+      "tld": "site",
+      "ip_address": "188.114.96.3",
+      "nameservers": "carlos.ns.cloudflare.com sima.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "Pendle",
+      "drainer_type": "",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Gridinsoft",
+        "SOCRadar"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-15 07:21:40"
+    },
+    {
+      "domain": "app-tronlink.org-v2.ink",
+      "detected_at": "2026-11-15 16:34:45",
+      "registrar": "Global Domain Group LLC",
+      "registrar_country": "US",
+      "tld": "ink",
+      "ip_address": "150.251.227.160",
+      "nameservers": "a.dnspod.com c.dnspod.com",
+      "status": "enriched",
+      "target_brand": "TronLink",
+      "drainer_type": "",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "Fortinet",
+        "G-Data",
+        "Kaspersky",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-10 14:38:49"
+    },
+    {
+      "domain": "revancedapk.net",
+      "detected_at": "2026-11-15 16:35:13",
+      "registrar": "NameCheap, Inc.",
+      "registrar_country": "US",
+      "tld": "net",
+      "ip_address": "172.67.170.238",
+      "nameservers": "stevie.ns.cloudflare.com tim.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-05 08:00:12"
+    },
+    {
+      "domain": "revancedapp.io",
+      "detected_at": "2026-11-15 16:35:29",
+      "registrar": "NameCheap, Inc.",
+      "registrar_country": "",
+      "tld": "io",
+      "ip_address": "188.114.96.3",
+      "nameservers": "aria.ns.cloudflare.com ray.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "Seclookup",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2022-12-05 18:10:40"
+    },
+    {
+      "domain": "revancedapk.org",
+      "detected_at": "2026-11-15 16:35:31",
+      "registrar": "GoDaddy.com, LLC",
+      "registrar_country": "",
+      "tld": "org",
+      "ip_address": "188.114.97.3",
+      "nameservers": "marge.ns.cloudflare.com zeus.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "Seclookup",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2023-01-14 14:32:01"
+    },
+    {
+      "domain": "revancedapk.com",
+      "detected_at": "2026-11-15 16:35:32",
+      "registrar": "Spaceship, Inc.",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "44.233.250.75",
+      "nameservers": "launch1.spaceship.net launch2.spaceship.net",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Chong Lua Dao",
+        "ESET",
+        "Fortinet",
+        "Gridinsoft",
+        "Kaspersky",
+        "Lionic",
+        "SOCRadar",
+        "Sophos"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2024-10-22 07:38:44"
+    },
+    {
+      "domain": "tronlink.st",
+      "detected_at": "2026-11-15 16:35:32",
+      "registrar": "IncogNET",
+      "registrar_country": "",
+      "tld": "st",
+      "ip_address": "150.251.227.160",
+      "nameservers": "a.dnspod.com b.dnspod.com c.dnspod.com",
+      "status": "enriched",
+      "target_brand": "TronLink",
+      "drainer_type": "",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Emsisoft",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "Gridinsoft",
+        "Kaspersky",
+        "Netcraft",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-08 00:00:00"
+    },
+    {
+      "domain": "maxsvru.club",
+      "detected_at": "2026-11-15 16:35:49",
+      "registrar": "Gname.com Pte. Ltd.",
+      "registrar_country": "DE",
+      "tld": "club",
+      "ip_address": "87.120.104.209",
+      "nameservers": "milan.ns.cloudflare.com rosalyn.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "Kaspersky"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-13 18:37:39"
+    },
+    {
+      "domain": "meopux.com",
+      "detected_at": "2026-11-15 16:36:19",
+      "registrar": "Gransy, s.r.o.",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.97.3",
+      "nameservers": "everton.ns.cloudflare.com lindsey.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "x.com",
+      "drainer_type": "",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "Kaspersky",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-13 20:34:16"
+    },
+    {
+      "domain": "buycocaineindubai.com",
+      "detected_at": "2026-11-15 16:36:49",
+      "registrar": "NameSilo, LLC",
+      "registrar_country": "US",
+      "tld": "com",
+      "ip_address": "206.72.206.88",
+      "nameservers": "vda2900a.trouble-free.net vda2900b.trouble-free.net",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-01-21 09:08:09"
+    },
+    {
+      "domain": "xclient.dev",
+      "detected_at": "2026-11-15 16:37:06",
+      "registrar": "CloudFlare, Inc.",
+      "registrar_country": "",
+      "tld": "dev",
+      "ip_address": "49.13.81.65",
+      "nameservers": "josh.ns.cloudflare.com kate.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "BitDefender",
+        "G-Data",
+        "Kaspersky",
+        "SOCRadar"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-09-18 22:03:32"
+    },
+    {
+      "domain": "blogssab.com",
+      "detected_at": "2026-11-15 16:37:10",
+      "registrar": "NameCheap, Inc.",
+      "registrar_country": "US",
+      "tld": "com",
+      "ip_address": "188.114.96.3",
+      "nameservers": "dawn.ns.cloudflare.com syeef.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "ADMINUSLabs",
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2023-04-06 19:22:08"
+    },
+    {
+      "domain": "trinitymax.net",
+      "detected_at": "2026-11-15 16:37:34",
+      "registrar": "CNOBIN INFORMATION TECHNOLOGY LIMITED",
+      "registrar_country": "",
+      "tld": "net",
+      "ip_address": "172.67.158.162",
+      "nameservers": "adaline.ns.cloudflare.com jermaine.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-15 11:53:09"
+    },
+    {
+      "domain": "whartpzz.com",
+      "detected_at": "2026-11-15 16:37:47",
+      "registrar": "NameCheap, Inc.",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "172.67.161.183",
+      "nameservers": "dawn.ns.cloudflare.com syeef.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Chong Lua Dao",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2023-04-06 19:23:37"
+    },
+    {
+      "domain": "potblaster.com",
+      "detected_at": "2026-11-15 17:59:21",
+      "registrar": "Dynadot Inc",
+      "registrar_country": "US",
+      "tld": "com",
+      "ip_address": "188.114.96.3",
+      "nameservers": "mariah.ns.cloudflare.com watson.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-09-28 12:51:16"
+    },
+    {
+      "domain": "event.puf-quest.com",
+      "detected_at": "2026-11-15 18:11:09",
+      "registrar": "TUCOWS.COM, CO.",
+      "registrar_country": "KN",
+      "tld": "com",
+      "ip_address": "188.114.96.3",
+      "nameservers": "dane.ns.cloudflare.com joyce.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-14 20:42:10"
+    },
+    {
+      "domain": "tektikla.futbol",
+      "detected_at": "2026-11-15 18:20:02",
+      "registrar": "Tucows Domains Inc.",
+      "registrar_country": "",
+      "tld": "futbol",
+      "ip_address": "188.114.96.3",
+      "nameservers": "magali.ns.cloudflare.com trevor.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-22 04:49:24"
+    },
+    {
+      "domain": "zentharioncapital.com",
+      "detected_at": "2026-11-15 18:21:20",
+      "registrar": "Hosting Concepts B.V. d/b/a Registrar.eu",
+      "registrar_country": "US",
+      "tld": "com",
+      "ip_address": "54.38.84.25",
+      "nameservers": "ns1.secureclouddns.net ns2.secureclouddns.net",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-10-18 09:49:15"
+    },
+    {
+      "domain": "rylestead-finance.com",
+      "detected_at": "2026-11-15 19:41:37",
+      "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "91.236.116.210",
+      "nameservers": "athena.ns.cloudflare.com rocco.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Fortinet"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-11 22:30:41"
+    },
+    {
+      "domain": "xentratrust.live",
+      "detected_at": "2026-11-15 19:45:52",
+      "registrar": "Global Domain Group LLC",
+      "registrar_country": "",
+      "tld": "live",
+      "ip_address": "198.251.84.236",
+      "nameservers": "ns113.my-control-panel.com ns114.my-control-panel.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-07-18 02:59:00"
+    },
+    {
+      "domain": "ccrefundbank.com",
+      "detected_at": "2026-11-15 19:49:09",
+      "registrar": "Global Domain Group LLC",
+      "registrar_country": "US",
+      "tld": "com",
+      "ip_address": "23.153.104.2",
+      "nameservers": "ns1.my-control-panel.com ns2.my-control-panel.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CyRadar",
+        "Fortinet",
+        "G-Data",
+        "Kaspersky",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-01-12 13:59:32"
+    },
+    {
+      "domain": "metrolistapks.com",
+      "detected_at": "2026-11-15 20:15:18",
+      "registrar": "Hosting Concepts B.V. d/b/a Registrar.eu",
+      "registrar_country": "US",
+      "tld": "com",
+      "ip_address": "104.21.90.168",
+      "nameservers": "dina.ns.cloudflare.com shane.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "Fortinet"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-06-13 09:28:30"
+    },
+    {
+      "domain": "endyor.com",
+      "detected_at": "2026-11-15 20:49:55",
+      "registrar": "DreamHost, LLC",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "104.21.71.170",
+      "nameservers": "kiki.ns.cloudflare.com troy.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 14,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "Emsisoft",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "Netcraft",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2022-02-08 05:48:11"
+    },
+    {
+      "domain": "brasil-facebook.blogspot.com",
+      "detected_at": "2026-11-15 21:05:13",
+      "registrar": "Google LLC",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "142.251.13.132",
+      "nameservers": "NS_NOT_FOUND",
+      "status": "enriched",
+      "target_brand": "Facebook",
+      "drainer_type": "",
+      "vt_detections": 16,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "Emsisoft",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "SOCRadar",
+        "Sophos",
+        "URLQuery",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2000-07-31 21:38:58"
+    },
+    {
+      "domain": "instagram030.github.io",
+      "detected_at": "2026-11-15 21:08:24",
+      "registrar": "GitHub, Inc.",
+      "registrar_country": "",
+      "tld": "io",
+      "ip_address": "185.199.109.153",
+      "nameservers": "NS_NOT_FOUND",
+      "status": "enriched",
+      "target_brand": "Instagram",
+      "drainer_type": "",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "DNS8",
+        "ESET",
+        "Emsisoft",
+        "Fortinet",
+        "G-Data",
+        "Google Safe Browsing",
+        "Gridinsoft",
+        "MalwareURL",
+        "Netcraft",
+        "SOCRadar",
+        "Sophos",
+        "Webroot"
+      ],
+      "gsb_flagged": true,
+      "creation_date": "2013-03-08 19:41:10"
+    },
+    {
+      "domain": "myservers.bio",
+      "detected_at": "2026-11-15 22:26:28",
+      "registrar": "NICENIC INTERNATIONAL GROUP CO., LIMITED",
+      "registrar_country": "",
+      "tld": "bio",
+      "ip_address": "202.170.75.201",
+      "nameservers": "raphaela.ns.cloudflare.com rory.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 1,
+      "vt_vendors": [
+        "alphaMountain.ai"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-08-30 11:26:52"
+    },
+    {
+      "domain": "maxeeru.club",
+      "detected_at": "2026-11-15 22:28:27",
+      "registrar": "Gname.com Pte. Ltd.",
+      "registrar_country": "SG",
+      "tld": "club",
+      "ip_address": "87.120.104.209",
+      "nameservers": "aurora.ns.cloudflare.com marty.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 0,
+      "vt_vendors": [],
+      "gsb_flagged": false,
+      "creation_date": "2026-11-15 13:31:55"
+    },
+    {
+      "domain": "brunomarsstore.shop",
+      "detected_at": "2026-11-16 03:46:20",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "brunomarsauofficial.shop",
+      "detected_at": "2026-11-16 03:46:26",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.42",
+      "nameservers": "isaac.ns.cloudflare.com savanna.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-06-14 00:00:00"
+    },
+    {
+      "domain": "brunosdinnerclub.shop",
+      "detected_at": "2026-11-16 03:46:27",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.95",
+      "nameservers": "colin.ns.cloudflare.com uma.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 11,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "BitDefender",
+        "Chong Lua Dao",
+        "CyRadar",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "brunotti.shop",
+      "detected_at": "2026-11-16 03:46:31",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.86",
+      "nameservers": "bailey.ns.cloudflare.com milan.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 12,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Lionic",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2024-11-15 00:00:00"
+    },
+    {
+      "domain": "brunottigear.shop",
+      "detected_at": "2026-11-16 03:47:14",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-04-15 00:00:00"
+    },
+    {
+      "domain": "bruntsfieldsportshq.shop",
+      "detected_at": "2026-11-16 03:47:15",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.20",
+      "nameservers": "isaac.ns.cloudflare.com tara.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "brytelabsco.shop",
+      "detected_at": "2026-11-16 03:48:30",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-23 00:00:00"
+    },
+    {
+      "domain": "brzfit.shop",
+      "detected_at": "2026-11-16 03:48:30",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "brzlab.shop",
+      "detected_at": "2026-11-16 03:48:35",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "37.72.142.130",
+      "nameservers": "cullen.ns.cloudflare.com erin.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "brzvelvet.shop",
+      "detected_at": "2026-11-16 03:49:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.43",
+      "nameservers": "shubhi.ns.cloudflare.com will.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "BitDefender",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bsandc.shop",
+      "detected_at": "2026-11-16 03:49:16",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bsgeneralshop.shop",
+      "detected_at": "2026-11-16 03:50:46",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "ESET",
+        "G-Data",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-04-21 00:00:00"
+    },
+    {
+      "domain": "bscsupplementswellness.shop",
+      "detected_at": "2026-11-16 03:51:00",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.80",
+      "nameservers": "jacqueline.ns.cloudflare.com yahir.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 2,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bshopdirect.shop",
+      "detected_at": "2026-11-16 03:51:30",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.94",
+      "nameservers": "aaron.ns.cloudflare.com kia.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bshed.shop",
+      "detected_at": "2026-11-16 03:51:42",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.46",
+      "nameservers": "adrian.ns.cloudflare.com hunts.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bsidesjeanshq.shop",
+      "detected_at": "2026-11-16 03:51:44",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.106.90.246",
+      "nameservers": "alice.ns.cloudflare.com tadeo.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bsthlm.shop",
+      "detected_at": "2026-11-16 03:51:50",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.106.90.115",
+      "nameservers": "art.ns.cloudflare.com hazel.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bswfashion.shop",
+      "detected_at": "2026-11-16 03:53:04",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.46",
+      "nameservers": "adrian.ns.cloudflare.com hunts.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btblosangelesfashion.shop",
+      "detected_at": "2026-11-16 03:53:39",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.68",
+      "nameservers": "eugene.ns.cloudflare.com teresa.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btchjewelry.shop",
+      "detected_at": "2026-11-16 03:53:48",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "derek.ns.cloudflare.com vida.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btelabs.shop",
+      "detected_at": "2026-11-16 03:53:52",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.43",
+      "nameservers": "shubhi.ns.cloudflare.com will.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btgstyle.shop",
+      "detected_at": "2026-11-16 03:53:54",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bthreegear.shop",
+      "detected_at": "2026-11-16 03:54:30",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "derek.ns.cloudflare.com vida.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btlrbeauty.shop",
+      "detected_at": "2026-11-16 03:55:07",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.43",
+      "nameservers": "shubhi.ns.cloudflare.com will.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btpdaily.shop",
+      "detected_at": "2026-11-16 03:55:44",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.46",
+      "nameservers": "adrian.ns.cloudflare.com hunts.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btretail.shop",
+      "detected_at": "2026-11-16 03:57:28",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.20",
+      "nameservers": "everton.ns.cloudflare.com ligia.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2023-06-07 00:00:00"
+    },
+    {
+      "domain": "btqfashion.shop",
+      "detected_at": "2026-11-16 03:57:40",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.46",
+      "nameservers": "adrian.ns.cloudflare.com hunts.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btqtoys.shop",
+      "detected_at": "2026-11-16 03:57:41",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.226",
+      "nameservers": "amit.ns.cloudflare.com deb.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "btrgear.shop",
+      "detected_at": "2026-11-16 03:57:53",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "80.71.144.123",
+      "nameservers": "junade.ns.cloudflare.com magali.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-07-06 00:00:00"
+    },
+    {
+      "domain": "btsofficialboutique.shop",
+      "detected_at": "2026-11-16 03:58:19",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.194",
+      "nameservers": "leland.ns.cloudflare.com nora.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bubblane.shop",
+      "detected_at": "2026-11-16 03:59:34",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CyRadar",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bubbleautocare.shop",
+      "detected_at": "2026-11-16 03:59:45",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.213",
+      "nameservers": "dante.ns.cloudflare.com zainab.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Forcepoint ThreatSeeker",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bubblegumthebrandapparel.shop",
+      "detected_at": "2026-11-16 04:00:20",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.125",
+      "nameservers": "bailey.ns.cloudflare.com milan.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bubblegumthebrandco.shop",
+      "detected_at": "2026-11-16 04:00:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.219",
+      "nameservers": "dante.ns.cloudflare.com zainab.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bubbleroomhq.shop",
+      "detected_at": "2026-11-16 04:00:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.236",
+      "nameservers": "ariadne.ns.cloudflare.com lee.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bucavistudio.shop",
+      "detected_at": "2026-11-16 04:01:32",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.43",
+      "nameservers": "marge.ns.cloudflare.com rene.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-06-24 00:00:00"
+    },
+    {
+      "domain": "buccipace.shop",
+      "detected_at": "2026-11-16 04:01:37",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Fortinet",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "buchemode.shop",
+      "detected_at": "2026-11-16 04:01:48",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "buchewear.shop",
+      "detected_at": "2026-11-16 04:01:58",
+      "registrar": "Dynadot Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.43",
+      "nameservers": "shubhi.ns.cloudflare.com will.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-07-26 17:59:07"
+    },
+    {
+      "domain": "buckmenfashion.shop",
+      "detected_at": "2026-11-16 04:02:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.224",
+      "nameservers": "ariadne.ns.cloudflare.com lee.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bucksboots.shop",
+      "detected_at": "2026-11-16 04:03:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-25 00:00:00"
+    },
+    {
+      "domain": "bucksbootsdirect.shop",
+      "detected_at": "2026-11-16 04:03:35",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "212.52.28.22",
+      "nameservers": "laila.ns.cloudflare.com yahir.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 6,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bucksproshophq.shop",
+      "detected_at": "2026-11-16 04:03:41",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.99",
+      "nameservers": "melnicoff.ns.cloudflare.com ximena.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "buckstyle.shop",
+      "detected_at": "2026-11-16 04:03:51",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "arely.ns.cloudflare.com joel.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "BitDefender",
+        "Chong Lua Dao",
+        "CyRadar",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Sophos"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bucore.shop",
+      "detected_at": "2026-11-16 04:04:02",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.116",
+      "nameservers": "jacqueline.ns.cloudflare.com yahir.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 4,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2024-11-09 00:00:00"
+    },
+    {
+      "domain": "buddhabuddhastudio.shop",
+      "detected_at": "2026-11-16 04:04:21",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-25 00:00:00"
+    },
+    {
+      "domain": "buddhastoneshopuk.shop",
+      "detected_at": "2026-11-16 04:05:39",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.196",
+      "nameservers": "jack.ns.cloudflare.com julissa.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 15,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Sophos",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-06-05 11:39:00"
+    },
+    {
+      "domain": "buddybrewdirect.shop",
+      "detected_at": "2026-11-16 04:05:55",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "46.245.239.113",
+      "nameservers": "hayes.ns.cloudflare.com piper.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CyRadar",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "buddycraft.shop",
+      "detected_at": "2026-11-16 04:06:25",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "31.222.234.210",
+      "nameservers": "derek.ns.cloudflare.com vida.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "buddylabel.shop",
+      "detected_at": "2026-11-16 04:06:27",
+      "registrar": "Dynadot Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "194.26.231.221",
+      "nameservers": "karsyn.ns.cloudflare.com max.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-20 11:14:09"
+    },
+    {
+      "domain": "budgysmuggleronline.shop",
+      "detected_at": "2026-11-16 04:06:29",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.130.241",
+      "nameservers": "glen.ns.cloudflare.com indie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 3,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Gridinsoft",
+        "LevelBlue"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-05-26 16:38:27"
+    },
+    {
+      "domain": "budsblushstore.shop",
+      "detected_at": "2026-11-16 04:07:43",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 8,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "Bfore.Ai PreCrime",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-26 00:00:00"
+    },
+    {
+      "domain": "buffvital.shop",
+      "detected_at": "2026-11-16 04:08:28",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.46",
+      "nameservers": "adrian.ns.cloudflare.com hunts.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "bufragrancepremiumshop.shop",
+      "detected_at": "2026-11-16 04:08:29",
+      "registrar": "Dynadot Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 9,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "CyRadar",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-04-30 10:34:21"
+    },
+    {
+      "domain": "bugasalt.shop",
+      "detected_at": "2026-11-16 04:08:31",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "62.233.61.66",
+      "nameservers": "lennox.ns.cloudflare.com nicole.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 13,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "Chong Lua Dao",
+        "CyRadar",
+        "Forcepoint ThreatSeeker",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "Kaspersky",
+        "LevelBlue",
+        "Lionic",
+        "Netcraft",
+        "Sophos"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2024-12-02 00:00:00"
+    },
+    {
+      "domain": "bugasalthq.shop",
+      "detected_at": "2026-11-16 04:08:32",
+      "registrar": "Spaceship, Inc.",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "188.244.119.61",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 10,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CRDF",
+        "CyRadar",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-03-20 03:16:53"
+    },
+    {
+      "domain": "bugattidirect.shop",
+      "detected_at": "2026-11-16 04:09:46",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "195.96.131.106",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 11,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "CyRadar",
+        "ESET",
+        "Fortinet",
+        "G-Data",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft",
+        "VIPRE",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-04-18 06:13:09"
+    },
+    {
+      "domain": "bugattishop.shop",
+      "detected_at": "2026-11-16 04:09:47",
+      "registrar": "DYNADOT LLC",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "193.162.133.218",
+      "nameservers": "amos.ns.cloudflare.com millie.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "G-Data",
+        "Gridinsoft",
+        "Netcraft",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-04-24 00:00:00"
+    },
+    {
+      "domain": "bugcatcapoohq.shop",
+      "detected_at": "2026-11-16 04:10:08",
+      "registrar": "REGISTRAR_NOT_FOUND",
+      "registrar_country": "",
+      "tld": "shop",
+      "ip_address": "23.252.79.123",
+      "nameservers": "bonnie.ns.cloudflare.com sid.ns.cloudflare.com",
+      "status": "enriched",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 5,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "CRDF",
+        "Gridinsoft",
+        "LevelBlue",
+        "Netcraft"
+      ],
+      "gsb_flagged": false,
+      "creation_date": ""
+    },
+    {
+      "domain": "future-aihub.com",
+      "detected_at": "2026-04-24 19:58:03",
+      "registrar": "Fewmoretaps OU d/b/a Trustname.com",
+      "registrar_country": "",
+      "tld": "com",
+      "ip_address": "188.114.97.3",
+      "nameservers": "pola.ns.cloudflare.com rudy.ns.cloudflare.com",
+      "status": "checking",
+      "target_brand": "",
+      "drainer_type": "",
+      "vt_detections": 7,
+      "vt_vendors": [
+        "alphaMountain.ai",
+        "BitDefender",
+        "ESET",
+        "Forcepoint ThreatSeeker",
+        "G-Data",
+        "Lionic",
+        "Webroot"
+      ],
+      "gsb_flagged": false,
+      "creation_date": "2026-04-15 19:12:11"
     }
   ]
 }
