@@ -12,7 +12,7 @@ import requests
 from tqdm import tqdm
 
 from utils import (
-    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS, is_unpublishable_root,
+    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS, PATH_SCOPED_HOSTS, is_unpublishable_root,
     load_publication_exclusions, is_allowed, save_json, make_badge, log,
 )
 
@@ -175,7 +175,16 @@ def add_url(dst: set, candidate: str):
         # The feed's host/path representation cannot encode a non-default port.
         if parsed.port not in {None, 80 if parsed.scheme == "http" else 443}:
             return
-        entry = host + (parsed.path or "/")
+        path = parsed.path or "/"
+        # A reported site root (no path, query or fragment) is a report of the
+        # host itself. Kept as "host/", such dedicated phishing hosts were
+        # dropped from every DNS format. Shared services and unpublishable
+        # roots stay page-scoped: one tenant's root page is not the service.
+        if (path == "/" and not parsed.query and not parsed.fragment
+                and host not in PATH_SCOPED_HOSTS and not is_unpublishable_root(host)):
+            dst.add(host)
+            return
+        entry = host + path
         if parsed.query:
             entry += "?" + parsed.query
         if parsed.fragment:
@@ -241,7 +250,9 @@ def fetch_content(url: str) -> str | None:
         except requests.exceptions.Timeout:
             log(f"TIMEOUT (attempt {attempt}/3): {url}", "warn")
         except requests.exceptions.HTTPError as e:
-            status = e.response.status_code if e.response else 0
+            # Response.__bool__ is Response.ok, i.e. False for every 4xx/5xx:
+            # a truthiness test turned every status into 0 and disabled retries.
+            status = e.response.status_code if e.response is not None else 0
             log(f"HTTP {status}: {url}", "warn")
             if status < 500:
                 break
@@ -262,6 +273,12 @@ def fetch_source(name: str, cfg: dict) -> tuple:
     content = fetch_content(url)
     if content and parser_func:
         domains = parser_func(content)
+        if not domains:
+            # HTTP 200 with an HTML error page, a changed schema or an empty
+            # body parses to nothing; count it as a failure so the health
+            # tracker reports it instead of recording a healthy empty source.
+            log(f"{name}: response parsed to 0 domains, treated as failure", "warn")
+            return name, set(), None, False
         content_hash = hashlib.sha256(content.encode("utf-8")).hexdigest()
         return name, domains, content_hash, True
     return name, set(), None, False

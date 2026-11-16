@@ -271,11 +271,18 @@ def save_json(path: Path, data, indent: int = 2):
 # ── Allowlist ────────────────────────────────────────────────────────────────
 
 def load_allowlist() -> Set[str]:
-    """Load allowlist as a flat set of domains."""
-    data = load_json(ALLOWLIST_FILE)
-    if isinstance(data, list):
-        return {normalize_entry(d) for d in data if d}
-    return set()
+    """Load allowlist as a flat set of domains.
+
+    Fails closed like the removal registry: a missing or unreadable allowlist
+    used to load as an empty set, which republished every appealed domain.
+    """
+    try:
+        data = json.loads(ALLOWLIST_FILE.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        raise ValueError(f"allowlist unreadable, refusing to publish: {e}") from e
+    if not isinstance(data, list):
+        raise ValueError("allowlist must be a JSON array")
+    return {normalize_entry(d) for d in data if d}
 
 
 def load_allowlist_split() -> Tuple[Set[str], Set[str]]:

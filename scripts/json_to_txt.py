@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import Set
 
 from utils import (
-    PROJECT_ROOT, IPV4_RE,
-    extract_domain, is_allowed, load_publication_exclusions, load_json_list, log,
+    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
+    extract_domain, is_allowed, is_public_suffix, load_publication_exclusions, load_json_list, log,
     normalize_entry,
 )
 
@@ -57,6 +57,11 @@ def load_domains(
                 continue
             if is_allowed(d, exact, suffix_patterns):
                 continue
+            # A public suffix (e.g. kasserver.com, a hosting provider's
+            # customer namespace) would block every tenant in the
+            # subtree-blocking formats (dnsmasq, unbound, adblock, RPZ *.).
+            if is_public_suffix(d) or d in INFRA_ROOTS:
+                continue
             clean.add(d)
         return sorted(clean)
     except Exception as e:
@@ -95,7 +100,9 @@ def adblock_header(name: str, source_key: str, count: int) -> str:
 def rpz_header(name: str, count: int) -> str:
     now = datetime.now(timezone.utc)
     ts = now.strftime("%Y-%m-%d %H:%M UTC")
-    serial = now.strftime("%Y%m%d%H%M")
+    # SOA SERIAL is an unsigned 32-bit integer (RFC 1035); YYYYMMDDHHMM does
+    # not fit and BIND/Knot/dnspython reject the zone. Unix time fits until 2106.
+    serial = int(now.timestamp())
     return (
         f"; Destroylist - {name} | RPZ zone | {count:,} domains | {ts}\n"
         f"; https://github.com/phishdestroy/destroylist\n"
@@ -132,6 +139,36 @@ def write(path: Path, content: str):
     path.write_text(content, encoding="utf-8")
 
 
+def rpz_serial_valid(path: Path) -> bool:
+    """False when the published zone still carries an out-of-range SOA serial."""
+    try:
+        with path.open(encoding="utf-8") as fh:
+            for _ in range(10):
+                line = fh.readline()
+                if " SOA " in line:
+                    return int(line.split()[4]) <= 0xFFFFFFFF
+    except (OSError, ValueError, IndexError):
+        return False
+    return False
+
+
+def write_if_changed(path: Path, head: str, body: str) -> bool:
+    """Rewrite a feed only when its entries changed.
+
+    Headers carry a timestamp; rewriting all formats on every run produced a
+    new commit of every feed file each hour even when no domain changed.
+    The existing file is split after exactly as many lines as the new header
+    has, so a shorter or longer domain set never compares equal by accident.
+    """
+    if path.exists() and (path.suffix != ".zone" or rpz_serial_valid(path)):
+        current = path.read_text(encoding="utf-8")
+        parts = current.split("\n", head.count("\n"))
+        if len(parts) > head.count("\n") and parts[-1] == body:
+            return False
+    write(path, head + body)
+    return True
+
+
 def main():
     FORMATS_DIR.mkdir(parents=True, exist_ok=True)
     exact, patterns = load_publication_exclusions()
@@ -145,15 +182,21 @@ def main():
         out.mkdir(exist_ok=True)
         n = name.replace("_", " ").title()
 
-        write(out / "domains.txt", header(n, len(domains), "plain") + "\n".join(domains) + "\n")
-        write(out / "hosts.txt", header(n, len(domains), "hosts") + "\n".join(f"0.0.0.0 {d}" for d in domains) + "\n")
-        write(out / "adblock.txt", adblock_header(n, name, len(domains)) + "\n".join(f"||{d}^" for d in domains) + "\n")
-        write(out / "dnsmasq.conf", header(n, len(domains), "dnsmasq") + "\n".join(f"address=/{d}/0.0.0.0" for d in domains) + "\n")
-        write(out / "unbound.conf", header(n, len(domains), "unbound") + "\n".join(f'local-zone: "{d}" always_nxdomain' for d in domains) + "\n")
-        write(out / "rpz.zone", rpz_header(n, len(domains)) + "\n".join(f"{d} CNAME ." for d in domains) + "\n")
-        write(out / "redis.txt", redis_format(name, domains))
+        feeds = [
+            ("domains.txt", header(n, len(domains), "plain"), "\n".join(domains) + "\n"),
+            ("hosts.txt", header(n, len(domains), "hosts"), "\n".join(f"0.0.0.0 {d}" for d in domains) + "\n"),
+            ("adblock.txt", adblock_header(n, name, len(domains)), "\n".join(f"||{d}^" for d in domains) + "\n"),
+            ("dnsmasq.conf", header(n, len(domains), "dnsmasq"), "\n".join(f"address=/{d}/0.0.0.0" for d in domains) + "\n"),
+            ("unbound.conf", header(n, len(domains), "unbound"), "\n".join(f'local-zone: "{d}" always_nxdomain' for d in domains) + "\n"),
+            # Apex and every subdomain, matching dnsmasq/unbound/adblock semantics.
+            ("rpz.zone", rpz_header(n, len(domains)), "\n".join(f"{d} CNAME .\n*.{d} CNAME ." for d in domains) + "\n"),
+        ]
+        redis_text = redis_format(name, domains)
+        redis_head, redis_body = redis_text.split("\n", 1)
+        feeds.append(("redis.txt", redis_head + "\n", redis_body))
 
-        log(f"{name}: {len(domains):,} domains -> 7 formats", "ok")
+        changed = sum(write_if_changed(out / fname, head, body) for fname, head, body in feeds)
+        log(f"{name}: {len(domains):,} domains -> {changed}/{len(feeds)} formats rewritten", "ok")
 
     primary = load_plain_entries(SOURCES["primary"])
     if primary:
