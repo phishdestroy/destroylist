@@ -24,12 +24,13 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
-      - name: Calculate statistics
-        run: python scripts/calculate_stats.py
-      - name: Rotate old archives to Release
+      - name: Calculate statistics, rotate snapshots and push with compare-and-swap retries
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           # Full-dump snapshots >32MB are not indexed by GitHub code search
           # (arrays shards handle searchability), so only the current month
           # stays in the tree; older snapshots move to the permanent Release.
@@ -38,14 +39,40 @@ jobs:
               --notes "Weekly and monthly full-list snapshots rotated out of the working tree. Current month lives in archives/."
           rotate() {
             dir=$1; keep=$2
-            ls "$dir"/*.json 2>/dev/null | sort | head -n -"$keep" | while read -r f; do
+            files=$(ls "$dir"/*.json 2>/dev/null | sort | head -n -"$keep" || true)
+            for f in $files; do
               echo "Rotating $f to Release"
-              gh release upload archives "$f" --clobber || { echo "Upload failed for $f, keeping in tree"; continue; }
-              git rm -q "$f"
+              if gh release upload archives "$f" --clobber; then
+                git rm -q "$f"
+              else
+                echo "Upload failed for $f, keeping in tree"
+              fi
             done
           }
-          rotate archives/weekly 4
-          rotate archives/monthly 1
+          # Rebuild from the newest main on every attempt. The former
+          # `git pull --rebase -X theirs` replayed this run's dns/*.json over
+          # counters that a concurrent list update had just committed.
+          for i in {1..5}; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/calculate_stats.py
+            rotate archives/weekly 4
+            rotate archives/monthly 1
+            git add dns/*.json archives/
+            if git diff --staged --quiet; then
+              echo "No changes to commit"
+              exit 0
+            fi
+            git commit -m "Update statistics [skip ci]"
+            git push origin HEAD:main && exit 0
+            echo "Push attempt $i failed, retrying in $((i * 3))s..."
+            sleep $((i * 3))
+          done
+          exit 1
+      - name: Refresh archives release notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           # Regenerate release notes with an up-to-date asset table
           cat > /tmp/release_notes.md <<'NOTES'
           ## 📦 Historical full-list snapshots
@@ -113,20 +140,3 @@ jobs:
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
         run: python scripts/update_gist.py
-      - name: Commit and push
-        run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add dns/*.json archives/ dns/stats_snapshot.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-          git commit -m "Update statistics [skip ci]"
-          for i in {1..5}; do
-            git pull --rebase -X theirs origin main && git push && exit 0
-            git rebase --abort 2>/dev/null || true
-            echo "Push attempt $i failed, retrying in $((i * 3))s..."
-            sleep $((i * 3))
-          done
-          exit 1

@@ -17,6 +17,26 @@ class URLScopeTests(unittest.TestCase):
         result = parse_urls_list('https://LINE.me/Profile/AbC?Token=XyZ#View\nhttps://dribbble.com/\n')
         self.assertEqual(result, {'line.me/Profile/AbC?Token=XyZ#View', 'dribbble.com/'})
 
+    def test_reported_site_root_is_a_domain_entry(self):
+        result = parse_urls_list(
+            'https://1-whatsapp.top/\nhttps://tenant.pages.dev\nhttps://t.me/\n'
+            'https://docs.google.com/\nhttps://scam-root.top/?ref=1\n'
+        )
+        # Dedicated hosts become domain entries (DNS formats can carry them);
+        # shared services and roots with a query stay page-scoped.
+        self.assertEqual(result, {'1-whatsapp.top', 'tenant.pages.dev', 't.me/',
+                                  'docs.google.com/', 'scam-root.top/?ref=1'})
+
+    def test_existing_root_path_entries_are_upgraded_on_next_run(self):
+        self.assertEqual(smart_aggregator.normalize_domain('199281-coinbase.com/'), '199281-coinbase.com')
+        self.assertEqual(smart_aggregator.normalize_domain('dribbble.com/'), 'dribbble.com/')
+
+    def test_public_suffix_is_not_published_in_dns_formats(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'list.json'
+            path.write_text(json.dumps(['kasserver.com', 'evil.kasserver.com', 'pages.dev']))
+            self.assertEqual(load_domains(path, set()), ['evil.kasserver.com'])
+
     def test_text_url_query_is_not_misread_as_adblock_options(self):
         self.assertEqual(parse_text_lines('https://line.me/AbC?price=$10^2'), {'line.me/AbC?price=$10^2'})
 

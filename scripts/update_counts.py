@@ -104,8 +104,17 @@ def main():
         log(f"{name}: {count:,}", "ok")
 
     if len(counts) == len(SOURCES):
-        save_json(METRICS_FILE, build_metrics(counts))
-        log(f"metrics manifest: {METRICS_FILE.name}", "ok")
+        metrics = build_metrics(counts)
+        try:
+            previous = json.loads(METRICS_FILE.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            previous = {}
+        # generatedAt changes on every run; only a counter change is news.
+        if previous.get("counts") == metrics["counts"]:
+            log(f"metrics manifest unchanged: {METRICS_FILE.name}", "ok")
+        else:
+            save_json(METRICS_FILE, metrics)
+            log(f"metrics manifest: {METRICS_FILE.name}", "ok")
     else:
         missing = ", ".join(sorted(set(SOURCES) - set(counts)))
         log(f"metrics manifest preserved; incomplete source set: {missing}", "warn")

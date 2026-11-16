@@ -130,8 +130,8 @@ def main():
 
     exact, patterns = load_publication_exclusions()
     if not exact and not patterns:
-        log("Allowlist is empty or missing", "warn")
-        return 0
+        # Still remove invalid entries, IPs and duplicates.
+        log("Allowlist and removal registry are empty", "warn")
 
     log(f"Allowlist: {len(exact)} exact + {len(patterns)} patterns")
 

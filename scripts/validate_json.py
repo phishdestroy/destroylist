@@ -15,12 +15,17 @@ FILES_TO_CHECK = [
     PROJECT_ROOT / "dns" / "active_domains.json",
     PROJECT_ROOT / "dns" / "content_active.json",
 ]
+# Missing allowlist would republish every appealed domain: never skip it.
+REQUIRED_FILES = {PROJECT_ROOT / "allow" / "allowlist.json"}
 
 
 def validate_file(filepath: Path) -> bool:
     rel = filepath.relative_to(PROJECT_ROOT)
 
     if not filepath.exists():
+        if filepath in REQUIRED_FILES:
+            log(f"{rel} — required file is missing", "error")
+            return False
         log(f"{rel} (not found, skipped)", "warn")
         return True
 

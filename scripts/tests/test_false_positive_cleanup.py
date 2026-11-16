@@ -70,6 +70,15 @@ HISTORICAL_ARTIFACTS = (
     "rootlist/2026/06/2026-06-threats.json",
 )
 
+def rotated_to_release(relative_path: str) -> bool:
+    """update_stats.yml moves old weekly/monthly snapshots to the "archives"
+    Release; once rotated they are no longer in the working tree."""
+    return (
+        relative_path.startswith(("archives/weekly/", "archives/monthly/"))
+        and not (PROJECT_ROOT / relative_path).exists()
+    )
+
+
 EXPECTED_ARCHIVE_COUNTS = {
     "archives/monthly/2026-08.json": (207643, 1027698),
     "archives/weekly/2026-W25.json": (162801, 945701),
@@ -286,6 +295,8 @@ class FalsePositiveCleanupTests(unittest.TestCase):
         findings = []
         for relative_path in HISTORICAL_ARTIFACTS:
             path = PROJECT_ROOT / relative_path
+            if rotated_to_release(relative_path):
+                continue
             text = path.read_text(encoding="utf-8-sig")
             try:
                 values = iter_json_strings(json.loads(text))
@@ -299,6 +310,8 @@ class FalsePositiveCleanupTests(unittest.TestCase):
 
     def test_historical_aggregate_counts_were_adjusted(self):
         for relative_path, expected in EXPECTED_ARCHIVE_COUNTS.items():
+            if rotated_to_release(relative_path):
+                continue
             data = json.loads((PROJECT_ROOT / relative_path).read_text())
             self.assertEqual(
                 (data["primary_count"], data["community_count"]), expected
