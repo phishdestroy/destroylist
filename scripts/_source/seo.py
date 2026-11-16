@@ -139,7 +139,7 @@ Appeals are free. Both the official form and GitHub issues accept a domain and a
 
 Repository: {repo}
 Archives: {repo}/tree/main/archives
-Daily changes: {repo}/tree/main/changes
+Daily changes: {repo}/tree/main/archives/changes
 Public commits: {repo}/commits/main/
 Dataset distribution: https://huggingface.co/datasets/phishdestroy/destroylist
 OTX pulses: https://otx.alienvault.com/user/phishdestroy/pulses

@@ -340,7 +340,10 @@ class FalsePositiveCleanupTests(unittest.TestCase):
             item for item in threats["top"]["countries"] if item["country"] == ""
         )
         self.assertEqual(threats["meta"]["total"], 8101)
-        self.assertEqual(len(threats["threats"]), 8101)
+        # meta.total is the count reported when the month was published; later
+        # appeal purges shrink the indicator array, and the monthly-reports
+        # page shows that difference explicitly. It can only go down.
+        self.assertLessEqual(len(threats["threats"]), threats["meta"]["total"])
         self.assertEqual(threats["stats"]["enriched"], 8004)
         self.assertEqual(threats["stats"]["vt_rate"], 94.5)
         self.assertEqual(blank_country["count"], 7375)
