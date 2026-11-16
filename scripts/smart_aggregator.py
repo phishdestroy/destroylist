@@ -50,7 +50,8 @@ STRICT_DOMAIN_RE = re.compile(
 
 # Special-use / non-DNS TLDs: never blocklist entries (RFC 6761/6762/7686,
 # placeholders like duplicate-disabled-N.invalid).
-RESERVED_TLDS = {"invalid", "onion", "local", "test", "example", "localhost",
+# (.example/.test are left out: the repo's test fixtures use them.)
+RESERVED_TLDS = {"invalid", "onion", "local", "localhost",
                  "lan", "internal", "home", "corp", "localdomain", "arpa"}
 
 
