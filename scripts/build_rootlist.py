@@ -7,7 +7,7 @@ from typing import Dict, List, Set
 
 from utils import (
     PROJECT_ROOT, IPV4_RE, PROVIDER_GROUPS, INFRA_ROOTS,
-    get_root, is_allowed, load_publication_exclusions, normalize_entry, save_json, log,
+    get_root, is_allowed, is_unpublishable_root, load_publication_exclusions, normalize_entry, save_json, log,
 )
 
 SOURCE_LIST = PROJECT_ROOT / "list.json"
@@ -71,6 +71,9 @@ def process_items(
 
         if is_allowed(host, _exact, _patterns):
             continue
+        # A bare platform/public-suffix host is never a publishable entry.
+        if is_unpublishable_root(host):
+            continue
 
         rd = get_root(host)
         if not rd:
@@ -79,7 +82,7 @@ def process_items(
         # An allowlisted root (e.g. cleared on appeal) must not be blocked as a
         # whole because one of its subdomains is listed: treat it like a
         # provider root and keep only the listed host, in the services list.
-        if rd in INFRA_ROOTS or is_allowed(rd, _exact, _patterns):
+        if is_unpublishable_root(rd) or is_allowed(rd, _exact, _patterns):
             service_hosts.add(host)
             for group, roots in PROVIDER_GROUPS.items():
                 if rd in roots:

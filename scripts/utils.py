@@ -71,6 +71,47 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
 }
 INFRA_ROOTS: Set[str] = set().union(*PROVIDER_GROUPS.values())
 
+# Never published as a block-everything entry or root (2026-11-16): public
+# suffixes from the ICANN *and* private PSL sections (run.app, appspot.com,
+# co.com, org.in) and popular site apexes (scripts/popular_roots.txt, Tranco
+# top 10k: azure.com, domaincontrol.com).  Listed subdomains stay published.
+POPULAR_ROOTS_FILE = Path(__file__).resolve().parent / "popular_roots.txt"
+
+
+def _load_popular_roots() -> Set[str]:
+    try:
+        lines = POPULAR_ROOTS_FILE.read_text(encoding="utf-8").splitlines()
+    except OSError:
+        return set()
+    return {line.strip().lower() for line in lines if line.strip() and not line.startswith("#")}
+
+
+POPULAR_ROOTS: Set[str] = _load_popular_roots()
+_PSL_WITH_PRIVATE = tldextract.TLDExtract(include_psl_private_domains=True)
+_PSL_EXPLICIT: Set[str] = set()
+
+
+def _explicit_psl_rules() -> Set[str]:
+    """Explicit PSL rules only.  Wildcards ("*.run.app") are skipped: under them
+    every tenant label is itself a suffix, and tenants must stay publishable."""
+    global _PSL_EXPLICIT
+    if not _PSL_EXPLICIT:
+        extractor = _PSL_WITH_PRIVATE._get_tld_extractor()  # tldextract==5.3.1
+        _PSL_EXPLICIT = {r.lower() for r in extractor.tlds_incl_private
+                         if r and not r.startswith(("*", "!"))}
+    return _PSL_EXPLICIT
+
+
+def is_public_suffix(domain: str) -> bool:
+    """True when the whole name is an explicit public suffix (ICANN or private)."""
+    d = (domain or "").strip(".").lower()
+    return "." in d and d in _explicit_psl_rules()
+
+
+def is_unpublishable_root(domain: str) -> bool:
+    d = (domain or "").strip(".").lower()
+    return d in INFRA_ROOTS or d in POPULAR_ROOTS or is_public_suffix(d)
+
 # A URL path is part of the identity on these services. Bare service roots are
 # not publishable/allowlistable, while an exact tenant hostname may cover paths
 # on that same tenant without affecting sibling tenants.

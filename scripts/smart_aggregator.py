@@ -12,7 +12,7 @@ import requests
 from tqdm import tqdm
 
 from utils import (
-    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS,
+    PROJECT_ROOT, IPV4_RE, INFRA_ROOTS, is_unpublishable_root,
     load_publication_exclusions, is_allowed, save_json, make_badge, log,
 )
 
@@ -48,16 +48,26 @@ STRICT_DOMAIN_RE = re.compile(
 
 # ── Domain helpers ───────────────────────────────────────────────────────────
 
+# Special-use / non-DNS TLDs: never blocklist entries (RFC 6761/6762/7686,
+# placeholders like duplicate-disabled-N.invalid).
+RESERVED_TLDS = {"invalid", "onion", "local", "test", "example", "localhost",
+                 "lan", "internal", "home", "corp", "localdomain", "arpa"}
+
+
 def is_valid_domain(d: str) -> bool:
-    if not d or len(d) > 253:
+    if not d or len(d) > 253 or not d.isascii():
         return False
     parts = d.split(".")
     if len(parts) < 2:
         return False
-    if not re.fullmatch(r"[a-z]{2,63}", parts[-1], re.IGNORECASE):
+    # re.ASCII: under IGNORECASE alone [a-z] also matches dotless "ı" (U+0131),
+    # which let raw-Unicode hostnames (5ıre.com) into the DNS formats.
+    if not re.fullmatch(r"[a-z]{2,63}", parts[-1], re.IGNORECASE | re.ASCII):
+        return False
+    if parts[-1].lower() in RESERVED_TLDS:
         return False
     return all(
-        re.fullmatch(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?", p, re.IGNORECASE)
+        re.fullmatch(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?", p, re.IGNORECASE | re.ASCII)
         for p in parts
     )
 
@@ -72,7 +82,7 @@ def normalize_domain(d: str) -> str:
         return ""
     if not is_valid_domain(d):
         return ""
-    if d in INFRA_ROOTS:
+    if is_unpublishable_root(d):
         return ""
     return d
 
