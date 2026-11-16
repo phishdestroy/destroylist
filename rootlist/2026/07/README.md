@@ -122,7 +122,6 @@ July 2026 detected **19,796** phishing and scam domains across 31 active days , 
 
 Detections peaked on **2026-07-29** with 4,125 domains; the lowest day was 2026-07-09 (225). The daily average was 639 domains. Days below 10% of the peak: 13.
 
-Crypto drainer kits identified this month: Solana Drainer (53), Wallet Connect Abuse (7), Angel Drainer (5).
 
 ### Registrar Accountability
 
@@ -211,16 +210,6 @@ Gridinsoft (16,145, 81.6%), alphaMountain.ai (15,970, 80.7%), Forcepoint ThreatS
 | **8** | Cloudflare | **226** | 1.1% |
 | **9** | Solana | **217** | 1.1% |
 | **10** | Microsoft | **216** | 1.1% |
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Biohazard.png" width="22" /> Crypto Drainers & Kits
-
-| # | Type | Domains |
-|:--:|:---|------:|
-| **1** | Solana Drainer | **53** |
-| **2** | Wallet Connect Abuse | **7** |
-| **3** | Angel Drainer | **5** |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
