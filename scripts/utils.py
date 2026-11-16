@@ -28,6 +28,28 @@ def _is_ip_addr(domain: str) -> bool:
     except ValueError:
         return False
 
+# Blogger country domains (Google). They left the Public Suffix List in 2024,
+# so is_public_suffix() no longer covers them, but every subdomain is still a
+# separate user blog: never publish one of these roots as a whole.
+BLOGGER_DOMAINS: Set[str] = {
+    "blogspot.ae", "blogspot.al", "blogspot.am", "blogspot.ba", "blogspot.be",
+    "blogspot.bg", "blogspot.bj", "blogspot.ca", "blogspot.cf", "blogspot.ch",
+    "blogspot.cl", "blogspot.co.at", "blogspot.co.id", "blogspot.co.il",
+    "blogspot.co.ke", "blogspot.co.nz", "blogspot.co.uk", "blogspot.co.za",
+    "blogspot.com", "blogspot.com.ar", "blogspot.com.au", "blogspot.com.br",
+    "blogspot.com.by", "blogspot.com.co", "blogspot.com.cy", "blogspot.com.ee",
+    "blogspot.com.eg", "blogspot.com.es", "blogspot.com.mt", "blogspot.com.ng",
+    "blogspot.com.tr", "blogspot.com.uy", "blogspot.cv", "blogspot.cz", "blogspot.de",
+    "blogspot.dk", "blogspot.fi", "blogspot.fr", "blogspot.gr", "blogspot.hk",
+    "blogspot.hr", "blogspot.hu", "blogspot.ie", "blogspot.in", "blogspot.is",
+    "blogspot.it", "blogspot.jp", "blogspot.kr", "blogspot.li", "blogspot.lt",
+    "blogspot.lu", "blogspot.md", "blogspot.mk", "blogspot.mr", "blogspot.mx",
+    "blogspot.my", "blogspot.nl", "blogspot.no", "blogspot.pe", "blogspot.pt",
+    "blogspot.qa", "blogspot.re", "blogspot.ro", "blogspot.rs", "blogspot.ru",
+    "blogspot.se", "blogspot.sg", "blogspot.si", "blogspot.sk", "blogspot.sn",
+    "blogspot.td", "blogspot.tw", "blogspot.ug", "blogspot.vn",
+}
+
 # ── Infrastructure providers (hosting platforms where subdomains ≠ root) ─────
 PROVIDER_GROUPS: Dict[str, Set[str]] = {
     "multi_tenant_hosting": {
@@ -50,9 +72,7 @@ PROVIDER_GROUPS: Dict[str, Set[str]] = {
     },
     "site_builders": {
         "weebly.com", "weeblysite.com", "wixsite.com", "wixstudio.com", "wordpress.com",
-        "blogspot.com", "blogspot.am", "blogspot.be", "blogspot.ru", "blogspot.it",
-        "blogspot.cz", "blogspot.md", "blogspot.mk", "blogspot.hk", "blogspot.in",
-        "blogspot.pe", "square.site", "webflow.io",
+        *BLOGGER_DOMAINS, "square.site", "webflow.io",
         "godaddysites.com", "webcindario.com", "home.pl", "pineapple.page",
         "gitbook.io", "carrd.co", "framer.app", "framer.ai", "framer.media", "framer.wiki",
         "softr.app", "bubble.io", "bubbleapps.io", "strikingly.com",

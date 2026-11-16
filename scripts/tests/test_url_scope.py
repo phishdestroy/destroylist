@@ -45,6 +45,13 @@ class URLScopeTests(unittest.TestCase):
         self.assertNotIn('line.me', roots | hosts | services)
         self.assertEqual(services, {'bad.line.me'})
 
+    def test_blogger_country_domain_is_never_published_as_root(self):
+        # blogspot.<cc> left the PSL in 2024; the tenant stays, the root must not.
+        roots, _, hosts, services = process_items(['phish-login.blogspot.ae', 'evil.blogspot.co.uk'])
+        self.assertEqual(roots, set())
+        self.assertEqual(hosts, set())
+        self.assertEqual(services, {'phish-login.blogspot.ae', 'evil.blogspot.co.uk'})
+
     def test_scoped_evidence_survives_next_aggregation_without_upstream(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
