@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,199 domains | 2026-11-17 11:23 UTC
+; Destroylist - Primary | RPZ zone | 231,200 domains | 2026-11-17 11:49 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794914595 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794916186 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -166128,6 +166128,8 @@ flyproxy.com CNAME .
 *.flyproxy.com CNAME .
 flyspoof.com CNAME .
 *.flyspoof.com CNAME .
+flyspoof.net CNAME .
+*.flyspoof.net CNAME .
 flyxcoin.info CNAME .
 *.flyxcoin.info CNAME .
 fm420.shop CNAME .
