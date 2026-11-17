@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,192 domains | 2026-11-17 04:17 UTC
+; Destroylist - Primary | RPZ zone | 231,193 domains | 2026-11-17 06:11 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794889035 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794895906 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -253334,6 +253334,8 @@ main.d8s6ciiuz4h9n.amplifyapp.com CNAME .
 *.main.d8s6ciiuz4h9n.amplifyapp.com CNAME .
 main.gmonewcoin.net CNAME .
 *.main.gmonewcoin.net CNAME .
+main.invite-tracker.lc CNAME .
+*.main.invite-tracker.lc CNAME .
 main.multi-dappschain.xyz CNAME .
 *.main.multi-dappschain.xyz CNAME .
 main.sbm-demo.xyz CNAME .
