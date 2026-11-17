@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,197 domains | 2026-11-17 09:39 UTC
+; Destroylist - Primary | RPZ zone | 231,198 domains | 2026-11-17 10:01 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794908364 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794909712 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -151970,6 +151970,8 @@ evmdeploy.pages.dev CNAME .
 *.evmdeploy.pages.dev CNAME .
 evmdepp.pro CNAME .
 *.evmdepp.pro CNAME .
+evmdexsyncvalidsolution.live CNAME .
+*.evmdexsyncvalidsolution.live CNAME .
 evmdrainertestet.us CNAME .
 *.evmdrainertestet.us CNAME .
 evmdrop.xyz CNAME .
