@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,338 domains | 2026-11-17 23:19 UTC
+; Destroylist - Primary | RPZ zone | 231,339 domains | 2026-11-17 23:52 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794957560 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794959554 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -236438,6 +236438,8 @@ ledger.emdtj.com CNAME .
 *.ledger.emdtj.com CNAME .
 ledger.emillstone.com CNAME .
 *.ledger.emillstone.com CNAME .
+ledger.en-incident.com CNAME .
+*.ledger.en-incident.com CNAME .
 ledger.en-locker.com CNAME .
 *.ledger.en-locker.com CNAME .
 ledger.en-update.com CNAME .
