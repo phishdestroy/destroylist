@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,337 domains | 2026-11-17 22:57 UTC
+; Destroylist - Primary | RPZ zone | 231,338 domains | 2026-11-17 23:19 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794956248 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794957560 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -201084,6 +201084,8 @@ id-metamask.app CNAME .
 *.id-metamask.app CNAME .
 id-myphone.us CNAME .
 *.id-myphone.us CNAME .
+id-paypalservice.dev CNAME .
+*.id-paypalservice.dev CNAME .
 id-potok.cash CNAME .
 *.id-potok.cash CNAME .
 id-r35dx.com CNAME .
