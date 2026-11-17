@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,204 domains | 2026-11-17 15:26 UTC
+; Destroylist - Primary | RPZ zone | 231,205 domains | 2026-11-17 15:33 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794929163 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794929622 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -373854,6 +373854,8 @@ stressthem.ru CNAME .
 *.stressthem.ru CNAME .
 stret-ledgercom.pages.dev CNAME .
 *.stret-ledgercom.pages.dev CNAME .
+stretto-celsius.com CNAME .
+*.stretto-celsius.com CNAME .
 stretto.com.proposal-offer.com CNAME .
 *.stretto.com.proposal-offer.com CNAME .
 strewin.com CNAME .
