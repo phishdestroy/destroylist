@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,209 domains | 2026-11-17 15:44 UTC
+; Destroylist - Primary | RPZ zone | 231,210 domains | 2026-11-17 15:50 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794930297 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794930643 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -379834,6 +379834,8 @@ swiftenintrust.com CNAME .
 *.swiftenintrust.com CNAME .
 swiftequora.com CNAME .
 *.swiftequora.com CNAME .
+swiftequora.online CNAME .
+*.swiftequora.online CNAME .
 swiftexpeditorscouriers.com CNAME .
 *.swiftexpeditorscouriers.com CNAME .
 swiftexpresscargo.net CNAME .
