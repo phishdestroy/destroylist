@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,211 domains | 2026-11-17 16:19 UTC
+; Destroylist - Primary | RPZ zone | 231,212 domains | 2026-11-17 16:29 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794932388 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794932963 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -367192,6 +367192,8 @@ stage-covid19.tremend.ro CNAME .
 *.stage-covid19.tremend.ro CNAME .
 stage-development.airdrop.app.yooldo.gg CNAME .
 *.stage-development.airdrop.app.yooldo.gg CNAME .
+stage-hhfg.apple782.top CNAME .
+*.stage-hhfg.apple782.top CNAME .
 stage-landing.pages.dev CNAME .
 *.stage-landing.pages.dev CNAME .
 stage.circlecommerce.ai CNAME .
