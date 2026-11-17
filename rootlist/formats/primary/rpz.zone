@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,334 domains | 2026-11-17 22:29 UTC
+; Destroylist - Primary | RPZ zone | 231,337 domains | 2026-11-17 22:57 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794954587 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794956248 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -245636,6 +245636,12 @@ lockcheker.com CNAME .
 *.lockcheker.com CNAME .
 lockcoin.net CNAME .
 *.lockcoin.net CNAME .
+locked1.com CNAME .
+*.locked1.com CNAME .
+locked2.com CNAME .
+*.locked2.com CNAME .
+locked3.com CNAME .
+*.locked3.com CNAME .
 locked4.com CNAME .
 *.locked4.com CNAME .
 lockedapp.org CNAME .
