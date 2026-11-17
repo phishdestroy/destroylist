@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,200 domains | 2026-11-17 11:49 UTC
+; Destroylist - Primary | RPZ zone | 231,201 domains | 2026-11-17 12:06 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794916186 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794917192 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -118866,6 +118866,8 @@ d-wallet-v4.app CNAME .
 *.d-wallet-v4.app CNAME .
 d.gettrustpayment.live CNAME .
 *.d.gettrustpayment.live CNAME .
+d.jornredirmop.com CNAME .
+*.d.jornredirmop.com CNAME .
 d.rwastar.xyz CNAME .
 *.d.rwastar.xyz CNAME .
 d.upln.app CNAME .
