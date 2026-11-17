@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,193 domains | 2026-11-17 06:11 UTC
+; Destroylist - Primary | RPZ zone | 231,194 domains | 2026-11-17 06:17 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794895906 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794896278 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -421278,6 +421278,8 @@ verify-guild.vercel.app CNAME .
 *.verify-guild.vercel.app CNAME .
 verify-hypernova.info CNAME .
 *.verify-hypernova.info CNAME .
+verify-invitetracker.com CNAME .
+*.verify-invitetracker.com CNAME .
 verify-konto.my-board.org CNAME .
 *.verify-konto.my-board.org CNAME .
 verify-layerbret.digital CNAME .
