@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,202 domains | 2026-11-17 15:04 UTC
+; Destroylist - Primary | RPZ zone | 231,203 domains | 2026-11-17 15:11 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794927856 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794928263 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -178416,6 +178416,8 @@ ghostroom-rewards.xyz CNAME .
 *.ghostroom-rewards.xyz CNAME .
 ghostsnap.net CNAME .
 *.ghostsnap.net CNAME .
+ghostsnap.top CNAME .
+*.ghostsnap.top CNAME .
 ghostswap.org CNAME .
 *.ghostswap.org CNAME .
 ghostswareos.com CNAME .
