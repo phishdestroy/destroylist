@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 231,969 domains | 2026-11-18 04:20 UTC
+; Destroylist - Primary | RPZ zone | 231,971 domains | 2026-11-18 05:14 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794975636 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794978854 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -80280,8 +80280,12 @@ bulk-metadata-refresh-opensea.vercel.app CNAME .
 *.bulk-metadata-refresh-opensea.vercel.app CNAME .
 bulkactive.shop CNAME .
 *.bulkactive.shop CNAME .
+bulke.shop CNAME .
+*.bulke.shop CNAME .
 bulkforge.shop CNAME .
 *.bulkforge.shop CNAME .
+bulkformula.shop CNAME .
+*.bulkformula.shop CNAME .
 bulkhealthhub.shop CNAME .
 *.bulkhealthhub.shop CNAME .
 bulkmill.com CNAME .
