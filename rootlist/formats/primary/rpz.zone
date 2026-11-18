@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,100 domains | 2026-11-18 13:16 UTC
+; Destroylist - Primary | RPZ zone | 232,101 domains | 2026-11-18 13:37 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795007778 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795009047 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -213790,6 +213790,8 @@ journal.reflective.app CNAME .
 *.journal.reflective.app CNAME .
 journal.ue.edu.krd CNAME .
 *.journal.ue.edu.krd CNAME .
+journaldww22akademie.pages.dev CNAME .
+*.journaldww22akademie.pages.dev CNAME .
 journalistic-memoirs.net CNAME .
 *.journalistic-memoirs.net CNAME .
 journalplus.info CNAME .
