@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,106 domains | 2026-11-18 14:04 UTC
+; Destroylist - Primary | RPZ zone | 232,107 domains | 2026-11-18 14:20 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795010668 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795011640 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -318592,6 +318592,8 @@ publiccredit.my CNAME .
 *.publiccredit.my CNAME .
 publiccredit.vip CNAME .
 *.publiccredit.vip CNAME .
+publicdeals.online CNAME .
+*.publicdeals.online CNAME .
 publice--coin-base.pages.dev CNAME .
 *.publice--coin-base.pages.dev CNAME .
 publice-apps.zapier.app CNAME .
