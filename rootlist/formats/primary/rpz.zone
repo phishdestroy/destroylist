@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,026 domains | 2026-11-18 07:47 UTC
+; Destroylist - Primary | RPZ zone | 232,027 domains | 2026-11-18 07:53 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794988056 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794988423 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -157476,6 +157476,8 @@ facepunch-launch.world CNAME .
 *.facepunch-launch.world CNAME .
 facepunch-new.org CNAME .
 *.facepunch-new.org CNAME .
+facepunch-offclantable.com CNAME .
+*.facepunch-offclantable.com CNAME .
 facepunch-promotion.world CNAME .
 *.facepunch-promotion.world CNAME .
 facepunch.cc CNAME .
