@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,255 domains | 2026-11-18 20:59 UTC
+; Destroylist - Primary | RPZ zone | 232,256 domains | 2026-11-18 21:10 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795035584 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795036235 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -160664,6 +160664,8 @@ fedexinc.pages.dev CNAME .
 *.fedexinc.pages.dev CNAME .
 fedexinterviewprep.com CNAME .
 *.fedexinterviewprep.com CNAME .
+fedexlpk.com CNAME .
+*.fedexlpk.com CNAME .
 fedexpcf.com CNAME .
 *.fedexpcf.com CNAME .
 fedexservicess.com CNAME .
