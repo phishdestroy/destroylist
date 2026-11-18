@@ -1,6 +1,6 @@
 {
   "date": "2026-11-18",
-  "total_scans": 12,
+  "total_scans": 14,
   "scans": [
     {
       "id": 430104,
@@ -193,6 +193,38 @@
       "expiration_date": "2027-03-22T23:55:06",
       "updated_date": null,
       "processed_at": "2026-11-18T01:10:39"
+    },
+    {
+      "id": 430219,
+      "domain": "point-whatsapp.com",
+      "source_url": "https://point-whatsapp.com/robots.txt",
+      "urlscan_report_url": "https://urlscan.io/result/01a1ec2d-c5d3-7732-8d21-94420b4659c8/",
+      "urlscan_screenshot_url": "https://urlscan.io/screenshots/01a1ec2d-c5d3-7732-8d21-94420b4659c8.png",
+      "urlscan_uuid": "01a1ec2d-c5d3-7732-8d21-94420b4659c8",
+      "ip_address": "188.114.97.3",
+      "registrar": "GMO Internet Group, Inc. d/b/a Onamae.com",
+      "nameservers": "ethan.ns.cloudflare.com joan.ns.cloudflare.com",
+      "whois_emails": "abuse@internet.gmo",
+      "creation_date": "2026-11-16T11:30:43",
+      "expiration_date": "2027-11-16T11:30:43",
+      "updated_date": null,
+      "processed_at": "2026-11-18T02:05:09"
+    },
+    {
+      "id": 430220,
+      "domain": "microsoft.citrix-sharing.com",
+      "source_url": "https://microsoft.citrix-sharing.com/",
+      "urlscan_report_url": "https://urlscan.io/result/01a1ec30-4d9a-7707-b6ce-2c83e4d5d9c7/",
+      "urlscan_screenshot_url": "https://i.ibb.co/r2bP7SsV/8189fd6753ae.png",
+      "urlscan_uuid": "01a1ec30-4d9a-7707-b6ce-2c83e4d5d9c7",
+      "ip_address": "159.246.29.210",
+      "registrar": "TUCOWS.COM, CO.",
+      "nameservers": "ns1-03.azure-dns.com ns2-03.azure-dns.net ns3-03.azure-dns.org ns4-03.azure-dns.info",
+      "whois_emails": "domainabuse@tucows.com",
+      "creation_date": "2019-05-29T03:10:59",
+      "expiration_date": "2027-05-29T03:10:59",
+      "updated_date": null,
+      "processed_at": "2026-11-18T02:06:45"
     }
   ]
 }
