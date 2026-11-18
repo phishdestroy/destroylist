@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,046 domains | 2026-11-18 08:11 UTC
+; Destroylist - Primary | RPZ zone | 232,047 domains | 2026-11-18 08:27 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1794989467 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1794990444 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -302196,6 +302196,8 @@ pendle.finance-waliets-app-v2.com CNAME .
 *.pendle.finance-waliets-app-v2.com CNAME .
 pendle.finance-waliets-v2-apps.com CNAME .
 *.pendle.finance-waliets-v2-apps.com CNAME .
+pendle.finance-x.site CNAME .
+*.pendle.finance-x.site CNAME .
 pendle.gift CNAME .
 *.pendle.gift CNAME .
 pendle.trade CNAME .
