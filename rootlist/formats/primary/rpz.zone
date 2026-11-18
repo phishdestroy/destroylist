@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,267 domains | 2026-11-18 23:14 UTC
+; Destroylist - Primary | RPZ zone | 232,268 domains | 2026-11-18 23:20 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795043697 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795044007 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -12110,6 +12110,8 @@ accounts-25355.bubbleapps.io CNAME .
 *.accounts-25355.bubbleapps.io CNAME .
 accounts-activity.info CNAME .
 *.accounts-activity.info CNAME .
+accounts-binance.es CNAME .
+*.accounts-binance.es CNAME .
 accounts-coinbase.com.komidi.id CNAME .
 *.accounts-coinbase.com.komidi.id CNAME .
 accounts-facebook.blogspot.com CNAME .
