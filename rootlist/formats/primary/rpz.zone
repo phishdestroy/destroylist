@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,380 domains | 2026-11-19 23:16 UTC
+; Destroylist - Primary | RPZ zone | 232,381 domains | 2026-11-19 23:31 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795130173 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795131082 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -230466,6 +230466,8 @@ kusihubshop.shop CNAME .
 *.kusihubshop.shop CNAME .
 kusod.com CNAME .
 *.kusod.com CNAME .
+kusorg.top CNAME .
+*.kusorg.top CNAME .
 kuspit-ai-system.com CNAME .
 *.kuspit-ai-system.com CNAME .
 kuspit-ai.com CNAME .
