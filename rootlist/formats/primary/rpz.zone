@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,271 domains | 2026-11-19 07:34 UTC
+; Destroylist - Primary | RPZ zone | 232,272 domains | 2026-11-19 07:56 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795073663 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795074971 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -370160,6 +370160,8 @@ standardtrustunion.com CNAME .
 *.standardtrustunion.com CNAME .
 standarduniontrustbk.com CNAME .
 *.standarduniontrustbk.com CNAME .
+standctrust.com CNAME .
+*.standctrust.com CNAME .
 standrem.de CNAME .
 *.standrem.de CNAME .
 stands-x.com CNAME .
