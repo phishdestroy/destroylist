@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,348 domains | 2026-11-19 18:55 UTC
+; Destroylist - Primary | RPZ zone | 232,349 domains | 2026-11-19 19:13 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795114517 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795115582 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -122622,6 +122622,8 @@ dashboard-aaves.xyz CNAME .
 *.dashboard-aaves.xyz CNAME .
 dashboard-accesspresale.live CNAME .
 *.dashboard-accesspresale.live CNAME .
+dashboard-accesspresales.live CNAME .
+*.dashboard-accesspresales.live CNAME .
 dashboard-adichain.xyz CNAME .
 *.dashboard-adichain.xyz CNAME .
 dashboard-aerodrome.info CNAME .
