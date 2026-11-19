@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,280 domains | 2026-11-19 08:08 UTC
+; Destroylist - Primary | RPZ zone | 232,281 domains | 2026-11-19 10:04 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795075690 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795082650 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -120000,6 +120000,8 @@ daemon-guarded-4535.vercel.app CNAME .
 *.daemon-guarded-4535.vercel.app CNAME .
 daemontools.org CNAME .
 *.daemontools.org CNAME .
+daeo.cc CNAME .
+*.daeo.cc CNAME .
 dafa04.com CNAME .
 *.dafa04.com CNAME .
 dafabet-casino.es CNAME .
