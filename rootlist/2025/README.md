@@ -55,7 +55,7 @@
 | Year | Link |
 |:-----|:-----|
 | **2025** | 📍 You are here |
-| [2026](../2026/) | 145,393+ domains (11 months, ongoing) |
+| [2026](../2026/) | 145,682+ domains (11 months, ongoing) |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
