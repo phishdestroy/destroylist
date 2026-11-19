@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,269 domains | 2026-11-18 23:31 UTC
+; Destroylist - Primary | RPZ zone | 232,270 domains | 2026-11-19 05:49 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795044670 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795067388 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -302444,6 +302444,8 @@ pendle-ecosystem.top CNAME .
 *.pendle-ecosystem.top CNAME .
 pendle-ecosystem.xyz CNAME .
 *.pendle-ecosystem.xyz CNAME .
+pendle-entry.finance CNAME .
+*.pendle-entry.finance CNAME .
 pendle-event.finance CNAME .
 *.pendle-event.finance CNAME .
 pendle-event.org CNAME .
