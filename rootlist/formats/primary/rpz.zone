@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,437 domains | 2026-11-20 12:18 UTC
+; Destroylist - Primary | RPZ zone | 232,438 domains | 2026-11-20 12:24 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795177111 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795177451 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -20050,6 +20050,8 @@ airsdropsalert.lol CNAME .
 *.airsdropsalert.lol CNAME .
 airsdropsalerts.sbs CNAME .
 *.airsdropsalerts.sbs CNAME .
+airshipmart.com CNAME .
+*.airshipmart.com CNAME .
 airsimsdirect.shop CNAME .
 *.airsimsdirect.shop CNAME .
 airslot.us CNAME .
