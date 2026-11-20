@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,390 domains | 2026-11-20 01:11 UTC
+; Destroylist - Primary | RPZ zone | 232,391 domains | 2026-11-20 01:28 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795137111 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795138124 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -382042,6 +382042,8 @@ swisspostrack.com CNAME .
 *.swisspostrack.com CNAME .
 swissprimeofficial.com CNAME .
 *.swissprimeofficial.com CNAME .
+swissrdp.com CNAME .
+*.swissrdp.com CNAME .
 swissseborg-login.webflow.io CNAME .
 *.swissseborg-login.webflow.io CNAME .
 swissstarnode.tech CNAME .
