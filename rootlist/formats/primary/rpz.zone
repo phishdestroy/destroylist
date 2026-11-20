@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,453 domains | 2026-11-20 17:37 UTC
+; Destroylist - Primary | RPZ zone | 232,454 domains | 2026-11-20 17:43 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795196271 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795196624 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -72988,6 +72988,8 @@ bofa-livechat.com CNAME .
 *.bofa-livechat.com CNAME .
 bofa-login.vercel.app CNAME .
 *.bofa-login.vercel.app CNAME .
+bofa-website.com CNAME .
+*.bofa-website.com CNAME .
 bofabrasil.com CNAME .
 *.bofabrasil.com CNAME .
 bofadeez44.vercel.app CNAME .
