@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,461 domains | 2026-11-20 18:24 UTC
+; Destroylist - Primary | RPZ zone | 232,462 domains | 2026-11-20 19:01 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795199069 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795201306 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -373116,6 +373116,8 @@ status-usepaid.xyz CNAME .
 *.status-usepaid.xyz CNAME .
 status-verificar.sbs CNAME .
 *.status-verificar.sbs CNAME .
+status.celsiuscreditors.network CNAME .
+*.status.celsiuscreditors.network CNAME .
 status.com-polybet-q05.com CNAME .
 *.status.com-polybet-q05.com CNAME .
 status.communityvote.xyz CNAME .
