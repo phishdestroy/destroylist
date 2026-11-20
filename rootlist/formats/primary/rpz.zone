@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,446 domains | 2026-11-20 15:20 UTC
+; Destroylist - Primary | RPZ zone | 232,447 domains | 2026-11-20 16:09 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795188051 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795190979 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -328728,6 +328728,8 @@ rbx-lab.cc CNAME .
 *.rbx-lab.cc CNAME .
 rbx-lab.com CNAME .
 *.rbx-lab.com CNAME .
+rbx-rbx.blogspot.com CNAME .
+*.rbx-rbx.blogspot.com CNAME .
 rbx-url.com CNAME .
 *.rbx-url.com CNAME .
 rbx.ac CNAME .
