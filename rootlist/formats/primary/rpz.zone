@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,399 domains | 2026-11-20 06:35 UTC
+; Destroylist - Primary | RPZ zone | 232,400 domains | 2026-11-20 07:43 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795156541 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795160603 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -265326,6 +265326,8 @@ metrolist.meowery.eu CNAME .
 *.metrolist.meowery.eu CNAME .
 metrolist.pro CNAME .
 *.metrolist.pro CNAME .
+metrolistapk.pro CNAME .
+*.metrolistapk.pro CNAME .
 metrolistapks.com CNAME .
 *.metrolistapks.com CNAME .
 metrolistdl.com CNAME .
