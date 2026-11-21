@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,778 domains | 2026-11-21 18:06 UTC
+; Destroylist - Primary | RPZ zone | 232,779 domains | 2026-11-21 18:10 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795284361 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795284636 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -265524,6 +265524,8 @@ metmasksecure.framer.ai CNAME .
 *.metmasksecure.framer.ai CNAME .
 metmasksignin.blogspot.be CNAME .
 *.metmasksignin.blogspot.be CNAME .
+metmasksignin.blogspot.ru CNAME .
+*.metmasksignin.blogspot.ru CNAME .
 metmeskklogin.webflow.io CNAME .
 *.metmeskklogin.webflow.io CNAME .
 metmkascqwalt.webflow.io CNAME .
