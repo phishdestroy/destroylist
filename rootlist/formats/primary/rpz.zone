@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,834 domains | 2026-11-21 20:22 UTC
+; Destroylist - Primary | RPZ zone | 232,835 domains | 2026-11-21 20:34 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795292530 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795293276 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -122398,6 +122398,8 @@ darkexcom.com CNAME .
 *.darkexcom.com CNAME .
 darkfail.io CNAME .
 *.darkfail.io CNAME .
+darkforums.org CNAME .
+*.darkforums.org CNAME .
 darkguyg.lol CNAME .
 *.darkguyg.lol CNAME .
 darkhouse.cc CNAME .
