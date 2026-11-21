@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,846 domains | 2026-11-21 21:18 UTC
+; Destroylist - Primary | RPZ zone | 232,847 domains | 2026-11-21 21:24 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795295910 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795296250 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -350426,6 +350426,8 @@ services-superb-site-a759fb.webflow.io CNAME .
 *.services-superb-site-a759fb.webflow.io CNAME .
 services-webs.weebly.com CNAME .
 *.services-webs.weebly.com CNAME .
+services.bhprints.store CNAME .
+*.services.bhprints.store CNAME .
 services.cropper-dex.com CNAME .
 *.services.cropper-dex.com CNAME .
 services.dex-fluid.com CNAME .
