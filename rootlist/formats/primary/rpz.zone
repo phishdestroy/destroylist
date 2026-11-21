@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,857 domains | 2026-11-21 23:27 UTC
+; Destroylist - Primary | RPZ zone | 232,858 domains | 2026-11-21 23:33 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795303660 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795303981 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -302082,6 +302082,8 @@ paypal.dalmatas.cl CNAME .
 *.paypal.dalmatas.cl CNAME .
 paypal.growin20.com CNAME .
 *.paypal.growin20.com CNAME .
+paypal.kinoberry.de CNAME .
+*.paypal.kinoberry.de CNAME .
 paypal.kinodora.de CNAME .
 *.paypal.kinodora.de CNAME .
 paypal.kinofino.de CNAME .
