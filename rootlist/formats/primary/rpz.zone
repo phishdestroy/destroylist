@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,829 domains | 2026-11-21 19:57 UTC
+; Destroylist - Primary | RPZ zone | 232,830 domains | 2026-11-21 20:07 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795291067 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795291679 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -200352,6 +200352,8 @@ hyper-sushi.lat CNAME .
 *.hyper-sushi.lat CNAME .
 hyper-swap-26bd.jvjkogjv.workers.dev CNAME .
 *.hyper-swap-26bd.jvjkogjv.workers.dev CNAME .
+hyper-trade.app CNAME .
+*.hyper-trade.app CNAME .
 hyper-trade.xyz CNAME .
 *.hyper-trade.xyz CNAME .
 hyper-unit.eu CNAME .
