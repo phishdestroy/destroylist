@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,600 domains | 2026-11-21 09:22 UTC
+; Destroylist - Primary | RPZ zone | 232,601 domains | 2026-11-21 11:43 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795252924 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795261390 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -352496,6 +352496,8 @@ shopskydance.shop CNAME .
 *.shopskydance.shop CNAME .
 shopsss.vip CNAME .
 *.shopsss.vip CNAME .
+shoptespoints.vercel.app CNAME .
+*.shoptespoints.vercel.app CNAME .
 shoptkreview.cc CNAME .
 *.shoptkreview.cc CNAME .
 shoptks.xyz CNAME .
