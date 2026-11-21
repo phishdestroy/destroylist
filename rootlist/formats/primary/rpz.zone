@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,597 domains | 2026-11-21 05:41 UTC
+; Destroylist - Primary | RPZ zone | 232,598 domains | 2026-11-21 07:37 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795239663 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795246662 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -402028,6 +402028,8 @@ trokucar.com CNAME .
 *.trokucar.com CNAME .
 trolink.cc CNAME .
 *.trolink.cc CNAME .
+trolink.com.cn CNAME .
+*.trolink.com.cn CNAME .
 trolink.live CNAME .
 *.trolink.live CNAME .
 troll-2uv.pages.dev CNAME .
