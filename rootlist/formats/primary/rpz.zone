@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,850 domains | 2026-11-21 22:08 UTC
+; Destroylist - Primary | RPZ zone | 232,851 domains | 2026-11-21 22:23 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795298893 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795299832 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -43718,6 +43718,8 @@ astra-run.pages.dev CNAME .
 *.astra-run.pages.dev CNAME .
 astra-sanctum.pages.dev CNAME .
 *.astra-sanctum.pages.dev CNAME .
+astrabot.design CNAME .
+*.astrabot.design CNAME .
 astrabotfin.com CNAME .
 *.astrabotfin.com CNAME .
 astrabyt.com CNAME .
