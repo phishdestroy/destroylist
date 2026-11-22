@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,897 domains | 2026-11-22 05:01 UTC
+; Destroylist - Primary | RPZ zone | 232,900 domains | 2026-11-22 05:29 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795323684 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795325397 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -2968,6 +2968,8 @@ $TTL 300
 *.1zxzxwve7fhz.ckobiology.com CNAME .
 2-allocations-abs.pages.dev CNAME .
 *.2-allocations-abs.pages.dev CNAME .
+2-allocations-flarenetwork.pages.dev CNAME .
+*.2-allocations-flarenetwork.pages.dev CNAME .
 2-binance.com CNAME .
 *.2-binance.com CNAME .
 2-euroline.com CNAME .
@@ -183600,6 +183602,8 @@ gooddogshop.click CNAME .
 *.gooddogshop.click CNAME .
 gooddybucket444.s3.eu-north-1.amazonaws.com CNAME .
 *.gooddybucket444.s3.eu-north-1.amazonaws.com CNAME .
+goodforgrill.forum CNAME .
+*.goodforgrill.forum CNAME .
 goodgames.pro CNAME .
 *.goodgames.pro CNAME .
 goodgarden.se CNAME .
@@ -274652,6 +274656,8 @@ morpho.sushiswap.lol CNAME .
 *.morpho.sushiswap.lol CNAME .
 morpho.trustline.id CNAME .
 *.morpho.trustline.id CNAME .
+morphoa1.pages.dev CNAME .
+*.morphoa1.pages.dev CNAME .
 morphoapp.live CNAME .
 *.morphoapp.live CNAME .
 morphochain.live CNAME .
