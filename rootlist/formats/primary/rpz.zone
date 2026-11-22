@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,918 domains | 2026-11-22 07:57 UTC
+; Destroylist - Primary | RPZ zone | 232,919 domains | 2026-11-22 08:18 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795334227 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795335494 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -108322,6 +108322,8 @@ com-receive.live CNAME .
 *.com-receive.live CNAME .
 com-recovery.help CNAME .
 *.com-recovery.help CNAME .
+com-refund.info CNAME .
+*.com-refund.info CNAME .
 com-relay-web.pro CNAME .
 *.com-relay-web.pro CNAME .
 com-reserve-47id.com CNAME .
