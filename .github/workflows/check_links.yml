@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Check markdown links
-        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        uses: tcort/github-action-markdown-link-check@e7c7a18363c842693fadde5d41a3bd3573a7a225
         with:
           use-quiet-mode: "yes"
           config-file: ".github/mlc_config.json"

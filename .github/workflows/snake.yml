@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Generate Pac-Man contribution graph
-        uses: abozanona/pacman-contribution-graph@main
+        uses: abozanona/pacman-contribution-graph@70945878b1118303b37b88060fc7145e1a57d7b1
         with:
           github_user_name: phishdestroy
           games: pacman
