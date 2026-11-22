@@ -1,0 +1,95 @@
+name: Publish dist
+on:
+  workflow_run:
+    workflows: ["On List Update", "Scheduled Update", "Purge Domain", "Update Statistics"]
+    types: [completed]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: dist-publish
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Skip if dist is already built from this commit
+        id: check
+        run: |
+          set -euo pipefail
+          SOURCE=$(git rev-parse HEAD)
+          echo "source=$SOURCE" >> "$GITHUB_OUTPUT"
+          if git fetch --no-tags --depth=1 origin "+refs/heads/dist:refs/remotes/origin/dist"; then
+            BUILT=$(git show refs/remotes/origin/dist:meta.json | python -c "import json,sys; print(json.load(sys.stdin)['source_commit'])" || true)
+            if [ "$BUILT" = "$SOURCE" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+              echo "dist is already built from main@${SOURCE::12}"
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          else
+            echo "dist does not exist yet"
+          fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Python
+        if: steps.check.outputs.skip != 'true'
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        if: steps.check.outputs.skip != 'true'
+        run: pip install -r scripts/requirements.txt
+
+      - name: Build feeds from main
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          python scripts/validate_json.py
+          python scripts/json_to_txt.py
+          python scripts/update_counts.py
+          python scripts/build_rootlist.py
+          python scripts/build_shards.py
+
+      - name: Replace dist with a single commit
+        if: steps.check.outputs.skip != 'true'
+        env:
+          SOURCE: ${{ steps.check.outputs.source }}
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/dist"
+          python scripts/build_dist.py --out "$OUT" --source-commit "$SOURCE" \
+            --now "$(git log -1 --format=%cI "$SOURCE")"
+
+          export GIT_INDEX_FILE="$RUNNER_TEMP/dist.index"
+          (cd "$OUT" && git -c core.sparseCheckout=false --git-dir="$GITHUB_WORKSPACE/.git" --work-tree=. add --all .)
+          FILES=$(git ls-files | wc -l)
+          EXPECTED=$(find "$OUT" -type f | wc -l)
+          if [ "$FILES" -ne "$EXPECTED" ]; then
+            echo "::error::staged $FILES files, dist has $EXPECTED"; exit 1
+          fi
+          TREE=$(git write-tree)
+          if git rev-parse --quiet --verify refs/remotes/origin/dist >/dev/null \
+             && [ "$(git rev-parse 'refs/remotes/origin/dist^{tree}')" = "$TREE" ]; then
+            echo "dist content is unchanged"
+            exit 0
+          fi
+
+          COMMIT=$(git -c user.name="github-actions[bot]" \
+                       -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                       commit-tree "$TREE" -m "dist: feeds built from main@${SOURCE::12} [skip ci]")
+          git push --force origin "$COMMIT:refs/heads/dist"
+          echo "Published dist ${COMMIT::12} from main@${SOURCE::12}"

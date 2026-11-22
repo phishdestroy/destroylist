@@ -72,17 +72,15 @@ jobs:
             python scripts/build_shards.py
             python scripts/calculate_stats.py --live
 
-            # Source and every generated consumer must land in one commit.
-            # Otherwise formats/rootlists can advertise domains that no
-            # longer exist in the authoritative source files.
             git add list.json list.txt count.json \
-                   community/blocklist.json community/blocklist.txt \
+                   community/blocklist.json \
                    community/dead_blocklist.json \
                    community/live_blocklist.json community/live_blocklist.txt \
-                   community/content_live.json community/content_live.txt \
+                   community/content_live.json \
                    community/count.json community/live_count.json \
                    community/content_active_count.json \
-                   dns/*.json dns/*.txt rootlist/ archives/changes/
+                   dns/*.json dns/*.txt rootlist/formats/primary_active/ \
+                   rootlist/formats/community_active/ archives/changes/
 
             if git diff --staged --quiet; then
               echo "Changes already present in remote"
