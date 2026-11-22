@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,919 domains | 2026-11-22 08:18 UTC
+; Destroylist - Primary | RPZ zone | 232,920 domains | 2026-11-22 08:27 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795335494 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795336062 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -313326,6 +313326,8 @@ poshmark-kyc.directory CNAME .
 *.poshmark-kyc.directory CNAME .
 poshmark-shop.shop CNAME .
 *.poshmark-shop.shop CNAME .
+poshmark-verify-34252436.shop CNAME .
+*.poshmark-verify-34252436.shop CNAME .
 poshmark.au-order218377.cfd CNAME .
 *.poshmark.au-order218377.cfd CNAME .
 poshmark.my-order-id37284.icu CNAME .
