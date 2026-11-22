@@ -6,11 +6,11 @@
   "providers": {
     "multi_tenant_hosting": {
       "total_domains": 58,
-      "total_entries": 173113,
+      "total_entries": 173142,
       "items": [
         {
           "domain": "pages.dev",
-          "count": 95914,
+          "count": 95937,
           "hosts": [
             "00-e8k.pages.dev",
             "00000000000000000000000.pages.dev",
@@ -3927,6 +3927,7 @@
             "2-allocation-yieldfields.pages.dev",
             "2-allocation-zipcoin.pages.dev",
             "2-allocations-abs.pages.dev",
+            "2-allocations-flarenetwork.pages.dev",
             "2-allocations-ponsfamily.pages.dev",
             "2-allowlist-ascendlaunch.pages.dev",
             "2-app-arcusgovernance.pages.dev",
@@ -4903,9 +4904,11 @@
             "22-zipcoin.pages.dev",
             "220-curvefi.pages.dev",
             "220-kinetiqgov.pages.dev",
+            "220-lists-moonshot.pages.dev",
             "220-stonkbroker-clutchmarkets.pages.dev",
             "221-curvefi.pages.dev",
             "221-kinetiqgov.pages.dev",
+            "221-lists-moonshot.pages.dev",
             "221-reallocate-flare.pages.dev",
             "221-stonkbroker-clutchmarkets.pages.dev",
             "222-curvefi.pages.dev",
@@ -4915,6 +4918,7 @@
             "222-stonkbroker-clutchmarkets.pages.dev",
             "223-curvefi.pages.dev",
             "223-kinetiqgov.pages.dev",
+            "223-lists-moonshot.pages.dev",
             "223-proposal-papertrade.pages.dev",
             "223-reallocate-flare.pages.dev",
             "223-stonkbroker-clutchmarkets.pages.dev",
@@ -27511,6 +27515,11 @@
             "collectiondapps.pages.dev",
             "colnbase-app.pages.dev",
             "colnbase-com-token-sale.pages.dev",
+            "colnbase-listings-4f65-3eeb.pages.dev",
+            "colnbase-listings-4f65-5ce9.pages.dev",
+            "colnbase-listings-4f65-9517.pages.dev",
+            "colnbase-listings-4f65-a6c3.pages.dev",
+            "colnbase-listings-4f65-cf09.pages.dev",
             "colnbazee-support.pages.dev",
             "colonylab-migration.pages.dev",
             "colonylab.pages.dev",
@@ -58610,6 +58619,7 @@
             "morpho-blue-markets.pages.dev",
             "morpho-cpi.pages.dev",
             "morpho-portal.pages.dev",
+            "morphoa1.pages.dev",
             "morphoairdrop.pages.dev",
             "morpholast.pages.dev",
             "morpholastnew.pages.dev",
@@ -65488,6 +65498,7 @@
             "poll-okxvote-517.pages.dev",
             "poll-okxvote-550.pages.dev",
             "poll-okxvote-564.pages.dev",
+            "poll-okxvote-582.pages.dev",
             "poll-okxvote-583.pages.dev",
             "polls-okxlistings.pages.dev",
             "poloniexdata.pages.dev",
@@ -89781,6 +89792,7 @@
             "vote-giza-net.pages.dev",
             "vote-giza.pages.dev",
             "vote-gizatech-com.pages.dev",
+            "vote-gloam.pages.dev",
             "vote-grvt.pages.dev",
             "vote-jumperhyz.pages.dev",
             "vote-jup.pages.dev",
@@ -90018,6 +90030,7 @@
             "vote-proposal-2l.pages.dev",
             "vote-proposal-2q.pages.dev",
             "vote-proposal-2v.pages.dev",
+            "vote-proposal-3.pages.dev",
             "vote-proposal-31.pages.dev",
             "vote-proposal-33.pages.dev",
             "vote-proposal-37h.pages.dev",
@@ -93457,13 +93470,23 @@
             "winter-summit-secure-user-2403-ec8f.pages.dev",
             "winter-summit-secure-user-2403-f872.pages.dev",
             "winter-summit-secure-user-3e08-1197.pages.dev",
+            "winter-summit-secure-user-3e08-1b93.pages.dev",
+            "winter-summit-secure-user-3e08-1f5d.pages.dev",
             "winter-summit-secure-user-3e08-2a49.pages.dev",
+            "winter-summit-secure-user-3e08-36f1.pages.dev",
             "winter-summit-secure-user-3e08-3b73.pages.dev",
             "winter-summit-secure-user-3e08-3e4a.pages.dev",
+            "winter-summit-secure-user-3e08-500c.pages.dev",
             "winter-summit-secure-user-3e08-5713.pages.dev",
+            "winter-summit-secure-user-3e08-5a6f.pages.dev",
             "winter-summit-secure-user-3e08-6c3f.pages.dev",
+            "winter-summit-secure-user-3e08-8fda.pages.dev",
             "winter-summit-secure-user-3e08-a882.pages.dev",
             "winter-summit-secure-user-3e08-abf6.pages.dev",
+            "winter-summit-secure-user-3e08-b3b4.pages.dev",
+            "winter-summit-secure-user-3e08-c9d9.pages.dev",
+            "winter-summit-secure-user-3e08-dafc.pages.dev",
+            "winter-summit-secure-user-3e08-e3cc.pages.dev",
             "winter-summit-secure-user-3e08-eef9.pages.dev",
             "winter-summit-secure-user-3e08-f849.pages.dev",
             "winter-summit-secure-user-3e08-fcdc.pages.dev",
@@ -95930,7 +95953,7 @@
         },
         {
           "domain": "vercel.app",
-          "count": 22033,
+          "count": 22035,
           "hosts": [
             "0-73-fr-66.vercel.app",
             "0-autht-lo-xfin-ity-w0965.vercel.app",
@@ -103774,6 +103797,7 @@
             "mainnettdappfix.vercel.app",
             "mainnetversestation.vercel.app",
             "mainnetverve.vercel.app",
+            "mainsblocksecure.vercel.app",
             "mainventconnt.vercel.app",
             "makerdeo.vercel.app",
             "makeup1003.vercel.app",
@@ -111043,6 +111067,7 @@
             "retrieve-of-token.vercel.app",
             "retro-bridge.vercel.app",
             "retro-pgf.vercel.app",
+            "return-usdt.vercel.app",
             "reverted-code.vercel.app",
             "revertrpc.vercel.app",
             "review-for-page-here.vercel.app",
@@ -142438,7 +142463,7 @@
         },
         {
           "domain": "github.io",
-          "count": 8956,
+          "count": 8960,
           "hosts": [
             "00008moj.github.io",
             "00award.github.io",
@@ -147006,6 +147031,7 @@
             "mathbase1.github.io",
             "matheus-586.github.io",
             "matheus0liveir4.github.io",
+            "matheusmartino97.github.io",
             "mathkaynsgvsjbhiabhsbu.github.io",
             "mathys689.github.io",
             "matimask-logu.github.io",
@@ -147376,6 +147402,7 @@
             "morgasvalencia.github.io",
             "morsalin7274-bit.github.io",
             "mosaiftech89.github.io",
+            "mosharraf062.github.io",
             "mostafa-dev124.github.io",
             "mostpllfan-ctrl.github.io",
             "mousum2002.github.io",
@@ -147870,6 +147897,7 @@
             "ocrasolana.github.io",
             "octabenavidez.github.io",
             "octobitsrefund.github.io",
+            "odaniel9896.github.io",
             "odilbeksaidov225-a11y.github.io",
             "oeprecious.github.io",
             "office365order.github.io",
@@ -150821,6 +150849,7 @@
             "velodrome-finances.github.io",
             "velodromefinance.github.io",
             "vendmartwallet.github.io",
+            "vendruco2.github.io",
             "venice-aii.github.io",
             "venkata-sreenivas.github.io",
             "venkatesh-kn-12.github.io",
@@ -173473,11 +173502,11 @@
     },
     "site_builders": {
       "total_domains": 95,
-      "total_entries": 72755,
+      "total_entries": 72760,
       "items": [
         {
           "domain": "gitbook.io",
-          "count": 22384,
+          "count": 22386,
           "hosts": [
             "0365-microsoft.gitbook.io",
             "0pensea.gitbook.io",
@@ -181943,6 +181972,7 @@
             "intro-web-metamsk.gitbook.io",
             "io-app-trezsor.gitbook.io",
             "io-app-ttrezor.gitbook.io",
+            "io-docs--trezor.gitbook.io",
             "io-dxs-trezor.gitbook.io",
             "io-en-exodus.gitbook.io",
             "io-enn-help-trezor.gitbook.io",
@@ -181963,6 +181993,7 @@
             "io-support-metamaskt.gitbook.io",
             "io-support-metamaskw.gitbook.io",
             "io-trezor-stcrt.gitbook.io",
+            "io-trizor-doc.gitbook.io",
             "io-wletconct.gitbook.io",
             "io-zero-lend-xyz.gitbook.io",
             "io-zksync.gitbook.io",
@@ -225619,7 +225650,7 @@
         },
         {
           "domain": "blogspot.com",
-          "count": 5043,
+          "count": 5045,
           "hosts": [
             "014oo.blogspot.com",
             "01xpga-agpx11.blogspot.com",
@@ -227040,6 +227071,7 @@
             "infoundianshopee-2020.blogspot.com",
             "infoundianshopee-22.blogspot.com",
             "infoundianshopee11.blogspot.com",
+            "infoundianshopee14.blogspot.com",
             "infoundianshopee15.blogspot.com",
             "infoundianshopee19.blogspot.com",
             "infoundianshopee26.blogspot.com",
@@ -228360,6 +228392,7 @@
             "shopeejkt001.blogspot.com",
             "shopeejkt195.blogspot.com",
             "shopeejkt211.blogspot.com",
+            "shopeejkt236.blogspot.com",
             "shopeejkt312.blogspot.com",
             "shopeejkt3215.blogspot.com",
             "shopeejkt337.blogspot.com",
@@ -246669,6 +246702,26 @@
           ]
         },
         {
+          "domain": "blogspot.ie",
+          "count": 14,
+          "hosts": [
+            "app-uphold-login.blogspot.ie",
+            "coin-virtue.blogspot.ie",
+            "coinbase-wallet-login-to.blogspot.ie",
+            "contact-metamask-support.blogspot.ie",
+            "dep4444.blogspot.ie",
+            "docs-uphold-wallet.blogspot.ie",
+            "en-us-uphold-login.blogspot.ie",
+            "facebook-psm.blogspot.ie",
+            "meetamaskloginn.blogspot.ie",
+            "metamaskextensuon.blogspot.ie",
+            "metamaskwallett.blogspot.ie",
+            "phantom-wallet-extension.blogspot.ie",
+            "upholddlogin.blogspot.ie",
+            "vhrtcgerx.blogspot.ie"
+          ]
+        },
+        {
           "domain": "blogspot.jp",
           "count": 14,
           "hosts": [
@@ -246686,25 +246739,6 @@
             "vhrtcgerx.blogspot.jp",
             "www.cgnfmf.blogspot.jp",
             "wwwcoinbasecomsignin.blogspot.jp"
-          ]
-        },
-        {
-          "domain": "blogspot.ie",
-          "count": 13,
-          "hosts": [
-            "app-uphold-login.blogspot.ie",
-            "coin-virtue.blogspot.ie",
-            "coinbase-wallet-login-to.blogspot.ie",
-            "contact-metamask-support.blogspot.ie",
-            "dep4444.blogspot.ie",
-            "docs-uphold-wallet.blogspot.ie",
-            "en-us-uphold-login.blogspot.ie",
-            "facebook-psm.blogspot.ie",
-            "meetamaskloginn.blogspot.ie",
-            "metamaskextensuon.blogspot.ie",
-            "metamaskwallett.blogspot.ie",
-            "upholddlogin.blogspot.ie",
-            "vhrtcgerx.blogspot.ie"
           ]
         },
         {
@@ -246804,7 +246838,7 @@
     },
     "decentralized_storage": {
       "total_domains": 8,
-      "total_entries": 2124,
+      "total_entries": 2125,
       "items": [
         {
           "domain": "dweb.link",
@@ -247808,7 +247842,7 @@
         },
         {
           "domain": "arweave.net",
-          "count": 539,
+          "count": 540,
           "hosts": [
             "23ggzlelrrcqusmukgx35egkid5n63az54pctu72x6p37wmco4oa.arweave.net",
             "24pyr7fqjdl7fsfphllhtz4fcbl52m2kvw5mnxllrf5mstgl47ta.arweave.net",
@@ -248026,6 +248060,7 @@
             "fxtxovfus4mhzvlrpuck7cchvc2notefnwcfddgunrcin35c3tfq.arweave.net",
             "g2afyzzazeavew6dtaf4dftm7nghcifgknsl3iwp2ikxgkyytlxq.arweave.net",
             "g3eukmthplm2rlmdy4murml25gn4tnlwtor3b6ybduar3oeijvna.arweave.net",
+            "g5b424vh4idbd4ugosgaaru5nojwf7i6ksgjn5n66xms6pqjnhzq.arweave.net",
             "g5b7g4to2azdcovi2qjwk5l4pfn36wwfi4t2xc5eprzp5vt7i45a.arweave.net",
             "g63c4lk3o6dku5vg4uasxmwyzrzjhq2np5glpq6n7gu4mlzu6e2a.arweave.net",
             "g6bchsueoc7jmifsobww3dniqnhylum5gxyizrjp5i2jhljfhmeq.arweave.net",
