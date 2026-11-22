@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,913 domains | 2026-11-22 07:34 UTC
+; Destroylist - Primary | RPZ zone | 232,915 domains | 2026-11-22 07:45 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795332848 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795333500 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -412576,6 +412576,8 @@ uniswapfoundation.limited CNAME .
 *.uniswapfoundation.limited CNAME .
 uniswapglobal.limited CNAME .
 *.uniswapglobal.limited CNAME .
+uniswapgo.cc CNAME .
+*.uniswapgo.cc CNAME .
 uniswapgrid.limited CNAME .
 *.uniswapgrid.limited CNAME .
 uniswapgroup.limited CNAME .
@@ -416072,6 +416074,8 @@ us0webzoom.com CNAME .
 *.us0webzoom.com CNAME .
 us0webzoom.store CNAME .
 *.us0webzoom.store CNAME .
+us11zoom.us CNAME .
+*.us11zoom.us CNAME .
 us12web-zoom-us-j-9043562891.pages.dev CNAME .
 *.us12web-zoom-us-j-9043562891.pages.dev CNAME .
 us15web.com CNAME .
