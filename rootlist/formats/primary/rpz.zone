@@ -1,7 +1,7 @@
-; Destroylist - Primary | RPZ zone | 232,893 domains | 2026-11-22 02:01 UTC
+; Destroylist - Primary | RPZ zone | 232,894 domains | 2026-11-22 02:07 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795312900 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795313254 86400 7200 2592000 300
   NS  localhost.
 
 0-0sc.com CNAME .
@@ -359310,6 +359310,8 @@ snapshots-useyap.xyz CNAME .
 *.snapshots-useyap.xyz CNAME .
 snapshots-v4-102.pages.dev CNAME .
 *.snapshots-v4-102.pages.dev CNAME .
+snaptasks.io CNAME .
+*.snaptasks.io CNAME .
 snaptour.app CNAME .
 *.snaptour.app CNAME .
 snaptraderaitrade.com CNAME .
