@@ -1,12 +1,12 @@
 {
   "OpenPhish": {
-    "hash": "5711deadfde6e54165863bc1b4caec14de764014ee7a47a649dd4912c53f3bfd",
+    "hash": "e5e8d2e21ca7f35ede5097961c975b53d442a7b90ff2bf17d64a29ef5aa5fd8a",
     "count": 300,
     "consecutive_failures": 0
   },
-  "Polkadot": {
-    "hash": "e6dab0ecf95948282d710ead422876cf27a5b4bb46e3e2656ee20eb8cfe4c739",
-    "count": 53971,
+  "MetaMask": {
+    "hash": "6c52c9984a6b7cff6e4c39e7c4575349085cce179fa5c393522c3c1bf475fa32",
+    "count": 120621,
     "consecutive_failures": 0
   },
   "SPMedia_DetectedURLs": {
@@ -14,9 +14,9 @@
     "count": 1524,
     "consecutive_failures": 0
   },
-  "MetaMask": {
-    "hash": "8511329921ffac5fb57c2e0170745534625728df16a39f8effa61083956bce38",
-    "count": 120619,
+  "Polkadot": {
+    "hash": "e6dab0ecf95948282d710ead422876cf27a5b4bb46e3e2656ee20eb8cfe4c739",
+    "count": 53971,
     "consecutive_failures": 0
   },
   "Codeesura": {
@@ -30,8 +30,8 @@
     "consecutive_failures": 0
   },
   "Phishunt": {
-    "hash": "190b20548576de8a83e49539c8d73db45cf0bdfd17c957ae752c7dddafeb3882",
-    "count": 843,
+    "hash": "59fd4d84bd5552bad2cb9ff16ec0fad7df0f407ee47671cfe2e4fbd2b85678d2",
+    "count": 837,
     "consecutive_failures": 0
   },
   "CryptoFirewall": {
@@ -45,13 +45,8 @@
     "consecutive_failures": 0
   },
   "SEAL": {
-    "hash": "332b319ab29a30cd5d94c79cab94c8ff1c6d0bb21998cb8ee90af932612b008b",
-    "count": 118337,
-    "consecutive_failures": 0
-  },
-  "Enkrypt_Blacklist": {
-    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
-    "count": 243814,
+    "hash": "2cd5d7b78c3914948d4a7cb6811a48d86eda9e37e592f0a93f8eeca5fbc8cd8d",
+    "count": 118362,
     "consecutive_failures": 0
   },
   "ScamSniffer": {
@@ -59,5 +54,10 @@
     "count": 362610,
     "consecutive_failures": 0
   },
-  "total_count": 1187268
+  "Enkrypt_Blacklist": {
+    "hash": "44a33a2cb3c0aa63123be0947268bd61e0339d029e3f67555cce6fd4c744ff7a",
+    "count": 243814,
+    "consecutive_failures": 0
+  },
+  "total_count": 1187837
 }
