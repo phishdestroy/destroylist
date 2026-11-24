@@ -1,6 +1,6 @@
 <!--
   PhishDestroy Threat Intelligence Report — November 2026
-  9,287 phishing & scam domains detected · Kill rate: 39.5%
+  9,597 phishing & scam domains detected · Kill rate: 43.1%
   Keywords: phishing report, threat intelligence, 2026-11, destroylist, scam domains, crypto drainer,
   phishing detection, domain blocklist, threat feed, VirusTotal, registrar abuse, brand impersonation,
   cryptocurrency phishing, wallet drainer, monthly security report, cybersecurity analytics
@@ -19,14 +19,14 @@
 <br>
 
 <a href="https://github.com/phishdestroy/destroylist">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%209%2C287%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%2039.5%25%20Kill%20Rate%3B%F0%9F%93%8A%20November%202026%20Report" alt="November 2026 Threat Intelligence Report" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=140&lines=%F0%9F%94%A5%209%2C597%20Phishing%20Domains%20Detected%3B%F0%9F%9B%A1%EF%B8%8F%2043.1%25%20Kill%20Rate%3B%F0%9F%93%8A%20November%202026%20Report" alt="November 2026 Threat Intelligence Report" />
 </a>
 
 <br><br>
 
-![domains](https://img.shields.io/badge/domains-9%2C287-FF0000?style=for-the-badge)
-![vs prev month](https://img.shields.io/badge/daily%20avg%20vs%20prev---36%25-FF0000?style=for-the-badge)
-![kill rate](https://img.shields.io/badge/kill%20rate-39.5%25-000000?style=for-the-badge)
+![domains](https://img.shields.io/badge/domains-9%2C597-FF0000?style=for-the-badge)
+![vs prev month](https://img.shields.io/badge/daily%20avg%20vs%20prev---37%25-FF0000?style=for-the-badge)
+![kill rate](https://img.shields.io/badge/kill%20rate-43.1%25-000000?style=for-the-badge)
 ![VT coverage](https://img.shields.io/badge/VT%20coverage-95.8%25-FF0000?style=for-the-badge)
 
 <br><br>
@@ -48,11 +48,11 @@
 
 | ![detected](https://img.shields.io/badge/detected--FF0000?style=flat-square) | ![live](https://img.shields.io/badge/live--CC0000?style=flat-square) | ![dead](https://img.shields.io/badge/dead--000000?style=flat-square) | ![enriched](https://img.shields.io/badge/enriched--333333?style=flat-square) |
 |:---:|:---:|:---:|:---:|
-| **9,287** | **5,165** | **3,369** | **7,850** |
+| **9,597** | **5,385** | **4,080** | **7,998** |
 
 | ![VirusTotal](https://img.shields.io/badge/VirusTotal--FF0000?style=flat-square) | ![Google SB](https://img.shields.io/badge/Google%20SB--000000?style=flat-square) | ![Avg Response](https://img.shields.io/badge/Avg%20Response--FF0000?style=flat-square) | ![Median](https://img.shields.io/badge/Median--000000?style=flat-square) |
 |:---:|:---:|:---:|:---:|
-| **8,898** (95.8%) | **589** | **375.2h** | **127h** |
+| **9,194** (95.8%) | **629** | **364.0h** | **116h** |
 
 </div>
 
@@ -60,7 +60,7 @@
 <img src="2026-11-activity.svg" alt="Daily Threat Detections — November 2026" width="850" />
 </div>
 
-> Peak: **2026-11-16** (1,459) &nbsp;·&nbsp; Low: **2026-11-13** (28) &nbsp;·&nbsp; Active days: **23** *(month ongoing)*
+> Peak: **2026-11-16** (1,459) &nbsp;·&nbsp; Low: **2026-11-13** (28) &nbsp;·&nbsp; Active days: **24** *(month ongoing)*
 
 <details>
 <summary>📊 <b>Daily breakdown</b></summary>
@@ -68,7 +68,7 @@
 
 | Date | Domains | Activity |
 |:-----|--------:|:---------|
-| `2026-11-01` | **962** | `█████████████░░░░░░░` |
+| `2026-11-01` | **961** | `█████████████░░░░░░░` |
 | `2026-11-02` | **326** | `████░░░░░░░░░░░░░░░░` |
 | `2026-11-03` | **126** | `██░░░░░░░░░░░░░░░░░░` |
 | `2026-11-04` | **716** | `██████████░░░░░░░░░░` |
@@ -88,9 +88,10 @@
 | `2026-11-18` | **1,002** | `██████████████░░░░░░` |
 | `2026-11-19` | **119** | `██░░░░░░░░░░░░░░░░░░` |
 | `2026-11-20` | **215** | `███░░░░░░░░░░░░░░░░░` |
-| `2026-11-21` | **267** | `████░░░░░░░░░░░░░░░░` |
+| `2026-11-21` | **266** | `████░░░░░░░░░░░░░░░░` |
 | `2026-11-22` | **209** | `███░░░░░░░░░░░░░░░░░` |
-| `2026-11-23` | **134** | `██░░░░░░░░░░░░░░░░░░` |
+| `2026-11-23` | **386** | `█████░░░░░░░░░░░░░░░` |
+| `2026-11-24` | **60** | `█░░░░░░░░░░░░░░░░░░░` |
 
 </details>
 
@@ -100,31 +101,31 @@
 
 ### Executive Summary
 
-November 2026 has detected **9,287** phishing and scam domains across 23 active days *(month ongoing as of 2026-11-23)*; at 404 domains per day that is a **-36%** change in daily volume from October 2026 (631 per day). The kill rate stands at **39.5%**, with 3,369 domains no longer serving content and 5,165 still live. VirusTotal flagged **95.8%** of the month's domains and Google Safe Browsing flagged 589. The leading registrar was Dynadot Inc with 1,175 domains (12.7%). Ledger was the most impersonated brand (362 domains).
+November 2026 has detected **9,597** phishing and scam domains across 24 active days *(month ongoing as of 2026-11-24)*; at 400 domains per day that is a **-37%** change in daily volume from October 2026 (631 per day). The kill rate stands at **43.1%**, with 4,080 domains no longer serving content and 5,385 still live. VirusTotal flagged **95.8%** of the month's domains and Google Safe Browsing flagged 629. The leading registrar was Dynadot Inc with 1,233 domains (12.8%). Ledger was the most impersonated brand (364 domains).
 
 ### Key Trends
 
-- **Volume** — 9,287 domains in 23 days so far; daily volume -36% vs October 2026.
+- **Volume** — 9,597 domains in 24 days so far; daily volume -37% vs October 2026.
 - **VirusTotal coverage** — 95.8% vs 97.4% the previous month.
-- **Registrars** — Dynadot Inc ranked #1 with 1,175 domains. New in the top 10: NameCheap, Inc., GKG.Net, Inc., MainReg Inc..
-- **Domain zones** — `.com` led with 3,450 domains (37.1%), followed by `.app`, `.shop`, `.dev`.
+- **Registrars** — Dynadot Inc ranked #1 with 1,233 domains. New in the top 10: NameCheap, Inc., GKG.Net, Inc., MainReg Inc..
+- **Domain zones** — `.com` led with 3,568 domains (37.2%), followed by `.app`, `.shop`, `.dev`.
 - **Brands** — top targets were Ledger, Whatsapp, Facebook. New in the top 10: Whatsapp, Microsoft, ShopeePay.
 
 ### Activity Patterns
 
-Detections peaked on **2026-11-16** with 1,459 domains; the lowest day was 2026-11-13 (28). The daily average was 404 domains. Days below 10% of the peak: 5.
+Detections peaked on **2026-11-16** with 1,459 domains; the lowest day was 2026-11-13 (28). The daily average was 400 domains. Days below 10% of the peak: 5.
 
 Crypto drainer kits identified this month: wallet_drainer (1).
 
 ### Registrar Accountability
 
-Dynadot Inc (1,175, 12.7%), NICENIC INTERNATIONAL GROUP CO., LIMITED (750, 8.1%), Spaceship, Inc. (452, 4.9%) were the three registrars with the most phishing domains this month.
+Dynadot Inc (1,233, 12.8%), NICENIC INTERNATIONAL GROUP CO., LIMITED (788, 8.2%), Spaceship, Inc. (474, 4.9%) were the three registrars with the most phishing domains this month.
 
-Top 3 registrars account for **2,377 domains** (25.6% of threats).
+Top 3 registrars account for **2,495 domains** (26.0% of threats).
 
 ### Detection Landscape
 
-alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSeeker (6,925, 74.6%), Fortinet (6,753, 72.7%) were the most active VirusTotal engines. Overall, 8,898 of 9,287 domains (95.8%) had at least one VirusTotal detection.
+alphaMountain.ai (8,124, 84.7%), Gridinsoft (7,810, 81.4%), Forcepoint ThreatSeeker (7,092, 73.9%), Fortinet (6,957, 72.5%) were the most active VirusTotal engines. Overall, 9,194 of 9,597 domains (95.8%) had at least one VirusTotal detection.
 
 ### Recommendations
 
@@ -140,18 +141,18 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 
 | # | Registrar | Domains | Share | Trend |
 |:--:|:---|------:|:---|:---:|
-| **1** | Dynadot Inc | **1,175** | `██░░░░░░░░░░░░░` 12.7% | 🔻 |
-| **2** | NICENIC INTERNATIONAL GROUP CO., LIMITED | **750** | `█░░░░░░░░░░░░░░` 8.1% | 🔻 |
-| **3** | Spaceship, Inc. | **452** | `█░░░░░░░░░░░░░░` 4.9% | 🔻 |
-| **4** | NameCheap, Inc. | **282** | `░░░░░░░░░░░░░░░` 3.0% | 🆕 |
+| **1** | Dynadot Inc | **1,233** | `██░░░░░░░░░░░░░` 12.8% | 🔻 |
+| **2** | NICENIC INTERNATIONAL GROUP CO., LIMITED | **788** | `█░░░░░░░░░░░░░░` 8.2% | 🔻 |
+| **3** | Spaceship, Inc. | **474** | `█░░░░░░░░░░░░░░` 4.9% | 🔻 |
+| **4** | NameCheap, Inc. | **287** | `░░░░░░░░░░░░░░░` 3.0% | 🆕 |
 | **5** | GKG.Net, Inc. | **197** | `░░░░░░░░░░░░░░░` 2.1% | 🆕 |
-| **6** | MainReg Inc. | **177** | `░░░░░░░░░░░░░░░` 1.9% | 🆕 |
-| **7** | GoDaddy.com, LLC | **172** | `░░░░░░░░░░░░░░░` 1.9% | 🔻 |
-| **8** | NameSilo, LLC | **165** | `░░░░░░░░░░░░░░░` 1.8% | 🔻 |
-| **9** | NAMECHEAP INC | **153** | `░░░░░░░░░░░░░░░` 1.6% | 🆕 |
+| **6** | MainReg Inc. | **177** | `░░░░░░░░░░░░░░░` 1.8% | 🆕 |
+| **7** | GoDaddy.com, LLC | **175** | `░░░░░░░░░░░░░░░` 1.8% | 🔻 |
+| **8** | NameSilo, LLC | **170** | `░░░░░░░░░░░░░░░` 1.8% | 🔻 |
+| **9** | NAMECHEAP INC | **138** | `░░░░░░░░░░░░░░░` 1.4% | 🆕 |
 | **10** | Porkbun LLC | **130** | `░░░░░░░░░░░░░░░` 1.4% | 🆕 |
 
-> ⚠️ Top 3 registrars = **2,377** domains (25.6% of all threats)
+> ⚠️ Top 3 registrars = **2,495** domains (26.0% of all threats)
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -159,16 +160,16 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 
 | # | TLD | Domains | Share | vs Prev |
 |:--:|:---|------:|------:|:---:|
-| **1** | `.com` | **3,450** | 37.1% | 🔻 |
-| **2** | `.app` | **977** | 10.5% | 🔻 |
-| **3** | `.shop` | **815** | 8.8% | 🔻 |
-| **4** | `.dev` | **729** | 7.8% | 🔻 |
-| **5** | `.io` | **483** | 5.2% | 🔺 |
-| **6** | `.net` | **241** | 2.6% | 🔻 |
-| **7** | `.digital` | **206** | 2.2% | 🆕 |
-| **8** | `.click` | **178** | 1.9% | 🆕 |
-| **9** | `.live` | **158** | 1.7% | 🔻 |
-| **10** | `.pro` | **152** | 1.6% | 🆕 |
+| **1** | `.com` | **3,568** | 37.2% | 🔻 |
+| **2** | `.app` | **999** | 10.4% | 🔻 |
+| **3** | `.shop` | **834** | 8.7% | 🔻 |
+| **4** | `.dev` | **753** | 7.8% | 🔻 |
+| **5** | `.io` | **508** | 5.3% | 🔺 |
+| **6** | `.net` | **247** | 2.6% | 🔻 |
+| **7** | `.digital` | **206** | 2.1% | 🆕 |
+| **8** | `.click` | **180** | 1.9% | 🆕 |
+| **9** | `.live` | **160** | 1.7% | 🔻 |
+| **10** | `.pro` | **155** | 1.6% | 🆕 |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -176,15 +177,15 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 
 | # | Country | Domains | Share |
 |:--:|:---|------:|------:|
-| **1** | Unknown | **7,979** | 85.9% |
-| **2** | US | **763** | 8.2% |
-| **3** | CN | **69** | 0.7% |
+| **1** | Unknown | **8,299** | 86.5% |
+| **2** | US | **742** | 7.7% |
+| **3** | CN | **71** | 0.7% |
 | **4** | FR | **64** | 0.7% |
-| **5** | HK | **63** | 0.7% |
-| **6** | NL | **41** | 0.4% |
+| **5** | HK | **64** | 0.7% |
+| **6** | NL | **43** | 0.4% |
 | **7** | SG | **30** | 0.3% |
-| **8** | GB | **28** | 0.3% |
-| **9** | CY | **27** | 0.3% |
+| **8** | CY | **28** | 0.3% |
+| **9** | GB | **28** | 0.3% |
 | **10** | RS | **25** | 0.3% |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
@@ -193,16 +194,16 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 
 | # | Brand | Domains | Share |
 |:--:|:---|------:|------:|
-| **1** | Ledger | **362** | 3.9% |
-| **2** | Whatsapp | **186** | 2.0% |
-| **3** | Facebook | **111** | 1.2% |
-| **4** | Google | **96** | 1.0% |
-| **5** | Metamask | **85** | 0.9% |
-| **6** | Microsoft | **82** | 0.9% |
-| **7** | ShopeePay | **75** | 0.8% |
-| **8** | Netflix | **72** | 0.8% |
-| **9** | Celer | **65** | 0.7% |
-| **10** | Trezor | **63** | 0.7% |
+| **1** | Ledger | **364** | 3.8% |
+| **2** | Whatsapp | **200** | 2.1% |
+| **3** | Facebook | **116** | 1.2% |
+| **4** | Google | **101** | 1.1% |
+| **5** | MetaMask | **89** | 0.9% |
+| **6** | Microsoft | **86** | 0.9% |
+| **7** | ShopeePay | **81** | 0.8% |
+| **8** | Netflix | **77** | 0.8% |
+| **9** | Roblox | **66** | 0.7% |
+| **10** | Trezor | **66** | 0.7% |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -218,23 +219,23 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 
 | # | Engine | Detections | Coverage |
 |:--:|:---|------:|------:|
-| **1** | alphaMountain.ai | **7,891** | 85.0% |
-| **2** | Gridinsoft | **7,565** | 81.5% |
-| **3** | Forcepoint ThreatSeeker | **6,925** | 74.6% |
-| **4** | Fortinet | **6,753** | 72.7% |
-| **5** | SOCRadar | **6,463** | 69.6% |
-| **6** | G-Data | **6,167** | 66.4% |
-| **7** | VIPRE | **6,109** | 65.8% |
-| **8** | BitDefender | **5,954** | 64.1% |
-| **9** | ESET | **5,637** | 60.7% |
-| **10** | Lionic | **5,547** | 59.7% |
-| **11** | Sophos | **5,476** | 59.0% |
-| **12** | Webroot | **4,801** | 51.7% |
-| **13** | Kaspersky | **4,102** | 44.2% |
-| **14** | CyRadar | **3,815** | 41.1% |
-| **15** | DNS8 | **3,541** | 38.1% |
+| **1** | alphaMountain.ai | **8,124** | 84.7% |
+| **2** | Gridinsoft | **7,810** | 81.4% |
+| **3** | Forcepoint ThreatSeeker | **7,092** | 73.9% |
+| **4** | Fortinet | **6,957** | 72.5% |
+| **5** | SOCRadar | **6,640** | 69.2% |
+| **6** | G-Data | **6,296** | 65.6% |
+| **7** | VIPRE | **6,194** | 64.5% |
+| **8** | BitDefender | **6,066** | 63.2% |
+| **9** | ESET | **5,753** | 59.9% |
+| **10** | Lionic | **5,634** | 58.7% |
+| **11** | Sophos | **5,558** | 57.9% |
+| **12** | Webroot | **4,933** | 51.4% |
+| **13** | Kaspersky | **4,180** | 43.6% |
+| **14** | CyRadar | **3,862** | 40.2% |
+| **15** | DNS8 | **3,577** | 37.3% |
 
-> ![VT flagged](https://img.shields.io/badge/VT%20flagged-8%2C898%20%2F%209%2C287-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-589-000000?style=flat-square)
+> ![VT flagged](https://img.shields.io/badge/VT%20flagged-9%2C194%20%2F%209%2C597-FF0000?style=flat-square) &nbsp; ![GSB flagged](https://img.shields.io/badge/GSB%20flagged-629-000000?style=flat-square)
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
@@ -243,7 +244,7 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 | Format | File | Description |
 |:-------|:-----|:------------|
 | 📋 Report | [`README.md`](.) | This report |
-| 🗃️ Threats | [`2026-11-threats.json`](2026-11-threats.json) | **9,287** threats with registrars, IPs, VT vendors |
+| 🗃️ Threats | [`2026-11-threats.json`](2026-11-threats.json) | **9,597** threats with registrars, IPs, VT vendors |
 | 📈 Chart | [`2026-11-activity.svg`](2026-11-activity.svg) | Daily detection activity graph |
 
 > 💡 **API access**: Query any domain at [`api.destroy.tools/v1/check`](https://api.destroy.tools/v1/check?domain=example.com) — free, no API key
@@ -276,7 +277,7 @@ alphaMountain.ai (7,891, 85.0%), Gridinsoft (7,565, 81.5%), Forcepoint ThreatSee
 | [August 2026](../../2026/08/) | **19,782** |
 | [September 2026](../../2026/09/) | **16,250** |
 | [October 2026](../../2026/10/) | **19,567** |
-| 📍 **November 2026** | **9,287** *(ongoing)* |
+| 📍 **November 2026** | **9,597** *(ongoing)* |
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
