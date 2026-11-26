@@ -1,7 +1,7 @@
-; Destroylist - Community Active | RPZ zone | 516,150 domains | 2026-11-26 19:47 UTC
+; Destroylist - Community Active | RPZ zone | 516,151 domains | 2026-11-26 19:51 UTC
 ; https://github.com/phishdestroy/destroylist
 $TTL 300
-@ SOA localhost. root.localhost. 1795722471 86400 7200 2592000 300
+@ SOA localhost. root.localhost. 1795722698 86400 7200 2592000 300
   NS  localhost.
 
 0-0.coinbase-com.info CNAME .
@@ -827878,6 +827878,8 @@ staticganalytics.info CNAME .
 *.staticganalytics.info CNAME .
 staticgtag.info CNAME .
 *.staticgtag.info CNAME .
+staticrun.app CNAME .
+*.staticrun.app CNAME .
 staticstress.st CNAME .
 *.staticstress.st CNAME .
 statikroute-landing.pages.dev CNAME .
